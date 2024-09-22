@@ -1,50 +1,22 @@
 ! Title: Removing unwanted URL parameters
-! Version: 0.0.2.5
+! Version: 0.0.2.6
 ! Description: Удаление нежелательных параметров с запросов разных программ (пример: Я.Браузер, Terabox) и не только.
-
-
-
 ! Request parameter Filter
 ! yandex.ru/portal/mobilesearch/config/browser?*
 ! Y.Browser
-
-
-$removeparam=screen_width
-$removeparam=screen_height
-$removeparam=first_install_date
-$removeparam=last_install_date
-$removeparam=first_update_date
-$removeparam=last_update_date
-$removeparam=model
-$removeparam=manufacturer
-$removeparam=lat
-$removeparam=lon
-$removeparam=location_accuracy
-$removeparam=location_recency
-
-
-
+! -
 ! Request Parameter Filter
 ! Microsoft Apps (for example: Authenticator)
 ! config.skype.com/config/v1/AuthClientAndroid/13.7.0*
-
-
-$removeparam=AudienceRing
-$removeparam=Model
-$removeparam=Manufacturer
-
-
+! -
 ! Request Parameter Filter
 ! Terabox
 ! Removing unnecessary parameters when uploading/sending files
 ! c-jp.terabox.com/rest/2.0/pcs/superfile2?method=XxxxxX&type=XxxxxX&path=XxX.XxX&partoffset=XxxxxxxX&app_id=XxxxX&uploadid=XxxxxxxxX&partseq=XxX&rand=XxxxxX&time=XxxxxX&devuid=XxxxxxX&clienttype=X&channel=XxxxxxxxxxxxxX&version=X.XX.X&logid=XxxxxX&firstlaunchtime=XxxxX&apn_id=XxxX&cuid=XxxxxxxxxX&network_type=xxx&carrier=xxxxx
-
-
-$removeparam=channel
-$removeparam=network_type
-$removeparam=carrier
-$removeparam=firstlaunchtime
-$removeparam=version
+! -
+$removeparam=screen_width|screen_height|first_install_date|last_install_date|first_update_date|last_update_date|model|manufacturer|lat|Lon|location_accuracy|location_recency
+$removeparam=AudienceRing|Model|Manufacturer
+$removeparam=channel|network_type|carrier|version|firstlaunchtime
 
 
 
@@ -52,10 +24,4 @@ $removeparam=version
 ! Y.Browser
 ! yandex.ru/ugcpub/iznanka?client=iznanka&ver=1&req_type=rating&text=https://××××××××.com/××××××××/×××××××/×××××××&rating_type=icon&theme=dark&icon_size=200&show_in_omni=1&ajax=%7B%22iznanka%22%3A%7B%7D%7D&view=json&uuid=XxxxxxxxxxxxxxX&device_id=XxxxxxxxxxxxxxX&density=X.X&font_size=1.17&res=XXXXxXXXX&browser_exp=XxxxxxX&tid=XxxxxX-XxxxX
 
-! $removeparam=client
-! $removeparam=device_id
-! $removeparam=show_in_omni
-
-! $removeparam=browser_exp
-! $removeparam=tid
-! $removeparam=res
+! $removeparam=client|browser_exp|tid|res|device_id|show_in_omni
