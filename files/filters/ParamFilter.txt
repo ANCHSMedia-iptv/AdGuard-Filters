@@ -1,5 +1,5 @@
 ! Title: Removing unwanted URL parameters
-! Version: 0.0.2.2
+! Version: 0.0.2.4
 ! Expires: 48 hours
 ! Description: Удаление нежелательных параметров с запросов разных программ (пример: Я.Браузер, Terabox) и не только.
 
@@ -9,18 +9,18 @@
 ! yandex.ru/portal/mobilesearch/config/browser?*
 ! Y.Browser
 
-||yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=screen_width
-||yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=screen_height
-||yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=first_install_date
-||yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=last_install_date
-||yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=first_update_date
-||yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=last_update_date
-||yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=model
-||yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=manufacturer
-||yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=lat
-||yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=lon
-||yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=location_accuracy
-||yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=location_recency
+yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=screen_width
+yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=screen_height
+yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=first_install_date
+yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=last_install_date
+yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=first_update_date
+yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=last_update_date
+yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=model
+yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=manufacturer
+yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=lat
+yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=lon
+yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=location_accuracy
+yandex.ru/portal/mobilesearch/config/browser?*$xmlhttprequest,removeparam=location_recency
 
 
 $removeparam=screen_width
@@ -43,11 +43,11 @@ $removeparam=location_recency
 ! Microsoft Apps (for example: Authenticator)
 ! config.skype.com/config/v1/AuthClientAndroid/13.7.0*
 
-||config.skype.com/config/v1/AuthClientAndroid/13.7.0?*$xmlhttprequest,removeparam=AudienceRing
-||config.skype.com/config/v1/AuthClientAndroid/13.7.0?*$xmlhttprequest,removeparam=Model
-||config.skype.com/config/v1/AuthClientAndroid/13.7.0?*$xmlhttprequest,removeparam=Manufacturer
+config.skype.com/config/v1/AuthClientAndroid/13.7.0?*$xmlhttprequest,removeparam=AudienceRing
+config.skype.com/config/v1/AuthClientAndroid/13.7.0?*$xmlhttprequest,removeparam=Model
+config.skype.com/config/v1/AuthClientAndroid/13.7.0?*$xmlhttprequest,removeparam=Manufacturer
 
-$removeparam=AudinceRing
+$removeparam=AudienceRing
 $removeparam=Model
 $removeparam=Manufacturer
 
@@ -58,11 +58,11 @@ $removeparam=Manufacturer
 ! c-jp.terabox.com/rest/2.0/pcs/superfile2?method=XxxxxX&type=XxxxxX&path=XxX.XxX&partoffset=XxxxxxxX&app_id=XxxxX&uploadid=XxxxxxxxX&partseq=XxX&rand=XxxxxX&time=XxxxxX&devuid=XxxxxxX&clienttype=X&channel=XxxxxxxxxxxxxX&version=X.XX.X&logid=XxxxxX&firstlaunchtime=XxxxX&apn_id=XxxX&cuid=XxxxxxxxxX&network_type=xxx&carrier=xxxxx
 
 
-||c-jp.terabox.com/rest/2.0/pcs/superfile2?*$other,removeparam=channel
-||c-jp.terabox.com/rest/2.0/pcs/superfile2?*$other,removeparam=network_type
-||c-jp.terabox.com/rest/2.0/pcs/superfile2?*$other,removeparam=carrier
-||c-jp.terabox.com/rest/2.0/pcs/superfile2?*$other,removeparam=firstlaunchtime
-|||c-jp.terabox.com/rest/2.0/pcs/superfile2?*$other,removeparam=version
+c-jp.terabox.com/rest/2.0/pcs/superfile2?*$other,removeparam=channel
+c-jp.terabox.com/rest/2.0/pcs/superfile2?*$other,removeparam=network_type
+c-jp.terabox.com/rest/2.0/pcs/superfile2?*$other,removeparam=carrier
+c-jp.terabox.com/rest/2.0/pcs/superfile2?*$other,removeparam=firstlaunchtime
+c-jp.terabox.com/rest/2.0/pcs/superfile2?*$other,removeparam=version
 
 
 $removeparam=channel
