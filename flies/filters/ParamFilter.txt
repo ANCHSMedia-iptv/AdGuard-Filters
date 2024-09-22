@@ -1,0 +1,44 @@
+! Title: Removing unwanted URL parameters
+! Version: 0.0.2
+! Expires: 48 hours
+! Description: Удаление нежелательных параметров с запросов разных программ (пример: Я.Браузер, Terabox).
+
+
+
+! Request parameter Filter
+! yandex.ru/portal/mobilesearch/config/browser*
+! Y.Browser
+
+$xhr,removeparam=screen_width,domain=yandex.ru
+$xhr,removeparam=screen_height,domain=yandex.ru
+$xhr,removeparam=first_install_date,domain=yandex.ru
+$xhr,removeparam=last_install_date,domain=yandex.ru
+$xhr,removeparam=first_update_date,domain=yandex.ru
+$xhr,removeparam=last_update_date,domain=yandex.ru
+$xhr,removeparam=model,domain=yandex.ru
+$xhr,removeparam=manufacturer,domain=yandex.ru
+$xhr,removeparam=lat,domain=yandex.ru
+$xhr,removeparam=lon,domain=yandex.ru
+$xhr,removeparam=location_accuracy,domain=yandex.ru
+$xhr,removeparam=location_recency,domain=yandex.ru
+
+
+! Request Parameter Filter
+! Microsoft Apps
+! config.skype.com/config/v1/AuthClientAndroid/13.7.0*
+
+$xhr,removeparam=AudienceRing,domain=config.skype.com
+$xhr,removeparam=Model,domain=config.skype.com
+$xhr,removeparam=Manufacturer,domain=config.skype.com
+
+
+! Request Parameter Filter
+! Terabox
+! Removing unnecessary parameters when uploading/sending files
+! c-jp.terabox.com/rest/2.0/pcs/superfile2?method=XxxxxX&type=XxxxxX&path=XxX.XxX&partoffset=XxxxxxxX&app_id=XxxxX&uploadid=XxxxxxxxX&partseq=XxX&rand=XxxxxX&time=XxxxxX&devuid=XxxxxxX&clienttype=X&channel=XxxxxxxxxxxxxX&version=X.XX.X&logid=XxxxxX&firstlaunchtime=XxxxX&apn_id=XxxX&cuid=XxxxxxxxxX&network_type=xxx&carrier=xxxxx
+
+
+$other,removeparam=channel,domain=c-jp.terabox.com
+$other,removeparam=network_type,domain=c-jp.terabox.com
+$other,removeparam=carrier,domain=c-jp.terabox.com
+$other,removeparam=firstlaunchtime,domain=c-jp.terabox.com
