@@ -37,7 +37,6 @@ $xhr,removeparam=Manufacturer,domain=config.skype.com
 ! Removing unnecessary parameters when uploading/sending files
 ! c-jp.terabox.com/rest/2.0/pcs/superfile2?method=XxxxxX&type=XxxxxX&path=XxX.XxX&partoffset=XxxxxxxX&app_id=XxxxX&uploadid=XxxxxxxxX&partseq=XxX&rand=XxxxxX&time=XxxxxX&devuid=XxxxxxX&clienttype=X&channel=XxxxxxxxxxxxxX&version=X.XX.X&logid=XxxxxX&firstlaunchtime=XxxxX&apn_id=XxxX&cuid=XxxxxxxxxX&network_type=xxx&carrier=xxxxx
 
-
 $other,removeparam=channel,domain=c-jp.terabox.com
 $other,removeparam=network_type,domain=c-jp.terabox.com
 $other,removeparam=carrier,domain=c-jp.terabox.com
