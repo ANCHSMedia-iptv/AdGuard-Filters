@@ -1,27 +1,57 @@
 ! Title: Removing unwanted URL parameters
-! Version: 0.0.2.6
+! Version: 0.0.2.9
+! alpha
+! Updated: 23.09.2024 12:55 GMT +3
+! Expires: 24 hours (updated almost every day)
 ! Description: Удаление нежелательных параметров с запросов разных программ (пример: Я.Браузер, Terabox) и не только.
+! ===========
 ! Request parameter Filter
-! yandex.ru/portal/mobilesearch/config/browser?*
 ! Y.Browser
-! -
+! yandex.ru/portal/mobilesearch/config/browser?*
+! yandex.ru/suggest/import-user-history?suggest_reqid=XxxxxxxxxxxX&device_id=XxxxxxxxxxxxxX&uuid=XxxxxxxxxX&srv=red-bro-suggest-touch&now=XxxxxxxxX&force_history=X&lasttime=XxxxxxxX
+! yandex.ru/suggest/export-user-history?suggest_reqid=XxxxxxxxxxxxX&device_id=XxxxxxX&uuid=XxxxxxxxxxxX&srv=red-bro-suggest-touch&now=XxxxxxX
+! =====
 ! Request Parameter Filter
 ! Microsoft Apps (for example: Authenticator)
 ! config.skype.com/config/v1/AuthClientAndroid/13.7.0*
-! -
+! =====
 ! Request Parameter Filter
 ! Terabox
 ! Removing unnecessary parameters when uploading/sending files
-! c-jp.terabox.com/rest/2.0/pcs/superfile2?method=XxxxxX&type=XxxxxX&path=XxX.XxX&partoffset=XxxxxxxX&app_id=XxxxX&uploadid=XxxxxxxxX&partseq=XxX&rand=XxxxxX&time=XxxxxX&devuid=XxxxxxX&clienttype=X&channel=XxxxxxxxxxxxxX&version=X.XX.X&logid=XxxxxX&firstlaunchtime=XxxxX&apn_id=XxxX&cuid=XxxxxxxxxX&network_type=xxx&carrier=xxxxx
-! -
-$removeparam=screen_width|screen_height|first_install_date|last_install_date|first_update_date|last_update_date|model|manufacturer|lat|Lon|location_accuracy|location_recency
-$removeparam=AudienceRing|Model|Manufacturer
-$removeparam=channel|network_type|carrier|version|firstlaunchtime
+! c-jp.terabox.com/rest/2.0/pcs/superfile2?method=XxxxxX&type=XxxxxX&path=XxX.XxX&partoffset=XxxxxxxX&app_id=XxxxX&uploadid=XxxxxxxxX&partseq=XxX&rand=XxxxxX&time=XxxxxX&devuid=XxxxxxX&clienttype=X&channel=XxxxxxxxxxxxxX&version=X.XX.X&logid=XxxxxX&firstlaunchtime=XxxxX&apn_id=XxxX&cuid=XxxxxxxxxX&network_type=xxxxxxxx&carrier=xxxxx
+! ===========
+
+$xmlhttrequest,removeparam=screen_width,domain=yandex.*
+$xmlhttrequest,removeparam=screen_height,domain=yandex.*
+$xmlhttrequest,removeparam=first_install_date,domain=yandex.*
+$xmlhttrequest,removeparam=last_install_date,domain=yandex.*
+$xmlhttrequest,removeparam=first_update_date,domain=yandex.*
+$xmlhttrequest,removeparam=last_update_date,domain=yandex.*
+$xmlhttrequest,removeparam=model,domain=yandex.*
+$xmlhttrequest,removeparam=manufacturer,domain=yandex.*
+$xmlhttrequest,removeparam=lat,domain=yandex.*
+$xmlhttrequest,removeparam=lon,domain=yandex.*
+$xmlhttrequest,removeparam=location_accuracy,domain=yandex.*
+$xmlhttrequest,removeparam=location_recency,domain=yandex.*
+$xmlhttrequest,removeparam=AudienceRing,domain=config.skype.com
+$xmlhttrequest,removeparam=Model,domain=config.skype.com
+$xmlhttrequest,removeparam=Manufacturer,domain=config.skype.com
+$other,removeparam=channel,domain=*.terabox.com
+$other,removeparam=network_type,domain=*.terabox.com
+$other,removeparam=carrier,domain=*.terabox.com
+$other,removeparam=version,domain=*.terabox.com
+$other,removeparam=firstlaunchtime,domain=*.terabox.com
+$xmlhttrequest,removeparam=now,domain=yandex.*
+$xmlhttrequest,removeparam=lasttime,domain=yandex.*
 
 
 
-! Removing unnecessary parameters
 ! Y.Browser
 ! yandex.ru/ugcpub/iznanka?client=iznanka&ver=1&req_type=rating&text=https://××××××××.com/××××××××/×××××××/×××××××&rating_type=icon&theme=dark&icon_size=200&show_in_omni=1&ajax=%7B%22iznanka%22%3A%7B%7D%7D&view=json&uuid=XxxxxxxxxxxxxxX&device_id=XxxxxxxxxxxxxxX&density=X.X&font_size=1.17&res=XXXXxXXXX&browser_exp=XxxxxxX&tid=XxxxxX-XxxxX
 
-! $removeparam=client|browser_exp|tid|res|device_id|show_in_omni
+! $xmlhttrequest,removeparam=client,domain=yandex.*
+! $xmlhttrequest,removeparam=browser_exp,domain=yandex.*
+! $xmlhttrequest,removeparam=tid,domain=yandex.*
+! $xmlhttrequest,removeparam=res,domain=yandex.*
+! $xmlhttrequest,removeparam=device_id,domain=yandex.*
+! $xmlhttrequest,removeparam=show_in_omni,domain=yandex.*
