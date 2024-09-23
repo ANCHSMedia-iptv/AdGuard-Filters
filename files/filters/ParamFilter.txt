@@ -1,7 +1,7 @@
 ! Title: Removing unwanted URL parameters
-! Version: 0.0.2.9
-! alpha
-! Updated: 23.09.2024 12:55 GMT +3
+! Version: 0.0.3
+! Alpha
+! Last Modified: 23.09.2024 11:23 UTC
 ! Expires: 24 hours (updated almost every day)
 ! Description: Удаление нежелательных параметров с запросов разных программ (пример: Я.Браузер, Terabox) и не только.
 ! ===========
@@ -21,37 +21,37 @@
 ! c-jp.terabox.com/rest/2.0/pcs/superfile2?method=XxxxxX&type=XxxxxX&path=XxX.XxX&partoffset=XxxxxxxX&app_id=XxxxX&uploadid=XxxxxxxxX&partseq=XxX&rand=XxxxxX&time=XxxxxX&devuid=XxxxxxX&clienttype=X&channel=XxxxxxxxxxxxxX&version=X.XX.X&logid=XxxxxX&firstlaunchtime=XxxxX&apn_id=XxxX&cuid=XxxxxxxxxX&network_type=xxxxxxxx&carrier=xxxxx
 ! ===========
 
-$xmlhttrequest,removeparam=screen_width,domain=yandex.*
-$xmlhttrequest,removeparam=screen_height,domain=yandex.*
-$xmlhttrequest,removeparam=first_install_date,domain=yandex.*
-$xmlhttrequest,removeparam=last_install_date,domain=yandex.*
-$xmlhttrequest,removeparam=first_update_date,domain=yandex.*
-$xmlhttrequest,removeparam=last_update_date,domain=yandex.*
-$xmlhttrequest,removeparam=model,domain=yandex.*
-$xmlhttrequest,removeparam=manufacturer,domain=yandex.*
-$xmlhttrequest,removeparam=lat,domain=yandex.*
-$xmlhttrequest,removeparam=lon,domain=yandex.*
-$xmlhttrequest,removeparam=location_accuracy,domain=yandex.*
-$xmlhttrequest,removeparam=location_recency,domain=yandex.*
-$xmlhttrequest,removeparam=AudienceRing,domain=config.skype.com
-$xmlhttrequest,removeparam=Model,domain=config.skype.com
-$xmlhttrequest,removeparam=Manufacturer,domain=config.skype.com
+$xmlhttprequest,removeparam=screen_width,domain=yandex.*
+$xmlhttprequest,removeparam=screen_height,domain=yandex.*
+$xmlhttprequest,removeparam=first_install_date,domain=yandex.*
+$xmlhttprequest,removeparam=last_install_date,domain=yandex.*
+$xmlhttprequest,removeparam=first_update_date,domain=yandex.*
+$xmlhttprequest,removeparam=last_update_date,domain=yandex.*
+$xmlhttprequest,removeparam=model,domain=yandex.*
+$xmlhttprequest,removeparam=manufacturer,domain=yandex.*
+$xmlhttprequest,removeparam=lat,domain=yandex.*
+$xmlhttprequest,removeparam=lon,domain=yandex.*
+$xmlhttprequest,removeparam=location_accuracy,domain=yandex.*
+$xmlhttprequest,removeparam=location_recency,domain=yandex.*
+$xmlhttprequest,removeparam=AudienceRing,domain=config.skype.com
+$xmlhttprequest,removeparam=Model,domain=config.skype.com
+$xmlhttprequest,removeparam=Manufacturer,domain=config.skype.com
 $other,removeparam=channel,domain=*.terabox.com
 $other,removeparam=network_type,domain=*.terabox.com
 $other,removeparam=carrier,domain=*.terabox.com
 $other,removeparam=version,domain=*.terabox.com
 $other,removeparam=firstlaunchtime,domain=*.terabox.com
-$xmlhttrequest,removeparam=now,domain=yandex.*
-$xmlhttrequest,removeparam=lasttime,domain=yandex.*
+$xmlhttprequest,removeparam=now,domain=yandex.*
+$xmlhttprequest,removeparam=lasttime,domain=yandex.*
 
 
 
 ! Y.Browser
-! yandex.ru/ugcpub/iznanka?client=iznanka&ver=1&req_type=rating&text=https://××××××××.com/××××××××/×××××××/×××××××&rating_type=icon&theme=dark&icon_size=200&show_in_omni=1&ajax=%7B%22iznanka%22%3A%7B%7D%7D&view=json&uuid=XxxxxxxxxxxxxxX&device_id=XxxxxxxxxxxxxxX&density=X.X&font_size=1.17&res=XXXXxXXXX&browser_exp=XxxxxxX&tid=XxxxxX-XxxxX
+! yandex.ru/ugcpub/iznanka?client=iznanka&ver=1&req_type=rating&text=*://*.*/*&rating_type=icon&theme=dark&icon_size=200&show_in_omni=1&ajax=%7B%22iznanka%22%3A%7B%7D%7D&view=json&uuid=XxxxxxxxxxxxxxX&device_id=XxxxxxxxxxxxxxX&density=X.X&font_size=1.17&res=XXXXxXXXX&browser_exp=XxxxxxX&tid=XxxxxX-XxxxX
 
-! $xmlhttrequest,removeparam=client,domain=yandex.*
-! $xmlhttrequest,removeparam=browser_exp,domain=yandex.*
-! $xmlhttrequest,removeparam=tid,domain=yandex.*
-! $xmlhttrequest,removeparam=res,domain=yandex.*
-! $xmlhttrequest,removeparam=device_id,domain=yandex.*
-! $xmlhttrequest,removeparam=show_in_omni,domain=yandex.*
+! $xmlhttprequest,removeparam=client,domain=yandex.*
+! $xmlhttprequest,removeparam=browser_exp,domain=yandex.*
+! $xmlhttprequest,removeparam=tid,domain=yandex.*
+! $xmlhttprequest,removeparam=res,domain=yandex.*
+! $xmlhttprequest,removeparam=device_id,domain=yandex.*
+! $xmlhttprequest,removeparam=show_in_omni,domain=yandex.*
