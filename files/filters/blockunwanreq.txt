@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections
-! Version: a0.0.2(1)
+! Version: a0.0.2-3
 ! Alpha
-! Homepage:
-! Last Modified: 12.09.2024 12:17 UTC
+! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
+! Last Modified: 12.09.2024 17:30 UTC
 ! Expires: 24 hours (updated almost every day)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
 
@@ -10,8 +10,6 @@
 
 ||analytics.picsart.com^
 ||sb.scorecardresearch.com^$important
-||www.googleadservices.com^$important
-||www.google-analytics.com^$important
 ||*metricell.com^$important
 ||*bronze.systems^$important
 ||graph.facebook.com^$important
@@ -20,7 +18,7 @@
 ||*amplreq.com^$important
 
 
-||*.bugsnag.com^$important
+||*bugsnag.com^$important
 ||*bugsnag*^$important
 ||*vk-analytics.ru^$app=ru.vk.store|com.vk.im|com.vkontakte.android|com.yandex.browser|com.opera.browser|com.kiwibrowser.browser|com.duckduckgo.mobile.android
 ||*instabug*^
@@ -34,7 +32,6 @@
 ||api.bing.com^
 ||*cellrebel.com^$important
 ||*onesignal.com^$important
-||vb-gae-front.ey.r.appspot.com^$important
 ||cdn.viglink.com^$important
 ||connect.facebook.net^$important
 ||connect.ok.ru^$important
@@ -45,7 +42,24 @@
 ||www.facebook.com^
 ||*snapkit.com^
 ||*appsflyer.com^
-||*ds.metric.gstatic.com^
+||analytics.72.ru^
+||syndication.twitter.com^
+||*rexpush.pro^
+||*peiynu.com^
+||*appspot.com^$important
+||counter.yabro.ru^
+||*flowerpla.com^
+||*amocrm.ru^
+||*gtrxlnd2.com^
+
+
+||*adserv.ai^
+||*tapulsads.ru^
+||*gonet-ads.com^
+||*telecid.ru^
+
+||checkip.amazonaws.col^
+
 
 
 !  Microsoft Analytics
@@ -99,13 +113,14 @@
 ||firebase.googleapis.com^
 
 
-! Crashlytics
+! Crashlytics + Firebase
 
 ||firebase-settings.crashlytics.com^$important
 ||reports.crahlytics.com^
 ||e.crashlytics.co^
 ||settings.crashlytics.com^
 ||firebase-settings.crashlytics.col^$important
+||crashlyticsreport-pa.googleapis.com^
 
 
 ! Yandex Analytics, Ads
@@ -125,6 +140,20 @@
 ||startup.appmetrica.yango.com^
 
 ! *appmetrica*^
+
+
+
+! Google
+
+||www.googleadservices.com^$important
+||www.google-analytics.com^$important
+||www.googletagmanager.com^
+||googletagmanager.com^
+||googleadservices.com^
+||google-analytics.com^
+||*ds.metric.gstatic.com^
+
+
 
 
 
