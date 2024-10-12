@@ -1,6 +1,7 @@
 ! Title: Block unwanted connections
-! Version: 0.0.2
+! Version: a0.0.2(1)
 ! Alpha
+! Homepage:
 ! Last Modified: 12.09.2024 12:17 UTC
 ! Expires: 24 hours (updated almost every day)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
@@ -37,7 +38,6 @@
 ||cdn.viglink.com^$important
 ||connect.facebook.net^$important
 ||connect.ok.ru^$important
-||startup.mobile.webvisor.com^$important
 ||*inappstory.ru^
 ||*inappstory.com^
 ||*appsflyersdk.com^
@@ -120,6 +120,7 @@
 ||startup.mobile.yandex.net^$important
 ||startup-mobile.ap.yandex-net.ru^$important
 ||mobile.yandexadexchange.net^$important
+||startup.mobile.webvisor.com^$important
 ||report.appmetrica.yango.com^
 ||startup.appmetrica.yango.com^
 
