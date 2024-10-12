@@ -1,0 +1,167 @@
+# Title: Block unwanted connections (DNS)
+# Version: a0.0.1
+# Alpha
+# Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
+# Last Modified: 12.09.2024 17:30 UTC
+# Expires: 24 hours (updated almost every day)
+# Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
+
+
+
+# -- Firebase
+
+||firebaseinstallations.googleapis.com^
+||firebaselogging.googleapis.com^
+||firebaseremoteconfig.googleapis.com^
+||firebaselogging-pa.googleapis.com^
+||firebaseinappmessaging.googleapis.com^
+||firebaseremoteconfigrealtime.googleapis.com^
+||firebase.googleapis.com^
+
+
+# -- Crashlytics + Firebase
+
+||firebase-settings.crashlytics.com^
+||reports.crahlytics.com^
+||e.crashlytics.co^
+||settings.crashlytics.com^
+||firebase-settings.crashlytics.col^$important
+||crashlyticsreport-pa.googleapis.com^
+
+
+# -- Yandex Analytics, Ads
+
+||banners.mobile.yandex.net^
+||banners.tst.mobile.yandex.net^
+||rosenberg.appmetrica.yandex.net^
+||bs.yandex.ru^
+||direct.yandex.ru^
+||tracking.ott.yandex.net^
+||ads.adfox.ru^
+||startup.mobile.yandex.net^
+||startup-mobile.ap.yandex-net.ru^
+||mobile.yandexadexchange.net^
+||startup.mobile.webvisor.com^
+||report.appmetrica.yango.com^
+||startup.appmetrica.yango.com^
+
+# *appmetrica*^
+
+
+
+# -- Браузерные запросы
+# -- Browser requests
+
+||news-af.feednews.com^$app=com.opera.browser,dnsrewrite=NXDOMAIN
+||api-a.oleads.com^$app=com.opera.browser,dnsrewrite=NXDOMAIN
+
+
+
+# -- Подключения к рекомендованным серверам (Minecraft BE)
+# -- Connections to recommended servers (Minecraft BE)
+
+
+||play.inpvp.net^
+||mco.lbsg.net^
+||play.galaxite.net^
+||geo.hivebedrock.network^
+||mco.cubecraft.net^
+||us.mineplex.com^
+||play.vexalmc.co^
+||play.pioneersurvival.net^
+||_minecraft._tcp.play.pioneersurvival.net^
+||_minecraft._tcp.us.mineplex.com^$dnsrewrite=NXDOMAIN
+||play.pixelparadise.gg^
+||mco.mineplex.com^$dnsrewrite=NXDOMAIN
+
+
+
+# -- RIP Mineplex 26.01.2013-12.05.2023
+# -- Сохранил запросы т.к. могут всё равно идти запросы (со старых версий к примеру где Mineplex есть)
+# -- I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)
+
+
+
+# -- Microsoft Analytics
+
+||mobile.events.data.microsoft.com^
+||self.events.data.microsoft.com^
+||mobile.pipe.aria.microsoft.com^
+
+
+# -- Google
+
+||www.googleadservices.com^
+||www.google-analytics.com^
+||www.googletagmanager.com^
+||googletagmanager.com^
+||googleadservices.com^
+||google-analytics.com^
+||*ds.metric.gstatic.com^
+
+
+
+
+||analytics.picsart.com^
+||sb.scorecardresearch.com^
+||*metricell.com^
+||*bronze.systems^
+||graph.facebook.com^$dnsrewrite=NXDOMAIN
+||*optifyr.com^
+||*gravatar.com^
+||*amplreq.com^
+||*bugsnag.com^
+||*bugsnag*^
+||*vk-analytics.ru^
+||*instabug*^
+||xray.mail.ru^
+||ad.mail.ru^
+||*dbankcloud*^
+||*doubleclick.net^
+||*rayjump.com^
+||smi2.ru^
+||*umeng.com^
+||api.bing.com^
+||*cellrebel.com^
+||*onesignal.com^
+||cdn.viglink.com^
+||connect.facebook.net^$dnsrewrite=NXDOMAIN
+||connect.ok.ru^
+||*inappstory.ru^
+||*inappstory.com^
+||*appsflyersdk.com^
+||facebook.com^$dnsrewrite=NXDOMAIN
+||www.facebook.com^$dnsrewrite=NXDOMAIN
+||*snapkit.com^
+||*appsflyer.com^
+||analytics.72.ru^
+||syndication.twitter.com^$dnsrewrite=NXDOMAIN
+||*rexpush.pro^
+||*peiynu.com^
+||*appspot.com^
+||counter.yabro.ru^
+||*flowerpla.com^
+||*amocrm.ru^
+||*gtrxlnd2.com^
+
+
+||*adserv.ai^
+||*tapulsads.ru^
+||*gonet-ads.com^
+||*telecid.ru^
+
+
+||checkip.amazonaws.col^
+
+
+# -- Microsoft Analytics
+
+||mobile.events.data.microsoft.com^
+||self.events.data.microsoft.com^
+||mobile.pipe.aria.microsoft.com^
+
+
+
+
+
+
