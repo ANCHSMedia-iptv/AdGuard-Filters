@@ -1,0 +1,132 @@
+! Title: Block unwanted connections
+! Version: 0.0.2
+! Alpha
+! Last Modified: 12.09.2024 12:17 UTC
+! Expires: 24 hours (updated almost every day)
+! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
+
+
+
+||analytics.picsart.com^
+||sb.scorecardresearch.com^$important
+||www.googleadservices.com^$important
+||www.google-analytics.com^$important
+||*metricell.com^$important
+||*bronze.systems^$important
+||graph.facebook.com^$important
+||*optifyr.com^$important
+||*gravatar.com^
+||*amplreq.com^$important
+
+
+||*.bugsnag.com^$important
+||*bugsnag*^$important
+||*vk-analytics.ru^$app=ru.vk.store|com.vk.im|com.vkontakte.android|com.yandex.browser|com.opera.browser|com.kiwibrowser.browser|com.duckduckgo.mobile.android
+||*instabug*^
+||xray.mail.ru^
+||ad.mail.ru^
+||*dbankcloud*^$app=ru.yandex.weatherplugin|com.ottplay.ottplay|ru.vk.im|ru.vkontakte.android|ru.vk.store|com.opera.browser,important
+||*doubleclick.net^$important
+||*rayjump.com^
+||smi2.ru^
+||*umeng.com^$important
+||api.bing.com^
+||*cellrebel.com^$important
+||*onesignal.com^$important
+||vb-gae-front.ey.r.appspot.com^$important
+||cdn.viglink.com^$important
+||connect.facebook.net^$important
+||connect.ok.ru^$important
+||startup.mobile.webvisor.com^$important
+||*inappstory.ru^
+||*inappstory.com^
+||*appsflyersdk.com^
+||facebook.com^
+||www.facebook.com^
+||*snapkit.com^
+||*appsflyer.com^
+||*ds.metric.gstatic.com^
+
+
+!  Microsoft Analytics
+||mobile.events.data.microsoft.com^$important
+||self.events.data.microsoft.com^$important
+||mobile.pipe.aria.microsoft.com^$important
+
+
+
+! Подключения к рекомендованным серверам (Minecraft BE)
+! Connections to recommended servers (Minecraft BE)
+
+||play.inpvp.net^
+||mco.lbsg.net^
+||play.galaxite.net^
+||geo.hivebedrock.network^
+||mco.cubecraft.net^
+||us.mineplex.com^
+||play.vexalmc.co^
+||play.pioneersurvival.net^
+||_minecraft._tcp.play.pioneersurvival.net^
+||_minecraft._tcp.us.mineplex.com^
+||play.pixelparadise.gg^
+||mco.mineplex.com^
+
+
+! RIP Mineplex 26.01.2013-12.05.2023
+! Сохранил запросы т.к. могут всё равно идти запросы (со старых версий к примеру где Mineplex есть)
+! I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)
+
+
+
+
+! Браузерные запросы
+! Browser requests
+
+||settings.kiwibrowser.com/search/getrecommendedsearch*^$important,app=com.kiwibrowser.browser,removeparam
+||news-af.feednews.com^$app=com.opera.browser,removeparam
+||api-a.oleads.com^$app=com.opera.browser.removeparam
+||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$app=com.kiwibrowser.browser
+
+
+! Firebase
+
+||firebaseinstallations.googleapis.com^
+||firebaselogging.googleapis.com^$important
+||firebaseremoteconfig.googleapis.com^$important
+||firebaselogging-pa.googleapis.com^$important
+||firebaseinappmessaging.googleapis.com^$important
+||firebaseremoteconfigrealtime.googleapis.com^
+||firebase.googleapis.com^
+
+
+! Crashlytics
+
+||firebase-settings.crashlytics.com^$important
+||reports.crahlytics.com^
+||e.crashlytics.co^
+||settings.crashlytics.com^
+||firebase-settings.crashlytics.col^$important
+
+
+! Yandex Analytics, Ads
+
+||banners.mobile.yandex.net^
+||banners.tst.mobile.yandex.net^
+||rosenberg.appmetrica.yandex.net^$important
+||bs.yandex.ru^
+||direct.yandex.ru^
+||tracking.ott.yandex.net^
+||ads.adfox.ru^$important
+||startup.mobile.yandex.net^$important
+||startup-mobile.ap.yandex-net.ru^$important
+||mobile.yandexadexchange.net^$important
+||report.appmetrica.yango.com^
+||startup.appmetrica.yango.com^
+
+! *appmetrica*^
+
+
+
+
+
+
