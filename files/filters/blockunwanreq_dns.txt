@@ -38,7 +38,7 @@
 ||bs.yandex.ru^
 ||direct.yandex.ru^
 ||tracking.ott.yandex.net^
-||ads.adfox.ru^
+||ads.adfox.ru^$dnsrewrite=NXDOMAIN
 ||startup.mobile.yandex.net^
 ||startup-mobile.ap.yandex-net.ru^
 ||*yandexadexchange.net^
@@ -144,6 +144,7 @@
 ||*tapulsads.ru^
 ||*gonet-ads.com^
 ||*telecid.ru^
+||www.tttturbonet.com^$dnsrewrite=NXDOMAIN
 
 
 ||checkip.amazonaws.col^$dnsrewrite=NXDOMAIN
