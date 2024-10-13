@@ -34,29 +34,21 @@
 
 ||banners.mobile.yandex.net^
 ||banners.tst.mobile.yandex.net^
-||rosenberg.appmetrica.yandex.net^
+||*appmetrica.yandex.net^
 ||bs.yandex.ru^
 ||direct.yandex.ru^
 ||tracking.ott.yandex.net^
 ||ads.adfox.ru^
 ||startup.mobile.yandex.net^
 ||startup-mobile.ap.yandex-net.ru^
-||mobile.yandexadexchange.net^
-||startup.mobile.webvisor.com^
-||report.appmetrica.yango.com^
-||startup.appmetrica.yango.com^
-||report.appmetrica.yandex.net^
-||u.startup.mobile.webvisor.com^
+||*yandexadexchange.net^
+||*webvisor.com^
+||*appmetrica.yango.com^
+
 
 # *appmetrica*^
 
 
-
-# -- Браузерные запросы
-# -- Browser requests
-
-||news-af.feednews.com^$app=com.opera.browser,dnsrewrite=NXDOMAIN
-||api-a.oleads.com^$app=com.opera.browser,dnsrewrite=NXDOMAIN
 
 
 
