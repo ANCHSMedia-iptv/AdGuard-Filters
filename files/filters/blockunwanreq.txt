@@ -10,21 +10,21 @@
 
 
 ||analytics.picsart.com^
-||sb.scorecardresearch.com^$important
+||*scorecardresearch.com^$important
 ||*metricell.com^$important
 ||*bronze.systems^$important
 ||graph.facebook.com^$important
 ||*optifyr.com^$important
-||*gravatar.com^
+||*gravatar.com^$important
 ||*amplreq.com^$important
 
 
 ||*bugsnag.com^$important
 ||*bugsnag*^$important
-||*vk-analytics.ru^$app=ru.vk.store|com.vk.im|com.vkontakte.android|com.yandex.browser|com.opera.browser|com.kiwibrowser.browser|com.duckduckgo.mobile.android
-||*instabug*^
+||*vk-analytics.ru^$app=ru.vk.store|com.vk.im|com.vkontakte.android|com.yandex.browser|com.opera.browser|com.kiwibrowser.browser|com.duckduckgo.mobile.android,important
+||*instabug*^$important
 ||xray.mail.ru^
-||ad.mail.ru^
+||ad.mail.ru^$important
 ||*dbankcloud*^$app=ru.yandex.weatherplugin|com.ottplay.ottplay|ru.vk.im|ru.vkontakte.android|ru.vk.store|com.opera.browser,important
 ||*doubleclick.net^$important
 ||*rayjump.com^
@@ -36,19 +36,19 @@
 ||cdn.viglink.com^$important
 ||connect.facebook.net^$important
 ||connect.ok.ru^$important
-||*inappstory.ru^
-||*inappstory.com^
-||*appsflyersdk.com^
+||*inappstory.ru^$important
+||*inappstory.com^$important
+||*appsflyersdk.com^$important
 ||facebook.com^
 ||www.facebook.com^
-||*snapkit.com^
-||*appsflyer.com^
+||*snapkit.com^$important
+||*appsflyer.com^$important
 ||analytics.72.ru^
 ||syndication.twitter.com^
 ||*rexpush.pro^
 ||*peiynu.com^
 ||*appspot.com^$important
-||counter.yabro.ru^
+||counter.yabro.ru^$important
 ||*flowerpla.com^
 ||*amocrm.ru^
 ||*gtrxlnd2.com^
@@ -58,6 +58,8 @@
 ||*tapulsads.ru^
 ||*gonet-ads.com^
 ||*telecid.ru^
+||www.tttturbonet.com^$app=com.dubox.drive
+
 
 ||checkip.amazonaws.col^
 
@@ -98,12 +100,12 @@
 ! Browser requests
 
 ||settings.kiwibrowser.com/search/getrecommendedsearch^$app=com.kiwibrowser.browser,removeparam
-||news-af.feednews.com^$app=com.opera.browser,removeparam
-||api-a.oleads.com^$app=com.opera.browser.removeparam
+||news-af.feednews.com^$app=com.opera.browser,removeparam,important
+||api-a.oleads.com^$app=com.opera.browser.removeparam,important
 ||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$app=com.kiwibrowser.browser
-||news.google.com^$app=com.kiwibrowser.browser
+||news.google.com^$app=com.kiwibrowser.browser,important
 ||enjoyxstudy.com^$app=com.kiwibrowser.browser
-||sitesuggestion.opera-api2.com^$app=com.opera.browser
+||sitesuggestion.opera-api2.com^$app=com.opera.browser,important
 
 
 
