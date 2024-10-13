@@ -52,6 +52,7 @@
 ||*flowerpla.com^
 ||*amocrm.ru^
 ||*gtrxlnd2.com^
+||*uxfeedback*^
 
 
 ||*adserv.ai^
