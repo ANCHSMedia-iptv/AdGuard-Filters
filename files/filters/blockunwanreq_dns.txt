@@ -154,7 +154,7 @@
 ||*telecid.ru^
 
 
-||checkip.amazonaws.col^
+||checkip.amazonaws.col^$dnsrewrite=NXDOMAIN
 
 
 # -- Microsoft Analytics
@@ -167,10 +167,10 @@
 # -- Браузерные запросы
 # -- Browser requests
 
-||news.google.com^
+||news.google.com^$dnsrewrite=NXDOMAIN
 ||enjoyxstudy.com^
-||news-af.feednews.com^
-||api-a.oleads.com^
+||news-af.feednews.com^$dnsrewrite=NXDOMAIN
+||api-a.oleads.com^$dnsrewrite=NXDOMIAN
 
 
 
