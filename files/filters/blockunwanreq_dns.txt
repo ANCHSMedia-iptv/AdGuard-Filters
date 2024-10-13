@@ -170,7 +170,8 @@
 ||news.google.com^$dnsrewrite=NXDOMAIN
 ||enjoyxstudy.com^
 ||news-af.feednews.com^$dnsrewrite=NXDOMAIN
-||api-a.oleads.com^$dnsrewrite=NXDOMIAN
+||api-a.oleads.com^$dnsrewrite=NXDOMAIN
+||sitesuggestion.opera-api2.com^
 
 
 
