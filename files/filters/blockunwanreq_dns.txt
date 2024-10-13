@@ -166,6 +166,9 @@
 ||news-af.feednews.com^$dnsrewrite=NXDOMAIN
 ||api-a.oleads.com^$dnsrewrite=NXDOMAIN
 ||sitesuggestion.opera-api2.com^
+||oscore.operacdn.com^
+||ws-oscore.opera-api2.com^
+||ft-oscore.opera-api2.com^
 
 
 
