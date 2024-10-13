@@ -98,7 +98,7 @@
 
 
 ||analytics.picsart.com^
-||sb.scorecardresearch.com^
+||*scorecardresearch.com^
 ||*metricell.com^
 ||*bronze.systems^
 ||graph.facebook.com^$dnsrewrite=NXDOMAIN
