@@ -103,6 +103,9 @@
 ||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$app=com.kiwibrowser.browser
 ||news.google.com^$app=com.kiwibrowser.browser
 ||enjoyxstudy.com^$app=com.kiwibrowser.browser
+||sitesuggestion.opera-api2.com^$app=com.opera.browser
+
+
 
 
 ! Firebase
