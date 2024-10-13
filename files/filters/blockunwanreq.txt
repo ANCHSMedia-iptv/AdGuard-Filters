@@ -133,19 +133,17 @@
 
 ||banners.mobile.yandex.net^
 ||banners.tst.mobile.yandex.net^
-||rosenberg.appmetrica.yandex.net^$important
+||*appmetrica.yandex.net^$important
 ||bs.yandex.ru^
 ||direct.yandex.ru^
 ||tracking.ott.yandex.net^
 ||ads.adfox.ru^$important
 ||startup.mobile.yandex.net^$important
 ||startup-mobile.ap.yandex-net.ru^$important
-||mobile.yandexadexchange.net^$important
-||startup.mobile.webvisor.com^$important
-||report.appmetrica.yango.com^
-||startup.appmetrica.yango.com^
-||report.appmetrica.yandex.net^$important
-||u.startup.mobile.webvisor.com^$important
+||*yandexadexchange.net^$important
+||*webvisor.com^$important
+||*appmetrica.yango.com^
+
 
 ! *appmetrica*^
 
