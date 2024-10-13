@@ -1,9 +1,10 @@
 ! Title: Block unwanted connections
-! Version: a0.0.2-3
+! Version: a0.0.2-4
 ! Alpha
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 12.09.2024 17:30 UTC
-! Expires: 24 hours (updated almost every day)
+! Last Modified: 13.10.2024 18:45 UTC
+! TimeUpdated: 2024-10-13T18:45:30+00:00
+! Expires: 48 hours (updated almost every day)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
 
 
@@ -96,10 +97,12 @@
 ! Браузерные запросы
 ! Browser requests
 
-||settings.kiwibrowser.com/search/getrecommendedsearch*^$important,app=com.kiwibrowser.browser,removeparam
+||settings.kiwibrowser.com/search/getrecommendedsearch^$app=com.kiwibrowser.browser,removeparam
 ||news-af.feednews.com^$app=com.opera.browser,removeparam
 ||api-a.oleads.com^$app=com.opera.browser.removeparam
 ||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$app=com.kiwibrowser.browser
+||news.google.com^$app=com.kiwibrowser.browser
+||enjoyxstudy.com^$app=com.kiwibrowser.browser
 
 
 ! Firebase
@@ -138,6 +141,8 @@
 ||startup.mobile.webvisor.com^$important
 ||report.appmetrica.yango.com^
 ||startup.appmetrica.yango.com^
+||report.appmetrica.yandex.net^$important
+||u.startup.mobile.webvisor.com^$important
 
 ! *appmetrica*^
 

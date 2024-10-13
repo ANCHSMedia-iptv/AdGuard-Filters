@@ -1,9 +1,10 @@
 # Title: Block unwanted connections (DNS)
-# Version: a0.0.1
+# Version: a0.0.1-4
 # Alpha
 # Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-# Last Modified: 12.09.2024 17:30 UTC
-# Expires: 24 hours (updated almost every day)
+# Last Modified: 13.10.2024 18:45 UTC
+# TimeUpdated: 2024-10-13T18:45:30+00:00
+# Expires: 48 hours (updated almost every day)
 # Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 
 
@@ -44,6 +45,8 @@
 ||startup.mobile.webvisor.com^
 ||report.appmetrica.yango.com^
 ||startup.appmetrica.yango.com^
+||report.appmetrica.yandex.net^
+||u.startup.mobile.webvisor.com^
 
 # *appmetrica*^
 
@@ -161,7 +164,13 @@
 ||mobile.pipe.aria.microsoft.com^
 
 
+# -- Браузерные запросы
+# -- Browser requests
 
+||news.google.com^
+||enjoyxstudy.com^
+||news-af.feednews.com^
+||api-a.oleads.com^
 
 
 
