@@ -1,5 +1,5 @@
 # Title: Block unwanted connections (DNS)
-# Version: a0.0.1-4
+# Version: a0.0.1-6
 # Alpha
 # Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 # Last Modified: 13.10.2024 18:45 UTC
@@ -169,6 +169,6 @@
 ||oscore.operacdn.com^
 ||ws-oscore.opera-api2.com^
 ||ft-oscore.opera-api2.com^
-
+||oscore.opera-api2.com^
 
 
