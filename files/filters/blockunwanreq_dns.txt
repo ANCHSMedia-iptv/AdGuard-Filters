@@ -26,7 +26,7 @@
 ||reports.crahlytics.com^
 ||e.crashlytics.co^
 ||settings.crashlytics.com^
-||firebase-settings.crashlytics.col^$important
+||firebase-settings.crashlytics.col^
 ||crashlyticsreport-pa.googleapis.com^
 
 
@@ -131,20 +131,20 @@
 ||*appsflyer.com^
 ||analytics.72.ru^
 ||syndication.twitter.com^$dnsrewrite=NXDOMAIN
-||*rexpush.pro^
-||*peiynu.com^
+||*rexpush.pro^$dnsrewrite=NXDOMAIN
+||*peiynu.com^$dnsrewrite=NXDOMAIN
 ||*appspot.com^
 ||counter.yabro.ru^
-||*flowerpla.com^
-||*amocrm.ru^
-||*gtrxlnd2.com^
+||*flowerpla.com^$dnsrewrite=NXDOMAIN
+||*amocrm.ru^$dnsrewrite=NXDOMAIN
+||*gtrxlnd2.com^$dnsrewrite=NXDOMAIN
 ||*uxfeedback*^
 
 
-||*adserv.ai^
-||*tapulsads.ru^
-||*gonet-ads.com^
-||*telecid.ru^
+||*adserv.ai^$dnsrewrite=NXDOMAIN
+||*tapulsads.ru^$dnsrewrite=NXDOMAIN
+||*gonet-ads.com^$dnsrewrite=NXDOMAIN
+||*telecid.ru^$dnsrewrite=NXDOMAIN
 ||www.tttturbonet.com^$dnsrewrite=NXDOMAIN
 
 
@@ -165,10 +165,10 @@
 ||enjoyxstudy.com^
 ||news-af.feednews.com^$dnsrewrite=NXDOMAIN
 ||api-a.oleads.com^$dnsrewrite=NXDOMAIN
-||sitesuggestion.opera-api2.com^
-||oscore.operacdn.com^
-||ws-oscore.opera-api2.com^
-||ft-oscore.opera-api2.com^
-||oscore.opera-api2.com^
+||sitesuggestion.opera-api2.com^$dnsrewrite=NXDOMAIN
+||oscore.operacdn.com^$dnsrewrite=NXDOMAIN
+||ws-oscore.opera-api2.com^$dnsrewrite=NXDOMAIN
+||ft-oscore.opera-api2.com^$dnsrewrite=NXDOMAIN
+||oscore.opera-api2.com^$dnsrewrite=NXDOMAIN
 
 
