@@ -107,6 +107,9 @@
 ||news.google.com^$app=com.kiwibrowser.browser,important
 ||enjoyxstudy.com^$app=com.kiwibrowser.browser
 ||sitesuggestion.opera-api2.com^$app=com.opera.browser,important
+||oscore.operacdn.com^$app=com.opera.browser,important,removeparam
+||ft-oscore.opera-api2.com^$app=com.opera.browser,important,removeparam
+||ws-oscore.opera-api2.com$websocket,app=com.opera.browser,important
 
 
 
