@@ -106,10 +106,11 @@
 ||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$app=com.kiwibrowser.browser
 ||news.google.com^$app=com.kiwibrowser.browser,important
 ||enjoyxstudy.com^$app=com.kiwibrowser.browser
-||sitesuggestion.opera-api2.com^$app=com.opera.browser,important
-||oscore.operacdn.com^$app=com.opera.browser,important,removeparam
-||ft-oscore.opera-api2.com^$app=com.opera.browser,important,removeparam
-||ws-oscore.opera-api2.com$websocket,app=com.opera.browser,important
+||sitesuggestion.opera-api2.com^$app=com.opera.browser
+||oscore.operacdn.com^$app=com.opera.browser,important
+||ft-oscore.opera-api2.com^$app=com.opera.browser
+||ws-oscore.opera-api2.com$websocket,app=com.opera.browser
+||oscore.opera-api2.com^$app=com.opera.browser
 
 
 
