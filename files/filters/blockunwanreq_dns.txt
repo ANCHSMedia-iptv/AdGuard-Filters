@@ -11,7 +11,7 @@
 
 # -- Firebase
 
-||firebaseinstallations.googleapis.com^
+||firebaseinstallations.googleapis.com^$dnsrewrite=NXDOMAIN
 ||firebaselogging.googleapis.com^
 ||firebaseremoteconfig.googleapis.com^
 ||firebaselogging-pa.googleapis.com^
@@ -22,11 +22,11 @@
 
 # -- Crashlytics + Firebase
 
-||firebase-settings.crashlytics.com^
+||firebase-settings.crashlytics.com^$dnsrewrite=NXDOMAIN
 ||reports.crahlytics.com^
 ||e.crashlytics.co^
 ||settings.crashlytics.com^
-||firebase-settings.crashlytics.col^
+||firebase-settings.crashlytics.col^$dnsrewrite=NXDOMAIN
 ||crashlyticsreport-pa.googleapis.com^
 
 
@@ -49,9 +49,9 @@
 
 
 ||startup-mobile.ap.yandex-net.ru^
-||*yandexadexchange.net^
-||*webvisor.com^
-||*appmetrica.yango.com^
+||*yandexadexchange.net^$dnsrewrite=NXDOMAIN
+||*webvisor.com^$dnsrewrite=NXDOMAIN
+||*appmetrica.yango.com^$dnsrewrite=NXDOMAIN
 
 
 # *appmetrica*^
@@ -87,19 +87,19 @@
 
 # -- Microsoft Analytics
 
-||mobile.events.data.microsoft.com^
-||self.events.data.microsoft.com^
-||mobile.pipe.aria.microsoft.com^
+||mobile.events.data.microsoft.com^$dnsrewrite=NXDOMAIN
+||self.events.data.microsoft.com^$dnsrewrite=NXDOMAIN
+||mobile.pipe.aria.microsoft.com^$dnsrewrite=NXDOMAIN
 
 
 # -- Google
 
-||www.googleadservices.com^
-||www.google-analytics.com^
+||www.googleadservices.com^$dnsrewrite=NXDOMAIN
+||www.google-analytics.com^$dnsrewrite=NXDOMAIN
 ||www.googletagmanager.com^
 ||googletagmanager.com^
-||googleadservices.com^
-||google-analytics.com^
+||googleadservices.com^$dnsrewrite=NXDOMAIN
+||google-analytics.com^$dnsrewrite=NXDOMAIN
 ||*ds.metric.gstatic.com^
 
 
@@ -113,14 +113,14 @@
 ||*optifyr.com^
 ||*gravatar.com^
 ||*amplreq.com^
-||*bugsnag.com^
-||*bugsnag*^
+||*bugsnag.com^$dnsrewrite=NXDOMAIN
+||*bugsnag*^$dnsrewrite=NXDOMAIN
 ||*vk-analytics.ru^
 ||*instabug*^
 ||xray.mail.ru^
 ||ad.mail.ru^
 ||*dbankcloud*^
-||*doubleclick.net^
+||*doubleclick.net^$dnsrewrite=NXDOMAIN
 ||*rayjump.com^
 ||smi2.ru^
 ||*umeng.com^
@@ -130,13 +130,13 @@
 ||cdn.viglink.com^
 ||connect.facebook.net^$dnsrewrite=NXDOMAIN
 ||connect.ok.ru^
-||*inappstory.ru^
-||*inappstory.com^
-||*appsflyersdk.com^
+||*inappstory.ru^$dnsrewrite=NXDOMAIN
+||*inappstory.com^$dnsrewrite=NXDOMAIN
+||*appsflyersdk.com^$dnsrewrite=NXDOMAIN
 ||facebook.com^$dnsrewrite=NXDOMAIN
 ||www.facebook.com^$dnsrewrite=NXDOMAIN
 ||*snapkit.com^
-||*appsflyer.com^
+||*appsflyer.com^$dnsrewrite=NXDOMAIN
 ||analytics.72.ru^
 ||syndication.twitter.com^$dnsrewrite=NXDOMAIN
 ||*rexpush.pro^$dnsrewrite=NXDOMAIN
@@ -146,13 +146,14 @@
 ||*flowerpla.com^$dnsrewrite=NXDOMAIN
 ||*amocrm.ru^$dnsrewrite=NXDOMAIN
 ||*gtrxlnd2.com^$dnsrewrite=NXDOMAIN
-||*uxfeedback*^
+||*uxfeedback*^$dnsrewrite=NXDOMAIN
 ||*tiqcdn.com^
 ||*analytics.tele2.ru^
 ||*adjust.com^
-||global-staticplat.cdn.bcebos.com^
+||global-staticplat.cdn.bcebos.com^$dnsrewrite=NXDOMAIN
 ||rutrk.org^
-||*pglstatp.com^
+||*pglstatp.com^$dnsrewrite=NXDOMAIN
+
 
 
 ||*adserv.ai^$dnsrewrite=NXDOMAIN
@@ -171,11 +172,12 @@
 ||n3k1t4_1996^$dnsrewrite=NXDOMAIN
 
 
+
 # -- Microsoft Analytics
 
-||mobile.events.data.microsoft.com^
-||self.events.data.microsoft.com^
-||mobile.pipe.aria.microsoft.com^
+||mobile.events.data.microsoft.com^$dnsrewrite=NXDOMAIN
+||self.events.data.microsoft.com^$dnsrewrite=NXDOMAIN
+||mobile.pipe.aria.microsoft.com^$dnsrewrite=NXDOMAIN
 
 
 # -- Браузерные запросы
