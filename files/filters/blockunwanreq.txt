@@ -54,6 +54,7 @@
 ||*gtrxlnd2.com^
 ||*uxfeedback*^
 ||*tiqcdn.com^
+||*analytics.tele2.ru^
 
 
 ||*adserv.ai^
