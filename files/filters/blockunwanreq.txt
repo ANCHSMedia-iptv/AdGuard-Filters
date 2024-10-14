@@ -173,6 +173,14 @@
 ||*ds.metric.gstatic.com^
 
 
+! Non-understandable addresses, but undesirable
+
+||sw.tobipovsem.com^
+||largestloitering.com^
+||f1e4fcff2b.27640ea29d.com^
+||d157c90939.1b384556ae.com^
+
+
 
 
 
