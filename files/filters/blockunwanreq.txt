@@ -55,6 +55,8 @@
 ||*uxfeedback*^
 ||*tiqcdn.com^
 ||*analytics.tele2.ru^
+||global-staticplat.cdn.bcebos.com^
+||*adjust.com^
 
 
 ||*adserv.ai^
@@ -62,9 +64,14 @@
 ||*gonet-ads.com^
 ||*telecid.ru^
 ||www.tttturbonet.com^$app=com.dubox.drive
+||*pavo*^$app=com.dubox.drive
 
 
 ||checkip.amazonaws.col^
+
+||n3k1t4_1996^
+||ikorrpa^
+||uisp.lan^
 
 
 
