@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections
-! Version: a0.0.2-6
+! Version: a0.0.2-9
 ! Alpha
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 13.10.2024 18:45 UTC
-! TimeUpdated: 2024-10-13T18:45:30+00:00
+! Last Modified: 14.10.2024 17:10 UTC
+! TimeUpdated: 2024-10-1417:10:30+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
 
@@ -57,6 +57,8 @@
 ||*analytics.tele2.ru^
 ||global-staticplat.cdn.bcebos.com^
 ||*adjust.com^
+||rutrk.org^
+
 
 
 ||*adserv.ai^

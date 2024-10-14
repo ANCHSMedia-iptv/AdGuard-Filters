@@ -1,9 +1,9 @@
 # Title: Block unwanted connections (DNS)
-# Version: a0.0.1-6
+# Version: a0.0.1-9
 # Alpha
 # Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-# Last Modified: 13.10.2024 18:45 UTC
-# TimeUpdated: 2024-10-13T18:45:30+00:00
+# Last Modified: 14.10.2024 17:10 UTC
+# TimeUpdated: 2024-10-14T17:10:30+00:00
 # Expires: 48 hours (updated almost every day)
 # Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 
@@ -143,6 +143,8 @@
 ||*analytics.tele2.ru^
 ||*adjust.com^
 ||global-staticplat.cdn.bcebos.com^
+||rutrk.org^
+||*pglstatp.com^
 
 
 ||*adserv.ai^$dnsrewrite=NXDOMAIN
@@ -150,6 +152,8 @@
 ||*gonet-ads.com^$dnsrewrite=NXDOMAIN
 ||*telecid.ru^$dnsrewrite=NXDOMAIN
 ||www.tttturbonet.com^$dnsrewrite=NXDOMAIN
+||*pavo*^$dnsrewrite=NXDOMAIN
+||v1^$dnsrewrite=NXDOMAIN
 
 
 ||checkip.amazonaws.col^$dnsrewrite=NXDOMAIN
