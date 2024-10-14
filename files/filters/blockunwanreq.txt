@@ -111,7 +111,7 @@
 ||sitesuggestion.opera-api2.com^$app=com.opera.browser
 ||oscore.operacdn.com^$app=com.opera.browser,important
 ||ft-oscore.opera-api2.com^$app=com.opera.browser
-||ws-oscore.opera-api2.com$websocket,app=com.opera.browser
+||ws-oscore.opera-api2.com^$websocket,app=com.opera.browser
 ||oscore.opera-api2.com^$app=com.opera.browser
 ||pns-sdk.opera-api2.com^$app=com.opera.browser,removeparam
 ||ofa-2-sub.osp.opera.software^$app=com.opera.browser,removeparam
