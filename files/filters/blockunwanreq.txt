@@ -169,7 +169,6 @@
 ! ====
 
 
-
 ||startup-mobile.ap.yandex-net.ru^$important
 ||*yandexadexchange.net^$important
 ||*webvisor.com^$important
