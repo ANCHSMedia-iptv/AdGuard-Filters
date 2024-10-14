@@ -162,7 +162,6 @@
 ||*telecid.ru^$dnsrewrite=NXDOMAIN
 ||www.tttturbonet.com^$dnsrewrite=NXDOMAIN
 ||*pavo*^$dnsrewrite=NXDOMAIN
-||v1^$dnsrewrite=NXDOMAIN
 
 
 ||checkip.amazonaws.col^$dnsrewrite=NXDOMAIN
@@ -170,6 +169,8 @@
 ||ikorrpa^$dnsrewrite=NXDOMAIN
 ||uisp.lan^$dnsrewrite=NXDOMAIN
 ||n3k1t4_1996^$dnsrewrite=NXDOMAIN
+||v1^$dnsrewrite=NXDOMAIN
+
 
 
 
