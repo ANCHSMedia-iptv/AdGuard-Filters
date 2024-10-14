@@ -178,4 +178,6 @@
 ||op.mykonf.com^$dnsrewrite=NXDOMAIN
 
 
+# -- Non-understandable addresses, but undesirable
+
 
