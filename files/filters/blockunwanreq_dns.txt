@@ -141,6 +141,8 @@
 ||*uxfeedback*^
 ||*tiqcdn.com^
 ||*analytics.tele2.ru^
+||*adjust.com^
+||global-staticplat.cdn.bcebos.com^
 
 
 ||*adserv.ai^$dnsrewrite=NXDOMAIN
@@ -151,6 +153,10 @@
 
 
 ||checkip.amazonaws.col^$dnsrewrite=NXDOMAIN
+
+||ikorrpa^$dnsrewrite=NXDOMAIN
+||uisp.lan^$dnsrewrite=NXDOMAIN
+||n3k1t4_1996^$dnsrewrite=NXDOMAIN
 
 
 # -- Microsoft Analytics
