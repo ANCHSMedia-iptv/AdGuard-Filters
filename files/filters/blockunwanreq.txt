@@ -3,7 +3,7 @@
 ! Alpha
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Last Modified: 14.10.2024 17:10 UTC
-! TimeUpdated: 2024-10-1417:10:30+00:00
+! TimeUpdated: 2024-10-14T17:10:30+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
 
@@ -52,7 +52,7 @@
 ||*flowerpla.com^
 ||*amocrm.ru^
 ||*gtrxlnd2.com^
-||*uxfeedback*^
+||*uxfeedback*^$important
 ||*tiqcdn.com^
 ||*analytics.tele2.ru^
 ||global-staticplat.cdn.bcebos.com^
@@ -111,21 +111,21 @@
 ! Браузерные запросы
 ! Browser requests
 
-||settings.kiwibrowser.com/search/getrecommendedsearch^$app=com.kiwibrowser.browser,removeparam
+||settings.kiwibrowser.com/search/getrecommendedsearch^$app=com.kiwibrowser.browser,removeparam,important
 ||news-af.feednews.com^$app=com.opera.browser,removeparam,important
-||api-a.oleads.com^$app=com.opera.browser.removeparam,important
+||api-a.oleads.com^$app=com.opera.browser,removeparam,important
 ||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$app=com.kiwibrowser.browser
 ||news.google.com^$app=com.kiwibrowser.browser,important
 ||enjoyxstudy.com^$app=com.kiwibrowser.browser
-||sitesuggestion.opera-api2.com^$app=com.opera.browser
+||sitesuggestion.opera-api2.com^$app=com.opera.browser,important
 ||oscore.operacdn.com^$app=com.opera.browser,important
-||ft-oscore.opera-api2.com^$app=com.opera.browser
-||ws-oscore.opera-api2.com^$websocket,app=com.opera.browser
-||oscore.opera-api2.com^$app=com.opera.browser
+||ft-oscore.opera-api2.com^$app=com.opera.browser,important
+||ws-oscore.opera-api2.com^$websocket,app=com.opera.browser,important
+||oscore.opera-api2.com^$app=com.opera.browser,important
 ||pns-sdk.opera-api2.com^$app=com.opera.browser,removeparam
 ||ofa-2-sub.osp.opera.software^$app=com.opera.browser,removeparam
 ||mcp.opera-api2.com^$app=com.opera.browser,removeparam
-||op.mykonf.com^$app=com.opera.browser,removeparam
+||op.mykonf.com^$app=com.opera.browser,removeparam,important
 
 
 
@@ -159,7 +159,7 @@
 ||bs.yandex.ru^
 ||direct.yandex.ru^
 ||tracking.ott.yandex.net^
-||ads.adfox.ru^$important
+||*adfox.ru^$important
 ||startup.mobile.yandex.net^$important
 ||startup-mobile.ap.yandex-net.ru^$important
 ||*yandexadexchange.net^$important
