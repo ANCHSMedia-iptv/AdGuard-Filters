@@ -41,10 +41,12 @@
 ||*adfox.ru^$dnsrewrite=NXDOMAIN
 ! startup.mobile.yandex.net^$dnsrewrite=NXDOMAIN
 
+
 ! ====
 ! Experiment:
 ||*mobile.yandex.net^$dnsrewrite=NXDOMAIN
 ! ====
+
 
 ||startup-mobile.ap.yandex-net.ru^
 ||*yandexadexchange.net^
