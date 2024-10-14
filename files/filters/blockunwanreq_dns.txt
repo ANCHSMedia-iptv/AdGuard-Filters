@@ -140,6 +140,7 @@
 ||*gtrxlnd2.com^$dnsrewrite=NXDOMAIN
 ||*uxfeedback*^
 ||*tiqcdn.com^
+||*analytics.tele2.ru^
 
 
 ||*adserv.ai^$dnsrewrite=NXDOMAIN
