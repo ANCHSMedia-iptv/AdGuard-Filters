@@ -147,6 +147,7 @@
 ||global-staticplat.cdn.bcebos.com^$dnsrewrite=NXDOMAIN
 ||rutrk.org^
 ||*pglstatp.com^$dnsrewrite=NXDOMAIN
+||stat-analytics.mediavitrina.ru^$dnsrewrite=NXDOMAIN
 
 
 
