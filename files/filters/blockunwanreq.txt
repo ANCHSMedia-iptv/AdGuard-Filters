@@ -152,7 +152,7 @@
 ||e.crashlytics.co^
 ||settings.crashlytics.com^
 ||firebase-settings.crashlytics.col^$important
-||crashlyticsreport-pa.googleapis.com^
+||crashlytics*-pa.googleapis.com^$important
 
 
 ! Yandex Analytics, Ads
