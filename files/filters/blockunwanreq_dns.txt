@@ -27,7 +27,8 @@
 ||e.crashlytics.co^
 ||settings.crashlytics.com^
 ||firebase-settings.crashlytics.col^$dnsrewrite=NXDOMAIN
-||crashlytics*-pa.googleapis.com^
+||crashlytics*-pa.googleapis.com^$dnsrewrite=NXDOMAIN
+
 
 
 # -- Yandex Analytics, Ads
