@@ -59,7 +59,7 @@
 ||*adjust*^$important
 ||rutrk.org^
 ||stat-analytics.mediavitrina.ru^
-
+||*pglstatp.com^
 
 
 ||*adserv.ai^
