@@ -169,12 +169,6 @@
 
 
 
-# -- Microsoft Analytics
-
-||mobile.events.data.microsoft.com^$dnsrewrite=NXDOMAIN
-||self.events.data.microsoft.com^$dnsrewrite=NXDOMAIN
-||mobile.pipe.aria.microsoft.com^$dnsrewrite=NXDOMAIN
-
 
 # -- Браузерные запросы
 # -- Browser requests
@@ -196,6 +190,8 @@
 ||*cdninstagram.com^$dnsrewrite=NXDOMAIN
 
 ||*sf-helper.com^$dnsrewrite=NXDOMAIN
+
+
 
 
 
