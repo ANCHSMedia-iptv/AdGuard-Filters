@@ -197,6 +197,9 @@
 ||ofa-2-sub.osp.opera.software^$dnsrewrite=NXDOMAIN
 ||mcp.opera-api2.com^$dnsrewrite=NXDOMAIN
 ||op.mykonf.com^$dnsrewrite=NXDOMAIN
+||ofa-b-sub.osp.opera.software^
+||*cdninstagram.com^$dnsrewrite=NXDOMAIN
+
 
 
 # -- Non-understandable addresses, but undesirable
