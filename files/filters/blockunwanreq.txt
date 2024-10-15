@@ -56,7 +56,7 @@
 ||*tiqcdn.com^
 ||*analytics.tele2.ru^
 ||global-staticplat.cdn.bcebos.com^
-||*.adjust.com^$important
+||*adjust*^$important
 ||rutrk.org^
 
 
