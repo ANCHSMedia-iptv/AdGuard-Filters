@@ -1,9 +1,9 @@
 # Title: Block unwanted connections (DNS)
-# Version: a0.0.2
+# Version: a0.0.2-1
 # Alpha
 # Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-# Last Modified: 14.10.2024 17:10 UTC
-# TimeUpdated: 2024-10-14T17:10:30+00:00
+# Last Modified: 15.10.2024 11:37 UTC
+# TimeUpdated: 2024-10-15T11:37:26+00:00
 # Expires: 48 hours (updated almost every day)
 # Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 
@@ -148,7 +148,7 @@
 ||rutrk.org^
 ||*pglstatp.com^$dnsrewrite=NXDOMAIN
 ||stat-analytics.mediavitrina.ru^$dnsrewrite=NXDOMAIN
-
+||stats.avito.ru^
 
 
 ||*adserv.ai^$dnsrewrite=NXDOMAIN
@@ -195,7 +195,7 @@
 ||ofa-b-sub.osp.opera.software^
 ||*cdninstagram.com^$dnsrewrite=NXDOMAIN
 
-||*sf-helper.com^
+||*sf-helper.com^$dnsrewrite=NXDOMAIN
 
 
 
