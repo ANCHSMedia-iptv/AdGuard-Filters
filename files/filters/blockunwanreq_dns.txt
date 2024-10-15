@@ -193,6 +193,8 @@
 ||ofa-b-sub.osp.opera.software^
 ||*cdninstagram.com^$dnsrewrite=NXDOMAIN
 
+||*sf-helper.com^
+
 
 
 # -- Non-understandable addresses, but undesirable
