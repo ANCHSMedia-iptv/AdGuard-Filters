@@ -58,6 +58,7 @@
 ||global-staticplat.cdn.bcebos.com^
 ||*adjust*^$important
 ||rutrk.org^
+||stat-analytics.mediavitrina.ru^
 
 
 
