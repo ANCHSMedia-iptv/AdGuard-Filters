@@ -164,15 +164,7 @@
 ||direct.yandex.ru^
 ||tracking.ott.yandex.net^
 ||*adfox.ru^$important
-! startup.mobile.yandex.net^$important
-
-
-! ====
-! Experiment:
 ||*mobile.yandex.net^$important
-! ====
-
-
 ||startup-mobile.ap.yandex-net.ru^$important
 ||*yandexadexchange.net^$important
 ||*webvisor.com^$important
