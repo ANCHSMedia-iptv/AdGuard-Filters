@@ -129,6 +129,8 @@
 ||op.mykonf.com^$app=com.opera.browser,removeparam,important
 ||ofa-b-sub.osp.opera.software^$app=com.opera.browser,removeparam
 ||*cdninstagram.com^$app=com.opera.browser,removeparam,important
+||*sf-helper.com^$important
+
 
 
 
