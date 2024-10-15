@@ -150,7 +150,7 @@
 ||*uxfeedback*^$dnsrewrite=NXDOMAIN
 ||*tiqcdn.com^
 ||*analytics.tele2.ru^
-||*.adjust.com^$dnsrewrite=NXDOMAIN
+||adjust.com^$dnsrewrite=NXDOMAIN
 ||global-staticplat.cdn.bcebos.com^$dnsrewrite=NXDOMAIN
 ||rutrk.org^
 ||*pglstatp.com^$dnsrewrite=NXDOMAIN
