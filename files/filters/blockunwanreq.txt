@@ -181,8 +181,8 @@
 ||www.google-analytics.com^$important
 ||www.googletagmanager.com^
 ||googletagmanager.com^
-||googleadservices.com^
-||google-analytics.com^
+||googleadservices.com^$important
+||google-analytics.com^$important
 ||*ds.metric.gstatic.com^
 
 
