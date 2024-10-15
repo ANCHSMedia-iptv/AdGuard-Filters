@@ -198,6 +198,7 @@
 ! Added to be blocked not only at the DNS level..
 
 ||*buzzoola.com^$important
+||stats.rustore.ru^$important
 
 
 
