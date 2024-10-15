@@ -135,10 +135,10 @@
 
 ! Firebase
 
-||firebaseinstallations.googleapis.com^
-||firebaselogging.googleapis.com^$important
-||firebaseremoteconfig.googleapis.com^$important
-||firebaselogging-pa.googleapis.com^$important
+||firebaseinstallations.googleapis.com^$important
+||firebaselogging.googleapis.com^
+||firebaseremoteconfig.googleapis.com^
+||firebaselogging-pa.googleapis.com^
 ||firebaseinappmessaging.googleapis.com^$important
 ||firebaseremoteconfigrealtime.googleapis.com^
 ||firebase.googleapis.com^
