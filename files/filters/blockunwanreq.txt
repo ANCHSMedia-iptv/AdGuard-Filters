@@ -194,6 +194,14 @@
 
 
 
+! Domains that are only in the AdGuard DNS filter..
+! Added to be blocked not only at the DNS level..
+
+||*buzzoola.com^$important
+
+
+
+
 
 
 
