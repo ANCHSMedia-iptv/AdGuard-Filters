@@ -1,5 +1,5 @@
 # Title: Block unwanted connections (DNS)
-# Version: a0.0.2-3(2)
+# Version: a0.0.2-5
 # Alpha
 # Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 # Last Modified: 15.10.2024 11:37 UTC
@@ -168,6 +168,7 @@
 ||uisp.lan^$dnsrewrite=NXDOMAIN
 ||n3k1t4_1996^$dnsrewrite=NXDOMAIN
 ||v1^$dnsrewrite=NXDOMAIN
+||router.silotis.us^$dnsrewrite=NXDOMAIN
 
 
 
