@@ -1,5 +1,5 @@
 ! Title: Block unwanted connections
-! Version: a0.0.3-2
+! Version: a0.0.3-3
 ! Alpha
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Last Modified: 15.10.2024 11:37 UTC
@@ -168,7 +168,7 @@
 ||direct.yandex.ru^
 ||tracking.ott.yandex.net^
 ||*adfox.ru^$important
-||*mobile.yandex.net^$important
+||startup.mobile.yandex.net^$important
 
 @@||api.lbs.yandex.net^
 @@||tc.mobile.yandex.net^
