@@ -169,8 +169,10 @@
 ||tracking.ott.yandex.net^
 ||*adfox.ru^$important
 ||*mobile.yandex.net^$important
+
 @@||api.lbs.yandex.net^
 @@||tc.mobile.yandex.net^
+
 ||startup-mobile.ap.yandex-net.ru^$important
 ||*yandexadexchange.net^$important
 ||*webvisor.com^$important
