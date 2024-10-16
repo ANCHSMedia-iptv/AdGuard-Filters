@@ -41,8 +41,10 @@
 ||tracking.ott.yandex.net^
 ||*adfox.ru^$dnsrewrite=NXDOMAIN
 ||*mobile.yandex.net^$dnsrewrite=NXDOMAIN
+
 @@||api.lbs.yandex.net^
 @@||tc.mobile.yandex.net^
+
 ||startup-mobile.ap.yandex-net.ru^
 ||*yandexadexchange.net^$dnsrewrite=NXDOMAIN
 ||*webvisor.com^$dnsrewrite=NXDOMAIN
