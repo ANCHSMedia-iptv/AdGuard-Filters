@@ -88,6 +88,7 @@
 
 
 
+
 ! Подключения к рекомендованным серверам (Minecraft BE)
 ! Connections to recommended servers (Minecraft BE)
 
@@ -106,8 +107,9 @@
 
 
 ! RIP Mineplex 26.01.2013-12.05.2023
-! Сохранил запросы т.к. могут всё равно идти запросы (со старых версий к примеру где Mineplex есть)
+! Сохранил запросы т.к. могут всё равно идти запросы (со старых версий, к примеру, где Mineplex есть)
 ! I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)
+
 
 
 
@@ -139,6 +141,7 @@
 
 
 
+
 ! Firebase
 
 ||firebaseinstallations.googleapis.com^$important
@@ -150,6 +153,7 @@
 ||firebase.googleapis.com^
 
 
+
 ! Crashlytics + Firebase
 
 ||firebase-settings.crashlytics.com^$important
@@ -158,6 +162,7 @@
 ||settings.crashlytics.com^
 ||firebase-settings.crashlytics.col^$important
 ||crashlytics*-pa.googleapis.com^$important
+
 
 
 ! Yandex Analytics, Ads
@@ -184,6 +189,7 @@
 
 
 
+
 ! Google
 
 ||www.googleadservices.com^$important
@@ -193,6 +199,8 @@
 ||googleadservices.com^$important
 ||google-analytics.com^$important
 ||*ds.metric.gstatic.com^
+
+
 
 
 ! Non-understandable addresses, but undesirable
