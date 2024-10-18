@@ -1,5 +1,5 @@
 ! Title: Block unwanted connections
-! Version: a0.0.4-2
+! Version: a0.0.4-3
 ! Alpha
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Last Modified: 16.10.2024 14:37 UTC
@@ -69,7 +69,12 @@
 ||*telecid.ru^
 ||www.tttturbonet.com^$app=com.dubox.drive
 ||*pavo*^$app=com.dubox.drive
-||*fancybox.in^$app=com.dubox.drive
+||*fancybox.in^
+||*adlooxtracking.ru^
+||*rixengine.com^
+||*weborama-tech.ru^
+||trk.mail.ru^
+||*svr-algorix.com^
 
 
 
