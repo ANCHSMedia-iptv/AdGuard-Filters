@@ -76,7 +76,7 @@
 ||trk.mail.ru^
 ||*svr-algorix.com^
 ||*kayzen.io^
-||*adinfinitum.
+||*adinfinitum.in^
 ||disk.akamaized.net^$app=com.dubox.drive
 
 
