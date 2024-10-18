@@ -1,5 +1,5 @@
 # Title: Block unwanted connections (DNS)
-# Version: a0.0.3-1
+# Version: a0.0.3-2
 # Alpha
 # Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 # Last Modified: 16.10.2024 14:37 UTC
@@ -147,7 +147,7 @@
 ||*tiqcdn.com^
 ||*analytics.tele2.ru^
 ||*adjust*^$dnsrewrite=NXDOMAIN
-||global-staticplat.cdn.bcebos.com^$dnsrewrite=NXDOMAIN
+||*cdn.bcebos.com^$dnsrewrite=NXDOMAIN
 ||rutrk.org^
 ||*pglstatp.com^$dnsrewrite=NXDOMAIN
 ||stat-analytics.mediavitrina.ru^$dnsrewrite=NXDOMAIN
@@ -161,6 +161,12 @@
 ||www.tttturbonet.com^$dnsrewrite=NXDOMAIN
 ||*pavo*^$dnsrewrite=NXDOMAIN
 ||*fancybox.in^$dnsrewrite=NXDOMAIN
+||*adlooxtracking.ru^$dnsrewrite=NXDOMAIN
+||*rixengine.com^$dnsrewrite=NXDOMAIN
+||*weborama-tech.ru^$dnsrewrite=NXDOMAIN
+||trk.mail.ru^$dnsrewrite=NXDOMAIN
+||*svr-algorix.com^$dnsrewrite=NXDOMAIN
+
 
 
 
