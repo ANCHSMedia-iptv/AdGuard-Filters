@@ -82,6 +82,7 @@
 ||content-autofill.googleapis.com^$app=com.dubox.drive
 
 
+||stun.services.mozilla.com^
 
 
 ||checkip.amazonaws.col^
