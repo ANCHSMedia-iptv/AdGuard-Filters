@@ -239,6 +239,9 @@
 ||*adriver.ru^$important
 ||*app-measurement.com^$important
 ||*umengcloud.com^
+||*bdstatic.com^
+||*gvt2.com^$important
+||*tracker-api.my.com^$important
 
 
 
