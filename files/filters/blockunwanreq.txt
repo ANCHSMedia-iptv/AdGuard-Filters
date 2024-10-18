@@ -55,7 +55,7 @@
 ||*uxfeedback*^$important
 ||*tiqcdn.com^
 ||*analytics.tele2.ru^
-||global-staticplat.cdn.bcebos.com^
+||*cdn.bcebos.com^
 ||*adjust*^$important
 ||rutrk.org^
 ||stat-analytics.mediavitrina.ru^
@@ -75,6 +75,7 @@
 ||*weborama-tech.ru^
 ||trk.mail.ru^
 ||*svr-algorix.com^
+
 
 
 
