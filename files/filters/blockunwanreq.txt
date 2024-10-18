@@ -79,6 +79,8 @@
 ||*adinfinitum.in^
 ||disk.akamaized.net^$app=com.dubox.drive
 
+||content-autofill.googleapis.com^$app=com.dubox.drive
+
 
 
 
@@ -228,8 +230,15 @@
 
 ||*buzzoola.com^$important
 ||stats.rustore.ru^$important
-||log.strm.yandex.ru^
+||log.strm.yandex.ru^$important
 ||amc.yandex.ru^
+||*applovin.com^$important
+||*hybrid.ai^
+||*silvermob.com^
+||*adrta.com^
+||*adriver.ru^$important
+||*app-measurement.com^$important
+||*umengcloud.com^
 
 
 
