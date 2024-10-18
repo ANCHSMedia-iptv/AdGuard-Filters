@@ -1,5 +1,5 @@
 ! Title: Block unwanted connections
-! Version: a0.0.4-3
+! Version: a0.0.4-4
 ! Alpha
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Last Modified: 16.10.2024 14:37 UTC
@@ -75,6 +75,9 @@
 ||*weborama-tech.ru^
 ||trk.mail.ru^
 ||*svr-algorix.com^
+||*kayzen.io^
+||*adinfinitum.
+||disk.akamaized.net^$app=com.dubox.drive
 
 
 
