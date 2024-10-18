@@ -61,6 +61,7 @@
 ||stat-analytics.mediavitrina.ru^
 ||*pglstatp.com^
 ||stats.avito.ru^$app=com.yandex.browser|com.avito.android
+||trk.pinterest.com^
 
 
 ||*adserv.ai^
