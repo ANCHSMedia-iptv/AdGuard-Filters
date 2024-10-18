@@ -1,5 +1,5 @@
 # Title: Block unwanted connections (DNS)
-# Version: a0.0.3
+# Version: a0.0.3-1
 # Alpha
 # Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 # Last Modified: 16.10.2024 14:37 UTC
@@ -160,6 +160,8 @@
 ||*telecid.ru^$dnsrewrite=NXDOMAIN
 ||www.tttturbonet.com^$dnsrewrite=NXDOMAIN
 ||*pavo*^$dnsrewrite=NXDOMAIN
+||*fancybox.in^$dnsrewrite=NXDOMAIN
+
 
 
 ||checkip.amazonaws.col^$dnsrewrite=NXDOMAIN
