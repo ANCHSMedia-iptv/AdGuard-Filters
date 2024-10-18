@@ -173,6 +173,9 @@
 
 
 
+||stun.services.mozilla.com^$dnsrewrite=NXDOMAIN
+
+
 
 
 ||checkip.amazonaws.col^$dnsrewrite=NXDOMAIN
