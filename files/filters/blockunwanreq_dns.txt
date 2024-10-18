@@ -152,6 +152,7 @@
 ||*pglstatp.com^$dnsrewrite=NXDOMAIN
 ||stat-analytics.mediavitrina.ru^$dnsrewrite=NXDOMAIN
 ||stats.avito.ru^
+||trk.pinterest.com^
 
 
 ||*adserv.ai^$dnsrewrite=NXDOMAIN
