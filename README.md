@@ -4,7 +4,8 @@ FOR MY USE ONLY!
 
 ====
 Filters:
-- Block unwanted paramenters
+- Block unwanted parame
+- ters
 - Block unwanted connections (Default + DNS)
 ===
 
