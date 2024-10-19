@@ -8,11 +8,11 @@
 # Experimental rules
 #
 #
-||api.picsart.com/location^$xhr,domain=*picsart.com
 #
 #
 #
-# Nothing yet.. but they will be soon :)
+#
+# Nothing yet.. 
 #
 #
 #
