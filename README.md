@@ -2,11 +2,9 @@ Repository for my AdGuard filters.
 
 FOR MY USE ONLY!
 
-====
 Filters:
 - Block unwanted parameters;
 - Block unwanted connections (Default + DNS)
-===
 
 Updated 18.10.2024
 
