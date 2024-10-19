@@ -1,5 +1,5 @@
 # Title: Block unwanted connections (DNS)
-# Version: a0.0.3-4
+# Version: a0.0.3-5
 # Alpha
 # Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 # Last Modified: 16.10.2024 14:37 UTC
@@ -227,12 +227,3 @@
 
 
 
-
-
-
-# -- Experimental rules 
-
-# -- Then they will be transferred to a separate filter file!
-
-
-# -- Nothing yet..
