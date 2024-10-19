@@ -1,5 +1,5 @@
 ! Title: Block unwanted connections
-! Version: a0.0.4-6
+! Version: a0.0.4-7
 ! Alpha
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Last Modified: 16.10.2024 14:37 UTC
@@ -65,6 +65,10 @@
 ||*pglstatp.com^
 ||stats.avito.ru^$app=com.yandex.browser|com.avito.android
 ||trk.pinterest.com^
+||cdn-app.sberdevices.ru/misc/0.0.0/assets/ad-sdk/ad-category-recognition.js^
+||stats.viqeo.tv^
+||metrics.viqeo.tv^
+||*adtech.com^
 
 
 ||*adserv.ai^
@@ -247,6 +251,7 @@
 ||*bdstatic.com^
 ||*gvt2.com^$important
 ||*tracker-api.my.com^$important
+
 
 
 
