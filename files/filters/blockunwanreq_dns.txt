@@ -139,7 +139,7 @@
 ||*rexpush.pro^$dnsrewrite=NXDOMAIN
 ||*peiynu.com^$dnsrewrite=NXDOMAIN
 ||*appspot.com^
-||counter.yabro.ru^
+||*yabro.ru^
 ||*flowerpla.com^$dnsrewrite=NXDOMAIN
 ||*amocrm.ru^$dnsrewrite=NXDOMAIN
 ||*gtrxlnd2.com^$dnsrewrite=NXDOMAIN

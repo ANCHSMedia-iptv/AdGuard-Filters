@@ -51,7 +51,7 @@
 ||*rexpush.pro^$important
 ||*peiynu.com^$important
 ||*appspot.com^$important
-||counter.yabro.ru^$important
+||*yabro.ru^$important
 ||*flowerpla.com^$important
 ||*amocrm.ru^$important
 ||*gtrxlnd2.com^$important
