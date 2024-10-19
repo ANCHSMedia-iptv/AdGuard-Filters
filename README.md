@@ -3,7 +3,7 @@ Repository for my AdGuard filters.
 FOR MY USE ONLY!
 
 Filters:
-- Block unwanted parameters;
+- Removing unwanted parameters;
 - Block unwanted connections (Default + DNS + Experimental rules)
 
 Updated 19.10.2024
