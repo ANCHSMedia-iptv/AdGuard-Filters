@@ -6,11 +6,11 @@
 # TimeUpdated: 2024-10-16T14:37:45+00:00
 # Expires: 48 hours (updated almost every day)
 # Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-
-
-
+#
+#
+#
 # -- Firebase
-
+#
 ||firebaseinstallations.googleapis.com^$dnsrewrite=NXDOMAIN
 ||firebaselogging.googleapis.com^
 ||firebaseremoteconfig.googleapis.com^
@@ -18,21 +18,21 @@
 ||firebaseinappmessaging.googleapis.com^
 ||firebaseremoteconfigrealtime.googleapis.com^
 ||firebase.googleapis.com^
-
-
+#
+#
 # -- Crashlytics + Firebase
-
+#
 ||firebase-settings.crashlytics.com^$dnsrewrite=NXDOMAIN
 ||reports.crahlytics.com^
 ||e.crashlytics.co^
 ||settings.crashlytics.com^
 ||firebase-settings.crashlytics.col^$dnsrewrite=NXDOMAIN
 ||crashlytics*-pa.googleapis.com^$dnsrewrite=NXDOMAIN
-
-
-
+#
+#
+#
 # -- Yandex Analytics, Ads
-
+#
 ||banners.mobile.yandex.net^
 ||banners.tst.mobile.yandex.net^
 ||*appmetrica.yandex.net^
@@ -41,26 +41,26 @@
 ||tracking.ott.yandex.net^
 ||*adfox.ru^$dnsrewrite=NXDOMAIN
 ||startup.mobile.yandex.net^$dnsrewrite=NXDOMAIN
-
+#
 @@||api.lbs.yandex.net^
 @@||tc.mobile.yandex.net^
-
+#
 ||startup-mobile.ap.yandex-net.ru^
 ||*yandexadexchange.net^$dnsrewrite=NXDOMAIN
 ||*webvisor.com^$dnsrewrite=NXDOMAIN
 ||*appmetrica.yango.com^$dnsrewrite=NXDOMAIN
-
-
+#
+#
 # *appmetrica*^
-
-
-
-
-
+#
+#
+#
+#
+#
 # -- Подключения к рекомендованным серверам (Minecraft BE)
 # -- Connections to recommended servers (Minecraft BE)
-
-
+#
+#
 ||play.inpvp.net^
 ||mco.lbsg.net^
 ||play.galaxite.net^
@@ -73,24 +73,24 @@
 ||_minecraft._tcp.us.mineplex.com^$dnsrewrite=NXDOMAIN
 ||play.pixelparadise.gg^
 ||mco.mineplex.com^$dnsrewrite=NXDOMAIN
-
-
-
+#
+#
+#
 # -- RIP Mineplex 26.01.2013-12.05.2023
 # -- Сохранил запросы т.к. могут всё равно идти запросы (со старых версий к примеру где Mineplex есть)
 # -- I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)
-
-
-
+#
+#
+#
 # -- Microsoft Analytics
-
+#
 ||mobile.events.data.microsoft.com^$dnsrewrite=NXDOMAIN
 ||self.events.data.microsoft.com^$dnsrewrite=NXDOMAIN
 ||mobile.pipe.aria.microsoft.com^$dnsrewrite=NXDOMAIN
-
-
+#
+#
 # -- Google
-
+#
 ||www.googleadservices.com^$dnsrewrite=NXDOMAIN
 ||www.google-analytics.com^$dnsrewrite=NXDOMAIN
 ||www.googletagmanager.com^
@@ -98,10 +98,10 @@
 ||googleadservices.com^$dnsrewrite=NXDOMAIN
 ||google-analytics.com^$dnsrewrite=NXDOMAIN
 ||*ds.metric.gstatic.com^
-
-
-
-
+#
+#
+#
+#
 ||analytics.picsart.com^
 ||*scorecardresearch.com^
 ||*metricell.com^
@@ -159,8 +159,8 @@
 ||stats.viqeo.tv^
 ||metrics.viqeo.tv^
 ||*adtech.com^
-
-
+#
+#
 ||*adserv.ai^$dnsrewrite=NXDOMAIN
 ||*tapulsads.ru^$dnsrewrite=NXDOMAIN
 ||*gonet-ads.com^$dnsrewrite=NXDOMAIN
@@ -176,30 +176,31 @@
 ||*kayzen.io^$dnsrewrite=NXDOMAIN
 ||disk.akamaized.net^$app=com.dubox.drive,dnsrewrite=NXDOMAIN
 ||*adinfinitum.in^$dnsrewrite=NXDOMAIN
-
-
-
-
+#
+#
+#
+#
 ||stun.services.mozilla.com^$dnsrewrite=NXDOMAIN
-
-
-
-
+#
+##
+#
+#
 ||checkip.amazonaws.col^$dnsrewrite=NXDOMAIN
-
+#
+#
 ||ikorrpa^$dnsrewrite=NXDOMAIN
 ||uisp.lan^$dnsrewrite=NXDOMAIN
 ||n3k1t4_1996^$dnsrewrite=NXDOMAIN
 ||v1^$dnsrewrite=NXDOMAIN
 ||router.silotis.us^$dnsrewrite=NXDOMAIN
-
-
-
-
-
+#
+#
+#
+#
+#
 # -- Браузерные запросы
 # -- Browser requests
-
+#
 ||news.google.com^$dnsrewrite=NXDOMAIN
 ||enjoyxstudy.com^$dnsrewrite=NXDOMAIN
 ||news-af.feednews.com^$dnsrewrite=NXDOMAIN
@@ -215,21 +216,22 @@
 ||op.mykonf.com^$dnsrewrite=NXDOMAIN
 ||ofa-b-sub.osp.opera.software^
 ||*cdninstagram.com^$dnsrewrite=NXDOMAIN
-
+#
 ||*sf-helper.com^$dnsrewrite=NXDOMAIN
-
-
-
-
-
+#
+#
+#
+#
+#
 # -- Non-understandable addresses, but undesirable
-
+#
 ||sw.tobipovsem.com^$dnsrewrite=NXDOMAIN
 ||largestloitering.com^$dnsrewrite=NXDOMAIN
 ||f1e4fcff2b.27640ea29d.com^$dnsrewrite=NXDOMAIN
 ||d157c90939.1b384556ae.com^$dnsrewrite=NXDOMAIN
-
-
-
-
-
+#
+#
+#
+#
+#
+#
