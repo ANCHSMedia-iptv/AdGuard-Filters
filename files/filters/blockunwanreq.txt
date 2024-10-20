@@ -206,7 +206,7 @@
 ||*webvisor.com^$important
 ||*appmetrica.yango.com^
 ||adfstat.yandex.ru^$important
-||push.yandex.ru/v2/subscribe/websocket?service=messenger^$websocket,important
+||push.yandex.ru/v2/subscribe/websocket^$websocket,important
 @@||api.lbs.yandex.net^
 @@||tc.mobile.yandex.net^
 
