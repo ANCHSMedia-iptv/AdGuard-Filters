@@ -1,9 +1,9 @@
 # Title: Block unwanted connections (DNS)
-# Version: a0.0.3-6
+# Version: a0.0.3-9
 # Alpha
 # Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-# Last Modified: 16.10.2024 14:37 UTC
-# TimeUpdated: 2024-10-16T14:37:45+00:00
+# Last Modified: 20.10.2024 15:03 UTC
+# TimeUpdated: 2024-10-20T15:03:20+00:00
 # Expires: 48 hours (updated almost every day)
 # Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 #
@@ -31,27 +31,26 @@
 #
 #
 #
-# -- Yandex Analytics, Ads
+# -- Yandex Analytics, Ads and other
 #
 ||banners.mobile.yandex.net^
 ||banners.tst.mobile.yandex.net^
-||*appmetrica.yandex.net^
+||*appmetrica.yandex.net^$dnsrewrite=NXDOMAIN
 ||bs.yandex.ru^
 ||direct.yandex.ru^
 ||tracking.ott.yandex.net^
 ||*adfox.ru^$dnsrewrite=NXDOMAIN
 ||startup.mobile.yandex.net^$dnsrewrite=NXDOMAIN
-#
-@@||api.lbs.yandex.net^
-@@||tc.mobile.yandex.net^
-#
-||startup-mobile.ap.yandex-net.ru^
+||startup-mobile.ap.yandex-net.ru^$dnsrewrite=NXDOMAIN
 ||*yandexadexchange.net^$dnsrewrite=NXDOMAIN
 ||*webvisor.com^$dnsrewrite=NXDOMAIN
 ||*appmetrica.yango.com^$dnsrewrite=NXDOMAIN
+||adfstat.yandex.ru^$dnsrewrite=NXDOMAIN
+||push.yandex.ru^
+@@||api.lbs.yandex.net^
+@@||tc.mobile.yandex.net^
 #
 #
-# *appmetrica*^
 #
 #
 #
@@ -132,13 +131,13 @@
 ||*appsflyersdk.com^$dnsrewrite=NXDOMAIN
 ||facebook.com^$dnsrewrite=NXDOMAIN
 ||www.facebook.com^$dnsrewrite=NXDOMAIN
-||*snapkit.com^
+||*snapkit.com^$dnsrewrite=NXDOMAIN
 ||*appsflyer.com^$dnsrewrite=NXDOMAIN
 ||analytics.72.ru^
 ||syndication.twitter.com^$dnsrewrite=NXDOMAIN
 ||*rexpush.pro^$dnsrewrite=NXDOMAIN
 ||*peiynu.com^$dnsrewrite=NXDOMAIN
-||*appspot.com^
+||*appspot.com^$dnsrewrite=NXDOMAIN
 ||*yabro.ru^
 ||*flowerpla.com^$dnsrewrite=NXDOMAIN
 ||*amocrm.ru^$dnsrewrite=NXDOMAIN
@@ -153,12 +152,15 @@
 ||stat-analytics.mediavitrina.ru^$dnsrewrite=NXDOMAIN
 ||stats.avito.ru^
 ||trk.pinterest.com^
-||*skcrtxr.com^
-||*terratraf.com^
-||top-fwz1.mail.ru^
+||*skcrtxr.com^$dnsrewrite=NXDOMAIN
+||*terratraf.com^$dnsrewrite=NXDOMAIN
+||top-fwz1.mail.ru^$dnsrewrite=NXDOMAIN
 ||stats.viqeo.tv^
 ||metrics.viqeo.tv^
 ||*adtech.com^
+||*statad.ru^
+||*mixpanel.com^$dnsrewrite=NXDOMAIN
+||mixpanel.cdn.viber.com^$dnsrewrite=NXDOMAIN
 #
 #
 ||*adserv.ai^$dnsrewrite=NXDOMAIN
@@ -182,7 +184,7 @@
 #
 ||stun.services.mozilla.com^$dnsrewrite=NXDOMAIN
 #
-##
+#
 #
 #
 ||checkip.amazonaws.col^$dnsrewrite=NXDOMAIN
@@ -193,6 +195,7 @@
 ||n3k1t4_1996^$dnsrewrite=NXDOMAIN
 ||v1^$dnsrewrite=NXDOMAIN
 ||router.silotis.us^$dnsrewrite=NXDOMAIN
+||=^$dnsrewrite=NXDOMAIN
 #
 #
 #
@@ -220,6 +223,10 @@
 ||*sf-helper.com^$dnsrewrite=NXDOMAIN
 #
 #
+#
+#
+#
+# ---
 #
 #
 #

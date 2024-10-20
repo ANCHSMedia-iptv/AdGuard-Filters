@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections
-! Version: a0.0.4-7
+! Version: a0.0.4-9
 ! Alpha
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 16.10.2024 14:37 UTC
-! TimeUpdated: 2024-10-16T14:37:45+00:00
+! Last Modified: 20.10.2024 15:03 UTC
+! TimeUpdated: 2024-10-20T15:03:20+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
 
@@ -24,11 +24,11 @@
 
 ||*bugsnag.com^$important
 ||*bugsnag*^$important
-||*vk-analytics.ru^$app=ru.vk.store|com.vk.im|com.vkontakte.android|com.yandex.browser|com.opera.browser|com.kiwibrowser.browser|com.duckduckgo.mobile.android,important
+||*vk-analytics.ru^$important
 ||*instabug*^$important
 ||xray.mail.ru^
 ||ad.mail.ru^$important
-||*dbankcloud*^$app=ru.yandex.weatherplugin|com.ottplay.ottplay|ru.vk.im|ru.vkontakte.android|ru.vk.store|com.opera.browser,important
+||*dbankcloud*^$important
 ||*doubleclick.net^$important
 ||*rayjump.com^
 ||smi2.ru^
@@ -62,13 +62,16 @@
 ||*adjust*^$important
 ||rutrk.org^
 ||stat-analytics.mediavitrina.ru^
-||*pglstatp.com^
-||stats.avito.ru^$app=com.yandex.browser|com.avito.android
+||*pglstatp.com^$important
+||stats.avito.ru^
 ||trk.pinterest.com^
-||cdn-app.sberdevices.ru/misc/0.0.0/assets/ad-sdk/ad-category-recognition.js^
-||stats.viqeo.tv^
-||metrics.viqeo.tv^
-||*adtech.com^
+||cdn-app.sberdevices.ru/misc/0.0.0/assets/ad-sdk/ad-category-recognition.js^$script,important
+||stats.viqeo.tv^$important
+||metrics.viqeo.tv^$important
+||*adtech.com^$important
+||*statad.ru^$important
+||*mixpanel.com^$important
+||mixpanel.cdn.viber.com^$important
 
 
 ||*adserv.ai^
@@ -81,7 +84,7 @@
 ||*adlooxtracking.ru^
 ||*rixengine.com^
 ||*weborama-tech.ru^
-||trk.mail.ru^
+||trk.mail.ru^$important
 ||*svr-algorix.com^
 ||*kayzen.io^
 ||*adinfinitum.in^
@@ -100,6 +103,7 @@
 ||uisp.lan^
 ||v1^
 ||router.silotis.us^
+||=^
 
 
 
@@ -187,7 +191,7 @@
 
 
 
-! Yandex Analytics, Ads
+! Yandex Analytics, Ads and other
 
 ||banners.mobile.yandex.net^
 ||banners.tst.mobile.yandex.net^
@@ -197,17 +201,16 @@
 ||tracking.ott.yandex.net^
 ||*adfox.ru^$important
 ||startup.mobile.yandex.net^$important
-
-@@||api.lbs.yandex.net^
-@@||tc.mobile.yandex.net^
-
 ||startup-mobile.ap.yandex-net.ru^$important
 ||*yandexadexchange.net^$important
 ||*webvisor.com^$important
 ||*appmetrica.yango.com^
+||adfstat.yandex.ru^$important
+||push.yandex.ru/v2/subscribe/websocket?service=messenger^$websocket,important
+@@||api.lbs.yandex.net^
+@@||tc.mobile.yandex.net^
 
 
-! *appmetrica*^
 
 
 
@@ -223,14 +226,6 @@
 ||*ds.metric.gstatic.com^
 
 
-
-
-! Non-understandable addresses, but undesirable
-
-||sw.tobipovsem.com^
-||largestloitering.com^
-||f1e4fcff2b.27640ea29d.com^
-||d157c90939.1b384556ae.com^
 
 
 
@@ -252,6 +247,20 @@
 ||*gvt2.com^$important
 ||*tracker-api.my.com^$important
 
+
+
+
+
+! ---
+
+
+
+! Non-understandable addresses, but undesirable
+
+||sw.tobipovsem.com^
+||largestloitering.com^
+||f1e4fcff2b.27640ea29d.com^
+||d157c90939.1b384556ae.com^
 
 
 
