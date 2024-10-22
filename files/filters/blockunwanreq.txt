@@ -1,5 +1,5 @@
 ! Title: Block unwanted connections
-! Version: a0.0.5
+! Version: a0.0.5-1
 ! Alpha
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Last Modified: 20.10.2024 15:03 UTC
@@ -74,6 +74,7 @@
 ||mixpanel.cdn.viber.com^$important
 ||*btloader.com^
 ||*digitalcaramel.com^
+||*ads-twitter.com^
 
 
 ||*adserv.ai^
@@ -92,7 +93,7 @@
 ||*adinfinitum.in^
 ||disk.akamaized.net^$app=com.dubox.drive
 
-||content-autofill.googleapis.com^$app=com.dubox.drive
+||content-autofill.googleapis.com^$app=com.dubox.drive,important
 
 
 ||stun.services.mozilla.com^
@@ -214,7 +215,7 @@
 ||push.yandex.ru/v*/subscribe/^$websocket,important
 @@||api.lbs.yandex.net^
 @@||tc.mobile.yandex.net^
-! mc.yandex.ru^
+
 
 
 
@@ -251,6 +252,13 @@
 ||*bdstatic.com^
 ||*gvt2.com^$important
 ||*tracker-api.my.com^$important
+||*ad.intl.xiaomi.com^$important
+||*ms.vk.com^$important
+||*app-measurement.com^$important
+||mc.yandex.ru^
+||tnc16-*.byteoversea.com^$important
+||tnc16-*.isnssdk.com^$important
+||*pangle.io^$important
 
 
 
