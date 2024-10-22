@@ -241,7 +241,7 @@
 ||*buzzoola.com^$important
 ||stats.rustore.ru^$important
 ||log.strm.yandex.ru^$important
-||amc.yandex.ru^
+||amc.yandex.ru^$important
 ||*applovin.com^$important
 ||*hybrid.ai^
 ||*silvermob.com^
@@ -255,10 +255,11 @@
 ||*ad.intl.xiaomi.com^$important
 ||*ms.vk.com^$important
 ||*app-measurement.com^$important
-||mc.yandex.ru^
+||mc.yandex.ru^$important
 ||tnc16-*.byteoversea.com^$important
 ||tnc16-*.isnssdk.com^$important
 ||*pangle.io^$important
+
 
 
 
@@ -270,7 +271,7 @@
 
 ! Non-understandable addresses, but undesirable
 
-||*tobipovsem.com^
+||*tobipovsem.com^$important
 ||largestloitering.com^
 ||f1e4fcff2b.27640ea29d.com^
 ||d157c90939.1b384556ae.com^
