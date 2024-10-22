@@ -175,7 +175,7 @@
 ||*tapulsads.ru^
 ||*gonet-ads.com^
 ||*telecid.ru^$
-||www.tttturbonet.com^$dnsrewrite=NXDOMAIN
+||www.tttturbonet.com^
 ||*pavo*^
 ||*fancybox.in^
 ||*adlooxtracking.ru^
@@ -217,11 +217,11 @@
 ||*enjoyxstudy.com^
 ||news-af.feednews.com^
 ||api-a.oleads.com^
-||sitesuggestion.opera-api2.com^$dnsrewrite=NXDOMAIN
-||oscore.operacdn.com^$dnsrewrite=NXDOMAIN
-||ws-oscore.opera-api2.com^$dnsrewrite=NXDOMAIN
-||ft-oscore.opera-api2.com^$dnsrewrite=NXDOMAIN
-||oscore.opera-api2.com^$dnsrewrite=NXDOMAIN
+||sitesuggestion.opera-api2.com^
+||oscore.operacdn.com^
+||ws-oscore.opera-api2.com^
+||ft-oscore.opera-api2.com^
+||oscore.opera-api2.com^
 ||pns-sdk.opera-api2.com^$dnsrewrite=NXDOMAIN
 ||ofa-2-sub.osp.opera.software^$dnsrewrite=NXDOMAIN
 ||mcp.opera-api2.com^$dnsrewrite=NXDOMAIN
