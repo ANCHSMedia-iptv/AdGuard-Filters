@@ -75,6 +75,9 @@
 ||*btloader.com^$important
 ||*digitalcaramel.com^$important
 ||*ads-twitter.com^
+||ru.pinterest.com/_/_/trace/trace/^$xhr
+||ru.pinterest.com/_/_/storage_report/^$xhr
+||ru.pinterest.com/_/_/logClientError/^$xhr
 
 
 ||*adserv.ai^
@@ -217,6 +220,8 @@
 ||push.yandex.ru/v*/subscribe/^$websocket,important
 @@||api.lbs.yandex.net^
 @@||tc.mobile.yandex.net^
+||http-check-headers.yandex.ru^$xhr
+||yandex.ru/messenger/api/*^$xhr
 
 
 
