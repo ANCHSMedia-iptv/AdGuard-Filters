@@ -63,8 +63,8 @@
 ||rutrk.org^
 ||stat-analytics.mediavitrina.ru^
 ||*pglstatp.com^$important
-||stats.avito.ru^
-||trk.pinterest.com^
+||stats.avito.ru^$important
+||trk.pinterest.com^$important
 ||cdn-app.sberdevices.ru/misc/0.0.0/assets/ad-sdk/ad-category-recognition.js^$script,important
 ||stats.viqeo.tv^$important
 ||metrics.viqeo.tv^$important
@@ -72,8 +72,8 @@
 ||*statad.ru^$important
 ||*mixpanel.com^$important
 ||mixpanel.cdn.viber.com^$important
-||*btloader.com^
-||*digitalcaramel.com^
+||*btloader.com^$important
+||*digitalcaramel.com^$important
 ||*ads-twitter.com^
 
 
@@ -152,9 +152,9 @@
 ||settings.kiwibrowser.com/search/getrecommendedsearch^$app=com.kiwibrowser.browser,removeparam,important
 ||news-af.feednews.com^$app=com.opera.browser,removeparam,important
 ||api-a.oleads.com^$app=com.opera.browser,removeparam,important
-||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$app=com.kiwibrowser.browser
+||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$app=com.kiwibrowser.browser,important
 ||news.google.com^$app=com.kiwibrowser.browser,important
-||enjoyxstudy.com^$app=com.kiwibrowser.browser
+||*enjoyxstudy.com^$app=com.kiwibrowser.browser,important
 ||sitesuggestion.opera-api2.com^$app=com.opera.browser,important
 ||oscore.operacdn.com^$app=com.opera.browser,important
 ||ft-oscore.opera-api2.com^$app=com.opera.browser,important
@@ -167,7 +167,9 @@
 ||ofa-b-sub.osp.opera.software^$app=com.opera.browser,removeparam
 ||*cdninstagram.com^$app=com.opera.browser,removeparam,important
 
+
 ||*sf-helper.com^$important
+
 
 
 
