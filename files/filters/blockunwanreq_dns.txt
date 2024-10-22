@@ -1,5 +1,5 @@
 # Title: Block unwanted connections (DNS)
-# Version: a0.0.4
+# Version: a0.0.4-1
 # Alpha
 # Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 # Last Modified: 20.10.2024 15:03 UTC
@@ -11,7 +11,7 @@
 #
 # -- Firebase
 #
-||firebaseinstallations.googleapis.com^$dnsrewrite=NXDOMAIN
+||firebaseinstallations.googleapis.com^
 ||firebaselogging.googleapis.com^
 ||firebaseremoteconfig.googleapis.com^
 ||firebaselogging-pa.googleapis.com^
@@ -22,12 +22,12 @@
 #
 # -- Crashlytics + Firebase
 #
-||firebase-settings.crashlytics.com^$dnsrewrite=NXDOMAIN
+||firebase-settings.crashlytics.com^
 ||reports.crahlytics.com^
 ||e.crashlytics.co^
 ||settings.crashlytics.com^
-||firebase-settings.crashlytics.col^$dnsrewrite=NXDOMAIN
-||crashlytics*-pa.googleapis.com^$dnsrewrite=NXDOMAIN
+||firebase-settings.crashlytics.col^
+||crashlytics*-pa.googleapis.com^
 #
 #
 #
@@ -35,21 +35,22 @@
 #
 ||banners.mobile.yandex.net^
 ||banners.tst.mobile.yandex.net^
-||*appmetrica.yandex.net^$dnsrewrite=NXDOMAIN
+||*appmetrica.yandex.net^
 ||bs.yandex.ru^
 ||direct.yandex.ru^
 ||tracking.ott.yandex.net^
-||*adfox.ru^$dnsrewrite=NXDOMAIN
-||startup.mobile.yandex.net^$dnsrewrite=NXDOMAIN
-||startup-mobile.ap.yandex-net.ru^$dnsrewrite=NXDOMAIN
-||*yandexadexchange.net^$dnsrewrite=NXDOMAIN
-||*webvisor.com^$dnsrewrite=NXDOMAIN
-||*appmetrica.yango.com^$dnsrewrite=NXDOMAIN
-||adfstat.yandex.ru^$dnsrewrite=NXDOMAIN
+||*adfox.ru^
+||startup.mobile.yandex.net^
+||startup-mobile.ap.yandex-net.ru^
+||*yandexadexchange.net^
+||*webvisor.com^
+||*appmetrica.yango.com^
+||adfstat.yandex.ru^
 ||push.yandex.ru^
 @@||api.lbs.yandex.net^
 @@||tc.mobile.yandex.net^
-# mc.yandex.ru^
+#
+#
 #
 #
 #
@@ -83,19 +84,19 @@
 #
 # -- Microsoft Analytics
 #
-||mobile.events.data.microsoft.com^$dnsrewrite=NXDOMAIN
-||self.events.data.microsoft.com^$dnsrewrite=NXDOMAIN
-||mobile.pipe.aria.microsoft.com^$dnsrewrite=NXDOMAIN
+||mobile.events.data.microsoft.com^
+||self.events.data.microsoft.com^
+||mobile.pipe.aria.microsoft.com^
 #
 #
 # -- Google
 #
-||www.googleadservices.com^$dnsrewrite=NXDOMAIN
-||www.google-analytics.com^$dnsrewrite=NXDOMAIN
+||www.googleadservices.com^
+||www.google-analytics.com
 ||www.googletagmanager.com^
 ||googletagmanager.com^
-||googleadservices.com^$dnsrewrite=NXDOMAIN
-||google-analytics.com^$dnsrewrite=NXDOMAIN
+||googleadservices.com^
+||google-analytics.com^
 ||*ds.metric.gstatic.com^
 #
 #
@@ -105,7 +106,7 @@
 ||*scorecardresearch.com^
 ||*metricell.com^
 ||*bronze.systems^
-||graph.facebook.com^$dnsrewrite=NXDOMAIN
+||graph.facebook.com^
 ||*optifyr.com^
 ||*gravatar.com^
 ||*amplreq.com^
@@ -116,7 +117,7 @@
 ||xray.mail.ru^
 ||ad.mail.ru^
 ||*dbankcloud*^
-||*doubleclick.net^$dnsrewrite=NXDOMAIN
+||*doubleclick.net^
 ||*rayjump.com^
 ||smi2.ru^
 ||*umeng.com^
@@ -128,16 +129,16 @@
 ||connect.ok.ru^
 ||*inappstory.ru^$dnsrewrite=NXDOMAIN
 ||*inappstory.com^$dnsrewrite=NXDOMAIN
-||*appsflyersdk.com^$dnsrewrite=NXDOMAIN
+||*appsflyersdk.com^
 ||facebook.com^$dnsrewrite=NXDOMAIN
 ||www.facebook.com^$dnsrewrite=NXDOMAIN
-||*snapkit.com^$dnsrewrite=NXDOMAIN
-||*appsflyer.com^$dnsrewrite=NXDOMAIN
+||*snapkit.com^
+||*appsflyer.com^
 ||analytics.72.ru^
-||syndication.twitter.com^$dnsrewrite=NXDOMAIN
+||syndication.twitter.com^
 ||*rexpush.pro^$dnsrewrite=NXDOMAIN
 ||*peiynu.com^$dnsrewrite=NXDOMAIN
-||*appspot.com^$dnsrewrite=NXDOMAIN
+||*appspot.com^
 ||*yabro.ru^
 ||*flowerpla.com^$dnsrewrite=NXDOMAIN
 ||*amocrm.ru^$dnsrewrite=NXDOMAIN
@@ -145,26 +146,29 @@
 ||*uxfeedback*^$dnsrewrite=NXDOMAIN
 ||*tiqcdn.com^
 ||*analytics.tele2.ru^
-||*adjust*^$dnsrewrite=NXDOMAIN
-||*cdn.bcebos.com^$dnsrewrite=NXDOMAIN
+||*adjust*^
+||*cdn.bcebos.com^
 ||rutrk.org^
 ||*pglstatp.com^$dnsrewrite=NXDOMAIN
-||stat-analytics.mediavitrina.ru^$dnsrewrite=NXDOMAIN
+||stat-analytics.mediavitrina.ru^
 ||stats.avito.ru^
 ||trk.pinterest.com^
 ||*skcrtxr.com^$dnsrewrite=NXDOMAIN
 ||*terratraf.com^$dnsrewrite=NXDOMAIN
-||top-fwz1.mail.ru^$dnsrewrite=NXDOMAIN
+||top-fwz1.mail.ru^
 ||stats.viqeo.tv^
 ||metrics.viqeo.tv^
 ||*adtech.com^
 ||*statad.ru^
-||*mixpanel.com^$dnsrewrite=NXDOMAIN
-||mixpanel.cdn.viber.com^$dnsrewrite=NXDOMAIN
-||d3c8j8snkzfr1n.cloudfront.net^$dnsrewrite=NXDOMAIN
-||*btloader.com^$dnsrewrite=NXDOMAIN
-||*adskeeper.co.uk^$dnsrewrite=NXDOMAIN
+||*mixpanel.com^
+||mixpanel.cdn.viber.com^
+||d3c8j8snkzfr1n.cloudfront.net^
+||*btloader.com^
+||*adskeeper.co.uk^
 ||*digitalcaramel.com^
+||*ads-twitter.com^
+||*ms.vk.com^
+||*ad.intl.xiaomi.com^
 #
 #
 ||*adserv.ai^$dnsrewrite=NXDOMAIN
@@ -177,7 +181,7 @@
 ||*adlooxtracking.ru^$dnsrewrite=NXDOMAIN
 ||*rixengine.com^$dnsrewrite=NXDOMAIN
 ||*weborama-tech.ru^$dnsrewrite=NXDOMAIN
-||trk.mail.ru^$dnsrewrite=NXDOMAIN
+||trk.mail.ru^
 ||*svr-algorix.com^$dnsrewrite=NXDOMAIN
 ||*kayzen.io^$dnsrewrite=NXDOMAIN
 ||disk.akamaized.net^$app=com.dubox.drive,dnsrewrite=NXDOMAIN
@@ -189,7 +193,7 @@
 ||stun.services.mozilla.com^$dnsrewrite=NXDOMAIN
 #
 #
-||widget-sweettv.kwizbot.io^$dnsrewrite=NXDOMAIN
+||widget-sweettv.kwizbot.io^
 #
 #
 ||checkip.amazonaws.col^$dnsrewrite=NXDOMAIN
