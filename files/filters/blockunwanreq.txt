@@ -1,5 +1,5 @@
 ! Title: Block unwanted connections
-! Version: a0.0.5-2
+! Version: a0.0.5-4
 ! Alpha
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Last Modified: 20.10.2024 15:03 UTC
@@ -75,9 +75,14 @@
 ||*btloader.com^$important
 ||*digitalcaramel.com^$important
 ||*ads-twitter.com^
-||ru.pinterest.com/_/_/trace/trace/^$xhr
-||ru.pinterest.com/_/_/storage_report/^$xhr
-||ru.pinterest.com/_/_/logClientError/^$xhr
+||ru.pinterest.com/_/_/trace/trace/^$xhr,important
+||ru.pinterest.com/_/_/storage_report/^$xhr,important
+||ru.pinterest.com/_/_/logClientError/^$xhr,important
+||*bitrix.info^$important
+||avito.ru/stat/radar*^$image,domain=avito.ru
+||avito.ru/web/1/adv/network/creative^$xhr,domain=avito.ru
+||avito.ru/dstatic/j/dfp/px.js^$script,domain=avito.ru
+||*advert*^$image
 
 
 ||*adserv.ai^
