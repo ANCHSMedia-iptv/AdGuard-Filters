@@ -147,6 +147,7 @@
 ||*tiqcdn.com^
 ||*analytics.tele2.ru^
 ||*adjust*^
+||app.adjust.com^
 ||*cdn.bcebos.com^
 ||rutrk.org^
 ||*pglstatp.com^
