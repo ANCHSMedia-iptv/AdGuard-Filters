@@ -1,5 +1,5 @@
 ! Title: Block unwanted connections
-! Version: a0.0.5-4
+! Version: a0.0.5-5
 ! Alpha
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Last Modified: 20.10.2024 15:03 UTC
@@ -75,14 +75,19 @@
 ||*btloader.com^$important
 ||*digitalcaramel.com^$important
 ||*ads-twitter.com^
-||ru.pinterest.com/_/_/trace/trace/^$xhr,important
-||ru.pinterest.com/_/_/storage_report/^$xhr,important
-||ru.pinterest.com/_/_/logClientError/^$xhr,important
+||*pinterest.com/_/_/trace/trace/^$xhr,important
+||*pinterest.com/_/_/storage_report/^$xhr,important
+||*pinterest.com/_/_/logClientError/^$xhr,important
 ||*bitrix.info^$important
 ||avito.ru/stat/radar*^$image,domain=avito.ru
 ||avito.ru/web/1/adv/network/creative^$xhr,domain=avito.ru
 ||avito.ru/dstatic/j/dfp/px.js^$script,domain=avito.ru
 ||*advert*^$image
+||megamarket.ru/api/mobile/v1/analyticsDataService/webVitalsMetrics/send^$xhr,important
+||megamarket.ru/api/mobile/v1/analyticsDataService^$xhr,important
+||megamarket.ru/api/mobile/v1/promoContentService/promoContent/get^$xhr
+||megamarket.ru/api/fl/idw-smm^$xhr
+||gstatic.com/firebasejs/*/firebase-app.js^$script
 
 
 ||*adserv.ai^
@@ -160,7 +165,7 @@
 ||settings.kiwibrowser.com/search/getrecommendedsearch^$app=com.kiwibrowser.browser,removeparam,important
 ||news-af.feednews.com^$app=com.opera.browser,removeparam,important
 ||api-a.oleads.com^$app=com.opera.browser,removeparam,important
-||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$app=com.kiwibrowser.browser,important
+||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$script,app=com.kiwibrowser.browser,important
 ||news.google.com^$app=com.kiwibrowser.browser,important
 ||*enjoyxstudy.com^$app=com.kiwibrowser.browser,important
 ||sitesuggestion.opera-api2.com^$app=com.opera.browser,important
@@ -223,7 +228,6 @@
 ||*appmetrica.yango.com^
 ||adfstat.yandex.ru^$important
 ||push.yandex.ru/v*/subscribe/^$websocket,important
-@@||api.lbs.yandex.net^
 @@||tc.mobile.yandex.net^
 ||http-check-headers.yandex.ru^$xhr
 ||yandex.ru/messenger/api/*^$xhr
@@ -268,9 +272,11 @@
 ||*ms.vk.com^$important
 ||*app-measurement.com^$important
 ||mc.yandex.ru^$important
-||tnc16-*.byteoversea.com^$important
-||tnc16-*.isnssdk.com^$important
+||tnc*.byteoversea.com^$important
+||tnc*.isnssdk.com^$important
 ||*pangle.io^$important
+||adashx4ae.ut.taobao.com^
+||iad-*.braze.com^$important
 
 
 
