@@ -1,5 +1,5 @@
 # Title: Block unwanted connections (DNS)
-# Version: a0.0.4-4
+# Version: a0.0.4-5
 # Alpha
 # Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 # Last Modified: 20.10.2024 15:03 UTC
@@ -25,6 +25,7 @@
 ||firebase-settings.crashlytics.com^
 ||reports.crahlytics.com^
 ||e.crashlytics.co^
+# report.crashlytics.com^
 ||settings.crashlytics.com^
 ||firebase-settings.crashlytics.col^
 ||crashlytics*-pa.googleapis.com^
@@ -87,6 +88,7 @@
 ||mobile.events.data.microsoft.com^
 ||self.events.data.microsoft.com^
 ||mobile.pipe.aria.microsoft.com^
+# self.pipe.aria.microsoft.com^
 #
 #
 # -- Google
@@ -173,6 +175,7 @@
 ||*bitrix.info^
 ||*metrika-informer.com^
 ||stats.habr.com^
+# *iad-*.braze.com^
 #
 #
 ||*adserv.ai^
