@@ -79,15 +79,19 @@
 ||*pinterest.com/_/_/storage_report/^$xhr,important
 ||*pinterest.com/_/_/logClientError/^$xhr,important
 ||*bitrix.info^$important
-||avito.ru/stat/radar*^$image,domain=avito.ru
-||avito.ru/web/1/adv/network/creative^$xhr,domain=avito.ru
-||avito.ru/dstatic/j/dfp/px.js^$script,domain=avito.ru
+||avito.ru/stat/radar*^$image
+||avito.ru/web/1/adv/network/creative^$xhr
+||avito.ru/dstatic/j/dfp/px.js^$script
 ||*advert*^$image
 ||megamarket.ru/api/mobile/v1/analyticsDataService/webVitalsMetrics/send^$xhr,important
 ||megamarket.ru/api/mobile/v1/analyticsDataService^$xhr,important
 ||megamarket.ru/api/mobile/v1/promoContentService/promoContent/get^$xhr
 ||megamarket.ru/api/fl/idw-smm^$xhr
 ||gstatic.com/firebasejs/*/firebase-app.js^$script
+||d3c8j8snkzfr1n.cloudfront.net^
+||*adskeeper.co.uk^
+||*metrika-informer.com^$important
+||stats.habr.com^
 
 
 ||*adserv.ai^
@@ -130,6 +134,7 @@
 ||mobile.events.data.microsoft.com^$important
 ||self.events.data.microsoft.com^$important
 ||mobile.pipe.aria.microsoft.com^$important
+! self.pipe.aria.microsoft.com^
 
 
 
@@ -205,6 +210,7 @@
 
 ||firebase-settings.crashlytics.com^$important
 ||reports.crahlytics.com^
+! report.crashlytics.com^
 ||e.crashlytics.co^
 ||settings.crashlytics.com^
 ||firebase-settings.crashlytics.col^$important
@@ -230,7 +236,7 @@
 ||push.yandex.ru/v*/subscribe/^$websocket,important
 @@||tc.mobile.yandex.net^
 ||http-check-headers.yandex.ru^$xhr
-||yandex.ru/messenger/api/*^$xhr
+||yandex.ru/messenger/api/*^$xhr,important
 
 
 
@@ -276,7 +282,8 @@
 ||tnc*.isnssdk.com^$important
 ||*pangle.io^$important
 ||adashx4ae.ut.taobao.com^
-||iad-*.braze.com^$important
+||*iad-*.braze.com^$important
+! sdk.iad-*.braze.com^
 
 
 
