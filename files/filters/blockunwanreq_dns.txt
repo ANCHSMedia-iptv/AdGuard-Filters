@@ -58,7 +58,6 @@
 ||*appmetrica.yango.com^
 ||adfstat.yandex.ru^
 ||push.yandex.ru^
-@@||api.lbs.yandex.net^
 @@||tc.mobile.yandex.net^
 ||http-check-headers.yandex.ru^
 !
