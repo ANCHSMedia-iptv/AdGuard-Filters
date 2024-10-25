@@ -1,10 +1,14 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
-! Version: a0.0.6-2
-! Alpha
+! Version: a0.0.6-3
 ! TimeUpdated: 2024-10-20T15:03:20+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
+
+
+
+! Alpha version
+
 ! Подойдёт для мобильных устройств и компьютеров.
 
 
@@ -116,6 +120,7 @@
 ||*kayzen.io^
 ||*adinfinitum.in^
 ||disk.akamaized.net^$app=com.dubox.drive
+||*gamerplay*.space^
 
 ||content-autofill.googleapis.com^$app=com.dubox.drive,important
 
@@ -141,6 +146,7 @@
 ||mobile.events.data.microsoft.com^$important
 ||self.events.data.microsoft.com^$important
 ||mobile.pipe.aria.microsoft.com^$important
+||mobile.events.data.microsoft.com^$important
 ! self.pipe.aria.microsoft.com^
 
 

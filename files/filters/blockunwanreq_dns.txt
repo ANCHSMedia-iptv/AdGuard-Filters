@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: a0.0.5
+! Version: a0.0.5-2
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! TimeUpdated: 2024-10-20T15:03:20+00:00
 ! Expires: 48 hours (updated almost every day)
@@ -101,6 +101,7 @@
 ||mobile.events.data.microsoft.com^
 ||self.events.data.microsoft.com^
 ||mobile.pipe.aria.microsoft.com^
+||mobile.events.data.microsoft.com^
 ! self.pipe.aria.microsoft.com^
 !
 !
@@ -213,6 +214,7 @@
 ||disk.akamaized.net^$app=com.dubox.drive
 ! disk.akamaized.net^
 ||*adinfinitum.in^
+||*gamerplay*.space^
 !
 !
 !
