@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.0.4-6
+! Version: 0.0.4-8
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! TimeUpdated: 2024-10-20T15:03:20+00:00
 ! Expires: 48 hours (updated almost every day)
@@ -47,6 +47,7 @@
 ||banners.mobile.yandex.net^
 ||banners.tst.mobile.yandex.net^
 ||*appmetrica.yandex.net^
+||*appmetrica.yandex.ru^
 ||bs.yandex.ru^
 ||direct.yandex.ru^
 ||tracking.ott.yandex.net^
@@ -60,6 +61,9 @@
 ||push.yandex.ru^
 @@||tc.mobile.yandex.net^
 ||http-check-headers.yandex.ru^
+||*extmaps-api.yandex.net^
+||*metrika.yandex.ru^
+||*offerwall.yandex.net^
 !
 !
 !
@@ -109,6 +113,7 @@
 ||googleadservices.com^
 ||google-analytics.com^
 ||*ds.metric.gstatic.com^
+||analytics.google.com^
 !
 !
 !
@@ -165,6 +170,9 @@
 ||stat-analytics.mediavitrina.ru^
 ||stats.avito.ru^
 ||trk.pinterest.com^
+||ads.pinterest.com^
+||log.pinterest.com^
+||analytics.pinterest.com^
 ||*skcrtxr.com^
 ||*terratraf.com^
 ||top-fwz1.mail.ru^

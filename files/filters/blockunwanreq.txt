@@ -65,6 +65,9 @@
 ||*pglstatp.com^$important
 ||stats.avito.ru^$important
 ||trk.pinterest.com^$important
+||ads.pinterest.com^$important
+||log.pinterest.com^$important
+||analytics.pinterest.com^$important
 ||cdn-app.sberdevices.ru/misc/0.0.0/assets/ad-sdk/ad-category-recognition.js^$script,important
 ||stats.viqeo.tv^$important
 ||metrics.viqeo.tv^$important
@@ -229,10 +232,11 @@
 ||banners.mobile.yandex.net^
 ||banners.tst.mobile.yandex.net^
 ||*appmetrica.yandex.net^$important
+||*appmetrica.yandex.ru^
 ||bs.yandex.ru^
 ||direct.yandex.ru^
 ||tracking.ott.yandex.net^
-||*adfox.ru^$important
+||*adfox*^$important
 ||startup.mobile.yandex.net^$important
 ||startup-mobile.ap.yandex-net.ru^$important
 ||*yandexadexchange.net^$important
@@ -243,7 +247,9 @@
 @@||tc.mobile.yandex.net^
 ||http-check-headers.yandex.ru^$xhr
 ||yandex.ru/messenger/api/*^$xhr,important
-
+||*extmaps-api.yandex.net^
+||*metrika.yandex.ru^
+||*offerwall.yandex.net^
 
 
 
@@ -258,6 +264,7 @@
 ||googleadservices.com^$important
 ||google-analytics.com^$important
 ||*ds.metric.gstatic.com^
+||analytics.google.com^
 
 
 
