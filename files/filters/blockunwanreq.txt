@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
-! Version: a0.0.6-3
+! Version: a0.0.6-4
 ! TimeUpdated: 2024-10-20T15:03:20+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
@@ -101,7 +101,11 @@
 ||*metrika-informer.com^$important
 ||stats.habr.com^
 ||*analytics-toolbar*^
-||analytics.faregy.com^
+||*analytics.faregy.com^
+||finance.ozon.ru/api/v2/referralProgram_promoter_getPromoterInfo^$xhr
+||finance.ozon.ru/api/v2/loyalty_promotions_getConsistentPromotion^$xhr
+||finance.ozon.ru/api/v2/loyalty_promotions_getBanners^$xhr
+||finance.ozon.ru/api/v2/loyalty_stars_getPromotionStatus^$xhr
 
 
 ||*adserv.ai^
@@ -220,6 +224,7 @@
 ||firebaseinappmessaging.googleapis.com^$important
 ||firebaseremoteconfigrealtime.googleapis.com^
 ||firebase.googleapis.com^
+||firebase.google.com^
 
 
 
@@ -314,6 +319,11 @@
 ! sdk.iad-*.braze.com^
 ||logs.unchecky.com^
 ||*infeng.site^
+||*iad.appboy.com^
+||accscdn.m.taobao.com^
+
+
+
 
 
 
