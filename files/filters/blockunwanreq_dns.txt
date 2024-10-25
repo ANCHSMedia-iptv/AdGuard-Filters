@@ -1,11 +1,21 @@
 ! Title: Block unwanted connections (DNS)
-! Version: a0.0.4-6
-! Alpha
+! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
+! Version: 0.0.4-6
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 20.10.2024 15:03 UTC
 ! TimeUpdated: 2024-10-20T15:03:20+00:00
 ! Expires: 48 hours (updated almost every day)
+!
+!
+!
+! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
+! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
+! Last Modified: 20.10.2024 15:03 UTC
+!
+!
+! Alpha version
+!
+!
 !
 !
 !
@@ -181,17 +191,18 @@
 ||*adserv.ai^
 ||*tapulsads.ru^
 ||*gonet-ads.com^
-||*telecid.ru^$
+||*telecid.ru^
 ||www.tttturbonet.com^
 ||*pavo*^
 ||*fancybox.in^
 ||*adlooxtracking.ru^
-||*rixengine.com^$
+||*rixengine.com
 ||*weborama-tech.ru^
 ||trk.mail.ru^
 ||*svr-algorix.com^
 ||*kayzen.io^
 ||disk.akamaized.net^$app=com.dubox.drive
+! disk.akamaized.net^
 ||*adinfinitum.in^
 !
 !
@@ -217,11 +228,15 @@
 !
 !
 !
-! -- Браузерные запросы
-! -- Browser requests
+! -- =Браузерные запросы=
+! -- =Browser requests=
 !
 ||news.google.com^
 ||*enjoyxstudy.com^
+!
+!
+! -- Opera
+!
 ||news-af.feednews.com^
 ||api-a.oleads.com^
 ||sitesuggestion.opera-api2.com^
@@ -235,6 +250,8 @@
 ||op.mykonf.com^
 ||ofa-b-sub.osp.opera.software^
 ||*cdninstagram.com^
+!
+! -- Other
 !
 ||*sf-helper.com^
 !

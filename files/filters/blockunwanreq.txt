@@ -1,11 +1,11 @@
 ! Title: Block unwanted connections
-! Version: a0.0.5-6
+! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
+! Version: a0.0.5-9
 ! Alpha
-! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 20.10.2024 15:03 UTC
 ! TimeUpdated: 2024-10-20T15:03:20+00:00
 ! Expires: 48 hours (updated almost every day)
-! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
+! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
+
 
 
 
@@ -165,27 +165,32 @@
 
 
 
-! Браузерные запросы
-! Browser requests
+! =Браузерные запросы=
+! =Browser requests=
 
 ||settings.kiwibrowser.com/search/getrecommendedsearch^$app=com.kiwibrowser.browser,removeparam,important
-||news-af.feednews.com^$app=com.opera.browser,removeparam,important
-||api-a.oleads.com^$app=com.opera.browser,removeparam,important
-||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$script,app=com.kiwibrowser.browser,important
-||news.google.com^$app=com.kiwibrowser.browser,important
-||*enjoyxstudy.com^$app=com.kiwibrowser.browser,important
-||sitesuggestion.opera-api2.com^$app=com.opera.browser,important
-||oscore.operacdn.com^$app=com.opera.browser,important
-||ft-oscore.opera-api2.com^$app=com.opera.browser,important
-||ws-oscore.opera-api2.com^$websocket,app=com.opera.browser,important
-||oscore.opera-api2.com^$app=com.opera.browser,important
-||pns-sdk.opera-api2.com^$app=com.opera.browser,removeparam
-||ofa-2-sub.osp.opera.software^$app=com.opera.browser,removeparam
-||mcp.opera-api2.com^$app=com.opera.browser,removeparam
-||op.mykonf.com^$app=com.opera.browser,removeparam,important
-||ofa-b-sub.osp.opera.software^$app=com.opera.browser,removeparam
-||*cdninstagram.com^$app=com.opera.browser,removeparam,important
+||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$script,important
+||news.google.com^$important
+||*enjoyxstudy.com^$important
 
+! Opera
+
+||news-af.feednews.com^$removeparam,important
+||api-a.oleads.com^$removeparam,important
+||sitesuggestion.opera-api2.com^$important
+||oscore.operacdn.com^$important
+||ft-oscore.opera-api2.com^$important
+||ws-oscore.opera-api2.com^$websocket,important
+||oscore.opera-api2.com^important
+||pns-sdk.opera-api2.com^$removeparam,important
+||ofa-2-sub.osp.opera.software^$removeparam,important
+||mcp.opera-api2.com^$removeparam,important
+||op.mykonf.com^$important,important
+||ofa-b-sub.osp.opera.software^$removeparam,important
+||*cdninstagram.com^$removeparam,important
+
+
+! Other
 
 ||*sf-helper.com^$important
 
