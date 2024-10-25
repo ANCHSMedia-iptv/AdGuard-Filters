@@ -1,16 +1,16 @@
-# Title: Block unwanted connections (DNS)
-# Version: a0.0.4-6
-# Alpha
-# Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-# Last Modified: 20.10.2024 15:03 UTC
-# TimeUpdated: 2024-10-20T15:03:20+00:00
-# Expires: 48 hours (updated almost every day)
-# Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-#
-#
-#
-# -- Firebase
-#
+! Title: Block unwanted connections (DNS)
+! Version: a0.0.4-6
+! Alpha
+! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
+! Last Modified: 20.10.2024 15:03 UTC
+! TimeUpdated: 2024-10-20T15:03:20+00:00
+! Expires: 48 hours (updated almost every day)
+! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
+!
+!
+!
+! -- Firebase
+!
 ||firebaseinstallations.googleapis.com^
 ||firebaselogging.googleapis.com^
 ||firebaseremoteconfig.googleapis.com^
@@ -18,22 +18,22 @@
 ||firebaseinappmessaging.googleapis.com^
 ||firebaseremoteconfigrealtime.googleapis.com^
 ||firebase.googleapis.com^
-#
-#
-# -- Crashlytics + Firebase
-#
+!
+!
+! -- Crashlytics + Firebase
+!
 ||firebase-settings.crashlytics.com^
 ||reports.crahlytics.com^
 ||e.crashlytics.co^
-# report.crashlytics.com^
+! report.crashlytics.com^
 ||settings.crashlytics.com^
 ||firebase-settings.crashlytics.col^
 ||crashlytics*-pa.googleapis.com^
-#
-#
-#
-# -- Yandex Analytics, Ads and other
-#
+!
+!
+!
+! -- Yandex Analytics, Ads and other
+!
 ||banners.mobile.yandex.net^
 ||banners.tst.mobile.yandex.net^
 ||*appmetrica.yandex.net^
@@ -51,17 +51,17 @@
 @@||api.lbs.yandex.net^
 @@||tc.mobile.yandex.net^
 ||http-check-headers.yandex.ru^
-#
-#
-#
-#
-#
-#
-#
-# -- Подключения к рекомендованным серверам (Minecraft BE)
-# -- Connections to recommended servers (Minecraft BE)
-#
-#
+!
+!
+!
+!
+!
+!
+!
+! -- Подключения к рекомендованным серверам (Minecraft BE)
+! -- Connections to recommended servers (Minecraft BE)
+!
+!
 ||play.inpvp.net^
 ||mco.lbsg.net^
 ||play.galaxite.net^
@@ -74,25 +74,25 @@
 ||_minecraft._tcp.us.mineplex.com^$dnsrewrite=NXDOMAIN
 ||play.pixelparadise.gg^
 ||mco.mineplex.com^$dnsrewrite=NXDOMAIN
-#
-#
-#
-# -- RIP Mineplex 26.01.2013-12.05.2023
-# -- Сохранил запросы т.к. могут всё равно идти запросы (со старых версий к примеру где Mineplex есть)
-# -- I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)
-#
-#
-#
-# -- Microsoft Analytics
-#
+!
+!
+!
+! -- RIP Mineplex 26.01.2013-12.05.2023
+! -- Сохранил запросы т.к. могут всё равно идти запросы (со старых версий к примеру где Mineplex есть)
+! -- I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)
+!
+!
+!
+! -- Microsoft Analytics
+!
 ||mobile.events.data.microsoft.com^
 ||self.events.data.microsoft.com^
 ||mobile.pipe.aria.microsoft.com^
-# self.pipe.aria.microsoft.com^
-#
-#
-# -- Google
-#
+! self.pipe.aria.microsoft.com^
+!
+!
+! -- Google
+!
 ||www.googleadservices.com^
 ||www.google-analytics.com
 ||www.googletagmanager.com^
@@ -100,10 +100,10 @@
 ||googleadservices.com^
 ||google-analytics.com^
 ||*ds.metric.gstatic.com^
-#
-#
-#
-#
+!
+!
+!
+!
 ||analytics.picsart.com^
 ||*scorecardresearch.com^
 ||*metricell.com^
@@ -175,9 +175,9 @@
 ||*bitrix.info^
 ||*metrika-informer.com^
 ||stats.habr.com^
-# *iad-*.braze.com^
-#
-#
+! *iad-*.braze.com^
+!
+!
 ||*adserv.ai^
 ||*tapulsads.ru^
 ||*gonet-ads.com^
@@ -193,33 +193,33 @@
 ||*kayzen.io^
 ||disk.akamaized.net^$app=com.dubox.drive
 ||*adinfinitum.in^
-#
-#
-#
-#
+!
+!
+!
+!
 ||stun.services.mozilla.com^
-#
-#
+!
+!
 ||widget-sweettv.kwizbot.io^
-#
-#
+!
+!
 ||checkip.amazonaws.col^
-#
-#
+!
+!
 ||ikorrpa^$dnsrewrite=NXDOMAIN
 ||uisp.lan^$dnsrewrite=NXDOMAIN
 ||n3k1t4_1996^$dnsrewrite=NXDOMAIN
 ||v1^$dnsrewrite=NXDOMAIN
 ||router.silotis.us^$dnsrewrite=NXDOMAIN
 ||=^$dnsrewrite=NXDOMAIN
-#
-#
-#
-#
-#
-# -- Браузерные запросы
-# -- Browser requests
-#
+!
+!
+!
+!
+!
+! -- Браузерные запросы
+! -- Browser requests
+!
 ||news.google.com^
 ||*enjoyxstudy.com^
 ||news-af.feednews.com^
@@ -235,29 +235,29 @@
 ||op.mykonf.com^
 ||ofa-b-sub.osp.opera.software^
 ||*cdninstagram.com^
-#
+!
 ||*sf-helper.com^
-#
-#
-#
-#
-#
-# ---
-#
-#
-#
-# -- Non-understandable addresses, but undesirable
-#
+!
+!
+!
+!
+!
+! ---
+!
+!
+!
+! -- Non-understandable addresses, but undesirable
+!
 ||*tobipovsem.com^$dnsrewrite=NXDOMAIN
 ||largestloitering.com^$dnsrewrite=NXDOMAIN
 ||f1e4fcff2b.27640ea29d.com^$dnsrewrite=NXDOMAIN
 ||d157c90939.1b384556ae.com^$dnsrewrite=NXDOMAIN
 ||*vesmaveselo*^$dnsrewrite=NXDOMAIN
 ||*myroledance.com^$dnsrewrite=NXDOMAIN
-#
-#
-#
-#
-#
-#
-#
+!
+!
+!
+!
+!
+!
+!
