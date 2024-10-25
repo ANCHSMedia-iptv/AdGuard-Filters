@@ -5,6 +5,7 @@
 ! TimeUpdated: 2024-10-20T15:03:20+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
+! Подойдёт для мобильных устройств и компьютеров.
 
 
 
@@ -97,6 +98,7 @@
 ||*metrika-informer.com^$important
 ||stats.habr.com^
 ||*analytics-toolbar*^
+||analytics.faregy.com^
 
 
 ||*adserv.ai^
@@ -298,6 +300,7 @@
 ||adashx4ae.ut.taobao.com^
 ||*iad-*.braze.com^$important
 ! sdk.iad-*.braze.com^
+||logs.unchecky.com^
 
 
 

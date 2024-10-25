@@ -15,7 +15,7 @@
 !
 ! Alpha version
 !
-!
+! Подойдёт для мобильных устройств и компьютеров.
 !
 !
 !
@@ -193,6 +193,7 @@
 ||*metrika-informer.com^
 ||stats.habr.com^
 ||*analytics-toolbar*^
+||analytics.faregy.com^
 ! *iad-*.braze.com^
 !
 !
