@@ -192,7 +192,7 @@
 ||*bitrix.info^
 ||*metrika-informer.com^
 ||stats.habr.com^
-||analytics-toolbar.faregy.com^
+||*analytics-toolbar*^
 ! *iad-*.braze.com^
 !
 !
