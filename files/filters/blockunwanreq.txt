@@ -34,7 +34,6 @@
 ||xray.mail.ru^
 ||ad.mail.ru^$important
 ||*dbankcloud*^$important
-||*doubleclick.net^$important
 ||*rayjump.com^
 ||smi2.ru^
 ||*umeng.com^$important
@@ -274,6 +273,13 @@
 ||google-analytics.com^$important
 ||*ds.metric.gstatic.com^
 ||analytics.google.com^
+||*doubleclick.net^$important
+||pagead2.googlesyndication.com^
+||adservice.google.com^
+||afs.googlesyndication.com^
+
+
+
 
 
 
@@ -307,6 +313,7 @@
 ||*iad-*.braze.com^$important
 ! sdk.iad-*.braze.com^
 ||logs.unchecky.com^
+||*infeng.site^
 
 
 

@@ -115,6 +115,12 @@
 ||google-analytics.com^
 ||*ds.metric.gstatic.com^
 ||analytics.google.com^
+||*doubleclick.net^
+||pagead2.googlesyndication.com^
+||adservice.google.com^
+||afs.googlesyndication.com^
+!
+!
 !
 !
 !
@@ -134,7 +140,6 @@
 ||xray.mail.ru^
 ||ad.mail.ru^
 ||*dbankcloud*^
-||*doubleclick.net^
 ||*rayjump.com^
 ||smi2.ru^
 ||*umeng.com^
