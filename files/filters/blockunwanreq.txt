@@ -96,6 +96,7 @@
 ||*adskeeper.co.uk^
 ||*metrika-informer.com^$important
 ||stats.habr.com^
+||analytics-toolbar.faregy.com^
 
 
 ||*adserv.ai^
