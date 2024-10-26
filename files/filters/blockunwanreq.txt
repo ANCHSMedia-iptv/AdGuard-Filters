@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
-! Version: a0.0.6-4.5
-! TimeUpdated: 2024-10-20T15:03:20+00:00
+! Version: a0.0.6-4.7
+! TimeUpdated: 2024-10-26T19:03:20+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -15,7 +15,12 @@
 !
 !
 ||analytics.picsart.com^
+!
+!
+! Это API запрос сервиса PicsArt на получение вашего местоположения на основе IP адреса и других данных. Возможно, в целях аналитики.
 ||api.picsart.com/location^$xhr,domain=picsart.com
+!
+!
 !
 !
 ||*scorecardresearch.com^$important
@@ -30,7 +35,6 @@
 ||*vk-analytics.ru^$important
 ||*instabug*^$important
 ||xray.mail.ru^
-||ad.mail.ru^$important
 ||*dbankcloud*^$important
 ||*rayjump.com^
 ||smi2.ru^
@@ -148,7 +152,10 @@
 ||self.events.data.microsoft.com^$important
 ||mobile.pipe.aria.microsoft.com^$important
 ||mobile.events.data.microsoft.com^$important
+||eu-mobile.events.data.microsoft.com^
 ! self.pipe.aria.microsoft.com^
+! *pipe.aria.microsoft.com^
+! *events.data.microsoft.com^
 !
 !
 !
@@ -291,6 +298,7 @@
 ! Domains that are only in the AdGuard DNS filter..
 ! Added to be blocked not only at the DNS level..
 !
+||ad.mail.ru^$important
 ||*buzzoola.com^$important
 ||stats.rustore.ru^$important
 ||log.strm.yandex.ru^$important
