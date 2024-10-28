@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.0.6-beta
+! Version: 0.0.6-1-beta
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! TimeUpdated: 2024-10-28T16:03:20+00:00
 ! Expires: 48 hours (updated almost every day)
@@ -102,7 +102,7 @@
 ! -- Microsoft Analytics
 !
 ||mobile.events.data.microsoft.com^
-||self.events.data.microsoft.com^$dnsrewrite=REFUSED
+||self.events.data.microsoft.com^
 ||mobile.pipe.aria.microsoft.com^
 ||mobile.events.data.microsoft.com^
 ! self.pipe.aria.microsoft.com^
@@ -139,8 +139,8 @@
 ||*optifyr.com^
 ||*gravatar.com^
 ||*amplreq.com^
-||*bugsnag.com^$dnsrewrite=REFUSED
-||*bugsnag*^$dnsrewrite=REFUSED
+||*bugsnag.com^
+||*bugsnag*^
 ||*vk-analytics.ru^
 ||*instabug*^
 ||xray.mail.ru^$dnsrewrite=REFUSED
