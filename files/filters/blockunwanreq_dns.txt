@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.0.6-3-beta
+! Version: 0.0.6-4-beta
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! TimeUpdated: 2024-10-28T19:03:20+00:00
 ! Expires: 48 hours (updated almost every day)
@@ -183,8 +183,8 @@
 ||ads.pinterest.com^
 ||log.pinterest.com^
 ||analytics.pinterest.com^
-||*skcrtxr.com^$dnsrewrite=REFUSED
-||*terratraf.com^$dnsrewrite=REFUSED
+||*skcrtxr.com^
+||*terratraf.com^
 ||top-fwz1.mail.ru^
 ||stats.viqeo.tv^
 ||metrics.viqeo.tv^
@@ -208,6 +208,10 @@
 ||clck.dzen.ru^
 ||*unityads.unity3d.com^
 ||beacon.shazam.com^
+||tns-counter.ru^
+||geo.geosurf.io^
+!
+!
 !
 !
 ||*adserv.ai^$dnsrewrite=REFUSED
