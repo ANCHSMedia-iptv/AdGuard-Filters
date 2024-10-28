@@ -116,7 +116,6 @@
 ||api.x.com/*/jot/error_log.json^$xhr
 ||api.x.com/*/jot/ces/p2^$xhr
 ||api.x.com/*/jot/client_event.json^$xhr
-
 !
 !
 !
@@ -164,7 +163,7 @@
 ||mobile.pipe.aria.microsoft.com^$important
 ||mobile.events.data.microsoft.com^$important
 ||eu-mobile.events.data.microsoft.com^
-! self.pipe.aria.microsoft.com^
+||self.pipe.aria.microsoft.com^
 ! *pipe.aria.microsoft.com^
 ! *events.data.microsoft.com^
 !
