@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
 ! Version: a0.0.6-5
-! TimeUpdated: 2024-10-26T19:03:20+00:00
+! TimeUpdated: 2024-10-27T19:03:20+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -35,6 +35,7 @@
 ||*vk-analytics.ru^$important
 ||*instabug*^$important
 ||xray.mail.ru^
+||ad.mail.ru^
 ||*dbankcloud*^$important
 ||*rayjump.com^
 ||smi2.ru^
@@ -48,8 +49,8 @@
 ||*inappstory.ru^$important
 ||*inappstory.com^$important
 ||*appsflyersdk.com^$important
-||facebook.com^
-||www.facebook.com^
+||facebook.com^$domain=~facebook.com
+||www.facebook.com^$domain=~facebook.com
 ||*snapkit.com^$important
 ||*appsflyer.com^$important
 ||analytics.72.ru^
@@ -108,6 +109,8 @@
 ||finance.ozon.ru/api/v2/loyalty_promotions_getConsistentPromotion^$xhr
 ||finance.ozon.ru/api/v2/loyalty_promotions_getBanners^$xhr
 ||finance.ozon.ru/api/v2/loyalty_stars_getPromotionStatus^$xhr
+||*pinterest.com/_/_/csp_report/^$xhr
+||clck.dzen.ru^
 !
 !
 ||*adserv.ai^
@@ -261,7 +264,7 @@
 ||*webvisor.com^$important
 ||*appmetrica.yango.com^
 ||adfstat.yandex.ru^$important
-||push.yandex.ru/v*/subscribe/^$websocket,important
+||push.yandex.ru/v*/subscribe/*^$websocket,important
 @@||tc.mobile.yandex.net^
 ||http-check-headers.yandex.ru^$xhr
 ||yandex.ru/messenger/api/*^$xhr,important
@@ -325,8 +328,9 @@
 ! sdk.iad-*.braze.com^
 ||logs.unchecky.com^
 ||*infeng.site^
-||*iad.appboy.com^
+||*iad.appboy.com^$important
 ||accscdn.m.taobao.com^
+||*unityads.unity3d.com^$important
 !
 !
 !
@@ -348,6 +352,7 @@
 ||d157c90939.1b384556ae.com^
 ||*vesmaveselo*^
 ||*myroledance.com^
+||*vaterlines.com^
 !
 !
 !

@@ -2,7 +2,7 @@
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Version: a0.0.5-5
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-10-26T19:03:20+00:00
+! TimeUpdated: 2024-10-27T19:03:20+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 26.10.2024 19:03 UTC
+! Last Modified: 27.10.2024 19:03 UTC
 !
 !
 ! Alpha version
@@ -83,7 +83,7 @@
 ||play.galaxite.net^
 ||geo.hivebedrock.network^
 ||mco.cubecraft.net^
-||us.mineplex.com^
+||us.mineplex.com^$dnsrewrite=NXDOMAIN
 ||play.vexalmc.co^
 ||play.pioneersurvival.net^
 ||_minecraft._tcp.play.pioneersurvival.net^
@@ -102,7 +102,7 @@
 ! -- Microsoft Analytics
 !
 ||mobile.events.data.microsoft.com^
-||self.events.data.microsoft.com^$dnsrewrite=NXDOMAIN
+||self.events.data.microsoft.com^$dnsrewrite=REFUSED
 ||mobile.pipe.aria.microsoft.com^
 ||mobile.events.data.microsoft.com^
 ! self.pipe.aria.microsoft.com^
@@ -134,16 +134,16 @@
 ||*scorecardresearch.com^
 ||*metricell.com^
 ||*bronze.systems^
-||graph.facebook.com^
+||graph.facebook.com^$dnsrewrite=REFUSED
 ||*optifyr.com^
 ||*gravatar.com^
 ||*amplreq.com^
-||*bugsnag.com^$dnsrewrite=NXDOMAIN
-||*bugsnag*^$dnsrewrite=NXDOMAIN
+||*bugsnag.com^$dnsrewrite=REFUSED
+||*bugsnag*^$dnsrewrite=REFUSED
 ||*vk-analytics.ru^
 ||*instabug*^
-||xray.mail.ru^
-||ad.mail.ru^
+||xray.mail.ru^$dnsrewrite=REFUSED
+||ad.mail.ru^$dnsrewrite=REFUSED
 ||*dbankcloud*^
 ||*rayjump.com^
 ||smi2.ru^
@@ -152,40 +152,40 @@
 ||*cellrebel.com^
 ||*onesignal.com^
 ||cdn.viglink.com^
-||connect.facebook.net^$dnsrewrite=NXDOMAIN
+||connect.facebook.net^$dnsrewrite=REFUSED
 ||connect.ok.ru^
-||*inappstory.ru^$dnsrewrite=NXDOMAIN
-||*inappstory.com^$dnsrewrite=NXDOMAIN
+||*inappstory.ru^$dnsrewrite=REFUSED
+||*inappstory.com^$dnsrewrite=REFUSED
 ||*appsflyersdk.com^
-||facebook.com^$dnsrewrite=NXDOMAIN
-||www.facebook.com^$dnsrewrite=NXDOMAIN
+||facebook.com^$dnsrewrite=REFUSED,domain=~facebook.com
+||www.facebook.com^$dnsrewrite=REFUSED,domain=~facebook.com
 ||*snapkit.com^
 ||*appsflyer.com^
 ||analytics.72.ru^
-||syndication.twitter.com^
-||*rexpush.pro^
-||*peiynu.com^
+||syndication.twitter.com^$dnsrewrite=REFUSED
+||*rexpush.pro^$dnsrewrite=REFUSED
+||*peiynu.com^$dnsrewrite=REFUSED
 ||*appspot.com^
 ||*yabro.ru^
-||*flowerpla.com^
-||*amocrm.ru^
-||*gtrxlnd2.com^
-||*uxfeedback*^$dnsrewrite=NXDOMAIN
+||*flowerpla.com^$dnsrewrite=REFUSED
+||*amocrm.ru^$dnsrewrite=REFUSED
+||*gtrxlnd2.com^$dnsrewrite=REFUSED
+||*uxfeedback*^$dnsrewrite=REFUSED
 ||*tiqcdn.com^
 ||*analytics.tele2.ru^
 ||*adjust*^
 ||app.adjust.com^
 ||*cdn.bcebos.com^
 ||rutrk.org^
-||*pglstatp.com^
+||*pglstatp.com^$dnsrewrite=REFUSED
 ||stat-analytics.mediavitrina.ru^
 ||stats.avito.ru^
 ||trk.pinterest.com^
 ||ads.pinterest.com^
 ||log.pinterest.com^
 ||analytics.pinterest.com^
-||*skcrtxr.com^
-||*terratraf.com^
+||*skcrtxr.com^$dnsrewrite=REFUSED
+||*terratraf.com^$dnsrewrite=REFUSED
 ||top-fwz1.mail.ru^
 ||stats.viqeo.tv^
 ||metrics.viqeo.tv^
@@ -197,34 +197,36 @@
 ||*btloader.com^
 ||*adskeeper.co.uk^
 ||*digitalcaramel.com^
-||*ads-twitter.com^
+||*ads-twitter.com^$dnsrewrite=REFUSED
 ||*ms.vk.com^
-||*ad.intl.xiaomi.com^
+||*ad.*.xiaomi.com^
 ||*bitrix.info^
 ||*metrika-informer.com^
 ||stats.habr.com^
 ||*analytics-toolbar*^
-||analytics.faregy.com^
+||*analytics.faregy.com^
 ! *iad-*.braze.com^
+||clck.dzen.ru^
+||*unityads.unity3d.com^
 !
 !
-||*adserv.ai^
-||*tapulsads.ru^
-||*gonet-ads.com^
-||*telecid.ru^
+||*adserv.ai^$dnsrewrite=REFUSED
+||*tapulsads.ru^$dnsrewrite=REFUSED
+||*gonet-ads.com^$dnsrewrite=REFUSED
+||*telecid.ru^$dnsrewrite=REFUSED
 ||www.tttturbonet.com^
 ||*pavo*^
 ||*fancybox.in^
-||*adlooxtracking.ru^
-||*rixengine.com
-||*weborama-tech.ru^
+||*adlooxtracking.ru^$dnsrewrite=REFUSED
+||*rixengine.com$dnsrewrite=REFUSED
+||*weborama-tech.ru^$dnsrewrite=REFUSED
 ||trk.mail.ru^
-||*svr-algorix.com^
-||*kayzen.io^
+||*svr-algorix.com^$dnsrewrite=REFUSED
+||*kayzen.io^$dnsrewrite=REFUSED
 ||disk.akamaized.net^$app=com.dubox.drive
 ! disk.akamaized.net^
-||*adinfinitum.in^
-||*gamerplay*.space^
+||*adinfinitum.in^$dnsrewrite=REFUSED
+||*gamerplay*.space^$dnsrewrite=REFUSED
 !
 !
 !
@@ -238,12 +240,12 @@
 ||checkip.amazonaws.col^
 !
 !
-||ikorrpa^$dnsrewrite=NXDOMAIN
-||uisp.lan^$dnsrewrite=NXDOMAIN
-||n3k1t4_1996^$dnsrewrite=NXDOMAIN
-||v1^$dnsrewrite=NXDOMAIN
-||router.silotis.us^$dnsrewrite=NXDOMAIN
-||=^$dnsrewrite=NXDOMAIN
+||ikorrpa^$dnsrewrite=REFUSED
+||uisp.lan^$dnsrewrite=REFUSED
+||n3k1t4_1996^$dnsrewrite=REFUSED
+||v1^$dnsrewrite=REFUSED
+||router.silotis.us^$dnsrewrite=REFUSED
+||=^$dnsrewrite=REFUSED
 !
 !
 !
@@ -252,29 +254,29 @@
 ! -- =Браузерные запросы=
 ! -- =Browser requests=
 !
-||news.google.com^
-||*enjoyxstudy.com^
+||news.google.com^$dnsrewrite=SERVFAIL
+||*enjoyxstudy.com^$dnsrewrite=REFUSED
 !
 !
 ! -- Opera
 !
-||news-af.feednews.com^
-||api-a.oleads.com^
-||sitesuggestion.opera-api2.com^
+||news-af.feednews.com^$dnsrewrite=REFUSED
+||api-a.oleads.com^$dnsrewrite=REFUSED
+||sitesuggestion.opera-api2.com^$dnsrewrite=REFUSED
 ||oscore.operacdn.com^
 ||ws-oscore.opera-api2.com^
 ||ft-oscore.opera-api2.com^
 ||oscore.opera-api2.com^
-||pns-sdk.opera-api2.com^$dnsrewrite=NXDOMAIN
-||ofa-2-sub.osp.opera.software^$dnsrewrite=NXDOMAIN
-||mcp.opera-api2.com^$dnsrewrite=NXDOMAIN
-||op.mykonf.com^
+||pns-sdk.opera-api2.com^$dnsrewrite=REFUSED
+||ofa-2-sub.osp.opera.software^$dnsrewrite=REFUSED
+||mcp.opera-api2.com^$dnsrewrite=REFUSED
+||op.mykonf.com^$dnsrewrite=REFUSED
 ||ofa-b-sub.osp.opera.software^
 ||*cdninstagram.com^
 !
 ! -- Other
 !
-||*sf-helper.com^
+||*sf-helper.com^$dnsrewrite=SERVFAIL
 !
 !
 !
@@ -286,12 +288,13 @@
 !
 ! -- Non-understandable addresses, but undesirable
 !
-||*tobipovsem.com^$dnsrewrite=NXDOMAIN
-||largestloitering.com^$dnsrewrite=NXDOMAIN
-||f1e4fcff2b.27640ea29d.com^$dnsrewrite=NXDOMAIN
-||d157c90939.1b384556ae.com^$dnsrewrite=NXDOMAIN
-||*vesmaveselo*^$dnsrewrite=NXDOMAIN
-||*myroledance.com^$dnsrewrite=NXDOMAIN
+||*tobipovsem.com^$dnsrewrite=REFUSED
+||largestloitering.com^$dnsrewrite=REFUSED
+||f1e4fcff2b.27640ea29d.com^$dnsrewrite=REFUSED
+||d157c90939.1b384556ae.com^$dnsrewrite=REFUSED
+||*vesmaveselo*^$dnsrewrite=REFUSED
+||*myroledance.com^$dnsrewrite=REFUSED
+||*vaterlines.com^$dnsrewrite=REFUSED
 !
 !
 !
