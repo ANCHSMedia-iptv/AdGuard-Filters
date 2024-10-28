@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
-! Version: 0.0.7-4-beta
-! TimeUpdated: 2024-10-28T16:03:20+00:00
+! Version: 0.0.7-5-beta
+! TimeUpdated: 2024-10-28T16:04:20+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -163,14 +163,37 @@
 !
 !
 !  Microsoft Analytics
-||mobile.events.data.microsoft.com^$important
-||self.events.data.microsoft.com^$important
-||mobile.pipe.aria.microsoft.com^$important
-||mobile.events.data.microsoft.com^$important
-||eu-mobile.events.data.microsoft.com^
-||self.pipe.aria.microsoft.com^
-! *pipe.aria.microsoft.com^
-! *events.data.microsoft.com^
+! mobile.events.data.microsoft.com^$important
+! self.events.data.microsoft.com^$important
+! mobile.pipe.aria.microsoft.com^$important
+! mobile.events.data.microsoft.com^$important
+! eu-mobile.events.data.microsoft.com^
+! self.pipe.aria.microsoft.com^
+||*pipe.aria.microsoft.com^$important
+||*events.data.microsoft.com^$important
+!
+! For Windows
+!
+||query.prod.cms.rt.microsoft.com^
+||inputsuggestions.msdxcdn.microsoft.com^
+||settings-win.data.microsoft.com^
+||dcg.microsoft.com^
+||*choice.microsoft.com^
+||*choice.microsoft.com.nsatc.net^
+||corpext.msitadfs.glbdns2.microsoft.com^
+||*redir.metaservices.microsoft.com^
+||*df.telemetry.microsoft.com^
+||settings-sandbox.data.microsoft.com^
+||sls.update.microsoft.com.akadns.net^
+||*telemetry.microsoft.com.nsatc.net^
+||*telemetry.microsoft.com^
+||*statsfe2.ws.microsoft.com^
+||*telemetry.appex.bing.net^
+||*telemetry.urs.microsoft.com^
+||vortex*.data.microsoft.com^
+||*metaservices.microsoft.com^
+||*telemetry.appex.bing.net^
+||*statsfe2.ws.microsoft.com^
 !
 !
 !
