@@ -113,7 +113,8 @@
 ||clck.dzen.ru^
 ||api.github.com/_private/browser/stats^$xhr
 ||collector.github.com/github/collect^$xhr
-
+!
+!
 !
 !
 ||*adserv.ai^
