@@ -1,13 +1,13 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
-! Version: a0.0.6-5
-! TimeUpdated: 2024-10-27T19:03:20+00:00
+! Version: 0.0.7-beta
+! TimeUpdated: 2024-10-28T16:03:20+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
 !
 !
-! Alpha version
+! Beta version
 !
 ! Подойдёт для мобильных устройств и компьютеров.
 !
@@ -35,7 +35,7 @@
 ||*vk-analytics.ru^$important
 ||*instabug*^$important
 ||xray.mail.ru^
-||ad.mail.ru^
+||ad.mail.ru^$important
 ||*dbankcloud*^$important
 ||*rayjump.com^
 ||smi2.ru^
@@ -111,6 +111,9 @@
 ||finance.ozon.ru/api/v2/loyalty_stars_getPromotionStatus^$xhr
 ||*pinterest.com/_/_/csp_report/^$xhr
 ||clck.dzen.ru^
+||api.github.com/_private/browser/stats^$xhr
+||collector.github.com/github/collect^$xhr
+
 !
 !
 ||*adserv.ai^
@@ -290,6 +293,7 @@
 ||pagead2.googlesyndication.com^
 ||adservice.google.com^
 ||afs.googlesyndication.com^
+||safeframe.googlesyndication.com^
 !
 !
 !
