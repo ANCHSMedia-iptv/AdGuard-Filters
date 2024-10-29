@@ -328,7 +328,12 @@
 ||*myroledance.com^$dnsrewrite=REFUSED
 ||*vaterlines.com^$dnsrewrite=REFUSED
 !
+! --
 !
+!
+!
+!
+!@@||local.adguard.org^
 !
 !
 !
