@@ -1,10 +1,12 @@
 ! Title: Block unwanted connections
-! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д.
-! Version: 0.0.7-5-beta
+! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д.
+! Version: 0.0.7-6-beta
 ! TimeUpdated: 2024-10-28T16:04:20+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
+!
+! Не только запросы к доменам, ну и скрипты, запросы типа XHR.
 !
 !
 ! Beta version
@@ -98,7 +100,7 @@
 ||megamarket.ru/api/mobile/v1/analyticsDataService^$xhr
 ||megamarket.ru/api/mobile/v1/promoContentService/promoContent/get^$xhr
 ||megamarket.ru/api/fl/idw-smm^$xhr
-||gstatic.com/firebasejs/*/firebase-app.js^$script
+||*/firebase*.js^$script
 ||d3c8j8snkzfr1n.cloudfront.net^
 ||*adskeeper.co.uk^
 ||*metrika-informer.com^$important
@@ -110,15 +112,18 @@
 ||finance.ozon.ru/api/v2/loyalty_promotions_getBanners^$xhr
 ||finance.ozon.ru/api/v2/loyalty_stars_getPromotionStatus^$xhr
 ||*pinterest.com/_/_/csp_report/^$xhr
-||clck.dzen.ru^
+||clck.dzen.ru^$important
 ||api.github.com/_private/browser/stats^$xhr
 ||collector.github.com/github/collect^$xhr
 ||api.x.com/*/jot/error_log.json^$xhr
 ||api.x.com/*/jot/ces/p2^$xhr
 ||api.x.com/*/jot/client_event.json^$xhr
-||*tns-counter.ru^
+||*tns-counter.ru^$important
 ||*/geo-context^$other
 ||geo.geosurf.io^
+||platform.twitter.com/widgets.js^$script,domain=~x.com|~twitter.com
+||*instagram.com/embed.js^$script,domain=~instagram.com
+||*tiktok.com/embed.js^$script,domain=~tiktok.com
 !
 !
 !
@@ -387,6 +392,15 @@
 ||*vesmaveselo*^
 ||*myroledance.com^
 ||*vaterlines.com^
+!
+!
+!
+! ---
+!
+!
+!
+!
+! @@||local.adguard.org^
 !
 !
 !
