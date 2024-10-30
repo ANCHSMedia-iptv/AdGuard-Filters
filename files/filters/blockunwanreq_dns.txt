@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.0.6-7-beta
+! Version: 0.0.6-8-beta
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-10-29T18:04:20+00:00
+! TimeUpdated: 2024-10-30T17:04:20+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -47,8 +47,7 @@
 !
 ! -- Yandex Analytics, Ads and other
 !
-||banners.mobile.yandex.net^
-||banners.tst.mobile.yandex.net^
+||banners*mobile.yandex.net^
 ||*appmetrica.yandex.net^
 ||*appmetrica.yandex.ru^
 ||bs.yandex.ru^
@@ -65,7 +64,7 @@
 @@||tc.mobile.yandex.net^
 ||http-check-headers.yandex.ru^
 ||*extmaps-api.yandex.net^
-||*metrika.yandex.ru^
+||*metrika.yandex.*^
 ||*offerwall.yandex.net^
 !
 !
@@ -129,6 +128,7 @@
 ||*metaservices.microsoft.com^
 ||*telemetry.appex.bing.net^
 ||*statsfe2.ws.microsoft.com^
+||fp-afd-nocache-ccp.azureedge.net^
 !
 !
 !
@@ -145,6 +145,7 @@
 ||*doubleclick.net^
 ||*googlesyndication.com^
 ||adservice.google.com^
+||s.youtube.com^ 
 !
 !
 !
@@ -233,6 +234,10 @@
 ||*tns-counter.ru^
 ||geo.geosurf.io^
 ||*relap.io^
+||*singular.net^
+||*mediation.unity3d.com^
+||alb.reddit.com^ 
+||*rudderstack.com^ 
 !
 !
 !
@@ -328,12 +333,7 @@
 ||*myroledance.com^$dnsrewrite=REFUSED
 ||*vaterlines.com^$dnsrewrite=REFUSED
 !
-! --
 !
-!
-!
-!
-!@@||local.adguard.org^
 !
 !
 !

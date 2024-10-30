@@ -19,7 +19,7 @@
 !
 !
 !
-!
+||im*-tub-ru.yandex.net^$domain=~*yandex.*
 !
 !
 !

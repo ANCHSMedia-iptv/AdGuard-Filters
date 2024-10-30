@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д.
-! Version: 0.0.7-7-beta
-! TimeUpdated: 2024-10-29T18:04:20+00:00
+! Version: 0.0.7-8-beta
+! TimeUpdated: 2024-10-30T17:04:20+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -124,6 +124,9 @@
 ||platform.twitter.com/widgets.js^$script,domain=~x.com|~twitter.com
 ||*instagram.com/embed.js^$script,domain=~instagram.com
 ||*tiktok.com/embed.js^$script,domain=~tiktok.com
+||*singular.net^
+||alb.reddit.com^
+||*rudderstack.com^ 
 !
 !
 !
@@ -199,6 +202,7 @@
 ||*metaservices.microsoft.com^
 ||*telemetry.appex.bing.net^
 ||*statsfe2.ws.microsoft.com^
+||fp-afd-nocache-ccp.azureedge.net^
 !
 !
 !
@@ -290,8 +294,7 @@
 !
 ! Yandex Analytics, Ads and other
 !
-||banners.mobile.yandex.net^
-||banners.tst.mobile.yandex.net^
+||banners*mobile.yandex.net^
 ||*appmetrica.yandex.net^$important
 ||*appmetrica.yandex.ru^
 ||bs.yandex.ru^
@@ -309,7 +312,7 @@
 ||http-check-headers.yandex.ru^$xhr
 ||yandex.ru/messenger/api/*^$xhr,important
 ||*extmaps-api.yandex.net^
-||*metrika.yandex.ru^
+||*metrika.yandex.*^
 ||*offerwall.yandex.net^
 !
 !
@@ -329,6 +332,7 @@
 ||*doubleclick.net^$important
 ||*googlesyndication.com^
 ||adservice.google.com^
+||s.youtube.com^ 
 !
 !
 !
@@ -346,7 +350,7 @@
 ||log.strm.yandex.ru^$important
 ||amc.yandex.ru^$important
 ||*applovin.com^$important
-||*hybrid.ai^
+||*hybrid.ai^$important
 ||*silvermob.com^
 ||*adrta.com^
 ||*adriver.ru^$important
@@ -369,7 +373,12 @@
 ||*infeng.site^
 ||*iad.appboy.com^$important
 ||accscdn.m.taobao.com^
-||*unityads.unity3d.com^$important
+||*ads.unity3d.com^$important
+||*mediation.unity3d.com^$important
+||mc.yandex.*^$important
+||an.yandex.*^$important
+||analytics.mobile.yandex.net^
+||*footprintdns.com^
 !
 !
 !
@@ -400,7 +409,7 @@
 !
 !
 !
-@@||local.adguard.org^
+! @@||local.adguard.org^
 !
 !
 !

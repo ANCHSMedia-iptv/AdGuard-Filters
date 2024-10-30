@@ -19,6 +19,7 @@
 !
 !
 ||platform.twitter.com^
+||im*-tub-ru.yandex.net^
 !
 !
 !
