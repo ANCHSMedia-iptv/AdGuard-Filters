@@ -326,7 +326,7 @@
 ! -- Non-understandable addresses, but undesirable
 !
 ||*tobipovsem.com^$dnsrewrite=REFUSED
-||largestloitering.com^$dnsrewrite=REFUSED
+||*largestloitering.com^$dnsrewrite=REFUSED
 ||f1e4fcff2b.27640ea29d.com^$dnsrewrite=REFUSED
 ||d157c90939.1b384556ae.com^$dnsrewrite=REFUSED
 ||*vesmaveselo*^$dnsrewrite=REFUSED
