@@ -82,7 +82,7 @@
 ||ads.pinterest.com^$important
 ||log.pinterest.com^$important
 ||analytics.pinterest.com^$important
-||cdn-app.sberdevices.ru/misc/0.0.0/assets/ad-sdk/ad-category-recognition.js^$script,important
+||cdn-app.sberdevices.ru/misc/*/assets/ad-sdk/ad-category-recognition.js^$script,important
 ||stats.viqeo.tv^$important
 ||metrics.viqeo.tv^$important
 ||*adtech.com^$important
@@ -127,8 +127,8 @@
 ||*/geo-context^$other
 ||geo.geosurf.io^
 ||platform.twitter.com/widgets.js^$script,domain=~x.com|~twitter.com
-||*instagram.com/embed.js^$script,domain=~instagram.com
-||*tiktok.com/embed.js^$script,domain=~tiktok.com
+||www.instagram.com/embed.js^$script,domain=~instagram.com
+||www.tiktok.com/embed.js^$script,domain=~tiktok.com
 ||*singular.net^
 ||alb.reddit.com^
 ||*rudderstack.com^ 
@@ -176,7 +176,7 @@
 !
 !
 !
-!  Microsoft Analytics
+! ===Microsoft Analytics===
 ! mobile.events.data.microsoft.com^$important
 ! self.events.data.microsoft.com^$important
 ! mobile.pipe.aria.microsoft.com^$important
@@ -212,7 +212,7 @@
 !
 !
 !
-!
+! ====
 !
 !
 ! Подключения к рекомендованным серверам (Minecraft BE)
@@ -273,7 +273,7 @@
 !
 !
 !
-!
+! ===
 !
 !
 ! Firebase
@@ -405,7 +405,7 @@
 ! Non-understandable addresses, but undesirable
 !
 ||*tobipovsem.com^$important
-||largestloitering.com^
+||*largestloitering.com^
 ||f1e4fcff2b.27640ea29d.com^
 ||d157c90939.1b384556ae.com^
 ||*vesmaveselo*^
