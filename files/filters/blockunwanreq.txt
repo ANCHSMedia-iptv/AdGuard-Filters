@@ -413,7 +413,7 @@
 !
 !
 !
-! @@||local.adguard.org^
+@@||local.adguard.org^
 !
 !
 !
