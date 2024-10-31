@@ -314,6 +314,7 @@
 ||*extmaps-api.yandex.net^
 ||*metrika.yandex.*^
 ||*offerwall.yandex.net^
+||push.yandex.ru^
 !
 !
 !
