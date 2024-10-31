@@ -292,8 +292,8 @@
 !
 ! -- Opera
 !
-||news-af.feednews.com^$dnsrewrite=REFUSED
-||api-a.oleads.com^$dnsrewrite=REFUSED
+||*feednews.com^$dnsrewrite=REFUSED
+||*oleads.com^$dnsrewrite=REFUSED
 ||sitesuggestion.opera-api2.com^$dnsrewrite=REFUSED
 ||oscore.operacdn.com^
 ||ws-oscore.opera-api2.com^
@@ -302,7 +302,7 @@
 ||pns-sdk.opera-api2.com^$dnsrewrite=REFUSED
 ||ofa-2-sub.osp.opera.software^$dnsrewrite=REFUSED
 ||mcp.opera-api2.com^$dnsrewrite=REFUSED
-||op.mykonf.com^$dnsrewrite=REFUSED
+||*mykonf.com^$dnsrewrite=REFUSED
 ||ofa-b-sub.osp.opera.software^
 ||*cdninstagram.com^
 !
@@ -334,6 +334,16 @@
 ||*vaterlines.com^$dnsrewrite=REFUSED
 !
 !
+!
+!
+! -- 
+!
+!
+!
+!
+!
+!
+@@||local.adguard.org^
 !
 !
 !
