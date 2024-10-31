@@ -240,6 +240,8 @@
 ||*rudderstack.com^ 
 ||aemetrics.aliexpress.ru^
 ||fourier.taobao.com^
+||*adlook.me^
+! *betweendigital.com^
 !
 !
 !

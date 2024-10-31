@@ -134,6 +134,8 @@
 ||*rudderstack.com^
 ||hh.ru/api/fl/logs/^$other
 ||*/generate_204^$domain=youtube.com
+||*adlook.me^
+! *betweendigital.com^
 !
 !
 !
