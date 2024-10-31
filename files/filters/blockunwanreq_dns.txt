@@ -2,7 +2,7 @@
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Version: 0.0.6-8-beta
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-10-30T17:04:20+00:00
+! TimeUpdated: 2024-10-31T18:27:20+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 29.10.2024 18:04 UTC
+! Last Modified: 31.10.2024 18:27 UTC
 !
 !
 ! Beta version
@@ -238,6 +238,8 @@
 ||*mediation.unity3d.com^
 ||alb.reddit.com^ 
 ||*rudderstack.com^ 
+||aemetrics.aliexpress.ru^
+||fourier.taobao.com^
 !
 !
 !
