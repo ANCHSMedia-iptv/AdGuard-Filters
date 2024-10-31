@@ -37,7 +37,6 @@
 ||*vk-analytics.ru^$important
 ||*instabug*^$important
 ||xray.mail.ru^
-||ad.mail.ru^$important
 ||*dbankcloud*^$important
 ||*rayjump.com^
 ||smi2.ru^
@@ -127,6 +126,7 @@
 ||*singular.net^
 ||alb.reddit.com^
 ||*rudderstack.com^ 
+||hh.ru/api/fl/logs/^$other
 !
 !
 !
@@ -207,6 +207,8 @@
 !
 !
 !
+!
+!
 ! Подключения к рекомендованным серверам (Minecraft BE)
 ! Connections to recommended servers (Minecraft BE)
 !
@@ -237,13 +239,14 @@
 !
 ||settings.kiwibrowser.com/search/getrecommendedsearch^$app=com.kiwibrowser.browser,removeparam,important
 ||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$script,important
+!
 ||news.google.com^$important
 ||*enjoyxstudy.com^$important
 !
 ! Opera
 !
-||news-af.feednews.com^$removeparam,important
-||api-a.oleads.com^$removeparam,important
+||*feednews.com^$removeparam,important
+||*oleads.com^$removeparam,important
 ||sitesuggestion.opera-api2.com^$important
 ||oscore.operacdn.com^$important
 ||ft-oscore.opera-api2.com^$important
@@ -252,7 +255,7 @@
 ||pns-sdk.opera-api2.com^$removeparam,important
 ||ofa-2-sub.osp.opera.software^$removeparam,important
 ||mcp.opera-api2.com^$removeparam,important
-||op.mykonf.com^$important,important
+||*mykonf.com^$important,important
 ||ofa-b-sub.osp.opera.software^$removeparam,important
 ||*cdninstagram.com^$removeparam,important
 !
@@ -314,7 +317,7 @@
 ||*extmaps-api.yandex.net^
 ||*metrika.yandex.*^
 ||*offerwall.yandex.net^
-||push.yandex.ru^
+||push.yandex.ru^$important
 !
 !
 !
@@ -331,7 +334,7 @@
 ||*ds.metric.gstatic.com^
 ||analytics.google.com^
 ||*doubleclick.net^$important
-||*googlesyndication.com^
+||*googlesyndication.com^$important
 ||adservice.google.com^
 ||s.youtube.com^ 
 !
