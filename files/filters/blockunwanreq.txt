@@ -50,8 +50,14 @@
 ||*inappstory.ru^$important
 ||*inappstory.com^$important
 ||*appsflyersdk.com^$important
-||facebook.com^$domain=~facebook.com
-||www.facebook.com^$domain=~facebook.com
+! facebook.com^$domain=~facebook.com
+! www.facebook.com^$domain=~facebook.com
+!
+! Закомментирован т.к. мешает загрузке самому сайту.
+!
+!
+!
+!
 ||*snapkit.com^$important
 ||*appsflyer.com^$important
 ||analytics.72.ru^
