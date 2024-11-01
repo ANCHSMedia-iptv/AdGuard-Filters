@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д.
-! Version: 0.0.7-8-beta
-! TimeUpdated: 2024-10-31T18:27:20+00:00
+! Version: 0.0.7-9-beta
+! TimeUpdated: 2024-11-1T18:50:20+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -136,6 +136,14 @@
 ||*/generate_204^$domain=youtube.com
 ||*adlook.me^
 ! *betweendigital.com^
+||*/api/advertising/*^$xhr,domain=hitfm.ru|montecarlo.ru
+||vk.com/js/api/openapi.js^$script,domain=~vk.com
+||*/cookiesync.js^$script
+||*/itunes_referals.js^$script
+||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script
+!
+||yastatic.net/s3/liza/_/promo-*.css^$css
+||yastatic.net/s3/liza/_/*ad-message.ogg^$media
 !
 !
 !
@@ -419,6 +427,8 @@
 !
 !
 ! ---
+!
+!
 !
 !
 !
