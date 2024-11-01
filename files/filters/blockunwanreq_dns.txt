@@ -154,7 +154,7 @@
 ||*scorecardresearch.com^
 ||*metricell.com^
 ||*bronze.systems^
-||graph.facebook.com^$dnsrewrite=REFUSED
+||graph.facebook.com^
 ||*optifyr.com^
 ||*gravatar.com^
 ||*amplreq.com^
