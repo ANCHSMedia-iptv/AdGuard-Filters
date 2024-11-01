@@ -206,7 +206,7 @@
 ||*choice.microsoft.com^
 ||*choice.microsoft.com.nsatc.net^
 ||corpext.msitadfs.glbdns2.microsoft.com^
-||*redir.metaservices.microsoft.com^
+||*metaservices.microsoft.com^
 ||*df.telemetry.microsoft.com^
 ||settings-sandbox.data.microsoft.com^
 ||sls.update.microsoft.com.akadns.net^
@@ -216,7 +216,6 @@
 ||*telemetry.appex.bing.net^
 ||*telemetry.urs.microsoft.com^
 ||vortex*.data.microsoft.com^
-||*metaservices.microsoft.com^
 ||*telemetry.appex.bing.net^
 ||*statsfe2.ws.microsoft.com^
 ||fp-afd-nocache-ccp.azureedge.net^
