@@ -133,6 +133,7 @@
 ||alb.reddit.com^
 ||*rudderstack.com^
 ||hh.ru/api/fl/logs/^$other
+||*cedexis.com^$important
 ||*/generate_204^$domain=youtube.com
 ||*adlook.me^
 ! *betweendigital.com^
@@ -141,9 +142,6 @@
 ||*/cookiesync.js^$script
 ||*/itunes_referals.js^$script
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script
-!
-||yastatic.net/s3/liza/_/promo-*.css^$css
-||yastatic.net/s3/liza/_/*ad-message.ogg^$media
 ||improving.duckduckgo.com^
 ||*hicloud*^$important
 !
@@ -257,7 +255,7 @@
 ! =Browser requests=
 !
 ||settings.kiwibrowser.com/search/getrecommendedsearch^$app=com.kiwibrowser.browser,removeparam,important
-||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$script,important
+||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_*.json^$script,important
 !
 ||news.google.com^$important
 ||*enjoyxstudy.com^$important
@@ -276,7 +274,7 @@
 ||mcp.opera-api2.com^$removeparam,important
 ||*mykonf.com^$important,important
 ||ofa-b-sub.osp.opera.software^$removeparam,important
-||*cdninstagram.com^$removeparam,important
+||*cdninstagram.com^$removeparam,important,domain=~instagram.com,app=com.opera.browser
 !
 !
 ! Other
@@ -337,6 +335,8 @@
 ||*metrika.yandex.*^
 ||*offerwall.yandex.net^
 ||push.yandex.ru^$important
+||yastatic.net/s*/liza/_/promo-*.css^$css
+||yastatic.net/s*/liza/_/*ad-message.ogg^$media
 !
 !
 !
