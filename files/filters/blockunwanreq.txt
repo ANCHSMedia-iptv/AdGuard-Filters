@@ -101,9 +101,9 @@
 ||avito.ru/web/1/adv/network/creative^$xhr
 ||avito.ru/dstatic/j/dfp/px.js^$script
 ||*advert*^$image
-||megamarket.ru/api/mobile/v1/analyticsDataService/webVitalsMetrics/send^$xhr
-||megamarket.ru/api/mobile/v1/analyticsDataService^$xhr
-||megamarket.ru/api/mobile/v1/promoContentService/promoContent/get^$xhr
+||megamarket.ru/api/mobile/v*/analyticsDataService/webVitalsMetrics/send^$xhr
+||megamarket.ru/api/mobile/v*/analyticsDataService^$xhr
+||megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr
 ||megamarket.ru/api/fl/idw-smm^$xhr
 ||*/firebase*.js^$script
 ||d3c8j8snkzfr1n.cloudfront.net^
@@ -112,10 +112,10 @@
 ||stats.habr.com^
 ||*analytics-toolbar*^
 ||*analytics.faregy.com^
-||finance.ozon.ru/api/v2/referralProgram_promoter_getPromoterInfo^$xhr
-||finance.ozon.ru/api/v2/loyalty_promotions_getConsistentPromotion^$xhr
-||finance.ozon.ru/api/v2/loyalty_promotions_getBanners^$xhr
-||finance.ozon.ru/api/v2/loyalty_stars_getPromotionStatus^$xhr
+||finance.ozon.ru/api/v*/referralProgram_promoter_getPromoterInfo^$xhr
+||finance.ozon.ru/api/v*/loyalty_promotions_getConsistentPromotion^$xhr
+||finance.ozon.ru/api/v*/loyalty_promotions_getBanners^$xhr
+||finance.ozon.ru/api/v*/loyalty_stars_getPromotionStatus^$xhr
 ||*pinterest.com/_/_/csp_report/^$xhr
 ||clck.dzen.ru^$important
 ||api.github.com/_private/browser/stats^$xhr
@@ -389,7 +389,6 @@
 ||*pangle.io^$important
 ||adashx4ae.ut.taobao.com^
 ||*iad-*.braze.com^$important
-! sdk.iad-*.braze.com^
 ||logs.unchecky.com^
 ||*infeng.site^
 ||*iad.appboy.com^$important
