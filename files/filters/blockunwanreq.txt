@@ -144,6 +144,8 @@
 !
 ||yastatic.net/s3/liza/_/promo-*.css^$css
 ||yastatic.net/s3/liza/_/*ad-message.ogg^$media
+||improving.duckduckgo.com^
+||*hicloud*^$important
 !
 !
 !
