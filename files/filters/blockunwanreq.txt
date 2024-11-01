@@ -217,7 +217,6 @@
 ||*telemetry.urs.microsoft.com^
 ||vortex*.data.microsoft.com^
 ||*telemetry.appex.bing.net^
-||*statsfe2.ws.microsoft.com^
 ||fp-afd-nocache-ccp.azureedge.net^
 !
 !
