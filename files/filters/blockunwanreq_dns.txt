@@ -244,6 +244,9 @@
 ! *betweendigital.com^
 ||stracker.rmg.ru^
 ! instreamatic.com^
+||improving.duckduckgo.com^
+||*hicloud*^
+!
 !
 !
 !
