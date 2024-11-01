@@ -244,6 +244,7 @@
 ! *betweendigital.com^
 ||stracker.rmg.ru^
 ! instreamatic.com^
+||*cedexis.com^$dnsrewrite=REFUSED
 ||improving.duckduckgo.com^
 ||*hicloud*^
 !
@@ -314,7 +315,7 @@
 ||mcp.opera-api2.com^$dnsrewrite=REFUSED
 ||*mykonf.com^$dnsrewrite=REFUSED
 ||ofa-b-sub.osp.opera.software^
-||*cdninstagram.com^
+||*cdninstagram.com^$domain=~instagram.com
 !
 ! -- Other
 !
