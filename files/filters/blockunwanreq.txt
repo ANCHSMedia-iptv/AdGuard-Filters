@@ -6,7 +6,7 @@
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
 !
-! Не только запросы к доменам, ну и скрипты, запросы типа XHR.
+! Не только запросы к доменам, ну и скрипты, запросы типа XHR и т.д...
 !
 !
 ! Beta version
