@@ -229,7 +229,7 @@
 ||*analytics.faregy.com^
 ! *iad-*.braze.com^
 ||clck.dzen.ru^
-||*unityads.unity3d.com^
+||*ads.unity3d.com^
 ||beacon.shazam.com^
 ||*tns-counter.ru^
 ||geo.geosurf.io^
