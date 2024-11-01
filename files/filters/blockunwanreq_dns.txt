@@ -221,6 +221,7 @@
 ||*ads-twitter.com^$dnsrewrite=REFUSED
 ||*ms.vk.com^
 ||*ad.*.xiaomi.com^
+||d3c8j8snkzfr1n.cloudfront.net^
 ||*bitrix.info^
 ||*metrika-informer.com^
 ||stats.habr.com^
