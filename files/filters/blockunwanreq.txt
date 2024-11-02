@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections
-! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д.
-! Version: 0.0.7-9-beta
+! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
+! Version: 0.0.8-CR
 ! TimeUpdated: 2024-11-1T18:50:20+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
@@ -9,7 +9,7 @@
 ! Не только запросы к доменам, ну и скрипты, запросы типа XHR и т.д...
 !
 !
-! Beta version
+! Candidate for Release version
 !
 ! Подойдёт для мобильных устройств и компьютеров.
 !
@@ -78,10 +78,6 @@
 ||stat-analytics.mediavitrina.ru^
 ||*pglstatp.com^$important
 ||stats.avito.ru^$important
-||trk.pinterest.com^$important
-||ads.pinterest.com^$important
-||log.pinterest.com^$important
-||analytics.pinterest.com^$important
 ||cdn-app.sberdevices.ru/misc/*/assets/ad-sdk/ad-category-recognition.js^$script,important
 ||stats.viqeo.tv^$important
 ||metrics.viqeo.tv^$important
@@ -92,34 +88,23 @@
 ||*btloader.com^$important
 ||*digitalcaramel.com^$important
 ||*ads-twitter.com^
-||*pinterest.com/_/_/trace/trace/^$xhr
-||*pinterest.com/_/_/storage_report/^$xhr
-||*pinterest.com/_/_/logClientError/^$xhr
-||*pinterest.com/_/graphql/^$xhr
 ||*bitrix.info^$important
 ||avito.ru/stat/radar*^$image
 ||avito.ru/web/1/adv/network/creative^$xhr
-||avito.ru/dstatic/j/dfp/px.js^$script
+! avito.ru/dstatic/j/dfp/px.js^$script
 ||*advert*^$image
-||megamarket.ru/api/mobile/v*/analyticsDataService/webVitalsMetrics/send^$xhr
-||megamarket.ru/api/mobile/v*/analyticsDataService^$xhr
-||megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr
-||megamarket.ru/api/fl/idw-smm^$xhr
 ||*/firebase*.js^$script
 ||d3c8j8snkzfr1n.cloudfront.net^
 ||*adskeeper.co.uk^
 ||*metrika-informer.com^$important
 ||stats.habr.com^
-||*analytics-toolbar*^
-||*analytics.faregy.com^
-||finance.ozon.ru/api/v*/referralProgram_promoter_getPromoterInfo^$xhr
-||finance.ozon.ru/api/v*/loyalty_promotions_getConsistentPromotion^$xhr
-||finance.ozon.ru/api/v*/loyalty_promotions_getBanners^$xhr
-||finance.ozon.ru/api/v*/loyalty_stars_getPromotionStatus^$xhr
-||*pinterest.com/_/_/csp_report/^$xhr
 ||clck.dzen.ru^$important
+!
+! GitHub Analytics
 ||api.github.com/_private/browser/stats^$xhr
 ||collector.github.com/github/collect^$xhr
+!
+!
 ||api.x.com/*/jot/error_log.json^$xhr
 ||api.x.com/*/jot/ces/p2^$xhr
 ||api.x.com/*/jot/client_event.json^$xhr
@@ -144,6 +129,95 @@
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script
 ||improving.duckduckgo.com^
 ||*hicloud*^$important
+||gstatic.com/cv/js/sender/v*/cast_sender.js^$script
+||gstatic.com/cast/sdk/libs/sender/*/cast_framework.js^$script
+||virustotal.com/ui/cookie_disclaimer^$xhr
+||virustotal.com/gui/_log-error^$xhr
+!
+||*/yandex.*^$image
+||*/liveinternet.*^$image
+||*/cycounter.*^$image
+!
+||*/liru.gif^$image
+||*/1px.*^$image,script
+||*/px.*^$image,script
+||*/blank.gif^$image,script
+!
+!
+!
+!
+!
+!
+!
+! == Analytics and other "garbage" from Megamarket. ==
+!
+||megamarket.ru/api/mobile/v*/analyticsDataService/*^$xhr
+||megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr
+||megamarket.ru/api/fl/idw-smm^$xhr
+||api.megamarket.tech/api/colibri/events/track^$xhr
+!
+! ===
+!
+!
+! == Analytics and other "garbage" from the Ozon Bank website (finance. ozon. ru). ==
+!
+||finance.ozon.ru/api/v*/referralProgram_promoter_getPromoterInfo^$xhr
+||finance.ozon.ru/api/v*/loyalty_promotions_getConsistentPromotion^$xhr
+||finance.ozon.ru/api/v*/loyalty_promotions_getBanners^$xhr
+||finance.ozon.ru/api/v*/loyalty_stars_getPromotionStatus^$xhr
+!
+! ===
+!
+!
+! == Analytics and other "garbage" from Pinterest. ==
+!
+||*pinterest.com/_/_/trace/trace/^$xhr
+||*pinterest.com/_/_/storage_report/^$xhr
+||*pinterest.com/_/_/logClientError/^$xhr
+||*pinterest.com/_/graphql/^$xhr
+||*pinterest.com/_/_/csp_report/^$xhr
+||trk.pinterest.com^$important
+||ads.pinterest.com^$important
+||log.pinterest.com^$important
+||analytics.pinterest.com^$important
+!
+! ===
+!
+!
+! == All the unnecessary “junk” from the Wildberries website. ==
+! Blocking ads, analytics and other “garbage”.
+!
+||a.wb.ru/e/*^$ping,domain=wildberries.ru
+||points.wb.ru/points-users-api/api/v*/w/promotion/available^$xhr,domain=wildberries.ru
+||static*.wbbasket.*/vol*/j/performanceAnalytics.*.js^$script,domain=wildberries.ru
+||wildberries.ru/webapi/stats/*^$xhr,domain=wildberries.ru
+||wildberries.ru/webapi/logging/*^$xhr,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/crm-bnrs/adsf/*.webp^$image,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/data/promotion-creatives.json.hash^$xhr,domain=wildberries.ru
+||static.wbstatic.net/j/performanceAnalytics.*.js^$script,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/crm-bnrs/bners*/*.webp^$image,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/data/banners-main-ru-v*.json^$script,domain=wildberries.ru
+||wildberries.ru/i/v*/apps/qr-apps.svg^$image,domain=wildberries.ru
+!
+! ===
+!
+!
+!
+! == All the unnecessary “junk” from the Ozon website. ==
+! Blocking ads, analytics and other “garbage”.
+!
+||ir.ozone.ru/s*/cms/*/*/qr-code_*.png^$image,domain=ozon.ru
+||st.ozone.ru/assets/*/detached/marketing/entry.*.js^$script,domain=ozon.ru
+||st.ozone.ru/s*/ozon-tag-manager/*/sdk.js^$script,domain=ozon.ru
+||ozon.ru/api/entrypoint-api.bx/page/json/v2*^$xhr,domain=ozon.ru
+||st.ozone.ru/assets/*/detached/rtb/marketing-desktop-adv-banner-v*.js^$script,domain=ozon.ru
+||st.ozone.ru/assets/*/common_molecules_adv-info_index_vue.*^$css,script,domain=ozon.ru
+||xapi.ozon.ru/api/logs-gateway/*^$xhr,domain=ozon.ru
+||st.ozone.ru/assets/*/detached/*/autosplit-teams_*_components*_adv-*.js^$script,domain=ozon.ru
+!
+!
+! ===
+!
 !
 !
 !
@@ -187,7 +261,7 @@
 !
 !
 !
-! ===Microsoft Analytics===
+! === Microsoft Analytics ===
 ! mobile.events.data.microsoft.com^$important
 ! self.events.data.microsoft.com^$important
 ! mobile.pipe.aria.microsoft.com^$important
@@ -197,7 +271,7 @@
 ||*pipe.aria.microsoft.com^$important
 ||*events.data.microsoft.com^$important
 !
-! For Windows
+! =For Windows=
 !
 ||query.prod.cms.rt.microsoft.com^
 ||inputsuggestions.msdxcdn.microsoft.com^
@@ -224,8 +298,8 @@
 ! ====
 !
 !
-! Подключения к рекомендованным серверам (Minecraft BE)
-! Connections to recommended servers (Minecraft BE)
+! == Подключения к рекомендованным серверам (Minecraft BE) ==
+! == Connections to recommended servers (Minecraft BE) ==
 !
 ||play.inpvp.net^
 ||mco.lbsg.net^
@@ -245,12 +319,12 @@
 ! Сохранил запросы т.к. могут всё равно идти запросы (со старых версий, к примеру, где Mineplex есть)
 ! I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)
 !
+! ==
 !
 !
 !
-!
-! =Браузерные запросы=
-! =Browser requests=
+! == Браузерные запросы ==
+! == Browser requests ==
 !
 ||settings.kiwibrowser.com/search/getrecommendedsearch^$app=com.kiwibrowser.browser,removeparam,important
 ||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_*.json^$script,important
@@ -258,7 +332,7 @@
 ||news.google.com^$important
 ||*enjoyxstudy.com^$important
 !
-! Opera
+! =Opera=
 !
 ||*feednews.com^$removeparam,important
 ||*oleads.com^$removeparam,important
@@ -275,9 +349,11 @@
 ||*cdninstagram.com^$removeparam,important,domain=~instagram.com,app=com.opera.browser
 !
 !
-! Other
+! =Other=
 !
 ||*sf-helper.com^$important
+||*analytics-toolbar*^
+||*analytics.faregy.com^
 !
 !
 !
@@ -285,7 +361,7 @@
 ! ===
 !
 !
-! Firebase
+! = Firebase =
 !
 ||firebaseinstallations.googleapis.com^$important
 ||firebaselogging.googleapis.com^
@@ -295,10 +371,10 @@
 ||firebaseremoteconfigrealtime.googleapis.com^
 ||firebase.googleapis.com^
 ||firebase.google.com^
+! ===
 !
 !
-!
-! Crashlytics + Firebase
+! == Crashlytics + Firebase ==
 !
 ||firebase-settings.crashlytics.com^$important
 ||reports.crahlytics.com^
@@ -307,10 +383,11 @@
 ||settings.crashlytics.com^
 ||firebase-settings.crashlytics.col^$important
 ||crashlytics*-pa.googleapis.com^$important
+! ===
 !
 !
 !
-! Yandex Analytics, Ads and other
+! == Yandex Analytics, Ads and other ==
 !
 ||banners*mobile.yandex.net^
 ||*appmetrica.yandex.net^$important
@@ -333,14 +410,24 @@
 ||*metrika.yandex.*^
 ||*offerwall.yandex.net^
 ||push.yandex.ru^$important
-||yastatic.net/s*/liza/_/promo-*.css^$css
-||yastatic.net/s*/liza/_/*ad-message.ogg^$media
+||yastatic.net/s*/liza/_/promo-*.css^$css,domain=mail.yandex.ru
+,domain=mail.yandex.ru||yastatic.net/s*/liza/_/*ad-message.ogg^$media
+||yastatic.net/s*/distribution/yanalytics/v*/*^$document,script
+||yastatic.net/s*/market-static/export-static/admon/frame.html^$document,domain=market.yandex.ru
+||yastatic.net/s*/psf/mail-liza-react-client/*.mail-liza.react-promo.ru-*.js^$script,domain=mail.yandex.ru
+||mail.yandex.ru/web-api/journal/v1*^$ping,domain=mail.yandex.ru
+!
+! =Cosmetic rules=
+market.yandex.ru###profitable_goods_tab-RecommendationRoll > div._1QNtS:nth-child(5)
+market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/recommendationRolls\/profitable_goods_tab\/content\/lazyGenerator\/initialContent\/recomLayoutItem_21\#58\:153_4 > div._3dfdb:first-child
+!
+!
+! ===
 !
 !
 !
 !
-!
-! Google
+! == Google ==
 !
 ||www.googleadservices.com^$important
 ||www.google-analytics.com^$important
@@ -355,7 +442,7 @@
 ||adservice.google.com^
 ||s.youtube.com^ 
 !
-!
+! ===
 !
 !
 !
@@ -383,7 +470,6 @@
 ||*ad.intl.xiaomi.com^$important
 ||*ms.vk.com^$important
 ||*app-measurement.com^$important
-||mc.yandex.ru^$important
 ||tnc*.byteoversea.com^$important
 ||tnc*.isnssdk.com^$important
 ||*pangle.io^$important
@@ -413,7 +499,7 @@
 !
 !
 !
-! Non-understandable addresses, but undesirable
+! - Non-understandable addresses, but undesirable -
 !
 ||*tobipovsem.com^$important
 ||*largestloitering.com^
