@@ -441,6 +441,7 @@
 ||yastatic.net/s*/market-static/export-static/admon/frame.html^$document,domain=market.yandex.ru
 ||yastatic.net/s*/psf/mail-liza-react-client/*.mail-liza.react-promo.*.js^$script,domain=mail.yandex.ru
 ||mail.yandex.ru/web-api/journal/v*^$ping,domain=mail.yandex.ru
+||media-adv.market.yandex.ru^
 !
 ! =Cosmetic rules=
 market.yandex.ru###profitable_goods_tab-RecommendationRoll > div._1QNtS:nth-child(5)
