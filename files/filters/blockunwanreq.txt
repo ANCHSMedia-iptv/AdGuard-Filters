@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.8-1-CR
+! Version: 0.0.8-3-CR
 ! TimeUpdated: 2024-11-2T18:50:20+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
@@ -132,8 +132,8 @@
 ||*hicloud*^$important
 ||gstatic.com/cv/js/sender/v*/cast_sender.js^$script
 ||gstatic.com/cast/sdk/libs/sender/*/cast_framework.js^$script
-||virustotal.com/ui/cookie_disclaimer^$xhr
-||virustotal.com/gui/_log-error^$xhr
+||virustotal.com/ui/cookie_disclaimer^$xhr,domain=virustotal.com
+||virustotal.com/gui/_log-error^$xhr,domain=virustotal.com
 !
 ||*/yandex.*^$image
 ||*/liveinternet.*^$image
@@ -143,6 +143,23 @@
 ||*/1px.*^$image,script
 ||*/px.*^$image,script
 ||*/blank.gif^$image,script
+||*4pda.to/s/*.gif^$image,domain=4pda.to
+||*/analytics.js^$script,important
+||ddlbots.com/cdn/shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,domain=ddlbots.com
+! *shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script
+||otlp-http-production.shopifysvc.com/v*/metrics^$xhr
+||*web-pixel-shopify-*-pixel*^$domain=ddlbots.com
+||*wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.min.js^$script
+||*/wp-content/plugins/*/assets/js/tracks.js*^$script
+||*ad.js^$script,important
+||*/empty.png^$image
+||store.bankiros.ru/js/metrics/*.js^$script.domain=store.bankiros.ru|bankiros.ru
+||*/firebase*.json^$script,xhr
+||*adhigh.net^
+||*rutarget.ru^
+||s.rbk.ru/*quote_static/quote-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru
+||trafffgen.rambler.ru^
+!
 !
 !
 !
@@ -197,10 +214,10 @@
 ||*basket*.wbbasket.ru/vol*/data/promotion-creatives.json.hash^$xhr,domain=wildberries.ru
 ||static.wbstatic.net/j/performanceAnalytics.*.js^$script,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/crm-bnrs/bners*/*.webp^$image,domain=wildberries.ru
-||*basket*.wbbasket.ru/vol*/data/banners-main-ru-v*.json^$script,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/data/banners-main-*.json^$script,domain=wildberries.ru
 ||*/i/v*/apps/qr-*.svg^$image,domain=wildberries.ru|global.wildberries.ru
 !
-||*basket*.wbbasket.ru/vol*/data/promo-panel-data-ru.json^$script,domain=global.wildberries.ru
+||*basket*.wbbasket.ru/vol*/data/promo-panel-data-*.json^$script,domain=global.wildberries.ru
 ||banners-website.wildberries.ru/public/v*/banners*^$xhr,domain=global.wildberries.ru
 !
 ! ===
@@ -419,7 +436,7 @@
 ||yastatic.net/s*/distribution/yanalytics/v*/*^$document,script
 ||yastatic.net/s*/market-static/export-static/admon/frame.html^$document,domain=market.yandex.ru
 ||yastatic.net/s*/psf/mail-liza-react-client/*.mail-liza.react-promo.ru-*.js^$script,domain=mail.yandex.ru
-||mail.yandex.ru/web-api/journal/v1*^$ping,domain=mail.yandex.ru
+||mail.yandex.ru/web-api/journal/v*^$ping,domain=mail.yandex.ru
 !
 ! =Cosmetic rules=
 market.yandex.ru###profitable_goods_tab-RecommendationRoll > div._1QNtS:nth-child(5)
