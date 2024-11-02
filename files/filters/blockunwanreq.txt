@@ -352,7 +352,7 @@
 ! == Browser requests ==
 !
 ||settings.kiwibrowser.com/search/getrecommendedsearch^$app=com.kiwibrowser.browser,removeparam,important
-||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_*.json^$script,important
+||*gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$important
 !
 ||news.google.com^$important
 ||*enjoyxstudy.com^$important
