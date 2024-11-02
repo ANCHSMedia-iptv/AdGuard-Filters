@@ -329,7 +329,7 @@
 !
 ! -- =Other=
 !
-||*sf-helper.com^$dnsrewrite=SERVFAIL
+||*sf-helper.com^
 ||*analytics-toolbar*^
 ||*analytics.faregy.com^
 !
