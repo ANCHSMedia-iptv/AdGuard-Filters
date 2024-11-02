@@ -122,7 +122,7 @@
 ||hh.ru/api/fl/logs/^$other
 ||*cedexis.com^$important
 ||*/generate_204^$domain=youtube.com
-||*adlook.me^
+||*adlook.me^$important
 ! *betweendigital.com^
 ||*/api/advertising/*^$xhr,domain=hitfm.ru|montecarlo.ru
 ||vk.com/js/api/openapi.js^$script,domain=~vk.com
@@ -157,8 +157,8 @@
 ||*/empty.*^$image
 ||store.bankiros.ru/js/metrics/*.js^$script.domain=store.bankiros.ru|bankiros.ru
 ||*/firebase*.json^$script,xhr
-||*adhigh.net^
-||*rutarget.ru^
+||*adhigh.net^$important
+||*rutarget.ru^$important
 ||s.rbk.ru/*quote_static/quote-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru
 ||trafffgen.rambler.ru^
 !
