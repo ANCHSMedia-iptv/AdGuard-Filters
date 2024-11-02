@@ -124,6 +124,7 @@
 ||*/generate_204^$domain=youtube.com
 ||*adlook.me^$important
 ! *betweendigital.com^
+! *instreamatic.com^
 ||*/api/advertising/*^$xhr,domain=hitfm.ru|montecarlo.ru
 ||vk.com/js/api/openapi.js^$script,domain=~vk.com
 ||*/cookiesync.js^$script
