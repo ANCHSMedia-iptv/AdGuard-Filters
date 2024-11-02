@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.8-CR
+! Version: 0.0.8-1-CR
 ! TimeUpdated: 2024-11-2T18:50:20+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
