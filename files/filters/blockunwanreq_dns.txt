@@ -67,6 +67,7 @@
 ||*metrika.yandex.*^
 ||*offerwall.yandex.net^
 ||abt.s*.yandex.net^
+||media-adv.market.yandex.ru^
 !
 ! ===
 !
