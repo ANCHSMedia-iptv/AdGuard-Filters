@@ -171,7 +171,7 @@
 ||*instabug*^
 ||xray.mail.ru^$dnsrewrite=REFUSED
 ||ad.mail.ru^$dnsrewrite=REFUSED
-||*dbankcloud*^
+||*dbankcloud*^$important
 ||*rayjump.com^
 ||smi2.ru^
 ||*umeng.com^
@@ -247,10 +247,10 @@
 ||*adlook.me^
 ! *betweendigital.com^
 ||stracker.rmg.ru^
-! instreamatic.com^
+! *instreamatic.com^
 ||*cedexis.com^$dnsrewrite=REFUSED
 ||improving.duckduckgo.com^
-||*hicloud*^
+||*hicloud*^$important
 ||*adspire.io^
 ||monorail-edge.shopifysvc.com^
 ||*adhigh.net^
