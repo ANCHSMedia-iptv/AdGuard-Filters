@@ -2,7 +2,7 @@
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Version: 0.0.7-CR
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-11-2T18:50:20+00:00
+! TimeUpdated: 2024-11-2T17:50:40+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 2.11.2024 18:50 UTC
+! Last Modified: 2.11.2024 17:50 UTC
 !
 !
 ! Candidate for Release version
@@ -21,7 +21,7 @@
 !
 !
 !
-! -- Firebase
+! -- == Firebase ==
 !
 ||firebaseinstallations.googleapis.com^
 ||firebaselogging.googleapis.com^
@@ -31,9 +31,9 @@
 ||firebaseremoteconfigrealtime.googleapis.com^
 ||firebase.googleapis.com^
 ||firebase.google.com^
+! ===
 !
-!
-! -- Crashlytics + Firebase
+! -- == Crashlytics + Firebase ==
 !
 ||firebase-settings.crashlytics.com^
 ||reports.crahlytics.com^
@@ -42,10 +42,10 @@
 ||settings.crashlytics.com^
 ||firebase-settings.crashlytics.col^
 ||crashlytics*-pa.googleapis.com^
+! ===
 !
 !
-!
-! -- Yandex Analytics, Ads and other
+! -- == Yandex Analytics, Ads and other ==
 !
 ||banners*mobile.yandex.net^
 ||*appmetrica.yandex.net^
@@ -67,13 +67,13 @@
 ||*metrika.yandex.*^
 ||*offerwall.yandex.net^
 !
+! ===
 !
 !
 !
 !
 !
-!
-! -- Подключения к рекомендованным серверам (Minecraft BE)
+! -- == Подключения к рекомендованным серверам (Minecraft BE) ==
 ! -- Connections to recommended servers (Minecraft BE)
 !
 !
@@ -96,9 +96,10 @@
 ! -- Сохранил запросы т.к. могут всё равно идти запросы (со старых версий к примеру где Mineplex есть)
 ! -- I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)
 !
+! ===
 !
 !
-! -- Microsoft Analytics
+! -- == Microsoft Analytics ==
 !
 ||*events.data.microsoft.com^
 ! self.events.data.microsoft.com^
@@ -106,7 +107,7 @@
 ! mobile.events.data.microsoft.com^
 ! self.pipe.aria.microsoft.com^
 !
-! For Windows
+! = For Windows =
 !
 ||query.prod.cms.rt.microsoft.com^
 ||inputsuggestions.msdxcdn.microsoft.com^
@@ -129,8 +130,11 @@
 ||fp-afd-nocache-ccp.azureedge.net^
 !
 !
+! ===
 !
-! -- Google
+!
+!
+! -- == Google ==
 !
 ||www.googleadservices.com^
 ||www.google-analytics.com
@@ -144,6 +148,8 @@
 ||*googlesyndication.com^
 ||adservice.google.com^
 ||s.youtube.com^ 
+!
+! ===
 !
 !
 !
@@ -292,14 +298,14 @@
 !
 !
 !
-! -- =Браузерные запросы=
-! -- =Browser requests=
+! -- ==Браузерные запросы ==
+! -- == Browser requests ==
 !
 ||news.google.com^$dnsrewrite=SERVFAIL
 ||*enjoyxstudy.com^$dnsrewrite=REFUSED
 !
 !
-! -- Opera
+! -- =Opera=
 !
 ||*feednews.com^$dnsrewrite=REFUSED
 ||*oleads.com^$dnsrewrite=REFUSED
@@ -315,7 +321,7 @@
 ||ofa-b-sub.osp.opera.software^
 ||*cdninstagram.com^$domain=~instagram.com
 !
-! -- Other
+! -- =Other=
 !
 ||*sf-helper.com^$dnsrewrite=SERVFAIL
 ||*analytics-toolbar*^

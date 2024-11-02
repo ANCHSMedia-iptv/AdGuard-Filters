@@ -50,6 +50,7 @@
 ||*inappstory.ru^$important
 ||*inappstory.com^$important
 ||*appsflyersdk.com^$important
+!
 ! facebook.com^$domain=~facebook.com
 ! www.facebook.com^$domain=~facebook.com
 !
@@ -149,7 +150,7 @@
 !
 !
 !
-! == Analytics and other "garbage" from Megamarket. ==
+! == Analytics and other "garbage" from Megamarket (megamarket .ru). ==
 !
 ||megamarket.ru/api/mobile/v*/analyticsDataService/*^$xhr
 ||megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr
@@ -169,7 +170,7 @@
 ! ===
 !
 !
-! == Analytics and other "garbage" from Pinterest. ==
+! == Analytics and other "garbage" from Pinterest (*. pinterest .com). ==
 !
 ||*pinterest.com/_/_/trace/trace/^$xhr
 ||*pinterest.com/_/_/storage_report/^$xhr
@@ -184,10 +185,10 @@
 ! ===
 !
 !
-! == All the unnecessary “junk” from the Wildberries website. ==
+! == All the unnecessary “junk” from the Wildberries website. (Russian and Global version) ==
 ! Blocking ads, analytics and other “garbage”.
 !
-||a.wb.ru/e/*^$ping,domain=wildberries.ru
+||a.wb.ru/e/*^$ping,domain=wildberries.ru|global.wildberries.ru
 ||points.wb.ru/points-users-api/api/v*/w/promotion/available^$xhr,domain=wildberries.ru
 ||static*.wbbasket.*/vol*/j/performanceAnalytics.*.js^$script,domain=wildberries.ru
 ||wildberries.ru/webapi/stats/*^$xhr,domain=wildberries.ru
@@ -197,7 +198,10 @@
 ||static.wbstatic.net/j/performanceAnalytics.*.js^$script,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/crm-bnrs/bners*/*.webp^$image,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/data/banners-main-ru-v*.json^$script,domain=wildberries.ru
-||wildberries.ru/i/v*/apps/qr-apps.svg^$image,domain=wildberries.ru
+||*/i/v*/apps/qr-*.svg^$image,domain=wildberries.ru|global.wildberries.ru
+!
+||*basket*.wbbasket.ru/vol*/data/promo-panel-data-ru.json^$script,domain=global.wildberries.ru
+||banners-website.wildberries.ru/public/v*/banners*^$xhr,domain=global.wildberries.ru
 !
 ! ===
 !
@@ -261,7 +265,7 @@
 !
 !
 !
-! === Microsoft Analytics ===
+! == Microsoft Analytics ==
 ! mobile.events.data.microsoft.com^$important
 ! self.events.data.microsoft.com^$important
 ! mobile.pipe.aria.microsoft.com^$important
@@ -295,7 +299,7 @@
 !
 !
 !
-! ====
+! ===
 !
 !
 ! == Подключения к рекомендованным серверам (Minecraft BE) ==
@@ -319,7 +323,7 @@
 ! Сохранил запросы т.к. могут всё равно идти запросы (со старых версий, к примеру, где Mineplex есть)
 ! I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)
 !
-! ==
+! ===
 !
 !
 !
@@ -361,7 +365,7 @@
 ! ===
 !
 !
-! = Firebase =
+! == Firebase ==
 !
 ||firebaseinstallations.googleapis.com^$important
 ||firebaselogging.googleapis.com^
@@ -499,7 +503,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 !
 !
 !
-! - Non-understandable addresses, but undesirable -
+! -- Non-understandable addresses, but undesirable -
 !
 ||*tobipovsem.com^$important
 ||*largestloitering.com^
