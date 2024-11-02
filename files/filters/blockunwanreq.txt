@@ -49,6 +49,7 @@
 ||connect.ok.ru^$important
 ||*inappstory.ru^$important
 ||*inappstory.com^$important
+! *inappstory.*^$important
 ||*appsflyersdk.com^$important
 !
 ! facebook.com^$domain=~facebook.com
@@ -91,7 +92,7 @@
 ||*ads-twitter.com^
 ||*bitrix.info^$important
 ||avito.ru/stat/radar*^$image
-||avito.ru/web/1/adv/network/creative^$xhr
+||avito.ru/web/*/adv/network/creative^$xhr
 ! avito.ru/dstatic/j/dfp/px.js^$script
 ||*advert*^$image
 ||*/firebase*.js^$script
@@ -149,6 +150,7 @@
 ! *shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script
 ||otlp-http-production.shopifysvc.com/v*/metrics^$xhr
 ||*web-pixel-shopify-*-pixel*^$domain=ddlbots.com
+! *web-pixel-shopify-*-pixel*^
 ||*wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.min.js^$script
 ||*/wp-content/plugins/*/assets/js/tracks.js*^$script
 ||*ad.js^$script,important
@@ -167,7 +169,7 @@
 !
 !
 !
-! == Analytics and other "garbage" from Megamarket (megamarket .ru). ==
+! == Analytics and other "garbage" from Megamarket (megamarket .ru, ex. Sbermegamarket). ==
 !
 ||megamarket.ru/api/mobile/v*/analyticsDataService/*^$xhr
 ||megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr
@@ -202,7 +204,7 @@
 ! ===
 !
 !
-! == All the unnecessary “junk” from the Wildberries website. (Russian and Global version) ==
+! == All the unnecessary “junk” from the Wildberries website (Russian and Global version). ==
 ! Blocking ads, analytics and other “garbage”.
 !
 ||a.wb.ru/e/*^$ping,domain=wildberries.ru|global.wildberries.ru
@@ -212,6 +214,7 @@
 ||wildberries.ru/webapi/logging/*^$xhr,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/crm-bnrs/adsf/*.webp^$image,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/data/promotion-creatives.json.hash^$xhr,domain=wildberries.ru
+! *basket*.wbbasket.ru/vol*/data/promotion-creatives.json^$script,domain=wildberries.ru
 ||static.wbstatic.net/j/performanceAnalytics.*.js^$script,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/crm-bnrs/bners*/*.webp^$image,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/data/banners-main-*.json^$script,domain=wildberries.ru
@@ -224,13 +227,13 @@
 !
 !
 !
-! == All the unnecessary “junk” from the Ozon website. ==
+! == All the unnecessary “junk” from the Ozon website (ozon .ru). ==
 ! Blocking ads, analytics and other “garbage”.
 !
 ||ir.ozone.ru/s*/cms/*/*/qr-code_*.png^$image,domain=ozon.ru
 ||st.ozone.ru/assets/*/detached/marketing/entry.*.js^$script,domain=ozon.ru
 ||st.ozone.ru/s*/ozon-tag-manager/*/sdk.js^$script,domain=ozon.ru
-||ozon.ru/api/entrypoint-api.bx/page/json/v2*^$xhr,domain=ozon.ru
+||ozon.ru/api/entrypoint-api.bx/page/json/v*^$xhr,domain=ozon.ru
 ||st.ozone.ru/assets/*/detached/rtb/marketing-desktop-adv-banner-v*.js^$script,domain=ozon.ru
 ||st.ozone.ru/assets/*/common_molecules_adv-info_index_vue.*^$css,script,domain=ozon.ru
 ||xapi.ozon.ru/api/logs-gateway/*^$xhr,domain=ozon.ru
@@ -337,8 +340,8 @@
 !
 !
 ! RIP Mineplex 26.01.2013-12.05.2023
-! Сохранил запросы т.к. могут всё равно идти запросы (со старых версий, к примеру, где Mineplex есть)
-! I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)
+! Сохранил запросы т.к. могут всё равно идти запросы (со старых версий, к примеру, где Mineplex есть)..
+! I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)..
 !
 ! ===
 !
@@ -367,7 +370,7 @@
 ||mcp.opera-api2.com^$removeparam,important
 ||*mykonf.com^$important,important
 ||ofa-b-sub.osp.opera.software^$removeparam,important
-||*cdninstagram.com^$removeparam,important,domain=~instagram.com,app=com.opera.browser
+||*cdninstagram.com^$important,domain=~instagram.com,app=com.opera.browser
 !
 !
 ! =Other=
@@ -432,10 +435,10 @@
 ||*offerwall.yandex.net^
 ||push.yandex.ru^$important
 ||yastatic.net/s*/liza/_/promo-*.css^$css,domain=mail.yandex.ru
-,domain=mail.yandex.ru||yastatic.net/s*/liza/_/*ad-message.ogg^$media
+||yastatic.net/s*/liza/_/*ad-message.ogg^$media,domain=mail.yandex.ru
 ||yastatic.net/s*/distribution/yanalytics/v*/*^$document,script
 ||yastatic.net/s*/market-static/export-static/admon/frame.html^$document,domain=market.yandex.ru
-||yastatic.net/s*/psf/mail-liza-react-client/*.mail-liza.react-promo.ru-*.js^$script,domain=mail.yandex.ru
+||yastatic.net/s*/psf/mail-liza-react-client/*.mail-liza.react-promo.*.js^$script,domain=mail.yandex.ru
 ||mail.yandex.ru/web-api/journal/v*^$ping,domain=mail.yandex.ru
 !
 ! =Cosmetic rules=
