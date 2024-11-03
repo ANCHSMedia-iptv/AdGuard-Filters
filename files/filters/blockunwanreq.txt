@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 0.0.8-6-CR
-! TimeUpdated: 2024-11-3T18:20:00+00:00
+! TimeUpdated: 2024-11-3T18:50:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -169,6 +169,7 @@
 ||russianfood.com/images/blg.png^$image,domain=russianfood.com
 @@||*assets.2gis.*/react.*ad.js^$script,domain=2gis.*
 @@||i0.wp.com/living.ai/wp-content/uploads/2024/08/2024082902-scaled.jpg*^$domain=living.ai
+||t.rbc.ru/v*/geoinfo/by-ip/^$xhr,domain=rbc.ru
 !
 !
 !
@@ -276,6 +277,7 @@ aliexpress.ru###__aer_root__ > div.MainLayout__root__79bpr.MainLayout__backgroun
 aliexpress.ru###__aer_root__ > div.MainLayout__root__79bpr.MainLayout__background-white__79bpr > div.snow-container_SnowContainer__container__rkv8lv:nth-child(7) > div.RedOrdersGrid_RedOrdersGrid__grid__um832:first-child > div.snow-ali-kit_RootGrid__container__18kmu5.RedOrdersGrid_RedOrdersGrid__container__um832 > div.RedOrdersGrid_RedOrdersGrid__rootGridInnerDiv__um832.snow-ali-kit_RootGrid__row__18kmu5.snow-ali-kit_RootGrid__align-flex-start__18kmu5 > div.snow-ali-kit_Col__col__1ccuye.snow-ali-kit_Col__align-self-flex-start__1ccuye.RedOrdersColumn_RedOrdersColumn__grid__987ze:last-child > div.snow-container_SnowContainer__container__rkv8lv > div.snow-container_SnowContainer__container__rkv8lv:last-child > div.CommonShelf_CommonShelf__profitShelf__1gmlo
 aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 russianfood.com###layout > div.layout > div.wrapper > table:nth-child(4) > tbody > tr:first-child > td.sub_left:first-child > div.sub_block:nth-child(4) > div:last-child
+t.rbc.ru##.footer__counter__image
 ! ===
 !
 !

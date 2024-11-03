@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.0.7-5-CR
+! Version: 0.0.7-6-CR
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-11-3T16:20:00+00:00
+! TimeUpdated: 2024-11-3T18:50:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -259,6 +259,7 @@
 ||rcmjs.rambler.ru^
 ||trafffgen.rambler.ru^
 ||*ddmanager.ru^
+||*.weborama.*^
 !
 !
 !
