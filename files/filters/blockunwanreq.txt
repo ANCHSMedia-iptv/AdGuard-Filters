@@ -474,7 +474,8 @@ t.rbc.ru##.footer__counter__image
 ||*offerwall.yandex.net^
 ||push.yandex.ru^$important
 ||yastatic.net/s*/liza/_/promo-*.css^$css,domain=mail.yandex.ru
-,domain=mail.yandex.ru||yastatic.net/s*/liza/_/*ad-message.ogg^$media
+,domain=mail.yandex.ru
+||yastatic.net/s*/liza/_/*ad-message.ogg^$media
 ||yastatic.net/s*/distribution/yanalytics/v*/*^$document,script
 ||yastatic.net/s*/market-static/export-static/admon/frame.html^$document,domain=market.yandex.ru
 ||yastatic.net/s*/psf/mail-liza-react-client/*.mail-liza.react-promo.*.js^$script,domain=mail.yandex.ru
