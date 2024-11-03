@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.8-3-CR
-! TimeUpdated: 2024-11-2T18:50:20+00:00
+! Version: 0.0.8-5-CR
+! TimeUpdated: 2024-11-3T16:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -45,8 +45,8 @@
 ||*cellrebel.com^$important
 ||*onesignal.com^$important
 ||cdn.viglink.com^$important
-||connect.facebook.net^$important
-||connect.ok.ru^$important
+||connect.facebook.net^$important,domain=~facebook.com
+||connect.ok.ru^$important,domain=~ok.ru
 ||*inappstory.ru^$important
 ||*inappstory.com^$important
 ! *inappstory.*^$important
@@ -92,7 +92,7 @@
 ||*ads-twitter.com^
 ||*bitrix.info^$important
 ||avito.ru/stat/radar*^$image
-||avito.ru/web/*/adv/network/creative^$xhr
+||avito.ru/web/1/adv/network/creative^$xhr
 ! avito.ru/dstatic/j/dfp/px.js^$script
 ||*advert*^$image
 ||*/firebase*.js^$script
@@ -122,9 +122,8 @@
 ||hh.ru/api/fl/logs/^$other
 ||*cedexis.com^$important
 ||*/generate_204^$domain=youtube.com
-||*adlook.me^$important
+||*adlook.me^
 ! *betweendigital.com^
-! *instreamatic.com^
 ||*/api/advertising/*^$xhr,domain=hitfm.ru|montecarlo.ru
 ||vk.com/js/api/openapi.js^$script,domain=~vk.com
 ||*/cookiesync.js^$script
@@ -158,10 +157,16 @@
 ||*/empty.*^$image
 ||store.bankiros.ru/js/metrics/*.js^$script.domain=store.bankiros.ru|bankiros.ru
 ||*/firebase*.json^$script,xhr
-||*adhigh.net^$important
-||*rutarget.ru^$important
+||*adhigh.net^
+||*rutarget.ru^
 ||s.rbk.ru/*quote_static/quote-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru
 ||trafffgen.rambler.ru^
+||st.aestatic.net/mixer/ssr/*/aer-assets/ext/ad-tracker.*.js^$script,domain=aliexpress.ru
+||img*.russianfood.com/images/common/main_menu_bg1.gif^$image,domain=russianfood.com
+||img*.russianfood.com/images/common/center_bg.gif^$image,domain=russianfood.com
+||img*.russianfood.com/images/common/bottom_line_bg.gif^$image,domain=russianfood.com
+||stat*.russianfood.com/tapi^$domain=russianfood.com
+||russianfood.com/images/blg.png^$image,domain=russianfood.com
 !
 !
 !
@@ -169,13 +174,20 @@
 !
 !
 !
-!
-! == Analytics and other "garbage" from Megamarket (megamarket .ru, ex. Sbermegamarket). ==
+! == Analytics and other "garbage" from Megamarket (megamarket .ru). ==
+! Blocking ads, analytics and other “garbage”.
 !
 ||megamarket.ru/api/mobile/v*/analyticsDataService/*^$xhr
 ||megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr
 ||megamarket.ru/api/fl/idw-smm^$xhr
 ||api.megamarket.tech/api/colibri/events/track^$xhr
+!
+! Rule for blocking banner ad images (new design)
+||main-cdn.sbermegamarket.ru/upload/mnt/*.jpg^$image,domain=megamarket.ru
+!
+||megamarket.ru/static/dist/images/cookies.*.webp^$image,domain=megamarket.ru
+||servicepipe.ru/static/*.js^$script,domain=megamarket.ru
+||ext.clickstream.sberbank.ru/metrics/*^$xhr,domain=megamarket.ru
 !
 ! ===
 !
@@ -186,6 +198,9 @@
 ||finance.ozon.ru/api/v*/loyalty_promotions_getConsistentPromotion^$xhr
 ||finance.ozon.ru/api/v*/loyalty_promotions_getBanners^$xhr
 ||finance.ozon.ru/api/v*/loyalty_stars_getPromotionStatus^$xhr
+||cdn*.ozone.ru/s*/ob-frontend/prod/release/all/static/assets/_app/immutable/assets/new-ozon-app-qr.*.svg^$image,domain=finance.ozon.ru
+||finance.ozon.ru/api/v*/performance^$xhr,ping,domain=finance.ozon.ru
+||finance.ozon.ru/api/v*/loyalty_promotions_getCurtain^$xhr
 !
 ! ===
 !
@@ -205,8 +220,9 @@
 ! ===
 !
 !
-! == All the unnecessary “junk” from the Wildberries website (Russian and Global version). ==
+! == All the unnecessary “junk” from the Wildberries website. (Russian and Global version) ==
 ! Blocking ads, analytics and other “garbage”.
+! There are rules on blocking scripts, requests, and picture ads on the homepage.
 !
 ||a.wb.ru/e/*^$ping,domain=wildberries.ru|global.wildberries.ru
 ||points.wb.ru/points-users-api/api/v*/w/promotion/available^$xhr,domain=wildberries.ru
@@ -218,18 +234,22 @@
 ! *basket*.wbbasket.ru/vol*/data/promotion-creatives.json^$script,domain=wildberries.ru
 ||static.wbstatic.net/j/performanceAnalytics.*.js^$script,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/crm-bnrs/bners*/*.webp^$image,domain=wildberries.ru
-||*basket*.wbbasket.ru/vol*/data/banners-main-*.json^$script,domain=wildberries.ru
-||*/i/v*/apps/qr-*.svg^$image,domain=wildberries.ru|global.wildberries.ru
+||*basket*.wbbasket.ru/vol*/data/banners-main-*-*.json^$script,xhr,domain=wildberries.ru
+||*/i/v*/apps/qr*.svg^$image,domain=wildberries.ru|global.wildberries.ru
+||banners-website.wildberries.ru/public/v*/banners*^$xhr,domain=wildberries.ru|global.wildberries.ru
 !
-||*basket*.wbbasket.ru/vol*/data/promo-panel-data-*.json^$script,domain=global.wildberries.ru
-||banners-website.wildberries.ru/public/v*/banners*^$xhr,domain=global.wildberries.ru
+||*basket*.wbbasket.ru/vol*/data/promo-panel-data-*.json^$script,xhr,domain=global.wildberries.ru
+||wbx-logs.wildberries.ru/api/v*/log^$xhr,domain=global.wildberries.ru
+!
+@@||*-basket-*.wbbasket.ru/vol*/site/j/spa/customTags/banners.*.js^$domain=wildberries.ru
 !
 ! ===
 !
 !
 !
-! == All the unnecessary “junk” from the Ozon website (ozon .ru). ==
+! == All the unnecessary “junk” from the Ozon website. ==
 ! Blocking ads, analytics and other “garbage”.
+! There are rules for blocking scripts, styles (CSS) and ad images, as well as personalized recommendations.
 !
 ||ir.ozone.ru/s*/cms/*/*/qr-code_*.png^$image,domain=ozon.ru
 ||st.ozone.ru/assets/*/detached/marketing/entry.*.js^$script,domain=ozon.ru
@@ -239,10 +259,22 @@
 ||st.ozone.ru/assets/*/common_molecules_adv-info_index_vue.*^$css,script,domain=ozon.ru
 ||xapi.ozon.ru/api/logs-gateway/*^$xhr,domain=ozon.ru
 ||st.ozone.ru/assets/*/detached/*/autosplit-teams_*_components*_adv-*.js^$script,domain=ozon.ru
-!
+! = Cosmetic rules =
+! Убран баннер с рекламой «Озон Рассрочки» на странице товара (в блоке с указанием цены и т.д.).
+! Removed the banner with «Ozon Installment» advertising on the product page (in the block with the price, etc.).
+ozon.ru###layoutPage > div.b6:first-child > div.container.c:nth-child(5) > div.lu0_27.ul3_27.ul5_27:last-child > div.nn0_27:last-child > div.n0n_27 > div.lu0_27.ul6_27.ul3_27.u3l_27 > div.lu0_27.ul6_27.ul3_27.lu4_27:first-child > div.vm7_27.v9m_27:last-child > div.mv9_27.vm9_27 > div.vm8_27:nth-child(2) > div > div.d4016-a.vl1_27:last-child > div.k4v_27 > div.vl0_27.a2016-a.a2016-a3
+! =
 !
 ! ===
 !
+!
+! === Cosmetic rules ===
+aliexpress.ru###__aer_root__ > div.MainLayout__root__79bpr.MainLayout__background-white__79bpr > div.snow-container_SnowContainer__container__rkv8lv:nth-child(7) > div.RedOrdersGrid_RedOrdersGrid__grid__um832:first-child > div.snow-ali-kit_RootGrid__container__18kmu5.RedOrdersGrid_RedOrdersGrid__container__um832 > div.RedOrdersGrid_RedOrdersGrid__rootGridInnerDiv__um832.snow-ali-kit_RootGrid__row__18kmu5.snow-ali-kit_RootGrid__align-flex-start__18kmu5 > div.snow-ali-kit_Col__col__1ccuye.snow-ali-kit_Col__align-self-flex-start__1ccuye.RedOrdersColumn_RedOrdersColumn__grid__987ze.RedOrdersColumn_RedOrdersColumn__emptyGridMobile__987ze:first-child > nav.SnowMenu_SnowMenu__wrapper__7qmnq > div.ModuleBanner_ModuleBanner__outer-wrapper__100x6:nth-child(2)
+aliexpress.ru###__aer_root__ > div.MainLayout__root__79bpr.MainLayout__background-white__79bpr > div.snow-container_SnowContainer__container__rkv8lv:nth-child(7) > div.RedOrdersGrid_RedOrdersGrid__grid__um832:first-child > div.snow-ali-kit_RootGrid__container__18kmu5.RedOrdersGrid_RedOrdersGrid__container__um832 > div.RedOrdersGrid_RedOrdersGrid__rootGridInnerDiv__um832.snow-ali-kit_RootGrid__row__18kmu5.snow-ali-kit_RootGrid__align-flex-start__18kmu5 > div.snow-ali-kit_Col__col__1ccuye.snow-ali-kit_Col__align-self-flex-start__1ccuye.RedOrdersColumn_RedOrdersColumn__grid__987ze:last-child > div.snow-container_SnowContainer__container__rkv8lv > div.snow-container_SnowContainer__container__rkv8lv:last-child
+aliexpress.ru###__aer_root__ > div.MainLayout__root__79bpr.MainLayout__background-white__79bpr > div.snow-container_SnowContainer__container__rkv8lv:nth-child(7) > div.RedOrdersGrid_RedOrdersGrid__grid__um832:first-child > div.snow-ali-kit_RootGrid__container__18kmu5.RedOrdersGrid_RedOrdersGrid__container__um832 > div.RedOrdersGrid_RedOrdersGrid__rootGridInnerDiv__um832.snow-ali-kit_RootGrid__row__18kmu5.snow-ali-kit_RootGrid__align-flex-start__18kmu5 > div.snow-ali-kit_Col__col__1ccuye.snow-ali-kit_Col__align-self-flex-start__1ccuye.RedOrdersColumn_RedOrdersColumn__grid__987ze:last-child > div.snow-container_SnowContainer__container__rkv8lv > div.snow-container_SnowContainer__container__rkv8lv:last-child > div.CommonShelf_CommonShelf__profitShelf__1gmlo
+aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
+russianfood.com###layout > div.layout > div.wrapper > table:nth-child(4) > tbody > tr:first-child > td.sub_left:first-child > div.sub_block:nth-child(4) > div:last-child
+! ===
 !
 !
 !
@@ -317,6 +349,7 @@
 ||vortex*.data.microsoft.com^
 ||*telemetry.appex.bing.net^
 ||fp-afd-nocache-ccp.azureedge.net^
+! =
 !
 !
 !
@@ -341,8 +374,8 @@
 !
 !
 ! RIP Mineplex 26.01.2013-12.05.2023
-! Сохранил запросы т.к. могут всё равно идти запросы (со старых версий, к примеру, где Mineplex есть)..
-! I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)..
+! Сохранил запросы т.к. могут всё равно идти запросы (со старых версий, к примеру, где Mineplex есть)
+! I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)
 !
 ! ===
 !
@@ -351,7 +384,7 @@
 ! == Браузерные запросы ==
 ! == Browser requests ==
 !
-||settings.kiwibrowser.com/search/getrecommendedsearch*^$important,app=com.kiwibrowser.browser
+||settings.kiwibrowser.com/search/getrecommendedsearch^$important,app=com.kiwibrowser.browser
 ||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$important
 !
 ||news.google.com^$important
@@ -371,7 +404,8 @@
 ||mcp.opera-api2.com^$removeparam,important
 ||*mykonf.com^$important,important
 ||ofa-b-sub.osp.opera.software^$removeparam,important
-||*cdninstagram.com^$important,domain=~instagram.com,app=com.opera.browser
+||*cdninstagram.com^$removeparam,important,domain=~instagram.com,app=com.opera.browser
+! =
 !
 !
 ! =Other=
@@ -379,6 +413,7 @@
 ||*sf-helper.com^$important
 ||*analytics-toolbar*^
 ||*analytics.faregy.com^
+! =
 !
 !
 !
@@ -436,16 +471,17 @@
 ||*offerwall.yandex.net^
 ||push.yandex.ru^$important
 ||yastatic.net/s*/liza/_/promo-*.css^$css,domain=mail.yandex.ru
-||yastatic.net/s*/liza/_/*ad-message.ogg^$media,domain=mail.yandex.ru
+,domain=mail.yandex.ru||yastatic.net/s*/liza/_/*ad-message.ogg^$media
 ||yastatic.net/s*/distribution/yanalytics/v*/*^$document,script
 ||yastatic.net/s*/market-static/export-static/admon/frame.html^$document,domain=market.yandex.ru
-||yastatic.net/s*/psf/mail-liza-react-client/*.mail-liza.react-promo.*.js^$script,domain=mail.yandex.ru
+||yastatic.net/s*/psf/mail-liza-react-client/*.mail-liza.react-promo.ru-*.js^$script,domain=mail.yandex.ru
 ||mail.yandex.ru/web-api/journal/v*^$ping,domain=mail.yandex.ru
 ||media-adv.market.yandex.ru^
 !
-! =Cosmetic rules=
+! = Cosmetic rules =
 market.yandex.ru###profitable_goods_tab-RecommendationRoll > div._1QNtS:nth-child(5)
 market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/recommendationRolls\/profitable_goods_tab\/content\/lazyGenerator\/initialContent\/recomLayoutItem_21\#58\:153_4 > div._3dfdb:first-child
+! =
 !
 !
 ! ===
@@ -545,6 +581,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 !
 !
 @@||local.adguard.org^
+!
 !
 !
 !

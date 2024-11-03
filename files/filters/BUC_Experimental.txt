@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections (Experimental)
-! Version: 20241102-3
-! Last Modified: 2.11.2024
+! Version: 20241103-1
+! Last Modified: 3.11.2024
 ! It is updated frequently because it contains experimental filtering rules.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Description: Блокировка нежелательных запросов - экспериментальные правила.
@@ -29,6 +29,7 @@
 !
 ||st.ozone.ru/assets/*/detached/search/search-tap-tags.js^$script,domain=ozon.ru
 ||ozon.ru/api/composer-api.bx/_action/v*/getSearchTapTags^$xhr,domain=ozon.ru
+||xapi.ozon.ru/dlte/multi^$ping,domain=ozon.ru|finance.ozon.ru
 !
 ! ===
 !
@@ -45,8 +46,22 @@
 !
 ||*alexametrics.com^
 !
+||cdn*.ozonusercontent.com/s*/sellerassets/*/*.jpeg^$image,domain=ozon.ru
+||ext.clickstream.sberbank.ru/metrics/*^$xhr,domain=megamarket.ru
 !
 !
+! == "Superfluous garbage" from the website (personal cabinet) of T-Bank (ex. Tinkoff). ==
+!
+||tbank.ru/api/front/supreme/log/*^$xhr,domain=tbank.ru
+||*tinkoff.ru/gateway/v*/event*^$ping,xhr,domain=tbank.ru
+||tbank.ru/api/front/supreme-beer/*^$xhr,domain=tbank.ru
+||tmsg.tbank.ru/api/v*/log^$ping,xhr,domain=tbank.ru
+||acdn.tinkoff.ru/resources?name=analytics_config^$xhr,domain=tbank.ru
+||*/tracking/mappings/test/active-mapping.json^$script,xhr,domain=tbank.ru
+||tbank.ru/api/cfg/web-gateway/getResponse^$xhr,domain=tbank.ru
+||cfg.tinkoff.ru/api-gateway/v*/getToggles^$xhr,domain=tbank.ru
+!
+! ===
 !
 !
 !

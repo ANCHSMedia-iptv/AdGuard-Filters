@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.0.7-3-CR
+! Version: 0.0.7-5-CR
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-11-2T17:50:40+00:00
+! TimeUpdated: 2024-11-3T16:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 2.11.2024 17:50 UTC
+! Last Modified: 3.11.2024 16:20 UTC
 !
 !
 ! Candidate for Release version
@@ -180,8 +180,8 @@
 ||*cellrebel.com^
 ||*onesignal.com^
 ||cdn.viglink.com^
-||connect.facebook.net^$dnsrewrite=REFUSED
-||connect.ok.ru^
+||connect.facebook.net^$dnsrewrite=REFUSED,domain=~facebook.com
+||connect.ok.ru^$domain=~ok.ru
 ||*inappstory.ru^$dnsrewrite=REFUSED
 ||*inappstory.com^$dnsrewrite=REFUSED
 ||*appsflyersdk.com^
@@ -258,6 +258,7 @@
 ||*rutarget.ru^
 ||rcmjs.rambler.ru^
 ||trafffgen.rambler.ru^
+||*ddmanager.ru^
 !
 !
 !
@@ -330,7 +331,7 @@
 !
 ! -- =Other=
 !
-||*sf-helper.com^
+||*sf-helper.com^$dnsrewrite=SERVFAIL
 ||*analytics-toolbar*^
 ||*analytics.faregy.com^
 !
