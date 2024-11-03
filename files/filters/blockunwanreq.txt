@@ -190,7 +190,6 @@
 !
 ||megamarket.ru/static/dist/images/cookies.*.webp^$image,domain=megamarket.ru
 ||servicepipe.ru/static/*.js^$script,domain=megamarket.ru
-||ext.clickstream.sberbank.ru/metrics/*^$xhr,domain=megamarket.ru
 !
 ! ===
 !
