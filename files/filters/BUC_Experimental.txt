@@ -47,7 +47,7 @@
 ||*alexametrics.com^
 !
 ||cdn*.ozonusercontent.com/s*/sellerassets/*/*.jpeg^$image,domain=ozon.ru
-||ext.clickstream.sberbank.ru/metrics/*^$xhr,domain=megamarket.ru
+||ext.clickstream.sberbank.ru/metrics/*^$xhr
 !
 !
 ! == "Superfluous garbage" from the website (personal cabinet) of T-Bank (ex. Tinkoff). ==
@@ -60,6 +60,14 @@
 ||*/tracking/mappings/test/active-mapping.json^$script,xhr,domain=tbank.ru
 ||tbank.ru/api/cfg/web-gateway/getResponse^$xhr,domain=tbank.ru
 ||cfg.tinkoff.ru/api-gateway/v*/getToggles^$xhr,domain=tbank.ru
+!
+! ===
+!
+! == 2gis ==
+!
+||2gis.*/public/promo/*.png^$image,domain=2gis.*
+||ams*-cdn.2gis.*/raws/*.svg^$image,domain=2gis.*
+||*assets.2gis.*/gdprCookieBanner.*.js^$script,domain=2gis.*
 !
 ! ===
 !
