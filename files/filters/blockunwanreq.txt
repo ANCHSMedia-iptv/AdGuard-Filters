@@ -188,7 +188,7 @@
 !
 ! Ломается сайт DeepL при применении правил блокировки к скриптам tracking-*.js, late-cookieBannerLax.*.js и стилю late-cookieBannerLax.*.css, которые приведены ниже и разрешены.
 ! The site DeepL crashes when applying blocking rules to the tracking-*.js, late-cookieBannerLax.*.js and late-cookieBannerLax.*.css scripts, which are listed below and allowed.
-@@||static.deepl.com/gatsby/tracing-*.js^$domain=deepl.com
+@@||static.deepl.com/gatsby/tracking-*.js^$domain=deepl.com
 @@||static.deepl.com/gatsby/*cookieBanner*.*^$domain=deepl.com
 !
 !
