@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections (Experimental)
-! Version: 20241103-1
-! Last Modified: 3.11.2024
+! Version: 20241104-2
+! Last Modified: 4.11.2024
 ! It is updated frequently because it contains experimental filtering rules.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Description: Блокировка нежелательных запросов - экспериментальные правила.
@@ -23,18 +23,24 @@
 !
 !
 !
-! == All the unnecessary “junk” from the Ozon website. ==
+! == Blocking unnecessary “garbage” from the Ozon website (ozon .ru). ==
+! == Блокировка ненужного «мусора» с сайта Озон (ozon .ru). ==
 ! Blocking ads, analytics and other “garbage”.
-!
+! Блокировка рекламы, аналитики и прочего «мусора».
 !
 ||st.ozone.ru/assets/*/detached/search/search-tap-tags.js^$script,domain=ozon.ru
 ||ozon.ru/api/composer-api.bx/_action/v*/getSearchTapTags^$xhr,domain=ozon.ru
+!
+! -The rule applies to Ozon and Ozon Bank's website. -
+! - Правило применимо к сайту Озона и Озон Банка. -
 ||xapi.ozon.ru/dlte/multi^$ping,domain=ozon.ru|finance.ozon.ru
+! -
 !
 ! ===
 !
 !
-! == ==
+! == Яндекс.Маркет ==
+! == Yandex.Market ==
 !
 ||market.yandex.ru/api/resolve/?r=src/resolvers/recommendationsLogs/*^$xhr,domain=market.yandex.ru
 ||yastatic.net/s*/market-static/white-desktop/light/*Recommen*.js^$script,domain=market.yandex.ru
@@ -46,11 +52,12 @@
 !
 ||*alexametrics.com^
 !
-||cdn*.ozonusercontent.com/s*/sellerassets/*/*.jpeg^$image,domain=ozon.ru
-||ext.clickstream.sberbank.ru/metrics/*^$xhr
+!
+!
 !
 !
 ! == "Superfluous garbage" from the website (personal cabinet) of T-Bank (ex. Tinkoff). ==
+! == «Лишний мусор» с сайта (личного кабинета) Т-Банка (ex. Тинькофф). ==
 !
 ||tbank.ru/api/front/supreme/log/*^$xhr,domain=tbank.ru
 ||*tinkoff.ru/gateway/v*/event*^$ping,xhr,domain=tbank.ru
@@ -70,6 +77,29 @@
 ||*assets.2gis.*/gdprCookieBanner.*.js^$script,domain=2gis.*
 !
 ! ===
+!
+! 
+! - Блокировка рекламного всплывающего окна при входе в личный кабинет Ozon Банка с помощью косметического правила. -
+finance.ozon.ru##div.paranja.svelte-uv8txi:last-child > div.wrapper.svelte-uv8txi
+! -
+!
+!
+!
+!
+!
+! == AliExpress ==
+!
+||st.aestatic.net/mixer/widgets/bx/RecommendationFeedV*/*/system/RecommendationFeedV*.*^$css,script,domain=aliexpress.ru
+||st.aestatic.net/mixer/widgets/bx/RedOrderRecommendationFeedModal/*/system/RedOrderRecommendationFeedModal.*^$css,script,domain=aliexpress.ru
+||st.aestatic.net/mixer/widgets/bx/RecommendationFeedOrderSimilarWrapper/*/system/RecommendationFeedOrderSimilarWrapper.js^$script,domain=aliexpress.ru
+||st.aestatic.net/mixer/ssr/*/aer-assets/tracker.*.js^$script,domain=aliexpress.ru
+||st.aestatic.net/mixer/ssr/*/aer-assets/reasons.*.js^$script,domain=aliexpress.ru
+!
+! ===
+!
+!
+!
+!
 !
 !
 !

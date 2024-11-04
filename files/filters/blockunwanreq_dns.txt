@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.0.7-6-CR
+! Version: 0.0.8-CR
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-11-3T18:50:00+00:00
+! TimeUpdated: 2024-11-4T16:35:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,18 +10,24 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 3.11.2024 16:20 UTC
+! Last Modified: 4.11.2024 16:35 UTC
+!
+!
+! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
+!
 !
 !
 ! Candidate for Release version
+! Версия: Кандидат на релиз
 !
 ! Подойдёт для мобильных устройств и компьютеров.
+! Suitable for mobile devices and computers.
 !
 !
 !
 !
 !
-! -- == Firebase ==
+! -- == Google Firebase ==
 !
 ||firebaseinstallations.googleapis.com^
 ||firebaselogging.googleapis.com^
@@ -33,7 +39,7 @@
 ||firebase.google.com^
 ! ===
 !
-! -- == Crashlytics + Firebase ==
+! -- == Google Crashlytics + Firebase ==
 !
 ||firebase-settings.crashlytics.com^
 ||reports.crahlytics.com^
@@ -46,28 +52,29 @@
 !
 !
 ! -- == Yandex Analytics, Ads and other ==
+! -- == Яндекс: Аналитика, реклама и прочее. ==
 !
 ||banners*mobile.yandex.net^
-||*appmetrica.yandex.net^
-||*appmetrica.yandex.ru^
+||*appmetrica.yandex.net^$important
+||*appmetrica.yandex.ru^$important
 ||bs.yandex.ru^
 ||direct.yandex.ru^
-||tracking.ott.yandex.net^
-||*adfox.ru^
-||startup.mobile.yandex.net^
-||startup-mobile.ap.yandex-net.ru^
-||*yandexadexchange.net^
-||*webvisor.com^
-||*appmetrica.yango.com^
-||adfstat.yandex.ru^
-||push.yandex.ru^
+||tracking.ott.yandex.net^$important
+||*adfox.ru^$important
+||startup.mobile.yandex.net^$important
+||startup-mobile.ap.yandex-net.ru^$important
+||*yandexadexchange.net^$important
+||*webvisor.com^$important
+||*appmetrica.yango.com^$important
+||adfstat.yandex.ru^$important
+||push.yandex.ru^$important
 @@||tc.mobile.yandex.net^
-||http-check-headers.yandex.ru^
+||http-check-headers.yandex.ru^$important
 ||*extmaps-api.yandex.net^
 ||*metrika.yandex.*^
 ||*offerwall.yandex.net^
-||abt.s*.yandex.net^
-||media-adv.market.yandex.ru^
+||abt.s*.yandex.net^$important
+||media-adv.market.yandex.ru^$important
 !
 ! ===
 !
@@ -76,7 +83,7 @@
 !
 !
 ! -- == Подключения к рекомендованным серверам (Minecraft BE) ==
-! -- Connections to recommended servers (Minecraft BE)
+! -- == Connections to recommended servers (Minecraft BE) ==
 !
 !
 ||play.inpvp.net^
@@ -95,13 +102,14 @@
 !
 !
 ! -- RIP Mineplex 26.01.2013-12.05.2023
-! -- Сохранил запросы т.к. могут всё равно идти запросы (со старых версий к примеру где Mineplex есть)
-! -- I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)
+! -- Сохранил запросы т.к. могут всё равно идти запросы (со старых версий к примеру где Mineplex есть)..
+! -- I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)..
 !
 ! ===
 !
 !
 ! -- == Microsoft Analytics ==
+! -- == Аналитика Microsoft (Майкрософт) ==
 !
 ||*events.data.microsoft.com^
 ! self.events.data.microsoft.com^
@@ -109,7 +117,8 @@
 ! mobile.events.data.microsoft.com^
 ! self.pipe.aria.microsoft.com^
 !
-! = For Windows =
+! -- = For Windows =
+! -- = Для Виндовс =
 !
 ||query.prod.cms.rt.microsoft.com^
 ||inputsuggestions.msdxcdn.microsoft.com^
@@ -137,19 +146,20 @@
 !
 !
 ! -- == Google ==
+! -- == Гугл ==
 !
-||www.googleadservices.com^
-||www.google-analytics.com
-||www.googletagmanager.com^
-||googletagmanager.com^
-||googleadservices.com^
-||google-analytics.com^
-||*ds.metric.gstatic.com^
-||analytics.google.com^
-||*doubleclick.net^
-||*googlesyndication.com^
-||adservice.google.com^
-||s.youtube.com^ 
+||www.googleadservices.com^$important
+||www.google-analytics.com^$important
+||www.googletagmanager.com^$important
+||googletagmanager.com^$important
+||googleadservices.com^$important
+||google-analytics.com^$important
+||*ds.metric.gstatic.com^$important
+||analytics.google.com^$important
+||*doubleclick.net^$important
+||*googlesyndication.com^$important
+||adservice.google.com^$important
+||s.youtube.com^ $important
 !
 ! ===
 !
@@ -158,23 +168,23 @@
 !
 !
 !
-||analytics.picsart.com^
-||*scorecardresearch.com^
-||*metricell.com^
-||*bronze.systems^
+||analytics.picsart.com^$important
+||*scorecardresearch.com^$important
+||*metricell.com^$important
+||*bronze.systems^$important
 ||graph.facebook.com^
 ||*optifyr.com^
 ||*gravatar.com^
 ||*amplreq.com^
-||*bugsnag.com^
-||*bugsnag*^
-||*vk-analytics.ru^
-||*instabug*^
+||*bugsnag.com^$important
+||*bugsnag*^$important
+||*vk-analytics.ru^$important
+||*instabug*^$important
 ||xray.mail.ru^$dnsrewrite=REFUSED
 ||ad.mail.ru^$dnsrewrite=REFUSED
 ||*dbankcloud*^$important
 ||*rayjump.com^
-||smi2.ru^
+||smi2.ru^$important
 ||*umeng.com^
 ||api.bing.com^
 ||*cellrebel.com^
@@ -189,7 +199,7 @@
 ||www.facebook.com^$dnsrewrite=REFUSED,domain=~facebook.com
 ||*snapkit.com^
 ||*appsflyer.com^
-||analytics.72.ru^
+||analytics.72.ru^$important
 ||syndication.twitter.com^$dnsrewrite=REFUSED
 ||*rexpush.pro^$dnsrewrite=REFUSED
 ||*peiynu.com^$dnsrewrite=REFUSED
@@ -200,66 +210,66 @@
 ||*gtrxlnd2.com^$dnsrewrite=REFUSED
 ||*uxfeedback*^$dnsrewrite=REFUSED
 ||*tiqcdn.com^
-||*analytics.tele2.ru^
-||*adjust*^
-||app.adjust.com^
+||*analytics.tele2.ru^$important
+||*adjust*^$important
+||app.adjust.com^$important
 ||*cdn.bcebos.com^
-||rutrk.org^
+||rutrk.org^$important
 ||*pglstatp.com^$dnsrewrite=REFUSED
 ||stat-analytics.mediavitrina.ru^
-||stats.avito.ru^
-||trk.pinterest.com^
-||ads.pinterest.com^
-||log.pinterest.com^
+||stats.avito.ru^$important
+||trk.pinterest.com^$important
+||ads.pinterest.com^$important
+||log.pinterest.com^$important
 ||analytics.pinterest.com^
-||*skcrtxr.com^
-||*terratraf.com^
-||top-fwz1.mail.ru^
-||stats.viqeo.tv^
-||metrics.viqeo.tv^
-||*adtech.com^
-||*statad.ru^
-||*mixpanel.com^
-||mixpanel.cdn.viber.com^
-||d3c8j8snkzfr1n.cloudfront.net^
-||*btloader.com^
-||*adskeeper.co.uk^
-||*digitalcaramel.com^
+||*skcrtxr.com^$important
+||*terratraf.com^$important
+||top-fwz1.mail.ru^$important
+||stats.viqeo.tv^$important
+||metrics.viqeo.tv^$important
+||*adtech.com^$important
+||*statad.ru^$important
+||*mixpanel.com^$important
+||mixpanel.cdn.viber.com^$important
+||d3c8j8snkzfr1n.cloudfront.net^$important
+||*btloader.com^$important
+||*adskeeper.co.uk^$important
+||*digitalcaramel.com^$important$important
 ||*ads-twitter.com^$dnsrewrite=REFUSED
-||*ms.vk.com^
-||*ad.*.xiaomi.com^
+||*ms.vk.com^$important
+||*ad.*.xiaomi.com^$important
 ||d3c8j8snkzfr1n.cloudfront.net^
-||*bitrix.info^
-||*metrika-informer.com^
-||stats.habr.com^
+||*bitrix.info^$important
+||*metrika-informer.com^$important
+||stats.habr.com^$important
 ! *iad-*.braze.com^
-||clck.dzen.ru^
-||*ads.unity3d.com^
-||beacon.shazam.com^
-||*tns-counter.ru^
-||geo.geosurf.io^
-||*relap.io^
-||*singular.net^
-||*mediation.unity3d.com^
-||alb.reddit.com^ 
-||*rudderstack.com^ 
+||clck.dzen.ru^$important
+||*ads.unity3d.com^$important
+||beacon.shazam.com^$important
+||*tns-counter.ru^$important
+||geo.geosurf.io^$important
+||*relap.io^$important
+||*singular.net^$important
+||*mediation.unity3d.com^$important
+||alb.reddit.com^ $important
+||*rudderstack.com^ $important
 ||aemetrics.aliexpress.ru^
 ||fourier.taobao.com^
-||*adlook.me^
+||*adlook.me^$important
 ! *betweendigital.com^
-||stracker.rmg.ru^
+||stracker.rmg.ru^$important
 ! *instreamatic.com^
 ||*cedexis.com^$dnsrewrite=REFUSED
-||improving.duckduckgo.com^
+||improving.duckduckgo.com^$important
 ||*hicloud*^$important
-||*adspire.io^
-||monorail-edge.shopifysvc.com^
-||*adhigh.net^
-||*rutarget.ru^
-||rcmjs.rambler.ru^
-||trafffgen.rambler.ru^
-||*ddmanager.ru^
-||*.weborama.*^
+||*adspire.io^$important
+||monorail-edge.shopifysvc.com^$important
+||*adhigh.net^$important
+||*rutarget.ru^$important
+||rcmjs.rambler.ru^$important
+||trafffgen.rambler.ru^$important
+||*ddmanager.ru^$important
+||*.weborama.*^$important
 !
 !
 !
@@ -332,7 +342,7 @@
 !
 ! -- =Other=
 !
-||*sf-helper.com^$dnsrewrite=SERVFAIL
+||*sf-helper.com^
 ||*analytics-toolbar*^
 ||*analytics.faregy.com^
 !
@@ -370,6 +380,7 @@
 !
 !
 @@||local.adguard.org^
+@@||injections.adguard.org^
 !
 !
 !
