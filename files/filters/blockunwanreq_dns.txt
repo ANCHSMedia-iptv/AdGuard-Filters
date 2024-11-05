@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.0.8-2-CR
+! Version: 0.0.8-5-CR
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-11-5T11:52:40+00:00
+! TimeUpdated: 2024-11-05T18:44:40+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 5.11.2024 11:52 UTC
+! Last Modified: 05.11.2024 18:44 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -54,11 +54,11 @@
 ! -- == Yandex Analytics, Ads and other ==
 ! -- == Яндекс: Аналитика, реклама и прочее. ==
 !
-||banners*mobile.yandex.net^
+||banners*mobile.yandex.net^$important
 ||*appmetrica.yandex.net^$important
 ||*appmetrica.yandex.ru^$important
-||bs.yandex.ru^
-||direct.yandex.ru^
+||bs.yandex.ru^$important
+||direct.yandex.ru^$important
 ||tracking.ott.yandex.net^$important
 ||*adfox.ru^$important
 ||startup.mobile.yandex.net^$important
@@ -70,9 +70,9 @@
 ||push.yandex.ru^$important
 @@||tc.mobile.yandex.net^
 ||http-check-headers.yandex.ru^$important
-||*extmaps-api.yandex.net^
-||*metrika.yandex.*^
-||*offerwall.yandex.net^
+||*extmaps-api.yandex.net^$important
+||*metrika.yandex.*^$important
+||*offerwall.yandex.net^$important
 ||abt.s*.yandex.net^$important
 ||media-adv.market.yandex.ru^$important
 !
@@ -186,9 +186,10 @@
 ||*dbankcloud*^$important
 ||*rayjump.com^
 ||smi2.ru^$important
-||*umeng.com^
+||*24smi.net^$important
+||*umeng.com^$important
 ||api.bing.com^
-||*cellrebel.com^
+||*cellrebel.com^$important
 ||*onesignal.com^
 ||cdn.viglink.com^
 ||connect.facebook.net^$dnsrewrite=REFUSED,domain=~facebook.com
@@ -251,15 +252,15 @@
 ||*relap.io^$important
 ||*singular.net^$important
 ||*mediation.unity3d.com^$important
-||alb.reddit.com^ $important
-||*rudderstack.com^ $important
+||alb.reddit.com^$important
+||*rudderstack.com^$important
 ||aemetrics.aliexpress.ru^
 ||fourier.taobao.com^
 ||*adlook.me^$important
-! *betweendigital.com^
+||*betweendigital.com^$important
 ||stracker.rmg.ru^$important
 ! *instreamatic.com^
-||*cedexis.com^$dnsrewrite=REFUSED
+||*cedexis.com^$dnsrewrite=REFUSED,important
 ||improving.duckduckgo.com^$important
 ||*hicloud*^$important
 ||*adspire.io^$important
@@ -276,6 +277,20 @@
 ||*quantserve.com^$important
 ||*pub.network^$important
 ||*maxmind.com^$important
+||eventstream.dodopizza.com^$important
+||*cnt.my^$important
+||*top100.ru^$important
+||*acint.net^$important
+||a.ria.ru^$important
+||*infox.sg^$important
+||*digitaltarget.ru^$important
+||*push4site.com^$important
+||*criteo.net^$important
+||*begun.ru^$important
+||sync.rambler.ru^$important
+||image.sendsay.ru^$important
+! *sendsay.ru^$important
+||*lentainform.com^$important
 !
 !
 !

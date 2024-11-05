@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections (Experimental)
-! Version: 20241105
-! Last Modified: 5.11.2024
+! Version: 20241105-2
+! Last Modified: 05.11.2024
 ! It is updated frequently because it contains experimental filtering rules.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Description: Блокировка нежелательных запросов - экспериментальные правила.
@@ -31,10 +31,6 @@
 ||st.ozone.ru/assets/*/detached/search/search-tap-tags.js^$script,domain=ozon.ru
 ||ozon.ru/api/composer-api.bx/_action/v*/getSearchTapTags^$xhr,domain=ozon.ru
 !
-! -The rule applies to Ozon and Ozon Bank's website. -
-! - Правило применимо к сайту Озона и Озон Банка. -
-||xapi.ozon.ru/dlte/multi^$ping,domain=ozon.ru|finance.ozon.ru
-! -
 !
 ! ===
 !
@@ -88,45 +84,6 @@ finance.ozon.ru##div.paranja.svelte-uv8txi:last-child > div.wrapper.svelte-uv8tx
 !
 !
 !
-! == AliExpress ==
-!
-||st.aestatic.net/mixer/widgets/bx/RecommendationFeedV*/*/system/RecommendationFeedV*.*^$css,script,domain=aliexpress.ru
-||st.aestatic.net/mixer/widgets/bx/RedOrderRecommendationFeedModal/*/system/RedOrderRecommendationFeedModal.*^$css,script,domain=aliexpress.ru
-||st.aestatic.net/mixer/widgets/bx/RecommendationFeedOrderSimilarWrapper/*/system/RecommendationFeedOrderSimilarWrapper.js^$script,domain=aliexpress.ru
-||st.aestatic.net/mixer/ssr/*/aer-assets/tracker.*.js^$script,domain=aliexpress.ru
-||st.aestatic.net/mixer/ssr/*/aer-assets/reasons.*.js^$script,domain=aliexpress.ru
-!
-! ===
-!
-!
-! == Otzovik website ==
-!
-! Правило блокировки рекламных картинок на главной странице (несмотря на блокировку блоков с рекламой другими фильтрами)..
-! Но одна есть прям на главной странице - реклама Альфа банка, которая находится прямо в блоке Промоакции.. 
-||*otzovik.com/services/20*/*/*.*^$image,domain=otzovik.com
-!
-! - Косметические правила -
-! Есть вариант заблокировать сам блок косметическом правилом..
-! otzovik.com###content > div.home-grid:last-child > div.content-left:first-child > div.topblock.promo.home-box:nth-child(2)
-! -
-!
-! ===
-!
-!
-! == Irecommend website ==
-!
-||*-irec.r-*.com/collect^$xhr,domain=irecommend.ru
-||irecommend.ru/ss_t/collect^$xhr,domain=irecommend.ru
-!
-! Блокировка скрипта, отвечающего за рекламу (несмотря на блокировку URL адресов рекламы другими фильтрами).
-||irecommend.ru/injector/reklamko.js^$script,domain=irecommend.ru
-!
-! Блокировка скрипта, отвечающего за аналитику Яндекс Метрики (несмотря на блокировку URL адресов другими фильтрами).
-||irecommend.ru/injector/metrika-config.js^$script,domain=irecommend.ru
-!
-||irecommend.ru/injector/gpu.js^$script,domain=irecommend.ru
-!
-! ===
 !
 !
 !
@@ -138,6 +95,32 @@ finance.ozon.ru##div.paranja.svelte-uv8txi:last-child > div.wrapper.svelte-uv8tx
 !
 !
 !
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! 
 !
 !
 !

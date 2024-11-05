@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.9-2-CR
-! TimeUpdated: 2024-11-15Е11:52:40+00:00
+! Version: 0.0.9-5-CR
+! TimeUpdated: 2024-11-05T18:44:40+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -42,8 +42,9 @@
 ||*instabug*^$important
 ||xray.mail.ru^
 ||*dbankcloud*^$important
-||*rayjump.com^
-||smi2.ru^
+||*rayjump.com^$important
+||smi2.ru^$important
+||*24smi.net^$important
 ||*umeng.com^$important
 ||api.bing.com^
 ||*cellrebel.com^$important
@@ -122,12 +123,12 @@
 ||www.tiktok.com/embed.js^$script,important,domain=~tiktok.com
 ||*singular.net^$important
 ||alb.reddit.com^
-||*rudderstack.com^
+||*rudderstack.com^$important
 ||hh.ru/api/fl/logs/^$other,important
 ||*cedexis.com^$important
 ||*/generate_204^$domain=youtube.com
 ||*adlook.me^$important
-! *betweendigital.com^$important
+||*betweendigital.com^$important
 ||*/api/advertising/*^$xhr,domain=hitfm.ru|montecarlo.ru
 ||vk.com/js/api/openapi.js^$script,domain=~vk.com
 ||*/cookiesync.js^$script
@@ -145,42 +146,39 @@
 ||*/cycounter.*^$image
 !
 ||*/liru.gif^$image
-||*/1px.*^$image,script
-||*/px.*^$image,script
+||*/1px.*^$image,script,xhr
+||*/px.*^$image,script,xhr
 ||*/blank.*^$image,script
 ||*/analytics.js^$script,important
-||ddlbots.com/cdn/shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,domain=ddlbots.com
-! *shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script
-||otlp-http-production.shopifysvc.com/v*/metrics^$xhr
-||*web-pixel-shopify-*-pixel*^$domain=ddlbots.com
-! *web-pixel-shopify-*-pixel*^
-||*wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.min.js^$script
-||*/wp-content/plugins/*/assets/js/tracks.js*^$script
+! */analytics.*^$script,important
+||ddlbots.com/cdn/shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,domain=ddlbots.com,important
+! *shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
+||otlp-http-production.shopifysvc.com/v*/metrics^$xhr,important
+||*web-pixel-shopify-*-pixel*^$domain=ddlbots.com,important
+! *web-pixel-shopify-*-pixel*^$important
+||*wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.min.js^$script,important
+||*/wp-content/plugins/*/assets/js/tracks.js*^$script,important
 ||*/ad.js^$script,important
-||*/empty.*^$image
-||store.bankiros.ru/js/metrics/*.js^script,domain=store.bankiros.ru|bankiros.ru
+||*/empty.*^$image,important
+||store.bankiros.ru/js/metrics/*.js^script,domain=bankiros.ru,important
 ||*adhigh.net^
 ||*rutarget.ru^
-||s.rbk.ru/*quote_static/quote-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru
+||s.rbk.ru/*quote_static/quote-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru,important
 ||trafffgen.rambler.ru^
-@@||st.aestatic.net/mixer/ssr/*/aer-assets/ext/ad-tracker.*.js^$domain=aliexpress.ru
-@@||st.aestatic.net/mixer/ssr/*/aer-assets/ext/tracking.*.js^$domain=aliexpress.ru
-@@||st.aestatic.net/mixer/ssr/*/aer-assets/ext/local-tracking.*.js$domain=aliexpress.ru
-||gotovim-doma.ru/img/*/*.gif^$image,domain=gotovim-doma.ru
+||gotovim-doma.ru/img/*/*.gif^$image,domain=gotovim-doma.ru,important
 ||img*.russianfood.com/images/common/main_menu_bg1.gif^$image,domain=russianfood.com
 ||img*.russianfood.com/images/common/center_bg.gif^$image,domain=russianfood.com
 ||img*.russianfood.com/images/common/bottom_line_bg.gif^$image,domain=russianfood.com
-||stat*.russianfood.com/tapi^$domain=russianfood.com
-||russianfood.com/images/blg.png^$image,domain=russianfood.com
+||stat*.russianfood.com/tapi^$domain=russianfood.com,important
+||russianfood.com/images/blg.png^$image,domain=russianfood.com,important
 @@||*assets.2gis.*/react.*ad.js^$script,domain=2gis.*
 @@||i0.wp.com/living.ai/wp-content/uploads/2024/08/2024082902-scaled.jpg*^$domain=living.ai
 ||t.rbc.ru/v*/geoinfo/by-ip/^$xhr,domain=rbc.ru
 ||ext.clickstream.sberbank.ru/metrics/*^$xhr,important
 ||servicepipe.ru/static/*.js^$script
 ||player.twitch.tv/js/embed/v*.js^$script,domain=~twitch.tv,important
-||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com
-||cdn.gamestatic.net/files/pictures/promo_banner_*.png^$image,domain=rbkgames.com
-! pochta.ru/sentry/api/*/envelope/*^$ping,domain=pochta.ru,important
+||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com,important
+||cdn.gamestatic.net/files/pictures/promo_banner_*.png^$image,domain=rbkgames.com,important
 ||pochta.ru/api/tracking/api/v*/trackings/*^$xhr,domain=pochta.ru,important
 ||passport.pochta.ru/pc/ext/v*/session/state*^$domain=pochta.ru,important
 ||*alicdn.com/AWSC/et/*/et_f.js^$script,important
@@ -196,24 +194,58 @@
 !
 !
 !
-||*.103.*/css/cookiesNotification.css^$css,domain=mag.103.*
-||*.103.*/js/cookiesNotificationBy.js^$script,domain=mag.103.*
+||*.103.*/css/cookiesNotification.css^$css,important,domain=mag.103.*
+||*.103.*/js/cookiesNotificationBy.js^$script,important,domain=mag.103.*
 ||d31j93rd8oukbv.cloudfront.net^$important
-||*site-chat.me/support/support.int.js*^$script
-||gemotest.ru/local/templates/main/img/chat.svg^$image,domain=gemotest.ru
+||*site-chat.me/support/support.int.js*^$script,important
+! gemotest.ru/local/templates/main/img/chat.svg^$image,domain=gemotest.ru
 ||probolezny.ru/api/v*/fingerprint^$xhr,domain=probolezny.ru,important
-||invitro.ru/edna/assets/multibutton.js?*^$script,domain=invitro.ru
+||invitro.ru/edna/assets/multibutton.js*^$script,domain=invitro.ru
 ||invitro.ru/local/templates/invitro_main/webrtc/*/*.js^$script,domain=invitro.ru
 ||invitro.ru/*.gif^$image,domain=invitro.ru,important
 ||burp/favicon.ico^$image,important
 ||zap/favicon.ico^$image,important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
-||widget.7medica.ru/*.*^$script,xhr
+||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,important
+||widget.7medica.ru/*.*^$script,xhr,important
 ||*/api/*/envelope/*^$ping,xhr,important
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||*maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com
 ||mediafiredls.com/adsupply/*^$xhr,domain=mediafire.com,important
+||publicapi.dodois.io/ru/api/v*/financialmetrics^$xhr,domain=dodopizza.ru,important
+||papajohns.ru/assets/empty.*.jpg^$image,domain=papajohns.ru,important
+||supportai.yandex/widget/v*/bundle.js^$script,important
+||id.rambler.ru/rambler-id-helper/auth_events.js^$script
+||cdnn*.img.ria.ru/min/js/analytics/ab_title_scroll_event.js*^$script,domain=ria.ru,important
+||cdnn*.img.ria.ru/min/js/libs/ria.get.banners.js*^$script,domain=ria.ru
+||cdnn*.img.ria.ru/min/js/libs/notifications.js*^$script,domain=ria.ru
+||*/adv.gif^$image,important
+! */adv.*^$image,important
+||ura.news/widgets/banner_loader/loader.php*^$xhr,domain=ura.news,important
+||telegram.org/js/telegram-widget.js*^$script,domain=~telegram.org
+||vk.com/dist/web/ads_light.*.js^$script,important
+||s.ura.news/js/dist/ccc.bundle.js*^$script,domain=ura.news,important
+||s.ura.news/js/dist/aaa.bundle.js*^$script,domain=ura.news,important
+||cdn.iz.ru/profiles/portal/themes/purple/js/redesigntargets.js^$script,domain=iz.ru,important
+||cdn.iz.ru/profiles/portal/modules/ticker/template/index/image/bg.jpg^$image,domain=iz.ru,important
+||cdn.iz.ru/profiles/portal/modules/recommendation/template/index/js/script.js*^$script,domain=iz.ru,important
+||cdn.iz.ru/profiles/portal/themes/purple/js/statistics/custom_criteo2.js*^$script,domain=iz.ru,important
+||static.gazeta.ru/nm2021/js/others_scripts_*.js^$script,domain=gazeta.ru,important
+||sync.rambler.ru^$important
+! comments.rambler.ru/ws/*^$websocket
+||s*.stc.yc.kpcdn.net/share/i/beige/*.gif^$image,important
+||s*.stc.yc.kpcdn.net/s*/*/adaptive/img/banner.gif*^$xhr,important
+! *sendsay.ru^$important
+||*lentainform.com^
+||*/1x1.*^$image,xhr,script,important
+||smotrim.ru/js/media-scope.js^$script,important
+||cdn-st*.rtr-vesti.ru/mh_files/*/imho.js^$script,domain=vesti.ru,important
+||vesti.ru/i/bg.png*^$image,domain=vesti.ru,important
+||vesti.ru/i/preloader.gif*^$image,domain=vesti.ru,important
+||life.ru/_next/static/chunks/2793.3fd7e7f2a78da9d92688.js^$script,domain=life.ru,important
+!
+!
 !
 !
 !
@@ -250,7 +282,6 @@
 !
 !
 !
-!
 ! == Analytics and other "garbage" from the Megamarket website (megamarket .ru) (ex. Sbermegamerket). ==
 ! == Аналитика и прочий «мусор» с сайта Мегамаркета (megamarket .ru) (ex. Сбермегамаркет). ==
 ! Blocking ads, analytics and other “garbage”.
@@ -268,6 +299,7 @@
 ||megamarket.ru/static/dist/images/cookies.*.webp^$image,domain=megamarket.ru
 !
 ! ===
+!
 !
 !
 ! == Analytics and other "garbage" from the Ozon Bank website (finance. ozon. ru). ==
@@ -289,6 +321,7 @@
 ! ===
 !
 !
+!
 ! == Analytics and other "garbage" from the Pinterest website (*. pinterest .com). ==
 ! == Аналитика и прочий «мусор» с сайта Пинтерест (*. pinterest .com). ==
 ! Blocking ads, analytics and other “garbage”.
@@ -305,6 +338,7 @@
 ||analytics.pinterest.com^$important
 !
 ! ===
+!
 !
 !
 ! == Blocking unnecessary “garbage” from the Wildberries website (Russian and Global version). ==
@@ -351,7 +385,7 @@
 ! Blocking ads, analytics and other “garbage”.
 ! Блокировка рекламы, аналитики и прочего «мусора».
 ! Rules for blocking scripts, styles (CSS) and ad images are present, as well as personalized recommendations.
-! Присутствуют правила блокировки скриптов, стилей (CSS) и рекламных изображений, а также персонализированные рекомендации.
+! Присутствуют правила блокировки скриптов, стилей (CSS) и рекламных изображений, а также персонализированных рекомендаций.
 !
 ||ir.ozone.ru/s*/cms/*/*/qr-code_*.png^$image,domain=ozon.ru
 ||st.ozone.ru/assets/*/detached/marketing/entry.*.js^$script,domain=ozon.ru
@@ -362,6 +396,12 @@
 ||xapi.ozon.ru/api/logs-gateway/*^$xhr,domain=ozon.ru
 ||st.ozone.ru/assets/*/detached/*/autosplit-teams_*_components*_adv-*.js^$script,domain=ozon.ru
 ||cdn*.ozonusercontent.com/s*/sellerassets/*/*.jpeg^$image,domain=ozon.ru
+!
+! -The rule applies to Ozon and Ozon Bank's website. -
+! - Правило применимо к сайту Озона и Озон Банка. -
+||xapi.ozon.ru/dlte/multi^$ping,domain=ozon.ru|finance.ozon.ru
+! -
+!
 ! = Cosmetic rules =
 ! Убран баннер с рекламой «Озон Рассрочки» на странице товара (в блоке с указанием цены и т.д.).
 ! Removed the banner with «Ozon Installment» advertising on the product page (in the block with the price, etc.).
@@ -374,11 +414,73 @@ ozon.ru###layoutPage > div.b6:first-child > div.container.c:nth-child(5) > div.l
 !
 !
 !
-! === Cosmetic rules ===
-! === Косметические правила ===
+! == Blocking unnecessary “garbage” from the Irecommend website (irecommend .ru). ==
+! == Блокировка ненужного «мусора» с сайта Irecommend (irecommend .ru). ==
+! Blocking analytics and other “garbage”.
+! Блокировка аналитики и прочего «мусора».
+!
+||*-irec.r-*.com/collect^$xhr,domain=irecommend.ru
+||irecommend.ru/ss_t/collect^$xhr,domain=irecommend.ru
+!
+! Блокировка скрипта, отвечающего за рекламу (несмотря на блокировку URL адресов рекламы другими фильтрами).
+||irecommend.ru/injector/reklamko.js^$script,domain=irecommend.ru
+!
+! Блокировка скрипта, отвечающего за аналитику Яндекс Метрики (несмотря на блокировку URL адресов другими фильтрами).
+||irecommend.ru/injector/metrika-config.js^$script,domain=irecommend.ru
+!
+||irecommend.ru/injector/gpu.js^$script,domain=irecommend.ru
+!
+! ===
+!
+!
+!
+! == Otzovik website (otzovik .com) ==
+!
+! Правило блокировки рекламных картинок на главной странице (несмотря на блокировку блоков с рекламой другими фильтрами)..
+! Но одна есть прям на главной странице - реклама Альфа банка, которая находится прямо в блоке Промоакции.. 
+||*otzovik.com/services/20*/*/*.*^$image,domain=otzovik.com
+!
+! - Косметические правила -
+! Есть вариант заблокировать сам блок косметическом правилом..
+! otzovik.com###content > div.home-grid:last-child > div.content-left:first-child > div.topblock.promo.home-box:nth-child(2)
+! -
+!
+! ===
+!
+!
+!
+! == AliExpress (aliexpress .ru) ==
+!
+!
+||st.aestatic.net/mixer/ssr/*/aer-assets/tracker.*.js^$script,domain=aliexpress.ru
+||st.aestatic.net/mixer/ssr/*/aer-assets/reasons.*.js^$script,domain=aliexpress.ru
+||st.aestatic.net/mixer/widgets/bx/RecommendationFeedV*/*/system/RecommendationFeedV*.*^$css,script,domain=aliexpress.ru
+||st.aestatic.net/mixer/widgets/bx/RedOrderRecommendationFeedModal/*/system/RedOrderRecommendationFeedModal.*^$css,script,domain=aliexpress.ru
+||st.aestatic.net/mixer/widgets/bx/RecommendationFeedOrderSimilarWrapper/*/system/RecommendationFeedOrderSimilarWrapper.js^$script,domain=aliexpress.ru
+!
+! = Cosmetic rules =
 aliexpress.ru##div.ModuleBanner_ModuleBanner__outer-wrapper__100x6
 ! aliexpress.ru###__aer_root__ > div.MainLayout__root__79bpr.MainLayout__background-white__79bpr > div.snow-container_SnowContainer__container__rkv8lv:nth-child(7) > div.RedOrdersGrid_RedOrdersGrid__grid__um832:first-child > div.snow-ali-kit_RootGrid__container__18kmu5.RedOrdersGrid_RedOrdersGrid__container__um832 > div.RedOrdersGrid_RedOrdersGrid__rootGridInnerDiv__um832.snow-ali-kit_RootGrid__row__18kmu5.snow-ali-kit_RootGrid__align-flex-start__18kmu5 > div.snow-ali-kit_Col__col__1ccuye.snow-ali-kit_Col__align-self-flex-start__1ccuye.RedOrdersColumn_RedOrdersColumn__grid__987ze:last-child > div.snow-container_SnowContainer__container__rkv8lv > div.snow-container_SnowContainer__container__rkv8lv:last-child
 aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
+! =
+! -
+@@||st.aestatic.net/mixer/ssr/*/aer-assets/ext/ad-tracker.*.js^$domain=aliexpress.ru
+@@||st.aestatic.net/mixer/ssr/*/aer-assets/ext/tracking.*.js^$domain=aliexpress.ru
+@@||st.aestatic.net/mixer/ssr/*/aer-assets/ext/local-tracking.*.js$domain=aliexpress.ru
+! -
+! ===
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! === Cosmetic rules ===
+! === Косметические правила ===
 russianfood.com###layout > div.layout > div.wrapper > table:nth-child(4) > tbody > tr:first-child > td.sub_left:first-child > div.sub_block:nth-child(4) > div:last-child
 t.rbc.ru##.footer__counter__image
 webproverka.com##table:first-child > tbody > tr:last-child > td > p > table:last-child > tbody > tr:nth-child(2) > td > table > tbody > tr > td:first-child
@@ -394,7 +496,23 @@ rbkgames.com##.quick-bar
 mag.103.by##.cookiesNotificationBy
 gemotest.ru##div.content-inner:nth-child(6) > main.content-section.content-wrapper_info-article:nth-child(5) > div.container__flex:first-child > aside.sidebar.mobile--hidden:last-child > div.sidebar-inner.sticky--widget:last-child > a.sidebar__widget.telegram-widget:first-child
 ##a[href^="https://www.1c-bitrix.ru/composite/"]
+!
+! Баннер насчёт cookie файлов
+rostics.ru##div._3l3oK3nIbnZ
+! Рекламные баннеры-слайдеры
+rostics.ru##div._16TFR6yWKNl
+!
+gazeta.ru##div.b_telegram_subscriber
+! gazeta.ru##div._s_banner_fullscreen
+! gazeta.ru##div._s_banner_billboard
+! gazeta.ru##div.ad_branding_footer
+! gazeta.ru##div._s_banner_show_up
+md.kp.media##div.sc-1a8tb7h-0
+##a[href^="//www.liveinternet.ru/click"]
+!
 ! ===
+!
+!
 !
 !
 !
@@ -574,12 +692,12 @@ gemotest.ru##div.content-inner:nth-child(6) > main.content-section.content-wrapp
 ! == Yandex: Analytics, Ads and other ==
 ! == Яндекс: Аналитика, реклама и прочее. ==
 !
-||banners*mobile.yandex.net^
+||banners*mobile.yandex.net^$important
 ||*appmetrica.yandex.net^$important
 ||*appmetrica.yandex.ru^
-||bs.yandex.ru^
-||direct.yandex.ru^
-||tracking.ott.yandex.net^
+||bs.yandex.ru^$important
+||direct.yandex.ru^$important
+||tracking.ott.yandex.net^$important
 ||*adfox*^$important
 ||startup.mobile.yandex.net^$important
 ||startup-mobile.ap.yandex-net.ru^$important
@@ -589,11 +707,11 @@ gemotest.ru##div.content-inner:nth-child(6) > main.content-section.content-wrapp
 ||adfstat.yandex.ru^$important
 ||push.yandex.ru/v*/subscribe/*^$websocket,important
 @@||tc.mobile.yandex.net^
-||http-check-headers.yandex.ru^$xhr
+||http-check-headers.yandex.ru^$xhr,important
 ||yandex.ru/messenger/api/*^$xhr,important
-||*extmaps-api.yandex.net^
-||*metrika.yandex.*^
-||*offerwall.yandex.net^
+||*extmaps-api.yandex.net^$important
+||*metrika.yandex.*^$important
+||*offerwall.yandex.net^$important
 ||push.yandex.ru^$important
 ||yastatic.net/s*/liza/_/promo-*.css^$css,domain=mail.yandex.ru
 ||yastatic.net/s*/liza/_/*ad-message.ogg^$media,domain=mail.yandex.ru
@@ -601,8 +719,8 @@ gemotest.ru##div.content-inner:nth-child(6) > main.content-section.content-wrapp
 ||yastatic.net/s*/market-static/export-static/admon/frame.html^$document,domain=market.yandex.ru
 ||yastatic.net/s*/psf/mail-liza-react-client/*.mail-liza.react-promo.*.js^$script,domain=mail.yandex.ru
 ||mail.yandex.ru/web-api/journal/v*^$ping,domain=mail.yandex.ru
-||media-adv.market.yandex.ru^
-@@||yandex.ru/clck/click^$domain=mail.yandex.ru
+||media-adv.market.yandex.ru^$important
+! @@||yandex.ru/clck/click^$domain=mail.yandex.ru
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -676,7 +794,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*mediation.unity3d.com^$important
 ||mc.yandex.*^$important
 ||an.yandex.*^$important
-||analytics.mobile.yandex.net^
+||analytics.mobile.yandex.net^$important
 ||*footprintdns.com^
 ||aemetrics.aliexpress.ru^$important
 !
