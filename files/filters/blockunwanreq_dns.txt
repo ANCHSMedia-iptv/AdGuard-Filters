@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.0.8-1-CR
+! Version: 0.0.8-2-CR
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! TimeUpdated: 2024-11-5T11:52:40+00:00
 ! Expires: 48 hours (updated almost every day)
@@ -159,7 +159,7 @@
 ||*doubleclick.net^$important
 ||*googlesyndication.com^$important
 ||adservice.google.com^$important
-||s.youtube.com^ $important
+||s.youtube.com^$important
 !
 ! ===
 !
@@ -175,7 +175,8 @@
 ||graph.facebook.com^
 ||*optifyr.com^
 ||*gravatar.com^
-||*amplreq.com^
+||*amplreq.com^$important
+||*amplitude.com^$important
 ||*bugsnag.com^$important
 ||*bugsnag*^$important
 ||*vk-analytics.ru^$important
@@ -272,6 +273,9 @@
 ||d31j93rd8oukbv.cloudfront.net^$important
 ||mod.calltouch.ru^$important
 ||tracking.diginetica.net^$important
+||*quantserve.com^$important
+||*pub.network^$important
+||*maxmind.com^$important
 !
 !
 !
@@ -363,13 +367,14 @@
 !
 ! -- Non-understandable addresses, but undesirable
 !
-||*tobipovsem.com^$dnsrewrite=REFUSED
-||*largestloitering.com^$dnsrewrite=REFUSED
-||f1e4fcff2b.27640ea29d.com^$dnsrewrite=REFUSED
-||d157c90939.1b384556ae.com^$dnsrewrite=REFUSED
-||*vesmaveselo*^$dnsrewrite=REFUSED
-||*myroledance.com^$dnsrewrite=REFUSED
+||*tobipovsem.com^$important,dnsrewrite=REFUSED
+||*largestloitering.com^important,$dnsrewrite=REFUSED
+||f1e4fcff2b.27640ea29d.com^important,$dnsrewrite=REFUSED
+||d157c90939.1b384556ae.com^important,$dnsrewrite=REFUSED
+||*vesmaveselo*^$important,dnsrewrite=REFUSED
+||*myroledance.com^$important,dnsrewrite=REFUSED
 ||*vaterlines.com^$dnsrewrite=REFUSED
+||*otnolatrnup.com^$important
 !
 !
 !

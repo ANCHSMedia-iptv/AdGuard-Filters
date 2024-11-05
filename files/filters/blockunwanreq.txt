@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.9-CR
+! Version: 0.0.9-2-CR
 ! TimeUpdated: 2024-11-15Е11:52:40+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
@@ -35,6 +35,7 @@
 ||*optifyr.com^$important
 ||*gravatar.com^$important
 ||*amplreq.com^$important
+||*amplitude.com^$important
 ||*bugsnag.com^$important
 ||*bugsnag*^$important
 ||*vk-analytics.ru^$important
@@ -179,10 +180,11 @@
 ||player.twitch.tv/js/embed/v*.js^$script,domain=~twitch.tv,important
 ||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com
 ||cdn.gamestatic.net/files/pictures/promo_banner_*.png^$image,domain=rbkgames.com
-||pochta.ru/sentry/api/*/envelope/*^$ping,domain=pochta.ru,important
+! pochta.ru/sentry/api/*/envelope/*^$ping,domain=pochta.ru,important
 ||pochta.ru/api/tracking/api/v*/trackings/*^$xhr,domain=pochta.ru,important
 ||passport.pochta.ru/pc/ext/v*/session/state*^$domain=pochta.ru,important
 ||*alicdn.com/AWSC/et/*/et_f.js^$script,important
+!
 !
 !
 ! -
@@ -207,6 +209,11 @@
 ||zap/favicon.ico^$image,important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||widget.7medica.ru/*.*^$script,xhr
+||*/api/*/envelope/*^$ping,xhr,important
+||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
+||*maxmind.com^$important
+||mediafire.com/blank.html^$domain=mediafire.com
+||mediafiredls.com/adsupply/*^$xhr,domain=mediafire.com,important
 !
 !
 !
@@ -369,9 +376,8 @@ ozon.ru###layoutPage > div.b6:first-child > div.container.c:nth-child(5) > div.l
 !
 ! === Cosmetic rules ===
 ! === Косметические правила ===
-aliexpress.ru###__aer_root__ > div.MainLayout__root__79bpr.MainLayout__background-white__79bpr > div.snow-container_SnowContainer__container__rkv8lv:nth-child(7) > div.RedOrdersGrid_RedOrdersGrid__grid__um832:first-child > div.snow-ali-kit_RootGrid__container__18kmu5.RedOrdersGrid_RedOrdersGrid__container__um832 > div.RedOrdersGrid_RedOrdersGrid__rootGridInnerDiv__um832.snow-ali-kit_RootGrid__row__18kmu5.snow-ali-kit_RootGrid__align-flex-start__18kmu5 > div.snow-ali-kit_Col__col__1ccuye.snow-ali-kit_Col__align-self-flex-start__1ccuye.RedOrdersColumn_RedOrdersColumn__grid__987ze.RedOrdersColumn_RedOrdersColumn__emptyGridMobile__987ze:first-child > nav.SnowMenu_SnowMenu__wrapper__7qmnq > div.ModuleBanner_ModuleBanner__outer-wrapper__100x6:nth-child(2)
-aliexpress.ru###__aer_root__ > div.MainLayout__root__79bpr.MainLayout__background-white__79bpr > div.snow-container_SnowContainer__container__rkv8lv:nth-child(7) > div.RedOrdersGrid_RedOrdersGrid__grid__um832:first-child > div.snow-ali-kit_RootGrid__container__18kmu5.RedOrdersGrid_RedOrdersGrid__container__um832 > div.RedOrdersGrid_RedOrdersGrid__rootGridInnerDiv__um832.snow-ali-kit_RootGrid__row__18kmu5.snow-ali-kit_RootGrid__align-flex-start__18kmu5 > div.snow-ali-kit_Col__col__1ccuye.snow-ali-kit_Col__align-self-flex-start__1ccuye.RedOrdersColumn_RedOrdersColumn__grid__987ze:last-child > div.snow-container_SnowContainer__container__rkv8lv > div.snow-container_SnowContainer__container__rkv8lv:last-child
-aliexpress.ru###__aer_root__ > div.MainLayout__root__79bpr.MainLayout__background-white__79bpr > div.snow-container_SnowContainer__container__rkv8lv:nth-child(7) > div.RedOrdersGrid_RedOrdersGrid__grid__um832:first-child > div.snow-ali-kit_RootGrid__container__18kmu5.RedOrdersGrid_RedOrdersGrid__container__um832 > div.RedOrdersGrid_RedOrdersGrid__rootGridInnerDiv__um832.snow-ali-kit_RootGrid__row__18kmu5.snow-ali-kit_RootGrid__align-flex-start__18kmu5 > div.snow-ali-kit_Col__col__1ccuye.snow-ali-kit_Col__align-self-flex-start__1ccuye.RedOrdersColumn_RedOrdersColumn__grid__987ze:last-child > div.snow-container_SnowContainer__container__rkv8lv > div.snow-container_SnowContainer__container__rkv8lv:last-child > div.CommonShelf_CommonShelf__profitShelf__1gmlo
+aliexpress.ru##div.ModuleBanner_ModuleBanner__outer-wrapper__100x6
+! aliexpress.ru###__aer_root__ > div.MainLayout__root__79bpr.MainLayout__background-white__79bpr > div.snow-container_SnowContainer__container__rkv8lv:nth-child(7) > div.RedOrdersGrid_RedOrdersGrid__grid__um832:first-child > div.snow-ali-kit_RootGrid__container__18kmu5.RedOrdersGrid_RedOrdersGrid__container__um832 > div.RedOrdersGrid_RedOrdersGrid__rootGridInnerDiv__um832.snow-ali-kit_RootGrid__row__18kmu5.snow-ali-kit_RootGrid__align-flex-start__18kmu5 > div.snow-ali-kit_Col__col__1ccuye.snow-ali-kit_Col__align-self-flex-start__1ccuye.RedOrdersColumn_RedOrdersColumn__grid__987ze:last-child > div.snow-container_SnowContainer__container__rkv8lv > div.snow-container_SnowContainer__container__rkv8lv:last-child
 aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 russianfood.com###layout > div.layout > div.wrapper > table:nth-child(4) > tbody > tr:first-child > td.sub_left:first-child > div.sub_block:nth-child(4) > div:last-child
 t.rbc.ru##.footer__counter__image
@@ -615,16 +621,16 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 !
 ||www.googleadservices.com^$important
 ||www.google-analytics.com^$important
-||www.googletagmanager.com^
+||www.googletagmanager.com^$important
 ||googletagmanager.com^
 ||googleadservices.com^$important
 ||google-analytics.com^$important
-||*ds.metric.gstatic.com^
-||analytics.google.com^
+||*ds.metric.gstatic.com^$important
+||analytics.google.com^$important
 ||*doubleclick.net^$important
 ||*googlesyndication.com^$important
-||adservice.google.com^
-||s.youtube.com^ 
+||adservice.google.com^$important
+||s.youtube.com^$important
 !
 ! ===
 !
