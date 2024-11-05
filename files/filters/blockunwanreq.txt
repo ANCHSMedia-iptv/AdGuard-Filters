@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 0.0.9-CR
-! TimeUpdated: 2024-11-4T16:35:00+00:00
+! TimeUpdated: 2024-11-15Е11:52:40+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -92,13 +92,13 @@
 ||*btloader.com^$important
 ||*digitalcaramel.com^$important
 ||*ads-twitter.com^
-||*bitrix.info^$importanе
+||*bitrix.info^$important
 ||avito.ru/stat/radar*^$image,domain=avito.ru
 ||avito.ru/web/*/adv/network/creative^$xhr,domain=avito.ru
 ! avito.ru/dstatic/j/dfp/px.js^$script
 ||*advert*^$image,important
-||*/firebase*.js^$script
-||d3c8j8snkzfr1n.cloudfront.net^
+||*/firebase*.*^$script,xhr
+||d3c8j8snkzfr1n.cloudfront.net^$important
 ||*adskeeper.co.uk^$important
 ||*metrika-informer.com^$important
 ||stats.habr.com^$important
@@ -146,7 +146,7 @@
 ||*/liru.gif^$image
 ||*/1px.*^$image,script
 ||*/px.*^$image,script
-||*/blank.gif^$image,script
+||*/blank.*^$image,script
 ||*/analytics.js^$script,important
 ||ddlbots.com/cdn/shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,domain=ddlbots.com
 ! *shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script
@@ -158,7 +158,6 @@
 ||*/ad.js^$script,important
 ||*/empty.*^$image
 ||store.bankiros.ru/js/metrics/*.js^script,domain=store.bankiros.ru|bankiros.ru
-||*/firebase*.json^$script,xhr
 ||*adhigh.net^
 ||*rutarget.ru^
 ||s.rbk.ru/*quote_static/quote-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru
@@ -186,13 +185,28 @@
 ||*alicdn.com/AWSC/et/*/et_f.js^$script,important
 !
 !
+! -
 ! Ломается сайт DeepL при применении правил блокировки к скриптам tracking-*.js, late-cookieBannerLax.*.js и стилю late-cookieBannerLax.*.css, которые приведены ниже и разрешены.
 ! The site DeepL crashes when applying blocking rules to the tracking-*.js, late-cookieBannerLax.*.js and late-cookieBannerLax.*.css scripts, which are listed below and allowed.
 @@||static.deepl.com/gatsby/tracking-*.js^$domain=deepl.com
 @@||static.deepl.com/gatsby/*cookieBanner*.*^$domain=deepl.com
+! -
 !
 !
 !
+||*.103.*/css/cookiesNotification.css^$css,domain=mag.103.*
+||*.103.*/js/cookiesNotificationBy.js^$script,domain=mag.103.*
+||d31j93rd8oukbv.cloudfront.net^$important
+||*site-chat.me/support/support.int.js*^$script
+||gemotest.ru/local/templates/main/img/chat.svg^$image,domain=gemotest.ru
+||probolezny.ru/api/v*/fingerprint^$xhr,domain=probolezny.ru,important
+||invitro.ru/edna/assets/multibutton.js?*^$script,domain=invitro.ru
+||invitro.ru/local/templates/invitro_main/webrtc/*/*.js^$script,domain=invitro.ru
+||invitro.ru/*.gif^$image,domain=invitro.ru,important
+||burp/favicon.ico^$image,important
+||zap/favicon.ico^$image,important
+||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
+||widget.7medica.ru/*.*^$script,xhr
 !
 !
 !
@@ -371,6 +385,9 @@ myrusakov.ru###right > div.block:first-child
 myrusakov.ru###slider
 rbkgames.com###global-wrapper > div.main-content:nth-child(7) > div.centered.centered-with-banner:first-child > div.right-part:last-child
 rbkgames.com##.quick-bar
+mag.103.by##.cookiesNotificationBy
+gemotest.ru##div.content-inner:nth-child(6) > main.content-section.content-wrapper_info-article:nth-child(5) > div.container__flex:first-child > aside.sidebar.mobile--hidden:last-child > div.sidebar-inner.sticky--widget:last-child > a.sidebar__widget.telegram-widget:first-child
+##a[href^="https://www.1c-bitrix.ru/composite/"]
 ! ===
 !
 !

@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections (Experimental)
-! Version: 20241104-2
-! Last Modified: 4.11.2024
+! Version: 20241105
+! Last Modified: 5.11.2024
 ! It is updated frequently because it contains experimental filtering rules.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Description: Блокировка нежелательных запросов - экспериментальные правила.
@@ -52,7 +52,8 @@
 !
 ||*alexametrics.com^
 !
-!
+||invitro.edna.ru/api/chat/config*^$xhr,domain=invitro.ru
+||api.mindbox.ru^
 !
 !
 !
@@ -96,6 +97,47 @@ finance.ozon.ru##div.paranja.svelte-uv8txi:last-child > div.wrapper.svelte-uv8tx
 ||st.aestatic.net/mixer/ssr/*/aer-assets/reasons.*.js^$script,domain=aliexpress.ru
 !
 ! ===
+!
+!
+! == Otzovik website ==
+!
+! Правило блокировки рекламных картинок на главной странице (несмотря на блокировку блоков с рекламой другими фильтрами)..
+! Но одна есть прям на главной странице - реклама Альфа банка, которая находится прямо в блоке Промоакции.. 
+||*otzovik.com/services/20*/*/*.*^$image,domain=otzovik.com
+!
+! - Косметические правила -
+! Есть вариант заблокировать сам блок косметическом правилом..
+! otzovik.com###content > div.home-grid:last-child > div.content-left:first-child > div.topblock.promo.home-box:nth-child(2)
+! -
+!
+! ===
+!
+!
+! == Irecommend website ==
+!
+||*-irec.r-*.com/collect^$xhr,domain=irecommend.ru
+||irecommend.ru/ss_t/collect^$xhr,domain=irecommend.ru
+!
+! Блокировка скрипта, отвечающего за рекламу (несмотря на блокировку URL адресов рекламы другими фильтрами).
+||irecommend.ru/injector/reklamko.js^$script,domain=irecommend.ru
+!
+! Блокировка скрипта, отвечающего за аналитику Яндекс Метрики (несмотря на блокировку URL адресов другими фильтрами).
+||irecommend.ru/injector/metrika-config.js^$script,domain=irecommend.ru
+!
+||irecommend.ru/injector/gpu.js^$script,domain=irecommend.ru
+!
+! ===
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
 !
 !
 !
