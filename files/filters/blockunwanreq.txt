@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.9-5-CR
-! TimeUpdated: 2024-11-05T18:44:40+00:00
+! Version: 0.0.9-6-CR
+! TimeUpdated: 2024-11-06T19:20:40+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -146,8 +146,8 @@
 ||*/cycounter.*^$image
 !
 ||*/liru.gif^$image
-||*/1px.*^$image,script,xhr
-||*/px.*^$image,script,xhr
+||*/1px.*^$image,xhr,script,important
+||*/px.*^$image,xhr,script,important
 ||*/blank.*^$image,script
 ||*/analytics.js^$script,important
 ! */analytics.*^$script,important
@@ -244,7 +244,9 @@
 ||vesti.ru/i/bg.png*^$image,domain=vesti.ru,important
 ||vesti.ru/i/preloader.gif*^$image,domain=vesti.ru,important
 ||life.ru/_next/static/chunks/2793.3fd7e7f2a78da9d92688.js^$script,domain=life.ru,important
-||*/p.*^$image,script,xhr,important
+||*/p.*^$image,xhr,script,important
+||static.1tv.ru/player/config/banner.gif*^$image,domain=1tv.ru
+||api.1tv.ru/v*/promo_places/alert_for_player^$xhr,domain=1tv.ru
 !
 !
 !
@@ -259,24 +261,29 @@
 ! Blocking advertising images (despite blocking blocks with advertisements by other filters).
 ! Блокировка рекламных изображений (несмотря на блокировку блоков с рекламой другими фильтрами).
 !
-||i.4pda.ws/s/j7797vJf7wXCUrXnWh8xPfxuqiJRRGRkUgh8jR6OO0PFfP5ufc87AXS4.jpg^$image,domain=4pda.to
-||i.4pda.ws/s/j7792z19Rj5R8htucavSGxm27Td5ydMKImOg3w5fXGhm6fA0pRxT6973q.jpg^$image,domain=4pda.to
-||i.4pda.ws/s/j779GV8ovFw3CWv3qC3WnvDB0sB1xyAkgdC5MgHy25B5xm2K7jQgdCHP.jpg^$image,domain=4pda.to
-||*4pda.to/s/j7791bThHvd81QZ79g8a0ckuA1iy.jpg*^$image,domain=4pda.to
-||i.4pda.ws/s/j779G3LLb9uHmMmTbQwKtrYpRz1pfGil4AlaXi7RSHIJez2Iq1cUa9HRr3.jpg^$image,domain=4pda.to
+! i.4pda.ws/s/*.jpg^$image,domain=4pda.to
+||*4pda.to/s/*.jpg?_=*^$image,domain=4pda.to
+||i.4pda.ws/s/vIBCYgN5BkfUH7sJNrH2qkTXfJvy59kvOFuWhz1LmU5QlRkxToMQigxly.jpg^$image,domain=4pda.to
+
 !
 ! Blocking hidden html component of Yandex analytics.
 ! Блокировка скрытого html компонента аналитики Яндекса.
-||*4pda.to/s/j779JOmKD8frhyRigmLImLq.html^$domain=4pda.to
+||*4pda.to/s/*.html^$domain=4pda.to
 !
 ! Blocking the script responsible for advertising (despite other filters blocking URLs of advertisements).
 ! Блокировка скрипта, отвечающего за рекламу (несмотря на блокировку URL адресов рекламы другими фильтрами).
 ||*4pda.to/s/j7793LgWtPTV.js*^$script,domain=4pda.to
+
 !
 ! Blocking hidden images in one pixel (1 x 1).
 ! Блокировка скрытых изображений в один пиксель (1 x 1).
-||*4pda.to/s/*.gif^$image,domain=4pda.to
+||*4pda.to/s/*.gif*^$image,domain=4pda.to
 ||*4pda.to/s/j7790osz2tCgk6fYcxz2yqeM8NXMm.png^$image,domain=4pda.to
+||*4pda.to/s/vIBCbXoJxOYy9Rr4CXbD5HkEyfQ.png^$image,domain=4pda.to
+!
+@@||i.4pda.ws/s/*.jpg?v=*^$domain=4pda.to
+@@||*4pda.to/s/*.js?_=*^$domain=4pda.to
+@@||*4pda.to/s/*/*/menu_item.gif^$domain=4pda.to
 !
 !
 ! ===
