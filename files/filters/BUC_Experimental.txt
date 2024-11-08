@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections (Experimental)
-! Version: 20241105-2
-! Last Modified: 05.11.2024
+! Version: 20241108
+! Last Modified: 08.11.2024
 ! It is updated frequently because it contains experimental filtering rules.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Description: Блокировка нежелательных запросов - экспериментальные правила.
@@ -82,7 +82,7 @@ finance.ozon.ru##div.paranja.svelte-uv8txi:last-child > div.wrapper.svelte-uv8tx
 !
 !
 !
-!
+||yastatic.net/partner-code-bundles/*.js^$script,important
 !
 !
 !

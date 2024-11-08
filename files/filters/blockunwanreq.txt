@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.9-6-CR
-! TimeUpdated: 2024-11-06T19:20:40+00:00
+! Version: 0.0.9-8-CR
+! TimeUpdated: 2024-11-08T18:20:40+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -233,7 +233,6 @@
 ||cdn.iz.ru/profiles/portal/themes/purple/js/statistics/custom_criteo2.js*^$script,domain=iz.ru,important
 ||static.gazeta.ru/nm2021/js/others_scripts_*.js^$script,domain=gazeta.ru,important
 ||sync.rambler.ru^$important
-! comments.rambler.ru/ws/*^$websocket
 ||s*.stc.yc.kpcdn.net/share/i/beige/*.gif^$image,important
 ||s*.stc.yc.kpcdn.net/s*/*/adaptive/img/banner.gif*^$xhr,important
 ! *sendsay.ru^$important
@@ -245,8 +244,31 @@
 ||vesti.ru/i/preloader.gif*^$image,domain=vesti.ru,important
 ||life.ru/_next/static/chunks/2793.3fd7e7f2a78da9d92688.js^$script,domain=life.ru,important
 ||*/p.*^$image,xhr,script,important
-||static.1tv.ru/player/config/banner.gif*^$image,domain=1tv.ru
-||api.1tv.ru/v*/promo_places/alert_for_player^$xhr,domain=1tv.ru
+||static.1tv.ru/player/config/banner.gif*^$image,domain=1tv.ru,important
+||api.1tv.ru/v*/promo_places/alert_for_player^$xhr,domain=1tv.ru,important
+||*ad-tech.ru^
+||championat.com/atlas/metrics/^$xhr,domain=championat.com,important
+||cdn-assets.matchtv.ru/build/assets/external/matchtv-stat.*.js^$domain=matchtv.ru,important
+||*/api/*/store/*^$ping,xhr,important
+||matchtv.ru/recommendation*^$xhr,domain=matchtv.ru,important
+||static*.ntv.ru/assets/*/ad-side-bar*.*^$css,script,domain=ntv.ru,important
+||static*.ntv.ru/assets/*/social-share*.*^$css,script,domain=ntv.ru,important
+||tvc.ru/api/promo/*^$xhr,domain=tvc.ru,important
+||otr-online.ru/cookie-accept^$xhr,domain=otr-online.ru,important
+||otr-online.ru/public/scripts/5714.js^$script,domain=otr-online.ru,important
+||ctc.ru/turms/mediascope/counter/audience*^$xhr,domain=ctc.ru,important
+||static-api.mediavitrina.ru/v*/epg/*/ad-injections.json^$xhr,script,important
+! */mediascope/counter/audience*^$xhr,important
+||tv3.ru/_nuxt/adfox-*.vue.*.js^$script,domain=tv3.ru,important
+||domashniy.ru/dist/assets/img/contest/pop-up-compilation.webp^$image,domain=domashniy.ru
+||friday.ru/svg/sprite.svg*^$xhr,domain=friday.ru,important
+||nets-api.gpmdata.ru/api/v*/counters/counter/*^$xhr,important
+||trex-receiver.gpmdata.ru/net/*/*/events^$xhr,important
+||static.tnt-online.ru/getintent_pixel.js^$script,domain=tnt-online.ru,important
+||static.tnt-online.ru/accept_cookie.js^$script,domain=tnt-online.ru,important
+||tnt-online.ru/images/*/icons/sprite.svg*^$image,domain=tnt-online.ru,important
+||rutube.ru/static/img/png/adsdkbanner.png^$xhr,important
+||*/pixel.*^$image,xhr,script,important
 !
 !
 !
@@ -517,6 +539,7 @@ gazeta.ru##div.b_telegram_subscriber
 ! gazeta.ru##div._s_banner_show_up
 md.kp.media##div.sc-1a8tb7h-0
 ##a[href^="//www.liveinternet.ru/click"]
+championat.com##div.header-bottom__adv
 !
 ! ===
 !
