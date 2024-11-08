@@ -496,7 +496,7 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 ! -
 @@||st.aestatic.net/mixer/ssr/*/aer-assets/ext/ad-tracker.*.js^$domain=aliexpress.ru
 @@||st.aestatic.net/mixer/ssr/*/aer-assets/ext/tracking.*.js^$domain=aliexpress.ru
-@@||st.aestatic.net/mixer/ssr/*/aer-assets/ext/local-tracking.*.js$domain=aliexpress.ru
+@@||st.aestatic.net/mixer/ssr/*/aer-assets/ext/local-tracking.*.js^$domain=aliexpress.ru
 ! -
 ! ===
 !

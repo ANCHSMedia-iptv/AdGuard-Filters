@@ -299,6 +299,7 @@
 ||*artfut.com^$important
 ||*d1tracker.ru^$important
 ||*adpod.in^
+||cpa.hh.ru^$important
 !
 !
 !
