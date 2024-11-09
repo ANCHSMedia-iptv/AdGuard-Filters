@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.9-8-CR
-! TimeUpdated: 2024-11-08T18:20:40+00:00
+! Version: 0.0.9-9-CR
+! TimeUpdated: 2024-11-09T18:00:10+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -179,8 +179,8 @@
 ||player.twitch.tv/js/embed/v*.js^$script,domain=~twitch.tv,important
 ||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com,important
 ||cdn.gamestatic.net/files/pictures/promo_banner_*.png^$image,domain=rbkgames.com,important
-||pochta.ru/api/tracking/api/v*/trackings/*^$xhr,domain=pochta.ru,important
-||passport.pochta.ru/pc/ext/v*/session/state*^$domain=pochta.ru,important
+! pochta.ru/api/tracking/api/v*/trackings/*^$xhr,domain=pochta.ru,important
+! passport.pochta.ru/pc/ext/v*/session/state*^$domain=pochta.ru,important
 ||*alicdn.com/AWSC/et/*/et_f.js^$script,important
 !
 !
@@ -208,7 +208,7 @@
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-||*/api/*/envelope/*^$ping,xhr,important
+||*/api/*/envelope/*^$ping,xhr,important,domain=~pochta.ru
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||*maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com
@@ -269,6 +269,9 @@
 ||tnt-online.ru/images/*/icons/sprite.svg*^$image,domain=tnt-online.ru,important
 ||rutube.ru/static/img/png/adsdkbanner.png^$xhr,important
 ||*/pixel.*^$image,xhr,script,important
+||api.*.ru/v*/distribution*^$xhr,domain=vc.ru|dtf.ru
+||api.*.ru/v*/recommendations*^$xhr,domain=vc.ru|dtf.ru
+||booster.osnova.io/a/relevant/many*^$xhr,domain=vc.ru|dtf.ru
 !
 !
 !
@@ -473,6 +476,9 @@ ozon.ru###layoutPage > div.b6:first-child > div.container.c:nth-child(5) > div.l
 ! - Косметические правила -
 ! Есть вариант заблокировать сам блок косметическом правилом..
 ! otzovik.com###content > div.home-grid:last-child > div.content-left:first-child > div.topblock.promo.home-box:nth-child(2)
+!
+! Удаление рекламных баннеров на странице результатов поискового запроса.
+otzovik.com##div[class^="produkt-corteny item sortable"]
 ! -
 !
 ! ===
@@ -540,6 +546,7 @@ gazeta.ru##div.b_telegram_subscriber
 md.kp.media##div.sc-1a8tb7h-0
 ##a[href^="//www.liveinternet.ru/click"]
 championat.com##div.header-bottom__adv
+bxbox.bxb.delivery###content > div.sidebar:first-child > div.itc-slider:last-child
 !
 ! ===
 !
@@ -737,7 +744,6 @@ championat.com##div.header-bottom__adv
 ||*appmetrica.yango.com^
 ||adfstat.yandex.ru^$important
 ||push.yandex.ru/v*/subscribe/*^$websocket,important
-@@||tc.mobile.yandex.net^
 ||http-check-headers.yandex.ru^$xhr,important
 ||yandex.ru/messenger/api/*^$xhr,important
 ||*extmaps-api.yandex.net^$important
@@ -788,7 +794,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 !
 !
 !
-! Domains that are only in the AdGuard DNS filter..
+! - Domains that are only in the AdGuard DNS filter.. -
 ! Added to be blocked not only at the DNS level..
 ! Домены, которые находятся только в фильтре AdGuard DNS..
 ! Добавлено, чтобы блокировались не только на уровне DNS..
@@ -829,7 +835,21 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*footprintdns.com^
 ||aemetrics.aliexpress.ru^$important
 !
+! --
 !
+!
+!
+!
+!
+! === Белый список ===
+! === Whitelist ===
+!
+@@||tc.mobile.yandex.net^
+@@||pochta.ru^
+!
+!
+!
+! ===
 !
 !
 !
