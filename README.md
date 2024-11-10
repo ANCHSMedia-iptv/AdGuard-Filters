@@ -6,6 +6,6 @@ Filters:
 - Removing unwanted parameters;
 - Block unwanted connections (Default + DNS + Experimental)
 
-Updated 09.11.2024
+Updated 10.11.2024
 
 Started 22.09.2024
