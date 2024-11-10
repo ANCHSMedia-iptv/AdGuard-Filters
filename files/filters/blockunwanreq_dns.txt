@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.0.8-9-CR
+! Version: 0.0.9
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-11-09T18:00:10+00:00
+! TimeUpdated: 2024-11-10T18:50:10+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,15 +10,15 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 09.11.2024 18:10 UTC
+! Last Modified: 10.11.2024 18:50 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
 !
 !
 !
-! Candidate for Release version
-! Версия: Кандидат на релиз
+! Release version
+! Версия: Релиз
 !
 ! Подойдёт для мобильных устройств и компьютеров.
 ! Suitable for mobile devices and computers.
@@ -300,6 +300,7 @@
 ||*adpod.in^
 ||cpa.hh.ru^$important
 ||s*.wi-fi.ru^
+||*addtoany.com^$important
 !
 !
 !
@@ -368,7 +369,7 @@
 ||mcp.opera-api2.com^$dnsrewrite=REFUSED
 ||*mykonf.com^$dnsrewrite=REFUSED
 ||ofa-b-sub.osp.opera.software^
-||*cdninstagram.com^$domain=~instagram.com
+! *cdninstagram.com^$domain=~instagram.com
 !
 ! -- =Other=
 !

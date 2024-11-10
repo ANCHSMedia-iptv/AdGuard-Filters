@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.9-9-CR
-! TimeUpdated: 2024-11-09T18:00:10+00:00
+! Version: 0.0.9
+! TimeUpdated: 2024-11-109T18:50:10+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -12,8 +12,8 @@
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc..
 !
 !
-! Candidate for Release version
-! Версия: Кандидат на релиз
+! Release version
+! Версия: Релиз
 !
 ! Подойдёт для мобильных устройств и компьютеров.
 ! Suitable for mobile devices and computers.
@@ -272,6 +272,8 @@
 ||api.*.ru/v*/distribution*^$xhr,domain=vc.ru|dtf.ru
 ||api.*.ru/v*/recommendations*^$xhr,domain=vc.ru|dtf.ru
 ||booster.osnova.io/a/relevant/many*^$xhr,domain=vc.ru|dtf.ru
+||apis.google.com/js/plusone.js^$script
+||*addtoany.com^
 !
 !
 !
@@ -547,6 +549,7 @@ md.kp.media##div.sc-1a8tb7h-0
 ##a[href^="//www.liveinternet.ru/click"]
 championat.com##div.header-bottom__adv
 bxbox.bxb.delivery###content > div.sidebar:first-child > div.itc-slider:last-child
+global.cdek.ru##a.shopping-banner:nth-child(5)
 !
 ! ===
 !
@@ -683,7 +686,7 @@ bxbox.bxb.delivery###content > div.sidebar:first-child > div.itc-slider:last-chi
 ||mcp.opera-api2.com^$removeparam,important
 ||*mykonf.com^$important,important
 ||ofa-b-sub.osp.opera.software^$removeparam,important
-||*cdninstagram.com^$removeparam,important,domain=~instagram.com,app=com.opera.browser
+! *cdninstagram.com^$removeparam,important,domain=~instagram.com,app=com.opera.browser
 ! =
 !
 !
