@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.9
-! TimeUpdated: 2024-11-109T18:50:10+00:00
+! Version: 0.0.9-1
+! TimeUpdated: 2024-11-12T18:50:30+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -116,7 +116,7 @@
 ||api.x.com/*/jot/ces/p2^$xhr
 ||api.x.com/*/jot/client_event.json^$xhr
 ||*tns-counter.ru^$important
-||*/geo-context^$other
+||*/geo-context^$other,xhr
 ||geo.geosurf.io^$important
 ||platform.twitter.com/widgets.js^$script,important,domain=~x.com|~twitter.com
 ||www.instagram.com/embed.js^$script,important,domain=~instagram.com
@@ -274,6 +274,8 @@
 ||booster.osnova.io/a/relevant/many*^$xhr,domain=vc.ru|dtf.ru
 ||apis.google.com/js/plusone.js^$script
 ||*addtoany.com^
+||gazprom-neft.*/*.gif^$image,domain=gazprom-neft.ru|gazprom-neft.com
+||zoon.ru/images/border.gif^$image,domain=zoon.ru
 !
 !
 !
@@ -550,6 +552,8 @@ md.kp.media##div.sc-1a8tb7h-0
 championat.com##div.header-bottom__adv
 bxbox.bxb.delivery###content > div.sidebar:first-child > div.itc-slider:last-child
 global.cdek.ru##a.shopping-banner:nth-child(5)
+*.atmosferapark.ru##.user-cookie
+maxiland72.ru###rec782509983 > div.t657.t657_rectangle:first-child
 !
 ! ===
 !
