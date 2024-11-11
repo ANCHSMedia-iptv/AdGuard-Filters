@@ -605,8 +605,8 @@ maxiland72.ru###rec782509983 > div.t657.t657_rectangle:first-child
 ||*pipe.aria.microsoft.com^$important
 ||*events.data.microsoft.com^$important
 !
-! =For Windows=
-! =Для Виндовс=
+! = For Windows =
+! = Для Виндовс =
 !
 ||query.prod.cms.rt.microsoft.com^
 ||inputsuggestions.msdxcdn.microsoft.com^

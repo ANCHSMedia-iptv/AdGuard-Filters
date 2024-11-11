@@ -138,7 +138,7 @@
 ||vortex*.data.microsoft.com^
 ||*telemetry.appex.bing.net^
 ||fp-afd-nocache-ccp.azureedge.net^
-!
+! =
 !
 ! ===
 !
