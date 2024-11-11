@@ -13,7 +13,7 @@
 !
 !
 ! Release version
-! Версия: Релиз
+! Релизная версия
 !
 ! Подойдёт для мобильных устройств и компьютеров.
 ! Suitable for mobile devices and computers.
@@ -97,7 +97,6 @@
 ||*bitrix.info^$important
 ||avito.ru/stat/radar*^$image,domain=avito.ru
 ||avito.ru/web/*/adv/network/creative^$xhr,domain=avito.ru
-! avito.ru/dstatic/j/dfp/px.js^$script
 ||*advert*^$image,important
 ||*/firebase*.*^$script,xhr
 ||d3c8j8snkzfr1n.cloudfront.net^$important
@@ -111,7 +110,7 @@
 ||collector.github.com/github/collect^$xhr,important
 !
 !
-||unpkg.com/pwacompat^$script
+||unpkg.com/pwacompat^$script,xhr
 ||api.x.com/*/jot/error_log.json^$xhr
 ||api.x.com/*/jot/ces/p2^$xhr
 ||api.x.com/*/jot/client_event.json^$xhr
@@ -179,8 +178,6 @@
 ||player.twitch.tv/js/embed/v*.js^$script,domain=~twitch.tv,important
 ||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com,important
 ||cdn.gamestatic.net/files/pictures/promo_banner_*.png^$image,domain=rbkgames.com,important
-! pochta.ru/api/tracking/api/v*/trackings/*^$xhr,domain=pochta.ru,important
-! passport.pochta.ru/pc/ext/v*/session/state*^$domain=pochta.ru,important
 ||*alicdn.com/AWSC/et/*/et_f.js^$script,important
 !
 !
@@ -543,10 +540,6 @@ rostics.ru##div._3l3oK3nIbnZ
 rostics.ru##div._16TFR6yWKNl
 !
 gazeta.ru##div.b_telegram_subscriber
-! gazeta.ru##div._s_banner_fullscreen
-! gazeta.ru##div._s_banner_billboard
-! gazeta.ru##div.ad_branding_footer
-! gazeta.ru##div._s_banner_show_up
 md.kp.media##div.sc-1a8tb7h-0
 ##a[href^="//www.liveinternet.ru/click"]
 championat.com##div.header-bottom__adv
@@ -717,7 +710,7 @@ maxiland72.ru###rec782509983 > div.t657.t657_rectangle:first-child
 ||firebaseinappmessaging.googleapis.com^$important
 ||firebaseremoteconfigrealtime.googleapis.com^
 ||firebase.googleapis.com^
-||firebase.google.com^
+! firebase.google.com^
 ! ===
 !
 !

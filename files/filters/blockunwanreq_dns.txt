@@ -18,7 +18,7 @@
 !
 !
 ! Release version
-! Версия: Релиз
+! Релизная версия
 !
 ! Подойдёт для мобильных устройств и компьютеров.
 ! Suitable for mobile devices and computers.
@@ -36,7 +36,7 @@
 ||firebaseinappmessaging.googleapis.com^
 ||firebaseremoteconfigrealtime.googleapis.com^
 ||firebase.googleapis.com^
-||firebase.google.com^
+! firebase.google.com^
 ! ===
 !
 ! -- == Google Crashlytics + Firebase ==
