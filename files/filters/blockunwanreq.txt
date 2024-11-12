@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.9-1
-! TimeUpdated: 2024-11-12T18:50:30+00:00
+! Version: 0.0.9-2
+! TimeUpdated: 2024-11-12T17:50:30+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -130,7 +130,8 @@
 ||*betweendigital.com^$important
 ||*/api/advertising/*^$xhr,domain=hitfm.ru|montecarlo.ru
 ||vk.com/js/api/openapi.js^$script,domain=~vk.com
-||*/cookiesync.js^$script
+||*cookie*.js^$script,important
+||*Cookie*.js^$script,important
 ||*/itunes_referals.js^$script
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script
 ||improving.duckduckgo.com^$important
@@ -155,7 +156,7 @@
 ||otlp-http-production.shopifysvc.com/v*/metrics^$xhr,important
 ||*web-pixel-shopify-*-pixel*^$domain=ddlbots.com,important
 ! *web-pixel-shopify-*-pixel*^$important
-||*wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.min.js^$script,important
+! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.min.js^$script,important (новое правило, строка 133 и 134)
 ||*/wp-content/plugins/*/assets/js/tracks.js*^$script,important
 ||*/ad.js^$script,important
 ||*/empty.*^$image,important
@@ -192,7 +193,8 @@
 !
 !
 ||*.103.*/css/cookiesNotification.css^$css,important,domain=mag.103.*
-||*.103.*/js/cookiesNotificationBy.js^$script,important,domain=mag.103.*
+! *.103.*/css/cookiesNotification*.css^$css,important,domain=mag.103.*
+! *.103.*/js/cookiesNotificationBy.js^$script,important,domain=mag.103.* (новое правило, строка 133 и 134)
 ||d31j93rd8oukbv.cloudfront.net^$important
 ||*site-chat.me/support/support.int.js*^$script,important
 ! gemotest.ru/local/templates/main/img/chat.svg^$image,domain=gemotest.ru
@@ -205,7 +207,7 @@
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-||*/api/*/envelope/*^$ping,xhr,important,domain=~pochta.ru
+||*/api/*/envelope/*^$ping,xhr,important,domain=~pochta.ru|~gloria-jeans.ru
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||*maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com
@@ -262,7 +264,7 @@
 ||nets-api.gpmdata.ru/api/v*/counters/counter/*^$xhr,important
 ||trex-receiver.gpmdata.ru/net/*/*/events^$xhr,important
 ||static.tnt-online.ru/getintent_pixel.js^$script,domain=tnt-online.ru,important
-||static.tnt-online.ru/accept_cookie.js^$script,domain=tnt-online.ru,important
+! static.tnt-online.ru/accept_cookie.js^$script,domain=tnt-online.ru,important (новое правило, строка 133 и 134)
 ||tnt-online.ru/images/*/icons/sprite.svg*^$image,domain=tnt-online.ru,important
 ||rutube.ru/static/img/png/adsdkbanner.png^$xhr,important
 ||*/pixel.*^$image,xhr,script,important
@@ -273,6 +275,11 @@
 ||*addtoany.com^
 ||gazprom-neft.*/*.gif^$image,domain=gazprom-neft.ru|gazprom-neft.com
 ||zoon.ru/images/border.gif^$image,domain=zoon.ru
+! (новое правило, строка 133 и 134)
+! (новое правило, строка 133 и 134)
+||userapi.com/js/api/openapi.js*^$domain=~vk.com
+||analytics.vsem-edu-oblako.ru*/track^$xhr,important
+||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,domain=kinoteatr.ru
 !
 !
 !
@@ -540,13 +547,25 @@ rostics.ru##div._3l3oK3nIbnZ
 rostics.ru##div._16TFR6yWKNl
 !
 gazeta.ru##div.b_telegram_subscriber
+!
+! Пустое место под рекламу
 md.kp.media##div.sc-1a8tb7h-0
+!
 ##a[href^="//www.liveinternet.ru/click"]
 championat.com##div.header-bottom__adv
 bxbox.bxb.delivery###content > div.sidebar:first-child > div.itc-slider:last-child
 global.cdek.ru##a.shopping-banner:nth-child(5)
 *.atmosferapark.ru##.user-cookie
+!
+! Предупреждение об использовании cookie
 maxiland72.ru###rec782509983 > div.t657.t657_rectangle:first-child
+!
+##a[href^="http://www.1c-bitrix.ru/composite/"]
+!
+! Предупреждение об использовании cookie и Яндекс.Метрики
+amodei.ru##div[class^="concept-banner  lato   cb-bottom cb-fixed  cb-long  light  cb-close-on animated light-gray slideInUp"]
+!
+
 !
 ! ===
 !
