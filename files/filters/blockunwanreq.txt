@@ -159,7 +159,8 @@
 ! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.min.js^$script,important (новое правило, строка 133 и 134)
 ||*/wp-content/plugins/*/assets/js/tracks.js*^$script,important
 ||*/ad.js^$script,important
-||*/empty.*^$image,important
+||*/empty*.*^$image,important
+! *empty*.*^$image,important
 ||store.bankiros.ru/js/metrics/*.js^script,domain=bankiros.ru,important
 ||*adhigh.net^
 ||*rutarget.ru^
@@ -213,7 +214,7 @@
 ||mediafire.com/blank.html^$domain=mediafire.com
 ||mediafiredls.com/adsupply/*^$xhr,domain=mediafire.com,important
 ||publicapi.dodois.io/ru/api/v*/financialmetrics^$xhr,domain=dodopizza.ru,important
-||papajohns.ru/assets/empty.*.jpg^$image,domain=papajohns.ru,important
+! papajohns.ru/assets/empty.*.jpg^$image,domain=papajohns.ru,important
 ||supportai.yandex/widget/v*/bundle.js^$script,important
 ||id.rambler.ru/rambler-id-helper/auth_events.js^$script
 ||cdnn*.img.ria.ru/min/js/analytics/ab_title_scroll_event.js*^$script,domain=ria.ru,important
@@ -277,7 +278,7 @@
 ||zoon.ru/images/border.gif^$image,domain=zoon.ru
 ! (новое правило, строка 133 и 134)
 ! (новое правило, строка 133 и 134)
-||userapi.com/js/api/openapi.js*^$domain=~vk.com
+||userapi.com/js/api/openapi.js*^$script,domain=~vk.com
 ||analytics.vsem-edu-oblako.ru*/track^$xhr,important
 ||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,domain=kinoteatr.ru
 !
