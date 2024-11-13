@@ -307,6 +307,7 @@
 ||*retailrocket.*^$important
 ||*botfaqtor.ru^$important
 ||stat.sputnik.ru^$important
+||sa.hoodmaps.com^$important
 !
 !
 !
