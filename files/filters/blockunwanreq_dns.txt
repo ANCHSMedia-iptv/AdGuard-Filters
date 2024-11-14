@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.0.9-4
+! Version: 0.0.9-5
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-11-12T17:50:30+00:00
+! TimeUpdated: 2024-11-15T16:20:30+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 12.11.2024 17:30 UTC
+! Last Modified: 15.11.2024 16:30 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -308,6 +308,8 @@
 ||*botfaqtor.ru^$important
 ||stat.sputnik.ru^$important
 ||sa.hoodmaps.com^$important
+||analytics.dns-shop.ru^$important
+||stats.vk-portal.net^$important
 !
 !
 !
@@ -410,13 +412,13 @@
 !
 ! -- Non-understandable addresses, but undesirable
 !
-||*tobipovsem.com^$important,dnsrewrite=REFUSED
-||*largestloitering.com^important,$dnsrewrite=REFUSED
+||*.tobipovsem.com^$important,dnsrewrite=REFUSED
+||*.largestloitering.com^important,$dnsrewrite=REFUSED
 ||f1e4fcff2b.27640ea29d.com^important,$dnsrewrite=REFUSED
 ||d157c90939.1b384556ae.com^important,$dnsrewrite=REFUSED
 ||*vesmaveselo*^$important,dnsrewrite=REFUSED
-||*myroledance.com^$important,dnsrewrite=REFUSED
-||*vaterlines.com^$dnsrewrite=REFUSED
+||*.myroledance.com^$important,dnsrewrite=REFUSED
+||*.vaterlines.com^$dnsrewrite=REFUSED
 ||*otnolatrnup.com^$important
 !
 ! Адреса с спам-писем с содержанием 18+ (14.11.24 стал «жертвой» такого массового спама)..
@@ -427,6 +429,7 @@
 ||*aartaid.com^
 ||*adjurve.com^
 ||*barabalo.com^
+!
 !
 !
 ! ---

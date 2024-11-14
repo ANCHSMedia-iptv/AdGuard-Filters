@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.9-4
-! TimeUpdated: 2024-11-13T17:50:30+00:00
+! Version: 0.0.9-5
+! TimeUpdated: 2024-11-15T16:20:30+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -96,7 +96,7 @@
 ||*ads-twitter.com^
 ||*bitrix.info^$important
 ||avito.ru/stat/radar*^$image,domain=avito.ru
-||avito.ru/web/*/adv/network/creative^$xhr,domain=avito.ru
+! avito.ru/web/*/adv/network/creative^$xhr,domain=avito.ru
 ||*advert*^$image,important
 ||*/firebase*.*^$script,xhr
 ||d3c8j8snkzfr1n.cloudfront.net^$important
@@ -148,7 +148,7 @@
 ||*/liru.gif^$image
 ||*/1px.*^$image,xhr,script,important
 ||*/px.*^$image,xhr,script,important
-||*/blank.*^$image,script
+||*/blank.*^$image,script,xhr,important
 ||*/analytics.js^$script,important
 ! */analytics.*^$script,important
 ||ddlbots.com/cdn/shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,domain=ddlbots.com,important
@@ -160,6 +160,7 @@
 ||*/wp-content/plugins/*/assets/js/tracks.js*^$script,important
 ||*/ad.js^$script,important
 ||*/empty*.*^$image,important
+||*/adv/*^$image,xhr,script,important
 ! *empty*.*^$image,important
 ||store.bankiros.ru/js/metrics/*.js^script,domain=bankiros.ru,important
 ||*adhigh.net^
@@ -172,8 +173,6 @@
 ||img*.russianfood.com/images/common/bottom_line_bg.gif^$image,domain=russianfood.com
 ||stat*.russianfood.com/tapi^$domain=russianfood.com,important
 ||russianfood.com/images/blg.png^$image,domain=russianfood.com,important
-@@||*assets.2gis.*/react.*ad.js^$script,domain=2gis.*
-@@||i0.wp.com/living.ai/wp-content/uploads/2024/08/2024082902-scaled.jpg*^$domain=living.ai
 ||*rbc.ru/v*/geoinfo/by-ip/^$xhr,domain=rbc.ru
 ||ext.clickstream.sberbank.ru/metrics/*^$xhr,important
 ||servicepipe.ru/static/*.js^$script
@@ -181,18 +180,6 @@
 ||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com,important
 ||cdn.gamestatic.net/files/pictures/promo_banner_*.png^$image,domain=rbkgames.com,important
 ||*alicdn.com/AWSC/et/*/et_f.js^$script,important
-!
-!
-!
-! -
-! Ломается сайт DeepL при применении правил блокировки к скриптам tracking-*.js, late-cookieBannerLax.*.js и стилю late-cookieBannerLax.*.css, которые приведены ниже и разрешены.
-! The site DeepL crashes when applying blocking rules to the tracking-*.js, late-cookieBannerLax.*.js and late-cookieBannerLax.*.css scripts, which are listed below and allowed.
-@@||static.deepl.com/gatsby/tracking-*.js^$domain=deepl.com
-@@||static.deepl.com/gatsby/*cookieBanner*.*^$domain=deepl.com
-! -
-!
-!
-!
 ||*.103.*/css/cookiesNotification.css^$css,important,domain=mag.103.*
 ! *.103.*/css/cookiesNotification*.css^$css,important,domain=mag.103.*
 ! *.103.*/js/cookiesNotificationBy.js^$script,important,domain=mag.103.* (новое правило, строка 133 и 134)
@@ -224,6 +211,7 @@
 ! */adv.*^$image,important
 ||ura.news/widgets/banner_loader/loader.php*^$xhr,domain=ura.news,important
 ||telegram.org/js/telegram-widget.js*^$script,domain=~telegram.org
+||vk.com/al_video.php*^$xhr,domain=~vk.com
 ||vk.com/dist/web/ads_light.*.js^$script,important
 ||s.ura.news/js/dist/ccc.bundle.js*^$script,domain=ura.news,important
 ||s.ura.news/js/dist/aaa.bundle.js*^$script,domain=ura.news,important
@@ -283,6 +271,12 @@
 ||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,domain=kinoteatr.ru
 ||sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com
 ! sa.hoodmaps.com^
+||citilink.ru/graphql/^$xhr,domain=citilink.ru
+||fga.citilink.ru/collect^$xhr,domain=citilink.ru
+||dns-shop.ru/banner/get-header-banner/^$xhr,domain=dns-shop.ru
+||alfastrah.ru/js/detectPrivateMode.min.js^$script,domain=alfastrah.ru
+||vk.com/al_video.php?act=track_player_events^$xhr
+||leto-leto.com/images/btn-sprite.png^$image,domain=leto-leto.com
 !
 !
 !
@@ -544,31 +538,37 @@ mag.103.by##.cookiesNotificationBy
 gemotest.ru##div.content-inner:nth-child(6) > main.content-section.content-wrapper_info-article:nth-child(5) > div.container__flex:first-child > aside.sidebar.mobile--hidden:last-child > div.sidebar-inner.sticky--widget:last-child > a.sidebar__widget.telegram-widget:first-child
 ##a[href^="https://www.1c-bitrix.ru/composite/"]
 !
-! Баннер насчёт cookie файлов
+! Баннер насчёт cookie файлов (сайт ресторанов Rostic's (ex. KFC))
 rostics.ru##div._3l3oK3nIbnZ
-! Рекламные баннеры-слайдеры
+! Рекламные баннеры-слайдеры (сайт ресторанов Rostic's (ex. KFC))
 rostics.ru##div._16TFR6yWKNl
 !
 gazeta.ru##div.b_telegram_subscriber
 !
-! Пустое место под рекламу
+! Пустое место под рекламу (сайт Комсомольской правды, Молдовское подразделение)
 md.kp.media##div.sc-1a8tb7h-0
 !
 ##a[href^="//www.liveinternet.ru/click"]
 championat.com##div.header-bottom__adv
 bxbox.bxb.delivery###content > div.sidebar:first-child > div.itc-slider:last-child
 global.cdek.ru##a.shopping-banner:nth-child(5)
+!
+! Предупреждение об использовании cookie (сайт развлек. парка Атмосфера)
 *.atmosferapark.ru##.user-cookie
 !
-! Предупреждение об использовании cookie
+! Предупреждение об использовании cookie (сайт развлек. центра Максилэнд 72)
 maxiland72.ru###rec782509983 > div.t657.t657_rectangle:first-child
 !
 ##a[href^="http://www.1c-bitrix.ru/composite/"]
 !
-! Предупреждение об использовании cookie и Яндекс.Метрики
+! Предупреждение об использовании cookie и Яндекс.Метрики (интернет-магазин Амодей (Amodei.ru))
 amodei.ru##div[class^="concept-banner  lato   cb-bottom cb-fixed  cb-long  light  cb-close-on animated light-gray slideInUp"]
 !
-
+!
+! Рекомендуемые поисковые запросы внизу на странице объявления (сервис объявлений Авито)
+avito.ru##div[class^="styles-module-root-XfPi7 styles-module-margin-top_none-_c4I_ styles-module-margin-bottom_32-kQ_OA styles-module-root_direction_vertical-zyzdU styles-module-root_fullWidth-ariEk"]
+!
+!
 !
 ! ===
 !
@@ -867,7 +867,22 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ! === Whitelist ===
 !
 @@||tc.mobile.yandex.net^
-@@||pochta.ru^
+@@||*assets.2gis.*/react.*ad.js^$script,domain=2gis.*
+@@||i0.wp.com/living.ai/wp-content/uploads/2024/08/2024082902-scaled.jpg*^$domain=living.ai
+@@||irecommend.ru/injector/botbot.js^$script,domain=irecommend.ru
+@@||api.smotrim.ru/api/v*/geo^$xhr
+@@||player.smotrim.ru/js/vendor.js*^$script
+@@||player.smotrim.ru/js/manifest.js*^$script
+@@||player.smotrim.ru/js/app.js*^$script
+!
+!
+! -
+! Ломается сайт DeepL при применении правил блокировки к скриптам tracking-*.js, late-cookieBannerLax.*.js и стилю late-cookieBannerLax.*.css, которые приведены ниже и разрешены.
+! The site DeepL crashes when applying blocking rules to the tracking-*.js, late-cookieBannerLax.*.js and late-cookieBannerLax.*.css scripts, which are listed below and allowed.
+@@||static.deepl.com/gatsby/tracking-*.js^$domain=deepl.com
+@@||static.deepl.com/gatsby/*cookieBanner*.*^$domain=deepl.com
+! -
+!
 !
 !
 !
@@ -886,15 +901,16 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ! -- Non-understandable addresses, but undesirable --
 ! -- Непонятные адреса, но нежелательные --
 !
-||*tobipovsem.com^$important
-||*largestloitering.com^
+||*.tobipovsem.com^$important
+||*.largestloitering.com^
 ||f1e4fcff2b.27640ea29d.com^
 ||d157c90939.1b384556ae.com^
 ||*vesmaveselo*^
-||*myroledance.com^
-||*vaterlines.com^
+||*.myroledance.com^
+||*.vaterlines.com^
 !
 ! Адреса с спам-писем с содержанием 18+ (14.11.24 стал «жертвой» такого массового спама)..
+!
 ||*arumism.com^
 ||*furixor.com^
 ||*vatomno.com^
