@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.9-3
+! Version: 0.0.9-4
 ! TimeUpdated: 2024-11-13T17:50:30+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
@@ -894,6 +894,14 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*myroledance.com^
 ||*vaterlines.com^
 !
+! Адреса с спам-писем с содержанием 18+ (14.11.24 стал «жертвой» такого массового спама)..
+||*arumism.com^
+||*furixor.com^
+||*vatomno.com^
+||*kwageon.com^
+||*aartaid.com^
+||*adjurve.com^
+||*barabalo.com^
 !
 !
 ! ---
