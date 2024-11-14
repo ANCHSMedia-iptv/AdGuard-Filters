@@ -310,6 +310,7 @@
 ||sa.hoodmaps.com^$important
 ||analytics.dns-shop.ru^$important
 ||stats.vk-portal.net^$important
+||*rlrt.ru^
 !
 !
 !
