@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.9-6
-! TimeUpdated: 2024-11-15T14:40:00+00:00
+! Version: 0.0.9-7
+! TimeUpdated: 2024-11-15T16:00:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -393,7 +393,7 @@
 ! Home page ad blocking rules are present, as well as analytics.
 ! Присутствуют правила блокировки рекламы на главной странице, а также аналитики.
 !
-||points.wb.ru/points-users-api/api/v*/w/promotion/available^$xhr,domain=wildberries.ru
+||points.wb.ru/points-users-api/api/v*/*/promotion/available^$xhr,domain=wildberries.ru
 ||static*.wbbasket.*/vol*/j/performanceAnalytics.*.js^$script,domain=wildberries.ru
 ||wildberries.ru/webapi/stats/*^$xhr,domain=wildberries.ru
 ||wildberries.ru/webapi/logging/*^$xhr,domain=wildberries.ru
@@ -404,9 +404,17 @@
 ||*basket*.wbbasket.ru/vol*/crm-bnrs/bners*/*.webp^$image,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/data/banners-main-*-*.json^$script,xhr,domain=wildberries.ru
 !
+!
+! Блокировка загрузки рекламы лотереи (+ лого рекламы) на странице Личного Кабинета (Российская версия).
+! Blocking the download of lottery ad (+ advertising logo) on the Personal Account page (Russian version).
+||shopper-bt.wb.ru/shopper/api/v*/purchases/lottery-informer^$xhr,domain=wildberries.ru
+||static-basket-*.wbbasket.ru/vol*/site/*/lottery/lk/banner-logo-v2.png^$image,domain=wildberries.ru
+!
+!
 ! - Global version (Глобальная версия). -
 ||*basket*.wbbasket.ru/vol*/data/promo-panel-data-*.json^$script,xhr,domain=global.wildberries.ru
 ||wbx-logs.wildberries.ru/api/v*/log^$xhr,domain=global.wildberries.ru
+||static-basket-*.wbbasket.ru/vol*/wbx-static/prod/assets/images/qr-code/qr-code.png^$image,domain=global.wildberries.ru
 ! -
 !
 ! - Вперемешку с Глобальной и Российской версией (Interspersed with the Global and Russian versions). -
@@ -416,32 +424,53 @@
 ! -
 !
 @@||*-basket-*.wbbasket.ru/vol*/site/j/spa/customTags/banners.*.js^$domain=wildberries.ru
+@@||static.wbstatic.net/data/banners-main-*-*.json^$domain=wildberries.ru
+!
+!
+! = Cosmetic rules =
+! = Косметические правила =
+!
+! Рекламный баннер лотереи на странице Личного Кабинета (Российская версия).
+! Lottery advertising banner on the Personal Account page (Russian version).
+wildberries.ru###app > div:nth-child(5) > div.lk-main:nth-child(3) > div.lk-aside:first-child > div.lk-advertisement:nth-child(4)
+!
+!
 !
 ! ===
 !
 !
 !
-! == Blocking unnecessary “garbage” from the Ozon website (ozon .ru). ==
-! == Блокировка ненужного «мусора» с сайта Озон (ozon .ru). ==
+! == Blocking unnecessary “garbage” from the Ozon website (ozon .ru, .by). ==
+! == Блокировка ненужного «мусора» с сайта Озон (ozon .ru, .by). ==
 ! Blocking ads, analytics and other “garbage”.
 ! Блокировка рекламы, аналитики и прочего «мусора».
 ! Rules for blocking scripts, styles (CSS) and ad images are present, as well as personalized recommendations.
 ! Присутствуют правила блокировки скриптов, стилей (CSS) и рекламных изображений, а также персонализированных рекомендаций.
 !
-||ir.ozone.ru/s*/cms/*/*/qr-code_*.png^$image,domain=ozon.ru
-||st.ozone.ru/assets/*/detached/marketing/entry.*.js^$script,domain=ozon.ru
-||st.ozone.ru/s*/ozon-tag-manager/*/sdk.js^$script,domain=ozon.ru
-||ozon.ru/api/entrypoint-api.bx/page/json/v*^$xhr,domain=ozon.ru
-||st.ozone.ru/assets/*/detached/rtb/marketing-desktop-adv-banner-v*.js^$script,domain=ozon.ru
+||ir*.ozone.ru/s*/cms/*/qr-code_*.png^$image,domain=ozon.ru|ozon.by
+||st.ozone.ru/assets/*/detached/marketing/entry.*.js^$script,domain=ozon.ru|ozon.by
+||st.ozone.ru/s*/ozon-tag-manager/*/sdk.js^$script,domain=ozon.ru|ozon.by
+||*ozon.*/api/entrypoint-api.bx/page/json/v*^$xhr,domain=ozon.ru|ozon.by
+||st.ozone.ru/assets/*/detached/rtb/marketing-desktop-adv-banner-v*.js^$script,domain=ozon.ru|ozon.by
 ||st.ozone.ru/assets/*/common_molecules_adv-info_index_vue.*^$css,script,domain=ozon.ru
-||xapi.ozon.ru/api/logs-gateway/*^$xhr,domain=ozon.ru
-||st.ozone.ru/assets/*/detached/*/autosplit-teams_*_components*_adv-*.js^$script,domain=ozon.ru
-||cdn*.ozonusercontent.com/s*/sellerassets/*/*.jpeg^$image,domain=ozon.ru
+||xapi.ozon.*/api/logs-gateway/*^$xhr,domain=ozon.ru|ozon.by
+||st.ozone.ru/assets/*/detached/*/autosplit-teams_*_components*_adv-*.js^$script,domain=ozon.ru|ozon.by
+||cdn*.ozonusercontent.com/s*/sellerassets/*/*.jpeg^$image,domain=ozon.ru|ozon.by
+||st.ozone.ru/assets/*/detached/*/*-desktop-banner-carousel.js^$script,domain=ozon.ru
+||st.ozone.ru/assets/*/detached/search/search-tap-tags.js^$script,domain=ozon.ru|ozon.by
+||ozon.ru/api/composer-api.bx/_action/v*/getSearchTapTags^$xhr,domain=ozon.ru
+||st.ozone.ru/s*/client-metrics/*.js^$script,domain=ozon.ru|ozon.by
 !
 ! -The rule applies to Ozon and Ozon Bank's website. -
 ! - Правило применимо к сайту Озона и Озон Банка. -
-||xapi.ozon.ru/dlte/multi^$ping,domain=ozon.ru|finance.ozon.ru
+||xapi.ozon.*/dlte/multi^$ping,domain=ozon.ru|finance.ozon.ru|ozon.by
 ! -
+!
+! Белорусская версия (ozon .by)
+!
+||xapi.ozon.*/perf-metrics-collector/*$ping,domain=ozon.by
+||st.ozone.ru/assets/*/detached/uw/uw-desktop-object-banner-list.js^$script,domain=ozon.by|ozon.ru (!)
+!
 !
 ! = Cosmetic rules =
 ! Убран баннер с рекламой «Озон Рассрочки» на странице товара (в блоке с указанием цены и т.д.).
@@ -879,13 +908,15 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 @@||player.smotrim.ru/js/app.js*^$script
 @@||returnyoutubedislikeapi.com^
 @@||sponsor.ajay.app^
+@@||digiseller.market^
+@@||epg.iptvx.one^
 !
 !
 ! -
 ! Ломается сайт DeepL при применении правил блокировки к скриптам tracking-*.js, late-cookieBannerLax.*.js и стилю late-cookieBannerLax.*.css, которые приведены ниже и разрешены.
 ! The site DeepL crashes when applying blocking rules to the tracking-*.js, late-cookieBannerLax.*.js and late-cookieBannerLax.*.css scripts, which are listed below and allowed.
 @@||static.deepl.com/gatsby/tracking-*.js^$domain=deepl.com
-@@||static.deepl.com/gatsby/*cookieBanner*.*^$domain=deepl.com
+@@||static.deepl.com/gatsby/*cookieBanner*.*^$script,css,domain=deepl.com
 ! -
 !
 !
