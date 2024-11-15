@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.9-5
-! TimeUpdated: 2024-11-14T16:20:30+00:00
+! Version: 0.0.9-6
+! TimeUpdated: 2024-11-15T14:40:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -278,6 +278,8 @@
 ||vk.com/al_video.php?act=track_player_events^$xhr
 ||leto-leto.com/images/btn-sprite.png^$image,domain=leto-leto.com
 ||rlrt.ru/1rogx.min.js^$script
+||bitrix24.sportmoda.ru/upload/crm/tag/call.tracker.js*^$script,domain=sportmoda.ru
+||sportmoda.ru/bitrix/services/main/ajax.php?action=yandex%3Ametrika.yandex_metrika*^$xhr,domain=sportmoda.ru
 !
 !
 !
@@ -869,12 +871,14 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 !
 @@||tc.mobile.yandex.net^
 @@||*assets.2gis.*/react.*ad.js^$script,domain=2gis.*
-@@||i0.wp.com/living.ai/wp-content/uploads/2024/08/2024082902-scaled.jpg*^$domain=living.ai
+@@||i*.wp.com/living.ai/wp-content/uploads/2024/08/2024082902-scaled.jpg*^$domain=living.ai
 @@||irecommend.ru/injector/botbot.js^$script,domain=irecommend.ru
 @@||api.smotrim.ru/api/v*/geo^$xhr
 @@||player.smotrim.ru/js/vendor.js*^$script
 @@||player.smotrim.ru/js/manifest.js*^$script
 @@||player.smotrim.ru/js/app.js*^$script
+@@||returnyoutubedislikeapi.com^
+@@||sponsor.ajay.app^
 !
 !
 ! -
