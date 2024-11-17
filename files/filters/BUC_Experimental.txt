@@ -77,7 +77,7 @@ finance.ozon.ru##div.paranja.svelte-uv8txi:last-child > div.wrapper.svelte-uv8tx
 !
 !
 !
-||pl-res.online.sberbank.ru/lib.analytics/*/index.js^$script,domain=online.sberbank.ru
+!
 !
 !
 !
