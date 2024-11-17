@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 0.0.9-9
-! TimeUpdated: 2024-11-17T14:20:00+00:00
+! TimeUpdated: 2024-11-17T17:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -307,6 +307,7 @@
 ||dostavista.ru/backend/browser-error-log^$xhr,domain=dostavista.ru
 ||express.dhl.ru/local/templates/dhl/components/bitrix/menu/*_menu/images/left_menu_bg.gif^$xhr,domain=express.dhl.ru
 ||api.flocktory.com^$third-party,important
+||websbol.clickstream.sberbank.ru/metrics/sbol^$xhr,domain=sberbank.ru
 !
 !
 !
@@ -997,6 +998,10 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 @@||*detmir.st/*/*ad*.*^$script,image,domain=detmir.ru
 @@||*detmir.st/*/*AD*.*^$image,domain=detmir.ru
 @@||captcha-api.yandex.ru^
+@@||esa-res.online.sberbank.ru/ESA/bizone/*/antifraud.min.js^$script,domain=online.sberbank.ru
+@@||cdnweb.sberbank.ru/*/*.*^$image,xhr,domain=online.sberbank.ru
+@@||esa-res.online.sberbank.ru/ESA/sbol/r-*/unallowedbrowsers.js^$script,domain=online.sberbank.ru
+@@||esa-res.online.sberbank.ru/ESA/sbol/r-*/bowser.*.js^$script,domain=online.sberbank.ru
 !
 !
 ! -

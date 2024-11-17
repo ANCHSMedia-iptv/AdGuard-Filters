@@ -324,6 +324,7 @@
 ||*targetads.io^$important
 ||*.livetex.ru^
 ||api.flocktory.com^$important
+||visor.sberbank.ru^
 !
 !
 !

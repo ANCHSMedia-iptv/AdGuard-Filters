@@ -1,5 +1,5 @@
 ! Title: Block unwanted connections (Experimental) [DNS]
-! Version: 17112024
+! Version: 17112024-1
 ! Last Modified: 17.11.2024
 ! It is updated frequently because it contains experimental filtering rules.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
@@ -20,9 +20,9 @@
 !
 ||platform.twitter.com^
 ||im*-tub-ru.yandex.net^
-||visor.sberbank.ru^
 ||gtm.deepl.com^
 ||s.deepl.com^
+!
 !
 !
 !
