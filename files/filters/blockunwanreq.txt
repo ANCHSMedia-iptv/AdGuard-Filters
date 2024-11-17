@@ -66,7 +66,7 @@
 !
 ||*snapkit.com^$important
 ||*appsflyer.com^$important
-||analytics.72.ru^
+||analytics.72.ru^$important
 ||syndication.twitter.com^
 ||*rexpush.pro^$important
 ||*peiynu.com^$important
@@ -93,7 +93,7 @@
 ||mixpanel.cdn.viber.com^$important
 ||*btloader.com^$important
 ||*digitalcaramel.com^$important
-||*ads-twitter.com^
+||*ads-twitter.com^$important
 ||*bitrix.info^$important
 ||avito.ru/stat/radar*^$image,domain=avito.ru
 ! avito.ru/web/*/adv/network/creative^$xhr,domain=avito.ru
@@ -786,7 +786,7 @@ avito.ru##div[class^="styles-module-root-XfPi7 styles-module-margin-top_none-_c4
 !
 ||banners*mobile.yandex.net^$important
 ||*appmetrica.yandex.net^$important
-||*appmetrica.yandex.ru^
+||*appmetrica.yandex.ru^$important
 ||bs.yandex.ru^$important
 ||direct.yandex.ru^$important
 ||tracking.ott.yandex.net^$important
@@ -795,7 +795,7 @@ avito.ru##div[class^="styles-module-root-XfPi7 styles-module-margin-top_none-_c4
 ||startup-mobile.ap.yandex-net.ru^$important
 ||*yandexadexchange.net^$important
 ||*webvisor.com^$important
-||*appmetrica.yango.com^
+||*appmetrica.yango.com^$important
 ||adfstat.yandex.ru^$important
 ||push.yandex.ru/v*/subscribe/*^$websocket,important
 ||http-check-headers.yandex.ru^$xhr,important
@@ -861,12 +861,12 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||amc.yandex.ru^$important
 ||*applovin.com^$important
 ||*hybrid.ai^$important
-||*silvermob.com^
-||*adrta.com^
+||*silvermob.com^$important
+||*adrta.com^$important
 ||*adriver.ru^$important
 ||*app-measurement.com^$important
-||*umengcloud.com^
-||*bdstatic.com^
+||*umengcloud.com^$important
+||*bdstatic.com^$important
 ||*gvt2.com^$important
 ||*tracker-api.my.com^$important
 ||*ad.intl.xiaomi.com^$important
@@ -875,10 +875,10 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||tnc*.byteoversea.com^$important
 ||tnc*.isnssdk.com^$important
 ||*pangle.io^$important
-||adashx4ae.ut.taobao.com^
+||adashx4ae.ut.taobao.com^$important
 ||*iad-*.braze.com^$important
-||logs.unchecky.com^
-||*infeng.site^
+||logs.unchecky.com^$important
+||*infeng.site^$important
 ||*iad.appboy.com^$important
 ||accscdn.m.taobao.com^
 ||*ads.unity3d.com^$important
@@ -886,8 +886,11 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||mc.yandex.*^$important
 ||an.yandex.*^$important
 ||analytics.mobile.yandex.net^$important
-||*footprintdns.com^
+||*footprintdns.com^$important
 ||aemetrics.aliexpress.ru^$important
+||*inmobi.com^$important
+||*vungle.com^$important
+||*mtgglobals.com^$important
 !
 ! --
 !
