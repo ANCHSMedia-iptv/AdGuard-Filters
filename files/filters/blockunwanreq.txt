@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.9-7
-! TimeUpdated: 2024-11-15T16:00:00+00:00
+! Version: 0.0.9-8
+! TimeUpdated: 2024-11-17T11:10:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -20,7 +20,7 @@
 !
 !
 !
-||analytics.picsart.com^
+||analytics.picsart.com^$important
 !
 !
 ! Это API запрос сервиса PicsArt на получение вашего местоположения на основе IP адреса и других данных. Возможно, в целях аналитики.
@@ -165,6 +165,8 @@
 ||store.bankiros.ru/js/metrics/*.js^script,domain=bankiros.ru,important
 ||*adhigh.net^
 ||*rutarget.ru^
+||api.mindbox.ru^$important
+||*/api/fl/idw-*^$xhr,important
 ||s.rbk.ru/*quote_static/quote-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru,important
 ||trafffgen.rambler.ru^
 ||gotovim-doma.ru/img/*/*.gif^$image,domain=gotovim-doma.ru,important
@@ -184,6 +186,7 @@
 ! *.103.*/css/cookiesNotification*.css^$css,important,domain=mag.103.*
 ! *.103.*/js/cookiesNotificationBy.js^$script,important,domain=mag.103.* (новое правило, строка 133 и 134)
 ||d31j93rd8oukbv.cloudfront.net^$important
+||d1tru86qrby720.cloudfront.net^$important
 ||*site-chat.me/support/support.int.js*^$script,important
 ! gemotest.ru/local/templates/main/img/chat.svg^$image,domain=gemotest.ru
 ||probolezny.ru/api/v*/fingerprint^$xhr,domain=probolezny.ru,important
@@ -280,6 +283,23 @@
 ||rlrt.ru/1rogx.min.js^$script
 ||bitrix24.sportmoda.ru/upload/crm/tag/call.tracker.js*^$script,domain=sportmoda.ru
 ||sportmoda.ru/bitrix/services/main/ajax.php?action=yandex%3Ametrika.yandex_metrika*^$xhr,domain=sportmoda.ru
+||sokolov.ru/api/v*/content/area/auth-banner/^$xhr,domain=sokolov.ru
+||cdn.diginetica.net^$third-party
+||r.revoplus.ru/javascripts/iframe/v*/revoiframe.js^$script
+||*.t2.ru/*.gif^$image,domain=t2.ru
+||api.sunlight.net/v*/content/pages/banners/personal/^$xhr,domain=sunlight.net
+||static*.megafon.ru/public/oldbrowser/is-old-browser.js*^$script,domain=megafon.ru
+||*.beeline.ru/js-log.ashx^$xhr,domain=beeline.ru
+||static.beeline.ru/upload/images/*qr*.svg^$image,domain=beeline.ru
+||static.beeline.ru/upload/images/*QR*.png^$image,domain=beeline.ru
+||api-content.web-api.dom.ru/v*/promo-line^$xhr,domain=dom.ru
+||lenta.com/api-gateway/v*/banners/adhweb^$xhr,domain=lenta.com
+||*.fp.kaspersky-labs.com^
+||otel-collector.lenta.tech/v*/traces^$xhr,domain=lenta.com
+||cdn*.helpdeskeddy.com//js/modules/chat_widget/hde.js^$script
+||sitecdn.api.lenta.com/assets-ng/footer/lenta-app-qr.svg^$image,domain=lenta.com
+||magnit.ru/_nuxt/my-magnit.*.svg^$image,domain=magnit.ru
+||magnit.ru/_nuxt/app-magnit.*.svg^$image,domain=magnit.ru
 !
 !
 !
@@ -330,7 +350,7 @@
 !
 ||megamarket.ru/api/mobile/v*/analyticsDataService/*^$xhr
 ||megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr
-||megamarket.ru/api/fl/idw-smm^$xhr
+! megamarket.ru/api/fl/idw-smm^$xhr (новое правило, строка 168)
 ||api.megamarket.tech/api/colibri/events/track^$xhr
 !
 ! Rule for blocking banner ad images (new design) (PC version).
@@ -368,11 +388,11 @@
 ! Blocking ads, analytics and other “garbage”.
 ! Блокировка рекламы, аналитики и прочего «мусора».
 !
-||*pinterest.com/_/_/trace/trace/^$xhr
-||*pinterest.com/_/_/storage_report/^$xhr
-||*pinterest.com/_/_/logClientError/^$xhr
-||*pinterest.com/_/graphql/^$xhr
-||*pinterest.com/_/_/csp_report/^$xhr
+||*pinterest.com/_/_/trace/trace/^$xhr,important
+||*pinterest.com/_/_/storage_report/^$xhr,important
+||*pinterest.com/_/_/logClientError/^$xhr,important
+||*pinterest.com/_/graphql/^$xhr,important
+||*pinterest.com/_/_/csp_report/^$xhr,important
 ||trk.pinterest.com^$important
 ||ads.pinterest.com^$important
 ||log.pinterest.com^$important
@@ -448,10 +468,10 @@ wildberries.ru###app > div:nth-child(5) > div.lk-main:nth-child(3) > div.lk-asid
 ! Присутствуют правила блокировки скриптов, стилей (CSS) и рекламных изображений, а также персонализированных рекомендаций.
 !
 ||ir*.ozone.ru/s*/cms/*/qr-code_*.png^$image,domain=ozon.ru|ozon.by
-||st.ozone.ru/assets/*/detached/marketing/entry.*.js^$script,domain=ozon.ru|ozon.by
+||st.ozone.ru/assets/*/detached/marketing*/entry.*.js^$script,domain=ozon.ru|ozon.by
 ||st.ozone.ru/s*/ozon-tag-manager/*/sdk.js^$script,domain=ozon.ru|ozon.by
 ||*ozon.*/api/entrypoint-api.bx/page/json/v*^$xhr,domain=ozon.ru|ozon.by
-||st.ozone.ru/assets/*/detached/rtb/marketing-desktop-adv-banner-v*.js^$script,domain=ozon.ru|ozon.by
+||st.ozone.ru/assets/*/detached/*/marketing-desktop-adv-banner-v*.js^$script,domain=ozon.ru|ozon.by
 ||st.ozone.ru/assets/*/common_molecules_adv-info_index_vue.*^$css,script,domain=ozon.ru
 ||xapi.ozon.*/api/logs-gateway/*^$xhr,domain=ozon.ru|ozon.by
 ||st.ozone.ru/assets/*/detached/*/autosplit-teams_*_components*_adv-*.js^$script,domain=ozon.ru|ozon.by
@@ -460,6 +480,8 @@ wildberries.ru###app > div:nth-child(5) > div.lk-main:nth-child(3) > div.lk-asid
 ||st.ozone.ru/assets/*/detached/search/search-tap-tags.js^$script,domain=ozon.ru|ozon.by
 ||ozon.ru/api/composer-api.bx/_action/v*/getSearchTapTags^$xhr,domain=ozon.ru
 ||st.ozone.ru/s*/client-metrics/*.js^$script,domain=ozon.ru|ozon.by
+||ir.ozone.ru/s*/cms/*/ozon_job-*.png^$image,domain=ozon.ru
+||ir.ozone.ru/s*/cms/*/*_11.11_*.jpg^$image,domain=ozon.ru
 !
 ! -The rule applies to Ozon and Ozon Bank's website. -
 ! - Правило применимо к сайту Озона и Озон Банка. -
@@ -469,13 +491,14 @@ wildberries.ru###app > div:nth-child(5) > div.lk-main:nth-child(3) > div.lk-asid
 ! Белорусская версия (ozon .by)
 !
 ||xapi.ozon.*/perf-metrics-collector/*$ping,domain=ozon.by
-||st.ozone.ru/assets/*/detached/uw/uw-desktop-object-banner-list.js^$script,domain=ozon.by|ozon.ru (!)
+||st.ozone.ru/assets/*/detached/uw/uw-desktop-object-banner-list.js^$script,domain=ozon.by
 !
 !
 ! = Cosmetic rules =
-! Убран баннер с рекламой «Озон Рассрочки» на странице товара (в блоке с указанием цены и т.д.).
-! Removed the banner with «Ozon Installment» advertising on the product page (in the block with the price, etc.).
-ozon.ru###layoutPage > div.b6:first-child > div.container.c:nth-child(5) > div.lu0_27.ul3_27.ul5_27:last-child > div.nn0_27:last-child > div.n0n_27 > div.lu0_27.ul6_27.ul3_27.u3l_27 > div.lu0_27.ul6_27.ul3_27.lu4_27:first-child > div.vm7_27.v9m_27:last-child > div.mv9_27.vm9_27 > div.vm8_27:nth-child(2) > div > div.d4016-a.vl1_27:last-child > div.k4v_27 > div.vl0_27.a2016-a.a2016-a3
+! = Косметические правила =
+! Удаление баннера с рекламой «Озон Рассрочки» на странице товара (в блоке с указанием цены и т.д.).
+! Removing the banner with «Ozon Installment» advertising on the product page (in the block with the price, etc.).
+ozon.ru##div[data-widget="webInstallmentPurchase"]
 ! =
 ! Зато от блокировки некоторых скриптов сломался подвал сайта (footer) на главной странице XD (к примеру, в разделе Корзина подвал сайта работает).
 ! But from blocking some scripts broke the site basement (footer) on the main page XD (for example, in the Shopping Cart section the site basement works).
@@ -510,6 +533,9 @@ ozon.ru###layoutPage > div.b6:first-child > div.container.c:nth-child(5) > div.l
 ! Но одна есть прям на главной странице - реклама Альфа банка, которая находится прямо в блоке Промоакции.. 
 ||*otzovik.com/services/20*/*/*.*^$image,domain=otzovik.com
 !
+||yabs.yandex.ru^$domain=otzovik.com
+!
+! - Cosmetic rules -
 ! - Косметические правила -
 ! Есть вариант заблокировать сам блок косметическом правилом..
 ! otzovik.com###content > div.home-grid:last-child > div.content-left:first-child > div.topblock.promo.home-box:nth-child(2)
@@ -522,7 +548,7 @@ otzovik.com##div[class^="produkt-corteny item sortable"]
 !
 !
 !
-! == AliExpress (aliexpress .ru) ==
+! == AliExpress website (aliexpress .ru) ==
 !
 !
 ||st.aestatic.net/mixer/ssr/*/aer-assets/tracker.*.js^$script,domain=aliexpress.ru
@@ -532,6 +558,7 @@ otzovik.com##div[class^="produkt-corteny item sortable"]
 ||st.aestatic.net/mixer/widgets/bx/RecommendationFeedOrderSimilarWrapper/*/system/RecommendationFeedOrderSimilarWrapper.js^$script,domain=aliexpress.ru
 !
 ! = Cosmetic rules =
+! = Косметические правила =
 aliexpress.ru##div.ModuleBanner_ModuleBanner__outer-wrapper__100x6
 ! aliexpress.ru###__aer_root__ > div.MainLayout__root__79bpr.MainLayout__background-white__79bpr > div.snow-container_SnowContainer__container__rkv8lv:nth-child(7) > div.RedOrdersGrid_RedOrdersGrid__grid__um832:first-child > div.snow-ali-kit_RootGrid__container__18kmu5.RedOrdersGrid_RedOrdersGrid__container__um832 > div.RedOrdersGrid_RedOrdersGrid__rootGridInnerDiv__um832.snow-ali-kit_RootGrid__row__18kmu5.snow-ali-kit_RootGrid__align-flex-start__18kmu5 > div.snow-ali-kit_Col__col__1ccuye.snow-ali-kit_Col__align-self-flex-start__1ccuye.RedOrdersColumn_RedOrdersColumn__grid__987ze:last-child > div.snow-container_SnowContainer__container__rkv8lv > div.snow-container_SnowContainer__container__rkv8lv:last-child
 aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
@@ -545,6 +572,33 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 !
 !
 !
+! == Сайт магазина Детский мир (detmir .ru) ==
+!
+||api.detmir.ru/v*/ui/default-suggestions*^$xhr,domain=detmir.ru
+||go.detmir.st/img/1731586870/6301b1732f0709bc7dbef85e5bf55185.svg^$image,domain=detmir.ru
+!
+! - Косметические правила -
+!
+! Рекламные баннеры
+detmir.ru##div[data-testid="advContainer"]
+! -
+!
+! ===
+!
+!
+!
+! == Сайт провайдера Дом.ру (dom .ru) ==
+!
+||*.dom.ru/static/js/calltouch.js^$script,domain=dom.ru
+||*.dom.ru/static/js/googleTagManager.js^$script,domain=dom.ru
+||*.dom.ru/static/js/mailRuCounter.js^$script,domain=dom.ru
+!
+! - Косметические парвила -
+! Рекламный блок (сайт провайдера Дом.ру (dom .ru))
+dom.ru##div[class^="sc-6e31cbc2-0 kKbgFL"]
+! -
+!
+! ===
 !
 !
 !
@@ -577,7 +631,7 @@ rostics.ru##div._16TFR6yWKNl
 !
 gazeta.ru##div.b_telegram_subscriber
 !
-! Пустое место под рекламу (сайт Комсомольской правды, Молдовское подразделение)
+! Пустое место под рекламу (новостной сайт Комсомольская правда, Молдовское подразделение)
 md.kp.media##div.sc-1a8tb7h-0
 !
 ##a[href^="//www.liveinternet.ru/click"]
@@ -591,14 +645,24 @@ global.cdek.ru##a.shopping-banner:nth-child(5)
 ! Предупреждение об использовании cookie (сайт развлек. центра Максилэнд 72)
 maxiland72.ru###rec782509983 > div.t657.t657_rectangle:first-child
 !
+!
 ##a[href^="http://www.1c-bitrix.ru/composite/"]
+!
 !
 ! Предупреждение об использовании cookie и Яндекс.Метрики (интернет-магазин Амодей (Amodei.ru))
 amodei.ru##div[class^="concept-banner  lato   cb-bottom cb-fixed  cb-long  light  cb-close-on animated light-gray slideInUp"]
 !
-!
-! Рекомендуемые поисковые запросы внизу на странице объявления (сервис объявлений Авито)
+! Рекомендуемые поисковые запросы внизу на странице объявления (сервис объявлений Авито (avito .ru))
 avito.ru##div[class^="styles-module-root-XfPi7 styles-module-margin-top_none-_c4I_ styles-module-margin-bottom_32-kQ_OA styles-module-root_direction_vertical-zyzdU styles-module-root_fullWidth-ariEk"]
+!
+! Рекламный баннер сверху сайта (сайт ювелирных товаров Соколов (sokolov .ru))
+sokolov.ru##div[class^="AuthBanner_banner__rKnfp"]
+!
+! Рекламный баннер сверху сайта (сайт оператора связа билайн (beeline .ru))
+beeline.ru##div[class^="BJOeQ"]
+!
+! Блок о подписке на email рассылку в подвале сайта (сайт оператора связа билайн (beeline .ru))
+beeline.ru##div[class^="dRwBs"]
 !
 !
 !
@@ -781,6 +845,7 @@ avito.ru##div[class^="styles-module-root-XfPi7 styles-module-margin-top_none-_c4
 !
 !
 !
+!
 ! == Yandex: Analytics, Ads and other ==
 ! == Яндекс: Аналитика, реклама и прочее. ==
 !
@@ -812,6 +877,12 @@ avito.ru##div[class^="styles-module-root-XfPi7 styles-module-margin-top_none-_c4
 ||mail.yandex.ru/web-api/journal/v*^$ping,domain=mail.yandex.ru
 ||media-adv.market.yandex.ru^$important
 ! @@||yandex.ru/clck/click^$domain=mail.yandex.ru
+||yastatic.net/partner-code-bundles/*.js^$script,important
+||yastatic.net/nearest.js^$script
+||browser.pay.yandex.ru/api/v*/split-status^$important
+||paybro-static.s*.yandex.net/paybro/v*/widget-*.*^$script,css
+||paybro-static.s*.yandex.net/paybro/v*/8a4cff28d9bf287197a4.png^$image
+||yastatic.net/safeframe-bundles/*/host.js^$script
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -840,6 +911,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*googlesyndication.com^$important
 ||adservice.google.com^$important
 ||s.youtube.com^$important
+||appsgrowthpromo*.clients*.google.com^$important
 !
 ! ===
 !
@@ -912,7 +984,9 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 @@||returnyoutubedislikeapi.com^
 @@||sponsor.ajay.app^
 @@||digiseller.market^
-@@||epg.iptvx.one^
+@@||*.iptvx.one^
+@@||*detmir.st/*/*ad*.*^$script,image,domain=detmir.ru
+@@||*detmir.st/*/*AD*.*^$image,domain=detmir.ru
 !
 !
 ! -
@@ -949,7 +1023,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*.myroledance.com^$third-party
 ||*.vaterlines.com^
 !
-! Адреса с спам-писем с содержанием 18+ (14.11.24 стал «жертвой» такого массового спама)..
+! Адреса с спам-писем с содержанием 18+ (с 14.11.24 стал «жертвой» такого массового спама)..
 !
 ||*arumism.com^
 ||*furixor.com^
@@ -958,6 +1032,8 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*aartaid.com^
 ||*adjurve.com^
 ||*barabalo.com^
+||*fuckbookflirt.com^
+||*peachdates.com^
 !
 !
 ! ---

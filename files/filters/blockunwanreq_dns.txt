@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.0.9-7
+! Version: 0.0.9-8
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-11-15T16:00:00+00:00
+! TimeUpdated: 2024-11-1711:10:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 15.11.2024 16:00 UTC
+! Last Modified: 17.11.2024 11:10 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -29,25 +29,25 @@
 !
 ! -- == Google Firebase ==
 !
-||firebaseinstallations.googleapis.com^
-||firebaselogging.googleapis.com^
-||firebaseremoteconfig.googleapis.com^
-||firebaselogging-pa.googleapis.com^
-||firebaseinappmessaging.googleapis.com^
-||firebaseremoteconfigrealtime.googleapis.com^
+||firebaseinstallations.googleapis.com^$important
+||firebaselogging.googleapis.com^$important
+||firebaseremoteconfig.googleapis.com^$important
+||firebaselogging-pa.googleapis.com^$important
+||firebaseinappmessaging.googleapis.com^$important
+||firebaseremoteconfigrealtime.googleapis.com^$important
 ||firebase.googleapis.com^
 ! firebase.google.com^
 ! ===
 !
 ! -- == Google Crashlytics + Firebase ==
 !
-||firebase-settings.crashlytics.com^
-||reports.crahlytics.com^
-||e.crashlytics.co^
+||firebase-settings.crashlytics.com^$important
+||reports.crahlytics.com^$important
+||e.crashlytics.co^$important
 ! report.crashlytics.com^
-||settings.crashlytics.com^
-||firebase-settings.crashlytics.col^
-||crashlytics*-pa.googleapis.com^
+||settings.crashlytics.com^$important
+||firebase-settings.crashlytics.col^$important
+||crashlytics*-pa.googleapis.com^$important
 ! ===
 !
 !
@@ -110,9 +110,9 @@
 ! -- == Microsoft Analytics ==
 ! -- == Аналитика Microsoft (Майкрософт) ==
 !
-||*events.data.microsoft.com^
+||*events.data.microsoft.com^$important
 ! self.events.data.microsoft.com^
-||*pipe.aria.microsoft.com^
+||*pipe.aria.microsoft.com^$important
 ! mobile.events.data.microsoft.com^
 ! self.pipe.aria.microsoft.com^
 !
@@ -159,6 +159,7 @@
 ||*googlesyndication.com^$important
 ||adservice.google.com^$important
 ||s.youtube.com^$important
+||appsgrowthpromo*.clients*.google.com^$important
 !
 ! ===
 !
@@ -195,22 +196,22 @@
 ||connect.ok.ru^$domain=~ok.ru
 ||*inappstory.ru^$dnsrewrite=REFUSED
 ||*inappstory.com^$dnsrewrite=REFUSED
-||*appsflyersdk.com^
+||*appsflyersdk.com^$important
 ||facebook.com^$dnsrewrite=REFUSED,domain=~facebook.com
 ||www.facebook.com^$dnsrewrite=REFUSED,domain=~facebook.com
-||*snapkit.com^
-||*appsflyer.com^
+||*snapkit.com^$important
+||*appsflyer.com^$important
 ||analytics.72.ru^$important
 ||syndication.twitter.com^$dnsrewrite=REFUSED
 ||*rexpush.pro^$dnsrewrite=REFUSED
 ||*peiynu.com^$dnsrewrite=REFUSED
-||*appspot.com^
+||*appspot.com^$important
 ||*yabro.ru^
 ||*flowerpla.com^$dnsrewrite=REFUSED
 ||*amocrm.ru^$dnsrewrite=REFUSED
 ||*gtrxlnd2.com^$dnsrewrite=REFUSED
 ||*uxfeedback*^$dnsrewrite=REFUSED
-||*tiqcdn.com^
+||*tiqcdn.com^$important
 ||*analytics.tele2.ru^$important
 ||*adjust*^$important
 ||app.adjust.com^$important
@@ -233,6 +234,7 @@
 ||*mixpanel.com^$important
 ||mixpanel.cdn.viber.com^$important
 ||d3c8j8snkzfr1n.cloudfront.net^$important
+||d1tru86qrby720.cloudfront.net^$important
 ||*btloader.com^$important
 ||*adskeeper.co.uk^$important
 ||*digitalcaramel.com^$important$important
@@ -279,6 +281,7 @@
 ||eventstream.dodopizza.com^$important
 ||*cnt.my^$important
 ||*top100.ru^$important
+||api.mindbox.ru^$important
 ||*acint.net^$important
 ||a.ria.ru^$important
 ||*infox.sg^$important
@@ -311,6 +314,12 @@
 ||analytics.dns-shop.ru^$important
 ||stats.vk-portal.net^$important
 ||*rlrt.ru^
+||*api.useinsider.com^$important
+||code.acstat.com^$important
+||telegraf.detmir-stats.ru^$important
+||sp-env-p.detmir.ru^$important
+||static.popmechanic.ru^
+||a.mts.ru^$important
 !
 !
 !
@@ -426,7 +435,8 @@
 ||*.vaterlines.com^$dnsrewrite=REFUSED
 ||*otnolatrnup.com^$important
 !
-! Адреса с спам-писем с содержанием 18+ (14.11.24 стал «жертвой» такого массового спама)..
+! Адреса с спам-писем с содержанием 18+ (c 14.11.24 стал «жертвой» такого массового спама)..
+!
 ||*arumism.com^
 ||*furixor.com^
 ||*vatomno.com^
@@ -434,6 +444,8 @@
 ||*aartaid.com^
 ||*adjurve.com^
 ||*barabalo.com^
+||*fuckbookflirt.com^
+||*peachdates.com^
 !
 !
 !

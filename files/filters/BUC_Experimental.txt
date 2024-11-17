@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections (Experimental)
-! Version: 20241113
-! Last Modified: 13.11.2024
+! Version: 20241117
+! Last Modified: 17.11.2024
 ! It is updated frequently because it contains experimental filtering rules.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Description: Блокировка нежелательных запросов - экспериментальные правила.
@@ -23,16 +23,6 @@
 !
 !
 !
-! == Blocking unnecessary “garbage” from the Ozon website (ozon .ru). ==
-! == Блокировка ненужного «мусора» с сайта Озон (ozon .ru). ==
-! Blocking ads, analytics and other “garbage”.
-! Блокировка рекламы, аналитики и прочего «мусора».
-!
-||st.ozone.ru/assets/*/detached/search/search-tap-tags.js^$script,domain=ozon.ru
-||ozon.ru/api/composer-api.bx/_action/v*/getSearchTapTags^$xhr,domain=ozon.ru
-!
-!
-! ===
 !
 !
 ! == Яндекс.Маркет ==
@@ -49,7 +39,6 @@
 ||*alexametrics.com^
 !
 ||invitro.edna.ru/api/chat/config*^$xhr,domain=invitro.ru
-||api.mindbox.ru^
 !
 !
 !
@@ -82,8 +71,7 @@ finance.ozon.ru##div.paranja.svelte-uv8txi:last-child > div.wrapper.svelte-uv8tx
 !
 !
 !
-||yastatic.net/partner-code-bundles/*.js^$script,important
-||yabs.yandex.ru^$domain=otzovik.com
+!
 !
 !
 !
