@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.9-8
-! TimeUpdated: 2024-11-17T11:10:00+00:00
+! Version: 0.0.9-9
+! TimeUpdated: 2024-11-17T14:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -95,6 +95,7 @@
 ||*digitalcaramel.com^$important
 ||*ads-twitter.com^$important
 ||*bitrix.info^$important
+||*skcrtxr.com^$important
 ||avito.ru/stat/radar*^$image,domain=avito.ru
 ! avito.ru/web/*/adv/network/creative^$xhr,domain=avito.ru
 ||*advert*^$image,important
@@ -163,8 +164,8 @@
 ||*/adv/*^$image,xhr,script,important
 ! *empty*.*^$image,important
 ||store.bankiros.ru/js/metrics/*.js^script,domain=bankiros.ru,important
-||*adhigh.net^
-||*rutarget.ru^
+||*adhigh.net^$important
+||*rutarget.ru^$important
 ||api.mindbox.ru^$important
 ||*/api/fl/idw-*^$xhr,important
 ||s.rbk.ru/*quote_static/quote-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru,important
@@ -271,7 +272,7 @@
 ! (новое правило, строка 133 и 134)
 ||userapi.com/js/api/openapi.js*^$script,domain=~vk.com
 ||analytics.vsem-edu-oblako.ru*/track^$xhr,important
-||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,domain=kinoteatr.ru
+||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,important
 ||sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com
 ! sa.hoodmaps.com^
 ||citilink.ru/graphql/^$xhr,domain=citilink.ru
@@ -300,6 +301,11 @@
 ||sitecdn.api.lenta.com/assets-ng/footer/lenta-app-qr.svg^$image,domain=lenta.com
 ||magnit.ru/_nuxt/my-magnit.*.svg^$image,domain=magnit.ru
 ||magnit.ru/_nuxt/app-magnit.*.svg^$image,domain=magnit.ru
+||*targetads.io^$important
+||dostavista.ru/backend/browser-log^$xhr,domain=dostavista.ru
+||dostavista.ru/write-analytics^$xhr,domain=dostavista.ru
+||dostavista.ru/backend/browser-error-log^$xhr,domain=dostavista.ru
+||express.dhl.ru/local/templates/dhl/components/bitrix/menu/*_menu/images/left_menu_bg.gif^$xhr,domain=express.dhl.ru
 !
 !
 !
@@ -609,7 +615,7 @@ dom.ru##div[class^="sc-6e31cbc2-0 kKbgFL"]
 ! === Cosmetic rules ===
 ! === Косметические правила ===
 russianfood.com###layout > div.layout > div.wrapper > table:nth-child(4) > tbody > tr:first-child > td.sub_left:first-child > div.sub_block:nth-child(4) > div:last-child
-t.rbc.ru##.footer__counter__image
+rbc.ru##.footer__counter__image
 webproverka.com##table:first-child > tbody > tr:last-child > td > p > table:last-child > tbody > tr:nth-child(2) > td > table > tbody > tr > td:first-child
 webproverka.com##table:first-child > tbody > tr:last-child > td > p > table:last-child > tbody > tr:nth-child(2) > td > table > tbody > tr > td:last-child
 disk.yandex.ru###app > div.public__root > div.top-banner.top-banner_desktop:nth-child(2) > div.DesktopBanner_DesktopBanner_XjXmr.Theme.Theme_color_ps-dark.Theme_root_ps-dark > div.DesktopBanner_DesktopBanner__Foreground_B9EQN:last-child
@@ -664,6 +670,8 @@ beeline.ru##div[class^="BJOeQ"]
 ! Блок о подписке на email рассылку в подвале сайта (сайт оператора связа билайн (beeline .ru))
 beeline.ru##div[class^="dRwBs"]
 !
+! Сообщение об использовании блокировщика рекламы (сайт логистической компании (грузоперевозчика) Деловые Линии (dellin .ru))
+dellin.ru##div[class^="Notifications__PopupRoot-sc-ry41v1-0 dDPidn"]
 !
 !
 ! ===
@@ -987,6 +995,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 @@||*.iptvx.one^
 @@||*detmir.st/*/*ad*.*^$script,image,domain=detmir.ru
 @@||*detmir.st/*/*AD*.*^$image,domain=detmir.ru
+@@||captcha-api.yandex.ru^
 !
 !
 ! -

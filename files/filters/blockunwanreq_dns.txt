@@ -2,7 +2,7 @@
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Version: 0.0.9-8
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-11-1711:10:00+00:00
+! TimeUpdated: 2024-11-1714:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 17.11.2024 11:10 UTC
+! Last Modified: 17.11.2024 14:20 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -203,27 +203,27 @@
 ||*appsflyer.com^$important
 ||analytics.72.ru^$important
 ||syndication.twitter.com^$dnsrewrite=REFUSED
-||*rexpush.pro^$dnsrewrite=REFUSED
-||*peiynu.com^$dnsrewrite=REFUSED
+||*rexpush.pro^$dnsrewrite=REFUSED,important
+||*peiynu.com^$dnsrewrite=REFUSED,important
 ||*appspot.com^$important
 ||*yabro.ru^
-||*flowerpla.com^$dnsrewrite=REFUSED
-||*amocrm.ru^$dnsrewrite=REFUSED
-||*gtrxlnd2.com^$dnsrewrite=REFUSED
-||*uxfeedback*^$dnsrewrite=REFUSED
+||*flowerpla.com^$dnsrewrite=REFUSED,important
+||*amocrm.ru^$dnsrewrite=REFUSED,important
+||*gtrxlnd2.com^$dnsrewrite=REFUSED,important
+||*uxfeedback*^$dnsrewrite=REFUSED,important
 ||*tiqcdn.com^$important
 ||*analytics.tele2.ru^$important
 ||*adjust*^$important
 ||app.adjust.com^$important
 ||*cdn.bcebos.com^
 ||rutrk.org^$important
-||*pglstatp.com^$dnsrewrite=REFUSED
+||*pglstatp.com^$dnsrewrite=REFUSED,important
 ||stat-analytics.mediavitrina.ru^
 ||stats.avito.ru^$important
 ||trk.pinterest.com^$important
 ||ads.pinterest.com^$important
 ||log.pinterest.com^$important
-||analytics.pinterest.com^
+||analytics.pinterest.com^$important
 ||*skcrtxr.com^$important
 ||*terratraf.com^$important
 ||top-fwz1.mail.ru^$important
@@ -320,6 +320,9 @@
 ||sp-env-p.detmir.ru^$important
 ||static.popmechanic.ru^
 ||a.mts.ru^$important
+||*newrelic.com^$important
+||*targetads.io^$important
+||*.livetex.ru^
 !
 !
 !
@@ -410,6 +413,7 @@
 @@||static.deepl.com^
 @@||digiseller.market^
 @@||*.iptvx.one^
+@@||captcha-api.yandex.ru^
 !
 !
 ! ===
