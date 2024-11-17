@@ -205,7 +205,7 @@
 ||mediafire.com/blank.html^$domain=mediafire.com
 ||mediafiredls.com/adsupply/*^$xhr,domain=mediafire.com,important
 ||publicapi.dodois.io/ru/api/v*/financialmetrics^$xhr,domain=dodopizza.ru,important
-! papajohns.ru/assets/empty.*.jpg^$image,domain=papajohns.ru,important
+||papajohns.ru/assets/empty.*.jpg^$image,domain=papajohns.ru,important
 ||supportai.yandex/widget/v*/bundle.js^$script,important
 ||id.rambler.ru/rambler-id-helper/auth_events.js^$script
 ||cdnn*.img.ria.ru/min/js/analytics/ab_title_scroll_event.js*^$script,domain=ria.ru,important
