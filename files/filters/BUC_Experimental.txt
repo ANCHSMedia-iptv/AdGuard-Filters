@@ -1,5 +1,5 @@
 ! Title: Block unwanted connections (Experimental)
-! Version: 20241117
+! Version: 20241117-2
 ! Last Modified: 17.11.2024
 ! It is updated frequently because it contains experimental filtering rules.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
@@ -53,6 +53,11 @@
 ||*/tracking/mappings/test/active-mapping.json^$script,xhr,domain=tbank.ru
 ||tbank.ru/api/cfg/web-gateway/getResponse^$xhr,domain=tbank.ru
 ||cfg.tinkoff.ru/api-gateway/v*/getToggles^$xhr,domain=tbank.ru
+||tbank.ru/api/front/*^$xhr,domain=tbank.ru
+||acdn.tinkoff.ru/twa/hosted-libs/top-mail/v*/code.js^$script,domain=tbank.ru
+||acdn.tinkoff.ru/twa/hosted-libs/target-ads/v*/targetads-sdk-*.js^$script,domain=tbank.ru
+||acdn.tinkoff.ru/twa/ad-hoc/pixel-iframe/index.html^$domain=tbank.ru
+||acdn.tinkoff.ru/twa/hosted-libs/vk/v*/openapi.js*^$script,domain=tbank.ru
 !
 ! ===
 !

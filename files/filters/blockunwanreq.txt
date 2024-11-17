@@ -306,6 +306,7 @@
 ||dostavista.ru/write-analytics^$xhr,domain=dostavista.ru
 ||dostavista.ru/backend/browser-error-log^$xhr,domain=dostavista.ru
 ||express.dhl.ru/local/templates/dhl/components/bitrix/menu/*_menu/images/left_menu_bg.gif^$xhr,domain=express.dhl.ru
+||api.flocktory.com^$third-party,important
 !
 !
 !
