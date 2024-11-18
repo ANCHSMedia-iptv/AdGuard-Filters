@@ -1,5 +1,5 @@
 ! Title: Block unwanted connections (Experimental)
-! Version: 20241118
+! Version: 20241118-1
 ! Last Modified: 18.11.2024
 ! It is updated frequently because it contains experimental filtering rules.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
@@ -42,24 +42,7 @@
 !
 !
 !
-! == "Superfluous garbage" from the website (personal cabinet) of T-Bank (ex. Tinkoff). ==
-! == «Лишний мусор» с сайта (личного кабинета) Т-Банка (ex. Тинькофф). ==
 !
-||tbank.ru/api/front/supreme/log/*^$xhr,domain=tbank.ru
-||*tinkoff.ru/gateway/v*/event*^$ping,xhr,domain=tbank.ru
-||tbank.ru/api/front/supreme-beer/*^$xhr,domain=tbank.ru
-||tmsg.tbank.ru/api/v*/log^$ping,xhr,domain=tbank.ru
-||acdn.tinkoff.ru/resources?name=analytics_config^$xhr,domain=tbank.ru
-||*/tracking/mappings/test/active-mapping.json^$script,xhr,domain=tbank.ru
-||tbank.ru/api/cfg/web-gateway/getResponse^$xhr,domain=tbank.ru
-||cfg.tinkoff.ru/api-gateway/v*/getToggles^$xhr,domain=tbank.ru
-||tbank.ru/api/front/*^$xhr,domain=tbank.ru
-||acdn.tinkoff.ru/twa/hosted-libs/top-mail/v*/code.js^$script,domain=tbank.ru
-||acdn.tinkoff.ru/twa/hosted-libs/target-ads/v*/targetads-sdk-*.js^$script,domain=tbank.ru
-||acdn.tinkoff.ru/twa/ad-hoc/pixel-iframe/index.html^$domain=tbank.ru
-||acdn.tinkoff.ru/twa/hosted-libs/vk/v*/openapi.js*^$script,domain=tbank.ru
-!
-! ===
 !
 ! == 2gis ==
 !
