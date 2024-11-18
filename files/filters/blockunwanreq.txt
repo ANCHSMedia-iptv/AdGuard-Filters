@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.0.9-9
-! TimeUpdated: 2024-11-17T17:20:00+00:00
+! Version: 0.1_1
+! TimeUpdated: 2024-11-18T16:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -130,7 +130,7 @@
 ||*adlook.me^$important
 ||*betweendigital.com^$important
 ||*/api/advertising/*^$xhr,domain=hitfm.ru|montecarlo.ru
-||vk.com/js/api/openapi.js^$script,domain=~vk.com
+||vk.com/js/api/openapi.js^$script,domain=~vk.com,important
 ||*cookie*.js^$script,important
 ||*Cookie*.js^$script,important
 ||*/itunes_referals.js^$script
@@ -270,7 +270,7 @@
 ||zoon.ru/images/border.gif^$image,domain=zoon.ru
 ! (новое правило, строка 133 и 134)
 ! (новое правило, строка 133 и 134)
-||userapi.com/js/api/openapi.js*^$script,domain=~vk.com
+||userapi.com/js/api/openapi.js*^$script,domain=~vk.com,important
 ||analytics.vsem-edu-oblako.ru*/track^$xhr,important
 ||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,important
 ||sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com
@@ -283,7 +283,7 @@
 ||leto-leto.com/images/btn-sprite.png^$image,domain=leto-leto.com
 ||rlrt.ru/1rogx.min.js^$script
 ||bitrix24.sportmoda.ru/upload/crm/tag/call.tracker.js*^$script,domain=sportmoda.ru
-||sportmoda.ru/bitrix/services/main/ajax.php?action=yandex%3Ametrika.yandex_metrika*^$xhr,domain=sportmoda.ru
+||*/bitrix/services/main/ajax.php?action=yandex%3Ametrika.yandex_metrika*^$xhr
 ||sokolov.ru/api/v*/content/area/auth-banner/^$xhr,domain=sokolov.ru
 ||cdn.diginetica.net^$third-party
 ||r.revoplus.ru/javascripts/iframe/v*/revoiframe.js^$script
@@ -308,6 +308,16 @@
 ||express.dhl.ru/local/templates/dhl/components/bitrix/menu/*_menu/images/left_menu_bg.gif^$xhr,domain=express.dhl.ru
 ||api.flocktory.com^$third-party,important
 ||websbol.clickstream.sberbank.ru/metrics/sbol^$xhr,domain=sberbank.ru
+||*/bitrix/js/yandex.metrika/script.js*^$script
+||iguides.ru/local/components/iguides/notifications.subscribe/manifest.json^$other,domain=iguides.ru
+||cs.pikabu.ru/apps/ub/*/*/sprite.svg^$xhr,domain=pikabu.ru
+||avito.ru/dstatic/build/client/fingerprint.*^$script,domain=avito.ru
+!
+! Рекомендации в виде блока Популярное (популярных объявлений) внизу у подвала страницы результатов поискового запроса (раздел Молл, сайт объявлений Авито (avito .ru)).
+||avito.ru/js/recommendations^$xhr,domain=avito.ru
+!
+||notebookcheck-ru.com/fileadmin/Notebooks/*/*_pixel.gif^$image,domain=notebookcheck-ru.com
+!
 !
 !
 !
@@ -660,7 +670,7 @@ maxiland72.ru###rec782509983 > div.t657.t657_rectangle:first-child
 ! Предупреждение об использовании cookie и Яндекс.Метрики (интернет-магазин Амодей (Amodei.ru))
 amodei.ru##div[class^="concept-banner  lato   cb-bottom cb-fixed  cb-long  light  cb-close-on animated light-gray slideInUp"]
 !
-! Рекомендуемые поисковые запросы внизу на странице объявления (сервис объявлений Авито (avito .ru))
+! Блок с рекомендуемыми поисковыми запросами внизу на странице объявления (сервис объявлений Авито (avito .ru))
 avito.ru##div[class^="styles-module-root-XfPi7 styles-module-margin-top_none-_c4I_ styles-module-margin-bottom_32-kQ_OA styles-module-root_direction_vertical-zyzdU styles-module-root_fullWidth-ariEk"]
 !
 ! Рекламный баннер сверху сайта (сайт ювелирных товаров Соколов (sokolov .ru))
@@ -675,6 +685,11 @@ beeline.ru##div[class^="dRwBs"]
 ! Сообщение об использовании блокировщика рекламы (сайт логистической компании (грузоперевозчика) Деловые Линии (dellin .ru))
 dellin.ru##div[class^="Notifications__PopupRoot-sc-ry41v1-0 dDPidn"]
 !
+! Реклама своего телеграм канала (новостной сайт iguides .ru)
+iguides.ru##.i-box-cta_tg
+!
+! Блок с популярными запросами внизу у подвала страницы результатов поискового запроса + внизу на странице объявления (сайт объявлений Авито (avito .ru))
+avito.ru##div[class^="styles-module-root-fTGxT styles-module-margin-top_none-P0ihW styles-module-margin-bottom_none-ZFm_8"]
 !
 ! ===
 !
@@ -1003,6 +1018,8 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/unallowedbrowsers.js^$script,domain=online.sberbank.ru
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/bowser.*.js^$script,domain=online.sberbank.ru
 @@||pl-res.online.sberbank.ru/lib.analytics/*/index.js^$script,domain=online.sberbank.ru
+@@||pikabu.ru/.well-known/ddos-guard/*^$script,domain=pikabu.ru
+@@||google.com/js/bg/*.js^$xhr,script
 !
 !
 ! -
@@ -1050,7 +1067,6 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*barabalo.com^
 ||*fuckbookflirt.com^
 ||*peachdates.com^
-||*arousingdates.com^
 !
 !
 ! ---
