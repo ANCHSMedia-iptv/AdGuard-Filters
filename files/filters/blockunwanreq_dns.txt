@@ -471,7 +471,7 @@
 ||*.webbursthub.com^
 ||*.stellartrippromo.com^
 ||*.lunarhypeads.com^
-||*..moonlurepromo.com^
+||*.moonlurepromo.com^
 !
 !
 !
