@@ -324,6 +324,7 @@
 ||api.fix-price.com/buyer/v*/cookie-config^$xhr,domain=fix-price.com
 ||rm.fix-price.com/intake/v*/rum/events^$xhr,domain=fix-price.com
 ||pta.ramfy.ru/push/*.js^$script
+||cm*api.chefmarket.ru/api/v*/settings/dishes-statistic^$xhr,domain=chefmarket.ru
 !
 !
 !
@@ -729,6 +730,7 @@ domashniy.ru##div[class^="wcBWDEpAog3Py-ShnqRIvw=="]
 !
 !
 restart72.ru##div[class^="wrp_developer"]
+chefmarket.ru##div[class^="small-social__subscribe"]
 !
 !
 ! ===
@@ -1108,19 +1110,20 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||barabalo.com^
 ! fuckbookflirt.com^
 ||peachdates.com^
-||spmailtechno.com
-||mrflirty.com^
+||*.spmailtechno.com
+||*.mrflirty.com^
 ! localswebflirt.com^
-||wildblossoms.top^
-||lunarlifepromo.com^
-||moontrekadventures.com^
-||todayfundate.com^
-||summitquestadventure.com^
-||clifftops.top^
-||meetmarvel.com^
-||lovetimenow.com^
-||horizonpulserise.com^
+||*.wildblossoms.top^
+||*.lunarlifepromo.com^
+||*.moontrekadventures.com^
+||*.todayfundate.com^
+||*.summitquestadventure.com^
+||*.clifftops.top^
+||*.meetmarvel.com^
+||*.lovetimenow.com^
+||*.horizonpulserise.com^
 ||*flirt*.com^
+||*.webbursthub.com^
 !
 !
 ! ---

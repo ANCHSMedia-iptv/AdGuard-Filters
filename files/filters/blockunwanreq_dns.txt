@@ -454,6 +454,23 @@
 ||*barabalo.com^
 ||*fuckbookflirt.com^
 ||*peachdates.com^
+||*.spmailtechno.com
+||*.mrflirty.com^
+! localswebflirt.com^
+||*.wildblossoms.top^
+||*.lunarlifepromo.com^
+||*.moontrekadventures.com^
+||*.todayfundate.com^
+||*.summitquestadventure.com^
+||*.clifftops.top^
+||*.meetmarvel.com^
+||*.lovetimenow.com^
+||*.horizonpulserise.com^
+||*flirt*.com^
+||*.webbursthub.com^
+||*.stellartrippromo.com^
+||*.lunarhypeads.com^
+||*..moonlurepromo.com^
 !
 !
 !
