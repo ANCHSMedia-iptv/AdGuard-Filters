@@ -994,7 +994,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 !
 !
 ||ad.mail.ru^$important
-||*buzzoola.com^$important
+||*.buzzoola.com^$important
 ||stats.rustore.ru^$important
 ||log.strm.yandex.ru^$important
 ||amc.yandex.ru^$important
@@ -1009,11 +1009,11 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*gvt2.com^$important
 ||*tracker-api.my.com^$important
 ||*ad.intl.xiaomi.com^$important
-||*ms.vk.com^$important
-||*app-measurement.com^$important
+||*.ms.vk.com^$important
+||app-measurement.com^$important
 ||tnc*.byteoversea.com^$important
 ||tnc*.isnssdk.com^$important
-||*pangle.io^$important
+||*.pangle.io^$important
 ||adashx4ae.ut.taobao.com^$important
 ||*iad-*.braze.com^$important
 ||logs.unchecky.com^$important
@@ -1027,9 +1027,10 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||analytics.mobile.yandex.net^$important
 ||*footprintdns.com^$important
 ||aemetrics.aliexpress.ru^$important
-||*inmobi.com^$important
-||*vungle.com^$important
-||*mtgglobals.com^$important
+||*.inmobi.com^$important
+||*.vungle.com^$important
+||*.mtgglobals.com^$important
+||*.sbermarketing.ru^
 !
 ! --
 !
@@ -1063,6 +1064,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 @@||pikabu.ru/.well-known/ddos-guard/*^$script,domain=pikabu.ru
 @@||google.com/js/bg/*.js^$xhr,script
 @@||google.com/recaptcha/
+@@||websbol.clickstream.sberbank.ru^
 !
 !
 ! -
