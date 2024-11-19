@@ -1084,15 +1084,24 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 !
 ! Адреса с спам-писем с содержанием 18+ (с 14.11.24 стал «жертвой» такого массового спама)..
 !
-||*arumism.com^
-||*furixor.com^
-||*vatomno.com^
-||*kwageon.com^
-||*aartaid.com^
-||*adjurve.com^
-||*barabalo.com^
-||*fuckbookflirt.com^
-||*peachdates.com^
+||arumism.com^
+||furixor.com^
+||vatomno.com^
+||kwageon.com^
+||aartaid.com^
+||adjurve.com^
+||barabalo.com^
+||fuckbookflirt.com^
+||peachdates.com^
+||spmailtechno.com
+||mrflirty.com^
+||localswebflirt.com^
+||wildblossoms.top^
+||lunarlifepromo.com^
+||moontrekadventures.com^
+||todayfundate.com^
+||
+||
 !
 !
 ! ---
