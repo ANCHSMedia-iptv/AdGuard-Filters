@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.1_2
-! TimeUpdated: 2024-11-18T17:20:00+00:00
+! Version: 0.1_3
+! TimeUpdated: 2024-11-19T15:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -253,6 +253,7 @@
 ! */mediascope/counter/audience*^$xhr,important
 ||tv3.ru/_nuxt/adfox-*.vue.*.js^$script,domain=tv3.ru,important
 ||domashniy.ru/dist/assets/img/contest/pop-up-compilation.webp^$image,domain=domashniy.ru
+||domashniy.ru/dist/js/before.js^$script,domain=domashniy.ru
 ||friday.ru/svg/sprite.svg*^$xhr,domain=friday.ru,important
 ||nets-api.gpmdata.ru/api/v*/counters/counter/*^$xhr,important
 ||trex-receiver.gpmdata.ru/net/*/*/events^$xhr,important
@@ -317,6 +318,12 @@
 ||avito.ru/js/recommendations^$xhr,domain=avito.ru
 !
 ||notebookcheck-ru.com/fileadmin/Notebooks/*/*_pixel.gif^$image,domain=notebookcheck-ru.com
+||my.zadarma.com/callmewidget/v*/loader.js^$script
+||*/rest/analytics/*^$ping,domain=ntvplus.ru|ntvplus.tv,important
+||cdn.sportmaster.ru/upload/content/sports_assistant/chat-widget/*.js^$script
+||api.fix-price.com/buyer/v*/cookie-config^$xhr,domain=fix-price.com
+||rm.fix-price.com/intake/v*/rum/events^$xhr,domain=fix-price.com
+||pta.ramfy.ru/push/*.js^$script
 !
 !
 !
@@ -637,8 +644,8 @@ detmir.ru##div[data-testid="advContainer"]
 ||*.dom.ru/static/js/googleTagManager.js^$script,domain=dom.ru
 ||*.dom.ru/static/js/mailRuCounter.js^$script,domain=dom.ru
 !
-! - Косметические парвила -
-! Рекламный блок (сайт провайдера Дом.ру (dom .ru))
+! - Косметические правила -
+! Рекламный блок на главной странице сайта
 dom.ru##div[class^="sc-6e31cbc2-0 kKbgFL"]
 ! -
 !
@@ -705,17 +712,24 @@ sokolov.ru##div[class^="AuthBanner_banner__rKnfp"]
 ! Рекламный баннер сверху сайта (сайт оператора связа билайн (beeline .ru))
 beeline.ru##div[class^="BJOeQ"]
 !
-! Блок о подписке на email рассылку в подвале сайта (сайт оператора связа билайн (beeline .ru))
+! Блок о подписке на email рассылку в подвале сайта (сайт оператора связи билайн (beeline .ru))
 beeline.ru##div[class^="dRwBs"]
 !
 ! Сообщение об использовании блокировщика рекламы (сайт логистической компании (грузоперевозчика) Деловые Линии (dellin .ru))
 dellin.ru##div[class^="Notifications__PopupRoot-sc-ry41v1-0 dDPidn"]
 !
-! Реклама своего телеграм канала (новостной сайт iguides .ru)
+! Реклама телеграм канала (новостной сайт iguides .ru)
 iguides.ru##.i-box-cta_tg
 !
 ! Блок с популярными запросами внизу у подвала страницы результатов поискового запроса + внизу на странице объявления (сайт объявлений Авито (avito .ru))
 avito.ru##div[class^="styles-module-root-fTGxT styles-module-margin-top_none-P0ihW styles-module-margin-bottom_none-ZFm_8"]
+!
+! Поп-ап насчёт розыгрыши призов за просмотр сериалов (на момент понедельник, 18.11.2024) в правом нижнем углу на главной странице сайта телеканала Домашний (Россия) (domashniy .ru).
+domashniy.ru##div[class^="wcBWDEpAog3Py-ShnqRIvw=="]
+!
+!
+restart72.ru##div[class^="wrp_developer"]
+!
 !
 ! ===
 !
@@ -1046,6 +1060,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 @@||pl-res.online.sberbank.ru/lib.analytics/*/index.js^$script,domain=online.sberbank.ru
 @@||pikabu.ru/.well-known/ddos-guard/*^$script,domain=pikabu.ru
 @@||google.com/js/bg/*.js^$xhr,script
+@@||google.com/recaptcha/
 !
 !
 ! -
