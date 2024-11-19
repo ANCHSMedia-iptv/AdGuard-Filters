@@ -1091,17 +1091,21 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||aartaid.com^
 ||adjurve.com^
 ||barabalo.com^
-||fuckbookflirt.com^
+! fuckbookflirt.com^
 ||peachdates.com^
 ||spmailtechno.com
 ||mrflirty.com^
-||localswebflirt.com^
+! localswebflirt.com^
 ||wildblossoms.top^
 ||lunarlifepromo.com^
 ||moontrekadventures.com^
 ||todayfundate.com^
-||
-||
+||summitquestadventure.com^
+||clifftops.top^
+||meetmarvel.com^
+||lovetimenow.com^
+||horizonpulserise.com^
+||*flirt*.com^
 !
 !
 ! ---
