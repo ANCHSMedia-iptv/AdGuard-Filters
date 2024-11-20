@@ -472,6 +472,7 @@
 ||*.stellartrippromo.com^
 ||*.lunarhypeads.com^
 ||*.moonlurepromo.com^
+||*.cherrychitchat.com^
 !
 !
 !
