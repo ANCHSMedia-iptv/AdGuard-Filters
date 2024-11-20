@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.1_3
-! TimeUpdated: 2024-11-19T15:20:00+00:00
+! Version: 0.1_4
+! TimeUpdated: 2024-11-20T14:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -731,6 +731,8 @@ domashniy.ru##div[class^="wcBWDEpAog3Py-ShnqRIvw=="]
 !
 restart72.ru##div[class^="wrp_developer"]
 chefmarket.ru##div[class^="small-social__subscribe"]
+xn----7sbaj2agca3agfevjs7cwg.xn--p1ai##div[class^="cookie__info"]
+! санаторий-хвойный .рф
 !
 !
 ! ===
@@ -1027,9 +1029,9 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||analytics.mobile.yandex.net^$important
 ||*footprintdns.com^$important
 ||aemetrics.aliexpress.ru^$important
-||*.inmobi.com^$important
-||*.vungle.com^$important
-||*.mtgglobals.com^$important
+||*inmobi.com^$important
+||*vungle.com^$important
+||*mtgglobals.com^$important
 ||*.sbermarketing.ru^
 !
 ! --
@@ -1112,7 +1114,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||barabalo.com^
 ! fuckbookflirt.com^
 ||peachdates.com^
-||*.spmailtechno.com
+||*.spmailtechno.com^
 ||*.mrflirty.com^
 ! localswebflirt.com^
 ||*.wildblossoms.top^
@@ -1126,8 +1128,8 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*.horizonpulserise.com^
 ||*flirt*.com^
 ||*.webbursthub.com^
-||*.stellartrippromo.com^ 
-||*.lunarhypeads.com^ 
+||*.stellartrippromo.com^
+||*.lunarhypeads.com^
 ||*.moonlurepromo.com^
 ||*.cherrychitchat.com^
 !
