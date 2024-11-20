@@ -1126,6 +1126,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*.horizonpulserise.com^
 ||*flirt*.com^
 ||*.webbursthub.com^
+||*.cherrychitchat.com^
 !
 !
 ! ---
