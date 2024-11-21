@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.1_4
-! TimeUpdated: 2024-11-20T14:20:00+00:00
+! Version: 0.1_5
+! TimeUpdated: 2024-11-21T17:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -167,7 +167,7 @@
 ||*adhigh.net^$important
 ||*rutarget.ru^$important
 ||api.mindbox.ru^$important
-||*/api/fl/idw-*^$xhr,important
+||*/api/fl/id*^$xhr,important
 ||s.rbk.ru/*quote_static/quote-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru,important
 ||trafffgen.rambler.ru^
 ||gotovim-doma.ru/img/*/*.gif^$image,domain=gotovim-doma.ru,important
@@ -284,6 +284,7 @@
 ||leto-leto.com/images/btn-sprite.png^$image,domain=leto-leto.com
 ||rlrt.ru/1rogx.min.js^$script
 ||bitrix24.sportmoda.ru/upload/crm/tag/call.tracker.js*^$script,domain=sportmoda.ru
+! */upload/crm/tag/call.tracker.js*^$script
 ||*/bitrix/services/main/ajax.php?action=yandex%3Ametrika.yandex_metrika*^$xhr
 ||sokolov.ru/api/v*/content/area/auth-banner/^$xhr,domain=sokolov.ru
 ||cdn.diginetica.net^$third-party
@@ -325,6 +326,39 @@
 ||rm.fix-price.com/intake/v*/rum/events^$xhr,domain=fix-price.com
 ||pta.ramfy.ru/push/*.js^$script
 ||cm*api.chefmarket.ru/api/v*/settings/dishes-statistic^$xhr,domain=chefmarket.ru
+||cs*.pikabu.ru/v*/event/*/*^$xhr,domain=pikabu.ru
+||*.tlintegration.ru^
+||pa-na-ma.ru/site/templates/assets/js/components/notify.js^$script,domain=pa-na-ma.ru
+||pa-na-ma.ru/site/templates/assets/js/core/scrollspy.js^$script,domain=pa-na-ma.ru
+||*/GoogleAnalytics/content/scripts/tracking.js*^$script
+||cdn.antisov.ru/advisor.js^$script
+||goodmod.ru/scripts/*/api.js^$script
+||*/bitrix/tools/conversion/ajax_counter.php^$xhr
+||ekip-sport.ru/assets/template/js/cooki.js^$script,domain=ekip-sport.ru
+||assets-cdn.mvideo.ru/*/sprites/sprite.css.svg^$image,domain=mvideo.ru
+||mvideo.ru/bff/recommendations/*^$xhr,domain=mvideo.ru
+||mvideo.ru/bff/settings/promo-blocks*^$xhr,domain=mvideo.ru
+! holodilnik.ru/ajax/getRecommendsMB.php*^$xhr,domain=holodilnik.ru (новое правило, строка 347)
+||*/mindbox*.js^$script
+||holodilnik.ru/js/credit*.js*^$script,domain=holodilnik.ru
+||dashboard.fstrk.io/widget*/*.js^$script
+||code.2ypkht.ru^
+||idealturnik.ru/waitsetcookie/^$xhr,domain=idealturnik.ru
+||ur1s.ru^$third-party
+||idealturnik.ru/ordercall-config/^$xhr,domain=idealturnik.ru
+||andata.ru^$third-party
+||*/ajax/getRecom*.php^$xhr
+||my.pochtabank.ru/sdk/v*/pos-credit.js^$script
+||dadata.ru^$third-party
+||bestway-russia.ru/catalog/view/javascript/mtkv.js^$script,domain=bestway-russia.ru
+||bestway-russia.ru/catalog/view/javascript/tag.js^$script,domain=bestway-russia.ru
+||bestway-russia.ru/catalog/view/javascript/mango.js^$script,domain=bestway-russia.ru
+||bestway-russia.ru/catalog/view/javascript/suggestions/*suggestions*.*^$script,css,domain=bestway-russia.ru
+||*bugfender*^$important
+||api.intex.ru/*/api/*/storefront/domains/^$xhr,domain=intex.ru
+||*/bitrix/tools/composite_data.php^$xhr
+||wasabisys.com^
+||aplaut.io^$third-party
 !
 !
 !
@@ -734,6 +768,23 @@ chefmarket.ru##div[class^="small-social__subscribe"]
 xn----7sbaj2agca3agfevjs7cwg.xn--p1ai##div[class^="cookie__info"]
 ! санаторий-хвойный .рф
 !
+! Подписка на email рассылку (сайт evro-sport .ru)
+evro-sport.ru##div[class="subscribe"]
+!
+! -
+! Сайт интернет-магазина Холодильник.ру (holodilnik .ru)
+! Промо баннеры
+! От первого правила против промо баннера сверху сайта имеет «побочный эффект» - остаётся «пустое место».
+holodilnik.ru##div[class^="alert-container"]
+holodilnik.ru##div[class^="promo-box-container container"]
+! Предупреждение об использовании cookie
+holodilnik.ru##div[class^="notify-layer notify-layer--dark notify-layer--cookie"]
+! -
+!
+sports-tech.ru##div[class="subscribe_wrap info contacts_block_footer"]
+sportmoda.ru##div[class="subscribe_button"]
+intex.ru##div[class="menu__field_news"]
+ortix.ru##aside.ortix-info.ortix-subscribe__container:nth-child(5)
 !
 ! ===
 !
@@ -952,6 +1003,7 @@ xn----7sbaj2agca3agfevjs7cwg.xn--p1ai##div[class^="cookie__info"]
 ||paybro-static.s*.yandex.net/paybro/v*/widget-*.*^$script,css
 ||paybro-static.s*.yandex.net/paybro/v*/8a4cff28d9bf287197a4.png^$image
 ||yastatic.net/safeframe-bundles/*/host.js^$script
+||pay.yandex.ru/web/cl/click
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -1103,7 +1155,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*.myroledance.com^$third-party
 ||*.vaterlines.com^
 !
-! Адреса с спам-писем с содержанием 18+ (с 14.11.24 стал «жертвой» такого массового спама)..
+! Адреса с спам-писем с содержанием 18+ (с 14.11.24 по 19.11.24 стал «жертвой» такого массового спама)..
 !
 ||arumism.com^
 ||furixor.com^
