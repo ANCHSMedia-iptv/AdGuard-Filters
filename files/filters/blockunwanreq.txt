@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.1_5
-! TimeUpdated: 2024-11-21T17:30:00+00:00
+! Version: 0.1_6
+! TimeUpdated: 2024-11-22T17:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -116,7 +116,7 @@
 ||api.x.com/*/jot/ces/p2^$xhr
 ||api.x.com/*/jot/client_event.json^$xhr
 ||*tns-counter.ru^$important
-||*/geo-context^$other,xhr
+||*.ru/geo-context^$other,xhr,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||geo.geosurf.io^$important
 ||platform.twitter.com/widgets.js^$script,important,domain=~x.com|~twitter.com
 ||www.instagram.com/embed.js^$script,important,domain=~instagram.com
@@ -359,6 +359,14 @@
 ||*/bitrix/tools/composite_data.php^$xhr
 ||wasabisys.com^
 ||aplaut.io^$third-party
+||*.ru/metrika/tag.js^$script,domain=appleinsider.ru|androidinsider.ru
+||*.ru/gtag/js*^$script,domain=appleinsider.ru|androidinsider.ru
+! */gtag/js*^$script
+||*/js/lazyLoadYandexAndTelegram.js*^$script,domain=appleinsider.ru|androidinsider.ru
+||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/YandexRecommendations*.js^$script,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/Smi24*.js^$script.domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/Smi2*.js^$script,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+||*.ru/lid/articles/*.gif^$domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 !
 !
 !
@@ -763,7 +771,6 @@ avito.ru##div[class^="styles-module-root-fTGxT styles-module-margin-top_none-P0i
 domashniy.ru##div[class^="wcBWDEpAog3Py-ShnqRIvw=="]
 !
 !
-restart72.ru##div[class^="wrp_developer"]
 chefmarket.ru##div[class^="small-social__subscribe"]
 xn----7sbaj2agca3agfevjs7cwg.xn--p1ai##div[class^="cookie__info"]
 ! санаторий-хвойный .рф
