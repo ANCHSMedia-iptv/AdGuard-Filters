@@ -1155,7 +1155,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*.myroledance.com^$third-party
 ||*.vaterlines.com^
 !
-! Адреса с спам-писем с содержанием 18+ (с 14.11.24 по 19.11.24 стал «жертвой» такого массового спама)..
+! Адреса с спам-писем с содержанием 18+ (с 14.11.24 стал «жертвой» такого массового спама)..
 !
 ||arumism.com^
 ||furixor.com^
