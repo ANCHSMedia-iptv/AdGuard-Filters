@@ -1008,7 +1008,7 @@ ortix.ru##aside.ortix-info.ortix-subscribe__container:nth-child(5)
 ||mail.yandex.ru/web-api/journal/v*^$ping,domain=mail.yandex.ru
 ||media-adv.market.yandex.ru^$important
 ! @@||yandex.ru/clck/click^$domain=mail.yandex.ru
-||yastatic.net/partner-code-bundles/*.js^$script,important
+||yastatic.net/partner-code-bundles/*.js^$script,important,domain=~yandex.ru|~ya.ru
 ||yastatic.net/nearest.js^$script
 ||browser.pay.yandex.ru/api/v*/split-status^$important
 ||paybro-static.s*.yandex.net/paybro/v*/widget-*.*^$script,css
@@ -1131,6 +1131,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 @@||google.com/recaptcha/
 @@||websbol.clickstream.sberbank.ru^
 @@||*.googlevideo.com^
+@@||csp.yandex.net/csp
 !
 !
 ! -
