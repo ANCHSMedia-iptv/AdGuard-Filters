@@ -367,6 +367,10 @@
 ||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/Smi24*.js^$script.domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/Smi2*.js^$script,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||*.ru/lid/articles/*.gif^$domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe.*^$script,css,domain=asiaplustj.info
+||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
+||logs.tourister.ru^$domain=tourister.ru
+||tpembar.com^$domain=tourister.ru
 !
 !
 !
@@ -609,7 +613,7 @@ ozon.ru##div[data-widget="webInstallmentPurchase"]
 ! otzovik.com###content > div.home-grid:last-child > div.content-left:first-child > div.topblock.promo.home-box:nth-child(2)
 !
 ! Удаление рекламных баннеров на странице результатов поискового запроса.
-otzovik.com##div[class^="produkt-corteny item sortable"]
+otzovik.com##div[class^="produkt"][class$="sortable"]
 ! -
 !
 ! ===
