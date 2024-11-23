@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.1_6
-! TimeUpdated: 2024-11-22T17:30:00+00:00
+! Version: 0.1_7
+! TimeUpdated: 2024-11-23T15:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -765,7 +765,7 @@ dellin.ru##div[class^="Notifications__PopupRoot-sc-ry41v1-0 dDPidn"]
 iguides.ru##.i-box-cta_tg
 !
 ! Блок с популярными запросами внизу у подвала страницы результатов поискового запроса + внизу на странице объявления (сайт объявлений Авито (avito .ru))
-avito.ru##div[class^="styles-module-root-fTGxT styles-module-margin-top_none-P0ihW styles-module-margin-bottom_none-ZFm_8"]
+! avito.ru##div[class^="styles-module-root-fTGxT styles-module-margin-top_none-P0ihW styles-module-margin-bottom_none-ZFm_8"] (ломает поисковые фильтры)
 !
 ! Поп-ап насчёт розыгрыши призов за просмотр сериалов (на момент понедельник, 18.11.2024) в правом нижнем углу на главной странице сайта телеканала Домашний (Россия) (domashniy .ru).
 domashniy.ru##div[class^="wcBWDEpAog3Py-ShnqRIvw=="]
@@ -1110,8 +1110,8 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 @@||player.smotrim.ru/js/vendor.js*^$script
 @@||player.smotrim.ru/js/manifest.js*^$script
 @@||player.smotrim.ru/js/app.js*^$script
-@@||returnyoutubedislikeapi.com^
-@@||sponsor.ajay.app^
+@@||*returnyoutubedislikeapi.com*^
+@@||*sponsor.ajay.app*^
 @@||digiseller.market^
 @@||*.iptvx.one^
 @@||*detmir.st/*/*ad*.*^$script,image,domain=detmir.ru
@@ -1126,6 +1126,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 @@||google.com/js/bg/*.js^$xhr,script
 @@||google.com/recaptcha/
 @@||websbol.clickstream.sberbank.ru^
+@@||*.googlevideo.com^
 !
 !
 ! -
