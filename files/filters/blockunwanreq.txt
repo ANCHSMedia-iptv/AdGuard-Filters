@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.1_8
-! TimeUpdated: 2024-11-24T14:30:00+00:00
+! Version: 0.1_9
+! TimeUpdated: 2024-11-24T17:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -36,7 +36,7 @@
 ||*gravatar.com^$important
 ||*amplreq.com^$important
 ||*amplitude.com^$important
-||*bugsnag.com^$important
+! *bugsnag.com^$important
 ||*bugsnag*^$important
 ||*vk-analytics.ru^$important
 ||*instabug*^$important
@@ -147,9 +147,9 @@
 ||*/cycounter.*^$image
 !
 ||*/liru.gif^$image
-||*/1px.*^$image,xhr,script,important
-||*/px.*^$image,xhr,script,important
-||*/blank.*^$image,script,xhr,important
+||*/1px.*^$image,xhr,important
+||*/px.*^$image,xhr,important
+||*/blank.*^$image,xhr,important
 ||*/analytics.js^$script,important
 ! */analytics.*^$script,important
 ||ddlbots.com/cdn/shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,domain=ddlbots.com,important
@@ -199,7 +199,7 @@
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-||*/api/*/envelope/*^$ping,xhr,important,domain=~pochta.ru|~gloria-jeans.ru
+||*/api/*/envelope/*^$ping,xhr,important,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||*maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com
@@ -229,13 +229,13 @@
 ||s*.stc.yc.kpcdn.net/s*/*/adaptive/img/banner.gif*^$xhr,important
 ! *sendsay.ru^$important
 ||*lentainform.com^
-||*/1x1.*^$image,xhr,script,important
+||*/1x1.*^$image,xhr,important
 ||smotrim.ru/js/media-scope.js^$script,important
 ||cdn-st*.rtr-vesti.ru/mh_files/*/imho.js^$script,domain=vesti.ru,important
 ||vesti.ru/i/bg.png*^$image,domain=vesti.ru,important
 !
 ||life.ru/_next/static/chunks/2793.3fd7e7f2a78da9d92688.js^$script,domain=life.ru,important
-||*/p.*^$image,xhr,script,important
+||*/p.*^$image,xhr,important
 ||static.1tv.ru/player/config/banner.gif*^$image,domain=1tv.ru,important
 ||api.1tv.ru/v*/promo_places/alert_for_player^$xhr,domain=1tv.ru,important
 ||*ad-tech.ru^
@@ -321,7 +321,7 @@
 ||notebookcheck-ru.com/fileadmin/Notebooks/*/*_pixel.gif^$image,domain=notebookcheck-ru.com
 ||my.zadarma.com/callmewidget/v*/loader.js^$script
 ||*/rest/analytics/*^$ping,domain=ntvplus.ru|ntvplus.tv,important
-||cdn.sportmaster.ru/upload/content/sports_assistant/chat-widget/*.js^$script
+!
 ||api.fix-price.com/buyer/v*/cookie-config^$xhr,domain=fix-price.com
 ||rm.fix-price.com/intake/v*/rum/events^$xhr,domain=fix-price.com
 ||pta.ramfy.ru/push/*.js^$script
@@ -382,6 +382,19 @@
 ||ssl.gstatic.com/*/blank_1x.png^$image,domain=google.com
 ||google.com/*/cleardot.gif*^$image,domain=google.com
 ||*/dot.*^$image,xhr,script
+||dpd-site-analytics-backend-api-prod.dpd.ru/api/v*/event^$xhr,domain=dpd.ru
+||newprospect.ru/assets/filesmanager/upload/iblock/*/*.gif^$image,domain=newprospect.ru
+||newprospect.ru/assets/templates/default/img/*.gif^$image,domain=newprospect.ru
+||a.lmcdn.ru/static/permanent/libs/ad-blocker.js^$script,domain=lamoda.ru
+||*.lmcdn.ru/static/*/assets/*cookie*.css^$css,domain=lamoda.ru
+||hdeapi.lamoda.ru/js/modules/chat_widget/hde.js^$script,domain=lamoda.ru
+||*.sravni.ru/v*/advertising/banners/*^$xhr,domain=sravni.ru
+||graphql.kazanexpress.ru^
+||api.kazanexpress.ru/api/analytics/*^$xhr
+||partners.lemanapro.ru/api/tracker/*^$script,ping,domain=lemanapro.ru|leroymerlin.ru
+||leroymerlin.ru/5sgdmfD2wXGnNsQMcywx.html^$domain=lemanapro.ru|leroymerlin.ru
+||interfax.ru/footer__form_subscribe.html^$domain=interfax.ru
+||feeds.kommersant.ru/komcounter/readcounter*^$image,domain=kommersant.ru
 !
 !
 !
@@ -821,6 +834,11 @@ prudlesnoy.ru##div[class="t657 t657_rectangle"]
 ! Блок о подписке на email рассылку в подвале сайта
 sibinformburo.ru##div[class="col-lg-4 col-md-4 col-sm-6"]
 !
+! Предупреждение об использовании cookie (сайт логистической (транспортной) компании ДПД (DPD) (dpd .ru))
+dpd.ru##div[class="root_UnCiX"]
+!
+newprospect.ru##div[class="notification"]
+newprospect.ru##div[class="telegram"]
 !
 !
 !
@@ -1042,6 +1060,7 @@ sibinformburo.ru##div[class="col-lg-4 col-md-4 col-sm-6"]
 ||paybro-static.s*.yandex.net/paybro/v*/8a4cff28d9bf287197a4.png^$image
 ||yastatic.net/safeframe-bundles/*/host.js^$script
 ||pay.yandex.ru/web/cl/click
+||yastatic.net/pcode/adfox/$important
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
