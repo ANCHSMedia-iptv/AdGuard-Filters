@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.1_7
-! TimeUpdated: 2024-11-23T15:30:00+00:00
+! Version: 0.1_8
+! TimeUpdated: 2024-11-24T14:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -126,13 +126,13 @@
 ||*rudderstack.com^$important
 ||hh.ru/api/fl/logs/^$other,important
 ||*cedexis.com^$important
-||*/generate_204^$domain=youtube.com
+||*/generate_204^
 ||*adlook.me^$important
 ||*betweendigital.com^$important
 ||*/api/advertising/*^$xhr,domain=hitfm.ru|montecarlo.ru
 ||vk.com/js/api/openapi.js^$script,domain=~vk.com,important
-||*cookie*.js^$script,important
-||*Cookie*.js^$script,important
+||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com
+||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com
 ||*/itunes_referals.js^$script
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script
 ||improving.duckduckgo.com^$important
@@ -233,7 +233,7 @@
 ||smotrim.ru/js/media-scope.js^$script,important
 ||cdn-st*.rtr-vesti.ru/mh_files/*/imho.js^$script,domain=vesti.ru,important
 ||vesti.ru/i/bg.png*^$image,domain=vesti.ru,important
-||vesti.ru/i/preloader.gif*^$image,domain=vesti.ru,important
+!
 ||life.ru/_next/static/chunks/2793.3fd7e7f2a78da9d92688.js^$script,domain=life.ru,important
 ||*/p.*^$image,xhr,script,important
 ||static.1tv.ru/player/config/banner.gif*^$image,domain=1tv.ru,important
@@ -276,7 +276,7 @@
 ||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,important
 ||sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com
 ! sa.hoodmaps.com^
-||citilink.ru/graphql/^$xhr,domain=citilink.ru
+! citilink.ru/graphql/^$xhr,domain=citilink.ru (новое правило, строка 374)
 ||fga.citilink.ru/collect^$xhr,domain=citilink.ru
 ||dns-shop.ru/banner/get-header-banner/^$xhr,domain=dns-shop.ru
 ||alfastrah.ru/js/detectPrivateMode.min.js^$script,domain=alfastrah.ru
@@ -310,7 +310,7 @@
 ||express.dhl.ru/local/templates/dhl/components/bitrix/menu/*_menu/images/left_menu_bg.gif^$xhr,domain=express.dhl.ru
 ||api.flocktory.com^$third-party,important
 ||websbol.clickstream.sberbank.ru/metrics/sbol^$xhr,domain=sberbank.ru
-||*/bitrix/js/yandex.metrika/script.js*^$script
+||*/bitrix/js/yandex.metrika/script.js*^$script,important
 ||iguides.ru/local/components/iguides/notifications.subscribe/manifest.json^$other,domain=iguides.ru
 ||cs.pikabu.ru/apps/ub/*/*/sprite.svg^$xhr,domain=pikabu.ru
 ||avito.ru/dstatic/build/client/fingerprint.*^$script,domain=avito.ru
@@ -330,7 +330,7 @@
 ||*.tlintegration.ru^
 ||pa-na-ma.ru/site/templates/assets/js/components/notify.js^$script,domain=pa-na-ma.ru
 ||pa-na-ma.ru/site/templates/assets/js/core/scrollspy.js^$script,domain=pa-na-ma.ru
-||*/GoogleAnalytics/content/scripts/tracking.js*^$script
+||*/GoogleAnalytics/content/scripts/tracking.js*^$script,important
 ||cdn.antisov.ru/advisor.js^$script
 ||goodmod.ru/scripts/*/api.js^$script
 ||*/bitrix/tools/conversion/ajax_counter.php^$xhr
@@ -338,7 +338,7 @@
 ||assets-cdn.mvideo.ru/*/sprites/sprite.css.svg^$image,domain=mvideo.ru
 ||mvideo.ru/bff/recommendations/*^$xhr,domain=mvideo.ru
 ||mvideo.ru/bff/settings/promo-blocks*^$xhr,domain=mvideo.ru
-! holodilnik.ru/ajax/getRecommendsMB.php*^$xhr,domain=holodilnik.ru (новое правило, строка 347)
+! holodilnik.ru/ajax/getRecommendsMB.php*^$xhr,domain=holodilnik.ru (новое правило, строка 350)
 ||*/mindbox*.js^$script
 ||holodilnik.ru/js/credit*.js*^$script,domain=holodilnik.ru
 ||dashboard.fstrk.io/widget*/*.js^$script
@@ -351,8 +351,8 @@
 ||my.pochtabank.ru/sdk/v*/pos-credit.js^$script
 ||dadata.ru^$third-party
 ||bestway-russia.ru/catalog/view/javascript/mtkv.js^$script,domain=bestway-russia.ru
-||bestway-russia.ru/catalog/view/javascript/tag.js^$script,domain=bestway-russia.ru
-||bestway-russia.ru/catalog/view/javascript/mango.js^$script,domain=bestway-russia.ru
+||bestway-russia.ru/catalog/view/javascript/tag.js^$script,important,domain=bestway-russia.ru
+||bestway-russia.ru/catalog/view/javascript/mango.js^$script,important,domain=bestway-russia.ru
 ||bestway-russia.ru/catalog/view/javascript/suggestions/*suggestions*.*^$script,css,domain=bestway-russia.ru
 ||*bugfender*^$important
 ||api.intex.ru/*/api/*/storefront/domains/^$xhr,domain=intex.ru
@@ -363,14 +363,25 @@
 ||*.ru/gtag/js*^$script,domain=appleinsider.ru|androidinsider.ru
 ! */gtag/js*^$script
 ||*/js/lazyLoadYandexAndTelegram.js*^$script,domain=appleinsider.ru|androidinsider.ru
-||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/YandexRecommendations*.js^$script,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
-||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/Smi24*.js^$script.domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
-||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/Smi2*.js^$script,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
-||*.ru/lid/articles/*.gif^$domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/YandexRecommendations*.js^$script,important,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/Smi24*.js^$script,important,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/Smi2*.js^$script,important,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+||*.ru/lid/articles/*.gif^$important,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe.*^$script,css,domain=asiaplustj.info
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$domain=tourister.ru
-||tpembar.com^$domain=tourister.ru
+||tpembar.com^
+||*/graphql/^$xhr,important
+||getrcmx.com^
+||xcom-shop.ru/local/templates/shop2022/js/local/notify.*.js^$script,domain=xcom-shop.ru
+||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
+||flamp.ru/static/lib/apitracker.js^$script,domain=flamp.ru
+||vsluh.ru/upload/iblock/*.gif^$image,domain=vsluh.ru
+||script.wikia.nocookie.net/fandom-ae-assets/tracking-opt*/*/tracking-opt-*.js^$script,domain=fandom.com
+||playercdn.cdnvideo.ru/aloha/clappr/clappr-stats*.js^$script
+||ssl.gstatic.com/*/blank_1x.png^$image,domain=google.com
+||google.com/*/cleardot.gif*^$image,domain=google.com
+||*/dot.*^$image,xhr,script
 !
 !
 !
@@ -463,7 +474,7 @@
 ||*pinterest.com/_/_/trace/trace/^$xhr,important
 ||*pinterest.com/_/_/storage_report/^$xhr,important
 ||*pinterest.com/_/_/logClientError/^$xhr,important
-||*pinterest.com/_/graphql/^$xhr,important
+! *pinterest.com/_/graphql/^$xhr,important (новое правило, строка 374)
 ||*pinterest.com/_/_/csp_report/^$xhr,important
 ||trk.pinterest.com^$important
 ||ads.pinterest.com^$important
@@ -769,7 +780,7 @@ dellin.ru##div[class^="Notifications__PopupRoot-sc-ry41v1-0 dDPidn"]
 iguides.ru##.i-box-cta_tg
 !
 ! Блок с популярными запросами внизу у подвала страницы результатов поискового запроса + внизу на странице объявления (сайт объявлений Авито (avito .ru))
-! avito.ru##div[class^="styles-module-root-fTGxT styles-module-margin-top_none-P0ihW styles-module-margin-bottom_none-ZFm_8"] (ломает поисковые фильтры)
+! avito.ru##div[class^="styles-module-root-fTGxT styles-module-margin-top_none-P0ihW styles-module-margin-bottom_none-ZFm_8"] (23.11.2024 ломает поисковые фильтры)
 !
 ! Поп-ап насчёт розыгрыши призов за просмотр сериалов (на момент понедельник, 18.11.2024) в правом нижнем углу на главной странице сайта телеканала Домашний (Россия) (domashniy .ru).
 domashniy.ru##div[class^="wcBWDEpAog3Py-ShnqRIvw=="]
@@ -796,6 +807,22 @@ sports-tech.ru##div[class="subscribe_wrap info contacts_block_footer"]
 sportmoda.ru##div[class="subscribe_button"]
 intex.ru##div[class="menu__field_news"]
 ortix.ru##aside.ortix-info.ortix-subscribe__container:nth-child(5)
+!
+! Рекламный баннер сверху сайта (сайт интернет-магазина Технопарк)
+technopark.ru##div[class="header-topper app-header__topper"]
+!
+!
+vsluh.ru##div.content:nth-child(9) > div.container:nth-child(3) > div.content-detail__wrapper > div.content-detail__right:last-child > div.recomend:nth-child(7)
+!
+!
+! Предупреждение об использовании cookie
+prudlesnoy.ru##div[class="t657 t657_rectangle"]
+!
+! Блок о подписке на email рассылку в подвале сайта
+sibinformburo.ru##div[class="col-lg-4 col-md-4 col-sm-6"]
+!
+!
+!
 !
 ! ===
 !
@@ -1129,9 +1156,11 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 @@||pikabu.ru/.well-known/ddos-guard/*^$script,domain=pikabu.ru
 @@||google.com/js/bg/*.js^$xhr,script
 @@||google.com/recaptcha/
-@@||websbol.clickstream.sberbank.ru^
+! @@||websbol.clickstream.sberbank.ru^
 @@||*.googlevideo.com^
 @@||csp.yandex.net/csp
+@@||pay.yandex.ru/sdk/v*/pay.js^$script,xhr
+@@||uglyemail.com^
 !
 !
 ! -
@@ -1168,7 +1197,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*.myroledance.com^$third-party
 ||*.vaterlines.com^
 !
-! Адреса с спам-писем с содержанием 18+ (с 14.11.24 стал «жертвой» такого массового спама)..
+! Адреса с спам-писем с содержанием 18+ (с 14.11.24 по 24.11.24? стал «жертвой» такого массового спама)..
 !
 ||arumism.com^
 ||furixor.com^
@@ -1204,6 +1233,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||udotype.com^
 ||scosio.click^
 ||%3A%2F%2F%6C%61%77%72%65%6E%63%65%31%31%39%32%63%68%72%6F%6E%69%63%6C%65%2E%62%6C%6F%67%73%70%6F%74%2E%63%6F%6D^
+||*.purechats.com^
 !
 !
 !

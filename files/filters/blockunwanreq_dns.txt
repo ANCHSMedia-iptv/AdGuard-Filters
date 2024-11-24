@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.1_7
+! Version: 0.1_8
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-11-23T15:30:00+00:00
+! TimeUpdated: 2024-11-24T14:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 21.11.2024 17:30 UTC
+! Last Modified: 24.11.2024 14:30 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -160,6 +160,7 @@
 ||adservice.google.com^$important
 ||s.youtube.com^$important
 ||appsgrowthpromo*.clients*.google.com^$important
+||mail-ads.google.com^$important
 !
 ! ===
 !
@@ -334,6 +335,7 @@
 ||*bugfender*^$important
 ||*.leadhit.io^
 ||to.getnitropack.com^
+||getrcmx.com^
 !
 !
 !
@@ -425,8 +427,10 @@
 @@||digiseller.market^
 @@||*.iptvx.one^
 @@||captcha-api.yandex.ru^
-@@||websbol.clickstream.sberbank.ru^
+! @@||websbol.clickstream.sberbank.ru^
 @@||*.googlevideo.com^
+@@||pay.yandex.ru^
+@@||uglyemail.com^
 !
 !
 ! ===
@@ -452,7 +456,7 @@
 ||*.vaterlines.com^$dnsrewrite=REFUSED
 ||*otnolatrnup.com^$important
 !
-! Адреса с спам-писем с содержанием 18+ (c 14.11.24 стал «жертвой» такого массового спама)..
+! Адреса с спам-писем с содержанием 18+ (c 14.11.24 по 24.11.24? стал «жертвой» такого массового спама)..
 !
 ||*arumism.com^
 ||*furixor.com^
@@ -488,6 +492,7 @@
 ||udotype.com^
 ||scosio.click^
 ||%3A%2F%2F%6C%61%77%72%65%6E%63%65%31%31%39%32%63%68%72%6F%6E%69%63%6C%65%2E%62%6C%6F%67%73%70%6F%74%2E%63%6F%6D^
+||*.purechats.com^
 !
 !
 !
