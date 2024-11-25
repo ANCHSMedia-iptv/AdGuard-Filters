@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.2_0
-! TimeUpdated: 2024-11-25T13:30:00+00:00
+! Version: 0.2_1
+! TimeUpdated: 2024-11-25T18:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -342,7 +342,7 @@
 ||*/mindbox*.js^$script
 ||holodilnik.ru/js/credit*.js*^$script,domain=holodilnik.ru
 ||dashboard.fstrk.io/widget*/*.js^$script
-||code.*.ru^$domain=cdek.ru
+||code.*.ru^
 ||idealturnik.ru/waitsetcookie/^$xhr,domain=idealturnik.ru
 ||ur1s.ru^$third-party
 ||idealturnik.ru/ordercall-config/^$xhr,domain=idealturnik.ru
@@ -399,6 +399,10 @@
 ||sso.cdek.ru/auth/realms/b2c/protocol/openid-connect/3p-cookies/*.html^$domain=cdek.ru
 ||cdn*.vedomosti.ru/*/assets/subscrib_email-*.png^$image,domain=vedomosti.ru
 ||forbes.ru/api/*/special-adblock^$xhr,domain=forbes.ru
+||pravo.rg.ru/api/pravo-promo/^$xhr,domain=rg.ru
+||cdnfiles.rg.ru/_next/static/chunks/23844.e580c58d2fd6dcc4.js^$script,domain=rg.ru
+||cdnfiles.rg.ru/_next/static/chunks/60844.d7dbf4a358e29d67.js^$script,domain=rg.ru
+||cdnfiles.rg.ru/_next/static/chunks/1252-dd167f96c5822f19.js^$script,domain=rg.ru
 !
 !
 !
@@ -843,6 +847,9 @@ dpd.ru##div[class="root_UnCiX"]
 !
 newprospect.ru##div[class="notification"]
 newprospect.ru##div[class="telegram"]
+rg.ru##div[class="Subscribe_root__oarin Footer_subscribe__awe1E"]
+rg.ru##div[class="Footer_counters__5YSwr"]
+rg.ru##div[class="Footer_rss__ecqdR"]
 !
 !
 !
