@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.1_9
-! TimeUpdated: 2024-11-24T17:30:00+00:00
+! Version: 0.2_0
+! TimeUpdated: 2024-11-25T13:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -43,8 +43,8 @@
 ||xray.mail.ru^
 ||*dbankcloud*^$important
 ||*rayjump.com^$important
-||smi2.ru^$important
-||*24smi.net^$important
+||smi2.ru^$important,third-party,domain=~smi2.ru
+||24smi.net^$important
 ||*umeng.com^$important
 ||api.bing.com^
 ||*cellrebel.com^$important
@@ -342,7 +342,7 @@
 ||*/mindbox*.js^$script
 ||holodilnik.ru/js/credit*.js*^$script,domain=holodilnik.ru
 ||dashboard.fstrk.io/widget*/*.js^$script
-||code.2ypkht.ru^
+||code.*.ru^$domain=cdek.ru
 ||idealturnik.ru/waitsetcookie/^$xhr,domain=idealturnik.ru
 ||ur1s.ru^$third-party
 ||idealturnik.ru/ordercall-config/^$xhr,domain=idealturnik.ru
@@ -380,7 +380,7 @@
 ||script.wikia.nocookie.net/fandom-ae-assets/tracking-opt*/*/tracking-opt-*.js^$script,domain=fandom.com
 ||playercdn.cdnvideo.ru/aloha/clappr/clappr-stats*.js^$script
 ||ssl.gstatic.com/*/blank_1x.png^$image,domain=google.com
-||google.com/*/cleardot.gif*^$image,domain=google.com
+||feeds.kommersant.ru/komcounter/readcounter*^$image,domain=kommersant.ru
 ||*/dot.*^$image,xhr,script
 ||dpd-site-analytics-backend-api-prod.dpd.ru/api/v*/event^$xhr,domain=dpd.ru
 ||newprospect.ru/assets/filesmanager/upload/iblock/*/*.gif^$image,domain=newprospect.ru
@@ -391,10 +391,14 @@
 ||*.sravni.ru/v*/advertising/banners/*^$xhr,domain=sravni.ru
 ||graphql.kazanexpress.ru^
 ||api.kazanexpress.ru/api/analytics/*^$xhr
-||partners.lemanapro.ru/api/tracker/*^$script,ping,domain=lemanapro.ru|leroymerlin.ru
-||leroymerlin.ru/5sgdmfD2wXGnNsQMcywx.html^$domain=lemanapro.ru|leroymerlin.ru
+||partners.*.ru/api/tracker/*^$script,ping,domain=lemanapro.ru|leroymerlin.ru
+||*.ru/5sgdmfD2wXGnNsQMcywx*^$domain=lemanapro.ru|leroymerlin.ru
 ||interfax.ru/footer__form_subscribe.html^$domain=interfax.ru
-||feeds.kommersant.ru/komcounter/readcounter*^$image,domain=kommersant.ru
+||rbp1.ru^
+||doktor-khairov.ru/info/wp-content/plugins/wp-polls/images/default/pollbg.gif^$xhr,domain=doktor-khairov.ru
+||sso.cdek.ru/auth/realms/b2c/protocol/openid-connect/3p-cookies/*.html^$domain=cdek.ru
+||cdn*.vedomosti.ru/*/assets/subscrib_email-*.png^$image,domain=vedomosti.ru
+||forbes.ru/api/*/special-adblock^$xhr,domain=forbes.ru
 !
 !
 !
@@ -1180,6 +1184,8 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 @@||csp.yandex.net/csp
 @@||pay.yandex.ru/sdk/v*/pay.js^$script,xhr
 @@||uglyemail.com^
+@@||google.com/*/cleardot.gif*^$image,domain=google.com
+@@||cdn*.vedomosti.ru/*/assets/Banner-*.*^$script,css,domain=vedomosti.ru
 !
 !
 ! -
@@ -1216,7 +1222,8 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*.myroledance.com^$third-party
 ||*.vaterlines.com^
 !
-! Адреса с спам-писем с содержанием 18+ (с 14.11.24 по 24.11.24? стал «жертвой» такого массового спама)..
+! Адреса с спам-писем с содержанием 18+ (с 14.11.24 по 26.11.24? стал «жертвой» такого массового спама)..
+! Разблокировка допустима ТОЛЬКО для отписки с рассылки!
 !
 ||arumism.com^
 ||furixor.com^
