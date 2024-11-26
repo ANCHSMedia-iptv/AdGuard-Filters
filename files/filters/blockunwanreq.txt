@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.2_1
-! TimeUpdated: 2024-11-25T18:30:00+00:00
+! Version: 0.2_2
+! TimeUpdated: 2024-11-26T18:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -403,6 +403,8 @@
 ||cdnfiles.rg.ru/_next/static/chunks/23844.e580c58d2fd6dcc4.js^$script,domain=rg.ru
 ||cdnfiles.rg.ru/_next/static/chunks/60844.d7dbf4a358e29d67.js^$script,domain=rg.ru
 ||cdnfiles.rg.ru/_next/static/chunks/1252-dd167f96c5822f19.js^$script,domain=rg.ru
+||s91588.cdn.ngenix.net/branding/*/temp/*.jpg^$image,domain=sravni.ru
+||cdn.jsdelivr.net/jquery.suggestions/*/js/jquery.suggestions*.js^$script
 !
 !
 !
@@ -850,6 +852,7 @@ newprospect.ru##div[class="telegram"]
 rg.ru##div[class="Subscribe_root__oarin Footer_subscribe__awe1E"]
 rg.ru##div[class="Footer_counters__5YSwr"]
 rg.ru##div[class="Footer_rss__ecqdR"]
+tbank.ru##div[data-page-name="adBlockedPage"]
 !
 !
 !
