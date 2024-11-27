@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.2_2
+! Version: 0.2_3
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-11-26T18:30:00+00:00
+! TimeUpdated: 2024-11-27T18:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 26.11.2024 18:30 UTC
+! Last Modified: 27.11.2024 18:30 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -276,7 +276,7 @@
 ||d31j93rd8oukbv.cloudfront.net^$important
 ||mod.calltouch.ru^$important
 ||tracking.diginetica.net^$important
-||*quantserve.com^$important
+||quantserve.com^
 ||*pub.network^$important
 ||*maxmind.com^$important
 ||eventstream.dodopizza.com^$important
@@ -339,6 +339,12 @@
 ||dpd-site-analytics-backend-api-prod.dpd.ru^
 ||js-agent.newrelic.com^
 ||graphql.kazanexpress.ru^
+||hc.uralweb.ru^$important
+||clarity.ms^$important
+||cadmus.script.ac^$important
+||dn0qt3r0xannq.cloudfront.net^$important
+||bservr.com^$important
+||cpmstar.com^$domain=~cpmstar.com
 !
 !
 !
@@ -434,6 +440,7 @@
 @@||*.googlevideo.com^
 @@||pay.yandex.ru^
 @@||uglyemail.com^
+@@||hcaptcha.com^
 !
 !
 ! ===

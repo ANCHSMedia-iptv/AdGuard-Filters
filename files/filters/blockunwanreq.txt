@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.2_2
-! TimeUpdated: 2024-11-26T18:30:00+00:00
+! Version: 0.2_3
+! TimeUpdated: 2024-11-27T18:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -385,8 +385,8 @@
 ||dpd-site-analytics-backend-api-prod.dpd.ru/api/v*/event^$xhr,domain=dpd.ru
 ||newprospect.ru/assets/filesmanager/upload/iblock/*/*.gif^$image,domain=newprospect.ru
 ||newprospect.ru/assets/templates/default/img/*.gif^$image,domain=newprospect.ru
-||a.lmcdn.ru/static/permanent/libs/ad-blocker.js^$script,domain=lamoda.ru
-||*.lmcdn.ru/static/*/assets/*cookie*.css^$css,domain=lamoda.ru
+||*.lmcdn.ru/static/permanent/libs/ad-blocker.js^$script,domain=lamoda.ru
+! ||*.lmcdn.ru/static/*/assets/*cookie*.css^$css,domain=lamoda.ru (новое правило, строка 411)
 ||hdeapi.lamoda.ru/js/modules/chat_widget/hde.js^$script,domain=lamoda.ru
 ||*.sravni.ru/v*/advertising/banners/*^$xhr,domain=sravni.ru
 ||graphql.kazanexpress.ru^
@@ -405,6 +405,35 @@
 ||cdnfiles.rg.ru/_next/static/chunks/1252-dd167f96c5822f19.js^$script,domain=rg.ru
 ||s91588.cdn.ngenix.net/branding/*/temp/*.jpg^$image,domain=sravni.ru
 ||cdn.jsdelivr.net/jquery.suggestions/*/js/jquery.suggestions*.js^$script
+||medportal.ru/cookie_notice^$xhr,important,domain=medportal.ru
+||fedpress.ru/themes/fp/js/share.js^$script,domain=fedpress.ru
+||static.mel.fm/graph.js*^$script,domain=mel.fm
+||*cookie*.css^$css,important
+||b17.ru/img/0.gif^$image,domain=b17.ru
+||ufamama.ru/UserStatistics/*^$xhr,important,domain=ufamama.ru
+||ufamama.ru/services/BlogAdvisor/*^$xhr,important,domain=ufamama.ru
+||ufamama.ru/QR*^$image,domain=ufamama.ru
+||bolshoyvopros.ru/web/seedbnrs_views.cgi^$xhr,domain=bolshoyvopros.ru
+||*.curseforge.com/scripts/dct.js^$script,important,domain=curseforge.com
+||*.curseforge.com/scripts/clarity.js^$script,,important,domain=curseforge.com
+||*.curseforge.com/scripts/comscore.js^$script,important,domain=curseforge.com
+||bservr.com^$important
+||modrinth.com/inmobi.js^$script,domain=modrinth.com
+||modrinth.com/_nuxt/AdPlaceholder*.css^$css,domain=modrinth.com
+||api.modrinth.com/analytics/*^$xhr,domain=modrinth.com
+||img.ru-minecraft.ru/logokl2.png^$image,domain=ru-minecraft.ru
+||*/wp-content/plugins/thirstyaffiliates-pro/js/app/tap-gct.js*^$script
+||*/js/share*.js^$script,domain=misterlauncher.org|minecraftrating.ru
+||cubixworld.net/api/freepromo^$xhr,domain=cubixworld.net
+||cubixworld.net/scripts/ga.js^$script,domain=cubixworld.net
+||vk.com/widget_comments.php*^$important
+||*/js/mrl-web-api.js^$script,domain=minecraftrating.ru|misterlauncher.org
+||tmonitoring.com/uploads/banners/*/*.*^$image,domain=tmonitoring.com
+||api.vk.com/method/widgets.getComments*^$script,xhr,important
+||*/download_klauncher*.png^$image
+||modsmc.ru/_nuxt/2415b65.js^$script,domain=modsmc.ru
+||modsmc.ru/assets/icons/cookies.png^$image,domain=modsmc.ru
+! *Cookie*.css^$css,important
 !
 !
 !
@@ -754,7 +783,7 @@ rbkgames.com###global-wrapper > div.main-content:nth-child(7) > div.centered.cen
 rbkgames.com##.quick-bar
 mag.103.by##.cookiesNotificationBy
 gemotest.ru##div.content-inner:nth-child(6) > main.content-section.content-wrapper_info-article:nth-child(5) > div.container__flex:first-child > aside.sidebar.mobile--hidden:last-child > div.sidebar-inner.sticky--widget:last-child > a.sidebar__widget.telegram-widget:first-child
-##a[href^="https://www.1c-bitrix.ru/composite/"]
+##a[href^="//www.1c-bitrix.ru/composite/"]
 !
 ! Баннер насчёт cookie файлов (сайт ресторанов Rostic's (ex. KFC))
 rostics.ru##div._3l3oK3nIbnZ
@@ -778,7 +807,7 @@ global.cdek.ru##a.shopping-banner:nth-child(5)
 maxiland72.ru###rec782509983 > div.t657.t657_rectangle:first-child
 !
 !
-##a[href^="http://www.1c-bitrix.ru/composite/"]
+! ##a[href^="http://www.1c-bitrix.ru/composite/"]
 !
 !
 ! Предупреждение об использовании cookie и Яндекс.Метрики (интернет-магазин Амодей (Amodei.ru))
@@ -853,6 +882,22 @@ rg.ru##div[class="Subscribe_root__oarin Footer_subscribe__awe1E"]
 rg.ru##div[class="Footer_counters__5YSwr"]
 rg.ru##div[class="Footer_rss__ecqdR"]
 tbank.ru##div[data-page-name="adBlockedPage"]
+ru-minecraft.ru##div[class="klauncher-wrapper"]
+ru-m.org##div[class^="ramka"]
+misterlauncher.org##div[class^="alert alert-success text-center"]
+misterlauncher.org,minecraftrating.ru##div[class="text-center mt-4 font-weight-bold"]
+misterlauncher.org##div[class="block-try"]
+misterlauncher.org##div[class="page-header page-header-fixed hidden-xs page-header-fixed-show"]
+misterlauncher.org##div[class^="col-right"]
+minecraftrating.ru##div[class^="mrlauncher-banner"]
+inside.lemoncraft.ru,lemoncraft.ru##div[class^="discord-dialog discord-dialog--active"]
+tmonitoring.com##div[class^="metriks"]
+minecraftexpert.ru##div[class^="download-button klaun-button"]
+minecraftexpert.ru##div[class="download-button tg-button"]
+##div[class^="footer-counts"]
+##div[class^="counts"]
+##a[href$="klauncher"]
+minecraftpatch.ru##div[style="margin-top:20px;text-align: center;display: flex;flex-direction: column;justify-content: center;width: 100%;border-bottom: 1px solid #777;"]
 !
 !
 !
@@ -1196,6 +1241,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 @@||uglyemail.com^
 @@||google.com/*/cleardot.gif*^$image,domain=google.com
 @@||cdn*.vedomosti.ru/*/assets/Banner-*.*^$script,css,domain=vedomosti.ru
+@@||hcaptcha.com^
 !
 !
 ! -
@@ -1232,9 +1278,10 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*.myroledance.com^$third-party
 ||*.vaterlines.com^
 !
-! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 24.11.24 стал «жертвой» такого массового спама)..
+! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 стал «жертвой» такого массового спама)..
 ||s*.*.*.mydomain.zone^
 ||*.afrounitedsalon.de^
+!
 !
 ! Фишинг и мошенничество с спам рассылок (типа Столото) (с начала 2024 стал «жертвой» такого массового спама)..
 ||fgnrthgre.buzz^
