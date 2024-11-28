@@ -464,7 +464,8 @@
 ||*vesmaveselo*^$important,dnsrewrite=REFUSED
 ||*.myroledance.com^$important,dnsrewrite=REFUSED
 ||*.vaterlines.com^$dnsrewrite=REFUSED
-||*otnolatrnup.com^$important
+||otnolatrnup.com^$important
+||resp.us^
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 стал «жертвой» такого массового спама)..
 ||s*.*.*.mydomain.zone^
