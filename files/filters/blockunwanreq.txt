@@ -1277,6 +1277,8 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*vesmaveselo*^$third-party
 ||*.myroledance.com^$third-party
 ||*.vaterlines.com^
+||resp.us^
+!
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 стал «жертвой» такого массового спама)..
 ||s*.*.*.mydomain.zone^
