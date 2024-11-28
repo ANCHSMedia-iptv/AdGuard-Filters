@@ -1,13 +1,14 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.2_3
-! TimeUpdated: 2024-11-27T18:30:00+00:00
+! Version: 0.2_4
+! TimeUpdated: 2024-11-28T18:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
 !
 ! Не только запросы к доменам, ну и скрипты, запросы типа XHR и т.д...
 ! Not just domain queries, well scripts, XHR type queries, etc...
+! --- soon..
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc..
 !
@@ -276,7 +277,7 @@
 ||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,important
 ||sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com
 ! sa.hoodmaps.com^
-! citilink.ru/graphql/^$xhr,domain=citilink.ru (новое правило, строка 374)
+! citilink.ru/graphql/^$xhr,domain=citilink.ru (новое правило, строка 375)
 ||fga.citilink.ru/collect^$xhr,domain=citilink.ru
 ||dns-shop.ru/banner/get-header-banner/^$xhr,domain=dns-shop.ru
 ||alfastrah.ru/js/detectPrivateMode.min.js^$script,domain=alfastrah.ru
@@ -386,7 +387,7 @@
 ||newprospect.ru/assets/filesmanager/upload/iblock/*/*.gif^$image,domain=newprospect.ru
 ||newprospect.ru/assets/templates/default/img/*.gif^$image,domain=newprospect.ru
 ||*.lmcdn.ru/static/permanent/libs/ad-blocker.js^$script,domain=lamoda.ru
-! ||*.lmcdn.ru/static/*/assets/*cookie*.css^$css,domain=lamoda.ru (новое правило, строка 411)
+! *.lmcdn.ru/static/*/assets/*cookie*.css^$css,domain=lamoda.ru (новое правило, строка 411)
 ||hdeapi.lamoda.ru/js/modules/chat_widget/hde.js^$script,domain=lamoda.ru
 ||*.sravni.ru/v*/advertising/banners/*^$xhr,domain=sravni.ru
 ||graphql.kazanexpress.ru^
@@ -423,7 +424,7 @@
 ||api.modrinth.com/analytics/*^$xhr,domain=modrinth.com
 ||img.ru-minecraft.ru/logokl2.png^$image,domain=ru-minecraft.ru
 ||*/wp-content/plugins/thirstyaffiliates-pro/js/app/tap-gct.js*^$script
-||*/js/share*.js^$script,domain=misterlauncher.org|minecraftrating.ru
+||*/js/share*.js^$script
 ||cubixworld.net/api/freepromo^$xhr,domain=cubixworld.net
 ||cubixworld.net/scripts/ga.js^$script,domain=cubixworld.net
 ||vk.com/widget_comments.php*^$important
@@ -434,6 +435,18 @@
 ||modsmc.ru/_nuxt/2415b65.js^$script,domain=modsmc.ru
 ||modsmc.ru/assets/icons/cookies.png^$image,domain=modsmc.ru
 ! *Cookie*.css^$css,important
+||2ruoe1cm.ru^
+||zcode*.com^
+||minecraftgame.ru/wp-content/uploads/2019/10/fl-adbanner-horizontal.png^$image,domain=minecraftgame.ru
+||*/wp-content/plugins/social-by-webnavoz/js/socials_webnavoz.js*^$script
+||q.stripe.com^$important
+||hotmc.ru/copy/flag/transparent.gif^$image,domain=hotmc.ru
+||hotmc.ru/img/images/transparent-banner.png^$image,domain=hotmc.ru
+||files.hotmc.ru/upload/*.mp4*^$media,domain=hotmc.ru
+||api.flauncher.biz/banners/*^$media,image,domain=monitoringminecraft.net
+||mcrating.org/img/minecraft_server/banner*^$image,domain=mcrating.org
+||minecraft-inside.ru/uploads/servers/*/*.*^$image,domain=minecraft-inside.ru
+||cdn.misterlauncher.org/storage/servers/*.*^$image,domain=misterlauncher.org
 !
 !
 !
@@ -526,7 +539,7 @@
 ||*pinterest.com/_/_/trace/trace/^$xhr,important
 ||*pinterest.com/_/_/storage_report/^$xhr,important
 ||*pinterest.com/_/_/logClientError/^$xhr,important
-! *pinterest.com/_/graphql/^$xhr,important (новое правило, строка 374)
+! *pinterest.com/_/graphql/^$xhr,important (новое правило, строка 375)
 ||*pinterest.com/_/_/csp_report/^$xhr,important
 ||trk.pinterest.com^$important
 ||ads.pinterest.com^$important
@@ -898,6 +911,9 @@ minecraftexpert.ru##div[class="download-button tg-button"]
 ##div[class^="counts"]
 ##a[href$="klauncher"]
 minecraftpatch.ru##div[style="margin-top:20px;text-align: center;display: flex;flex-direction: column;justify-content: center;width: 100%;border-bottom: 1px solid #777;"]
+mcpehub.net##div[id="custom-7543-particle"]
+hotmc.ru##div[class^="banner-video-container"]
+minecraft-inside.ru##div[class="footer__counters"]
 !
 !
 !

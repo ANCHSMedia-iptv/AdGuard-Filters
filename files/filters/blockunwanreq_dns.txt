@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.2_3
+! Version: 0.2_4
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-11-27T18:30:00+00:00
+! TimeUpdated: 2024-11-28T18:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 27.11.2024 18:30 UTC
+! Last Modified: 28.11.2024 18:30 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -345,6 +345,11 @@
 ||dn0qt3r0xannq.cloudfront.net^$important
 ||bservr.com^$important
 ||cpmstar.com^$domain=~cpmstar.com
+||prft1pub.com^
+||2ruoe1cm.ru^
+||zcode*.com^
+||r.stripe.com^$important
+||mc.webvisor.org^$important
 !
 !
 !
@@ -466,6 +471,7 @@
 ||*.vaterlines.com^$dnsrewrite=REFUSED
 ||otnolatrnup.com^$important
 ||resp.us^
+!
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 стал «жертвой» такого массового спама)..
 ||s*.*.*.mydomain.zone^
