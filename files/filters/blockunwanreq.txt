@@ -1294,6 +1294,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*.myroledance.com^$third-party
 ||*.vaterlines.com^
 ||resp.us^
+||meshuradres.best^
 !
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 стал «жертвой» такого массового спама)..
@@ -1344,6 +1345,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||%3A%2F%2F%6C%61%77%72%65%6E%63%65%31%31%39%32%63%68%72%6F%6E%69%63%6C%65%2E%62%6C%6F%67%73%70%6F%74%2E%63%6F%6D^
 ||*.purechats.com^
 ||*.prettywomenco.com^
+||*.trodsimni.ru^
 !
 !
 !
