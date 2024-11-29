@@ -427,7 +427,7 @@
 ||*/js/share*.js^$script
 ||cubixworld.net/api/freepromo^$xhr,domain=cubixworld.net
 ||cubixworld.net/scripts/ga.js^$script,domain=cubixworld.net
-||vk.com/widget_comments.php*^$important
+||vk.com/widget_comments.php*^$important,domain=~vk.com
 ||*/js/mrl-web-api.js^$script,domain=minecraftrating.ru|misterlauncher.org
 ||tmonitoring.com/uploads/banners/*/*.*^$image,domain=tmonitoring.com
 ||api.vk.com/method/widgets.getComments*^$script,xhr,important
