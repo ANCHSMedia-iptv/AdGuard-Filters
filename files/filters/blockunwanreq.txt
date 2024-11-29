@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.2_4
-! TimeUpdated: 2024-11-28T18:30:00+00:00
+! Version: 0.2_5
+! TimeUpdated: 2024-11-29T18:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -29,34 +29,34 @@
 ||api.picsart.com/location^$xhr,domain=picsart.com
 !
 !
-||*scorecardresearch.com^$important
-||*metricell.com^$important
-||*bronze.systems^$important
+||scorecardresearch.com^$important
+||metricell.com^$important
+||bronze.systems^$important
 ||graph.facebook.com^$important
-||*optifyr.com^$important
-||*gravatar.com^$important
-||*amplreq.com^$important
-||*amplitude.com^$important
+||optifyr.com^$important
+||gravatar.com^$important
+||amplreq.com^$important
+||amplitude.com^$important
 ! *bugsnag.com^$important
 ||*bugsnag*^$important
 ||*vk-analytics.ru^$important
 ||*instabug*^$important
 ||xray.mail.ru^
 ||*dbankcloud*^$important
-||*rayjump.com^$important
+||rayjump.com^$important
 ||smi2.ru^$important,third-party,domain=~smi2.ru
-||24smi.net^$important
-||*umeng.com^$important
+||24smi.net^$important,third-party
+||umeng.com^$important
 ||api.bing.com^
-||*cellrebel.com^$important
-||*onesignal.com^$important
+||cellrebel.com^$important
+||onesignal.com^$important
 ||cdn.viglink.com^$important
 ||connect.facebook.net^$important,domain=~facebook.com
 ||connect.ok.ru^$important,domain=~ok.ru
-||*inappstory.ru^$important
-||*inappstory.com^$important
+||inappstory.ru^$important
+||inappstory.com^$important
 ! *inappstory.*^$important
-||*appsflyersdk.com^$important
+||appsflyersdk.com^$important
 !
 ! facebook.com^$domain=~facebook.com
 ! www.facebook.com^$domain=~facebook.com
@@ -65,45 +65,45 @@
 ! Commented out because it prevents the site itself from loading.
 !
 !
-||*snapkit.com^$important
-||*appsflyer.com^$important
+||snapkit.com^$important
+||appsflyer.com^$important
 ||analytics.72.ru^$important
 ||syndication.twitter.com^
-||*rexpush.pro^$important
-||*peiynu.com^$important
-||*appspot.com^$important
-||*yabro.ru^$important
-||*flowerpla.com^$important
-||*amocrm.ru^$important
-||*gtrxlnd2.com^$important
+||rexpush.pro^$important
+||peiynu.com^$important
+||appspot.com^$important
+||yabro.ru^$important
+||flowerpla.com^$important
+||amocrm.ru^$important
+||gtrxlnd2.com^$important
 ||*uxfeedback*^$important
-||*tiqcdn.com^$important
+||tiqcdn.com^$important
 ||*analytics.tele2.ru^$important
-||*cdn.bcebos.com^
+||cdn.bcebos.com^
 ||*adjust*^$important
 ||rutrk.org^$important
 ||stat-analytics.mediavitrina.ru^$important
-||*pglstatp.com^$important
+||pglstatp.com^$important
 ||stats.avito.ru^$important
 ||cdn-app.sberdevices.ru/misc/*/assets/ad-sdk/ad-category-recognition.js^$script,important
 ||stats.viqeo.tv^$important
 ||metrics.viqeo.tv^$important
-||*adtech.com^$important
-||*statad.ru^$important
+||adtech.com^$important
+||statad.ru^$important
 ||*mixpanel.com^$important
 ||mixpanel.cdn.viber.com^$important
-||*btloader.com^$important
-||*digitalcaramel.com^$important
-||*ads-twitter.com^$important
-||*bitrix.info^$important
+||btloader.com^$important
+||digitalcaramel.com^$important
+||ads-twitter.com^$important
+||bitrix.info^$important
 ||*skcrtxr.com^$important
 ||avito.ru/stat/radar*^$image,domain=avito.ru
 ! avito.ru/web/*/adv/network/creative^$xhr,domain=avito.ru
 ||*advert*^$image,important
 ||*/firebase*.*^$script,xhr
 ||d3c8j8snkzfr1n.cloudfront.net^$important
-||*adskeeper.co.uk^$important
-||*metrika-informer.com^$important
+||adskeeper.co.uk^$important
+||metrika-informer.com^$important
 ||stats.habr.com^$important
 ||clck.dzen.ru^$important
 !
@@ -122,14 +122,14 @@
 ||platform.twitter.com/widgets.js^$script,important,domain=~x.com|~twitter.com
 ||www.instagram.com/embed.js^$script,important,domain=~instagram.com
 ||www.tiktok.com/embed.js^$script,important,domain=~tiktok.com
-||*singular.net^$important
+||singular.net^$important
 ||alb.reddit.com^
-||*rudderstack.com^$important
+||rudderstack.com^$important
 ||hh.ru/api/fl/logs/^$other,important
-||*cedexis.com^$important
+||cedexis.com^$important
 ||*/generate_204^
 ||*adlook.me^$important
-||*betweendigital.com^$important
+||betweendigital.com^$important
 ||*/api/advertising/*^$xhr,domain=hitfm.ru|montecarlo.ru
 ||vk.com/js/api/openapi.js^$script,domain=~vk.com,important
 ||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com
@@ -239,7 +239,7 @@
 ||*/p.*^$image,xhr,important
 ||static.1tv.ru/player/config/banner.gif*^$image,domain=1tv.ru,important
 ||api.1tv.ru/v*/promo_places/alert_for_player^$xhr,domain=1tv.ru,important
-||*ad-tech.ru^
+||ad-tech.ru^
 ||championat.com/atlas/metrics/^$xhr,domain=championat.com,important
 ||cdn-assets.matchtv.ru/build/assets/external/matchtv-stat.*.js^$domain=matchtv.ru,important
 ||*/api/*/store/*^$ping,xhr,important
@@ -267,7 +267,7 @@
 ||api.*.ru/v*/recommendations*^$xhr,domain=vc.ru|dtf.ru
 ||booster.osnova.io/a/relevant/many*^$xhr,domain=vc.ru|dtf.ru
 ||apis.google.com/js/plusone.js^$script
-||*addtoany.com^
+||addtoany.com^
 ||gazprom-neft.*/*.gif^$image,domain=gazprom-neft.ru|gazprom-neft.com
 ||zoon.ru/images/border.gif^$image,domain=zoon.ru
 ! (новое правило, строка 133 и 134)
@@ -283,7 +283,7 @@
 ||alfastrah.ru/js/detectPrivateMode.min.js^$script,domain=alfastrah.ru
 ||vk.com/al_video.php?act=track_player_events^$xhr
 ||leto-leto.com/images/btn-sprite.png^$image,domain=leto-leto.com
-||rlrt.ru/1rogx.min.js^$script
+! rlrt.ru/1rogx.min.js^$script
 ||bitrix24.sportmoda.ru/upload/crm/tag/call.tracker.js*^$script,domain=sportmoda.ru
 ! */upload/crm/tag/call.tracker.js*^$script
 ||*/bitrix/services/main/ajax.php?action=yandex%3Ametrika.yandex_metrika*^$xhr
@@ -304,7 +304,7 @@
 ||sitecdn.api.lenta.com/assets-ng/footer/lenta-app-qr.svg^$image,domain=lenta.com
 ||magnit.ru/_nuxt/my-magnit.*.svg^$image,domain=magnit.ru
 ||magnit.ru/_nuxt/app-magnit.*.svg^$image,domain=magnit.ru
-||*targetads.io^$important
+||targetads.io^$important
 ||dostavista.ru/backend/browser-log^$xhr,domain=dostavista.ru
 ||dostavista.ru/write-analytics^$xhr,domain=dostavista.ru
 ||dostavista.ru/backend/browser-error-log^$xhr,domain=dostavista.ru
@@ -328,7 +328,7 @@
 ||pta.ramfy.ru/push/*.js^$script
 ||cm*api.chefmarket.ru/api/v*/settings/dishes-statistic^$xhr,domain=chefmarket.ru
 ||cs*.pikabu.ru/v*/event/*/*^$xhr,domain=pikabu.ru
-||*.tlintegration.ru^
+||tlintegration.ru^
 ||pa-na-ma.ru/site/templates/assets/js/components/notify.js^$script,domain=pa-na-ma.ru
 ||pa-na-ma.ru/site/templates/assets/js/core/scrollspy.js^$script,domain=pa-na-ma.ru
 ||*/GoogleAnalytics/content/scripts/tracking.js*^$script,important
@@ -447,6 +447,18 @@
 ||mcrating.org/img/minecraft_server/banner*^$image,domain=mcrating.org
 ||minecraft-inside.ru/uploads/servers/*/*.*^$image,domain=minecraft-inside.ru
 ||cdn.misterlauncher.org/storage/servers/*.*^$image,domain=misterlauncher.org
+||speraspace.com^
+||rlrt.ru^
+||vsesvets.com^
+||yapx.ru^
+||ru-minecraft.ru/uploads/forum/images/*/*_ad_sign.png^$image,domain=ru-minecraft.ru
+||api.expf.ru/api/v*/geo^$xhr
+||rutube.ru/api/video/recommendation*^$xhr,domain=rutube.ru
+||rutube.ru/static/img/png/adsdkbanner.png^$xhr,domain=rutube.ru
+||accounts.google.com/_/IdpIFrameHttp/cspreport^$xhr,other
+||cdn.rt.com/scripts/adfox/*.js^$script,important,domain=russiatoday.ru
+||mediator.mail.ru/script/*/^$script,xhr,important
+||socialstat.rt.com/socialstat?url=$xhr,important,domain=russiatoday.ru
 !
 !
 !
@@ -808,7 +820,9 @@ gazeta.ru##div.b_telegram_subscriber
 ! Пустое место под рекламу (новостной сайт Комсомольская правда, Молдовское подразделение)
 md.kp.media##div.sc-1a8tb7h-0
 !
-##a[href^="//www.liveinternet.ru/click"]
+##a[href="//www.liveinternet.ru/click"]
+##a[href="https://www.liveinternet.ru/click"]
+##a[href="http://www.liveinternet.ru/click"]
 championat.com##div.header-bottom__adv
 bxbox.bxb.delivery###content > div.sidebar:first-child > div.itc-slider:last-child
 global.cdek.ru##a.shopping-banner:nth-child(5)
@@ -913,7 +927,11 @@ minecraftexpert.ru##div[class="download-button tg-button"]
 minecraftpatch.ru##div[style="margin-top:20px;text-align: center;display: flex;flex-direction: column;justify-content: center;width: 100%;border-bottom: 1px solid #777;"]
 mcpehub.net##div[id="custom-7543-particle"]
 hotmc.ru##div[class^="banner-video-container"]
-minecraft-inside.ru##div[class="footer__counters"]
+minecraft-inside.ru##div[class^="footer__counters"]
+mody-minecraft.ru##div[class^="footer-conter"]
+ru-minecraft.ru##div[class^="ministat"]
+russiatoday.ru##div[class^="follows-channel follows-channel_top-middle follows-channel_djen"]
+russiatoday.ru##div[class^="article__facebook article__facebook_article-page_news"]
 !
 !
 !
@@ -1346,6 +1364,9 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*.purechats.com^
 ||*.prettywomenco.com^
 ||*.trodsimni.ru^
+||*.gichenisatcilaw.ru^
+||*.bersvirla.ru^
+||*.lacsaimo.ru^
 !
 !
 !
