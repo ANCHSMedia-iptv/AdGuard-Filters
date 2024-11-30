@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.3.1-R
-! TimeUpdated: 2024-11-30T17:20:00+00:00
+! Version: 0.3.2-R
+! TimeUpdated: 2024-11-30T17:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -151,7 +151,7 @@
 ||*/1px.*^$image,xhr,important
 ||*/px.*^$image,xhr,important
 ||*/blank.*^$image,xhr,important
-||*/analytics.js^$script,important
+||*/analytics.js^$script,domain=~analytics.google.com|~www.google-analytics.com
 ! */analytics.*^$script,important
 ||ddlbots.com/cdn/shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,domain=ddlbots.com,important
 ! *shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
