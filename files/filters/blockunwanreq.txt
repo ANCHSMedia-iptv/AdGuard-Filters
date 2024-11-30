@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.2_5
-! TimeUpdated: 2024-11-29T18:30:00+00:00
+! Version: 0.2_6
+! TimeUpdated: 2024-11-30T13:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -132,8 +132,8 @@
 ||betweendigital.com^$important
 ||*/api/advertising/*^$xhr,domain=hitfm.ru|montecarlo.ru
 ||vk.com/js/api/openapi.js^$script,domain=~vk.com,important
-||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com
-||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com
+||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com
+||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com
 ||*/itunes_referals.js^$script
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script
 ||improving.duckduckgo.com^$important
@@ -459,6 +459,7 @@
 ||cdn.rt.com/scripts/adfox/*.js^$script,important,domain=russiatoday.ru
 ||mediator.mail.ru/script/*/^$script,xhr,important
 ||socialstat.rt.com/socialstat?url=$xhr,important,domain=russiatoday.ru
+||*/mcserverstop.jpg^$image
 !
 !
 !
@@ -932,6 +933,7 @@ mody-minecraft.ru##div[class^="footer-conter"]
 ru-minecraft.ru##div[class^="ministat"]
 russiatoday.ru##div[class^="follows-channel follows-channel_top-middle follows-channel_djen"]
 russiatoday.ru##div[class^="article__facebook article__facebook_article-page_news"]
+minecraftch.ru##div[class^="vkgroup"]
 !
 !
 !
@@ -1183,6 +1185,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||adservice.google.com^$important
 ||s.youtube.com^$important
 ||appsgrowthpromo*.clients*.google.com^$important
+||jnn-pa.googleapis.com/*/Create^$xhr,other
 !
 ! ===
 !
@@ -1336,24 +1339,24 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||barabalo.com^
 ! fuckbookflirt.com^
 ||peachdates.com^
-||*.spmailtechno.com^
-||*.mrflirty.com^
+||spmailtechno.com^
+||mrflirty.com^
 ! localswebflirt.com^
-||*.wildblossoms.top^
-||*.lunarlifepromo.com^
-||*.moontrekadventures.com^
-||*.todayfundate.com^
-||*.summitquestadventure.com^
-||*.clifftops.top^
-||*.meetmarvel.com^
-||*.lovetimenow.com^
-||*.horizonpulserise.com^
+||wildblossoms.top^
+||lunarlifepromo.com^
+||moontrekadventures.com^
+||todayfundate.com^
+||summitquestadventure.com^
+||clifftops.top^
+||meetmarvel.com^
+||lovetimenow.com^
+||horizonpulserise.com^
 ||*flirt*.com^
-||*.webbursthub.com^
-||*.stellartrippromo.com^
-||*.lunarhypeads.com^
-||*.moonlurepromo.com^
-||*.cherrychitchat.com^
+||webbursthub.com^
+||stellartrippromo.com^
+||lunarhypeads.com^
+||moonlurepromo.com^
+||cherrychitchat.com^
 ||jonoicu.com^
 ||abderim.space^
 ||adsoccl.com^
@@ -1361,12 +1364,27 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||udotype.com^
 ||scosio.click^
 ||%3A%2F%2F%6C%61%77%72%65%6E%63%65%31%31%39%32%63%68%72%6F%6E%69%63%6C%65%2E%62%6C%6F%67%73%70%6F%74%2E%63%6F%6D^
-||*.purechats.com^
-||*.prettywomenco.com^
-||*.trodsimni.ru^
-||*.gichenisatcilaw.ru^
-||*.bersvirla.ru^
-||*.lacsaimo.ru^
+||purechats.com^
+||prettywomenco.com^
+||trodsimni.ru^
+||gichenisatcilaw.ru^
+||bersvirla.ru^
+||lacsaimo.ru^
+||garisgoculutan.ru^
+||hoolassnire.ru^
+||profellleadvesthof.ru^
+||granlarmdant.ru^
+||exnanung.ru^
+||saapremevpel.ru^
+||lecparkterccypartni.ru^
+||locachi.ru^
+||longgrunwirspe.ru^
+||etdemothee.ru^
+||jarecom.ru^
+||cfqndvmyttega.ru^
+||itabpresunlan.ru^
+||inamalclonsuppscutev.ru^
+||cennarasetitabwai.ru^
 !
 !
 !
