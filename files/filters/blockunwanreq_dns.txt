@@ -304,7 +304,7 @@
 ||adpod.in^
 ||cpa.hh.ru^$important
 ||s*.wi-fi.ru^
-||addtoany.com^$important
+||static.addtoany.com^$important
 ||player-telemetry.vimeo.com^$important
 ||fresnel-events.vimeocdn.com^$important
 ||roistat.com^$important
@@ -529,7 +529,7 @@
 ||husperm.space^
 ||udotype.com^
 ||scosio.click^
-||%3A%2F%2F%6C%61%77%72%65%6E%63%65%31%31%39%32%63%68%72%6F%6E%69%63%6C%65%2E%62%6C%6F%67%73%70%6F%74%2E%63%6F%6D^
+!
 ||purechats.com^
 ||prettywomenco.com^
 ||trodsimni.ru^
@@ -558,6 +558,7 @@
 ||crusricbeispormenasi.ru^
 ||pacalageab.ru^
 ||zowymoro.ru^
+||ewadma.ru^
 !
 !
 !

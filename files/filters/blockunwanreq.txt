@@ -267,7 +267,7 @@
 ||api.*.ru/v*/recommendations*^$xhr,domain=vc.ru|dtf.ru
 ||booster.osnova.io/a/relevant/many*^$xhr,domain=vc.ru|dtf.ru
 ||apis.google.com/js/plusone.js^$script
-||addtoany.com^
+! addtoany.com^
 ||gazprom-neft.*/*.gif^$image,domain=gazprom-neft.ru|gazprom-neft.com
 ||zoon.ru/images/border.gif^$image,domain=zoon.ru
 ! (новое правило, строка 133 и 134)
@@ -475,6 +475,13 @@
 ||playground.ru/build/40.cce4b36e.js^$script,domain=playground.ru
 ||playground.ru/api/referral.log?$image,domain=playground.ru
 ||playground.ru/sound/notification.mp3^$media,domain=playground.ru
+||minecraftpatch.ru/wp-content/themes/minecraftpatch.ru/img/tinkoff.png^$image,domain=minecraftpatch.ru
+||chocolateminecraft.com/images/server-logo-100.png^$image
+||minecraftkwiki.online/wp-json/wordpress-popular-posts/v*/popular-posts^$xhr,domain=minecraftkwiki.online
+||misterlauncher.org/monitoring/server_id/*/^$domain=misterlauncher.org
+||*/block-vk.webp^$image
+||minecraftrating.ru/widgets_api/monitoring/monitoring.html^$domain=minecraftrating.ru
+||cdn.jsdelivr.net/npm/cookify*/src/index.js^$script
 !
 !
 !
@@ -955,6 +962,15 @@ vlauncher.ru##div[class^="counters-box"]
 ##div[class^="counter"]
 ##a[href^="//statcounter.com/"]
 minecraftkwiki.online##div[class="widget rounded overflow-hidden filter-field shadow mb-3 bg-gray mt-xs-0 mb-3 widget_cabinet_comment_widget"]
+minecraftpatch.ru##section:nth-child(2) > div.wrapper:last-child > div.post_box:last-child > div.post_text:last-child > div.description:last-child > div:first-child > p:nth-child(2)
+minecraftkwiki.online##li[class^="menu-item menu-item-type-custom menu-item-object-custom menu-item-18959 nav-item"]
+mcmodspc.com##div[class^="site-main__single-header-right-bottom grid__row"]
+mody4mine.ru##div[class^="vk_groups"]
+misterlauncher.org##a[href^="https://misterlauncher.org/"]
+gamewith.net##div[class="game-announce"]
+minecraftonly.com##a[href="/start.html"]
+minecraftonly.com##div[class="streams-sidebar position-fixed"]
+modscraft.net##div[class="content-listen-body"]
 !
 !
 !
@@ -1177,6 +1193,7 @@ minecraftkwiki.online##div[class="widget rounded overflow-hidden filter-field sh
 ||yastatic.net/safeframe-bundles/*/host.js^$script
 ||pay.yandex.ru/web/cl/click
 ||yastatic.net/pcode/adfox/$important
+||site.yandex.net/*/js/suggest.js^$script
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -1384,7 +1401,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||husperm.space^
 ||udotype.com^
 ||scosio.click^
-||%3A%2F%2F%6C%61%77%72%65%6E%63%65%31%31%39%32%63%68%72%6F%6E%69%63%6C%65%2E%62%6C%6F%67%73%70%6F%74%2E%63%6F%6D^
+!
 ||purechats.com^
 ||prettywomenco.com^
 ||trodsimni.ru^
@@ -1413,6 +1430,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||crusricbeispormenasi.ru^
 ||pacalageab.ru^
 ||zowymoro.ru^
+||ewadma.ru^
 !
 !
 !
