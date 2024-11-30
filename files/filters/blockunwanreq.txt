@@ -229,8 +229,8 @@
 ||s*.stc.yc.kpcdn.net/share/i/beige/*.gif^$image,important
 ||s*.stc.yc.kpcdn.net/s*/*/adaptive/img/banner.gif*^$xhr,important
 ! *sendsay.ru^$important
-||*lentainform.com^
-||*/1x1.*^$image,xhr,important
+||lentainform.com^$important
+||*/1x1.*^$image,xhr,important,domain=~lentainform.com
 ||smotrim.ru/js/media-scope.js^$script,important
 ||cdn-st*.rtr-vesti.ru/mh_files/*/imho.js^$script,domain=vesti.ru,important
 ||vesti.ru/i/bg.png*^$image,domain=vesti.ru,important
