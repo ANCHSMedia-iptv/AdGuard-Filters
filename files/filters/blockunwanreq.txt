@@ -116,7 +116,7 @@
 ||api.x.com/*/jot/error_log.json^$xhr
 ||api.x.com/*/jot/ces/p2^$xhr
 ||api.x.com/*/jot/client_event.json^$xhr
-||*tns-counter.ru^$important
+||tns-counter.ru^$important
 ||*.ru/geo-context^$other,xhr,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||geo.geosurf.io^$important
 ||platform.twitter.com/widgets.js^$script,important,domain=~x.com|~twitter.com
@@ -143,7 +143,7 @@
 ||virustotal.com/ui/cookie_disclaimer^$xhr,domain=virustotal.com,important
 ||virustotal.com/gui/_log-error^$xhr,domain=virustotal.com,important
 !
-||*/yandex.*^$image
+! */yandex.*^$image
 ||*/liveinternet.*^$image
 ||*/cycounter.*^$image
 !
