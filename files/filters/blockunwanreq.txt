@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.2_7
-! TimeUpdated: 2024-11-30T11:40:00+00:00
+! Version: 0.2_8
+! TimeUpdated: 2024-11-30T12:10:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -474,6 +474,7 @@
 ||playground.ru/build/38.88d331f7.js^$script,domain=playground.ru
 ||playground.ru/build/40.cce4b36e.js^$script,domain=playground.ru
 ||playground.ru/api/referral.log?$image,domain=playground.ru
+||playground.ru/sound/notification.mp3^$media,domain=playground.ru
 !
 !
 !
@@ -953,6 +954,7 @@ xenolith.ru##div[class^="f_banners"]
 vlauncher.ru##div[class^="counters-box"]
 ##div[class^="counter"]
 ##a[href^="//statcounter.com/"]
+minecraftkwiki.online##div[class="widget rounded overflow-hidden filter-field shadow mb-3 bg-gray mt-xs-0 mb-3 widget_cabinet_comment_widget"]
 !
 !
 !
