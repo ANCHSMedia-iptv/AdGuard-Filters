@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.3.6-R
-! TimeUpdated: 2024-12-01T16:30:00+00:00
+! Version: 0.3.7-R
+! TimeUpdated: 2024-12-01T17:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -319,7 +319,7 @@
 ||cs.pikabu.ru/apps/ub/*/*/sprite.svg^$xhr,domain=pikabu.ru
 ||avito.ru/dstatic/build/client/fingerprint.*^$script,domain=avito.ru
 !
-! Рекомендации в виде блока Популярное (популярных объявлений) внизу у подвала страницы результатов поискового запроса (раздел Молл, сайт объявлений Авито (avito .ru)).
+! Рекомендации в виде блока Популярное (популярных объявлений) внизу у подвала страницы результатов поискового запроса (сайт объявлений Авито (avito .ru)).
 ||avito.ru/js/recommendations^$xhr,domain=avito.ru
 !
 ||notebookcheck-ru.com/fileadmin/Notebooks/*/*_pixel.gif^$image,domain=notebookcheck-ru.com
@@ -997,6 +997,7 @@ minecraftheat.ru##.obfuscated-link, .launcher-link
 ##.counters
 minecraftmain.ru###custom_html-5 > div.textwidget.custom-html-widget:last-child > div.widget.gp-social-buttons-widget.gp-clearfix > ul.gp-social-icons > li:last-child > a.social-google-news.ext-link
 alfabank.by##div[class="sendpulse"]
+russianfood.com##div[align="center"]
 !
 !
 !
