@@ -1,7 +1,8 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 0.3.7-R
-! TimeUpdated: 2024-12-01T17:30:00+00:00
+! TimeUpdated: 2024-12-01T18:00:00+00:00
+! TimeUpdated: 2024-12-01T18:00:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -186,7 +187,7 @@
 ||player.twitch.tv/js/embed/v*.js^$script,domain=~twitch.tv,important
 ||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com,important
 ||cdn.gamestatic.net/files/pictures/promo_banner_*.png^$image,domain=rbkgames.com,important
-||*alicdn.com/AWSC/et/*/et_f.js^$script,important
+||*.alicdn.com/AWSC/et/*/et_f.js^$script,important
 ||*.103.*/css/cookiesNotification.css^$css,important,domain=mag.103.*
 ! *.103.*/css/cookiesNotification*.css^$css,important,domain=mag.103.*
 ! *.103.*/js/cookiesNotificationBy.js^$script,important,domain=mag.103.* (новое правило, строка 133 и 134)
@@ -756,12 +757,14 @@ otzovik.com##div[class^="produkt"][class$="sortable"]
 ||st.aestatic.net/mixer/widgets/bx/RecommendationFeedV*/*/system/RecommendationFeedV*.*^$css,script,domain=aliexpress.ru
 ||st.aestatic.net/mixer/widgets/bx/RedOrderRecommendationFeedModal/*/system/RedOrderRecommendationFeedModal.*^$css,script,domain=aliexpress.ru
 ||st.aestatic.net/mixer/widgets/bx/RecommendationFeedOrderSimilarWrapper/*/system/RecommendationFeedOrderSimilarWrapper.js^$script,domain=aliexpress.ru
+||aliexpress.ru/aer-jsonapi/bx/web/recommend/just-for-you-new-ru-sell^$xhr,domain=aliexpress.ru
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
 aliexpress.ru##div.ModuleBanner_ModuleBanner__outer-wrapper__100x6
 ! aliexpress.ru###__aer_root__ > div.MainLayout__root__79bpr.MainLayout__background-white__79bpr > div.snow-container_SnowContainer__container__rkv8lv:nth-child(7) > div.RedOrdersGrid_RedOrdersGrid__grid__um832:first-child > div.snow-ali-kit_RootGrid__container__18kmu5.RedOrdersGrid_RedOrdersGrid__container__um832 > div.RedOrdersGrid_RedOrdersGrid__rootGridInnerDiv__um832.snow-ali-kit_RootGrid__row__18kmu5.snow-ali-kit_RootGrid__align-flex-start__18kmu5 > div.snow-ali-kit_Col__col__1ccuye.snow-ali-kit_Col__align-self-flex-start__1ccuye.RedOrdersColumn_RedOrdersColumn__grid__987ze:last-child > div.snow-container_SnowContainer__container__rkv8lv > div.snow-container_SnowContainer__container__rkv8lv:last-child
 aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
+aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important;}
 ! =
 ! -
 @@||st.aestatic.net/mixer/ssr/*/aer-assets/ext/ad-tracker.*.js^$domain=aliexpress.ru
