@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.3.5-R
-! TimeUpdated: 2024-12-01T15:30:00+00:00
+! Version: 0.3.6-R
+! TimeUpdated: 2024-12-01T16:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -496,6 +496,9 @@
 ||minecraftheat.ru/uploads/bimages/*/*.*^$image,domain=minecraftheat.ru
 ||xgm.guru/resource/view^$xhr,domain=xgm.guru
 ||*/_vercel/insights/script.js^$script
+||event.playground.ru*/.well-known/mercure?$xhr,domain=playground.ru
+||alfabank.by/api/cookies/getCookieByLocalstorage.php^$xhr,domain=alfabank.by
+||matomo.alfabank.by^$domain=alfabank.by
 !
 !
 !
@@ -993,6 +996,7 @@ minecraftheat.ru##.obfuscated-link, .launcher-link
 ##a[href*="//plus.google.com/"]
 ##.counters
 minecraftmain.ru###custom_html-5 > div.textwidget.custom-html-widget:last-child > div.widget.gp-social-buttons-widget.gp-clearfix > ul.gp-social-icons > li:last-child > a.social-google-news.ext-link
+alfabank.by##div[class="sendpulse"]
 !
 !
 !
@@ -1489,6 +1493,8 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||muemopurandlottibi.ru^
 ||contibedntaper.ru^
 ||loimesgetemas.ru^
+||geshilehusesint.ru^
+||membbimacbibilfens.ru^
 !
 !
 !
