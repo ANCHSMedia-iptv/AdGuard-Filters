@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.3.4-R
-! TimeUpdated: 2024-12-01T11:30:00+00:00
+! Version: 0.3.5-R
+! TimeUpdated: 2024-12-01T15:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1486,6 +1486,9 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||blacesren.ru^
 ||thralresliocheating.ru^
 ||tteladheadmivimafo.ru^
+||muemopurandlottibi.ru^
+||contibedntaper.ru^
+||loimesgetemas.ru^
 !
 !
 !
