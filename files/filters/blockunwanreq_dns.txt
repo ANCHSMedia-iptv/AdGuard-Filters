@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.3.0-R
+! Version: 0.3.4-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-11-30T17:10:00+00:00
+! TimeUpdated: 2024-12-01T11:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 30.11.2024 17:10 UTC
+! Last Modified: 01.12.2024 11:30 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -332,6 +332,7 @@
 ||code.2ypkht.ru^
 ||marketplace.ur1s.ru^
 ||suggestions.dadata.ru^
+||logs.tourister.ru^
 ||*bugfender*^$important
 ||leadhit.io^
 ||to.getnitropack.com^
@@ -360,6 +361,8 @@
 ||ads.pubmatic.com^$domain=~pubmatic.com
 ||rassilkatest.ru^
 ||code.rkjs.net^
+||vercel-insights.com^
+||webstats.gnome.org^
 !
 !
 !
@@ -486,15 +489,15 @@
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 стал «жертвой» такого массового спама)..
 ||s*.*.*.mydomain.zone^
-||*.afrounitedsalon.de^
+||afrounitedsalon.de^
 !
 !
 ! Фишинг и мошенничество с спам рассылок (типа Столото) (с начала 2024 стал «жертвой» такого массового спама)..
 ||fgnrthgre.buzz^
 !
 !
-! Адреса с спам-писем с содержанием 18+ (c 14.11.24 по 26.11.24? стал «жертвой» такого массового спама)..
-! Разблокировка допустима ТОЛЬКО для отписки с рассылки!
+! Адреса с спам-писем с содержанием 18+ (c 14.11.24 стал «жертвой» такого массового спама)..
+! Разблокировка допустима ТОЛЬКО для отписки с рассылки! (если вообще сработает..)
 !
 ||arumism.com^
 ||furixor.com^
@@ -532,6 +535,7 @@
 !
 ||purechats.com^
 ||prettywomenco.com^
+! ---
 ||trodsimni.ru^
 ||gichenisatcilaw.ru^
 ||bersvirla.ru^
@@ -561,6 +565,35 @@
 ||ewadma.ru^
 ||jnmdveawb.ru^
 ||dayhorgehard.ru^
+||joiconfcordumbfilica.ru^
+||ficbsincxyhasilapho.ru^
+!
+||mencontstarrott.ru^
+||dreadperspecma.ru^
+||indeathquireamosto.ru^
+||guarwamocellitorcry.ru^
+||thommaterhietrovpugg.ru^
+!
+! - Contains virus
+||datehiker.com^
+!
+!
+||exatstoug.ru^
+||cudddenane.ru^
+||chamradesemb.ru^
+||peuhomacilassde.ru^
+||adtiasoge.ru^
+||ditonoraberel.ru^
+||igdowheker.ru^
+||roriwildra.ru^
+||longgrunwirspe.ru^
+||balltraninssilbutmete.ru^
+||flumeepmenwei.ru^
+||sonimaconredica.ru^
+||garsubstruceathatbacon.ru^
+||blacesren.ru^
+||thralresliocheating.ru^
+||tteladheadmivimafo.ru^
 !
 !
 !

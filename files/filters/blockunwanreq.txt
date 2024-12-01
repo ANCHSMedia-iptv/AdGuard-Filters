@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.3.2-R
-! TimeUpdated: 2024-11-30T17:30:00+00:00
+! Version: 0.3.4-R
+! TimeUpdated: 2024-12-01T11:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -146,6 +146,9 @@
 ! */yandex.*^$image
 ||*/liveinternet.*^$image
 ||*/cycounter.*^$image
+||*/yandex.php^$image
+||*/liveinternet.php^$image
+||*/cycounter.png^$image
 !
 ||*/liru.gif^$image
 ||*/1px.*^$image,xhr,important
@@ -230,7 +233,7 @@
 ||s*.stc.yc.kpcdn.net/s*/*/adaptive/img/banner.gif*^$xhr,important
 ! *sendsay.ru^$important
 ||lentainform.com^$important
-||*/1x1.*^$image,xhr,important,domain=~lentainform.com
+||*/1x1.*^$image,xhr,important,domain=~autocounter.lentainform.com
 ||smotrim.ru/js/media-scope.js^$script,important
 ||cdn-st*.rtr-vesti.ru/mh_files/*/imho.js^$script,domain=vesti.ru,important
 ||vesti.ru/i/bg.png*^$image,domain=vesti.ru,important
@@ -370,7 +373,7 @@
 ||*.ru/lid/articles/*.gif^$important,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe.*^$script,css,domain=asiaplustj.info
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
-||logs.tourister.ru^$domain=tourister.ru
+||logs.tourister.ru^
 ||tpembar.com^
 ||*/graphql/^$xhr,important
 ||getrcmx.com^
@@ -485,6 +488,14 @@
 ||cdn.axeum.ru/assets/*/js/advertising.*.js^$script,domain=axeum.ru
 ||cdn.axeum.ru/assets/*/js/yandex.*.js^$script,domain=axeum.ru
 ||cdn.axeum.ru/assets/*/plugins/mc_yandex_ru_metrika_tag.*.js^$script,domain=axeum.ru
+||linkunshorten.com/js/11.js^$script,domain=linkunshorten.com
+||linkunshorten.com/js/559.js^$script,domain=linkunshorten.com
+||linkunshorten.com/img/promo/*.png^$image,domain=linkunshorten.com
+||topcraft.club/media/img/projects/*.*^$image,domain=topcraft.club
+||topcraft.club/media/img/images/*.*^$image,domain=topcraft.club
+||minecraftheat.ru/uploads/bimages/*/*.*^$image,domain=minecraftheat.ru
+||xgm.guru/resource/view^$xhr,domain=xgm.guru
+||*/_vercel/insights/script.js^$script
 !
 !
 !
@@ -974,6 +985,14 @@ gamewith.net##div[class="game-announce"]
 minecraftonly.com##a[href="/start.html"]
 minecraftonly.com##div[class="streams-sidebar position-fixed"]
 modscraft.net##div[class="content-listen-body"]
+topcraft.club##div[class="row zverinco"]
+topcraft.club##div[class="visible-lg left-big-zebra"]
+minecraftheat.ru##div[class="block-section social-block"]
+minecraftheat.ru##.obfuscated-link, .launcher-link
+##div[class^="counters"]
+##a[href*="//plus.google.com/"]
+##.counters
+minecraftmain.ru###custom_html-5 > div.textwidget.custom-html-widget:last-child > div.widget.gp-social-buttons-widget.gp-clearfix > ul.gp-social-icons > li:last-child > a.social-google-news.ext-link
 !
 !
 !
@@ -1357,19 +1376,20 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||*.vaterlines.com^
 ||resp.us^
 ||meshuradres.best^
+||bit.ly/m/vaylakazan^
 !
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 стал «жертвой» такого массового спама)..
 ||s*.*.*.mydomain.zone^
-||*.afrounitedsalon.de^
+||afrounitedsalon.de^
 !
 !
 ! Фишинг и мошенничество с спам рассылок (типа Столото) (с начала 2024 стал «жертвой» такого массового спама)..
 ||fgnrthgre.buzz^
 !
 !
-! Адреса с спам-писем с содержанием 18+ (с 14.11.24 по 26.11.24? стал «жертвой» такого массового спама)..
-! Разблокировка допустима ТОЛЬКО для отписки с рассылки!
+! Адреса с спам-писем с содержанием 18+ (с 14.11.24 стал «жертвой» такого массового спама)..
+! Разблокировка допустима ТОЛЬКО для отписки с рассылки! (если вообще сработает..)
 !
 ||arumism.com^
 ||furixor.com^
@@ -1407,6 +1427,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 !
 ||purechats.com^
 ||prettywomenco.com^
+! ---
 ||trodsimni.ru^
 ||gichenisatcilaw.ru^
 ||bersvirla.ru^
@@ -1436,6 +1457,35 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||ewadma.ru^
 ||jnmdveawb.ru^
 ||dayhorgehard.ru^
+||joiconfcordumbfilica.ru^
+||ficbsincxyhasilapho.ru^
+!
+||mencontstarrott.ru^
+||dreadperspecma.ru^
+||indeathquireamosto.ru^
+||guarwamocellitorcry.ru^
+||thommaterhietrovpugg.ru^
+!
+! - Contains virus
+||datehiker.com^
+!
+!
+||exatstoug.ru^
+||cudddenane.ru^
+||chamradesemb.ru^
+||peuhomacilassde.ru^
+||adtiasoge.ru^
+||ditonoraberel.ru^
+||igdowheker.ru^
+||roriwildra.ru^
+||longgrunwirspe.ru^
+||balltraninssilbutmete.ru^
+||flumeepmenwei.ru^
+||sonimaconredica.ru^
+||garsubstruceathatbacon.ru^
+||blacesren.ru^
+||thralresliocheating.ru^
+||tteladheadmivimafo.ru^
 !
 !
 !
