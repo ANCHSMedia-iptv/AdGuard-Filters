@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.4.2-R
+! Version: 0.4.3-R
 ! TimeUpdated: 2024-12-02T15:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
@@ -173,7 +173,7 @@
 ||api.mindbox.ru^$important
 ||*/api/fl/id*^$xhr,important
 ||s.rbk.ru/*quote_static/quote-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru,important
-||trafffgen.rambler.ru^
+||trafffgen.rambler.ru^$important
 ||gotovim-doma.ru/img/*/*.gif^$image,domain=gotovim-doma.ru,important
 ||img*.russianfood.com/images/common/main_menu_bg1.gif^$image,domain=russianfood.com
 ||img*.russianfood.com/images/common/center_bg.gif^$image,domain=russianfood.com
@@ -437,7 +437,7 @@
 ||*/download_klauncher*.png^$image
 ||modsmc.ru/_nuxt/2415b65.js^$script,domain=modsmc.ru
 ||modsmc.ru/assets/icons/cookies.png^$image,domain=modsmc.ru
-! *Cookie*.css^$css,important
+! *Cookie*.css^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com
 ||2ruoe1cm.ru^
 ||zcode*.com^
 ||minecraftgame.ru/wp-content/uploads/2019/10/fl-adbanner-horizontal.png^$image,domain=minecraftgame.ru
@@ -518,6 +518,12 @@
 ||osnmedia.ru/wp-content/uploads/*/*/*-promo.png^$image,domain=osnmedia.ru
 ||*.ru/wp-content/themes/*/img/tg*.jpg^$image,domain=androidinsider.ru|appleinsider.ru
 ||*.ru/wp-content/themes/*/img/telegram*.svg^$image,domain=androidinsider.ru|appleinsider.ru
+||vp.rambler.ru/player/sdk.js^$script
+||developers.rambler.ru/likes/v*/widget.js^$script
+||rambler.ru/location/*^$xhr
+||banki.ru/service/layout-header/geo/^$xhr,domain=banki.ru
+||cdn.banki.ru/static/common-static/common-scripts/build/base.*.js^$script,domain=banki.ru
+||banki.ru/products/currencyNodejsApi/getTrackingUrlList/^$xhr,domain=banki.ru
 !
 !
 !
@@ -972,6 +978,9 @@ sibinformburo.ru##div[class="col-lg-4 col-md-4 col-sm-6"]
 !
 ! Предупреждение об использовании cookie (сайт логистической (транспортной) компании ДПД (DPD) (dpd .ru))
 dpd.ru##div[class="root_UnCiX"]
+!
+xn----7sbaj2agca3agfevjs7cwg.xn--p1ai##div[class^="cookie__info"]
+! санаторий-хвойный.рф
 !
 newprospect.ru##div[class="notification"]
 newprospect.ru##div[class="telegram"]
@@ -1564,6 +1573,10 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||lingderglarytpost.ru^
 ||sveralsoforti.ru^
 ||adexposvaramsmedee.ru^
+||cournacheck.ru^
+||newohed.ru^
+||newsversdistedeter.ru^
+||difkingta.ru^
 !
 !
 !
