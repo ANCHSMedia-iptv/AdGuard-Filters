@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.3.9-R
-! TimeUpdated: 2024-12-02T10:10:00+00:00
+! Version: 0.4.0-R
+! TimeUpdated: 2024-12-02T13:10:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -513,6 +513,8 @@
 ||ccsyncuuid.net^$domain=bigenc.ru
 ||c.bigenc.ru/metrics$xhr,domain=bigenc.ru
 ||s.bigenc.ru/_nuxt/social-*.*.js^$script,domain=bigenc.ru
+||rtvi.com/wp-content/themes/rtvi/images/pixel_1pixel.png^$xhr,domain=rtvi.com
+||counter.rambler.ru^$important
 !
 !
 !
@@ -865,7 +867,7 @@ rbkgames.com###global-wrapper > div.main-content:nth-child(7) > div.centered.cen
 rbkgames.com##.quick-bar
 mag.103.by##.cookiesNotificationBy
 gemotest.ru##div.content-inner:nth-child(6) > main.content-section.content-wrapper_info-article:nth-child(5) > div.container__flex:first-child > aside.sidebar.mobile--hidden:last-child > div.sidebar-inner.sticky--widget:last-child > a.sidebar__widget.telegram-widget:first-child
-##a[href^="//www.1c-bitrix.ru/composite/"]
+##a[href*="//www.1c-bitrix.ru/composite/"]
 !
 ! Баннер насчёт cookie файлов (сайт ресторанов Rostic's (ex. KFC))
 rostics.ru##div._3l3oK3nIbnZ
@@ -877,9 +879,9 @@ gazeta.ru##div.b_telegram_subscriber
 ! Пустое место под рекламу (новостной сайт Комсомольская правда, Молдовское подразделение)
 md.kp.media##div.sc-1a8tb7h-0
 !
-##a[href="//www.liveinternet.ru/click"]
-##a[href="https://www.liveinternet.ru/click"]
-##a[href="http://www.liveinternet.ru/click"]
+! ##a[href="//www.liveinternet.ru/click"]
+! ##a[href="https://www.liveinternet.ru/click"]
+! ##a[href="http://www.liveinternet.ru/click"]
 championat.com##div.header-bottom__adv
 ! bxbox.bxb.delivery###content > div.sidebar:first-child > div.itc-slider:last-child
 bxbox.bxb.delivery##.itc-slider
@@ -1028,6 +1030,9 @@ life.ru##div[class="styles_email__2Wd0i"]
 raiffeisen.ru##div[class="CookieDialog"]
 baby.ru##div[id^="adriver_banner_side"]
 baby.ru##div[class^="learn-and-participate"]
+osnmedia.ru##div[style^="padding: 15px 10px; border-top: 1px solid rgb(179, 182, 187); font-size: 14px; font-weight: 600; line-height: 1.4;"]
+##img[src*="counter.rambler.ru"]
+##a[href*="www.liveinternet.ru"]
 !
 !
 !
