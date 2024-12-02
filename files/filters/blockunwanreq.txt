@@ -1550,6 +1550,9 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||spurdovebacknonecwa.ru^
 ||cycmekillcomvila.ru^
 ||liawoumelaher.ru^
+||hargstagidasunin.ru^
+||percobethems.ru^
+||lelangbackban.ru^
 !
 !
 !
@@ -1569,7 +1572,7 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 !
 ! Соцсети Facebook и Instagram заблокированы и запрещены на территории РФ, владеющая ими компания Meta признана экстремисткой и деятельность в РФ запрещена.
 ! Соцсеть X (бывший Twitter) заблокирован на территориии РФ.
-!
-!
+! Social networks Facebook and Instagram are blocked and banned in the Russian Federation, the company that owns them, Meta, is recognized as extremist and its activities in the Russian Federation are prohibited.
+! Social network X (formerly, ex. Twitter) is blocked in the Russian Federation.
 !
 !
