@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 0.4.2-R
-! TimeUpdated: 2024-12-02T14:30:00+00:00
+! TimeUpdated: 2024-12-02T15:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -127,7 +127,7 @@
 ||rudderstack.com^$important
 ||hh.ru/api/fl/logs/^$other,important,domain=hh.ru
 ||cedexis.com^$important
-||*/generate_204^
+||*/generate_204^$domain=~youtube.com|~googlevideo.com
 ||*adlook.me^$important
 ||betweendigital.com^$important
 ||*/api/advertising/*^$xhr,domain=hitfm.ru|montecarlo.ru
@@ -1562,6 +1562,8 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||percobethems.ru^
 ||lelangbackban.ru^
 ||lingderglarytpost.ru^
+||sveralsoforti.ru^
+||adexposvaramsmedee.ru^
 !
 !
 !
