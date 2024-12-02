@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.3.8-R
-! TimeUpdated: 2024-12-01T18:40:00+00:00
+! Version: 0.3.9-R
+! TimeUpdated: 2024-12-02T10:10:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1001,6 +1001,7 @@ minecraftmain.ru###custom_html-5 > div.textwidget.custom-html-widget:last-child 
 alfabank.by##div[class="sendpulse"]
 russianfood.com##div[align="center"]
 life.ru##div[class="styles_email__2Wd0i"]
+raiffeisen.ru##div[class="CookieDialog"]
 !
 !
 !
@@ -1502,7 +1503,22 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||nysbullveerphycyn.ru^
 ||headdnaldraserextydi.ru^
 ||tepertiburdiwho.ru^
-!
+||encotsamuf.ru^
+||giesuelea.ru^
+||gladitolposesorguang.ru^
+||stanfecpairril.ru^
+||softvarlandcasis.ru^
+||thralresliocheating.ru^
+||zozlil.com^
+||yzchavoulunsoft.ru^
+||blinisla.ru^
+||quiresvi.ru^
+||tacklemo.ru^
+||tyouterfansrenle.ru^
+||hopcourone.ru^
+||estoduccaiheart.ru^
+||liobroththesnoewebpasac.ru^
+||pummesamin.ru^
 !
 !
 ! ---
