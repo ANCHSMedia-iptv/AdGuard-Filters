@@ -198,8 +198,8 @@
 ||inappstory.ru^$dnsrewrite=REFUSED
 ||inappstory.com^$dnsrewrite=REFUSED
 ||appsflyersdk.com^$important
-||facebook.com^$dnsrewrite=REFUSED,domain=~facebook.com
-||www.facebook.com^$dnsrewrite=REFUSED,domain=~facebook.com
+! facebook.com^$dnsrewrite=REFUSED,domain=~facebook.com
+! www.facebook.com^$dnsrewrite=REFUSED,domain=~facebook.com
 ||snapkit.com^$important
 ||appsflyer.com^$important
 ||analytics.72.ru^$important
@@ -619,6 +619,10 @@
 ||estoduccaiheart.ru^
 ||liobroththesnoewebpasac.ru^
 ||pummesamin.ru^
+||devasinesepalb.ru^
+||spurdovebacknonecwa.ru^
+||cycmekillcomvila.ru^
+||liawoumelaher.ru^
 !
 !
 !
@@ -632,6 +636,11 @@
 @@||local.adguard.org^
 @@||injections.adguard.org^
 !
+!
+!
+!
+! Соцсети Facebook и Instagram заблокированы на территории РФ, владеющая ими компания Meta признана экстремисткой и деятельность в РФ запрещена.
+! Соцсеть X (бывший Twitter) заблокирован на территориии РФ.
 !
 !
 !
