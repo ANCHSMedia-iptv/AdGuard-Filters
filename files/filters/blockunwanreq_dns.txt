@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.4.6-R
+! Version: 0.4.7-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-03T17:30:00+00:00
+! TimeUpdated: 2024-12-03T17:58:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 03.12.2024 17:30 UTC
+! Last Modified: 03.12.2024 17:58 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -191,7 +191,7 @@
 ||umeng.com^$important
 ! api.bing.com^$domain=~bing.com
 ||cellrebel.com^$important
-||onesignal.com^
+||onesignal.com^$important
 ||cdn.viglink.com^
 ||connect.facebook.net^$dnsrewrite=REFUSED,domain=~facebook.com
 ||connect.ok.ru^$domain=~ok.ru
@@ -214,6 +214,7 @@
 ||*uxfeedback*^$dnsrewrite=REFUSED,important
 ||tiqcdn.com^$important
 ||*analytics.tele2.ru^$important
+! analytics.tele2.ru^$important
 ||*adjust*^$important
 ||app.adjust.com^$important
 ||cdn.bcebos.com^
@@ -239,8 +240,8 @@
 ||*btloader.com^$important
 ||adskeeper.co.uk^$important
 ||digitalcaramel.com^$important$important
-||*ads-twitter.com^$dnsrewrite=REFUSED
-||*ms.vk.com^$important
+||ads-twitter.com^$dnsrewrite=REFUSED
+||ms.vk.com^$important
 ||*ad.*.xiaomi.com^$important
 ||d3c8j8snkzfr1n.cloudfront.net^
 ||bitrix.info^$important
@@ -294,7 +295,7 @@
 ||image.sendsay.ru^$important
 ! *sendsay.ru^$important
 ||lentainform.com^$important
-||*rtb.mts.ru^$important
+||rtb.mts.ru^$important
 ||ad-tech.ru^
 ||nst.trex.media^
 ||svk-native.ru^
@@ -332,7 +333,7 @@
 ||code.2ypkht.ru^
 ||marketplace.ur1s.ru^
 ||suggestions.dadata.ru^
-||logs.tourister.ru^
+||logs.tourister.ru^$important
 ||*bugfender*^$important
 ||leadhit.io^
 ||to.getnitropack.com^
@@ -341,7 +342,7 @@
 ||js-agent.newrelic.com^
 ||graphql.kazanexpress.ru^
 ||hc.uralweb.ru^$important
-||clarity.ms^$important
+||clarity.ms^
 ||cadmus.script.ac^$important
 ||dn0qt3r0xannq.cloudfront.net^$important
 ||bservr.com^$important
@@ -361,18 +362,17 @@
 ||ads.pubmatic.com^$domain=~pubmatic.com
 ||rassilkatest.ru^
 ||code.rkjs.net^
-||vercel-insights.com^
-||webstats.gnome.org^
-||matomo.alfabank.by^
+||vercel-insights.com^$important
+||webstats.gnome.org^$important
+||matomo.alfabank.by^$important
 ||beacon.wikia-services.com^
 ||news.mirtesen.ru^
 ||counter.rambler.ru^$important
-||monitor.azure.com^
-||clicktale.net^
-||ads.linkedin.com^
-||bat.bing.com^
-||ats.everesttech.net^
-||clarity.ms^
+||monitor.azure.com^$important
+||clicktale.net^$important
+||ads.linkedin.com^$important
+||bat.bing.com^$important
+||ats.everesttech.net^$important
 !
 !
 !
@@ -683,6 +683,9 @@
 ||aurflzstvigdt.ru^
 ||povnilimemogurta.ru^
 ||esfreehilbee.ru^
+||restrarresctringen.ru^
+||tenpimaca.ru^
+||fihonbisota.ru^
 !
 ||jenkinj.cfd^
 ||eodkiewicz.sbs^

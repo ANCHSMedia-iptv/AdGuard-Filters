@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.4.6-R
-! TimeUpdated: 2024-12-03T17:50:00+00:00
+! Version: 0.4.7-R
+! TimeUpdated: 2024-12-03T17:58:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -79,6 +79,7 @@
 ||*uxfeedback*^$important
 ||tiqcdn.com^$important
 ||*analytics.tele2.ru^$important
+! analytics.tele2.ru^$important
 ||cdn.bcebos.com^
 ||*adjust*^$important
 ||rutrk.org^$important
@@ -128,7 +129,7 @@
 ||hh.ru/api/fl/logs/^$other,important,domain=hh.ru
 ||cedexis.com^$important
 ||*/generate_204^$domain=~youtube.com|~googlevideo.com
-||*adlook.me^$important
+||adlook.me^$important
 ||betweendigital.com^$important
 ||*/api/advertising/*^$xhr,domain=hitfm.ru|montecarlo.ru
 ||vk.com/js/api/openapi.js^$script,domain=~vk.com,important
@@ -1275,8 +1276,9 @@ androidinsider.ru###content > article.article:first-child > div.article-body:nth
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
-market.yandex.ru###profitable_goods_tab-RecommendationRoll > div._1QNtS:nth-child(5)
-market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/recommendationRolls\/profitable_goods_tab\/content\/lazyGenerator\/initialContent\/recomLayoutItem_21\#58\:153_4 > div._3dfdb:first-child
+! market.yandex.ru###profitable_goods_tab-RecommendationRoll > div._1QNtS:nth-child(5)
+! market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/recommendationRolls\/profitable_goods_tab\/content\/lazyGenerator\/initialContent\/recomLayoutItem_21\#58\:153_4 > div._3dfdb:first-child
+! В последнее время перестали помогать косметические правила против рекомендаций на главной странице Я.Маркета, буду экспериментировать. (03.12.2024)
 ! =
 !
 !
@@ -1319,26 +1321,26 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 !
 !
 ||ad.mail.ru^$important
-||*.buzzoola.com^$important
+||buzzoola.com^$important
 ||stats.rustore.ru^$important
 ||log.strm.yandex.ru^$important
 ||amc.yandex.ru^$important
-||*applovin.com^$important
-||*hybrid.ai^$important
-||*silvermob.com^$important
-||*adrta.com^$important
-||*adriver.ru^$important
-||*app-measurement.com^$important
-||*umengcloud.com^$important
-||*bdstatic.com^$important
-||*gvt2.com^$important
-||*tracker-api.my.com^$important
-||*ad.intl.xiaomi.com^$important
-||*.ms.vk.com^$important
+||applovin.com^$important
+||hybrid.ai^$important
+||silvermob.com^$important
+||adrta.com^$important
+||adriver.ru^$important
+||app-measurement.com^$important
+||umengcloud.com^$important
+||bdstatic.com^$important
+||gvt2.com^$important
+||tracker-api.my.com^$important
+||ad.intl.xiaomi.com^$important
+||ms.vk.com^$important
 ||app-measurement.com^$important
 ||tnc*.byteoversea.com^$important
 ||tnc*.isnssdk.com^$important
-||*.pangle.io^$important
+||pangle.io^$important
 ||adashx4ae.ut.taobao.com^$important
 ||*iad-*.braze.com^$important
 ||logs.unchecky.com^$important
@@ -1352,10 +1354,10 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||analytics.mobile.yandex.net^$important
 ||*footprintdns.com^$important
 ||aemetrics.aliexpress.ru^$important
-||*inmobi.com^$important
-||*vungle.com^$important
-||*mtgglobals.com^$important
-||*.sbermarketing.ru^
+||inmobi.com^$important
+||vungle.com^$important
+||mtgglobals.com^$important
+||sbermarketing.ru^$important
 !
 ! --
 !
@@ -1621,6 +1623,9 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||aurflzstvigdt.ru^
 ||povnilimemogurta.ru^
 ||esfreehilbee.ru^
+||restrarresctringen.ru^
+||tenpimaca.ru^
+||fihonbisota.ru^
 !
 ||jenkinj.cfd^
 ||eodkiewicz.sbs^
