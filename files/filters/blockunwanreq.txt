@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 0.4.5-R
-! TimeUpdated: 2024-12-03T13:20:00+00:00
+! TimeUpdated: 2024-12-03T16:40:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -524,6 +524,7 @@
 ||banki.ru/service/layout-header/geo/^$xhr,domain=banki.ru
 ||cdn.banki.ru/static/common-static/common-scripts/build/base.*.js^$script,domain=banki.ru
 ||banki.ru/products/currencyNodejsApi/getTrackingUrlList/^$xhr,domain=banki.ru
+||mywebpc.ru/wp-content/uploads/2024/07/telegram-chanel.png^$image,domain=mywebpc.ru
 !
 !
 !
@@ -1613,10 +1614,12 @@ market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/
 ||zuchriribesurf.ru^
 ||yzchavoulunsoft.ru^
 ||castpanphuhafir.ru^
+||hohurve.ru^
 !
 ||jenkinj.cfd^
 ||eodkiewicz.sbs^
 ||rb.gy^
+||steeber.cfd^
 !
 !
 !
