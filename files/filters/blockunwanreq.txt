@@ -273,8 +273,8 @@
 ! addtoany.com^
 ||gazprom-neft.*/*.gif^$image,domain=gazprom-neft.ru|gazprom-neft.com
 ||zoon.ru/images/border.gif^$image,domain=zoon.ru
-! (новое правило, строка 133 и 134)
-! (новое правило, строка 133 и 134)
+! (новое правило, строка 135 и 136)
+! (новое правило, строка 135 и 136)
 ||userapi.com/js/api/openapi.js*^$script,domain=~vk.com,important
 ||analytics.vsem-edu-oblako.ru*/track^$xhr,important
 ||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,important
