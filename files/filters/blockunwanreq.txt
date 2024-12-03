@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 0.4.6-R
-! TimeUpdated: 2024-12-03T17:30:00+00:00
+! TimeUpdated: 2024-12-03T17:50:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -543,6 +543,7 @@
 ! i.4pda.ws/s/*.jpg^$image,domain=4pda.to
 ||*4pda.to/s/*.jpg?_=*^$image,domain=4pda.to
 ||i.4pda.ws/s/vIBCYgN5BkfUH7sJNrH2qkTXfJvy59kvOFuWhz1LmU5QlRkxToMQigxly.jpg^$image,domain=4pda.to
+||i.4pda.ws/s/ZFjpvgdZQa3YXN2Kz0XLce5z0FmAiEXvAPN2YC2qk8IOH7XE23z1bANz2Nll.jpg^$image,domain=4pda.to
 
 !
 ! Blocking hidden html component of Yandex analytics.
@@ -556,7 +557,7 @@
 !
 ! Blocking hidden images in one pixel (1 x 1).
 ! Блокировка скрытых изображений в один пиксель (1 x 1).
-||*4pda.to/s/*.gif*^$image,xhr,domain=4pda.to
+! *4pda.to/s/*.gif*^$image,xhr,domain=4pda.to  (03.12.202 не грузятся иконки, скрытые изображения в один пиксель будут блокироваться отдельно)
 ||*4pda.to/s/j7790osz2tCgk6fYcxz2yqeM8NXMm.png^$image,domain=4pda.to
 ||*4pda.to/s/vIBCbXoJxOYy9Rr4CXbD5HkEyfQ.png^$image,domain=4pda.to
 !
