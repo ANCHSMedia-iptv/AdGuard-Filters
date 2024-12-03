@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.4.4-R
+! Version: 0.4.5-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-02T18:50:00+00:00
+! TimeUpdated: 2024-12-03T13:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 02.12.2024 18:50 UTC
+! Last Modified: 03.12.2024 13:20 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -189,7 +189,7 @@
 ||smi2.ru^$important,domain=~smi2.ru
 ||24smi.net^$important
 ||umeng.com^$important
-||api.bing.com^
+! api.bing.com^$domain=~bing.com
 ||cellrebel.com^$important
 ||onesignal.com^
 ||cdn.viglink.com^
@@ -367,6 +367,12 @@
 ||beacon.wikia-services.com^
 ||news.mirtesen.ru^
 ||counter.rambler.ru^$important
+||monitor.azure.com^
+||clicktale.net^
+||ads.linkedin.com^
+||bat.bing.com^
+||ats.everesttech.net^
+||clarity.ms^
 !
 !
 !
@@ -639,6 +645,43 @@
 ||labfilyds.ru^
 ||famssterdufdeduheadsso.ru^
 ||wacroli.ru^
+!
+||uphunreca.ru^
+||repguiri.ru^
+||stemolcipdede.ru^
+||chamradesemb.ru^
+||abniphinib.ru^
+||chabtempsingrigtine.ru^
+||preemnanoduc.ru^
+||siterfmalica.ru^
+||chetinharddispdrivatev.ru^
+||pesapa.ru^
+||gilrachildwilltemptrapov.ru^
+||profellleadvesthof.ru^
+||prillam.com^
+||guenihendcheckthesronet.ru^
+||quiprotanorepjhon.ru^
+||avgethatothecomp.ru^
+||storviapatel.ru^
+||hohurve.ru^
+||smalsuppnessipere.ru^
+||gladitolposesorguang.ru^
+||losdietindebujici.ru^
+||sovolbersvewell.ru^
+||pejoport.ru^
+||nysbullveerphycyn.ru^
+||elemowar.ru^
+||barctrupkikamurent.ru^
+||tincdeedbiotwor.ru^
+||anecsalobo.ru^
+||lockrentsynpanato.ru^
+||zuchriribesurf.ru^
+||yzchavoulunsoft.ru^
+||castpanphuhafir.ru^
+!
+||jenkinj.cfd^
+||eodkiewicz.sbs^
+||rb.gy^
 !
 !
 !
