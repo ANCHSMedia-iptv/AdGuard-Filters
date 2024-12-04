@@ -373,6 +373,7 @@
 ||ads.linkedin.com^$important
 ||bat.bing.com^$important
 ||ats.everesttech.net^$important
+||aqxme-eorex.site^
 !
 !
 !
