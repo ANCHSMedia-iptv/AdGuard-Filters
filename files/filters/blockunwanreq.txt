@@ -1663,6 +1663,7 @@ androidinsider.ru###content > article.article:first-child > div.article-body:nth
 ||sonbuspgabb.ru^
 ||techarddipitab.ru^
 ||mittdendnivirotu.ru^
+||seisicar.ru^
 !
 ||jenkinj.cfd^
 ||eodkiewicz.sbs^

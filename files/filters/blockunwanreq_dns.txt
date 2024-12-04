@@ -716,6 +716,7 @@
 ||sonbuspgabb.ru^
 ||techarddipitab.ru^
 ||mittdendnivirotu.ru^
+||seisicar.ru^
 !
 ||jenkinj.cfd^
 ||eodkiewicz.sbs^
