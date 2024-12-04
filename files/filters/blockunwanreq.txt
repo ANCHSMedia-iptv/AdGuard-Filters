@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.4.7-R
-! TimeUpdated: 2024-12-03T17:58:00+00:00
+! Version: 0.4.9-R
+! TimeUpdated: 2024-12-04T12:00:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -527,6 +527,7 @@
 ||banki.ru/products/currencyNodejsApi/getTrackingUrlList/^$xhr,domain=banki.ru
 ||mywebpc.ru/wp-content/uploads/2024/07/telegram-chanel.png^$image,domain=mywebpc.ru
 ||anycomment.io/*/comment/stream^$xhr
+||apptracer.ru^
 !
 !
 !
@@ -1358,6 +1359,7 @@ androidinsider.ru###content > article.article:first-child > div.article-body:nth
 ||vungle.com^$important
 ||mtgglobals.com^$important
 ||sbermarketing.ru^$important
+||mobileapptracking.com^$important
 !
 ! --
 !
@@ -1435,6 +1437,7 @@ androidinsider.ru###content > article.article:first-child > div.article-body:nth
 ||resp.us^
 ||meshuradres.best^
 ||bit.ly/m/vaylakazan^
+||bonuscudede.com^
 !
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 стал «жертвой» такого массового спама)..
@@ -1626,11 +1629,36 @@ androidinsider.ru###content > article.article:first-child > div.article-body:nth
 ||restrarresctringen.ru^
 ||tenpimaca.ru^
 ||fihonbisota.ru^
+||miokendgomesign.ru^
+||boozfanucigi.ru^
+||neydorebtotags.ru^
+||critrouglynd.ru^
+||fihonbisota.ru^
+||kingkafib.ru^
+||liecredvast.ru^
+||scutvesvietext.ru^
+||matchire.ru^
+||spirguahelzlochemomor.ru^
+||newsversdistedeter.ru^
+||torscropen.ru^
+||togbadoorko.ru^
+||hocomsodorjocongui.ru^
+||wallsopon.ru^
+||prodperreresta.ru^
+||wirsgoogsa.ru^
+||urdeepwordslipapmontaxb.ru^
+||dayprovrepsobibdia.ru^
+||atuninetvisaguzz.ru^
+||torscropen.ru^
+||cournacheck.ru^
 !
 ||jenkinj.cfd^
 ||eodkiewicz.sbs^
 ||rb.gy^
 ||steeber.cfd^
+! tillaan.cyou^
+||tillaan.*^
+! tillaan.cfd^
 !
 !
 !
