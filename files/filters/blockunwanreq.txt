@@ -1661,6 +1661,8 @@ androidinsider.ru###content > article.article:first-child > div.article-body:nth
 ||nysbullveerphycyn.ru^
 ||olcupismi.ru^
 ||sonbuspgabb.ru^
+||techarddipitab.ru^
+||mittdendnivirotu.ru^
 !
 ||jenkinj.cfd^
 ||eodkiewicz.sbs^
