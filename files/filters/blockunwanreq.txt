@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.5.0-R
-! TimeUpdated: 2024-12-04T14:00:00+00:00
+! Version: 0.5.1-R
+! TimeUpdated: 2024-12-04T16:00:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -55,7 +55,7 @@
 ||connect.ok.ru^$important,domain=~ok.ru
 ||inappstory.ru^$important
 ||inappstory.com^$important
-! *inappstory.*^$important
+! inappstory.*^$important
 ||appsflyersdk.com^$important
 !
 ! facebook.com^$domain=~facebook.com
@@ -1654,6 +1654,11 @@ androidinsider.ru###content > article.article:first-child > div.article-body:nth
 ||headdnaldraserextydi.ru^
 ||seacorhayverrads.ru^
 ||unevdon.ru^
+||halfpreslynchdarktonli.ru^
+||pigmalis.ru^
+||outarci.ru^
+||hopcourone.ru^
+||nysbullveerphycyn.ru^
 !
 ||jenkinj.cfd^
 ||eodkiewicz.sbs^
