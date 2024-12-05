@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.5.7-R
-! TimeUpdated: 2024-12-05T17:50:00+00:00
+! Version: 0.5.8-R
+! TimeUpdated: 2024-12-05T18:35:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -326,7 +326,7 @@
 ||notebookcheck-ru.com/fileadmin/Notebooks/*/*_pixel.gif^$image,domain=notebookcheck-ru.com
 ||my.zadarma.com/callmewidget/v*/loader.js^$script
 ||*/rest/analytics/*^$ping,domain=ntvplus.ru|ntvplus.tv,important
-!
+||browserleaks.com/res/screenshot.mp3^$media,domain=browserleaks.com
 ||api.fix-price.com/buyer/v*/cookie-config^$xhr,domain=fix-price.com
 ||rm.fix-price.com/intake/v*/rum/events^$xhr,domain=fix-price.com
 ||img.fix-price.com/_marketplace/animated_banner/436c0465d482f161d85a9e698bdb3cfb32189e8d.svg^$xhr,domain=fix-price.com
@@ -375,7 +375,7 @@
 ||*.ru/lid/articles/*.gif^$important,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe.*^$script,css,domain=asiaplustj.info
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
-||logs.tourister.ru^
+||logs.tourister.ru^$important
 ||tpembar.com^
 ||*/graphql/^$xhr,important
 ||getrcmx.com^
@@ -530,6 +530,11 @@
 ||apptracer.ru^$important
 ||xkkh.starkai.com/admin_tpl_css.css^$css,domain=energizelab.com
 ||energizelab.com/*/images/getemail.svg^$image,domain=energizelab.com
+||alexametrics.com^$important
+||static.klaviyo.com^$important
+||*/perf-kit/shopify-perf-kit-*.*.js^$script
+||stats.llaun.ch^
+||stats.iobit.com^$important
 !
 !
 !
@@ -1302,8 +1307,8 @@ energizelab.com##div[class^="getemail"]
 ||google-analytics.com^$important
 ||*ds.metric.gstatic.com^$important
 ||analytics.google.com^$important
-||*doubleclick.net^$important
-||*googlesyndication.com^$important
+||doubleclick.net^$important
+||googlesyndication.com^$important
 ||adservice.google.com^$important
 ||s.youtube.com^$important
 ||appsgrowthpromo*.clients*.google.com^$important
@@ -1689,6 +1694,7 @@ energizelab.com##div[class^="getemail"]
 ||biwardcums.ru^
 ||neckcesaltzah.ru^
 ||glidriderhambpec.ru^
+||menhoconsfolgperswhirfi.ru^
 !
 ! --
 ||mlnsprofiles.cc^

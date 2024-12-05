@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.5.7-R
+! Version: 0.5.8-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-05T17:50:00+00:00
+! TimeUpdated: 2024-12-05T18:35:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 05.12.2024 17:50 UTC
+! Last Modified: 05.12.2024 18:35 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -155,8 +155,8 @@
 ||google-analytics.com^$important
 ||*ds.metric.gstatic.com^$important
 ||analytics.google.com^$important
-||*doubleclick.net^$important
-||*googlesyndication.com^$important
+||doubleclick.net^$important
+||googlesyndication.com^$important
 ||adservice.google.com^$important
 ||s.youtube.com^$important
 ||appsgrowthpromo*.clients*.google.com^$important
@@ -374,6 +374,14 @@
 ||bat.bing.com^$important
 ||ats.everesttech.net^$important
 ||aqxme-eorex.site^
+||alexametrics.com^$important
+||static.klaviyo.com^$important
+||monorail-edge.shopifysvc.com^$important
+||static-tracking.klaviyo.com^$important
+||otlp-http-production.shopifysvc.com^$important
+||stats.llaun.ch^
+||beacon.shazam.com^$important
+||stats.iobit.com^$important
 !
 !
 !
@@ -740,6 +748,7 @@
 ||biwardcums.ru^
 ||neckcesaltzah.ru^
 ||glidriderhambpec.ru^
+||menhoconsfolgperswhirfi.ru^
 !
 ! --
 ||mlnsprofiles.cc^
