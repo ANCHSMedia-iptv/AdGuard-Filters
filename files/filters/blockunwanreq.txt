@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 0.5.6-R
-! TimeUpdated: 2024-12-05T10:30:00+00:00
+! TimeUpdated: 2024-12-05T14:40:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1684,6 +1684,7 @@ energizelab.com##div[class^="getemail"]
 ||taslipetducalca.ru^
 ||speechfeiconromyb.ru^
 ||ciaspeedbelidespoto.ru^
+||keilintiebeca.ru^
 !
 ! --
 ||mlnsprofiles.cc^
