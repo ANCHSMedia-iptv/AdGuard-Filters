@@ -555,6 +555,7 @@
 ||pdalife.to/updateView/^$xhr,domain=pdalife.to
 ||a.cdnpure.*/analytics_*.js^$script,domain=apkpure.net|apkpure.com
 ||r.cdnpure.com^$important
+||mynickname.com/img/icon-nft.png^$xhr,domain=mynickname.com
 !
 !
 !
@@ -1083,11 +1084,12 @@ wifigid.ru##div[class^="wifigid-test-block"]
 wifigid.ru##a[href^="https://t.me/wifigid"]
 pdalife.to##div[class*="ads-popup"]
 uptodown.com##div.content:first-child > section.vpn:nth-child(7)
-androeed.ru##div[class^="vacancies"]
-5play.org##div[class^="f-telegram"]
+androeed.ru##div[class="vacancies"]
+5play.org##div[class="f-telegram"]
 apkpure.net,apkpure.com##a[class*="telegram-btn"]
 apkpure.net##main.main-container:nth-child(2) > div.home-main-container.auto-container:nth-child(2) > div.module-card-container.dt-hot-topics:nth-child(6)
-apkpure.com##div[class^="social-network"]
+apkpure.com##div[class="social-network"]
+mynickname.com##a[class="btn nft"]
 !
 !
 !
@@ -1776,6 +1778,7 @@ apkpure.com##div[class^="social-network"]
 ||predovio.sbs^
 ||schimcel.cfd^
 ||paaocha.cfd^
+||steeber.cfd^
 !
 !
 !
