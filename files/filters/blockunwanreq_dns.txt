@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.6.1-R
+! Version: 0.6.2-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-06T15:50:00+00:00
+! TimeUpdated: 2024-12-06T16:50:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 06.12.2024 15:50 UTC
+! Last Modified: 06.12.2024 16:50 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -383,6 +383,11 @@
 ||beacon.shazam.com^$important
 ||stats.iobit.com^$important
 ||rotor.overclockers.ru^$important
+||ssm.codes^$important
+||push-sdk.com^$important
+||report.apkpure.net^$important
+||t3.cdnpure.com^$important
+||r.apkpure.*^$important
 !
 !
 !
@@ -495,16 +500,17 @@
 !
 ! -- Non-understandable addresses, but undesirable
 !
-||*.tobipovsem.com^$important,dnsrewrite=REFUSED
-||*.largestloitering.com^important,$dnsrewrite=REFUSED
+||tobipovsem.com^$important,dnsrewrite=REFUSED
+||largestloitering.com^important,$dnsrewrite=REFUSED
 ||f1e4fcff2b.27640ea29d.com^important,$dnsrewrite=REFUSED
 ||d157c90939.1b384556ae.com^important,$dnsrewrite=REFUSED
 ||*vesmaveselo*^$important,dnsrewrite=REFUSED
-||*.myroledance.com^$important,dnsrewrite=REFUSED
+||myroledance.com^$important,dnsrewrite=REFUSED
 ||*.vaterlines.com^$dnsrewrite=REFUSED
 ||otnolatrnup.com^$important
 ||resp.us^
 ||meshuradres.best^
+||lavatoryyourself.com^
 !
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 стал «жертвой» такого массового спама)..
@@ -798,6 +804,7 @@
 ||eodkiewicz.cfd^
 ||predovio.sbs^
 ||schimcel.cfd^
+||paaocha.cfd^
 !
 !
 !

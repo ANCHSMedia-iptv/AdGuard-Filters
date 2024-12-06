@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.6.1-R
-! TimeUpdated: 2024-12-06T15:50:00+00:00
+! Version: 0.6.2-R
+! TimeUpdated: 2024-12-06T16:50:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -547,6 +547,14 @@
 ||pdalife.to/default/images/design/Blitz_D.jpg^$xhr,domain=pdalife.to
 ||pdalife.to/default/images/sprite.png^$xhr,domain=pdalife.to
 ||pdalife.to/default/images/icons/sprite.svg$xhr,domain=pdalife.to
+||api*.ldplayer.net/ows/*/ldsite/event^$xhr,domain=ldplayer.net
+||api*.ldplayer.net/ows/*/ip/checkIpArea^$xhr,domain=ldplayer.net
+||cdn.ldplayer.net/gw/static/ld_gw/js/adMsg.js^$script,domain=ldplayer.net
+||uptodown.com/img/vpn-mockup.webp^$image,domain=uptodown.com
+||uptodown.com/img/svgs/icon-vpn-secondary.svg^$image,domain=uptodown.com
+||pdalife.to/updateView/^$xhr,domain=pdalife.to
+||a.cdnpure.*/analytics_*.js^$script,domain=apkpure.net|apkpure.com
+||r.cdnpure.com^$important
 !
 !
 !
@@ -1074,6 +1082,12 @@ wifigid.ru##a[class^="telegram-channel"]
 wifigid.ru##div[class^="wifigid-test-block"]
 wifigid.ru##a[href^="https://t.me/wifigid"]
 pdalife.to##div[class*="ads-popup"]
+uptodown.com##div.content:first-child > section.vpn:nth-child(7)
+androeed.ru##div[class^="vacancies"]
+5play.org##div[class^="f-telegram"]
+apkpure.net,apkpure.com##a[class*="telegram-btn"]
+apkpure.net##main.main-container:nth-child(2) > div.home-main-container.auto-container:nth-child(2) > div.module-card-container.dt-hot-topics:nth-child(6)
+apkpure.com##div[class^="social-network"]
 !
 !
 !
@@ -1330,7 +1344,7 @@ pdalife.to##div[class*="ads-popup"]
 ||appsgrowthpromo*.clients*.google.com^$important
 ||jnn-pa.googleapis.com/*/Create^$xhr,other
 ||ssl.gstatic.com/*/blank_1x.png^$image
-||accounts.google.com/_/IdpIFrameHttp/cspreport^$xhr,other
+! accounts.google.com/_/IdpIFrameHttp/cspreport$xhr,other (06.12.24 не работает правило)
 !
 ! ===
 !
@@ -1424,6 +1438,7 @@ pdalife.to##div[class*="ads-popup"]
 @@||cdn*.vedomosti.ru/*/assets/Banner-*.*^$script,css,domain=vedomosti.ru
 @@||hcaptcha.com^
 @@||iphones.ru/wp-content/themes/simpla2/images/sprites/ir-a18a0.png^$xhr,domain=iphones.ru
+@@||a.apkpure.net/captcha
 !
 !
 ! -
@@ -1451,18 +1466,18 @@ pdalife.to##div[class*="ads-popup"]
 ! -- Non-understandable addresses, but undesirable --
 ! -- Непонятные адреса, но нежелательные --
 !
-||*.tobipovsem.com^$important,third-party
-! cdn.tobipovsem.com^$important,third-party
-||*.largestloitering.com^$third-party
+||tobipovsem.com^$important,third-party
+||largestloitering.com^$third-party
 ||f1e4fcff2b.27640ea29d.com^
 ||d157c90939.1b384556ae.com^
 ||*vesmaveselo*^$third-party
-||*.myroledance.com^$third-party
+||myroledance.com^$third-party
 ||*.vaterlines.com^
 ||resp.us^
 ||meshuradres.best^
 ||bit.ly/m/vaylakazan^
 ||bonuscudede.com^
+||lavatoryyourself.com^
 !
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 стал «жертвой» такого массового спама)..
@@ -1760,6 +1775,7 @@ pdalife.to##div[class*="ads-popup"]
 ||eodkiewicz.cfd^
 ||predovio.sbs^
 ||schimcel.cfd^
+||paaocha.cfd^
 !
 !
 !
