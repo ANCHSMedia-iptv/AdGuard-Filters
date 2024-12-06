@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.5.9-R
+! Version: 0.6.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-05T18:50:00+00:00
+! TimeUpdated: 2024-12-06T15:50:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 05.12.2024 18:50 UTC
+! Last Modified: 06.12.2024 15:50 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -382,6 +382,7 @@
 ||stats.llaun.ch^
 ||beacon.shazam.com^$important
 ||stats.iobit.com^$important
+||rotor.overclockers.ru^$important
 !
 !
 !
@@ -750,6 +751,34 @@
 ||glidriderhambpec.ru^
 ||menhoconsfolgperswhirfi.ru^
 ||getisnugobbtripmossmis.ru^
+||gayrarese.ru^
+||gendayfreakdodgdigmant.ru^
+||suppworkscolacpasa.ru^
+||pliclopjoizagarsoy.ru^
+||distperglosihan.ru^
+||obbxanreismariz.ru^
+||apindotmisearwa.ru^
+||recmortdellaybonon.ru^
+||confeacatehyhea.ru^
+||boeblusisunderthau.ru^
+||dibomuk.ru^
+||osgisriburtaigo.ru^
+||leovumeddbotpa.ru^
+||edrefehamantui.ru^
+||bonfasedvernnounjudgfreed.ru^
+||bestgimmipetcagogod.ru^
+||dracterlyst.ru^
+||teotucontdramcomsuppsis.ru^
+||vcalerdiepros.ru^
+||nilouvirneuro.ru^
+||ticodee.ru^
+||enkeberchealth.ru^
+||extedmatchra.ru^
+||hardfidddomsync.ru^
+||speedapscher.ru^
+||lebestde.ru^
+||lackchurchnounphylipon.ru^
+||oututipmabileb.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -766,6 +795,9 @@
 ||schpppe.sbs^
 ||langwortr.top^
 ||barrowr.sbs^
+||eodkiewicz.cfd^
+||predovio.sbs^
+||schimcel.cfd^
 !
 !
 !

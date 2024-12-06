@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.5.9-R
-! TimeUpdated: 2024-12-05T18:50:00+00:00
+! Version: 0.6.1-R
+! TimeUpdated: 2024-12-06T15:50:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -540,6 +540,13 @@
 ||static.cnews.ru/img/zoom/2023/08/22/*.*^$image,domain=zoom.cnews.ru
 ||filearchive.cnews.ru/img/files/2022/04/08/icon-*.png^$image,domain=zoom.cnews.ru
 ||a.lifehacker.ru/lifehacker/tracker^$xhr,domain=lifehacker.ru
+||iphones.ru/wp-content/themes/simpla2/images/sprites/*.png^$xhr,domain=iphones.ru
+||iphones.ru/wp-content/themes/simpla2/images/banner/yota/*.*^$xhr,domain=iphones.ru
+||trashbox.ru/img/blank-blue.png^$xhr,.domain=trashbox.ru
+||pdalife.to/default/js/push.js^$script,domain=pdalife.to
+||pdalife.to/default/images/design/Blitz_D.jpg^$xhr,domain=pdalife.to
+||pdalife.to/default/images/sprite.png^$xhr,domain=pdalife.to
+||pdalife.to/default/images/icons/sprite.svg$xhr,domain=pdalife.to
 !
 !
 !
@@ -1017,8 +1024,8 @@ inside.lemoncraft.ru,lemoncraft.ru##div[class^="discord-dialog discord-dialog--a
 tmonitoring.com##div[class^="metriks"]
 minecraftexpert.ru##div[class^="download-button klaun-button"]
 minecraftexpert.ru##div[class="download-button tg-button"]
-##div[class^="footer-counts"]
-##div[class^="counts"]
+##div[class*="footer-counts"]
+##div[class*="counts"]
 ##a[href$="klauncher"]
 minecraftpatch.ru##div[style="margin-top:20px;text-align: center;display: flex;flex-direction: column;justify-content: center;width: 100%;border-bottom: 1px solid #777;"]
 mcpehub.net##div[id="custom-7543-particle"]
@@ -1032,7 +1039,7 @@ minecraftch.ru##div[class^="vkgroup"]
 ##a[href$="//mcservers.top/"]
 xenolith.ru##div[class^="f_banners"]
 vlauncher.ru##div[class^="counters-box"]
-##div[class^="counter"]
+##div[class*="counter"]
 ##a[href^="//statcounter.com/"]
 minecraftkwiki.online##div[class="widget rounded overflow-hidden filter-field shadow mb-3 bg-gray mt-xs-0 mb-3 widget_cabinet_comment_widget"]
 minecraftpatch.ru##section:nth-child(2) > div.wrapper:last-child > div.post_box:last-child > div.post_text:last-child > div.description:last-child > div:first-child > p:nth-child(2)
@@ -1048,7 +1055,7 @@ topcraft.club##div[class="row zverinco"]
 topcraft.club##div[class="visible-lg left-big-zebra"]
 minecraftheat.ru##div[class="block-section social-block"]
 minecraftheat.ru##.obfuscated-link, .launcher-link
-##div[class^="counters"]
+##div[class*="counters"]
 ##a[href*="//plus.google.com/"]
 ##.counters
 minecraftmain.ru###custom_html-5 > div.textwidget.custom-html-widget:last-child > div.widget.gp-social-buttons-widget.gp-clearfix > ul.gp-social-icons > li:last-child > a.social-google-news.ext-link
@@ -1063,6 +1070,10 @@ osnmedia.ru##div[style^="padding: 15px 10px; border-top: 1px solid rgb(179, 182,
 ##a[href*="www.liveinternet.ru"]
 androidinsider.ru###content > article.article:first-child > div.article-body:nth-child(4) > p:nth-child(8) > code.small-text
 energizelab.com##div[class^="getemail"]
+wifigid.ru##a[class^="telegram-channel"]
+wifigid.ru##div[class^="wifigid-test-block"]
+wifigid.ru##a[href^="https://t.me/wifigid"]
+pdalife.to##div[class*="ads-popup"]
 !
 !
 !
@@ -1412,6 +1423,7 @@ energizelab.com##div[class^="getemail"]
 @@||google.com/*/cleardot.gif*^$image
 @@||cdn*.vedomosti.ru/*/assets/Banner-*.*^$script,css,domain=vedomosti.ru
 @@||hcaptcha.com^
+@@||iphones.ru/wp-content/themes/simpla2/images/sprites/ir-a18a0.png^$xhr,domain=iphones.ru
 !
 !
 ! -
@@ -1701,6 +1713,34 @@ energizelab.com##div[class^="getemail"]
 ||glidriderhambpec.ru^
 ||menhoconsfolgperswhirfi.ru^
 ||getisnugobbtripmossmis.ru^
+||gayrarese.ru^
+||gendayfreakdodgdigmant.ru^
+||suppworkscolacpasa.ru^
+||pliclopjoizagarsoy.ru^
+||distperglosihan.ru^
+||obbxanreismariz.ru^
+||apindotmisearwa.ru^
+||recmortdellaybonon.ru^
+||confeacatehyhea.ru^
+||boeblusisunderthau.ru^
+||dibomuk.ru^
+||osgisriburtaigo.ru^
+||leovumeddbotpa.ru^
+||edrefehamantui.ru^
+||bonfasedvernnounjudgfreed.ru^
+||bestgimmipetcagogod.ru^
+||dracterlyst.ru^
+||teotucontdramcomsuppsis.ru^
+||vcalerdiepros.ru^
+||nilouvirneuro.ru^
+||ticodee.ru^
+||enkeberchealth.ru^
+||extedmatchra.ru^
+||hardfidddomsync.ru^
+||speedapscher.ru^
+||lebestde.ru^
+||lackchurchnounphylipon.ru^
+||oututipmabileb.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -1717,6 +1757,9 @@ energizelab.com##div[class^="getemail"]
 ||schpppe.sbs^
 ||langwortr.top^
 ||barrowr.sbs^
+||eodkiewicz.cfd^
+||predovio.sbs^
+||schimcel.cfd^
 !
 !
 !
