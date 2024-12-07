@@ -74,6 +74,8 @@
 ||offerwall.yandex.net^$important
 ||abt.s*.yandex.net^$important
 ||media-adv.market.yandex.ru^$important
+||mc.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua
+||an.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~e.mail.ru
 !
 ! ===
 !
@@ -440,7 +442,7 @@
 ! -- == Browser requests ==
 !
 ||news.google.com^$dnsrewrite=SERVFAIL
-||*enjoyxstudy.com^$dnsrewrite=REFUSED
+||enjoyxstudy.com^$dnsrewrite=REFUSED
 !
 !
 ! -- =Opera=
@@ -485,6 +487,8 @@
 @@||pay.yandex.ru^
 @@||uglyemail.com^
 @@||hcaptcha.com^
+@@||www.msftconnecttest.com^
+@@||*-*.*.global.*.sharepoint.com^
 !
 !
 ! ===

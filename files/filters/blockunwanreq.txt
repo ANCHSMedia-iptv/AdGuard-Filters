@@ -1211,7 +1211,7 @@ mynickname.com##a[class="btn nft"]
 ||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$important
 !
 ||news.google.com^$important
-||*enjoyxstudy.com^$important
+||enjoyxstudy.com^$important
 !
 ! =Opera=
 ! =Опера=
@@ -1311,7 +1311,7 @@ mynickname.com##a[class="btn nft"]
 ||paybro-static.s*.yandex.net/paybro/v*/widget-*.*^$script,css
 ||paybro-static.s*.yandex.net/paybro/v*/8a4cff28d9bf287197a4.png^$image
 ||yastatic.net/safeframe-bundles/*/host.js^$script
-||pay.yandex.ru/web/cl/click
+||pay.yandex.ru/web/cl/click$important
 ||yastatic.net/pcode/adfox/$important
 ||site.yandex.net/*/js/suggest.js^$script
 !
@@ -1443,6 +1443,8 @@ mynickname.com##a[class="btn nft"]
 @@||iphones.ru/wp-content/themes/simpla2/images/sprites/ir-a18a0.png^$xhr,domain=iphones.ru
 @@||a.apkpure.net/captcha
 @@||accounts.google.com/*/cspreport$xhr,other
+@@||www.msftconnecttest.com^
+@@||pay.yandex.ru^
 !
 !
 ! -
