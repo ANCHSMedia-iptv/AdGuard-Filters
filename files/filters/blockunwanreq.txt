@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.6.6-R
-! TimeUpdated: 2024-12-07T18:10:00+00:00
+! Version: 0.6.7-R
+! TimeUpdated: 2024-12-07T18:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -556,6 +556,8 @@
 ||a.cdnpure.*/analytics_*.js^$script,domain=apkpure.net|apkpure.com
 ||r.cdnpure.com^$important
 ||mynickname.com/img/icon-nft.png^$xhr,domain=mynickname.com
+||playground.ru/img/ui/steam-pay-*.png^$xhr,domain=playground.ru
+||i.playground.ru/e/0FGSrqlsrh75Hy7S9mrjtg.jpeg.webp^$image,domain=playground.ru
 !
 !
 !
