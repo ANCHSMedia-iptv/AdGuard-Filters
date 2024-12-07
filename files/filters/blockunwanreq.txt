@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.6.5-R
-! TimeUpdated: 2024-12-07T17:20:00+00:00
+! Version: 0.6.6-R
+! TimeUpdated: 2024-12-07T17:40:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1347,6 +1347,7 @@ mynickname.com##a[class="btn nft"]
 ||jnn-pa.googleapis.com/*/Create^$xhr,other
 ||ssl.gstatic.com/*/blank_1x.png^$image
 ! accounts.google.com/_/IdpIFrameHttp/cspreport$xhr,other (06.12.24 не работает правило, 07.12.24 для безопасности разблокирован)
+||accounts.youtube.com/RotateCookies^$xhr,important
 !
 ! ===
 !
@@ -1481,6 +1482,7 @@ mynickname.com##a[class="btn nft"]
 ||bit.ly/m/vaylakazan^
 ||bonuscudede.com^
 ||lavatoryyourself.com^
+||antpeak.com^
 !
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 стал «жертвой» такого массового спама)..
