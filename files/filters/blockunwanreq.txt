@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.6.7-R
-! TimeUpdated: 2024-12-07T18:30:00+00:00
+! Version: 0.6.8-R
+! TimeUpdated: 2024-12-07T18:50:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -558,6 +558,8 @@
 ||mynickname.com/img/icon-nft.png^$xhr,domain=mynickname.com
 ||playground.ru/img/ui/steam-pay-*.png^$xhr,domain=playground.ru
 ||i.playground.ru/e/0FGSrqlsrh75Hy7S9mrjtg.jpeg.webp^$image,domain=playground.ru
+||cdn.iz.ru/profiles/portal/modules/fix/template/js/yandex_zen.js^$script,domain=iz.ru
+||cdn.iz.ru/profiles/portal/themes/purple/js/partners-block.js^$script,domain=iz.ru
 !
 !
 !
@@ -1447,6 +1449,7 @@ mynickname.com##a[class="btn nft"]
 @@||accounts.google.com/*/cspreport$xhr,other
 @@||www.msftconnecttest.com^
 @@||pay.yandex.ru^
+@@||*/.well-known/ddos-guard/*$xhr,script
 !
 !
 ! -
