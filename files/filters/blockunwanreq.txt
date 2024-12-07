@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.6.8-R
-! TimeUpdated: 2024-12-07T18:50:00+00:00
+! Version: 0.6.9-R
+! TimeUpdated: 2024-12-07T18:57:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -266,7 +266,7 @@
 ! static.tnt-online.ru/accept_cookie.js^$script,domain=tnt-online.ru,important (новое правило, строка 135 и 136)
 ||tnt-online.ru/images/*/icons/sprite.svg*^$image,domain=tnt-online.ru,important
 ||rutube.ru/static/img/png/adsdkbanner.png^$xhr,important
-||*/pixel.*^$image,xhr,script,important
+||*/pixel.*^$image,xhr,script,important,domain=~statad.ru
 ||api.*.ru/v*/distribution*^$xhr,domain=vc.ruvc.ru|dtf.ru
 ||api.*.ru/v*/recommendations*^$xhr,domain=vc.ru|dtf.ru
 ||booster.osnova.io/a/relevant/many*^$xhr,domain=vc.ru|dtf.ru
@@ -542,7 +542,7 @@
 ||a.lifehacker.ru/lifehacker/tracker^$xhr,domain=lifehacker.ru
 ||iphones.ru/wp-content/themes/simpla2/images/sprites/*.png^$xhr,domain=iphones.ru
 ||iphones.ru/wp-content/themes/simpla2/images/banner/yota/*.*^$xhr,domain=iphones.ru
-||trashbox.ru/img/blank-blue.png^$xhr,.domain=trashbox.ru
+||trashbox.ru/img/blank-blue.png^$xhr,domain=trashbox.ru
 ||pdalife.to/default/js/push.js^$script,domain=pdalife.to
 ||pdalife.to/default/images/design/Blitz_D.jpg^$xhr,domain=pdalife.to
 ||pdalife.to/default/images/sprite.png^$xhr,domain=pdalife.to
@@ -560,6 +560,10 @@
 ||i.playground.ru/e/0FGSrqlsrh75Hy7S9mrjtg.jpeg.webp^$image,domain=playground.ru
 ||cdn.iz.ru/profiles/portal/modules/fix/template/js/yandex_zen.js^$script,domain=iz.ru
 ||cdn.iz.ru/profiles/portal/themes/purple/js/partners-block.js^$script,domain=iz.ru
+||siteapi.vtb.ru/api/geoip/ip-data^$xhr,domain=vtb.ru
+||alfabank.servicecdn.ru/assr/AnalyticsEventSenderOnMount.*.js^$script,domain=alfabank.ru
+||alfabank.ru/conductor/metrics^$xhr,domain=alfabank.ru
+||browser.sentry-cdn.com/*/bundle.tracing.*.js^$script,domain=alfabank.ru
 !
 !
 !
