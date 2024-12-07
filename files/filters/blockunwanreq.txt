@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.6.4-R
-! TimeUpdated: 2024-12-07T16:20:00+00:00
+! Version: 0.6.5-R
+! TimeUpdated: 2024-12-07T17:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -39,7 +39,7 @@
 ||amplitude.com^$important
 ! *bugsnag.com^$important
 ||*bugsnag*^$important
-||*vk-analytics.ru^$important
+||vk-analytics.ru^$important
 ||*instabug*^$important
 ||xray.mail.ru^
 ||*dbankcloud*^$important
@@ -91,13 +91,13 @@
 ||metrics.viqeo.tv^$important
 ||adtech.com^$important
 ||statad.ru^$important
-||*mixpanel.com^$important
+||mixpanel.com^$important
 ||mixpanel.cdn.viber.com^$important
 ||btloader.com^$important
 ||digitalcaramel.com^$important
 ||ads-twitter.com^$important
 ||bitrix.info^$important
-||*skcrtxr.com^$important
+||skcrtxr.com^$important
 ||avito.ru/stat/radar*^$image,domain=avito.ru
 ! avito.ru/web/*/adv/network/creative^$xhr,domain=avito.ru
 ||*advert*^$image,important
@@ -1102,20 +1102,20 @@ mynickname.com##a[class="btn nft"]
 !
 !
 !
-||*adserv.ai^
-||*tapulsads.ru^
-||*gonet-ads.com^
-||*telecid.ru^
+||adserv.ai^
+||tapulsads.ru^
+||gonet-ads.com^
+||telecid.ru^
 ||www.tttturbonet.com^$app=com.dubox.drive
 ||*pavo*^$app=com.dubox.drive
-||*fancybox.in^
-||*adlooxtracking.ru^
-||*rixengine.com^
-||*weborama-tech.ru^
+||fancybox.in^
+||adlooxtracking.ru^
+||rixengine.com^
+||weborama-tech.ru^
 ||trk.mail.ru^$important
-||*svr-algorix.com^
-||*kayzen.io^
-||*adinfinitum.in^
+||svr-algorix.com^
+||kayzen.io^
+||adinfinitum.in^
 ||disk.akamaized.net^$app=com.dubox.drive
 ||*gamerplay*.space^
 !
@@ -1277,25 +1277,25 @@ mynickname.com##a[class="btn nft"]
 ! == Яндекс: Аналитика, реклама и прочее. ==
 !
 ||banners*mobile.yandex.net^$important
-||*appmetrica.yandex.net^$important
-||*appmetrica.yandex.ru^$important
+||appmetrica.yandex.net^$important
+||appmetrica.yandex.ru^$important
 ||bs.yandex.ru^$important
 ||direct.yandex.ru^$important
 ||tracking.ott.yandex.net^$important
 ||*adfox*^$important
 ||startup.mobile.yandex.net^$important
 ||startup-mobile.ap.yandex-net.ru^$important
-||*yandexadexchange.net^$important
-||*webvisor.com^$important
-||*appmetrica.yango.com^$important
+||yandexadexchange.net^$important
+||webvisor.com^$important
+||appmetrica.yango.com^$important
 ||adfstat.yandex.ru^$important
 ||push.yandex.ru/v*/subscribe/*^$websocket,important
 ||csp.yandex.net/csp?from=messenger$xhr
-||http-check-headers.yandex.ru^$xhr,important
+||http-check-headers.yandex.ru^$important
 ||yandex.ru/messenger/api/*^$xhr,important
 ||*extmaps-api.yandex.net^$important
-||*metrika.yandex.*^$important
-||*offerwall.yandex.net^$important
+||metrika.yandex.*^$important
+||offerwall.yandex.net^$important
 ||push.yandex.ru^$important
 ||yastatic.net/s*/liza/_/promo-*.css^$css,domain=mail.yandex.ru
 ||yastatic.net/s*/liza/_/*ad-message.ogg^$media,domain=mail.yandex.ru
@@ -1305,7 +1305,7 @@ mynickname.com##a[class="btn nft"]
 ||mail.yandex.ru/web-api/journal/v*^$ping,domain=mail.yandex.ru
 ||media-adv.market.yandex.ru^$important
 ! @@||yandex.ru/clck/click^$domain=mail.yandex.ru
-||yastatic.net/partner-code-bundles/*.js^$script,important,domain=~yandex.ru|~ya.ru
+||yastatic.net/partner-code-bundles/*.js^$script,important,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.ua
 ||yastatic.net/nearest.js^$script
 ||browser.pay.yandex.ru/api/v*/split-status^$important
 ||paybro-static.s*.yandex.net/paybro/v*/widget-*.*^$script,css
@@ -1346,7 +1346,7 @@ mynickname.com##a[class="btn nft"]
 ||appsgrowthpromo*.clients*.google.com^$important
 ||jnn-pa.googleapis.com/*/Create^$xhr,other
 ||ssl.gstatic.com/*/blank_1x.png^$image
-! accounts.google.com/_/IdpIFrameHttp/cspreport$xhr,other (06.12.24 не работает правило)
+! accounts.google.com/_/IdpIFrameHttp/cspreport$xhr,other (06.12.24 не работает правило, 07.12.24 для безопасности разблокирован)
 !
 ! ===
 !
@@ -1390,8 +1390,8 @@ mynickname.com##a[class="btn nft"]
 ||accscdn.m.taobao.com^
 ||*ads.unity3d.com^$important
 ||*mediation.unity3d.com^$important
-||mc.yandex.*^$important
-||an.yandex.*^$important
+||mc.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua
+||an.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~e.mail.ru
 ||analytics.mobile.yandex.net^$important
 ||*footprintdns.com^$important
 ||aemetrics.aliexpress.ru^$important
@@ -1418,10 +1418,10 @@ mynickname.com##a[class="btn nft"]
 @@||player.smotrim.ru/js/vendor.js*^$script
 @@||player.smotrim.ru/js/manifest.js*^$script
 @@||player.smotrim.ru/js/app.js*^$script
-@@||*returnyoutubedislikeapi.com*^
-@@||*sponsor.ajay.app*^
+@@||returnyoutubedislikeapi.com*^
+@@||sponsor.ajay.app*^
 @@||digiseller.market^
-@@||*.iptvx.one^
+@@||iptvx.one^
 @@||captcha-api.yandex.ru^
 @@||esa-res.online.sberbank.ru/ESA/bizone/*/antifraud.min.js^$script,domain=online.sberbank.ru
 @@||cdnweb.sberbank.ru/*/*.*^$image,xhr,domain=online.sberbank.ru
@@ -1432,7 +1432,7 @@ mynickname.com##a[class="btn nft"]
 @@||google.com/js/bg/*.js^$xhr,script
 @@||google.com/recaptcha/
 ! @@||websbol.clickstream.sberbank.ru^
-@@||*.googlevideo.com^
+@@||googlevideo.com^
 @@||csp.yandex.net/csp
 @@||pay.yandex.ru/sdk/v*/pay.js^$script,xhr
 @@||uglyemail.com^
@@ -1441,6 +1441,7 @@ mynickname.com##a[class="btn nft"]
 @@||hcaptcha.com^
 @@||iphones.ru/wp-content/themes/simpla2/images/sprites/ir-a18a0.png^$xhr,domain=iphones.ru
 @@||a.apkpure.net/captcha
+@@||accounts.google.com/*/cspreport$xhr,other
 !
 !
 ! -
@@ -1823,7 +1824,7 @@ mynickname.com##a[class="btn nft"]
 !
 !
 @@||local.adguard.org^
-@@||injections.adguard.org^
+@@||injections.adguard.org^$important
 !
 !
 !
