@@ -1477,6 +1477,7 @@ mynickname.com##a[class="btn nft"]
 ||*vesmaveselo*^$third-party
 ||myroledance.com^$third-party
 ||*.vaterlines.com^
+||otnolatrnup.com^$important
 ||resp.us^
 ||meshuradres.best^
 ||bit.ly/m/vaylakazan^
