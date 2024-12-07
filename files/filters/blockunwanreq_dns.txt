@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.6.3-R
+! Version: 0.6.4-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-06T16:50:00+00:00
+! TimeUpdated: 2024-12-06T16:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 06.12.2024 16:50 UTC
+! Last Modified: 06.12.2024 16:20 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -785,6 +785,32 @@
 ||lebestde.ru^
 ||lackchurchnounphylipon.ru^
 ||oututipmabileb.ru^
+||tiabermi.ru^
+||carammarenunde.ru^
+||gehdikarremona.ru^
+||surpodescfasraradloy.ru^
+||subsmopentesa.ru^
+||telemcida.ru^
+||tranlesnecknesrenoun.ru^
+||natebgetitualesqi.ru^
+||longsaxtatonpaycanra.ru^
+||schematallipotkeybit.ru^
+||toaselfhugitoverde.ru^
+||ballrohotdeealern.ru^
+||rutyrur.ru^
+||breakquigoladignahrre.ru^
+||spirguahelzlochemomor.ru^
+||dasirabo.ru^
+||elemowar.ru^
+||gobbxanreismariz.ru^
+||ziplozi.ru^
+||bounkorasegdobafir.ru^
+||boatrepargsys.ru^
+||meyretitiliwestrakamerk.ru^
+||edanmoutbiopia.ru^
+||presapcon.ru^
+||uwcalfyostenourtituthade.ru^
+||myohydgasymdistthera.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -806,6 +832,12 @@
 ||schimcel.cfd^
 ||paaocha.cfd^
 ||steeber.cfd^
+||barrowr.sbs^
+!
+! --
+||*-sg.callback.cloudses.com^
+||wewlep.com^
+! --
 !
 !
 !
