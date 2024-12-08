@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.7.0-R
+! Version: 0.7.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-08T10:10:00+00:00
+! TimeUpdated: 2024-12-08T14:10:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 08.12.2024 10:10 UTC
+! Last Modified: 08.12.2024 14:10 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -818,12 +818,39 @@
 ||uwcalfyostenourtituthade.ru^
 ||myohydgasymdistthera.ru^
 ||gambdaresdo.ru^
+||cheerwaquarmeraperma.ru^
+||cesslanapho.ru^
+||ziofiltcothanviwitergee.ru^
+||lingpapsedeste.ru^
+||rachigtekin.ru^
+||ifanulitopgeper.ru^
+||prembattpylzeberbirthri.ru^
+||gulsbafanec.ru^
+||riatabcilinhelepji.ru^
+||swerucanmameli.ru^
+||ylofcoun.ru^
+||creatbabsonorrcestlim.ru^
+||teasrarekon.ru^
+||gopercekecagard.ru^
+||lighwohnnus.ru^
+||kontmindceelotamolasib.ru^
+||wantcarcalepofitsde.ru^
+||ettylzakhbuftafat.ru^
+||proxophalivem.ru^
+||techjarec.ru^
+||heagtodilasi.ru^
+||pindepidilafasro.ru^
+||ilinterfifodiscrads.ru^
+||poibeha.ru^
+||fectsonvingdyspwellsantwil.ru^
+||kemipurrarohiltting.ru^
 !
 ! --
 ||mlnsprofiles.cc^
 ! --
 !
-||jenkinj.cfd^
+||jenkinj.*^
+! jenkinj.cfd^
 ||eodkiewicz.sbs^
 ||rb.gy^
 ||steeber.cfd^
@@ -834,8 +861,10 @@
 ||schpppe.sbs^
 ||langwortr.top^
 ||barrowr.sbs^
-||eodkiewicz.cfd^
-||predovio.sbs^
+||eodkiewicz.*^
+! eodkiewicz.cfd^
+||predovio.*^
+! predovio.sbs^
 ||schimcel.cfd^
 ||paaocha.cfd^
 ||steeber.cfd^
@@ -844,6 +873,7 @@
 ! --
 ||*-sg.callback.cloudses.com^
 ||wewlep.com^
+||escplad.com^
 ! --
 !
 !
