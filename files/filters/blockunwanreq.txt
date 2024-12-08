@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.7.2-R
-! TimeUpdated: 2024-12-08T15:50:00+00:00
+! Version: 0.7.3-R
+! TimeUpdated: 2024-12-08T17:10:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -460,7 +460,7 @@
 ||api.expf.ru/api/v*/geo^$xhr
 ||rutube.ru/api/video/recommendation*^$xhr,domain=rutube.ru
 ||rutube.ru/static/img/png/adsdkbanner.png^$xhr,domain=rutube.ru
-||api.carrotquest.app/v*/users/*self_user/delpresence^$ping,domain=tochka.com
+||api.carrotquest.app/v*/users/*self_user/*^$ping,xhr,domain=tochka.com
 ||cdn.rt.com/scripts/adfox/*.js^$script,important,domain=russiatoday.ru
 ||mediator.mail.ru/script/*/^$script,xhr,important
 ||socialstat.rt.com/socialstat?url=$xhr,important,domain=russiatoday.ru
@@ -568,20 +568,18 @@
 ||gazprombank.ru/upload/mtm/main/matomo*.js^$script,domain=gazprombank.ru
 ||gazprombank.ru/upload/mtm/tag.js*^$script,domain=gazprombank.ru
 ||otpbank.ru/bitrix/templates/redesign/js/counter/*.js^$script,domain=otpbank.ru
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+||rts-*.carrotquest.app/websocket/app_online_changed*/chat_bot_conversation_finished*^$websocket,domain=tochka.com
+||api.carrotquest.app/v*/jsconnect^$domain=tochka.com
+||tochka.com/storage/app/media/carrotquest/carrotquest.js^$script,domain=tochka.com
+||y-cdn.uralsib.ru/front/static/vendor/tag*.js^$script,domain=uralsib.ru
+||invite-agent.uralsib.ru/confirm/*/click*$xhr,domain=uralsib.ru
+||mtsbank.ru/upload/static/offer-popup/offer-poup-dengi.webp^$image,domain=mtsbank.ru
+||mtsbank.ru/upload/static/img/personalOffer/*.webp^$image,domain=mtsbank.ru
+||mtsbank.ru/upload/static/main-page/telegram-image-*.webp^$image,domain=mtsbank.ru
+||api-app.sovcombank.ru/cdn/gistfile.*.js^$script,domain=sovcombank.ru
+||ecdn.sovcombank.ru/js/em.js^$script,$domain=sovcombank.ru
+||api-app.sovcombank.ru/em^$xhr,domain=sovcombank.ru
+|helpdesk.unistream.ru/js/modules/chat_widget/media/exquisite.*.ogg^$media,domain=unistream.ru
 !
 !
 !
@@ -782,6 +780,8 @@ wildberries.ru###app > div:nth-child(5) > div.lk-main:nth-child(3) > div.lk-asid
 ! Удаление баннера с рекламой «Озон Рассрочки» на странице товара (в блоке с указанием цены и т.д.).
 ! Removing the banner with «Ozon Installment» advertising on the product page (in the block with the price, etc.).
 ozon.ru##div[data-widget="webInstallmentPurchase"]
+!
+ozon.ru###layoutPage > div.b6:first-child > div.dy0_9 > div > div.container.c:nth-child(3) > div.e1:last-child > div.d3.c8:last-child > div.e4 > div:nth-child(3)
 ! =
 ! Зато от блокировки некоторых скриптов сломался подвал сайта (footer) на главной странице XD (к примеру, в разделе Корзина подвал сайта работает).
 ! But from blocking some scripts broke the site basement (footer) on the main page XD (for example, in the Shopping Cart section the site basement works).
@@ -1119,11 +1119,12 @@ apkpure.net##main.main-container:nth-child(2) > div.home-main-container.auto-con
 apkpure.com##div[class="social-network"]
 mynickname.com##a[class="btn nft"]
 open.ru##div[class^="CookieWarning"]
-
-
-
-
-
+tochka.com##div[class^="footer_subscription"]
+mtsbank.ru##div[class^="styled__Wrapper-sc-37ac7ba-0 hhBONQ"]
+mtsbank.ru##div[class^="styled__Wrapper-sc-67d955a5-0 ezVDaK"]
+mtsbank.ru##div[class^="sc-42b79eba-0 bmZTQS"]
+sovcombank.ru##div[class^="fixed bottom-0 left-0 right-0 z-20 w-full border-none bg-white shadow-cookie"]
+unistream.ru##div[class^="cc-window cc-banner cc-type-info cc-theme-classic cc-bottom cc-color-override-1028359685"]
 !
 !
 !
@@ -1727,7 +1728,6 @@ open.ru##div[class^="CookieWarning"]
 ||scutvesvietext.ru^
 ||matchire.ru^
 ||spirguahelzlochemomor.ru^
-||newsversdistedeter.ru^
 ||torscropen.ru^
 ||togbadoorko.ru^
 ||hocomsodorjocongui.ru^
@@ -1754,7 +1754,6 @@ open.ru##div[class^="CookieWarning"]
 ||seisicar.ru^
 ||nicknajingbourf.ru^
 ||raustarin.ru^
-||newsversdistedeter.ru^
 ||suamk.com^
 ||farscapaxilagaban.ru^
 ||thouculpgas.ru^
@@ -1858,6 +1857,7 @@ open.ru##div[class^="CookieWarning"]
 ||poibeha.ru^
 ||fectsonvingdyspwellsantwil.ru^
 ||kemipurrarohiltting.ru^
+||reverkonfcaf.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -1867,7 +1867,8 @@ open.ru##div[class^="CookieWarning"]
 ! jenkinj.cfd^
 ||eodkiewicz.sbs^
 ||rb.gy^
-||steeber.cfd^
+||steeber.*^
+! steeber.cfd^
 ! tillaan.cyou^
 ||tillaan.*^
 ! tillaan.cfd^

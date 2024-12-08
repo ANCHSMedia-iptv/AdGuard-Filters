@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.7.1-R
+! Version: 0.7.3-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-08T14:10:00+00:00
+! TimeUpdated: 2024-12-08T17:10:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 08.12.2024 14:10 UTC
+! Last Modified: 08.12.2024 17:10 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -76,6 +76,7 @@
 ||media-adv.market.yandex.ru^$important
 ||mc.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua
 ||an.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~e.mail.ru
+||abt.s3.yandex.net^
 !
 ! ===
 !
@@ -391,6 +392,8 @@
 ||t3.cdnpure.com^$important
 ||r.apkpure.*^$important
 ||geo.cookie-script.com^
+||1dmp.io^
+||kameleoon.eu^
 !
 !
 !
@@ -713,7 +716,6 @@
 ||scutvesvietext.ru^
 ||matchire.ru^
 ||spirguahelzlochemomor.ru^
-||newsversdistedeter.ru^
 ||torscropen.ru^
 ||togbadoorko.ru^
 ||hocomsodorjocongui.ru^
@@ -740,7 +742,6 @@
 ||seisicar.ru^
 ||nicknajingbourf.ru^
 ||raustarin.ru^
-||newsversdistedeter.ru^
 ||suamk.com^
 ||farscapaxilagaban.ru^
 ||thouculpgas.ru^
@@ -844,6 +845,7 @@
 ||poibeha.ru^
 ||fectsonvingdyspwellsantwil.ru^
 ||kemipurrarohiltting.ru^
+||reverkonfcaf.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -853,7 +855,8 @@
 ! jenkinj.cfd^
 ||eodkiewicz.sbs^
 ||rb.gy^
-||steeber.cfd^
+||steeber.*^
+! steeber.cfd^
 ! tillaan.cyou^
 ||tillaan.*^
 ! tillaan.cfd^
