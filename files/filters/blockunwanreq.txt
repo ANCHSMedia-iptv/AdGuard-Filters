@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.6.9-R
-! TimeUpdated: 2024-12-07T18:57:00+00:00
+! Version: 0.7.0-R
+! TimeUpdated: 2024-12-08T10:10:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -165,12 +165,12 @@
 ! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.min.js^$script,important (новое правило, строка 135 и 136)
 ||*/wp-content/plugins/*/assets/js/tracks.js*^$script,important
 ||*/ad.js^$script,important
-||*/empty*.*^$image,important
+||*/empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru
 ||*/adv/*^$image,xhr,script,important
 ! *empty*.*^$image,important
 ||store.bankiros.ru/js/metrics/*.js^script,domain=bankiros.ru,important
-||*adhigh.net^$important
-||*rutarget.ru^$important
+||adhigh.net^$important
+||rutarget.ru^$important
 ||api.mindbox.ru^$important
 ||*/api/fl/id*^$xhr,important
 ||s.rbk.ru/*quote_static/quote-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru,important
@@ -183,7 +183,7 @@
 ||russianfood.com/images/blg.png^$image,domain=russianfood.com,important
 ||*rbc.ru/v*/geoinfo/by-ip/^$xhr,domain=rbc.ru
 ||ext.clickstream.sberbank.ru/metrics/*^$xhr,important
-||servicepipe.ru/static/*.js^$script
+||servicepipe.ru/static/*.js^$script,domain=~onlinetrade.ru
 ||player.twitch.tv/js/embed/v*.js^$script,domain=~twitch.tv,important
 ||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com,important
 ||cdn.gamestatic.net/files/pictures/promo_banner_*.png^$image,domain=rbkgames.com,important
@@ -204,7 +204,7 @@
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-||*/api/*/envelope/*^$ping,xhr,important,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru
+||*/api/*/envelope/*^$ping,xhr,important,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com,important
@@ -395,7 +395,7 @@
 ||hdeapi.lamoda.ru/js/modules/chat_widget/hde.js^$script,domain=lamoda.ru
 ||*.sravni.ru/v*/advertising/banners/*^$xhr,domain=sravni.ru
 ||graphql.kazanexpress.ru^
-||api.kazanexpress.ru/api/analytics/*^$xhr
+||api.kazanexpress.ru/api/analytics/*^$xhr,domain=mm.ru|kazanexpress.ru
 ||partners.*.ru/api/tracker/*^$script,ping,domain=lemanapro.ru|leroymerlin.ru
 ||*.ru/5sgdmfD2wXGnNsQMcywx*^$domain=lemanapro.ru|leroymerlin.ru
 ||interfax.ru/footer__form_subscribe.html^$domain=interfax.ru
@@ -564,6 +564,24 @@
 ||alfabank.servicecdn.ru/assr/AnalyticsEventSenderOnMount.*.js^$script,domain=alfabank.ru
 ||alfabank.ru/conductor/metrics^$xhr,domain=alfabank.ru
 ||browser.sentry-cdn.com/*/bundle.tracing.*.js^$script,domain=alfabank.ru
+||akbars.ru/api/browser-log^$xhr,domain=akbars.ru
+||gazprombank.ru/upload/mtm/main/matomo*.js^$script,domain=gazprombank.ru
+||gazprombank.ru/upload/mtm/tag.js*^$script,domain=gazprombank.ru
+||otpbank.ru/bitrix/templates/redesign/js/counter/*.js^$script,domain=otpbank.ru
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 !
 !
 !
@@ -1098,6 +1116,12 @@ apkpure.net,apkpure.com##a[class*="telegram-btn"]
 apkpure.net##main.main-container:nth-child(2) > div.home-main-container.auto-container:nth-child(2) > div.module-card-container.dt-hot-topics:nth-child(6)
 apkpure.com##div[class="social-network"]
 mynickname.com##a[class="btn nft"]
+open.ru##div[class^="CookieWarning"]
+
+
+
+
+
 !
 !
 !
@@ -1454,6 +1478,8 @@ mynickname.com##a[class="btn nft"]
 @@||www.msftconnecttest.com^
 @@||pay.yandex.ru^
 @@||*/.well-known/ddos-guard/*$xhr,script
+@@||galamart.ru^
+@@||widgets.mango-office.ru/widgets/mango.js^$script,domain=galamart.ru
 !
 !
 ! -
@@ -1481,12 +1507,12 @@ mynickname.com##a[class="btn nft"]
 ! -- Non-understandable addresses, but undesirable --
 ! -- Непонятные адреса, но нежелательные --
 !
-||tobipovsem.com^$important,third-party
-||largestloitering.com^$third-party
+||tobipovsem.com^$important
+||largestloitering.com^
 ||f1e4fcff2b.27640ea29d.com^
 ||d157c90939.1b384556ae.com^
 ||*vesmaveselo*^$third-party
-||myroledance.com^$third-party
+||myroledance.com^
 ||*.vaterlines.com^
 ||otnolatrnup.com^$important
 ||resp.us^
@@ -1497,7 +1523,7 @@ mynickname.com##a[class="btn nft"]
 ||antpeak.com^
 !
 !
-! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 стал «жертвой» такого массового спама)..
+! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 по 30.11.24 был «жертвой» такого массового спама)..
 ||s*.*.*.mydomain.zone^
 ||afrounitedsalon.de^
 !
