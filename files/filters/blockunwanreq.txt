@@ -377,7 +377,7 @@
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^
-||*/graphql/^$xhr,important
+||*/graphql*^$xhr,important
 ||getrcmx.com^
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.*.js^$script,domain=xcom-shop.ru
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
