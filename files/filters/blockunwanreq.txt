@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.7.0-R
-! TimeUpdated: 2024-12-08T10:10:00+00:00
+! Version: 0.7.2-R
+! TimeUpdated: 2024-12-08T15:40:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -752,23 +752,23 @@ wildberries.ru###app > div:nth-child(5) > div.lk-main:nth-child(3) > div.lk-asid
 !
 ||ir*.ozone.ru/s*/cms/*/qr-code_*.png^$image,domain=ozon.ru|ozon.by
 ||st.ozone.ru/assets/*/detached/marketing*/entry.*.js^$script,domain=ozon.ru|ozon.by
-||st.ozone.ru/s*/ozon-tag-manager/*/sdk.js^$script,domain=ozon.ru|ozon.by
-||*ozon.*/api/entrypoint-api.bx/page/json/v*^$xhr,domain=ozon.ru|ozon.by
+! st.ozone.ru/s*/ozon-tag-manager/*/sdk.js^$script,domain=ozon.ru|ozon.by **
+! *ozon.*/api/entrypoint-api.bx/page/json/v*^$xhr,domain=ozon.ru|ozon.by **
 ||st.ozone.ru/assets/*/detached/*/marketing-desktop-adv-banner-v*.js^$script,domain=ozon.ru|ozon.by
 ||st.ozone.ru/assets/*/common_molecules_adv-info_index_vue.*^$css,script,domain=ozon.ru
-||xapi.ozon.*/api/logs-gateway/*^$xhr,domain=ozon.ru|ozon.by
-||st.ozone.ru/assets/*/detached/*/autosplit-teams_*_components*_adv-*.js^$script,domain=ozon.ru|ozon.by
+! xapi.ozon.*/api/logs-gateway/*^$xhr,domain=ozon.ru|ozon.by **
+! st.ozone.ru/assets/*/detached/*/autosplit-teams_*_components*_adv-*.js^$script,domain=ozon.ru|ozon.by **
 ||cdn*.ozonusercontent.com/s*/sellerassets/*/*.jpeg^$image,domain=ozon.ru|ozon.by
-||st.ozone.ru/assets/*/detached/*/*-desktop-banner-carousel.js^$script,domain=ozon.ru
-||st.ozone.ru/assets/*/detached/search/search-tap-tags.js^$script,domain=ozon.ru|ozon.by
-||ozon.ru/api/composer-api.bx/_action/v*/getSearchTapTags^$xhr,domain=ozon.ru
+! st.ozone.ru/assets/*/detached/*/*-desktop-banner-carousel.js^$script,domain=ozon.ru **
+! st.ozone.ru/assets/*/detached/search/search-tap-tags.js^$script,domain=ozon.ru|ozon.by **
+! ozon.ru/api/composer-api.bx/_action/v*/getSearchTapTags^$xhr,domain=ozon.ru **
 ||st.ozone.ru/s*/client-metrics/*.js^$script,domain=ozon.ru|ozon.by
 ||ir.ozone.ru/s*/cms/*/ozon_job-*.png^$image,domain=ozon.ru
 ||ir.ozone.ru/s*/cms/*/*_11.11_*.jpg^$image,domain=ozon.ru
 !
 ! -The rule applies to Ozon and Ozon Bank's website. -
 ! - Правило применимо к сайту Озона и Озон Банка. -
-||xapi.ozon.*/dlte/multi^$ping,domain=ozon.ru|finance.ozon.ru|ozon.by
+! xapi.ozon.*/dlte/multi^$ping,domain=ozon.ru|finance.ozon.ru|ozon.by **
 ! -
 !
 ! Белорусская версия (ozon .by)
@@ -785,6 +785,8 @@ ozon.ru##div[data-widget="webInstallmentPurchase"]
 ! =
 ! Зато от блокировки некоторых скриптов сломался подвал сайта (footer) на главной странице XD (к примеру, в разделе Корзина подвал сайта работает).
 ! But from blocking some scripts broke the site basement (footer) on the main page XD (for example, in the Shopping Cart section the site basement works).
+! -
+! ** - Пришлось отключить т.к. глючит сайт. (08.12.24)
 !
 ! ===
 !
@@ -1478,8 +1480,12 @@ open.ru##div[class^="CookieWarning"]
 @@||www.msftconnecttest.com^
 @@||pay.yandex.ru^
 @@||*/.well-known/ddos-guard/*$xhr,script
-@@||galamart.ru^
+@@||galamart.ru^$genhide
 @@||widgets.mango-office.ru/widgets/mango.js^$script,domain=galamart.ru
+@@||ozon.ru^$ghide
+
+
+
 !
 !
 ! -
@@ -1826,12 +1832,39 @@ open.ru##div[class^="CookieWarning"]
 ||uwcalfyostenourtituthade.ru^
 ||myohydgasymdistthera.ru^
 ||gambdaresdo.ru^
+||cheerwaquarmeraperma.ru^
+||cesslanapho.ru^
+||ziofiltcothanviwitergee.ru^
+||lingpapsedeste.ru^
+||rachigtekin.ru^
+||ifanulitopgeper.ru^
+||prembattpylzeberbirthri.ru^
+||gulsbafanec.ru^
+||riatabcilinhelepji.ru^
+||swerucanmameli.ru^
+||ylofcoun.ru^
+||creatbabsonorrcestlim.ru^
+||teasrarekon.ru^
+||gopercekecagard.ru^
+||lighwohnnus.ru^
+||kontmindceelotamolasib.ru^
+||wantcarcalepofitsde.ru^
+||ettylzakhbuftafat.ru^
+||proxophalivem.ru^
+||techjarec.ru^
+||heagtodilasi.ru^
+||pindepidilafasro.ru^
+||ilinterfifodiscrads.ru^
+||poibeha.ru^
+||fectsonvingdyspwellsantwil.ru^
+||kemipurrarohiltting.ru^
 !
 ! --
 ||mlnsprofiles.cc^
 ! --
 !
-||jenkinj.cfd^
+||jenkinj.*^
+! jenkinj.cfd^
 ||eodkiewicz.sbs^
 ||rb.gy^
 ||steeber.cfd^
@@ -1842,8 +1875,10 @@ open.ru##div[class^="CookieWarning"]
 ||schpppe.sbs^
 ||langwortr.top^
 ||barrowr.sbs^
-||eodkiewicz.cfd^
-||predovio.sbs^
+||eodkiewicz.*^
+! eodkiewicz.cfd^
+||predovio.*^
+! predovio.sbs^
 ||schimcel.cfd^
 ||paaocha.cfd^
 ||steeber.cfd^
@@ -1852,6 +1887,7 @@ open.ru##div[class^="CookieWarning"]
 ! --
 ||*-sg.callback.cloudses.com^
 ||wewlep.com^
+||escplad.com^
 ! --
 !
 !
