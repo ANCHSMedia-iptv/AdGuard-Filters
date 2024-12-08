@@ -582,8 +582,6 @@
 ||helpdesk.unistream.ru/js/modules/chat_widget/media/exquisite.*.ogg^$media,domain=unistream.ru
 ||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/share.js^$script,domain=kp.ru
 ||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/zen-subscribe.js^$script,domain=kp.ru
-
-
 !
 !
 !
