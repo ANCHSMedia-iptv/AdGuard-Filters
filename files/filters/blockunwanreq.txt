@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 0.7.3-R
-! TimeUpdated: 2024-12-08T17:10:00+00:00
+! TimeUpdated: 2024-12-08T17:50:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -503,7 +503,7 @@
 ||matomo.alfabank.by^$domain=alfabank.by
 ||st.babysfera.ru/*/static/assets/Components/*/Shared/ShareButton/ShareButton.js^$script,domain=baby.ru
 ||hoff.ru/vue/analytics/webvitals/^$ping,domain=hoff.ru
-||static.tildacdn.com/js/tilda-stat-*.min.js^$script
+||*/tilda-stat-*.*.js^$script
 ||lib.usedesk.ru/secure.usedesk.ru/widget_159338_39300.js^$script,domain=bxbox.bxb.delivery
 ||*tracking/ipify^$xhr
 ||rawgit.com/RobinHerbots/Inputmask/*/dist/jquery.inputmask.js^$script
@@ -579,7 +579,11 @@
 ||api-app.sovcombank.ru/cdn/gistfile.*.js^$script,domain=sovcombank.ru
 ||ecdn.sovcombank.ru/js/em.js^$script,$domain=sovcombank.ru
 ||api-app.sovcombank.ru/em^$xhr,domain=sovcombank.ru
-|helpdesk.unistream.ru/js/modules/chat_widget/media/exquisite.*.ogg^$media,domain=unistream.ru
+||helpdesk.unistream.ru/js/modules/chat_widget/media/exquisite.*.ogg^$media,domain=unistream.ru
+||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/share.js^$script,domain=kp.ru
+||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/zen-subscribe.js^$script,domain=kp.ru
+
+
 !
 !
 !
@@ -1125,6 +1129,7 @@ mtsbank.ru##div[class^="styled__Wrapper-sc-67d955a5-0 ezVDaK"]
 mtsbank.ru##div[class^="sc-42b79eba-0 bmZTQS"]
 sovcombank.ru##div[class^="fixed bottom-0 left-0 right-0 z-20 w-full border-none bg-white shadow-cookie"]
 unistream.ru##div[class^="cc-window cc-banner cc-type-info cc-theme-classic cc-bottom cc-color-override-1028359685"]
+kp.ru##div[class^="sc-11vvdi3-20 cIvLXI"]
 !
 !
 !
@@ -1487,6 +1492,7 @@ unistream.ru##div[class^="cc-window cc-banner cc-type-info cc-theme-classic cc-b
 @@||onlinetrade.ru^$ghide
 @@||onlinetrade.ru/xpvnsulc/sp_rotated_captcha/
 ! @@||onlinetrade.ru^
+@@||s09.stc.yc.kpcdn.net/share/i/beige/325472601571f31e1bf00674c368d335.gif^$domain=kp.ru
 !
 !
 ! -
@@ -1858,6 +1864,8 @@ unistream.ru##div[class^="cc-window cc-banner cc-type-info cc-theme-classic cc-b
 ||fectsonvingdyspwellsantwil.ru^
 ||kemipurrarohiltting.ru^
 ||reverkonfcaf.ru^
+||middgnutphisticolarfirsplac.ru^
+||viaditabneu.ru^
 !
 ! --
 ||mlnsprofiles.cc^
