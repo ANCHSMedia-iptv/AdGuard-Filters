@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 0.8.0-R
-! TimeUpdated: 2024-12-09T17:10:00+00:00
+! TimeUpdated: 2024-12-09T17:11:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1094,7 +1094,7 @@ minecraftpatch.ru##section:nth-child(2) > div.wrapper:last-child > div.post_box:
 minecraftkwiki.online##li[class^="menu-item menu-item-type-custom menu-item-object-custom menu-item-18959 nav-item"]
 mcmodspc.com##div[class^="site-main__single-header-right-bottom grid__row"]
 mody4mine.ru##div[class^="vk_groups"]
-misterlauncher.org##a[href^="https://misterlauncher.org/"]
+! misterlauncher.org##a[href^="https://misterlauncher.org/"] (09.12.24 некоторые кнопки и разделы сайта ломаются)
 gamewith.net##div[class="game-announce"]
 minecraftonly.com##a[href="/start.html"]
 minecraftonly.com##div[class="streams-sidebar position-fixed"]
