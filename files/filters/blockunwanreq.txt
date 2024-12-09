@@ -1891,6 +1891,7 @@ mikhail-yudin.ru##footer.footer:nth-child(6) > div.footer__line:nth-child(2)
 ||quipacaransiozy.ru^
 ||daynisi.ru^
 ||galyrup.ru^
+||qoirecocusunrinira.ru^
 !
 ! --
 ||mlnsprofiles.cc^
