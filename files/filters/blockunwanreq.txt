@@ -633,16 +633,17 @@
 ! Blocking ads, analytics and other “garbage”.
 ! Блокировка рекламы, аналитики и прочего «мусора».
 !
-||megamarket.ru/api/mobile/v*/analyticsDataService/*^$xhr
-||megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr
-! megamarket.ru/api/fl/idw-smm^$xhr (новое правило, строка 174)
-||api.megamarket.tech/api/colibri/events/track^$xhr
+||megamarket.ru/api/mobile/v*/analyticsDataService/*^$xhr,important
+||megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr,important
+! megamarket.ru/api/fl/idw-smm^$xhr (новое правило, строка 175)
+||api.megamarket.tech/api/colibri/events/*^$xhr,important
+||megamarket.ru/api/mobile/v*/promoContentService/*^$xhr,important
 !
 ! Rule for blocking banner ad images (new design) (PC version).
 ! Правило блокировки рекламных баннеров (новый дизайн) (ПК версия).
-||main-cdn.sbermegamarket.ru/upload/mnt/*.jpg^$image,domain=megamarket.ru
+||main-cdn.sbermegamarket.ru/upload/mnt/*.jpg^$image
 !
-||megamarket.ru/static/dist/images/cookies.*.webp^$image,domain=megamarket.ru
+||megamarket.ru/static/dist/images/cookies.*.webp^$image
 !
 ! ===
 !
