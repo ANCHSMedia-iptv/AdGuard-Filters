@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.7.8-R
-! TimeUpdated: 2024-12-09T11:40:00+00:00
+! Version: 0.7.9-R
+! TimeUpdated: 2024-12-09T14:40:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -586,6 +586,7 @@
 ||habr.com/kek/v*/reactions/counters$xhr,domain=habr.com
 ||*/api/fl*^$xhr,important
 ||eaglercraft.com/js/fb.js^$script,domain=eaglercraft.com
+||s.basicconfig.com/channel/20*$script,domain=gid-minecraft.ru
 !
 !
 !
@@ -1070,7 +1071,8 @@ tmonitoring.com##div[class^="metriks"]
 minecraftexpert.ru##div[class^="download-button klaun-button"]
 minecraftexpert.ru##div[class="download-button tg-button"]
 ##div[class*="footer-counts"]
-~hlebs.ru##div[class*="counts"]
+! ~hlebs.ru##div[class*="counts"]
+##div[class^="counts"]
 ##a[href$="klauncher"]
 minecraftpatch.ru##div[style="margin-top:20px;text-align: center;display: flex;flex-direction: column;justify-content: center;width: 100%;border-bottom: 1px solid #777;"]
 mcpehub.net##div[id="custom-7543-particle"]
@@ -1138,6 +1140,7 @@ ip.osnova.news##a[href^="/vpn/ip.html"]
 ip.osnova.news##a[href^="/vpn/hosting.html"]
 ##a[href*="//ping-admin.ru"]
 mikhail-yudin.ru##footer.footer:nth-child(6) > div.footer__line:nth-child(2)
+easylauncher.org##div[class="widget"]
 !
 !
 !
@@ -1938,6 +1941,7 @@ mikhail-yudin.ru##footer.footer:nth-child(6) > div.footer__line:nth-child(2)
 ||escplad.com^
 ||greatdeposit.com^
 ||lawkj.com^
+||100percentopenrate-int.com^
 ! --
 !
 !
