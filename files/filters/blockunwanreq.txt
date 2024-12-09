@@ -584,6 +584,7 @@
 ||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/zen-subscribe.js^$script,domain=kp.ru
 ||assets.habr.com/habr-web/img/*.webp^$image,domain=habr.com
 ||habr.com/kek/v*/reactions/counters$xhr,domain=habr.com
+||*/api/fl*^$xhr,important
 !
 !
 !
@@ -633,11 +634,12 @@
 ! Blocking ads, analytics and other “garbage”.
 ! Блокировка рекламы, аналитики и прочего «мусора».
 !
-||megamarket.ru/api/mobile/v*/analyticsDataService/*^$xhr,important
-||megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr,important
+||megamarket.ru/api/mobile/v*/analyticsDataService/*^$xhr
+||megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr
 ! megamarket.ru/api/fl/idw-smm^$xhr (новое правило, строка 175)
-||api.megamarket.tech/api/colibri/events/*^$xhr,important
-||megamarket.ru/api/mobile/v*/promoContentService/*^$xhr,important
+||api.megamarket.tech/api/colibri/events/*^$xhr
+||megamarket.ru/api/mobile/v*/promoContentService/*^$xhr
+||api.megamarket.tech/api/events/config^$xhr
 !
 ! Rule for blocking banner ad images (new design) (PC version).
 ! Правило блокировки рекламных баннеров (новый дизайн) (ПК версия).
