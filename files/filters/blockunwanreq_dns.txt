@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.7.5-R
+! Version: 0.7.6-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-09T07:20:00+00:00
+! TimeUpdated: 2024-12-09T08:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 09.12.2024 07:20 UTC
+! Last Modified: 09.12.2024 08:20 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -394,6 +394,8 @@
 ||geo.cookie-script.com^
 ||1dmp.io^
 ||kameleoon.eu^
+||effect.habr.com^$important
+||referrer.disqus.com^$important
 !
 !
 !
@@ -450,8 +452,8 @@
 !
 ! -- =Opera=
 !
-||*feednews.com^$dnsrewrite=REFUSED
-||*oleads.com^$dnsrewrite=REFUSED
+||feednews.com^$dnsrewrite=REFUSED
+||oleads.com^$dnsrewrite=REFUSED
 ||sitesuggestion.opera-api2.com^$dnsrewrite=REFUSED
 ||oscore.operacdn.com^
 ||ws-oscore.opera-api2.com^
