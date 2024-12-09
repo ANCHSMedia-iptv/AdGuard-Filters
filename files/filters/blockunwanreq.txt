@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.7.9-R
-! TimeUpdated: 2024-12-09T14:40:00+00:00
+! Version: 0.8.0-R
+! TimeUpdated: 2024-12-09T17:10:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -587,6 +587,7 @@
 ||*/api/fl*^$xhr,important
 ||eaglercraft.com/js/fb.js^$script,domain=eaglercraft.com
 ||s.basicconfig.com/channel/20*$script,domain=gid-minecraft.ru
+||ixbt.com/site*/resources/javascript/kocmoc.js^$script,domain=ixbt.com
 !
 !
 !
@@ -1141,6 +1142,7 @@ ip.osnova.news##a[href^="/vpn/hosting.html"]
 ##a[href*="//ping-admin.ru"]
 mikhail-yudin.ru##footer.footer:nth-child(6) > div.footer__line:nth-child(2)
 easylauncher.org##div[class="widget"]
+richfamily.ru##div[id^="notification"]
 !
 !
 !
@@ -1905,6 +1907,7 @@ easylauncher.org##div[class="widget"]
 ||rougbeycons.ru^
 ||beityageatiturk.ru^
 ||tirajgolfrentsidustsi.ru^
+||chalsusophofapodyscentpen.ru^
 !
 ! --
 ||mlnsprofiles.cc^
