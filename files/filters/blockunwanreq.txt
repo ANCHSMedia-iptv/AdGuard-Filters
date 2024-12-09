@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.7.3-R
-! TimeUpdated: 2024-12-08T17:50:00+00:00
+! Version: 0.7.5-R
+! TimeUpdated: 2024-12-09T07:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1128,6 +1128,9 @@ mtsbank.ru##div[class^="sc-42b79eba-0 bmZTQS"]
 sovcombank.ru##div[class^="fixed bottom-0 left-0 right-0 z-20 w-full border-none bg-white shadow-cookie"]
 unistream.ru##div[class^="cc-window cc-banner cc-type-info cc-theme-classic cc-bottom cc-color-override-1028359685"]
 kp.ru##div[class^="sc-11vvdi3-20 cIvLXI"]
+ip.osnova.news##a[href^="/vpn/ip.html"]
+ip.osnova.news##a[href^="/vpn/hosting.html"]
+##a[href*="//ping-admin.ru"]
 !
 !
 !
@@ -1824,7 +1827,6 @@ kp.ru##div[class^="sc-11vvdi3-20 cIvLXI"]
 ||breakquigoladignahrre.ru^
 ||spirguahelzlochemomor.ru^
 ||dasirabo.ru^
-||elemowar.ru^
 ||gobbxanreismariz.ru^
 ||ziplozi.ru^
 ||bounkorasegdobafir.ru^
@@ -1864,6 +1866,22 @@ kp.ru##div[class^="sc-11vvdi3-20 cIvLXI"]
 ||reverkonfcaf.ru^
 ||middgnutphisticolarfirsplac.ru^
 ||viaditabneu.ru^
+||zithedesilkhenversco.ru^
+||climbire.ru^
+||ritiguze.ru^
+||seoritiburtima.ru^
+||opylciwoodforth.ru^
+||worthtesteracongwerthill.ru^
+||gadeverphepark.ru^
+||terpmilagar.ru^
+||inadescuspali.ru^
+||maipassdreamterlessnund.ru^
+||ringnivivitticast.ru^
+||debtloburchooroten.ru^
+||hodewinreisufyrevast.ru^
+||wallsticesproctioulauty.ru^
+||mwinabplicinouthizgram.ru^
+||quipacaransiozy.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -1890,11 +1908,14 @@ kp.ru##div[class^="sc-11vvdi3-20 cIvLXI"]
 ||paaocha.cfd^
 ||steeber.cfd^
 ||barrowr.sbs^
+||schulist.click^
+||cndricka.rest^
 !
 ! --
 ||*-sg.callback.cloudses.com^
 ||wewlep.com^
 ||escplad.com^
+||greatdeposit.com^
 ! --
 !
 !

@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.7.3-R
+! Version: 0.7.5-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-08T17:50:00+00:00
+! TimeUpdated: 2024-12-09T07:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 08.12.2024 17:50 UTC
+! Last Modified: 09.12.2024 07:20 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -808,7 +808,6 @@
 ||breakquigoladignahrre.ru^
 ||spirguahelzlochemomor.ru^
 ||dasirabo.ru^
-||elemowar.ru^
 ||gobbxanreismariz.ru^
 ||ziplozi.ru^
 ||bounkorasegdobafir.ru^
@@ -848,6 +847,22 @@
 ||reverkonfcaf.ru^
 ||middgnutphisticolarfirsplac.ru^
 ||viaditabneu.ru^
+||zithedesilkhenversco.ru^
+||climbire.ru^
+||ritiguze.ru^
+||seoritiburtima.ru^
+||opylciwoodforth.ru^
+||worthtesteracongwerthill.ru^
+||gadeverphepark.ru^
+||terpmilagar.ru^
+||inadescuspali.ru^
+||maipassdreamterlessnund.ru^
+||ringnivivitticast.ru^
+||debtloburchooroten.ru^
+||hodewinreisufyrevast.ru^
+||wallsticesproctioulauty.ru^
+||mwinabplicinouthizgram.ru^
+||quipacaransiozy.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -874,11 +889,14 @@
 ||paaocha.cfd^
 ||steeber.cfd^
 ||barrowr.sbs^
+||schulist.click^
+||cndricka.rest^
 !
 ! --
 ||*-sg.callback.cloudses.com^
 ||wewlep.com^
 ||escplad.com^
+||greatdeposit.com^
 ! --
 !
 !
