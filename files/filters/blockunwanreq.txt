@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.7.7-R
-! TimeUpdated: 2024-12-09T09:40:00+00:00
+! Version: 0.7.8-R
+! TimeUpdated: 2024-12-09T11:40:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1896,6 +1896,11 @@ mikhail-yudin.ru##footer.footer:nth-child(6) > div.footer__line:nth-child(2)
 ||qoirecocusunrinira.ru^
 ||subsuisympcirlnambre.ru^
 ||trinpatwhistglobicinman.ru^
+||mingmendemitines.ru^
+||alzulmilongslopesonimse.ru^
+||rougbeycons.ru^
+||beityageatiturk.ru^
+||tirajgolfrentsidustsi.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -1921,7 +1926,8 @@ mikhail-yudin.ru##footer.footer:nth-child(6) > div.footer__line:nth-child(2)
 ||schimcel.cfd^
 ||paaocha.cfd^
 ||steeber.cfd^
-||barrowr.sbs^
+||barrowr.*^
+! barrowr.sbs^
 ||schulist.click^
 ||cndricka.rest^
 !
@@ -1930,6 +1936,7 @@ mikhail-yudin.ru##footer.footer:nth-child(6) > div.footer__line:nth-child(2)
 ||wewlep.com^
 ||escplad.com^
 ||greatdeposit.com^
+||lawkj.com^
 ! --
 !
 !
