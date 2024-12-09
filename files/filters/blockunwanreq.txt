@@ -553,7 +553,7 @@
 ||uptodown.com/img/vpn-mockup.webp^$image,domain=uptodown.com
 ||uptodown.com/img/svgs/icon-vpn-secondary.svg^$image,domain=uptodown.com
 ||pdalife.to/updateView/^$xhr,domain=pdalife.to
-||a.cdnpure.*/analytics_*.js^$script,domain=apkpure.net|apkpure.com
+||a.*pure.*/analytics_*.js^$script,domain=apkpure.net|apkpure.com
 ||r.cdnpure.com^$important
 ||mynickname.com/img/icon-nft.png^$xhr,domain=mynickname.com
 ||playground.ru/img/ui/steam-pay-*.png^$xhr,domain=playground.ru
