@@ -585,6 +585,7 @@
 ||assets.habr.com/habr-web/img/*.webp^$image,domain=habr.com
 ||habr.com/kek/v*/reactions/counters$xhr,domain=habr.com
 ||*/api/fl*^$xhr,important
+||eaglercraft.com/js/fb.js^$script,domain=eaglercraft.com
 !
 !
 !
