@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.7.6-R
-! TimeUpdated: 2024-12-09T08:40:00+00:00
+! Version: 0.7.7-R
+! TimeUpdated: 2024-12-09T09:40:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -401,7 +401,7 @@
 ||interfax.ru/footer__form_subscribe.html^$domain=interfax.ru
 ||rbp1.ru^
 ||doktor-khairov.ru/info/wp-content/plugins/wp-polls/images/default/pollbg.gif^$xhr,domain=doktor-khairov.ru
-||sso.cdek.ru/auth/realms/b2c/protocol/openid-connect/3p-cookies/*.html^$domain=cdek.ru
+||*/protocol/openid-connect/3p-cookies/*.html^
 ||cdn*.vedomosti.ru/*/assets/subscrib_email-*.png^$image,domain=vedomosti.ru
 ||forbes.ru/api/*/special-adblock^$xhr,domain=forbes.ru
 ||pravo.rg.ru/api/pravo-promo/^$xhr,domain=rg.ru
@@ -1493,7 +1493,7 @@ mikhail-yudin.ru##footer.footer:nth-child(6) > div.footer__line:nth-child(2)
 @@||www.msftconnecttest.com^
 @@||pay.yandex.ru^
 @@||*/.well-known/ddos-guard/*$xhr,script
-@@||galamart.ru^$genhide
+@@||galamart.ru^$ghide
 @@||widgets.mango-office.ru/widgets/mango.js^$script,domain=galamart.ru
 @@||ozon.ru^$ghide
 @@||onlinetrade.ru^$ghide
@@ -1501,6 +1501,8 @@ mikhail-yudin.ru##footer.footer:nth-child(6) > div.footer__line:nth-child(2)
 ! @@||onlinetrade.ru^
 @@||s09.stc.yc.kpcdn.net/share/i/beige/325472601571f31e1bf00674c368d335.gif^$domain=kp.ru
 @@||*.id.group-ib.com^
+@@||smartcaptcha.yandexcloud.net/captcha.js
+@@||smartcaptcha.yandexcloud.net^
 !
 !
 ! -
@@ -1892,6 +1894,7 @@ mikhail-yudin.ru##footer.footer:nth-child(6) > div.footer__line:nth-child(2)
 ||daynisi.ru^
 ||galyrup.ru^
 ||qoirecocusunrinira.ru^
+||subsuisympcirlnambre.ru^
 !
 ! --
 ||mlnsprofiles.cc^
