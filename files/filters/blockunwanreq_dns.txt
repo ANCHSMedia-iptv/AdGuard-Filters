@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.8.1-R
+! Version: 0.8.2-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-09T18:10:00+00:00
+! TimeUpdated: 2024-12-10T15:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 09.12.2024 18:10 UTC
+! Last Modified: 10.12.2024 15:20 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -881,6 +881,34 @@
 ||chalsusophofapodyscentpen.ru^
 ||waminjuncprodic.ru^
 ||otichimsitermarp.ru^
+||consnulabobsipop.ru^
+||soinoidiowritak.ru^
+||fratleiwebcver.ru^
+||dollmeligenitroacrat.ru^
+||soytitibrefilyhurcori.ru^
+||rumbpasub.ru^
+||keyracecan.ru^
+||koglighwolfarb.ru^
+||mentiotina.ru^
+||qucilorisenrai.ru^
+||moavercaletztiwir.ru^
+||vaworlacyssubskente.ru>^
+||countwathosubpazukafourti.ru^
+||dimquidenanro.ru^
+||evwortaloo.ru^
+||wnydvkrhiq.ru^
+||jampwritpho.ru^
+||statamach.ru^
+||piwoolweabur.ru^
+||latilafib.ru^
+||backthernsicklogan.ru^
+||postcoolhand.ru^
+||ofniarenasanreisar.ru^
+||guiklasnura.ru^
+||gobbxanreismariz.ru^
+||dogentlanma.ru^
+||gersconmiterij.ru^
+||pilballref.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -908,8 +936,15 @@
 ||steeber.cfd^
 ||barrowr.*^
 ! barrowr.sbs^
-||schulist.click^
 ||cndricka.rest^
+||ononner.top^
+! -
+||schulist.click^
+||dolyst.click^
+||blefin.click^
+||huttat.click^
+||tesclo.click^
+||izathi.click^
 !
 ! --
 ||*-sg.callback.cloudses.com^
@@ -918,6 +953,11 @@
 ||greatdeposit.com^
 ||lawkj.com^
 ||100percentopenrate-int.com^
+||pantydownbet.com^
+||rodartorial.com^
+! -
+||aartaid.com^
+||utocoman.com^
 ! --
 !
 !

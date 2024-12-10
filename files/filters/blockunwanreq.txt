@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.8.1-R
-! TimeUpdated: 2024-12-09T18:11:00+00:00
+! Version: 0.8.2-R
+! TimeUpdated: 2024-12-10T15:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1546,10 +1546,14 @@ richfamily.ru##div[id^="notification"]
 ||otnolatrnup.com^$important
 ||resp.us^
 ||meshuradres.best^
-||bit.ly/m/vaylakazan^
+||bit.ly*vaylakazan^
+||tinyurl.com/vaylakzan^
+||t2m.io/2254777^
 ||bonuscudede.com^
 ||lavatoryyourself.com^
 ||antpeak.com^
+||t2m.io^
+||vaycasino*.com^
 !
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 по 30.11.24 был «жертвой» такого массового спама)..
@@ -1910,6 +1914,34 @@ richfamily.ru##div[id^="notification"]
 ||chalsusophofapodyscentpen.ru^
 ||waminjuncprodic.ru^
 ||otichimsitermarp.ru^
+||consnulabobsipop.ru^
+||soinoidiowritak.ru^
+||fratleiwebcver.ru^
+||dollmeligenitroacrat.ru^
+||soytitibrefilyhurcori.ru^
+||rumbpasub.ru^
+||keyracecan.ru^
+||koglighwolfarb.ru^
+||mentiotina.ru^
+||qucilorisenrai.ru^
+||moavercaletztiwir.ru^
+||vaworlacyssubskente.ru>^
+||countwathosubpazukafourti.ru^
+||dimquidenanro.ru^
+||evwortaloo.ru^
+||wnydvkrhiq.ru^
+||jampwritpho.ru^
+||statamach.ru^
+||piwoolweabur.ru^
+||latilafib.ru^
+||backthernsicklogan.ru^
+||postcoolhand.ru^
+||ofniarenasanreisar.ru^
+||guiklasnura.ru^
+||gobbxanreismariz.ru^
+||dogentlanma.ru^
+||gersconmiterij.ru^
+||pilballref.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -1937,8 +1969,15 @@ richfamily.ru##div[id^="notification"]
 ||steeber.cfd^
 ||barrowr.*^
 ! barrowr.sbs^
-||schulist.click^
 ||cndricka.rest^
+||ononner.top^
+! -
+||schulist.click^
+||dolyst.click^
+||blefin.click^
+||huttat.click^
+||tesclo.click^
+||izathi.click^
 !
 ! --
 ||*-sg.callback.cloudses.com^
@@ -1947,6 +1986,11 @@ richfamily.ru##div[id^="notification"]
 ||greatdeposit.com^
 ||lawkj.com^
 ||100percentopenrate-int.com^
+||pantydownbet.com^
+||rodartorial.com^
+! -
+||aartaid.com^
+||utocoman.com^
 ! --
 !
 !
