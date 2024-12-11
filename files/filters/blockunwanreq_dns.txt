@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.8.6-R
+! Version: 0.8.8-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-10T17:25:00+00:00
+! TimeUpdated: 2024-12-11T17:45:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 10.12.2024 17:25 UTC
+! Last Modified: 11.12.2024 17:45 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -398,6 +398,7 @@
 ||referrer.disqus.com^$important
 ||counter.megagroup.ru^$important
 ||simbad.pro^
+||public.profitwell.com^
 !
 !
 !
@@ -913,6 +914,34 @@
 ||kjomj.ru^
 ||vildayphentsa.ru^
 ||sinboda.ru^
+||promaber.ru^
+||ritiguze.ru^
+||vbvqwrj.ru^
+||emkjysvush.ru^
+||faifranverpaiplet.ru^
+||ilomtaraposc.ru^
+||backbatennwhittcica.ru^
+||wordrasamcomplove.ru^
+||punccalgestrinasacon.ru^
+||ivkbmxlh.ru^
+||almamsawalgglosarap.ru^
+||unpabvaperhelpnavicare.ru^
+||goldsteelinear.ru^
+||northnalogtio.ru^
+||kerpbirthnoncomarri.ru^
+||pharrunsfa.ru^
+||precamthasciserbemen.ru^
+||ygwzzxpucae.ru^
+||lumuscter.ru^
+||erpocagastfelere.ru^
+||nqcvfw.ru^
+||harzato.ru^
+||porrolupoharpacor.ru^
+||postsunsteacamrelad.ru^
+||chrisbadilyppgens.ru^
+||xbzxh.ru^
+||anothiraticune.ru^
+||adbloktivifast.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -927,7 +956,8 @@
 ! tillaan.cyou^
 ||tillaan.*^
 ! tillaan.cfd^
-||wingand.cfd^
+||wingand.*^
+! wingand.cfd^
 ||schpppe.sbs^
 ||langwortr.top^
 ||barrowr.sbs^
@@ -949,6 +979,11 @@
 ||huttat.click^
 ||tesclo.click^
 ||izathi.click^
+||cukoneu.click^
+||dookins.click^
+||cumilp.click^
+||sotivet.click^
+||senara.click^
 !
 ! --
 ||*-sg.callback.cloudses.com^
@@ -959,9 +994,14 @@
 ||100percentopenrate-int.com^
 ||pantydownbet.com^
 ||rodartorial.com^
+||alamojapan.com^
+||zenerl.com^
+||slysif.com^
+||guellit.com^
 ! -
 ||aartaid.com^
 ||utocoman.com^
+||nudosma.xyz^
 ! -
 ||xattract.com^
 ! --

@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.8.6-R
-! TimeUpdated: 2024-12-10T17:25:00+00:00
+! Version: 0.8.8-R
+! TimeUpdated: 2024-12-10T17:45:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -591,6 +591,8 @@
 ||desport.ru/api/get-ip-adress/get-ip-adress^$xhr,domain=desport.ru
 ||simbad.pro^
 ||desport.ru/js/webim.js^$script,domain=desport.ru
+||pw.nexusmods.com/js/container_aHn6giK8.js^$script,domain=nexusmods.com
+||nexusmods.com/Contents/Scripts/crazyad.js$script,domain=nexusmods.com
 !
 !
 !
@@ -1950,6 +1952,34 @@ desport.ru##div[class*="WebimButton"]
 ||kjomj.ru^
 ||vildayphentsa.ru^
 ||sinboda.ru^
+||promaber.ru^
+||ritiguze.ru^
+||vbvqwrj.ru^
+||emkjysvush.ru^
+||faifranverpaiplet.ru^
+||ilomtaraposc.ru^
+||backbatennwhittcica.ru^
+||wordrasamcomplove.ru^
+||punccalgestrinasacon.ru^
+||ivkbmxlh.ru^
+||almamsawalgglosarap.ru^
+||unpabvaperhelpnavicare.ru^
+||goldsteelinear.ru^
+||northnalogtio.ru^
+||kerpbirthnoncomarri.ru^
+||pharrunsfa.ru^
+||precamthasciserbemen.ru^
+||ygwzzxpucae.ru^
+||lumuscter.ru^
+||erpocagastfelere.ru^
+||nqcvfw.ru^
+||harzato.ru^
+||porrolupoharpacor.ru^
+||postsunsteacamrelad.ru^
+||chrisbadilyppgens.ru^
+||xbzxh.ru^
+||anothiraticune.ru^
+||adbloktivifast.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -1964,7 +1994,8 @@ desport.ru##div[class*="WebimButton"]
 ! tillaan.cyou^
 ||tillaan.*^
 ! tillaan.cfd^
-||wingand.cfd^
+||wingand.*^
+! wingand.cfd^
 ||schpppe.sbs^
 ||langwortr.top^
 ||barrowr.sbs^
@@ -1986,6 +2017,11 @@ desport.ru##div[class*="WebimButton"]
 ||huttat.click^
 ||tesclo.click^
 ||izathi.click^
+||cukoneu.click^
+||dookins.click^
+||cumilp.click^
+||sotivet.click^
+||senara.click^
 !
 ! --
 ||*-sg.callback.cloudses.com^
@@ -1996,9 +2032,14 @@ desport.ru##div[class*="WebimButton"]
 ||100percentopenrate-int.com^
 ||pantydownbet.com^
 ||rodartorial.com^
+||alamojapan.com^
+||zenerl.com^
+||slysif.com^
+||guellit.com^
 ! -
 ||aartaid.com^
 ||utocoman.com^
+||nudosma.xyz^
 ! -
 ||xattract.com^
 ! --
