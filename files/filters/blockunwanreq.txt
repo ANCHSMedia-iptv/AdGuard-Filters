@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.9.3-R
-! TimeUpdated: 2024-12-13T18:40:00+00:00
+! Version: 0.9.4-R
+! TimeUpdated: 2024-12-13T18:42:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2049,6 +2049,7 @@ mywot.com##div[class="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__
 ||amunguefe.ru^
 ||thaibuttre.ru^
 ||sunochmacu.ru^
+||precamthasciserbemen.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -2145,6 +2146,7 @@ mywot.com##div[class="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__
 ||onticei.xyz^
 ||tipture.space^
 ||hookupmadeeasy.com^
+||connecthookup.com/campaigns
 ! -
 ||xattract.com^
 ||xn3j2k.com^
