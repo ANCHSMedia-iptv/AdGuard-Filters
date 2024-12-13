@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.8.8-R
-! TimeUpdated: 2024-12-11T17:45:00+00:00
+! Version: 0.9.1-R
+! TimeUpdated: 2024-12-13T14:45:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -593,6 +593,8 @@
 ||desport.ru/js/webim.js^$script,domain=desport.ru
 ||pw.nexusmods.com/js/container_aHn6giK8.js^$script,domain=nexusmods.com
 ||nexusmods.com/Contents/Scripts/crazyad.js$script,domain=nexusmods.com
+||superapteka.ru/api/metric/$xhr,domain=superapteka.ru
+||outsidethebox.ms/blog/wp-content/uploads/blog-images/tg-logo-48.png^$image,domain=outsidethebox.ms
 !
 !
 !
@@ -1150,6 +1152,7 @@ easylauncher.org##div[class="widget"]
 richfamily.ru##div[id^="notification"]
 desport.ru##div[class*="Cookies_cookie"]
 desport.ru##div[class*="WebimButton"]
+outsidethebox.ms##div.site-container:first-child > div.site-inner:nth-child(2) > div.wrap > div.content-sidebar-wrap > main.content:first-child > section.author-box.tg-box:nth-child(7)
 !
 !
 !
@@ -1980,6 +1983,61 @@ desport.ru##div[class*="WebimButton"]
 ||xbzxh.ru^
 ||anothiraticune.ru^
 ||adbloktivifast.ru^
+||bnvcnm.ru^
+||velbogyschechar.ru^
+||tempsacaterfa.ru^
+||akcogzqozocv.ru^
+||prechfootppapasugina.ru^
+||amadmanringveglo.ru^
+||besttingpres.ru^
+||chautranisunubedpes.ru^
+||tiolarwinksandskinalpran.ru^
+||adizelevatres.ru^
+||lzuaiiuljkf.ru^
+||learnramsgavis.ru^
+||nivinsorjustmitta.ru^
+||downtocalvansvadile.ru^
+||goskulisu.ru^
+||plumodinafderleadowngime.ru^
+||spoksingmispnel.ru^
+||kaisusvtter.ru^
+||diokirslordglenmedentha.ru^
+||cairisinendconferea.ru^
+||hqqfnsgsn.ru^
+||dinehartsund.ru^
+||psychadden.ru^
+||creedhedifmicic.ru^
+||lantichir.ru^
+||resmepost.ru^
+||corhealthmajump.ru^
+||nalterslotipgaiders.ru^
+||subnewsmalttowocon.ru^
+||utacqsip.ru^
+||ritabtebackrofor.ru^
+||weisalerectle.ru^
+||temhotolto.ru^
+||jlbqk.ru^
+||resnagestdeskminsfamesgingcryp.ru^
+||odviomanotesttrodpors.ru^
+||virrdalcilecaldutili.ru^
+||lydoni.ru^
+||unazba.ru^
+||sosunthepalafunkcrun.ru^
+||bracustrogogbal.ru^
+||acalacasleg.ru^
+||ceigarpe.ru^
+||lieworlporpahercpatti.ru^
+||ebrule.ru^
+||schadeawusarro.ru^
+||erenmansa.ru^
+||neailynchtran.ru^
+||flakininosrimidbald.ru^
+||wirkroomworthlismedis.ru^
+||neygeililigacaplu.ru^
+||drunwoodssingpertponihap.ru^
+||apkachewipo.ru^
+||camirestreba.ru^
+||asellydest.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -1996,7 +2054,8 @@ desport.ru##div[class*="WebimButton"]
 ! tillaan.cfd^
 ||wingand.*^
 ! wingand.cfd^
-||schpppe.sbs^
+||schpppe.*^
+! schpppe.sbs^
 ||langwortr.top^
 ||barrowr.sbs^
 ||eodkiewicz.*^
@@ -2010,6 +2069,7 @@ desport.ru##div[class*="WebimButton"]
 ! barrowr.sbs^
 ||cndricka.rest^
 ||ononner.top^
+||aaocha.cfd^
 ! -
 ||schulist.click^
 ||dolyst.click^
@@ -2022,9 +2082,21 @@ desport.ru##div[class*="WebimButton"]
 ||cumilp.click^
 ||sotivet.click^
 ||senara.click^
+||quenta.click^
+||rustro.click^
+||oocons.click^
+||fasiand.click^
+||menduce.click^
+||nistyp.click^
+||exorpol.click^
+||unject.click^
+||ablebr.click^
+||ossica.click^
+||aluant.click^
 !
 ! --
-||*-sg.callback.cloudses.com^
+||*-sg.callback.cloudses.com/campaigns
+||*-sg.callback.cloudses.com/api/webhook?
 ||wewlep.com^
 ||escplad.com^
 ||greatdeposit.com^
@@ -2036,12 +2108,35 @@ desport.ru##div[class*="WebimButton"]
 ||zenerl.com^
 ||slysif.com^
 ||guellit.com^
+||bevolis.com^
+||quickcupidweb.com^
 ! -
 ||aartaid.com^
 ||utocoman.com^
 ||nudosma.xyz^
+||tofersp.space^
+||podaxt.com^
+||edgecooker.com^
+||cosmiccovejourneys.com^
+||enchantedmysticpaths.com^
+||blissfulechojourneys.com^
+||serendipityrealmtrails.com^
+||mojecti.com^
+||byyy.org^
+||hzzz.org^
+||arumism.com^
+||phtfula.space^
+||husphewo.com^
+||funomin.com^
+||turixia.com^
+||ickcrai.com^
+||spodate.space^
+||onticei.xyz^
+||tipture.space^
+||hookupmadeeasy.com^
 ! -
 ||xattract.com^
+||xn3j2k.com^
 ! --
 !
 !

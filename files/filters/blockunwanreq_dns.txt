@@ -399,6 +399,9 @@
 ||counter.megagroup.ru^$important
 ||simbad.pro^
 ||public.profitwell.com^
+||track.segmentstream.com^$important
+||analytics.a-plus.ru^$important
+||artfut.com^$important
 !
 !
 !
@@ -942,6 +945,61 @@
 ||xbzxh.ru^
 ||anothiraticune.ru^
 ||adbloktivifast.ru^
+||bnvcnm.ru^
+||velbogyschechar.ru^
+||tempsacaterfa.ru^
+||akcogzqozocv.ru^
+||prechfootppapasugina.ru^
+||amadmanringveglo.ru^
+||besttingpres.ru^
+||chautranisunubedpes.ru^
+||tiolarwinksandskinalpran.ru^
+||adizelevatres.ru^
+||lzuaiiuljkf.ru^
+||learnramsgavis.ru^
+||nivinsorjustmitta.ru^
+||downtocalvansvadile.ru^
+||goskulisu.ru^
+||plumodinafderleadowngime.ru^
+||spoksingmispnel.ru^
+||kaisusvtter.ru^
+||diokirslordglenmedentha.ru^
+||cairisinendconferea.ru^
+||hqqfnsgsn.ru^
+||dinehartsund.ru^
+||psychadden.ru^
+||creedhedifmicic.ru^
+||lantichir.ru^
+||resmepost.ru^
+||corhealthmajump.ru^
+||nalterslotipgaiders.ru^
+||subnewsmalttowocon.ru^
+||utacqsip.ru^
+||ritabtebackrofor.ru^
+||weisalerectle.ru^
+||temhotolto.ru^
+||jlbqk.ru^
+||resnagestdeskminsfamesgingcryp.ru^
+||odviomanotesttrodpors.ru^
+||virrdalcilecaldutili.ru^
+||lydoni.ru^
+||unazba.ru^
+||sosunthepalafunkcrun.ru^
+||bracustrogogbal.ru^
+||acalacasleg.ru^
+||ceigarpe.ru^
+||lieworlporpahercpatti.ru^
+||ebrule.ru^
+||schadeawusarro.ru^
+||erenmansa.ru^
+||neailynchtran.ru^
+||flakininosrimidbald.ru^
+||wirkroomworthlismedis.ru^
+||neygeililigacaplu.ru^
+||drunwoodssingpertponihap.ru^
+||apkachewipo.ru^
+||camirestreba.ru^
+||asellydest.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -958,7 +1016,8 @@
 ! tillaan.cfd^
 ||wingand.*^
 ! wingand.cfd^
-||schpppe.sbs^
+||schpppe.*^
+! schpppe.sbs^
 ||langwortr.top^
 ||barrowr.sbs^
 ||eodkiewicz.*^
@@ -972,6 +1031,7 @@
 ! barrowr.sbs^
 ||cndricka.rest^
 ||ononner.top^
+||aaocha.cfd^
 ! -
 ||schulist.click^
 ||dolyst.click^
@@ -984,9 +1044,21 @@
 ||cumilp.click^
 ||sotivet.click^
 ||senara.click^
+||quenta.click^
+||rustro.click^
+||oocons.click^
+||fasiand.click^
+||menduce.click^
+||nistyp.click^
+||exorpol.click^
+||unject.click^
+||ablebr.click^
+||ossica.click^
+||aluant.click^
 !
 ! --
-||*-sg.callback.cloudses.com^
+||*-sg.callback.cloudses.com/campaigns
+||*-sg.callback.cloudses.com/api/webhook?
 ||wewlep.com^
 ||escplad.com^
 ||greatdeposit.com^
@@ -998,12 +1070,35 @@
 ||zenerl.com^
 ||slysif.com^
 ||guellit.com^
+||bevolis.com^
+||quickcupidweb.com^
 ! -
 ||aartaid.com^
 ||utocoman.com^
 ||nudosma.xyz^
+||tofersp.space^
+||podaxt.com^
+||edgecooker.com^
+||cosmiccovejourneys.com^
+||enchantedmysticpaths.com^
+||blissfulechojourneys.com^
+||serendipityrealmtrails.com^
+||mojecti.com^
+||byyy.org^
+||hzzz.org^
+||arumism.com^
+||phtfula.space^
+||husphewo.com^
+||funomin.com^
+||turixia.com^
+||ickcrai.com^
+||spodate.space^
+||onticei.xyz^
+||tipture.space^
+||hookupmadeeasy.com^
 ! -
 ||xattract.com^
+||xn3j2k.com^
 ! --
 !
 !
