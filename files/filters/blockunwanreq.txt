@@ -596,6 +596,7 @@
 ||superapteka.ru/api/metric/$xhr,domain=superapteka.ru
 ||outsidethebox.ms/blog/wp-content/uploads/blog-images/tg-logo-48.png^$image,domain=outsidethebox.ms
 ||app.mywot.com/api/analytics/event^$xhr,domain=mywot.com
+||*/revo/config/config.php^$xhr
 !
 !
 !
