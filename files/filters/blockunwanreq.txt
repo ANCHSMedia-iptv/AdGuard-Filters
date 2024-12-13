@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.9.2-R
-! TimeUpdated: 2024-12-13T18:20:00+00:00
+! Version: 0.9.3-R
+! TimeUpdated: 2024-12-13T18:40:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -595,6 +595,7 @@
 ||nexusmods.com/Contents/Scripts/crazyad.js$script,domain=nexusmods.com
 ||superapteka.ru/api/metric/$xhr,domain=superapteka.ru
 ||outsidethebox.ms/blog/wp-content/uploads/blog-images/tg-logo-48.png^$image,domain=outsidethebox.ms
+||app.mywot.com/api/analytics/event^$xhr,domain=mywot.com
 !
 !
 !
@@ -880,21 +881,21 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 !
 !
 ! == "Superfluous garbage" from the website (personal cabinet) of T-Bank (ex. Tinkoff). ==
-! == «Лишний мусор» с сайта (личного кабинета) Т-Банка (ex. Тинькофф). ==
+! == «Лишний мусор» с сайта (личного кабинета) Т-Банка (ex. Тинькофф). + сервисов самого банка и журнала Т-Ж (journal .tinkoff .ru) ==
 !
-||tbank.ru/api/front/*^$xhr,domain=tbank.ru
-||*tinkoff.ru/gateway/v*/event*^$ping,xhr,domain=tbank.ru
-! tbank.ru/api/front/supreme-beer/*^$xhr,domain=tbank.ru
-||tmsg.tbank.ru/api/v*/log^$ping,xhr,domain=tbank.ru
-||acdn.tinkoff.ru/resources?name=analytics_config^$xhr,domain=tbank.ru
-||*/tracking/mappings/test/active-mapping.json^$script,xhr,domain=tbank.ru
-||tbank.ru/api/cfg/web-gateway/getResponse^$xhr,domain=tbank.ru
-||cfg.tinkoff.ru/api-gateway/v*/getToggles^$xhr,domain=tbank.ru
-||tbank.ru/api/front/*^$xhr,domain=tbank.ru
-||acdn.tinkoff.ru/twa/hosted-libs/top-mail/v*/code.js^$script,domain=tbank.ru
-||acdn.tinkoff.ru/twa/hosted-libs/target-ads/v*/targetads-sdk-*.js^$script,domain=tbank.ru
-||acdn.tinkoff.ru/twa/ad-hoc/pixel-iframe/index.html^$domain=tbank.ru
-||acdn.tinkoff.ru/twa/hosted-libs/vk/v*/openapi.js*^$script,domain=tbank.ru
+||tbank.ru/api/front/*^$xhr,domain=tbank.ru|tinkoff.ru
+||*tinkoff.ru/gateway/v*/event*^$ping,xhr,domain=tbank.ru|tinkoff.ru
+! tbank.ru/api/front/supreme-beer/*^$xhr,domain=tbank.ru|tinkoff.ru
+||tmsg.tbank.ru/api/v*/log^$ping,xhr,domain=tbank.ru|tinkoff.ru
+||acdn.tinkoff.ru/resources?name=analytics_config^$xhr,domain=tbank.ru|tinkoff.ru
+||*/tracking/mappings/test/active-mapping.json^$script,xhr,domain=tbank.ru|tinkoff.ru
+||tbank.ru/api/cfg/web-gateway/getResponse^$xhr,domain=tbank.ru|tinkoff.ru
+||cfg.*.ru/api-gateway/v*/getToggles^$xhr,domain=tbank.ru|tinkoff.ru
+||tbank.ru/api/front/*^$xhr,domain=tbank.ru|tinkoff.ru
+||acdn.tinkoff.ru/twa/hosted-libs/top-mail/v*/code.js^$script,domain=tbank.ru|tinkoff.ru
+||acdn.tinkoff.ru/twa/hosted-libs/target-ads/v*/targetads-sdk-*.js^$script,domain=tbank.ru|tinkoff.ru
+||acdn.tinkoff.ru/twa/ad-hoc/pixel-iframe/index.html^$domain=tbank.ru|tinkoff.ru
+||acdn.tinkoff.ru/twa/hosted-libs/vk/v*/openapi.js*^$script,domain=tbank.ru|tinkoff.ru
 !
 ! ===
 !
@@ -1153,6 +1154,11 @@ richfamily.ru##div[id^="notification"]
 desport.ru##div[class*="Cookies_cookie"]
 desport.ru##div[class*="WebimButton"]
 outsidethebox.ms##div.site-container:first-child > div.site-inner:nth-child(2) > div.wrap > div.content-sidebar-wrap > main.content:first-child > section.author-box.tg-box:nth-child(7)
+info.agt72.ru##dialog[class="popup"]
+journal.tinkoff.ru##div[class^="_wrapper_d7xut_4"][data-with-emoji="false"]
+journal.tinkoff.ru##div[class="_subscription_1qfgu_16"]
+mywot.com##div[class="StyledUtils__FlexColumn-sc-14r66vj-1 StyledScorecard__SideBarContainer-sc-1id9k6z-1 jMQSPi"]
+mywot.com##div[class="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__InstallButtonContainerRow-sc-jubsjz-3 chPpOm"]
 !
 !
 !
@@ -2040,6 +2046,9 @@ outsidethebox.ms##div.site-container:first-child > div.site-inner:nth-child(2) >
 ||asellydest.ru^
 ||nihydtaocasi.ru^
 ||lantrerenlimenhutan.ru^
+||amunguefe.ru^
+||thaibuttre.ru^
+||sunochmacu.ru^
 !
 ! --
 ||mlnsprofiles.cc^
