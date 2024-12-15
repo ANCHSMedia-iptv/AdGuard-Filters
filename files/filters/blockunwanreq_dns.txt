@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.9.4-R
+! Version: 0.9.7-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-13T18:42:00+00:00
+! TimeUpdated: 2024-12-15T16:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 13.12.2024 18:42 UTC
+! Last Modified: 15.12.2024 16:30 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -402,6 +402,7 @@
 ||track.segmentstream.com^$important
 ||analytics.a-plus.ru^$important
 ||artfut.com^$important
+||newrotatormarch23.bid^$important
 !
 !
 !
@@ -477,6 +478,7 @@
 ||*sf-helper.com^
 ||*analytics-toolbar*^
 ||*analytics.faregy.com^
+||analytics.1clickvpn.com^
 !
 !
 !
@@ -1006,9 +1008,83 @@
 ||thaibuttre.ru^
 ||sunochmacu.ru^
 ||precamthasciserbemen.ru^
+||lrfbsndhgqrz.ru^
+||pasnacegilesla.ru^
+||tanage.ru^
+||chatxtonights.com^
+||snapbertca.ru^
+||tioforhi.ru^
+||feaegddh.ru^
+||conlabika.ru^
+||ekjqh.ru^
+||ualsatpesi.ru^
+||blocodbreachinin.ru^
+||jubjgj.ru^
+||arfussurpbaga.ru^
+||tripcomrevecykilli.ru^
+||macuvertattbulami.ru^
+||sxrxjvpnol.ru^
+||bioresrobibovelsaa.ru^
+||seytatufib.ru^
+||atnoarazy.ru^
+||hitchgoldfolkpidyparlabe.ru^
+||perchitisekidite.ru^
+||necsoher.ru^
+||enwronemarinprof.ru^
+||lunqosuzsgx.ru^
+||neugodepilswebs.ru^
+||magdunnlisfanutlynn.ru^
+||wmxqcvone.ru^
+||cbkgd.ru^
+||eastigweaberchothou.ru^
+||cociporque.ru^
+||hlzizngjnpkqt.ru^
+||kapesol.ru^
+||malneramma.ru^
+||hcrpldwqys.ru^
+||reimalrabinenri.ru^
+||boggrimencedeckrepisve.ru^
+||rburathnocesre.ru^
+||eascamlotoomoti.ru^
+||nguritceredetmeo.ru^
+||ruethoughmaleterneu.ru^
+||carnewpgawethecom.ru^
+||diepredeninra.ru^
+||buhyifvprrq.ru^
+||progubinroa.ru^
+||alhtqubknsce.ru^
+||shaafzrfd.ru^
+||transubcatherssemb.ru^
+||dwelabma.ru^
+||erreirachicesciatleb.ru>^
+||chlagmiccuman.ru^
+||fivdims.ru^
+||sleavamhogypbimulnuall.ru^
+||kersxykerdujehoha.ru^
+||glesunhouter.ru^
+||sculunpalitoless.ru^
+||readivipocompcor.ru^
+||racecaquat.ru^
+||nyaprogserrelosback.ru^
+||sandbursovatoncutth.ru^
+||drivmaropikamva.ru^
+||rarevamur.ru^
+||rochanglegagcongwerkcaciti.ru^
+||pregbucktensosiberse.ru^
+||xsudesipgb.ru^
 !
 ! --
 ||mlnsprofiles.cc^
+! - Phishing
+||dateflng.com^
+||loosechicksgh7e.com^
+||lonalamimerk.biz^
+||joysmarranebenspicon.biz^
+!
+! - Contains virus
+||beamingdate.net^
+!
+||xerualsrak.biz^
 ! --
 !
 ||jenkinj.*^
@@ -1025,12 +1101,14 @@
 ||schpppe.*^
 ! schpppe.sbs^
 ||langwortr.top^
-||barrowr.sbs^
+||barrowr.*^
+! barrowr.sbs^
 ||eodkiewicz.*^
 ! eodkiewicz.cfd^
 ||predovio.*^
 ! predovio.sbs^
-||schimcel.cfd^
+||schimcel.*^
+! schimcel.cfd^
 ||paaocha.cfd^
 ||steeber.cfd^
 ||barrowr.*^
@@ -1061,6 +1139,13 @@
 ||ablebr.click^
 ||ossica.click^
 ||aluant.click^
+||hazocy.click^
+||oofultr.click^
+||jumenul.click^
+||helastc.click^
+||netoodi.click^
+||unistel.click^
+||menduce.click^
 !
 ! --
 ||*-sg.callback.cloudses.com^
@@ -1103,6 +1188,16 @@
 ||tipture.space^
 ||hookupmadeeasy.com^
 ||connecthookup.com^
+|urgative.com^
+||fastmailerwizz.com^
+||microtone.org^
+||orangeinnjoy.com^
+||visitrunner.com^
+||arviona.com^
+||fantasy-night.com^
+||pomimet.com^
+||itiseasy.org^
+||lemonads.org^
 ! -
 ||xattract.com^
 ||xn3j2k.com^

@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.9.4-R
-! TimeUpdated: 2024-12-13T18:42:00+00:00
+! Version: 0.9.7-R
+! TimeUpdated: 2024-12-15T16:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -597,6 +597,8 @@
 ||outsidethebox.ms/blog/wp-content/uploads/blog-images/tg-logo-48.png^$image,domain=outsidethebox.ms
 ||app.mywot.com/api/analytics/event^$xhr,domain=mywot.com
 ||*/revo/config/config.php^$xhr
+||bankinform.ru/img/dummy1.png^$image,domain=bankinform.ru
+||firefox-api-proxy.cdn.mozilla.net/*/*/recommendations
 !
 !
 !
@@ -1138,7 +1140,7 @@ apkpure.net,apkpure.com##a[class*="telegram-btn"]
 apkpure.net##main.main-container:nth-child(2) > div.home-main-container.auto-container:nth-child(2) > div.module-card-container.dt-hot-topics:nth-child(6)
 apkpure.com##div[class="social-network"]
 mynickname.com##a[class="btn nft"]
-open.ru##div[class^="CookieWarning"]
+##div[class^="CookieWarning"]
 tochka.com##div[class^="footer_subscription"]
 mtsbank.ru##div[class^="styled__Wrapper-sc-37ac7ba-0 hhBONQ"]
 mtsbank.ru##div[class^="styled__Wrapper-sc-67d955a5-0 ezVDaK"]
@@ -1160,6 +1162,9 @@ journal.tinkoff.ru##div[class^="_wrapper_d7xut_4"][data-with-emoji="false"]
 journal.tinkoff.ru##div[class="_subscription_1qfgu_16"]
 mywot.com##div[class="StyledUtils__FlexColumn-sc-14r66vj-1 StyledScorecard__SideBarContainer-sc-1id9k6z-1 jMQSPi"]
 mywot.com##div[class="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__InstallButtonContainerRow-sc-jubsjz-3 chPpOm"]
+proza.ru###footer > table:nth-child(2)
+bankinform.ru##div[class^="d-flex gap-3 flex-wrap align-content-center page_block fs-14 "]
+rsload.net##div[class="tgwrap"]
 !
 !
 !
@@ -1308,6 +1313,7 @@ mywot.com##div[class="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__
 ||*sf-helper.com^$important
 ||*analytics-toolbar*^$important
 ||*analytics.faregy.com^$important
+||analytics.1clickvpn.com^
 ! =
 !
 !
@@ -1662,7 +1668,7 @@ mywot.com##div[class="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__
 !
 ! - Contains virus
 ||datehiker.com^
-!
+! -
 !
 ||exatstoug.ru^
 ||cudddenane.ru^
@@ -2051,9 +2057,83 @@ mywot.com##div[class="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__
 ||thaibuttre.ru^
 ||sunochmacu.ru^
 ||precamthasciserbemen.ru^
+||lrfbsndhgqrz.ru^
+||pasnacegilesla.ru^
+||tanage.ru^
+||chatxtonights.com^
+||snapbertca.ru^
+||tioforhi.ru^
+||feaegddh.ru^
+||conlabika.ru^
+||ekjqh.ru^
+||ualsatpesi.ru^
+||blocodbreachinin.ru^
+||jubjgj.ru^
+||arfussurpbaga.ru^
+||tripcomrevecykilli.ru^
+||macuvertattbulami.ru^
+||sxrxjvpnol.ru^
+||bioresrobibovelsaa.ru^
+||seytatufib.ru^
+||atnoarazy.ru^
+||hitchgoldfolkpidyparlabe.ru^
+||perchitisekidite.ru^
+||necsoher.ru^
+||enwronemarinprof.ru^
+||lunqosuzsgx.ru^
+||neugodepilswebs.ru^
+||magdunnlisfanutlynn.ru^
+||wmxqcvone.ru^
+||cbkgd.ru^
+||eastigweaberchothou.ru^
+||cociporque.ru^
+||hlzizngjnpkqt.ru^
+||kapesol.ru^
+||malneramma.ru^
+||hcrpldwqys.ru^
+||reimalrabinenri.ru^
+||boggrimencedeckrepisve.ru^
+||rburathnocesre.ru^
+||eascamlotoomoti.ru^
+||nguritceredetmeo.ru^
+||ruethoughmaleterneu.ru^
+||carnewpgawethecom.ru^
+||diepredeninra.ru^
+||buhyifvprrq.ru^
+||progubinroa.ru^
+||alhtqubknsce.ru^
+||shaafzrfd.ru^
+||transubcatherssemb.ru^
+||dwelabma.ru^
+||erreirachicesciatleb.ru>^
+||chlagmiccuman.ru^
+||fivdims.ru^
+||sleavamhogypbimulnuall.ru^
+||kersxykerdujehoha.ru^
+||glesunhouter.ru^
+||sculunpalitoless.ru^
+||readivipocompcor.ru^
+||racecaquat.ru^
+||nyaprogserrelosback.ru^
+||sandbursovatoncutth.ru^
+||drivmaropikamva.ru^
+||rarevamur.ru^
+||rochanglegagcongwerkcaciti.ru^
+||pregbucktensosiberse.ru^
+||xsudesipgb.ru^
 !
 ! --
 ||mlnsprofiles.cc^
+! - Phishing
+||dateflng.com^
+||loosechicksgh7e.com^
+||lonalamimerk.biz^
+||joysmarranebenspicon.biz^
+!
+! - Contains virus
+||beamingdate.net^
+!
+||xerualsrak.biz^
 ! --
 !
 ||jenkinj.*^
@@ -2070,12 +2150,14 @@ mywot.com##div[class="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__
 ||schpppe.*^
 ! schpppe.sbs^
 ||langwortr.top^
-||barrowr.sbs^
+||barrowr.*^
+! barrowr.sbs^
 ||eodkiewicz.*^
 ! eodkiewicz.cfd^
 ||predovio.*^
 ! predovio.sbs^
-||schimcel.cfd^
+||schimcel.*^
+! schimcel.cfd^
 ||paaocha.cfd^
 ||steeber.cfd^
 ||barrowr.*^
@@ -2106,6 +2188,13 @@ mywot.com##div[class="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__
 ||ablebr.click^
 ||ossica.click^
 ||aluant.click^
+||hazocy.click^
+||oofultr.click^
+||jumenul.click^
+||helastc.click^
+||netoodi.click^
+||unistel.click^
+||menduce.click^
 !
 ! --
 ||*-sg.callback.cloudses.com/campaigns
@@ -2123,6 +2212,7 @@ mywot.com##div[class="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__
 ||guellit.com^
 ||bevolis.com^
 ||quickcupidweb.com^
+||coincast.org^
 ! -
 ||aartaid.com^
 ||utocoman.com^
@@ -2148,6 +2238,16 @@ mywot.com##div[class="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__
 ||tipture.space^
 ||hookupmadeeasy.com^
 ||connecthookup.com/campaigns
+||urgative.com^
+||fastmailerwizz.com^
+||microtone.org^
+||orangeinnjoy.com^
+||visitrunner.com^
+||arviona.com^
+||fantasy-night.com^
+||pomimet.com^
+||itiseasy.org^
+||lemonads.org^
 ! -
 ||xattract.com^
 ||xn3j2k.com^
