@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 0.9.8-R
+! Version: 0.9.9-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-15T18:10:00+00:00
+! TimeUpdated: 2024-12-16T07:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 15.12.2024 18:10 UTC
+! Last Modified: 16.12.2024 07:20 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -1075,6 +1075,26 @@
 ||liebahquirescollcabe.ru^
 ||notagut.ru^
 ||bqvsdhl.ru^
+||proturbowwheelcpho.ru^
+||ezjxmbbmrdjn.ru^
+||flyzberje.ru^
+||alflasramentmis.ru^
+||sinsconputo.ru^
+||sumpcalciabraglunriffte.ru^
+||cilfundninophipergambsir.ru^
+||andilawarhykifi.ru^
+||reogerpowarc.ru^
+||complanostkerivdiecal.ru^
+||raicharlbical.ru^
+||rvorwwagk.ru^
+||beverfigopelinnau.ru^
+||jeoklasafpayter.ru^
+||egceceroxaho.ru^
+||snowerarmlerodin.ru^
+||tinriospormevitang.ru^
+||tiotipufncalhwagi.ru^
+||tribinerannirestwhel.ru^
+||mduhi.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -1092,7 +1112,8 @@
 !
 ||jenkinj.*^
 ! jenkinj.cfd^
-||eodkiewicz.sbs^
+||eodkiewicz.*^
+! eodkiewicz.cfd^
 ||rb.gy^
 ||steeber.*^
 ! steeber.cfd^
@@ -1106,13 +1127,11 @@
 ||langwortr.top^
 ||barrowr.*^
 ! barrowr.sbs^
-||eodkiewicz.*^
-! eodkiewicz.cfd^
 ||predovio.*^
 ! predovio.sbs^
 ||schimcel.*^
 ! schimcel.cfd^
-||paaocha.cfd^
+||paaocha.*^
 ||steeber.cfd^
 ||barrowr.*^
 ! barrowr.sbs^
@@ -1201,6 +1220,8 @@
 ||pomimet.com^
 ||itiseasy.org^
 ||lemonads.org^
+||jyyy.org^
+||yzzz.org^
 ! -
 ||xattract.com^
 ||xn3j2k.com^

@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.9.8-R
-! TimeUpdated: 2024-12-15T18:10:00+00:00
+! Version: 0.9.9-R
+! TimeUpdated: 2024-12-16T07:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1165,6 +1165,7 @@ mywot.com##div[class="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__
 proza.ru###footer > table:nth-child(2)
 bankinform.ru##div[class^="d-flex gap-3 flex-wrap align-content-center page_block fs-14 "]
 rsload.net##div[class="tgwrap"]
+5play.org##div[class="telegram-cdn-btn"]
 !
 !
 !
@@ -1667,7 +1668,7 @@ rsload.net##div[class="tgwrap"]
 ||guarwamocellitorcry.ru^
 ||thommaterhietrovpugg.ru^
 !
-! - Contains virus
+! - Contains virus + phishing
 ||datehiker.com^
 ! -
 !
@@ -2125,6 +2126,26 @@ rsload.net##div[class="tgwrap"]
 ||liebahquirescollcabe.ru^
 ||notagut.ru^
 ||bqvsdhl.ru^
+||proturbowwheelcpho.ru^
+||ezjxmbbmrdjn.ru^
+||flyzberje.ru^
+||alflasramentmis.ru^
+||sinsconputo.ru^
+||sumpcalciabraglunriffte.ru^
+||cilfundninophipergambsir.ru^
+||andilawarhykifi.ru^
+||reogerpowarc.ru^
+||complanostkerivdiecal.ru^
+||raicharlbical.ru^
+||rvorwwagk.ru^
+||beverfigopelinnau.ru^
+||jeoklasafpayter.ru^
+||egceceroxaho.ru^
+||snowerarmlerodin.ru^
+||tinriospormevitang.ru^
+||tiotipufncalhwagi.ru^
+||tribinerannirestwhel.ru^
+||mduhi.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -2134,7 +2155,7 @@ rsload.net##div[class="tgwrap"]
 ||lonalamimerk.biz^
 ||joysmarranebenspicon.biz^
 !
-! - Contains virus
+! - Contains virus + phishing
 ||beamingdate.net^
 !
 ||xerualsrak.biz^
@@ -2142,7 +2163,8 @@ rsload.net##div[class="tgwrap"]
 !
 ||jenkinj.*^
 ! jenkinj.cfd^
-||eodkiewicz.sbs^
+||eodkiewicz.*^
+! eodkiewicz.cfd^
 ||rb.gy^
 ||steeber.*^
 ! steeber.cfd^
@@ -2156,13 +2178,11 @@ rsload.net##div[class="tgwrap"]
 ||langwortr.top^
 ||barrowr.*^
 ! barrowr.sbs^
-||eodkiewicz.*^
-! eodkiewicz.cfd^
 ||predovio.*^
 ! predovio.sbs^
 ||schimcel.*^
 ! schimcel.cfd^
-||paaocha.cfd^
+||paaocha.*^
 ||steeber.cfd^
 ||barrowr.*^
 ! barrowr.sbs^
@@ -2252,6 +2272,8 @@ rsload.net##div[class="tgwrap"]
 ||pomimet.com^
 ||itiseasy.org^
 ||lemonads.org^
+||jyyy.org^
+||yzzz.org^
 ! -
 ||xattract.com^
 ||xn3j2k.com^
