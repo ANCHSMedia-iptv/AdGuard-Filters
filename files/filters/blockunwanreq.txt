@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 0.9.9-R
-! TimeUpdated: 2024-12-16T07:20:00+00:00
+! Version: 1.0.1-R
+! TimeUpdated: 2024-12-17T15:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2146,6 +2146,44 @@ rsload.net##div[class="tgwrap"]
 ||tiotipufncalhwagi.ru^
 ||tribinerannirestwhel.ru^
 ||mduhi.ru^
+||cadocane.ru^
+||extedmatchra.ru^
+||bdmilhlemwasm.ru^
+||inicalne.ru^
+||oezwhuq.ru^
+||raiprommezcsefenanachant.ru^
+||provonovikin.ru^
+||tobayduu.ru^
+||diatuwalmo.ru^
+||panstabar.ru^
+||vanirilibet.ru^
+||bausticthiforsynch.ru^
+||mondcebegoodceisearchmertua.ru^
+||adtanic.ru^
+||waulenbauta.ru^
+||hididerguzzboots.ru^
+||rzrza.ru^
+||rehodthacostsua.ru^
+||utdecunelchungnetsiper.ru^
+||eremedpofergiri.ru^
+||ebdiheartproptex.ru^
+||scurpaymyhandpukeelryaprin.ru^
+||repicmi.ru^
+||taradili.ru^
+||ivprosnaktauthirlle.ru^
+||pragamoltelpecon.ru^
+||newslongractnar.ru^
+||erconcomsrelomagpidd.ru^
+||delogenwea.ru^
+||trosadourbapo.ru^
+||necheadebpemoushumb.ru^
+||ruckpuprewipe.ru^
+||sunenacdenogocent.ru^
+||guisysnetf.ru^
+||dresloasimonrocall.ru^
+||haypeldest.ru^
+||lesssarfayperto.ru^
+||ltesinpasole.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -2274,6 +2312,7 @@ rsload.net##div[class="tgwrap"]
 ||lemonads.org^
 ||jyyy.org^
 ||yzzz.org^
+||kkky.org^
 ! -
 ||xattract.com^
 ||xn3j2k.com^
