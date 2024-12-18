@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 1.0.2-R
+! Version: 1.0.3-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-17T17:20:00+00:00
+! TimeUpdated: 2024-12-18T16:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 17.12.2024 17:20 UTC
+! Last Modified: 18.12.2024 16:20 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -1135,6 +1135,29 @@
 ||ltesinpasole.ru^
 ||bloomecurhodornigeartisi.ru^
 ||hgotbtt.ru^
+||tayprobporrotamafat.ru^
+||stilnewsa.ru^
+||blpbf.ru^
+||procormalala.ru^
+||worlplanatimlaphomar.ru^
+||siorieskiloporpolandpletin.ru^
+||sesusereacam.ru^
+||gopxle.ru^
+||ercilmomatpofama.ru^
+||edimquidenanro.ru^
+||ozsetmayclinitintade.ru^
+||uniztechdia.ru^
+||sungkesttiticountragite.ru^
+||nerscutsapp.ru^
+||perffolocrasearketkkeng.ru^
+||vacguirabackmandoli.ru^
+||teydemertotadea.ru^
+||comppentamonidelo.ru^
+||contpolesshaflo.ru^
+||camenmirosub.ru^
+||nauniewalreivahalme.ru^
+||chesnorsde.ru^
+||wimdototabrepuawhi.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -1262,6 +1285,9 @@
 ||lemonads.org^
 ||jyyy.org^
 ||yzzz.org^
+||sideview.org^
+||craigwubben.com^
+||sicsfandom.com^
 ! -
 ||xattract.com^
 ||xn3j2k.com^
