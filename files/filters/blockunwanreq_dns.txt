@@ -1169,7 +1169,7 @@
 ||lonalamimerk.biz^
 ||joysmarranebenspicon.biz^
 !
-! - Contains virus
+! - Contains virus + phishing
 ||beamingdate.net^
 !
 ||xerualsrak.biz^
@@ -1275,7 +1275,7 @@
 ||tipture.space^
 ||hookupmadeeasy.com^
 ||connecthookup.com^
-|urgative.com^
+||urgative.com^
 ||fastmailerwizz.com^
 ||microtone.org^
 ||orangeinnjoy.com^
@@ -1287,9 +1287,11 @@
 ||lemonads.org^
 ||jyyy.org^
 ||yzzz.org^
+||kkky.org^
 ||sideview.org^
 ||craigwubben.com^
 ||sicsfandom.com^
+||helendtkevink4704.xyz^
 ! -
 ||xattract.com^
 ||xn3j2k.com^

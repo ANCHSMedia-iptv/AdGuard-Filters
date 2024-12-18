@@ -2340,6 +2340,10 @@ rsload.net##div[class="tgwrap"]
 ||jyyy.org^
 ||yzzz.org^
 ||kkky.org^
+||sideview.org^
+||craigwubben.com^
+||sicsfandom.com^
+||helendtkevink4704.xyz^
 ! -
 ||xattract.com^
 ||xn3j2k.com^
