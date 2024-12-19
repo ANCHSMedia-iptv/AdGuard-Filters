@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 1.0.4-R
-! TimeUpdated: 2024-12-18T18:20:00+00:00
+! Version: 1.0.5-R
+! TimeUpdated: 2024-12-20T18:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -599,6 +599,7 @@
 ||*/revo/config/config.php^$xhr
 ||bankinform.ru/img/dummy1.png^$image,domain=bankinform.ru
 ||firefox-api-proxy.cdn.mozilla.net/*/*/recommendations
+||yota.ru/assets/images/banner-cookies.png^$image,domain=yota.ru
 !
 !
 !
@@ -633,6 +634,7 @@
 ! *4pda.to/s/*.gif*^$image,xhr,domain=4pda.to  (03.12.202 не грузятся иконки, скрытые изображения в один пиксель будут блокироваться отдельно)
 ||*4pda.to/s/j7790osz2tCgk6fYcxz2yqeM8NXMm.png^$image,domain=4pda.to
 ||*4pda.to/s/vIBCbXoJxOYy9Rr4CXbD5HkEyfQ.png^$image,domain=4pda.to
+||4pda.to/static/module/lytebox/images/blank.gif^$image,domain=4pda.to
 !
 @@||i.4pda.ws/s/*.jpg?v=*^$domain=4pda.to
 @@||*4pda.to/s/*.js?_=*^$domain=4pda.to
@@ -2211,6 +2213,38 @@ rsload.net##div[class="tgwrap"]
 ||wimdototabrepuawhi.ru^
 ||creepasstocperscons.ru^
 ||isulristingsubshard.ru^
+||sancharmburg.ru^
+||puncdustgusra.ru^
+||tranmismiesantli.ru^
+||draksanetsehelprape.ru^
+||esanunemto.ru^
+||obakulenasbo.ru^
+||kdbffcdpxc.ru^
+||derdusamortchildfapalo.ru^
+||afinwarcacur.ru^
+||cemathalisrewabmiwor.ru^
+||lieblogacamdotitipinde.ru^
+||sterthiogroovendebbio.ru^
+||prolconhaugedeaso.ru^
+||lanslinkco.ru^
+||dialicagipawste.ru^
+||tergsublelocountdexrijc.ru^
+||seicehuarawafwi.ru^
+||feemulandownbibcent.ru^
+||dtoctipemerdiscxa.ru^
+||venchestpaba.ru^
+||starpormixicesta.ru^
+||leticte.ru^
+||prewididsleevusuntam.ru^
+||inulecdisliabiavi.ru^
+||mapositralo.ru^
+||weideriddtyststubox.ru^
+||anrinxosamsmo.ru^
+||arweilogsurp.ru^
+||noifancie.ru^
+||datoranenifoot.ru^
+||tetifulgiostud.ru^
+||leowebstegealipor.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -2343,7 +2377,18 @@ rsload.net##div[class="tgwrap"]
 ||sideview.org^
 ||craigwubben.com^
 ||sicsfandom.com^
+||updateflew.com^
+!
 ||helendtkevink4704.xyz^
+||velvethorizon.xyz^
+||sunnyglimmer.xyz^
+||gracefulglimpses.xyz^
+||serenestories2.xyz^
+||*diaries.xyz^
+||gracefulwhispers.xyz^
+||rosepetaldreams.xyz^
+
+
 ! -
 ||xattract.com^
 ||xn3j2k.com^
