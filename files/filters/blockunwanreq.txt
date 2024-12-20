@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 1.0.5-R
-! TimeUpdated: 2024-12-19T18:20:00+00:00
+! Version: 1.0.6-R
+! TimeUpdated: 2024-12-20T15:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2246,6 +2246,28 @@ rsload.net##div[class="tgwrap"]
 ||tetifulgiostud.ru^
 ||leowebstegealipor.ru^
 ||liseesihilu.ru^
+||omurfreedcallribogammist.ru^
+||hurtgoken.ru^
+||bionilere.ru^
+||porrayhonaherdyorea.ru^
+||beudolsaremorttisen.ru^
+||tiogratga.ru^
+||krstnqm.ru^
+||premtangachansicontschelasvic.ru^
+||hocniheart.ru^
+||breafrikoboh.ru^
+||harvateveahyla.ru^
+||diconeappfinbapanva.ru^
+||ciagorifadetursu.ru^
+||omanrilmetztewers.ru^
+||comlisttem.ru^
+||justreelituscau.ru^
+||emagymagbrahistai.ru^
+||goonadisprinfperspopwhoa.ru^
+||piolpurdoub.ru^
+||inashisteneck.ru^
+||niaprinocjasvanisthe.ru^
+||hzsasc.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -2379,6 +2401,9 @@ rsload.net##div[class="tgwrap"]
 ||craigwubben.com^
 ||sicsfandom.com^
 ||updateflew.com^
+||uthehouse.com^
+||shokherstore.com^
+||endlety.com^
 !
 ||helendtkevink4704.xyz^
 ||velvethorizon.xyz^
@@ -2388,8 +2413,12 @@ rsload.net##div[class="tgwrap"]
 ||*diaries.xyz^
 ||gracefulwhispers.xyz^
 ||rosepetaldreams.xyz^
-
-
+||gracefulglimpses.xyz^
+||mysteriousglances.xyz^
+||intimateworld.xyz^
+||ameliasjourney.xyz^
+||blissfulechoes.xyz^
+||ameliasjourney.xyz^
 ! -
 ||xattract.com^
 ||xn3j2k.com^
