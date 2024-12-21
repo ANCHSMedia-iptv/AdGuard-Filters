@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 1.0.6-R
-! TimeUpdated: 2024-12-20T15:30:00+00:00
+! Version: 1.0.7-R
+! TimeUpdated: 2024-12-22T17:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -600,6 +600,7 @@
 ||bankinform.ru/img/dummy1.png^$image,domain=bankinform.ru
 ||firefox-api-proxy.cdn.mozilla.net/*/*/recommendations
 ||yota.ru/assets/images/banner-cookies.png^$image,domain=yota.ru
+||k.cackle.me/widget/*/count$xhr
 !
 !
 !
@@ -1168,6 +1169,7 @@ proza.ru###footer > table:nth-child(2)
 bankinform.ru##div[class^="d-flex gap-3 flex-wrap align-content-center page_block fs-14 "]
 rsload.net##div[class="tgwrap"]
 5play.org##div[class="telegram-cdn-btn"]
+onlinetrade.ru##div[class^="cookiePanel"]
 !
 !
 !
@@ -2268,6 +2270,35 @@ rsload.net##div[class="tgwrap"]
 ||inashisteneck.ru^
 ||niaprinocjasvanisthe.ru^
 ||hzsasc.ru^
+||breafrikoboh.ru^
+||poragesho.ru^
+||wavawil.ru^
+||qixknvce.ru^
+||contaboscastfosquicy.ru^
+||viegrunerhalsoping.ru^
+||subscachondlufulhame.ru^
+||icinturriagraspol.ru^
+||rehowfeze.ru^
+||terasatenjunk.ru^
+||lidodinontiwhe.ru^
+||inexithexar.ru^
+||epimalti.ru^
+||thrownocheckceaxisyscu.ru^
+||reitremar.ru^
+||zmozdbgcqfmvx.ru^
+||irtamra.ru^
+||cannichanriemenga.ru^
+||trekabranorthgranlaptio.ru^
+||moldpledelapazoxut.ru^
+||apombras.ru^
+||vymrlmstpvb.ru^
+||acacvedist.ru^
+||probneumosake.ru^
+||withcompcu.ru^
+||bluferliuvere.ru^
+||nieflatmendgotvpodidpha.ru^
+||linticalkai.ru^
+||tiotabko.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -2281,6 +2312,8 @@ rsload.net##div[class="tgwrap"]
 ||beamingdate.net^
 !
 ||xerualsrak.biz^
+||highheelsjenna.xyz^
+||123myoffer.club^
 ! --
 !
 ||jenkinj.*^
@@ -2385,7 +2418,7 @@ rsload.net##div[class="tgwrap"]
 ||hookupmadeeasy.com^
 ||connecthookup.com/campaigns
 ||urgative.com^
-||fastmailerwizz.com^
+! fastmailerwizz.com^
 ||microtone.org^
 ||orangeinnjoy.com^
 ||visitrunner.com^
@@ -2404,6 +2437,17 @@ rsload.net##div[class="tgwrap"]
 ||uthehouse.com^
 ||shokherstore.com^
 ||endlety.com^
+||wilnt.com^
+||dlscdn.com^
+||app.cloakerly.com/link.php
+||trafficbiz.site^
+||go-fr-dt.com^
+||sheneedstoblow.com^
+||awesomesiteever.site^
+||rawepcoffers.site^
+||clicktracking.site^
+||trdt.online^
+||trckopti.com^
 !
 ||helendtkevink4704.xyz^
 ||velvethorizon.xyz^
@@ -2419,6 +2463,9 @@ rsload.net##div[class="tgwrap"]
 ||ameliasjourney.xyz^
 ||blissfulechoes.xyz^
 ||ameliasjourney.xyz^
+||ladylikewisdom.xyz^
+||tendertouches.xyz^
+||eleganceexpressed.xyz^
 ! -
 ||xattract.com^
 ||xn3j2k.com^

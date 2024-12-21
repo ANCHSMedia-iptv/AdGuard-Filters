@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 1.0.6-R
+! Version: 1.0.7-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-20T15:30:00+00:00
+! TimeUpdated: 2024-12-22T17:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 20.12.2024 15:30 UTC
+! Last Modified: 22.12.2024 17:30 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -1215,6 +1215,35 @@
 ||inashisteneck.ru^
 ||niaprinocjasvanisthe.ru^
 ||hzsasc.ru^
+||breafrikoboh.ru^
+||poragesho.ru^
+||wavawil.ru^
+||qixknvce.ru^
+||contaboscastfosquicy.ru^
+||viegrunerhalsoping.ru^
+||subscachondlufulhame.ru^
+||icinturriagraspol.ru^
+||rehowfeze.ru^
+||terasatenjunk.ru^
+||lidodinontiwhe.ru^
+||inexithexar.ru^
+||epimalti.ru^
+||thrownocheckceaxisyscu.ru^
+||reitremar.ru^
+||zmozdbgcqfmvx.ru^
+||irtamra.ru^
+||cannichanriemenga.ru^
+||trekabranorthgranlaptio.ru^
+||moldpledelapazoxut.ru^
+||apombras.ru^
+||vymrlmstpvb.ru^
+||acacvedist.ru^
+||probneumosake.ru^
+||withcompcu.ru^
+||bluferliuvere.ru^
+||nieflatmendgotvpodidpha.ru^
+||linticalkai.ru^
+||tiotabko.ru^
 !
 ! --
 ||mlnsprofiles.cc^
@@ -1228,6 +1257,8 @@
 ||beamingdate.net^
 !
 ||xerualsrak.biz^
+||highheelsjenna.xyz^
+||123myoffer.club^
 ! --
 !
 ||jenkinj.*^
@@ -1331,7 +1362,7 @@
 ||hookupmadeeasy.com^
 ||connecthookup.com^
 ||urgative.com^
-||fastmailerwizz.com^
+! fastmailerwizz.com^
 ||microtone.org^
 ||orangeinnjoy.com^
 ||visitrunner.com^
@@ -1346,7 +1377,39 @@
 ||sideview.org^
 ||craigwubben.com^
 ||sicsfandom.com^
+||updateflew.com^
+||uthehouse.com^
+||shokherstore.com^
+||endlety.com^
+||wilnt.com^
+||dlscdn.com^
+||app.cloakerly.com/link.php
+||trafficbiz.site^
+||go-fr-dt.com^
+||sheneedstoblow.com^
+||awesomesiteever.site^
+||rawepcoffers.site^
+||clicktracking.site^
+||trdt.online^
+||trckopti.com^
+!
 ||helendtkevink4704.xyz^
+||velvethorizon.xyz^
+||sunnyglimmer.xyz^
+||gracefulglimpses.xyz^
+||serenestories2.xyz^
+||*diaries.xyz^
+||gracefulwhispers.xyz^
+||rosepetaldreams.xyz^
+||gracefulglimpses.xyz^
+||mysteriousglances.xyz^
+||intimateworld.xyz^
+||ameliasjourney.xyz^
+||blissfulechoes.xyz^
+||ameliasjourney.xyz^
+||ladylikewisdom.xyz^
+||tendertouches.xyz^
+||eleganceexpressed.xyz^
 ! -
 ||xattract.com^
 ||xn3j2k.com^
