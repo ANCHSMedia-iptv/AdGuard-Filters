@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 1.0.7-R
-! TimeUpdated: 2024-12-22T17:30:00+00:00
+! Version: 2.0.2-R
+! TimeUpdated: 2025-01-02T09:00:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -601,6 +601,10 @@
 ||firefox-api-proxy.cdn.mozilla.net/*/*/recommendations
 ||yota.ru/assets/images/banner-cookies.png^$image,domain=yota.ru
 ||k.cackle.me/widget/*/count$xhr
+||static-s.kinorium.com/img/blank100.png^$image,domain=kinorium.com
+||images.promokodi.net/iblock/*/*/promokod_yandex_puteshestviya.png^$image,domain=promokodi.net
+||res.cloudinary.com/admitad-gmbh/image/upload/f_auto/v1732718726/2d472d9dfad055168d11f98741a3fa14.png^$image,domain=promocodes.hi-tech.mail.ru
+||cs*.pikabu.ru/v*/event/*/couponViewed^$ping,domain=promokod.pikabu.ru
 !
 !
 !
@@ -1170,6 +1174,14 @@ bankinform.ru##div[class^="d-flex gap-3 flex-wrap align-content-center page_bloc
 rsload.net##div[class="tgwrap"]
 5play.org##div[class="telegram-cdn-btn"]
 onlinetrade.ru##div[class^="cookiePanel"]
+blog.okko.tv##div:first-child > div.ad-site-wrapper:first-child > div.jsx-970602695.site-overlay.usDsuMBs > div > div.jsx-1539320767.content-background:first-child > div.S6B6PsCH > div.c4KiWuNi:first-child > div.jsx-3573993002.wideWrapper > header.jsx-1657880382.fHzZWEMd > div.jsx-1657880382.KKBSY_9z:last-child > a.mH7saeqi:last-child
+promokodi.net##div[class^="cashback-store-leftcol-banner hidden-xs hidden-sm"]
+mail.ru##div[class^="the-cookie"]
+promocodes.hi-tech.mail.ru##div[class^="retailer-coupon--banner"]
+promocodes.hi-tech.mail.ru##div[class^="retailer-telegram"]
+promocodes.hi-tech.mail.ru##div[class^="coupon-modal__banners"]
+promocodes.hi-tech.mail.ru##div[class^="scroll-banner"]
+promocodes.hi-tech.mail.ru##div[class^="retailer-coupon--partner"]
 !
 !
 !
@@ -1590,12 +1602,13 @@ onlinetrade.ru##div[class^="cookiePanel"]
 ||afrounitedsalon.de^
 !
 !
-! Фишинг и мошенничество с спам рассылок (типа Столото) (с начала 2024 стал «жертвой» такого массового спама)..
+! Фишинг и мошенничество с спам рассылок (типа Столото) (с начала 2024 по 2.01.25 стал «жертвой» такого массового спама)..
 ||fgnrthgre.buzz^
 !
 !
-! Адреса с спам-писем с содержанием 18+ (с 14.11.24 стал «жертвой» такого массового спама)..
+! Адреса с спам-писем с содержанием 18+ (с 14.11.24 по 2.05.25 стал «жертвой» такого массового спама)..
 ! Разблокировка допустима ТОЛЬКО для отписки с рассылки! (если вообще сработает..)
+! Набралось писем со спамом 1000+ - разбирать их нет смысла, поменял почту и аккаунт. (2.01.2025)
 !
 ||arumism.com^
 ||furixor.com^
@@ -2299,6 +2312,7 @@ onlinetrade.ru##div[class^="cookiePanel"]
 ||nieflatmendgotvpodidpha.ru^
 ||linticalkai.ru^
 ||tiotabko.ru^
+! I got 1000+ spam emails - there's no point in sorting them, I changed my email and account. (2.01.2025)
 !
 ! --
 ||mlnsprofiles.cc^
@@ -2448,6 +2462,10 @@ onlinetrade.ru##div[class^="cookiePanel"]
 ||clicktracking.site^
 ||trdt.online^
 ||trckopti.com^
+||wilnt.com^
+||cleartonixx.com^
+||cheetahkash.com^
+||secret4youdreams.com^
 !
 ||helendtkevink4704.xyz^
 ||velvethorizon.xyz^
@@ -2466,6 +2484,10 @@ onlinetrade.ru##div[class^="cookiePanel"]
 ||ladylikewisdom.xyz^
 ||tendertouches.xyz^
 ||eleganceexpressed.xyz^
+||spicymoments.xyz^
+||moonlightmusings.xyz^
+||nightandpassion.xyz^
+||AnnaPrivateGallery.xyz^
 ! -
 ||xattract.com^
 ||xn3j2k.com^

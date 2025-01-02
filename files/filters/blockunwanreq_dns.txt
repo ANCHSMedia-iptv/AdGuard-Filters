@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 1.0.7-R
+! Version: 2.0.2-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2024-12-22T17:30:00+00:00
+! TimeUpdated: 2025-01-02T09:00:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 22.12.2024 17:30 UTC
+! Last Modified: 02.01.2025 09:00 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -539,12 +539,13 @@
 ||afrounitedsalon.de^
 !
 !
-! Фишинг и мошенничество с спам рассылок (типа Столото) (с начала 2024 стал «жертвой» такого массового спама)..
+! Фишинг и мошенничество с спам рассылок (типа Столото) (с начала 2024 по 2.01.25 стал «жертвой» такого массового спама)..
 ||fgnrthgre.buzz^
 !
 !
-! Адреса с спам-писем с содержанием 18+ (c 14.11.24 стал «жертвой» такого массового спама)..
+! Адреса с спам-писем с содержанием 18+ (c 14.11.24 по 2.01.25 стал «жертвой» такого массового спама)..
 ! Разблокировка допустима ТОЛЬКО для отписки с рассылки! (если вообще сработает..)
+! Набралось писем со спамом 1000+ - разбирать их нет смысла, поменял почту и аккаунт. (2.01.2025)
 !
 ||arumism.com^
 ||furixor.com^
@@ -1244,6 +1245,7 @@
 ||nieflatmendgotvpodidpha.ru^
 ||linticalkai.ru^
 ||tiotabko.ru^
+! I got 1000+ spam emails - there's no point in sorting them, I changed my email and account. (2.01.2025)
 !
 ! --
 ||mlnsprofiles.cc^
@@ -1392,6 +1394,10 @@
 ||clicktracking.site^
 ||trdt.online^
 ||trckopti.com^
+||wilnt.com^
+||cleartonixx.com^
+||cheetahkash.com^
+||secret4youdreams.com^
 !
 ||helendtkevink4704.xyz^
 ||velvethorizon.xyz^
@@ -1410,6 +1416,10 @@
 ||ladylikewisdom.xyz^
 ||tendertouches.xyz^
 ||eleganceexpressed.xyz^
+||spicymoments.xyz^
+||moonlightmusings.xyz^
+||nightandpassion.xyz^
+||AnnaPrivateGallery.xyz^
 ! -
 ||xattract.com^
 ||xn3j2k.com^
