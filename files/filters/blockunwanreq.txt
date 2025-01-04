@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 2.0.3-R
-! TimeUpdated: 2025-01-04T13:00:00+00:00
+! Version: 2.0.4-R
+! TimeUpdated: 2025-01-04T12:00:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -605,6 +605,8 @@
 ||images.promokodi.net/iblock/*/*/promokod_yandex_puteshestviya.png^$image,domain=promokodi.net
 ||res.cloudinary.com/admitad-gmbh/image/upload/f_auto/v1732718726/2d472d9dfad055168d11f98741a3fa14.png^$image,domain=promocodes.hi-tech.mail.ru
 ||cs*.pikabu.ru/v*/event/*/couponViewed^$ping,domain=promokod.pikabu.ru
+||krasotaimedicina.ru/bitrix/templates/adaptive_main/images/ulli.gif^$image,xhr,domain=krasotaimedicina.ru
+-push-notifications/$xhr,important
 !
 !
 !
@@ -1184,6 +1186,7 @@ promocodes.hi-tech.mail.ru##div[class^="scroll-banner"]
 promocodes.hi-tech.mail.ru##div[class^="retailer-coupon--partner"]
 ozon.ru###layoutPage > div.b6:first-child > div.d0m_9 > div > div.container.c:nth-child(3) > div.e1:last-child > div.d3.c8:last-child > div.e4 > div:nth-child(3) > div > div.b3228-a.b3228-a0
 mega.comfortkino.ru##div[class^="popup-wrap"]
+xiaomitime.com##a[class^="our_app"]
 !
 !
 !
