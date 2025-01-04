@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 2.0.2-R
+! Version: 2.0.3-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-01-02T09:00:00+00:00
+! TimeUpdated: 2025-01-04T16:00:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 02.01.2025 09:00 UTC
+! Last Modified: 04.01.2025 16:00 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -403,6 +403,7 @@
 ||analytics.a-plus.ru^$important
 ||artfut.com^$important
 ||newrotatormarch23.bid^$important
+||widget.sparrow.ru^$important
 !
 !
 !
