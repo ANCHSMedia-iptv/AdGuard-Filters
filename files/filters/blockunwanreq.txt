@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 2.0.2-R
-! TimeUpdated: 2025-01-02T09:00:00+00:00
+! Version: 2.0.3-R
+! TimeUpdated: 2025-01-04T13:00:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1182,6 +1182,8 @@ promocodes.hi-tech.mail.ru##div[class^="retailer-telegram"]
 promocodes.hi-tech.mail.ru##div[class^="coupon-modal__banners"]
 promocodes.hi-tech.mail.ru##div[class^="scroll-banner"]
 promocodes.hi-tech.mail.ru##div[class^="retailer-coupon--partner"]
+ozon.ru###layoutPage > div.b6:first-child > div.d0m_9 > div > div.container.c:nth-child(3) > div.e1:last-child > div.d3.c8:last-child > div.e4 > div:nth-child(3) > div > div.b3228-a.b3228-a0
+mega.comfortkino.ru##div[class^="popup-wrap"]
 !
 !
 !
@@ -1550,6 +1552,8 @@ promocodes.hi-tech.mail.ru##div[class^="retailer-coupon--partner"]
 @@||smartcaptcha.yandexcloud.net/captcha.js
 @@||smartcaptcha.yandexcloud.net^
 @@||mega.nz^$ghide
+@@||hd.kinopoisk.ru^$important,document
+@@||kinopoisk.ru/install?
 !
 !
 ! -
