@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 2.0.6-R
-! TimeUpdated: 2025-01-05T17:00:00+00:00
+! Version: 2.0.7-R
+! TimeUpdated: 2025-01-05T17:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -982,9 +982,7 @@ gazeta.ru##div.b_telegram_subscriber
 ! Пустое место под рекламу (новостной сайт Комсомольская правда, Молдовское подразделение)
 md.kp.media##div.sc-1a8tb7h-0
 !
-! ##a[href="//www.liveinternet.ru/click"]
-! ##a[href="https://www.liveinternet.ru/click"]
-! ##a[href="http://www.liveinternet.ru/click"]
+!
 championat.com##div.header-bottom__adv
 ! bxbox.bxb.delivery###content > div.sidebar:first-child > div.itc-slider:last-child
 bxbox.bxb.delivery##.itc-slider
@@ -1425,12 +1423,23 @@ desport.ru##div[class^="PopupAppDesktop_PopupAppDesktop__v6Jyd PopupAppDesktop_P
 ||pay.yandex.ru/web/cl/click$important
 ||yastatic.net/pcode/adfox/$important
 ||site.yandex.net/*/js/suggest.js^$script
+||avatars.mds.yandex.net/get-market-adv/*/banner
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
 ! market.yandex.ru###profitable_goods_tab-RecommendationRoll > div._1QNtS:nth-child(5)
 ! market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/recommendationRolls\/profitable_goods_tab\/content\/lazyGenerator\/initialContent\/recomLayoutItem_21\#58\:153_4 > div._3dfdb:first-child
 ! В последнее время перестали помогать косметические правила против рекомендаций на главной странице Я.Маркета, буду экспериментировать. (03.12.2024)
+!
+!
+market.yandex.ru##._2wiey, ._1Ha5w, .r_nt5
+market.yandex.ru##._2sksL, _3Je9o, _1jXXo, _1MOwX, _1bCJz
+market.yandex.ru##[class^="HBydy cia-vs cia-cs"]
+market.yandex.ru##div[id^="/content/header/headerPromo"]
+market.yandex.ru##div[data-apiary-widget-name="@monetize/IncutConstructor/MadvBasicCarouselPlain"]
+market.yandex.ru##div[class^="_1u4JH cia-vs"]
+!
+!
 ! =
 !
 !
