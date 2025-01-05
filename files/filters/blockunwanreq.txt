@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 2.0.4-R
-! TimeUpdated: 2025-01-04T12:00:00+00:00
+! Version: 2.0.5-R
+! TimeUpdated: 2025-01-05T17:00:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1107,7 +1107,7 @@ minecraftch.ru##div[class^="vkgroup"]
 ##a[href$="//mcservers.top/"]
 xenolith.ru##div[class^="f_banners"]
 vlauncher.ru##div[class^="counters-box"]
-##div[class*="counter"]
+~demix.ru,~sportmaster.ru##div[class*="counter"]
 ##a[href^="//statcounter.com/"]
 minecraftkwiki.online##div[class="widget rounded overflow-hidden filter-field shadow mb-3 bg-gray mt-xs-0 mb-3 widget_cabinet_comment_widget"]
 minecraftpatch.ru##section:nth-child(2) > div.wrapper:last-child > div.post_box:last-child > div.post_text:last-child > div.description:last-child > div:first-child > p:nth-child(2)
@@ -1140,7 +1140,7 @@ androidinsider.ru###content > article.article:first-child > div.article-body:nth
 energizelab.com##div[class^="getemail"]
 wifigid.ru##a[class^="telegram-channel"]
 wifigid.ru##div[class^="wifigid-test-block"]
-wifigid.ru##a[href^="https://t.me/wifigid"]
+wifigid.ru##a[href*="//t.me/wifigid"]
 pdalife.to##div[class*="ads-popup"]
 uptodown.com##div.content:first-child > section.vpn:nth-child(7)
 androeed.ru##div[class="vacancies"]
@@ -1187,6 +1187,9 @@ promocodes.hi-tech.mail.ru##div[class^="retailer-coupon--partner"]
 ozon.ru###layoutPage > div.b6:first-child > div.d0m_9 > div > div.container.c:nth-child(3) > div.e1:last-child > div.d3.c8:last-child > div.e4 > div:nth-child(3) > div > div.b3228-a.b3228-a0
 mega.comfortkino.ru##div[class^="popup-wrap"]
 xiaomitime.com##a[class^="our_app"]
+sportmaster.ru##div[class^="sm-cookie-agreement-old"]
+sportmaster.ru##a[class^="sm-plate sm-plate--target"]
+demix.ru##div[class^="product-bnpl product-page__bnpl"]
 !
 !
 !
