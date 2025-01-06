@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 2.0.9-R
-! TimeUpdated: 2025-01-06T12:00:00+00:00
+! Version: 2.1.0-R
+! TimeUpdated: 2025-01-06T12:11:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -918,6 +918,11 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 ||static*.tinkoffjournal.ru/hedge/v*/yandex-metrika*.js^$script,domain=tbank.ru|tinkoff.ru
 ||cdn.*.ru/eventea/v*/pwa.json^$xhr,domain=tbank.ru|tinkoff.ru
 ||cdn.*.ru/eventea/v*/tj.json^$xhr,domain=tbank.ru|tinkoff.ru
+||static*.tinkoffjournal.ru/hedge/v*/vk-counter*.js^$script,domain=tbank.ru|tinkoff.ru
+||static*.tinkoffjournal.ru/hedge/v*/mercury-tracking-event.js^$script,domain=tbank.ru|tinkoff.ru
+||cdn.*.ru/twa/ttm/tinkoff-pwa/*/*/index.js^$script,domain=tbank.ru|tinkoff.ru
+! acdn.*.ru/eventea/bundle/eventea.bundle.js?$script,domain=tbank.ru|tinkoff.ru (soon..)
+||cdn.*.ru/eventea/v*/tjournal.json^$xhr,domain=tbank.ru|tinkoff.ru
 !
 ! ===
 !
