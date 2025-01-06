@@ -1447,7 +1447,7 @@ terabox.com##div.page:first-child > div.main-page > div.operate-top-notice:first
 market.yandex.ru##._2wiey, ._1Ha5w, .r_nt5
 market.yandex.ru##._2sksL, _3Je9o, _1jXXo, _1MOwX, _1bCJz
 market.yandex.ru##._2jB0Q, _1MOwX, _1bCJz
-market.yandex.ru##[class^="HBydy cia-vs cia-cs"]
+market.yandex.ru##div[class^="HBydy cia-vs cia-cs"]
 market.yandex.ru##div[id^="/content/header/headerPromo"]
 market.yandex.ru##div[data-apiary-widget-name="@monetize/IncutConstructor/MadvBasicCarouselPlain"]
 market.yandex.ru##div[class^="_1u4JH cia-vs"]
