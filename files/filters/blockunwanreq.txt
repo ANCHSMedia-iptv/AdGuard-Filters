@@ -165,7 +165,7 @@
 ! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.min.js^$script,important (новое правило, строка 135 и 136)
 ||*/wp-content/plugins/*/assets/js/tracks.js*^$script,important
 ||*/ad.js^$script,important
-||*/empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru
+||*/empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com
 ||*/adv/*^$image,xhr,script,important
 ! *empty*.*^$image,important
 ||store.bankiros.ru/js/metrics/*.js^script,domain=bankiros.ru,important
@@ -2544,8 +2544,8 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 !
 !
 ! Соцсети Facebook и Instagram заблокированы и запрещены на территории РФ, владеющая ими компания Meta признана экстремисткой и деятельность в РФ запрещена.
-! Соцсеть X (бывший Twitter) заблокирован на территориии РФ.
+! Соцсеть X (бывший Twitter) заблокирован на территории РФ.
 ! Social networks Facebook and Instagram are blocked and banned in the Russian Federation, the company that owns them, Meta, is recognized as extremist and its activities in the Russian Federation are prohibited.
-! Social network X (formerly, ex. Twitter) is blocked in the Russian Federation.
+! Social network X (formerly Twitter) is blocked in the Russian Federation.
 !
 !

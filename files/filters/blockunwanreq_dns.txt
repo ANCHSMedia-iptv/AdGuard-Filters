@@ -1442,8 +1442,8 @@
 !
 !
 ! Соцсети Facebook и Instagram заблокированы на территории РФ, владеющая ими компания Meta признана экстремисткой и деятельность в РФ запрещена.
-! Соцсеть X (бывший, ex. Twitter) заблокирован на территориии РФ.
+! Соцсеть X (бывший Twitter) заблокирован на территории РФ.
 ! Social networks Facebook and Instagram are blocked and banned in the Russian Federation, the company that owns them, Meta, is recognized as extremist and its activities in the Russian Federation are prohibited.
-! Social network X (formerly, ex. Twitter) is blocked in the Russian Federation.
+! Social network X (formerly Twitter) is blocked in the Russian Federation.
 !
 !
