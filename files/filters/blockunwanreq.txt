@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 2.1.0-R
-! TimeUpdated: 2025-01-06T12:11:00+00:00
+! TimeUpdated: 2025-01-06T12:13:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1008,7 +1008,6 @@ sputnik-georgia.ru###endless > div.endless__item > div.container.m-content:last-
 maxiland72.ru###rec782509983 > div.t657.t657_rectangle:first-child
 !
 !
-! ##a[href^="http://www.1c-bitrix.ru/composite/"]
 !
 !
 ! Предупреждение об использовании cookie и Яндекс.Метрики (интернет-магазин Амодей (Amodei.ru))
@@ -1121,7 +1120,7 @@ minecraftch.ru##div[class^="vkgroup"]
 xenolith.ru##div[class^="f_banners"]
 vlauncher.ru##div[class^="counters-box"]
 ~demix.ru,~sportmaster.ru##div[class*="counter"]
-##a[href^="//statcounter.com/"]
+##a[href*="//statcounter.com/"]
 minecraftkwiki.online##div[class="widget rounded overflow-hidden filter-field shadow mb-3 bg-gray mt-xs-0 mb-3 widget_cabinet_comment_widget"]
 minecraftpatch.ru##section:nth-child(2) > div.wrapper:last-child > div.post_box:last-child > div.post_text:last-child > div.description:last-child > div:first-child > p:nth-child(2)
 minecraftkwiki.online##li[class^="menu-item menu-item-type-custom menu-item-object-custom menu-item-18959 nav-item"]
