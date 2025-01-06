@@ -615,6 +615,12 @@
 ||cdn*.spravportal.ru/Images/Creatives/fl_getgift.png^$image,domain=spravportal.ru
 ||cdn*.spravportal.ru/Images/Creatives/WCBot_RC.jpg^$image,domain=spravportal.ru
 ||8sot.su/js/other/advisvisble.js^$script,domain=8sot.su
+||core-colibri-api.samokat.ru/api/clickstream^$xhr,domain=samokat.ru
+||core-colibri-api.samokat.ru/api/events/$xhr,domain=samokat.ru
+||samokat.ru/api/metrics^$xhr,ping,domain=samokat.ru
+||sfr7ag.ru^
+||samokat.ru/weborama.html^$domain=samokat.ru
+||api-web.samokat.ru/showcase/recommendations/whatToTryProducts$xhr,domain=samokat.ru
 !
 !
 !
