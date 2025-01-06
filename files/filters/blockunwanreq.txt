@@ -817,6 +817,7 @@ wildberries.ru###app > div:nth-child(5) > div.lk-main:nth-child(3) > div.lk-asid
 ozon.ru##div[data-widget="webInstallmentPurchase"]
 !
 ozon.ru###layoutPage > div.b6:first-child > div.dy0_9 > div > div.container.c:nth-child(3) > div.e1:last-child > div.d3.c8:last-child > div.e4 > div:nth-child(3)
+ozon.ru###layoutPage > div.b6:first-child > div.d0m_9 > div > div.container.c:nth-child(3) > div.e1:last-child > div.d3.c8:last-child > div.e4 > div:nth-child(3) > div > div.b3228-a.b3228-a0
 ! =
 ! Зато от блокировки некоторых скриптов сломался подвал сайта (footer) на главной странице XD (к примеру, в разделе Корзина подвал сайта работает).
 ! But from blocking some scripts broke the site basement (footer) on the main page XD (for example, in the Shopping Cart section the site basement works).
@@ -1187,7 +1188,6 @@ promocodes.hi-tech.mail.ru##div[class^="retailer-telegram"]
 promocodes.hi-tech.mail.ru##div[class^="coupon-modal__banners"]
 promocodes.hi-tech.mail.ru##div[class^="scroll-banner"]
 promocodes.hi-tech.mail.ru##div[class^="retailer-coupon--partner"]
-ozon.ru###layoutPage > div.b6:first-child > div.d0m_9 > div > div.container.c:nth-child(3) > div.e1:last-child > div.d3.c8:last-child > div.e4 > div:nth-child(3) > div > div.b3228-a.b3228-a0
 mega.comfortkino.ru##div[class^="popup-wrap"]
 xiaomitime.com##a[class^="our_app"]
 sportmaster.ru##div[class^="sm-cookie-agreement-old"]
