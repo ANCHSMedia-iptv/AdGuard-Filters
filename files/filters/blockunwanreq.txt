@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 2.0.7-R
-! TimeUpdated: 2025-01-05T17:30:00+00:00
+! Version: 2.0.8-R
+! TimeUpdated: 2025-01-06T10:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -428,7 +428,7 @@
 ||api.modrinth.com/analytics/*^$xhr,domain=modrinth.com
 ||img.ru-minecraft.ru/logokl2.png^$image,domain=ru-minecraft.ru
 ||*/wp-content/plugins/thirstyaffiliates-pro/js/app/tap-gct.js*^$script
-||*/js/share*.js^$script
+||*/js/share*.js^$script,domain=~teraboxcdn.com|~terabox.com
 ||cubixworld.net/api/freepromo^$xhr,domain=cubixworld.net
 ||cubixworld.net/scripts/ga.js^$script,domain=cubixworld.net
 ||vk.com/widget_comments.php*^$important,domain=~vk.com
@@ -611,6 +611,7 @@
 ||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/ViqeoFlyrollAdv*.js^$script,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||cm*api.chefmarket.ru/api/v*/settings/dishes-statistic^$xhr,domain=chefmarket.ru
 ||trial-sport.ru/images_g/2019/7/22/5417489_s.jpg^$image,domain=trial-sport.ru
+||static.line-scdn.net/liff/*/sdk.js^$script,xhr
 !
 !
 !
@@ -1198,6 +1199,8 @@ demix.ru##div[class^="product-bnpl product-page__bnpl"]
 trial-sport.ru##div[style="border-top: 1px solid #d7d7d7; margin-top: 37px; padding-top: 37px; position: relative; z-index: 1;"]
 trial-sport.ru##div[class^="col_right"]
 desport.ru##div[class^="PopupAppDesktop_PopupAppDesktop__v6Jyd PopupAppDesktop_PopupAppDesktopExpanded__qZHxe"]
+terabox.com##div.page:first-child > div.main-page > div.operate-popup-box:last-child
+terabox.com##div.page:first-child > div.main-page > div.operate-top-notice:first-child
 !
 !
 !
