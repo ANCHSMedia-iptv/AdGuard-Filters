@@ -1223,6 +1223,8 @@ spravportal.ru##div[style^="margin-top:8px;margin-bottom:8px"]
 spravportal.ru##div[class^="alert alert-info"]
 spravportal.ru##a[class^="btn btn-ar btn-info"]
 kiprinform.com##div[class^="news_send_block hide_on_touch"]
+thesecmaster.com##div[class^="hidden cmd:block"]
+thesecmaster.com##div[id^="newsLetterBoxSectionGlobal"]
 !
 !
 !
