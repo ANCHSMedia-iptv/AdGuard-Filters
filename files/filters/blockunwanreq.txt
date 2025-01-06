@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 2.1.1-R
-! TimeUpdated: 2025-01-06T12:30:00+00:00
+! Version: 2.1.2-R
+! TimeUpdated: 2025-01-06T14:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -497,7 +497,7 @@
 ||topcraft.club/media/img/images/*.*^$image,domain=topcraft.club
 ||minecraftheat.ru/uploads/bimages/*/*.*^$image,domain=minecraftheat.ru
 ||xgm.guru/resource/view^$xhr,domain=xgm.guru
-||*/_vercel/insights/script.js^$script
+||*/_vercel/insights/script.js^$script,important
 ||event.playground.ru*/.well-known/mercure?$xhr,domain=playground.ru
 ||alfabank.by/api/cookies/getCookieByLocalstorage.php^$xhr,domain=alfabank.by
 ||matomo.alfabank.by^$domain=alfabank.by
@@ -621,6 +621,7 @@
 ||sfr7ag.ru^
 ||samokat.ru/weborama.html^$domain=samokat.ru
 ||api-web.samokat.ru/showcase/recommendations/whatToTryProducts$xhr,domain=samokat.ru
+||*/_vercel/speed-insights/script.js^$script,important
 !
 !
 !
@@ -1221,6 +1222,7 @@ terabox.com##div.page:first-child > div.main-page > div.operate-top-notice:first
 spravportal.ru##div[style^="margin-top:8px;margin-bottom:8px"]
 spravportal.ru##div[class^="alert alert-info"]
 spravportal.ru##a[class^="btn btn-ar btn-info"]
+kiprinform.com##div[class^="news_send_block hide_on_touch"]
 !
 !
 !
@@ -1388,6 +1390,7 @@ spravportal.ru##a[class^="btn btn-ar btn-info"]
 ||firebaseremoteconfigrealtime.googleapis.com^
 ||firebase.googleapis.com^
 ! firebase.google.com^
+||firestore.googleapis.com^
 ! ===
 !
 !
