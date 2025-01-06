@@ -1346,9 +1346,9 @@
 ||tofersp.space^
 ||podaxt.com^
 ||edgecooker.com^
-||cosmiccovejourneys.com^
+||*journeys.com^
 ||enchantedmysticpaths.com^
-||blissfulechojourneys.com^
+! blissfulechojourneys.com^
 ||serendipityrealmtrails.com^
 ||mojecti.com^
 ||byyy.org^
