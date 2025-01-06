@@ -126,7 +126,7 @@
 ||singular.net^$important
 ||alb.reddit.com^
 ||rudderstack.com^$important
-||hh.ru/api/fl/logs/^$other,important,domain=hh.ru
+! hh.ru/api/fl/logs/^$other,important,domain=hh.ru (новое правило, строка 587)
 ||cedexis.com^$important
 ||*/generate_204^$domain=~youtube.com|~googlevideo.com
 ||adlook.me^$important
@@ -172,7 +172,7 @@
 ||adhigh.net^$important
 ||rutarget.ru^$important
 ||api.mindbox.ru^$important
-||*/api/fl/id*^$xhr,important
+! */api/fl/id*^$xhr,important (новое правило, строка 587)
 ||s.rbk.ru/*quote_static/quote-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru,important
 ||trafffgen.rambler.ru^$important
 ||gotovim-doma.ru/img/*/*.gif^$image,domain=gotovim-doma.ru,important
@@ -584,7 +584,7 @@
 ||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/zen-subscribe.js^$script,domain=kp.ru
 ||assets.habr.com/habr-web/img/*.webp^$image,domain=habr.com
 ||habr.com/kek/v*/reactions/counters$xhr,domain=habr.com
-||*/api/fl*^$xhr,important
+||*/api/fl*^$xhr,other,important
 ||eaglercraft.com/js/fb.js^$script,domain=eaglercraft.com
 ||s.basicconfig.com/channel/20*$script,domain=gid-minecraft.ru
 ||ixbt.com/site*/resources/javascript/kocmoc.js^$script,domain=ixbt.com
@@ -664,7 +664,7 @@
 !
 ||megamarket.ru/api/mobile/v*/analyticsDataService/*^$xhr
 ||megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr
-! megamarket.ru/api/fl/idw-smm^$xhr (новое правило, строка 175)
+! megamarket.ru/api/fl/idw-smm^$xhr (новое правило, строка 587)
 ||api.megamarket.tech/api/colibri/events/*^$xhr
 ||megamarket.ru/api/mobile/v*/promoContentService/*^$xhr
 ||api.megamarket.tech/api/events/config^$xhr
