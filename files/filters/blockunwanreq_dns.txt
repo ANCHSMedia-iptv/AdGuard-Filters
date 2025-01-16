@@ -407,7 +407,7 @@
 ||newrotatormarch23.bid^$important
 ||widget.sparrow.ru^$important
 ||sfr7ag.ru^
-! core-colibri-api.samokat.ru^ (soon..)
+||core-colibri-api.samokat.ru^
 ! a.wb.ru^ (soon..)
 ! wbx-logs.wildberries.ru^ (soon..)
 ||aads.com^$important
