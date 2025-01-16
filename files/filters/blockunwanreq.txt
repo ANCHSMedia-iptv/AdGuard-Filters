@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 2.1.7-R
-! TimeUpdated: 2025-01-16T15:30:00+00:00
+! TimeUpdated: 2025-01-16T15:35:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -653,6 +653,8 @@
 ||esports.ru/wp-content/uploads/2024/05/pari-logo-backing.svg^$image,domain=esports.ru
 ||esports.ru/wp-content/uploads/2024/12/freebet_5x1000_*.gif^$image,domain=esports.ru
 ||esports.ru/wp-content/uploads/2025/01/414x60.gif^$image,domain=esports.ru
+||matomo-el5.x5.ru^$important
+||frontlogger.dodois.io^
 !
 !
 !
@@ -1319,6 +1321,10 @@ esports.ru##div[class^="cursor-default absolute top-7 t-lg:top-8 z-10 js-present
 ||v1^
 ||router.silotis.us^
 ||=^
+||initplayback^
+||iptv.local^
+||ip-api.com^
+||ifconfig.co^
 !
 !
 !
@@ -1576,7 +1582,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||tracker-api.my.com^$important
 ||ad.intl.xiaomi.com^$important
 ||ms.vk.com^$important
-||app-measurement.com^$important
+||aemetrics.aliexpress.ru^$important
 ||tnc*.byteoversea.com^$important
 ||tnc*.isnssdk.com^$important
 ||pangle.io^$important
@@ -1592,7 +1598,6 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||an.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~e.mail.ru
 ||analytics.mobile.yandex.net^$important
 ||*footprintdns.com^$important
-||aemetrics.aliexpress.ru^$important
 ||inmobi.com^$important
 ||vungle.com^$important
 ||mtgglobals.com^$important
@@ -1657,6 +1662,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 @@||hd.kinopoisk.ru^$important,document
 @@||kinopoisk.ru/install?
 @@||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/*Sticky*Adv*.*^$script,stylesheet,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+@@||support.avito.ru^
 !
 !
 ! -
