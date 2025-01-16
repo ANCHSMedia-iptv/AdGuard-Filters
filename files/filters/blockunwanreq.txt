@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 2.1.3-R
-! TimeUpdated: 2025-01-06T16:30:00+00:00
+! Version: 2.1.7-R
+! TimeUpdated: 2025-01-16T15:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -623,7 +623,36 @@
 ||api-web.samokat.ru/showcase/recommendations/whatToTryProducts$xhr,domain=samokat.ru
 ||*/_vercel/speed-insights/script.js^$script,important
 ||zen.yandex.ru/widget-loader^$script,domain=3dnews.ru
-!
+||kupigolos.ru/img/info/710%D1%85294.webp^$image,domain=kupigolos.ru
+||kupigolos.ru/img/info/180x1270.webp^$image,domain=kupigolos.ru
+||yastatic.net/market-export/_/i/favicon/ymnew/558.png^$image
+||click-or-die.ru/wp-json/post-views-counter/view-post/$xhr,domain=click-or-die.ru
+||aads.com^$important
+||infird.com/cdn/$script,xhr
+||savefrom.net/img/ext-advice/ext-advice__icon-yabro.png^$xhr,domain=savefrom.net
+||savefrom.net/assets/experiment/partnersBlock/img/*.png^$image,domain=savefrom.net
+||savefrom.net/build/js/chunk~partnersBlock-js-main-js.js$script,domain=savefrom.net
+||savefrom.net/img/televzr/*.*^$xhr,domain=savefrom.net
+||savefrom.net/build/js/chunk~pBlock-js-main-js.js$script,domain=savefrom.net
+||savefrom.net/build/js/chunk~propellerPush-js-main-js.js$script,domain=savefrom.net
+||savefrom.net/img/favicons/thumb/*.png^$xhr,domain=savefrom.net
+||savefrom.net/img/ummy_icon_*.png^$image,domain=savefrom.net
+||savefrom.net/build/js/chunk~rsya-js-main-js.js$script,domain=savefrom.net
+||savefrom.net/build/js/chunk~rsyaRuBanners-js-main-js.js$script,domain=savefrom.net
+||savefrom.net/msec^$xhr,domain=savefrom.net
+||*.*/build/2f216d687fe39ac06f55.png^$image,domain=9xbuddy.com|offmp3.net
+||kanobu.ru/api/v*/ainfo/toplink-and-informer^$xhr,domain=kanobu.ru
+||kanobu.ru/api/v*/ainfo/informers/^$xhr,domain=kanobu.ru
+||brolink5s.site^
+||timto329gpl.com/player/js/adblock.js^$script
+||stats.myangular.life^$important
+||ws.getzend.digital^$important
+||rcmjs.rambler.ru/static/recommender.js^$script
+||hye1eaipby4w.matham.ws^
+||esports.ru/wp-content/uploads/2024/12/winline_logo_main_rgb.svg^$image,domain=esports.ru
+||esports.ru/wp-content/uploads/2024/05/pari-logo-backing.svg^$image,domain=esports.ru
+||esports.ru/wp-content/uploads/2024/12/freebet_5x1000_*.gif^$image,domain=esports.ru
+||esports.ru/wp-content/uploads/2025/01/414x60.gif^$image,domain=esports.ru
 !
 !
 !
@@ -742,14 +771,19 @@
 !
 ||points.wb.ru/points-users-api/api/v*/*/promotion/available^$xhr,domain=wildberries.ru
 ||static*.wbbasket.*/vol*/j/performanceAnalytics.*.js^$script,domain=wildberries.ru
-||wildberries.ru/webapi/stats/*^$xhr,domain=wildberries.ru
-||wildberries.ru/webapi/logging/*^$xhr,domain=wildberries.ru
+||wildberries.ru/webapi/stats/$xhr,domain=wildberries.ru
+||wildberries.ru/webapi/logging/$xhr,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/crm-bnrs/adsf/*.webp^$image,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/data/promotion-creatives.json.hash^$xhr,domain=wildberries.ru
 ! *basket*.wbbasket.ru/vol*/data/promotion-creatives.json^$script,domain=wildberries.ru
 ||static.wbstatic.net/j/performanceAnalytics.*.js^$script,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/crm-bnrs/bners*/*.webp^$image,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/data/banners-main-*-*.json^$script,xhr,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/site/*/*/*/*recommendationsList*.js^$script,xhr,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/site/t/*/cookies.*.json^$xhr,domain=wildberries.ru
+! a.wb.ru/sdk/sdk.js^$script,domain=wildberries.ru (soon..)
+!
+!
 !
 !
 ! Блокировка загрузки рекламы лотереи (+ лого рекламы) на странице Личного Кабинета (Российская версия).
@@ -770,8 +804,9 @@
 ||*/i/v*/apps/qr*.svg^$image,domain=wildberries.ru|global.wildberries.ru
 ! -
 !
-@@||*-basket-*.wbbasket.ru/vol*/site/j/spa/customTags/banners.*.js^$domain=wildberries.ru
+@@||*basket*.wbbasket.ru/vol*/site/j/spa/customTags/banners.*.js^$domain=wildberries.ru
 @@||static.wbstatic.net/data/banners-main-*-*.json^$domain=wildberries.ru
+@@||*basket*.wbbasket.ru/vol*/site/j/spa/customTags/spa.recommendations*.js^$script,domain=wildberries.ru
 !
 !
 ! = Cosmetic rules =
@@ -779,7 +814,7 @@
 !
 ! Рекламный баннер лотереи на странице Личного Кабинета (Российская версия).
 ! Lottery advertising banner on the Personal Account page (Russian version).
-wildberries.ru###app > div:nth-child(5) > div.lk-main:nth-child(3) > div.lk-aside:first-child > div.lk-advertisement:nth-child(4)
+wildberries.ru##div[class^="lk-advertisement"]
 !
 !
 !
@@ -1226,6 +1261,18 @@ spravportal.ru##a[class^="btn btn-ar btn-info"]
 kiprinform.com##div[class^="news_send_block hide_on_touch"]
 thesecmaster.com##div[class^="hidden cmd:block"]
 thesecmaster.com##div[id^="newsLetterBoxSectionGlobal"]
+kupigolos.ru##div[class^="promo-block"]
+kupigolos.ru##div[class^="s-place__right"]
+kupigolos.ru##div[class^="tg"]
+kupigolos.ru##a[class^="telegram"]
+savefrom.net##div[data-href*="televzr.com"]
+savefrom.net##div[data-ga-event*="send;event;vidacha;helper-promo-click"]
+savefrom.net##div[class^="second-btn-box"]
+9xbuddy.com,offmp3.net##section[class^="fixed bottom-0 bg-white dark:bg-night-400 shadow rounded border dark:border-night-300 m-4 text-gray-600 dark:text-gray-200 transition-transform delay-100"]
+esports.ru##div[class^="bg-gray-chg flex items-center relative select-none h-12.5 w-full "]
+esports.ru##aside[class^="t-lg:col-start-4 t-lg:col-end-4 px-4 t-sm:px-0"]
+esports.ru##div[class^="flex rounded-tl-xl rounded-tr-xl fixed left-0 right-0 bottom-0 z-10 overflow-hidden h-15 mx-auto w-295 max-w-full js-catfish  hidden t-sm:block"]
+esports.ru##div[class^="cursor-default absolute top-7 t-lg:top-8 z-10 js-present-popover  "]
 !
 !
 !
@@ -1448,10 +1495,10 @@ thesecmaster.com##div[id^="newsLetterBoxSectionGlobal"]
 ||browser.pay.yandex.ru/api/v*/split-status^$important
 ||paybro-static.s*.yandex.net/paybro/v*/widget-*.*^$script,css
 ||paybro-static.s*.yandex.net/paybro/v*/8a4cff28d9bf287197a4.png^$image
-||yastatic.net/safeframe-bundles/*/host.js^$script
+||yastatic.net/safeframe-bundles/*/host.js^$script,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.ua
 ||pay.yandex.ru/web/cl/click$important
 ||yastatic.net/pcode/adfox/$important
-||site.yandex.net/*/js/suggest.js^$script
+||site.yandex.net/*/js/suggest.js^$script,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.ua
 ||avatars.mds.yandex.net/get-market-adv/*/banner
 !
 ! = Cosmetic rules =
@@ -1655,6 +1702,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||antpeak.com^
 ||t2m.io^
 ||vaycasino*.com^
+||87h6.cfd^
 !
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 по 30.11.24 был «жертвой» такого массового спама)..
