@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 2.1.8-R
-! TimeUpdated: 2025-01-17T14:35:00+00:00
+! Version: 2.1.9-R
+! TimeUpdated: 2025-01-18T09:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -659,6 +659,8 @@
 ! migeek.ru/wp-admin/admin-ajax.php?id=*&action=wpshop_views_counter$xhr,domain=migeek.ru
 ||sibdroid.ru/upload/is/settings/c52/k8m6dcpmm5aqnx6nu8hn2t16va4e404l/TG%20desktop%20(2).png^$image,domain=sibdroid.ru
 /wp-admin/admin-ajax.php?*views*$xhr
+||api.zadarma.com/calltracker$xhr
+||effect.habr.com^$important,domain=habr.com
 !
 !
 !
@@ -1171,7 +1173,7 @@ minecraftch.ru##div[class^="vkgroup"]
 ##a[href$="//mcservers.top/"]
 xenolith.ru##div[class^="f_banners"]
 vlauncher.ru##div[class^="counters-box"]
-~demix.ru,~sportmaster.ru##div[class*="counter"]
+~demix.ru,~sportmaster.ru,~habr.com##div[class*="counter"]
 ##a[href*="//statcounter.com/"]
 minecraftkwiki.online##div[class="widget rounded overflow-hidden filter-field shadow mb-3 bg-gray mt-xs-0 mb-3 widget_cabinet_comment_widget"]
 minecraftpatch.ru##section:nth-child(2) > div.wrapper:last-child > div.post_box:last-child > div.post_text:last-child > div.description:last-child > div:first-child > p:nth-child(2)
