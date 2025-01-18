@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.0.1-R
-! TimeUpdated: 2025-01-18T13:20:00+00:00
+! Version: 3.0.2-R
+! TimeUpdated: 2025-01-18T17:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -165,7 +165,7 @@
 ! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.*.js^$script,important (новое правило, строка 136 и 137)
 /wp-content/plugins/*/assets/js/tracks.js$script,important
 /ad.js^$script,important
-/empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com
+/empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru
 /adv/*^$image,xhr,script,important
 ! *empty*.*^$image,important
 ||store.bankiros.ru/js/metrics/*.js^$script,domain=bankiros.ru,important
@@ -500,7 +500,7 @@
 /_vercel/insights/script.js^$script,important
 ||event.playground.ru*/.well-known/mercure?$xhr,domain=playground.ru
 ||alfabank.by/api/cookies/getCookieByLocalstorage.php^$xhr,domain=alfabank.by
-||matomo.alfabank.by^$domain=alfabank.by
+! matomo.alfabank.by^$domain=alfabank.by (новое правило, строка 676)
 ||st.babysfera.ru/*/static/assets/Components/*/Shared/ShareButton/ShareButton.js^$script,domain=baby.ru
 ||hoff.ru/vue/analytics/webvitals/^$ping,domain=hoff.ru
 /tilda-stat-*.*.js^$script
@@ -652,7 +652,7 @@
 ||esports.ru/wp-content/uploads/2024/05/pari-logo-backing.svg^$image,domain=esports.ru
 ||esports.ru/wp-content/uploads/2024/12/freebet_5x1000_*.gif^$image,domain=esports.ru
 ||esports.ru/wp-content/uploads/2025/01/414x60.gif^$image,domain=esports.ru
-||matomo-el5.x5.ru^$important
+! matomo-el5.x5.ru^$important (новое правило, строка 676)
 ||frontlogger.dodois.io^
 $cookie=/adtech_uid|top100_id/
 ||sibdroid.ru/upload/is/settings/c52/k8m6dcpmm5aqnx6nu8hn2t16va4e404l/TG%20desktop%20(2).png^$image,domain=sibdroid.ru
@@ -671,6 +671,12 @@ $cookie=/adtech_uid|top100_id/
 ||calc.ru/include/adsbygoogle.php$xhr,domain=calc.ru
 ||cdn.calc.ru/js/index2015.js^$script,domain=calc.ru
 ||yoomoney.ru/offerwall/ajax/statistics/$xhr,domain=yoomoney.ru
+||vprok.ru/_nextPublic/scripts/fingerprint/*/sdk-web*.js^$script,domain=vprok.ru
+||proto-eum.vprok.ru/eum/rum$ping,domain=vprok.ru
+||matomo*.*^$important
+/images/site_180x81_1.gif^$image,domain=2x2tv.ru|online.2x2tv.ru
+||api.vigo.one/uxzoom/*/notify$xhr
+||tolstoycomments.com^$domain=2x2tv.ru
 !
 !
 !
@@ -1182,7 +1188,7 @@ minecraftch.ru##div[class^="vkgroup"]
 ##a[href$="//mcservers.top/"]
 xenolith.ru##div[class^="f_banners"]
 vlauncher.ru##div[class^="counters-box"]
-~demix.ru,~sportmaster.ru,~habr.com,~iphones.ru##div[class*="counter"]
+~demix.ru,~sportmaster.ru,~habr.com,~iphones.ru,~vprok.ru##div[class*="counter"]
 ##a[href*="//statcounter.com/"]
 minecraftkwiki.online##div[class="widget rounded overflow-hidden filter-field shadow mb-3 bg-gray mt-xs-0 mb-3 widget_cabinet_comment_widget"]
 minecraftpatch.ru##section:nth-child(2) > div.wrapper:last-child > div.post_box:last-child > div.post_text:last-child > div.description:last-child > div:first-child > p:nth-child(2)
@@ -1299,6 +1305,8 @@ iphones.ru##div[class^="footer__line3"]
 it-world.ru##div[class^="left-magazines"]
 it-world.ru##div[class^="news-more"]
 alfabank.by##section[id^="subscribes"]
+vprok.ru##div[class^="Tooltip_root__EMk_3 Tooltip_whiteTheme__bkjSb"]
+lifemart.ru##div[class^="product-list__empty-card"]
 !
 !
 !
