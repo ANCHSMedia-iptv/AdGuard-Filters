@@ -301,15 +301,15 @@
 ! *sendsay.ru^$important
 ||lentainform.com^$important
 ||rtb.mts.ru^$important
-||ad-tech.ru^
-||nst.trex.media^
+||ad-tech.ru^$important
+||nst.trex.media^$important
 ||svk-native.ru^
 ||stat.teleport.media^$important
 ||artfut.com^$important
 ||d1tracker.ru^$important
 ||adpod.in^
 ||cpa.hh.ru^$important
-||s*.wi-fi.ru^
+||s*.wi-fi.ru^$important
 ||static.addtoany.com^$important
 ||player-telemetry.vimeo.com^$important
 ||fresnel-events.vimeocdn.com^$important
@@ -424,6 +424,13 @@
 ||frontlogger.dodois.io^
 ||rocket.ivi.ru^$important
 ||a.lifehacker.ru^$important
+||analytics.fontanka.ru^$important
+||analytics.msk1.ru^$important
+||analytics.chita.ru^$important
+||analytics.74.ru^$important
+||analytics.e1.ru^$important
+||analytics.ngs55.ru^$important
+||analytics.metro-cc.ru^$important
 !
 !
 !
