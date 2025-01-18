@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 2.1.9-R
-! TimeUpdated: 2025-01-18T09:30:00+00:00
+! TimeUpdated: 2025-01-18T10:30:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -267,9 +267,9 @@
 ||tnt-online.ru/images/*/icons/sprite.svg*^$image,domain=tnt-online.ru,important
 ||rutube.ru/static/img/png/adsdkbanner.png^$xhr,important
 ||*/pixel.*^$image,xhr,script,important,domain=~statad.ru
-||api.*.ru/v*/distribution*^$xhr,domain=vc.ruvc.ru|dtf.ru
-||api.*.ru/v*/recommendations*^$xhr,domain=vc.ru|dtf.ru
-||booster.osnova.io/a/relevant/many*^$xhr,domain=vc.ru|dtf.ru
+||api.*.ru/v*/distribution$xhr,domain=vc.ru|dtf.ru
+||api.*.ru/v*/recommendations$xhr,domain=vc.ru|dtf.ru
+||booster.osnova.io/a/relevant/many$xhr,domain=vc.ru|dtf.ru
 ||apis.google.com/js/plusone.js^$script
 ! addtoany.com^
 ||gazprom-neft.*/*.gif^$image,domain=gazprom-neft.ru|gazprom-neft.com
@@ -317,7 +317,7 @@
 ||websbol.clickstream.sberbank.ru/metrics/sbol^$xhr,domain=sberbank.ru
 ||*/bitrix/js/yandex.metrika/script.js*^$script,important
 ||iguides.ru/local/components/iguides/notifications.subscribe/manifest.json^$other,domain=iguides.ru
-||cs.pikabu.ru/apps/ub/*/*/sprite.svg^$xhr,domain=pikabu.ru
+! cs*.pikabu.ru/apps/ub/*/*/sprite.svg^$xhr,domain=pikabu.ru (ломает сайт 18.01.25)
 ||avito.ru/dstatic/build/client/fingerprint.*^$script,domain=avito.ru
 !
 ! Рекомендации в виде блока Популярное (популярных объявлений) внизу у подвала страницы результатов поискового запроса (сайт объявлений Авито (avito .ru)).
@@ -332,7 +332,7 @@
 ||img.fix-price.com/_marketplace/animated_banner/436c0465d482f161d85a9e698bdb3cfb32189e8d.svg^$xhr,domain=fix-price.com
 ||pta.ramfy.ru/push/*.js^$script
 ||cm*api.chefmarket.ru/api/v*/settings/dishes-statistic^$xhr,domain=chefmarket.ru
-||cs*.pikabu.ru/v*/event/*/*^$xhr,domain=pikabu.ru
+||cs*.pikabu.ru/v*/event/$xhr,ping,domain=pikabu.ru
 ||tlintegration.ru^
 ||pa-na-ma.ru/site/templates/assets/js/components/notify.js^$script,domain=pa-na-ma.ru
 ||pa-na-ma.ru/site/templates/assets/js/core/scrollspy.js^$script,domain=pa-na-ma.ru
@@ -604,7 +604,7 @@
 ||static-s.kinorium.com/img/blank100.png^$image,domain=kinorium.com
 ||images.promokodi.net/iblock/*/*/promokod_yandex_puteshestviya.png^$image,domain=promokodi.net
 ||res.cloudinary.com/admitad-gmbh/image/upload/f_auto/v1732718726/2d472d9dfad055168d11f98741a3fa14.png^$image,domain=promocodes.hi-tech.mail.ru
-||cs*.pikabu.ru/v*/event/*/couponViewed^$ping,domain=promokod.pikabu.ru
+!
 ||krasotaimedicina.ru/bitrix/templates/adaptive_main/images/ulli.gif^$image,xhr,domain=krasotaimedicina.ru
 -push-notifications/$xhr,important
 ||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/ViqeoFlyrollAdv*.js^$script,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
@@ -654,13 +654,16 @@
 ||esports.ru/wp-content/uploads/2025/01/414x60.gif^$image,domain=esports.ru
 ||matomo-el5.x5.ru^$important
 ||frontlogger.dodois.io^
-||mi.com^$cookie=adtech_uid
-||mi.com^$cookie=top100_id
-! migeek.ru/wp-admin/admin-ajax.php?id=*&action=wpshop_views_counter$xhr,domain=migeek.ru
+||mi.com^$cookie=/adtech_uid|top100_id/
 ||sibdroid.ru/upload/is/settings/c52/k8m6dcpmm5aqnx6nu8hn2t16va4e404l/TG%20desktop%20(2).png^$image,domain=sibdroid.ru
 /wp-admin/admin-ajax.php?*views*$xhr
 ||api.zadarma.com/calltracker$xhr
 ||effect.habr.com^$important,domain=habr.com
+||habr.com/kek/v*/articles/*/pageview$xhr,domain=habr.com
+||hawk.so/ws$websocket,important
+||*.ru/assets/hawk*.js^$script,domain=dtf.ru|vc.ru
+||cs15.pikabu.ru/post_img/2025/01/14/8/17368606351450798.png^$image,domain=pikabu.ru
+||d.pikabu.ru/counters/$xhr,domain=pikabu.ru
 !
 !
 !
@@ -1282,6 +1285,9 @@ esports.ru##aside[class^="t-lg:col-start-4 t-lg:col-end-4 px-4 t-sm:px-0"]
 esports.ru##div[class^="flex rounded-tl-xl rounded-tr-xl fixed left-0 right-0 bottom-0 z-10 overflow-hidden h-15 mx-auto w-295 max-w-full js-catfish  hidden t-sm:block"]
 esports.ru##div[class^="cursor-default absolute top-7 t-lg:top-8 z-10 js-present-popover  "]
 sibdroid.ru##div[class^="telegram_giveaway js_telegram_giveaway open"]
+dtf.ru##a[class^="sidebar-item sidebar-item--narrow"]
+dtf.ru##a[href*="/pay/steam"]
+pikabu.ru##div[class*="ny2024"]
 !
 !
 !
@@ -1654,7 +1660,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 @@||accounts.google.com/*/cspreport$xhr,other
 @@||www.msftconnecttest.com^
 @@||pay.yandex.ru^
-@@||*/.well-known/ddos-guard/*$xhr,script
+@@||*/.well-known/ddos-guard/$xhr,script,websocket
 @@||galamart.ru^$ghide
 @@||widgets.mango-office.ru/widgets/mango.js^$script,domain=galamart.ru
 @@||ozon.ru^$ghide
