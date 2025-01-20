@@ -1,0 +1,2723 @@
+! Title: Block unwanted connections
+! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
+! Version: 3.0.4-R
+! TimeUpdated: 2025-01-20T16:20:00+00:00
+! Expires: 48 hours (updated almost every day)
+! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
+!
+!
+! Не только запросы к доменам, ну и скрипты, запросы типа XHR и т.д...
+! Not just domain queries, well scripts, XHR type queries, etc...
+! --- soon..
+!
+! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc..
+!
+!
+! Release version
+! Релизная версия
+!
+! Подойдёт для мобильных устройств и компьютеров.
+! Suitable for mobile devices and computers.
+!
+!
+!
+||analytics.picsart.com^$important
+!
+!
+! Это API запрос сервиса PicsArt на получение вашего местоположения на основе IP адреса и других данных. Возможно, в целях аналитики.
+! This is an API request from the PicsArt service to get your location based on your IP address and other data. Possibly for analytics purposes.
+||api.picsart.com/location^$xhr,domain=picsart.com
+!
+!
+||scorecardresearch.com^$important
+||metricell.com^$important
+||bronze.systems^$important
+||graph.facebook.com^$important
+||optifyr.com^$important
+||gravatar.com^$important
+||amplreq.com^$important
+||amplitude.com^$important
+! *bugsnag.com^$important
+||*bugsnag*^$important
+||vk-analytics.ru^$important
+||*instabug*^$important
+||xray.mail.ru^
+||*dbankcloud*^$important
+||rayjump.com^$important
+||smi2.ru^$important,third-party,domain=~smi2.ru
+||24smi.net^$important,third-party
+||umeng.com^$important
+||api.bing.com^$third-party,domain=~bing.com
+||cellrebel.com^$important
+||onesignal.com^$important
+||cdn.viglink.com^$important
+||connect.facebook.net^$important,domain=~facebook.com
+||connect.ok.ru^$important,domain=~ok.ru
+||inappstory.ru^$important
+||inappstory.com^$important
+! inappstory.*^$important
+||appsflyersdk.com^$important
+!
+! facebook.com^$domain=~facebook.com
+! www.facebook.com^$domain=~facebook.com
+!
+! Закомментирован т.к. мешает загрузке самому сайту.
+! Commented out because it prevents the site itself from loading.
+!
+!
+||snapkit.com^$important
+||appsflyer.com^$important
+||analytics.72.ru^$important
+||syndication.twitter.com^
+||rexpush.pro^$important
+||peiynu.com^$important
+||appspot.com^$important
+||yabro.ru^$important
+||flowerpla.com^$important
+||amocrm.ru^$important
+||gtrxlnd2.com^$important
+||*uxfeedback*^$important
+||tiqcdn.com^$important
+||*analytics.tele2.ru^$important
+! analytics.tele2.ru^$important
+||cdn.bcebos.com^
+||*adjust*^$important
+||rutrk.org^$important
+||stat-analytics.mediavitrina.ru^$important
+||pglstatp.com^$important
+||stats.avito.ru^$important
+||cdn-app.sberdevices.ru/misc/*/assets/ad-sdk/ad-category-recognition.js^$script,important
+||stats.viqeo.tv^$important
+||metrics.viqeo.tv^$important
+||adtech.com^$important
+||statad.ru^$important
+||mixpanel.com^$important
+||mixpanel.cdn.viber.com^$important
+||btloader.com^$important
+||digitalcaramel.com^$important
+||ads-twitter.com^$important
+||bitrix.info^$important
+||skcrtxr.com^$important
+||avito.ru/stat/radar*^$image,domain=avito.ru
+! avito.ru/web/*/adv/network/creative^$xhr,domain=avito.ru
+||*advert*^$image,important
+/firebase*.*^$script,xhr
+||d3c8j8snkzfr1n.cloudfront.net^$important
+||adskeeper.co.uk^$important
+||metrika-informer.com^$important
+||stats.habr.com^$important
+||clck.dzen.ru^$important
+!
+! GitHub Analytics
+||api.github.com/_private/browser/stats^$xhr,important
+||collector.github.com/github/collect^$xhr,important
+!
+!
+||unpkg.com/pwacompat^$script,xhr
+||api.x.com/*/jot/error_log.json^$xhr
+||api.x.com/*/jot/ces/p2^$xhr
+||api.x.com/*/jot/client_event.json^$xhr
+||tns-counter.ru^$important
+.ru/geo-context^$other,xhr,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+||geo.geosurf.io^$important
+||platform.twitter.com/widgets.js^$script,important,domain=~x.com|~twitter.com
+||instagram.com/embed.js^$script,important,domain=~instagram.com
+||tiktok.com/embed.js^$script,important,domain=~tiktok.com
+||singular.net^$important
+||alb.reddit.com^
+||rudderstack.com^$important
+! hh.ru/api/fl/logs/^$other,important,domain=hh.ru (новое правило, строка 587)
+||cedexis.com^$important
+/generate_204$domain=~youtube.com|~googlevideo.com
+||adlook.me^$important
+||betweendigital.com^$important
+/api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru
+||vk.com/js/api/openapi.js^$script,domain=~vk.com,important
+||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com
+||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com
+/itunes_referals.js^$script
+||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script
+||improving.duckduckgo.com^$important
+||*hicloud*^$important
+||gstatic.com/cv/js/sender/v*/cast_sender.js^$script
+||gstatic.com/cast/sdk/libs/sender/*/cast_framework.js^$script
+||virustotal.com/ui/cookie_disclaimer^$xhr,domain=virustotal.com,important
+||virustotal.com/gui/_log-error^$xhr,domain=virustotal.com,important
+!
+! */yandex.*^$image
+/liveinternet.*^$image
+/cycounter.*^$image
+/yandex.php^$image
+/liveinternet.php^$image
+/cycounter.png^$image
+!
+/liru.gif^$image
+/1px.*^$image,xhr,important
+/px.*^$image,xhr,important
+/blank.*^$image,xhr,important
+/analytics.js^$script,domain=~analytics.google.com|~www.google-analytics.com
+! */analytics.*^$script,important
+! ddlbots.com/cdn/shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,domain=ddlbots.com,important
+||*shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
+||otlp-http-production.shopifysvc.com/v*/metrics$xhr,important
+! *web-pixel-shopify-*-pixel*^$domain=ddlbots.com,important
+||*web-pixel-shopify-*-pixel*^$important
+! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.*.js^$script,important (новое правило, строка 136 и 137)
+/wp-content/plugins/*/assets/js/tracks.js$script,important
+/ad.js^$script,important
+/empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru
+/adv/$image,xhr,script,important
+! *empty*.*^$image,important
+||store.bankiros.ru/js/metrics/*.js^$script,domain=bankiros.ru,important
+||adhigh.net^$important
+||rutarget.ru^$important
+||api.mindbox.ru^$important
+! */api/fl/id*^$xhr,important (новое правило, строка 587)
+||s.rbk.ru/*quote_static/quote-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru,important
+||trafffgen.rambler.ru^$important
+||gotovim-doma.ru/img/*/*.gif^$image,domain=gotovim-doma.ru,important
+||img*.russianfood.com/images/common/main_menu_bg1.gif^$image,domain=russianfood.com
+||img*.russianfood.com/images/common/center_bg.gif^$image,domain=russianfood.com
+||img*.russianfood.com/images/common/bottom_line_bg.gif^$image,domain=russianfood.com
+||stat*.russianfood.com/tapi^$domain=russianfood.com,important
+||russianfood.com/images/blg.png^$image,domain=russianfood.com,important
+||rbc.ru/v*/geoinfo/by-ip/$xhr,domain=rbc.ru
+||ext.clickstream.sberbank.ru/metrics/$xhr,important
+||servicepipe.ru/static/*.js^$script,domain=~onlinetrade.ru
+||player.twitch.tv/js/embed/v*.js^$script,domain=~twitch.tv,important
+||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com,important
+||cdn.gamestatic.net/files/pictures/promo_banner_*.png^$image,domain=rbkgames.com,important
+||alicdn.com/AWSC/et/*/et_f.js^$script,important
+||cpa.hh.ru^
+! *.103.*/css/cookiesNotification*.css^$css,important,domain=mag.103.* (новое правило, строка 416)
+! *.103.*/js/cookiesNotificationBy.js^$script,important,domain=mag.103.* (новое правило, строка 136 и 137)
+||d31j93rd8oukbv.cloudfront.net^$important
+||d1tru86qrby720.cloudfront.net^$important
+||*site-chat.me/support/support.int.js*^$script,important
+! gemotest.ru/local/templates/main/img/chat.svg^$image,domain=gemotest.ru
+||probolezny.ru/api/v*/fingerprint^$xhr,domain=probolezny.ru,important
+||invitro.ru/edna/assets/multibutton.js*^$script,domain=invitro.ru
+||invitro.ru/local/templates/invitro_main/webrtc/*/*.js^$script,domain=invitro.ru
+||invitro.ru/*.gif^$image,domain=invitro.ru,important
+||burp/favicon.ico^$image,important
+||zap/favicon.ico^$image,important
+||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
+||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,important
+||widget.7medica.ru/*.*^$script,xhr,important
+/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru,important
+||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
+||maxmind.com^$important
+||mediafire.com/blank.html^$domain=mediafire.com,important
+||mediafiredls.com/adsupply/$xhr,domain=mediafire.com,important
+||publicapi.dodois.io/ru/api/v*/financialmetrics^$xhr,domain=dodopizza.ru,important
+||papajohns.ru/assets/empty.*.jpg^$image,domain=papajohns.ru,important
+||supportai.yandex/widget/v*/bundle.js^$script,important
+||id.rambler.ru/rambler-id-helper/auth_events.js^$script
+||cdnn*.img.ria.ru/min/js/analytics/ab_title_scroll_event.js$script,domain=ria.ru,important
+||cdnn*.img.ria.ru/min/js/libs/ria.get.banners.js$script,domain=ria.ru
+||cdnn*.img.ria.ru/min/js/libs/notifications.js$script,domain=ria.ru
+/adv.gif^$image,important
+! */adv.*^$image,important
+||ura.news/widgets/banner_loader/loader.php$xhr,domain=ura.news,important
+||telegram.org/js/*widget*.js$script,domain=~telegram.org
+||vk.com/al_video.php$xhr,domain=~vk.com
+||vk.com/dist/web/ads_light.*.js^$script,important
+||s.ura.news/js/dist/ccc.bundle.js$script,domain=ura.news,important
+||s.ura.news/js/dist/aaa.bundle.js$script,domain=ura.news,important
+||cdn.iz.ru/profiles/portal/themes/purple/js/redesigntargets.js^$script,domain=iz.ru,important
+||cdn.iz.ru/profiles/portal/modules/ticker/template/index/image/bg.jpg^$image,domain=iz.ru,important
+||cdn.iz.ru/profiles/portal/modules/recommendation/template/index/js/script.js$script,domain=iz.ru,important
+||cdn.iz.ru/profiles/portal/themes/purple/js/statistics/custom_criteo2.js$script,domain=iz.ru,important
+||static.gazeta.ru/nm2021/js/others_scripts_*.js^$script,domain=gazeta.ru,important
+||sync.rambler.ru^$important
+||s*.stc.yc.kpcdn.net/share/i/beige/*.gif^$image,important
+||s*.stc.yc.kpcdn.net/s*/*/adaptive/img/banner.gif$xhr,important
+! *sendsay.ru^$important
+||lentainform.com^$important
+/1x1.*^$image,xhr,important,domain=~autocounter.lentainform.com|~lentainform.com
+||smotrim.ru/js/media-scope.js^$script,important
+||cdn-st*.rtr-vesti.ru/mh_files/*/imho.js^$script,domain=vesti.ru,important
+||vesti.ru/i/bg.png$image,domain=vesti.ru,important
+||api-voyage.jetcrm.ru/public/form/subscribe-form.js^$script
+||life.ru/_next/static/chunks/2793.3fd7e7f2a78da9d92688.js^$script,domain=life.ru,important
+/p.*^$image,xhr,important
+||static.1tv.ru/player/config/banner.gif$image,domain=1tv.ru,important
+||api.1tv.ru/v*/promo_places/alert_for_player^$xhr,domain=1tv.ru,important
+||ad-tech.ru^
+||championat.com/atlas/metrics/^$xhr,domain=championat.com,important
+||cdn-assets.matchtv.ru/build/assets/external/matchtv-stat.*.js^$domain=matchtv.ru,important
+/api/*/store/$ping,xhr,important
+||matchtv.ru/recommendation$xhr,domain=matchtv.ru,important
+||static*.ntv.ru/assets/*/ad-side-bar*.*^$css,script,domain=ntv.ru,important
+||static*.ntv.ru/assets/*/social-share*.*^$css,script,domain=ntv.ru,important
+||tvc.ru/api/promo/$xhr,domain=tvc.ru,important
+||otr-online.ru/cookie-accept^$xhr,domain=otr-online.ru,important
+||otr-online.ru/public/scripts/5714.js^$script,domain=otr-online.ru,important
+||ctc.ru/turms/mediascope/counter/audience$xhr,domain=ctc.ru,important
+||static-api.mediavitrina.ru/v*/epg/*/ad-injections.json^$xhr,script,important
+! /mediascope/counter/audience$xhr,important
+||tv3.ru/_nuxt/adfox-*.js^$script,domain=tv3.ru,important
+||domashniy.ru/dist/assets/img/contest/pop-up-compilation.webp^$image,domain=domashniy.ru
+||domashniy.ru/dist/js/before.js^$script,domain=domashniy.ru
+||friday.ru/svg/sprite.svg$xhr,domain=friday.ru,important
+||nets-api.gpmdata.ru/api/v*/counters/counter/$xhr,important
+||trex-receiver.gpmdata.ru/net/*/*/events^$xhr,important
+||static.tnt-online.ru/getintent_pixel.js^$script,domain=tnt-online.ru,important
+! static.tnt-online.ru/accept_cookie.js^$script,domain=tnt-online.ru,important (новое правило, строка 136 и 137)
+||tnt-online.ru/images/*/icons/sprite.svg$image,domain=tnt-online.ru,important
+||rutube.ru/static/img/png/adsdkbanner.png^$xhr,important
+/pixel.*^$image,xhr,script,important,domain=~statad.ru
+||api.*.ru/v*/distribution$xhr,domain=vc.ru|dtf.ru
+||api.*.ru/v*/recommendations$xhr,domain=vc.ru|dtf.ru
+||booster.osnova.io/*/relevant/many$xhr,domain=vc.ru|dtf.ru
+||apis.google.com/js/plusone.js^$script
+! addtoany.com^
+||gazprom-neft.*/*.gif^$image,domain=gazprom-neft.ru|gazprom-neft.com
+||zoon.ru/images/border.gif^$image,domain=zoon.ru
+! (новое правило, строка 136 и 137)
+! (новое правило, строка 136 и 137)
+||userapi.com/js/api/openapi.js$script,domain=~vk.com,important
+||analytics.vsem-edu-oblako.ru*/track^$xhr,important
+||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,important
+||sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com
+! sa.hoodmaps.com^
+! citilink.ru/graphql/^$xhr,domain=citilink.ru (новое правило, строка 380)
+||fga.citilink.ru/collect^$xhr,domain=citilink.ru
+||dns-shop.ru/banner/get-header-banner/^$xhr,domain=dns-shop.ru
+||alfastrah.ru/js/detectPrivateMode.*.js^$script,domain=alfastrah.ru
+||vk.com/al_video.php?act=track_player_events$xhr
+||leto-leto.com/images/btn-sprite.png^$image,domain=leto-leto.com
+! rlrt.ru/1rogx.min.js^$script
+! bitrix24.sportmoda.ru/upload/crm/tag/call.tracker.js$script,domain=sportmoda.ru
+/upload/crm/tag/call.tracker.js$script
+/bitrix/services/main/ajax.php?action=yandex$xhr
+||sokolov.ru/api/v*/content/area/auth-banner/^$xhr,domain=sokolov.ru
+||cdn.diginetica.net^$third-party
+||r.revoplus.ru/javascripts/iframe/v*/revoiframe.js^$script
+||t2.ru/*.gif^$image,domain=t2.ru
+||api.sunlight.net/v*/content/pages/banners/personal/^$xhr,domain=sunlight.net
+||static*.megafon.ru/public/oldbrowser/is-old-browser.js$script,domain=megafon.ru
+||beeline.ru/js-log.ashx^$xhr,domain=beeline.ru
+||static.beeline.ru/upload/images/*qr*.svg^$image,domain=beeline.ru
+||static.beeline.ru/upload/images/*QR*.png^$image,domain=beeline.ru
+||beeline.gestalt.email^$domain=beeline.ru
+||lenta.com/api-gateway/v*/banners/adhweb^$xhr,domain=lenta.com
+||fp.kaspersky-labs.com^$domain=lenta.com,third-party
+||otel-collector.lenta.tech/v*/traces^$xhr,domain=lenta.com
+||cdn*.helpdeskeddy.com//js/modules/chat_widget/hde.js^$script
+||sitecdn.api.lenta.com/assets-ng/footer/lenta-app-qr.svg^$image,domain=lenta.com
+||magnit.ru/_nuxt/my-magnit.*.svg^$image,domain=magnit.ru
+||magnit.ru/_nuxt/app-magnit.*.svg^$image,domain=magnit.ru
+||targetads.io^$important
+||dostavista.ru/backend/$xhr,domain=dostavista.ru
+||dostavista.ru/write-analytics^$xhr,domain=dostavista.ru
+! dostavista.ru/backend/browser-error-log^$xhr,domain=dostavista.ru (новое правило, строка 312)
+||express.dhl.ru/local/templates/dhl/components/bitrix/menu/*menu/images/left_menu_bg.gif^$xhr,domain=express.dhl.ru
+||api.flocktory.com^$third-party,important
+||websbol.clickstream.sberbank.ru/metrics/sbol^$xhr,domain=sberbank.ru
+/bitrix/js/yandex.metrika/script.js$script,important
+||iguides.ru/local/components/iguides/notifications.subscribe/manifest.json^$other,domain=iguides.ru
+! cs*.pikabu.ru/apps/ub/*/*/sprite.svg^$xhr,domain=pikabu.ru (ломает сайт 18.01.25)
+||avito.ru/dstatic/build/client/fingerprint.*^$script,domain=avito.ru
+!
+! Рекомендации в виде блока Популярное (популярных объявлений) внизу у подвала страницы результатов поискового запроса (сайт объявлений Авито (avito .ru)).
+||avito.ru/js/recommendations^$xhr,domain=avito.ru
+!
+||notebookcheck-ru.com/fileadmin/Notebooks/*/*_pixel.gif^$image,domain=notebookcheck-ru.com
+||my.zadarma.com/callmewidget/v*/loader.js^$script
+/rest/analytics/*$ping,domain=ntvplus.ru|ntvplus.tv,important
+||browserleaks.com/res/screenshot.mp3^$media,domain=browserleaks.com
+||api.fix-price.com/buyer/v*/cookie-config^$xhr,domain=fix-price.com
+||rm.fix-price.com/intake/v*/rum/events^$xhr,domain=fix-price.com
+||img.fix-price.com/_marketplace/animated_banner/436c0465d482f161d85a9e698bdb3cfb32189e8d.svg^$xhr,domain=fix-price.com
+||pta.ramfy.ru/push/*.js^$script
+||cm*api.chefmarket.ru/api/v*/settings/dishes-statistic^$xhr,domain=chefmarket.ru
+||cs*.pikabu.ru/v*/event/$xhr,ping,domain=pikabu.ru
+||tlintegration.ru^
+||pa-na-ma.ru/site/templates/assets/js/components/notify.js^$script,domain=pa-na-ma.ru
+||pa-na-ma.ru/site/templates/assets/js/core/scrollspy.js^$script,domain=pa-na-ma.ru
+/GoogleAnalytics/content/scripts/tracking.js$script,important
+||cdn.antisov.ru/advisor.js^$script
+||goodmod.ru/scripts/*/api.js^$script
+/bitrix/tools/conversion/ajax_counter.php^$xhr
+||ekip-sport.ru/assets/template/js/cooki.js^$script,domain=ekip-sport.ru
+||assets-cdn.mvideo.ru/*/sprites/sprite.css.svg^$image,domain=mvideo.ru
+||mvideo.ru/bff/recommendations/$xhr,domain=mvideo.ru
+||mvideo.ru/bff/settings/promo-blocks$xhr,domain=mvideo.ru
+! holodilnik.ru/ajax/getRecommendsMB.php*^$xhr,domain=holodilnik.ru (новое правило, строка 356)
+/mindbox*.js^$script
+||holodilnik.ru/js/credit*.js$script,domain=holodilnik.ru
+||dashboard.fstrk.io/widget*/*.js^$script
+||code.*.ru^
+||idealturnik.ru/waitsetcookie/^$xhr,domain=idealturnik.ru
+||ur1s.ru^$third-party
+||idealturnik.ru/ordercall-config/^$xhr,domain=idealturnik.ru
+||andata.ru^$third-party
+/ajax/getRecom*.php$xhr
+||my.pochtabank.ru/sdk/v*/pos-credit.js^$script
+||dadata.ru^$third-party
+||bestway-russia.ru/catalog/view/javascript/mtkv.js^$script,domain=bestway-russia.ru
+||bestway-russia.ru/catalog/view/javascript/tag.js^$script,important,domain=bestway-russia.ru
+||bestway-russia.ru/catalog/view/javascript/mango.js^$script,important,domain=bestway-russia.ru
+||bestway-russia.ru/catalog/view/javascript/suggestions/*suggestions*.*^$script,css,domain=bestway-russia.ru
+||*bugfender*^$important
+||api.intex.ru/*/api/*/storefront/domains/^$xhr,domain=intex.ru
+/bitrix/tools/composite_data.php$xhr
+||wasabisys.com^
+||aplaut.io^$third-party
+.ru/metrika/tag.js^$script,domain=appleinsider.ru|androidinsider.ru
+.ru/gtag/js$script,domain=appleinsider.ru|androidinsider.ru
+! */gtag/js$script
+/js/lazyLoadYandexAndTelegram.js$script,domain=appleinsider.ru|androidinsider.ru
+||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/YandexRecommendations*.js^$script,important,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/Smi24*.js^$script,important,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/Smi2*.js^$script,important,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+.ru/lid/articles/*.gif^$important,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe.*^$css,script,domain=asiaplustj.info
+||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
+||logs.tourister.ru^$important
+||tpembar.com^
+/graphql$xhr,important
+||getrcmx.com^
+||xcom-shop.ru/local/templates/shop2022/js/local/notify.*.js^$script,domain=xcom-shop.ru
+||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
+||flamp.ru/static/lib/apitracker.js^$script,domain=flamp.ru
+||vsluh.ru/upload/iblock/*.gif^$image,domain=vsluh.ru
+||script.wikia.nocookie.net/fandom-ae-assets/tracking-opt*/*/tracking-opt-*.js^$script,domain=fandom.com
+||playercdn.cdnvideo.ru/aloha/clappr/clappr-stats*.js^$script
+||feeds.kommersant.ru/komcounter/readcounter$image,domain=kommersant.ru
+/dot.*^$image,xhr,script
+||dpd-site-analytics-backend-api-prod.dpd.ru/api/v*/event^$xhr,domain=dpd.ru
+||newprospect.ru/assets/filesmanager/upload/iblock/*/*.gif^$image,domain=newprospect.ru
+||newprospect.ru/assets/templates/default/img/*.gif^$image,domain=newprospect.ru
+||lmcdn.ru/static/permanent/libs/ad-blocker.js^$script,domain=lamoda.ru
+! *.lmcdn.ru/static/*/assets/*cookie*.css^$css,domain=lamoda.ru (новое правило, строка 416)
+||hdeapi.lamoda.ru/js/modules/chat_widget/hde.js^$script,domain=lamoda.ru
+||sravni.ru/v*/advertising/banners/$xhr,domain=sravni.ru
+||graphql.kazanexpress.ru^
+||api.kazanexpress.ru/api/analytics/$xhr,domain=mm.ru|kazanexpress.ru
+||partners.*.ru/api/tracker/$script,ping,domain=lemanapro.ru|leroymerlin.ru
+.ru/5sgdmfD2wXGnNsQMcywx*^$domain=lemanapro.ru|leroymerlin.ru
+||interfax.ru/footer__form_subscribe.html^$domain=interfax.ru
+||rbp1.ru^
+||doktor-khairov.ru/info/wp-content/plugins/wp-polls/images/default/pollbg.gif^$xhr,domain=doktor-khairov.ru
+/protocol/openid-connect/3p-cookies/*.html^
+||cdn*.vedomosti.ru/*/assets/subscrib_email-*.png^$image,domain=vedomosti.ru
+||forbes.ru/api/*/special-adblock^$xhr,domain=forbes.ru
+||pravo.rg.ru/api/pravo-promo/^$xhr,domain=rg.ru
+||cdnfiles.rg.ru/_next/static/chunks/23844.e580c58d2fd6dcc4.js^$script,domain=rg.ru
+||cdnfiles.rg.ru/_next/static/chunks/60844.d7dbf4a358e29d67.js^$script,domain=rg.ru
+||cdnfiles.rg.ru/_next/static/chunks/1252-dd167f96c5822f19.js^$script,domain=rg.ru
+||s91588.cdn.ngenix.net/branding/*/temp/*.jpg^$image,domain=sravni.ru
+||cdn.jsdelivr.net/jquery.suggestions/*/js/jquery.suggestions*.js^$script
+||medportal.ru/cookie_notice^$xhr,important,domain=medportal.ru
+||fedpress.ru/themes/fp/js/share.js^$script,domain=fedpress.ru
+||static.mel.fm/graph.js$script,domain=mel.fm
+||*cookie*.css^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com
+||b17.ru/img/0.gif^$image,domain=b17.ru
+||ufamama.ru/UserStatistics/$xhr,important,domain=ufamama.ru
+||ufamama.ru/services/BlogAdvisor/$xhr,important,domain=ufamama.ru
+||ufamama.ru/QR$image,domain=ufamama.ru
+||bolshoyvopros.ru/web/seedbnrs_views.cgi^$xhr,domain=bolshoyvopros.ru
+||curseforge.com/scripts/dct.js^$script,important,domain=curseforge.com
+||curseforge.com/scripts/clarity.js^$script,important,domain=curseforge.com
+||curseforge.com/scripts/comscore.js^$script,important,domain=curseforge.com
+||bservr.com^$important
+||modrinth.com/inmobi.js^$script,domain=modrinth.com
+||modrinth.com/_nuxt/AdPlaceholder*.css^$css,domain=modrinth.com
+||api.modrinth.com/analytics/$xhr,domain=modrinth.com
+||img.ru-minecraft.ru/logokl2.png^$image,domain=ru-minecraft.ru
+/wp-content/plugins/thirstyaffiliates-pro/js/app/tap-gct.js$script
+/js/share*.js^$script,domain=~teraboxcdn.com|~terabox.com
+||cubixworld.net/api/freepromo^$xhr,domain=cubixworld.net
+||cubixworld.net/scripts/ga.js^$script,domain=cubixworld.net
+||vk.com/widget_comments.php$important,xhr,domain=~vk.com
+/js/mrl-web-api.js^$script,domain=minecraftrating.ru|misterlauncher.org
+||tmonitoring.com/uploads/banners/*/*.*^$image,domain=tmonitoring.com
+||api.vk.com/method/widgets.getComments$script,xhr,important,domain=~vk.com
+/download_klauncher*.png^$image
+||modsmc.ru/_nuxt/2415b65.js^$script,domain=modsmc.ru
+||modsmc.ru/assets/icons/cookies.png^$image,domain=modsmc.ru
+! *Cookie*.css^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com
+||2ruoe1cm.ru^
+||zcode*.com^
+||minecraftgame.ru/wp-content/uploads/2019/10/fl-adbanner-horizontal.png^$image,domain=minecraftgame.ru
+/wp-content/plugins/social-by-webnavoz/js/socials_webnavoz.js$script
+||api.mcpedl.com/api/stat/$xhr,domain=mcpedl.com
+||q.stripe.com^$important
+||hotmc.ru/copy/flag/transparent.gif^$image,domain=hotmc.ru
+||hotmc.ru/img/images/transparent-banner.png^$image,domain=hotmc.ru
+||files.hotmc.ru/upload/*.mp4$media,domain=hotmc.ru
+||api.flauncher.biz/banners/*$media,image,domain=monitoringminecraft.net
+||mcrating.org/img/minecraft_server/banner*$image,domain=mcrating.org
+||minecraft-inside.ru/uploads/servers/*/*.*^$image,domain=minecraft-inside.ru
+||cdn.misterlauncher.org/storage/servers/*.*^$image,domain=misterlauncher.org
+||speraspace.com^
+||rlrt.ru^
+||vsesvets.com^
+||yapx.ru^
+||ru-minecraft.ru/uploads/forum/images/*/*_ad_sign.png^$image,domain=ru-minecraft.ru
+||api.expf.ru/api/v*/geo^$xhr
+||rutube.ru/api/video/recommendation$xhr,domain=rutube.ru
+||rutube.ru/static/img/png/adsdkbanner.png^$xhr,domain=rutube.ru
+||api.carrotquest.app/v*/users/*self_user/$ping,xhr,domain=tochka.com
+||cdn.rt.com/scripts/adfox/*.js^$script,important,domain=russiatoday.ru
+||mediator.mail.ru/script/*/^$script,xhr,important
+||socialstat.rt.com/socialstat?url=$xhr,important,domain=russiatoday.ru
+/mcserverstop.jpg^$image
+||cdn.jsdelivr.net/npm/sharer*/sharer.*.js^$script
+||url.xenolith.ru/js/anonymize.js^$script,domain=xenolith.ru
+||rassilkatest.ru^
+||game-roblox.ru/wp-content/uploads/*niki.js^$script,domain=game-roblox.ru
+||cubeworldgame.com/wp-content/uploads/*/download.png^$image
+||code.rkjs.net^
+||minecraftkwiki.online/wp-json/post_helper/stats$xhr,domain=minecraftkwiki.online
+||recommend.playground.ru/api/post.recommendations$xhr,domain=playground.ru
+||playground.ru/css/post-recommendations.css^$css,domain=playground.ru
+||playground.ru/build/2.a7d6fd88.js^$script,domain=playground.ru
+||playground.ru/build/15.d0f129ad.js^$script,domain=playground.ru
+||playground.ru/build/38.88d331f7.js^$script,domain=playground.ru
+||playground.ru/build/40.cce4b36e.js^$script,domain=playground.ru
+||playground.ru/api/referral.log$image,domain=playground.ru
+||playground.ru/sound/notification.mp3^$media,domain=playground.ru
+||minecraftpatch.ru/wp-content/themes/minecraftpatch.ru/img/tinkoff.png^$image,domain=minecraftpatch.ru
+||chocolateminecraft.com/images/server-logo-100.png^$image
+||minecraftkwiki.online/wp-json/wordpress-popular-posts/v*/popular-posts^$xhr,domain=minecraftkwiki.online
+||misterlauncher.org/monitoring/server_id/*/^$domain=misterlauncher.org
+/block-vk.webp^$image
+||minecraftrating.ru/widgets_api/monitoring/monitoring.html^$domain=minecraftrating.ru
+||cdn.jsdelivr.net/npm/cookify*/src/index.js^$script
+||cdn.axeum.ru/assets/*/js/advertising.*.js^$script,domain=axeum.ru
+||cdn.axeum.ru/assets/*/js/yandex.*.js^$script,domain=axeum.ru
+||cdn.axeum.ru/assets/*/plugins/mc_yandex_ru_metrika_tag.*.js^$script,domain=axeum.ru
+||linkunshorten.com/js/11.js^$script,domain=linkunshorten.com
+||linkunshorten.com/js/559.js^$script,domain=linkunshorten.com
+||linkunshorten.com/img/promo/*.png^$image,domain=linkunshorten.com
+||topcraft.club/media/img/projects/*.*^$image,domain=topcraft.club
+||topcraft.club/media/img/images/*.*^$image,domain=topcraft.club
+||minecraftheat.ru/uploads/bimages/*/*.*^$image,domain=minecraftheat.ru
+||xgm.guru/resource/view^$xhr,domain=xgm.guru
+/_vercel/*/script.js^$script,important
+||event.playground.ru*/.well-known/mercure?$xhr,domain=playground.ru
+||alfabank.by/api/cookies/getCookieByLocalstorage.php^$xhr,domain=alfabank.by
+! matomo.alfabank.by^$domain=alfabank.by (новое правило, строка 676)
+||st.babysfera.ru/*/static/assets/Components/*/Shared/ShareButton/ShareButton.js^$script,domain=baby.ru
+||hoff.ru/vue/analytics/$ping,domain=hoff.ru
+/tilda-stat-*.*.js^$script
+||lib.usedesk.ru/secure.usedesk.ru/widget_159338_39300.js^$script,domain=bxb.delivery
+||*tracking/ipify^$xhr
+||rawgit.com/RobinHerbots/Inputmask/*/dist/jquery.inputmask.js^$script
+||ura.news/ssi/publication_promo_email.php$xhr,domain=ura.news
+||s.ura.news/images/news/upload/publication_promo_email/*/*.webp^$image,domain=ura.news
+/rambler-id-helper/*/storage.html^
+||news.gnezdo2.ru/gnezdo_news_tracker_new.js^$script,domain=bigenc.ru
+||ccsyncuuid.net^$domain=bigenc.ru
+||c.bigenc.ru/metrics$xhr,domain=bigenc.ru
+||s.bigenc.ru/_nuxt/social-*.*.js^$script,domain=bigenc.ru
+||rtvi.com/wp-content/themes/rtvi/images/pixel_1pixel.png^$xhr,domain=rtvi.com
+||counter.rambler.ru^$important
+||osnmedia.ru/wp-content/uploads/*/*/*-promo.png^$image,domain=osnmedia.ru
+.ru/wp-content/themes/*/img/tg*.jpg^$image,domain=androidinsider.ru|appleinsider.ru
+.ru/wp-content/themes/*/img/telegram*.svg^$image,domain=androidinsider.ru|appleinsider.ru
+||vp.rambler.ru/player/sdk.js^$script
+||developers.rambler.ru/likes/v*/widget.js^$script
+||rambler.ru/location/$xhr
+||banki.ru/service/layout-header/geo/^$xhr,domain=banki.ru
+||cdn.banki.ru/static/common-static/common-scripts/build/base.*.js^$script,domain=banki.ru
+||banki.ru/products/currencyNodejsApi/getTrackingUrlList/^$xhr,domain=banki.ru
+||mywebpc.ru/wp-content/uploads/2024/07/telegram-chanel.png^$image,domain=mywebpc.ru
+||anycomment.io/*/comment/stream^$xhr
+||apptracer.ru^$important
+||xkkh.starkai.com/admin_tpl_css.css^$css,domain=energizelab.com
+||energizelab.com/*/images/getemail.svg^$image,domain=energizelab.com
+||alexametrics.com^$important
+||static.klaviyo.com^$important
+/perf-kit/shopify-perf-kit-*.*.js^$script
+||stats.llaun.ch^
+||stats.iobit.com^$important
+||cnews.ru/subscribe/subscribe.js^$script,domain=cnews.ru
+||cnews.ru/inc/js/search-suggests.js$script,domain=cnews.ru
+||static.cnews.ru/img/zoom/2023/08/22/*.*^$image,domain=zoom.cnews.ru
+||filearchive.cnews.ru/img/files/2022/04/08/icon-*.png^$image,domain=zoom.cnews.ru
+||a.lifehacker.ru/lifehacker/tracker^$xhr,domain=lifehacker.ru
+||iphones.ru/wp-content/themes/simpla2/images/sprites/*.png^$xhr,domain=iphones.ru
+||iphones.ru/wp-content/themes/simpla2/images/banner/yota/*.*^$xhr,domain=iphones.ru
+||trashbox.ru/img/blank-blue.png^$xhr,domain=trashbox.ru
+||pdalife.to/default/js/push.js^$script,domain=pdalife.to
+||pdalife.to/default/images/design/Blitz_D.jpg^$xhr,domain=pdalife.to
+||pdalife.to/default/images/sprite.png^$xhr,domain=pdalife.to
+||pdalife.to/default/images/icons/sprite.svg$xhr,domain=pdalife.to
+||api*.ldplayer.net/ows/*/ldsite/event^$xhr,domain=ldplayer.net
+||api*.ldplayer.net/ows/*/ip/checkIpArea^$xhr,domain=ldplayer.net
+||cdn.ldplayer.net/gw/static/ld_gw/js/adMsg.js^$script,domain=ldplayer.net
+||uptodown.com/img/vpn-mockup.webp^$image,domain=uptodown.com
+||uptodown.com/img/svgs/icon-vpn-secondary.svg^$image,domain=uptodown.com
+||pdalife.to/updateView/^$xhr,domain=pdalife.to
+||a.*pure.*/analytics*.js^$script,domain=apkpure.net|apkpure.com
+||r.cdnpure.com^$important
+||mynickname.com/img/icon-nft.png^$xhr,domain=mynickname.com
+||playground.ru/img/ui/steam-pay-*.png^$xhr,domain=playground.ru
+||i.playground.ru/e/0FGSrqlsrh75Hy7S9mrjtg.jpeg.webp^$image,domain=playground.ru
+||cdn.iz.ru/profiles/portal/modules/fix/template/js/yandex_zen.js^$script,domain=iz.ru
+||cdn.iz.ru/profiles/portal/themes/purple/js/partners-block.js^$script,domain=iz.ru
+||siteapi.vtb.ru/api/geoip/ip-data^$xhr,domain=vtb.ru
+||alfabank.servicecdn.ru/assr/AnalyticsEventSender*.js^$script,domain=alfabank.ru
+||alfabank.ru/conductor/metrics^$xhr,domain=alfabank.ru
+||browser.sentry-cdn.com/*/bundle.tracing.*.js^$script
+||akbars.ru/api/browser-log^$xhr,domain=akbars.ru
+||gazprombank.ru/upload/mtm/main/matomo*.js^$script,domain=gazprombank.ru
+||gazprombank.ru/upload/mtm/tag.js$script,domain=gazprombank.ru
+||otpbank.ru/bitrix/templates/redesign/js/counter/*.js^$script,domain=otpbank.ru
+||rts-*.carrotquest.app/websocket/app_online_changed*/chat_bot_conversation_finished$websocket,domain=tochka.com
+||api.carrotquest.app/v*/jsconnect^$domain=tochka.com
+||tochka.com/storage/app/media/carrotquest/carrotquest.js^$script,domain=tochka.com
+||y-cdn.uralsib.ru/front/static/vendor/tag*.js^$script,domain=uralsib.ru
+||invite-agent.uralsib.ru/confirm/*/click$xhr,domain=uralsib.ru
+||mtsbank.ru/upload/static/offer-popup/offer-poup-dengi.webp^$image,domain=mtsbank.ru
+||mtsbank.ru/upload/static/img/personalOffer/*.webp^$image,domain=mtsbank.ru
+||mtsbank.ru/upload/static/main-page/telegram-image-*.webp^$image,domain=mtsbank.ru
+||api-app.sovcombank.ru/cdn/gistfile.*.js^$script,domain=sovcombank.ru
+||ecdn.sovcombank.ru/js/em.js^$script,$domain=sovcombank.ru
+||api-app.sovcombank.ru/em^$xhr,domain=sovcombank.ru
+||helpdesk.unistream.ru/js/modules/chat_widget/media/exquisite.*.ogg^$media,domain=unistream.ru
+||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/share.js^$script,domain=kp.ru
+||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/zen-subscribe.js^$script,domain=kp.ru
+||assets.habr.com/habr-web/img/*.webp^$image,domain=habr.com
+||habr.com/kek/v*/reactions/counters$xhr,domain=habr.com
+/api/fl$xhr,other,important
+||eaglercraft.com/js/fb.js^$script,domain=eaglercraft.com
+||s.basicconfig.com/channel/20$script,domain=gid-minecraft.ru
+||ixbt.com/site*/resources/javascript/kocmoc.js^$script,domain=ixbt.com
+||desport.ru/api/get-ip-adress/get-ip-adress^$xhr,domain=desport.ru
+||simbad.pro^
+||desport.ru/js/webim.js^$script,domain=desport.ru
+||pw.nexusmods.com/js/container_aHn6giK8.js^$script,domain=nexusmods.com
+||nexusmods.com/Contents/Scripts/crazyad.js$script,domain=nexusmods.com
+||superapteka.ru/api/metric/$xhr,domain=superapteka.ru
+||outsidethebox.ms/blog/wp-content/uploads/blog-images/tg-logo-48.png^$image,domain=outsidethebox.ms
+||app.mywot.com/api/analytics/event^$xhr,domain=mywot.com
+/revo/config/config.php^$xhr
+||bankinform.ru/img/dummy1.png^$image,domain=bankinform.ru
+||firefox-api-proxy.cdn.mozilla.net/*/*/recommendations
+||yota.ru/assets/images/banner-cookies.png^$image,domain=yota.ru
+||k.cackle.me/widget/*/count$xhr
+||static-s.kinorium.com/img/blank100.png^$image,domain=kinorium.com
+||images.promokodi.net/iblock/*/*/promokod_yandex_puteshestviya.png^$image,domain=promokodi.net
+||res.cloudinary.com/admitad-gmbh/image/upload/f_auto/v1732718726/2d472d9dfad055168d11f98741a3fa14.png^$image,domain=promocodes.hi-tech.mail.ru
+!
+||krasotaimedicina.ru/bitrix/templates/adaptive_main/images/ulli.gif^$image,xhr,domain=krasotaimedicina.ru
+-push-notifications/$xhr,important
+||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/ViqeoFlyrollAdv*.js^$script,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+||cm*api.chefmarket.ru/api/v*/settings/dishes-statistic^$xhr,domain=chefmarket.ru
+||trial-sport.ru/images_g/2019/7/22/5417489_s.jpg^$image,domain=trial-sport.ru
+||static.line-scdn.net/liff/*/sdk.js^$script,xhr
+||cdn*.spravportal.ru/Images/Creatives/fl_getgift.png^$image,domain=spravportal.ru
+||cdn*.spravportal.ru/Images/Creatives/WCBot_RC.jpg^$image,domain=spravportal.ru
+||8sot.su/js/other/advisvisble.js^$script,domain=8sot.su
+||core-colibri-api.samokat.ru/api/clickstream^$xhr,domain=samokat.ru
+||core-colibri-api.samokat.ru/api/events/$xhr,domain=samokat.ru
+||samokat.ru/api/metrics^$xhr,ping,domain=samokat.ru
+||sfr7ag.ru^
+||samokat.ru/weborama.html^$domain=samokat.ru
+||api-web.samokat.ru/showcase/recommendations/whatToTryProducts$xhr,domain=samokat.ru
+! /_vercel/speed-insights/script.js^$script,important (новое правило, строчка 500)
+||zen.yandex.ru/widget-loader^$script,domain=3dnews.ru
+||kupigolos.ru/img/info/710%D1%85294.webp^$image,domain=kupigolos.ru
+||kupigolos.ru/img/info/180x1270.webp^$image,domain=kupigolos.ru
+||yastatic.net/market-export/_/i/favicon/ymnew/558.png^$image
+||click-or-die.ru/wp-json/post-views-counter/view-post/$xhr,domain=click-or-die.ru
+||aads.com^$important
+||infird.com/cdn/$script,xhr
+||savefrom.net/img/ext-advice/ext-advice__icon-yabro.png^$xhr,domain=savefrom.net
+||savefrom.net/assets/experiment/partnersBlock/img/*.png^$image,domain=savefrom.net
+||savefrom.net/build/js/chunk~partnersBlock-js-main-js.js$script,domain=savefrom.net
+||savefrom.net/img/televzr/*.*^$xhr,domain=savefrom.net
+||savefrom.net/build/js/chunk~pBlock-js-main-js.js$script,domain=savefrom.net
+||savefrom.net/build/js/chunk~propellerPush-js-main-js.js$script,domain=savefrom.net
+||savefrom.net/img/favicons/thumb/*.png^$xhr,domain=savefrom.net
+||savefrom.net/img/ummy_icon_*.png^$image,domain=savefrom.net
+||savefrom.net/build/js/chunk~rsya-js-main-js.js$script,domain=savefrom.net
+||savefrom.net/build/js/chunk~rsyaRuBanners-js-main-js.js$script,domain=savefrom.net
+||savefrom.net/msec^$xhr,domain=savefrom.net
+/build/2f216d687fe39ac06f55.png^$image,domain=9xbuddy.com|offmp3.net
+||kanobu.ru/api/v*/ainfo/toplink-and-informer^$xhr,domain=kanobu.ru
+||kanobu.ru/api/v*/ainfo/informers/^$xhr,domain=kanobu.ru
+||brolink5s.site^
+||timto329gpl.com/player/js/adblock.js^$script
+||stats.myangular.life^$important
+||ws.getzend.digital^$important
+||rcmjs.rambler.ru/static/recommender.js^$script
+||hye1eaipby4w.matham.ws^
+||esports.ru/wp-content/uploads/2024/12/winline_logo_main_rgb.svg^$image,domain=esports.ru
+||esports.ru/wp-content/uploads/2024/05/pari-logo-backing.svg^$image,domain=esports.ru
+||esports.ru/wp-content/uploads/2024/12/freebet_5x1000_*.gif^$image,domain=esports.ru
+||esports.ru/wp-content/uploads/2025/01/414x60.gif^$image,domain=esports.ru
+! matomo-el5.x5.ru^$important (новое правило, строка 676)
+||frontlogger.dodois.io^
+$cookie=/adtech_uid|top100_id|dco.id/
+||sibdroid.ru/upload/is/settings/c52/k8m6dcpmm5aqnx6nu8hn2t16va4e404l/TG%20desktop%20(2).png^$image,domain=sibdroid.ru
+/wp-admin/admin-ajax.php?*views*$xhr
+||api.zadarma.com/calltracker$xhr
+||effect.habr.com^$important,domain=habr.com
+||habr.com/kek/v*/articles/*/pageview$xhr,domain=habr.com
+||hawk.so/ws$websocket,important
+.ru/assets/hawk*.js^$script,domain=dtf.ru|vc.ru
+||cs15.pikabu.ru/post_img/2025/01/14/8/17368606351450798.png^$image,domain=pikabu.ru
+||d.pikabu.ru/counters/$xhr,domain=pikabu.ru
+||matchtv.ru/api/v*/banners?$xhr,domain=matchtv.ru
+||idam.metro-cc.ru/authorize/api/oauth2/check_cookie_iframe^$domain=metro-cc.ru
+||calc.ru/include/ads.php$xhr,domain=calc.ru
+||calc.ru/js/informer.js$script,domain=calc.ru
+||calc.ru/include/adsbygoogle.php$xhr,domain=calc.ru
+||cdn.calc.ru/js/index2015.js^$script,domain=calc.ru
+||yoomoney.ru/offerwall/ajax/statistics/$xhr,domain=yoomoney.ru
+||vprok.ru/_nextPublic/scripts/fingerprint/*/sdk-web*.js^$script,domain=vprok.ru
+||proto-eum.vprok.ru/eum/rum$ping,domain=vprok.ru
+||matomo*.*^$important
+/images/site_180x81_1.gif^$image,domain=2x2tv.ru|online.2x2tv.ru
+||api.vigo.one/uxzoom/*/notify$xhr
+||tolstoycomments.com^$domain=2x2tv.ru
+||s.rbk.ru/*rbcnews_static/rbcnews-*/scripts/build/_metrika-config.js^$script,domain=rbc.ru
+||t.rbc.ru/info-service/api/v*/ev/$xhr,ping,domain=rbc.ru
+||t.rbc.ru/track/*/*/$xhr,domain=rbc.ru
+||s.rbk.ru/*rbcnews_static/rbcnews-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru
+||t.rbc.ru/rbcmetr/stat/regional/$xhr,domain=rbc.ru
+||telegram.org/css/*widget*.css$css,domain=~telegram.org
+||iguides.ru/bitrix/templates/iguides-2015/js/tg-widget.js$xhr,domain=iguides.ru
+||tourister.ru^$cookie=dis_is_retina
+||tochka.com^$cookie=tochka_analytics_client_uid
+||alfabank.ru^$cookie=/last_tags_of_interest|lastVisitDate/
+||vtb.ru^$cookie=rxvt
+$cookie=/dsp_click_id|mediaInfo|pageLanding/,domain=tbank.ru|tinkoff.ru,important
+||static.shopotam.ru/ad_dir/advert.js$script,domain=shopotam.ru
+||shopotam.ru^$cookie=/view_counter|z_ref_url|z_ref_target|z_ref_date|last_date/
+||rbc.ru^$cookie=qrator_msid2
+||mi.com^$cookie=/_ot_last_time|_ot_referrer_path/
+||mi.com^$cookie=/_ot_utm_*/
+||adv-cdn.tnt-online.ru^
+||1tv.ru^$cookie=cookieMatchedWithYandex
+||static.1tv.ru^$cookie=cookieMatchedWithYandex
+||1tv.ru/js/libs/browserUpdater.js^$script,domain=1tv.ru
+||smotrim.ru^$cookie=/yandexuid|yashr/
+||shopogolic.net^$cookie=dashly_device_guid
+||irecommend.ru^$cookie=/statsactivity|statstimer/
+||otzovik.com^$cookie=cgreg
+||otzovik.com^$cookie=refreg
+||otzovik.com^$cookie=ROBINBOBIN
+!
+!
+!
+!
+!
+!
+!
+!
+! == 4PDA ==
+!
+! Blocking advertising images (despite blocking blocks with advertisements by other filters).
+! Блокировка рекламных изображений (несмотря на блокировку блоков с рекламой другими фильтрами).
+!
+! i.4pda.ws/s/*.jpg^$image,domain=4pda.to
+||*4pda.to/s/*.jpg?_=*^$image,domain=4pda.to
+||i.4pda.ws/s/vIBCYgN5BkfUH7sJNrH2qkTXfJvy59kvOFuWhz1LmU5QlRkxToMQigxly.jpg^$image,domain=4pda.to
+||i.4pda.ws/s/ZFjpvgdZQa3YXN2Kz0XLce5z0FmAiEXvAPN2YC2qk8IOH7XE23z1bANz2Nll.jpg^$image,domain=4pda.to
+
+!
+! Blocking hidden html component of Yandex analytics.
+! Блокировка скрытого html компонента аналитики Яндекса.
+||*4pda.to/s/*.html^$domain=4pda.to
+!
+! Blocking the script responsible for advertising (despite other filters blocking URLs of advertisements).
+! Блокировка скрипта, отвечающего за рекламу (несмотря на блокировку URL адресов рекламы другими фильтрами).
+||*4pda.to/s/j7793LgWtPTV.js*^$script,domain=4pda.to
+
+!
+! Blocking hidden images in one pixel (1 x 1).
+! Блокировка скрытых изображений в один пиксель (1 x 1).
+! *4pda.to/s/*.gif*^$image,xhr,domain=4pda.to  (03.12.202 не грузятся иконки, скрытые изображения в один пиксель будут блокироваться отдельно)
+||*4pda.to/s/j7790osz2tCgk6fYcxz2yqeM8NXMm.png^$image,domain=4pda.to
+||*4pda.to/s/vIBCbXoJxOYy9Rr4CXbD5HkEyfQ.png^$image,domain=4pda.to
+||4pda.to/static/module/lytebox/images/blank.gif^$image,domain=4pda.to
+!
+@@||i.4pda.ws/s/*.jpg?v=*^$domain=4pda.to
+@@||*4pda.to/s/*.js?_=*^$domain=4pda.to
+@@||*4pda.to/s/*/*/menu_item.gif^$domain=4pda.to
+!
+!
+! ===
+!
+!
+!
+! == Analytics and other "garbage" from the Megamarket website (megamarket .ru) (ex. Sbermegamerket). ==
+! == Аналитика и прочий «мусор» с сайта Мегамаркета (megamarket .ru) (ex. Сбермегамаркет). ==
+! Blocking ads, analytics and other “garbage”.
+! Блокировка рекламы, аналитики и прочего «мусора».
+!
+||megamarket.ru/api/mobile/v*/analyticsDataService/$xhr
+||megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr
+! megamarket.ru/api/fl/idw-smm^$xhr (новое правило, строка 587)
+||api.megamarket.tech/api/colibri/events/$xhr
+||megamarket.ru/api/mobile/v*/promoContentService/$xhr
+||api.megamarket.tech/api/events/config^$xhr
+!
+! Rule for blocking banner ad images (new design) (PC version).
+! Правило блокировки рекламных баннеров (новый дизайн) (ПК версия).
+||main-cdn.sbermegamarket.ru/upload/mnt/*.jpg^$image
+!
+||megamarket.ru/static/dist/images/cookies.*.webp^$image
+!
+! ===
+!
+!
+!
+! == Analytics and other "garbage" from the Ozon Bank website (finance. ozon. ru). ==
+! == Аналитика и прочий «мусор» с сайта Ozon Банка (finance. ozon. ru). ==
+! Blocking ads, analytics and other “garbage”.
+! Блокировка рекламы, аналитики и прочего «мусора».
+!
+||finance.ozon.ru/api/v*/referralProgram_promoter_getPromoterInfo^$xhr,domain=finance.ozon.ru
+||finance.ozon.ru/api/v*/loyalty_promotions_getConsistentPromotion^$xhr,domain=finance.ozon.ru
+||finance.ozon.ru/api/v*/loyalty_promotions_getBanners^$xhr,domain=finance.ozon.ru
+||finance.ozon.ru/api/v*/loyalty_stars_getPromotionStatus^$xhr,domain=finance.ozon.ru
+||cdn*.ozone.ru/s*/ob-frontend/prod/release/all/static/assets/_app/immutable/assets/new-ozon-app-qr.*.svg^$image,domain=finance.ozon.ru
+||finance.ozon.ru/api/v*/performance^$xhr,ping,domain=finance.ozon.ru
+||finance.ozon.ru/api/v*/loyalty_promotions_getCurtain^$xhr,domain=finance.ozon.ru
+!
+! От блокировки картинки с QR кодом для скачивания приложения Ozon Банка, текст справа немного съехал налево 0_0.
+! From blocking the picture with the QR code for downloading the Ozon Bank app, the text on the right has moved slightly to the left 0_0.
+!
+! ===
+!
+!
+!
+! == Analytics and other "garbage" from the Pinterest website (*. pinterest .com). ==
+! == Аналитика и прочий «мусор» с сайта Пинтерест (*. pinterest .com). ==
+! Blocking ads, analytics and other “garbage”.
+! Блокировка рекламы, аналитики и прочего «мусора».
+!
+||*pinterest.com/_/_/trace/trace/^$xhr,important
+||*pinterest.com/_/_/storage_report/^$xhr,important
+||*pinterest.com/_/_/logClientError/^$xhr,important
+! *pinterest.com/_/graphql/^$xhr,important (новое правило, строка 380)
+||*pinterest.com/_/_/csp_report/^$xhr,important
+||trk.pinterest.com^$important
+||ads.pinterest.com^$important
+||log.pinterest.com^$important
+||analytics.pinterest.com^$important
+!
+! ===
+!
+!
+!
+! == Blocking unnecessary “garbage” from the Wildberries website (Russian and Global version). ==
+! == Блокировка ненужного «мусора» с сайта Wildberries (Российская и Глобальная версия). ==
+! Российская версия (Russian version): wildberries .ru
+! Глобальная версия (Global version): global .wildberries .ru
+!
+! Blocking ads, analytics and other “garbage”.
+! Блокировка рекламы, аналитики и прочего «мусора».
+! -
+! Home page ad blocking rules are present, as well as analytics.
+! Присутствуют правила блокировки рекламы на главной странице, а также аналитики.
+!
+||points.wb.ru/points-users-api/api/v*/*/promotion/available^$xhr,domain=wildberries.ru
+||static*.wbbasket.*/vol*/j/performanceAnalytics.*.js^$script,domain=wildberries.ru
+||wildberries.ru/webapi/stats/$xhr,domain=wildberries.ru
+||wildberries.ru/webapi/logging/$xhr,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/crm-bnrs/adsf/*.webp^$image,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/data/promotion-creatives.json.hash^$xhr,domain=wildberries.ru
+! *basket*.wbbasket.ru/vol*/data/promotion-creatives.json^$script,domain=wildberries.ru
+||static.wbstatic.net/j/performanceAnalytics.*.js^$script,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/crm-bnrs/bners*/*.webp^$image,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/data/banners-main-*-*.json^$script,xhr,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/site/*/*/*/*recommendationsList*.js^$script,xhr,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/site/t/*/cookies.*.json^$xhr,domain=wildberries.ru
+! a.wb.ru/sdk/sdk.js^$script,domain=wildberries.ru (soon..)
+!
+!
+!
+!
+! Блокировка загрузки рекламы лотереи (+ лого рекламы) на странице Личного Кабинета (Российская версия).
+! Blocking the download of lottery ad (+ advertising logo) on the Personal Account page (Russian version).
+||shopper-bt.wb.ru/shopper/api/v*/purchases/lottery-informer^$xhr,domain=wildberries.ru
+||static-basket-*.wbbasket.ru/vol*/site/*/lottery/lk/banner-logo-*.png^$image,domain=wildberries.ru
+!
+!
+! - Global version (Глобальная версия). -
+||*basket*.wbbasket.ru/vol*/data/promo-panel-data-*.json^$script,xhr,domain=global.wildberries.ru
+||wbx-logs.wildberries.ru/api/v*/log^$xhr,domain=global.wildberries.ru
+||static-basket-*.wbbasket.ru/vol*/wbx-static/prod/assets/images/qr-code/qr-code.png^$image,domain=global.wildberries.ru
+! -
+!
+! - Вперемешку с Глобальной и Российской версией (Interspersed with the Global and Russian versions). -
+||banners-website.wildberries.ru/public/v*/banners*^$xhr,domain=wildberries.ru|global.wildberries.ru
+||a.wb.ru/e/*^$ping,domain=wildberries.ru|global.wildberries.ru
+||*/i/v*/apps/qr*.svg^$image,domain=wildberries.ru|global.wildberries.ru
+! -
+!
+@@||*basket*.wbbasket.ru/vol*/site/j/spa/customTags/banners.*.js^$domain=wildberries.ru
+@@||static.wbstatic.net/data/banners-main-*-*.json^$domain=wildberries.ru
+@@||*basket*.wbbasket.ru/vol*/site/j/spa/customTags/spa.recommendations*.js^$script,domain=wildberries.ru
+!
+!
+! = Cosmetic rules =
+! = Косметические правила =
+!
+! Рекламный баннер лотереи на странице Личного Кабинета (Российская версия).
+! Lottery advertising banner on the Personal Account page (Russian version).
+wildberries.ru##div[class^="lk-advertisement"]
+!
+!
+!
+! ===
+!
+!
+!
+! == Blocking unnecessary “garbage” from the Ozon website (ozon .ru, .by). ==
+! == Блокировка ненужного «мусора» с сайта Озон (ozon .ru, .by). ==
+! Blocking ads, analytics and other “garbage”.
+! Блокировка рекламы, аналитики и прочего «мусора».
+! Rules for blocking scripts, styles (CSS) and ad images are present, as well as personalized recommendations.
+! Присутствуют правила блокировки скриптов, стилей (CSS) и рекламных изображений, а также персонализированных рекомендаций.
+!
+||ir*.ozone.ru/s*/cms/*/qr-code_*.png^$image,domain=ozon.ru|ozon.by
+||st.ozone.ru/assets/*/detached/marketing*/entry.*.js^$script,domain=ozon.ru|ozon.by
+! st.ozone.ru/s*/ozon-tag-manager/*/sdk.js^$script,domain=ozon.ru|ozon.by **
+! *ozon.*/api/entrypoint-api.bx/page/json/v*^$xhr,domain=ozon.ru|ozon.by **
+||st.ozone.ru/assets/*/detached/*/marketing-desktop-adv-banner-v*.js^$script,domain=ozon.ru|ozon.by
+||st.ozone.ru/assets/*/common_molecules_adv-info_index_vue.*^$css,script,domain=ozon.ru
+! xapi.ozon.*/api/logs-gateway/*^$xhr,domain=ozon.ru|ozon.by **
+! st.ozone.ru/assets/*/detached/*/autosplit-teams_*_components*_adv-*.js^$script,domain=ozon.ru|ozon.by **
+||cdn*.ozonusercontent.com/s*/sellerassets/*/*.jpeg^$image,domain=ozon.ru|ozon.by
+! st.ozone.ru/assets/*/detached/*/*-desktop-banner-carousel.js^$script,domain=ozon.ru **
+! st.ozone.ru/assets/*/detached/search/search-tap-tags.js^$script,domain=ozon.ru|ozon.by **
+! ozon.ru/api/composer-api.bx/_action/v*/getSearchTapTags^$xhr,domain=ozon.ru **
+||st.ozone.ru/s*/client-metrics/*.js^$script,domain=ozon.ru|ozon.by
+||ir.ozone.ru/s*/cms/*/ozon_job-*.png^$image,domain=ozon.ru
+||ir.ozone.ru/s*/cms/*/*_11.11_*.jpg^$image,domain=ozon.ru
+!
+! -The rule applies to Ozon and Ozon Bank's website. -
+! - Правило применимо к сайту Озона и Озон Банка. -
+! xapi.ozon.*/dlte/multi^$ping,domain=ozon.ru|finance.ozon.ru|ozon.by **
+! -
+!
+! Белорусская версия (ozon .by)
+!
+||xapi.ozon.*/perf-metrics-collector/*$ping,domain=ozon.by
+||st.ozone.ru/assets/*/detached/uw/uw-desktop-object-banner-list.js^$script,domain=ozon.by
+!
+!
+! = Cosmetic rules =
+! = Косметические правила =
+! Удаление баннера с рекламой «Озон Рассрочки» на странице товара (в блоке с указанием цены и т.д.).
+! Removing the banner with «Ozon Installment» advertising on the product page (in the block with the price, etc.).
+ozon.ru##div[data-widget="webInstallmentPurchase"]
+!
+ozon.ru###layoutPage > div.b6:first-child > div.dy0_9 > div > div.container.c:nth-child(3) > div.e1:last-child > div.d3.c8:last-child > div.e4 > div:nth-child(3)
+ozon.ru###layoutPage > div.b6:first-child > div.d0m_9 > div > div.container.c:nth-child(3) > div.e1:last-child > div.d3.c8:last-child > div.e4 > div:nth-child(3) > div > div.b3228-a.b3228-a0
+! =
+! Зато от блокировки некоторых скриптов сломался подвал сайта (footer) на главной странице XD (к примеру, в разделе Корзина подвал сайта работает).
+! But from blocking some scripts broke the site basement (footer) on the main page XD (for example, in the Shopping Cart section the site basement works).
+! -
+! ** - Пришлось отключить т.к. глючит сайт. (08.12.24)
+!
+! ===
+!
+!
+!
+! == Blocking unnecessary “garbage” from the Irecommend website (irecommend .ru). ==
+! == Блокировка ненужного «мусора» с сайта Irecommend (irecommend .ru). ==
+! Blocking analytics and other “garbage”.
+! Блокировка аналитики и прочего «мусора».
+!
+||*-irec.r-*.com/collect^$xhr,domain=irecommend.ru
+||irecommend.ru/ss_t/collect^$xhr,domain=irecommend.ru
+!
+! Блокировка скрипта, отвечающего за рекламу (несмотря на блокировку URL адресов рекламы другими фильтрами).
+||irecommend.ru/injector/reklamko.js^$script,domain=irecommend.ru
+!
+! Блокировка скрипта, отвечающего за аналитику Яндекс Метрики (несмотря на блокировку URL адресов другими фильтрами).
+||irecommend.ru/injector/metrika-config.js^$script,domain=irecommend.ru
+!
+||irecommend.ru/injector/gpu.js^$script,domain=irecommend.ru
+!
+! ===
+!
+!
+!
+! == Otzovik website (otzovik .com) ==
+!
+! Правило блокировки рекламных картинок на главной странице (несмотря на блокировку блоков с рекламой другими фильтрами)..
+! Но одна есть прям на главной странице - реклама Альфа банка, которая находится прямо в блоке Промоакции.. 
+||*otzovik.com/services/20*/*/*.*^$image,domain=otzovik.com
+!
+||yabs.yandex.ru^$domain=otzovik.com
+!
+! - Cosmetic rules -
+! - Косметические правила -
+! Есть вариант заблокировать сам блок косметическом правилом..
+! otzovik.com###content > div.home-grid:last-child > div.content-left:first-child > div.topblock.promo.home-box:nth-child(2)
+!
+! Удаление рекламных баннеров на странице результатов поискового запроса.
+otzovik.com##div[class^="produkt"][class$="sortable"]
+! -
+!
+! ===
+!
+!
+!
+! == AliExpress website (aliexpress .ru) ==
+!
+!
+||st.aestatic.net/mixer/ssr/*/aer-assets/tracker.*.js^$script,domain=aliexpress.ru
+||st.aestatic.net/mixer/ssr/*/aer-assets/reasons.*.js^$script,domain=aliexpress.ru
+||st.aestatic.net/mixer/widgets/bx/RecommendationFeedV*/*/system/RecommendationFeedV*.*^$css,script,domain=aliexpress.ru
+||st.aestatic.net/mixer/widgets/bx/RedOrderRecommendationFeedModal/*/system/RedOrderRecommendationFeedModal.*^$css,script,domain=aliexpress.ru
+||st.aestatic.net/mixer/widgets/bx/RecommendationFeedOrderSimilarWrapper/*/system/RecommendationFeedOrderSimilarWrapper.js^$script,domain=aliexpress.ru
+||aliexpress.ru/aer-jsonapi/bx/web/recommend/just-for-you-new-ru-sell^$xhr,domain=aliexpress.ru
+!
+! = Cosmetic rules =
+! = Косметические правила =
+aliexpress.ru##div.ModuleBanner_ModuleBanner__outer-wrapper__100x6
+! aliexpress.ru###__aer_root__ > div.MainLayout__root__79bpr.MainLayout__background-white__79bpr > div.snow-container_SnowContainer__container__rkv8lv:nth-child(7) > div.RedOrdersGrid_RedOrdersGrid__grid__um832:first-child > div.snow-ali-kit_RootGrid__container__18kmu5.RedOrdersGrid_RedOrdersGrid__container__um832 > div.RedOrdersGrid_RedOrdersGrid__rootGridInnerDiv__um832.snow-ali-kit_RootGrid__row__18kmu5.snow-ali-kit_RootGrid__align-flex-start__18kmu5 > div.snow-ali-kit_Col__col__1ccuye.snow-ali-kit_Col__align-self-flex-start__1ccuye.RedOrdersColumn_RedOrdersColumn__grid__987ze:last-child > div.snow-container_SnowContainer__container__rkv8lv > div.snow-container_SnowContainer__container__rkv8lv:last-child
+aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
+aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
+! =
+! -
+@@||st.aestatic.net/mixer/ssr/*/aer-assets/ext/ad-tracker.*.js^$domain=aliexpress.ru
+@@||st.aestatic.net/mixer/ssr/*/aer-assets/ext/tracking.*.js^$domain=aliexpress.ru
+@@||st.aestatic.net/mixer/ssr/*/aer-assets/ext/local-tracking.*.js^$domain=aliexpress.ru
+! -
+! ===
+!
+!
+!
+!
+!
+!
+! == "Superfluous garbage" from the website (personal cabinet) of T-Bank (ex. Tinkoff). ==
+! == «Лишний мусор» с сайта (личного кабинета) Т-Банка (ex. Тинькофф). + сервисов самого банка и журнала Т-Ж (journal .tinkoff .ru) ==
+!
+.ru/api/front/$xhr,domain=tbank.ru|tinkoff.ru
+.ru/gateway/v*/event$ping,xhr,domain=tbank.ru|tinkoff.ru
+! tbank.ru/api/front/supreme-beer/$xhr,domain=tbank.ru|tinkoff.ru
+.ru/api/v*/log^$ping,xhr,domain=tbank.ru|tinkoff.ru
+.ru/resources?name=analytics_config$xhr,domain=tbank.ru|tinkoff.ru
+/tracking/mappings/test/active-mapping.json^$script,xhr,domain=tbank.ru|tinkoff.ru
+.ru/api/cfg/web-gateway/getResponse^$xhr,domain=tbank.ru|tinkoff.ru
+||cfg.*.ru/api-gateway/v*/getToggles^$xhr,domain=tbank.ru|tinkoff.ru
+.ru/twa/hosted-libs/top-mail/v*/code.js^$script,domain=tbank.ru|tinkoff.ru
+.ru/twa/hosted-libs/target-ads/v*/targetads-sdk-*.js^$script,domain=tbank.ru|tinkoff.ru
+.ru/twa/ad-hoc/pixel-iframe/index.html^$domain=tbank.ru|tinkoff.ru
+.ru/twa/hosted-libs/vk/v*/openapi.js$script,domain=tbank.ru|tinkoff.ru
+||cdn.*.ru/eventea/v*/eventea.json^$xhr,domain=tbank.ru|tinkoff.ru
+/hedge/v*/yandex-metrika*.js^$script,domain=tbank.ru|tinkoff.ru
+||cdn.*.ru/eventea/v*/pwa.json^$xhr,domain=tbank.ru|tinkoff.ru
+||cdn.*.ru/eventea/v*/tj.json^$xhr,domain=tbank.ru|tinkoff.ru
+/hedge/v*/vk-counter*.js^$script,domain=tbank.ru|tinkoff.ru
+/hedge/v*/mercury-tracking-event.js^$script,domain=tbank.ru|tinkoff.ru
+||cdn.*.ru/twa/ttm/tinkoff-pwa/*/*/index.js^$script,domain=tbank.ru|tinkoff.ru
+||acdn.*.ru/eventea/bundle/eventea.bundle.js$script,domain=tbank.ru|tinkoff.ru
+||cdn.*.ru/eventea/v*/tjournal.json^$xhr,domain=tbank.ru|tinkoff.ru
+!
+! ===
+!
+!
+!
+!
+!
+! == Сайт магазина Детский мир (detmir .ru) ==
+!
+||api.detmir.ru/v*/ui/default-suggestions*^$xhr,domain=detmir.ru
+||go.detmir.st/img/1731586870/6301b1732f0709bc7dbef85e5bf55185.svg^$image,domain=detmir.ru
+!
+! - Косметические правила -
+!
+! Рекламные баннеры
+detmir.ru##div[data-testid="advContainer"]
+! -
+!
+! ===
+!
+!
+!
+! == Сайт провайдера Дом.ру (dom .ru) ==
+!
+||dom.ru/static/js/calltouch.js^$script,domain=dom.ru
+||dom.ru/static/js/googleTagManager.js^$script,domain=dom.ru
+||dom.ru/static/js/mailRuCounter.js^$script,domain=dom.ru
+||api-content.web-api.dom.ru/v*/promo-line^$xhr,domain=dom.ru
+!
+! - Косметические правила -
+! Рекламный блок на главной странице сайта
+dom.ru##div[class^="sc-6e31cbc2-0 kKbgFL"]
+! -
+!
+! ===
+!
+!
+!
+!
+!
+!
+!
+! === Cosmetic rules ===
+! === Косметические правила ===
+russianfood.com###layout > div.layout > div.wrapper > table:nth-child(4) > tbody > tr:first-child > td.sub_left:first-child > div.sub_block:nth-child(4) > div:last-child
+rbc.ru##.footer__counter__image
+webproverka.com##table:first-child > tbody > tr:last-child > td > p > table:last-child > tbody > tr:nth-child(2) > td > table > tbody > tr > td:first-child
+webproverka.com##table:first-child > tbody > tr:last-child > td > p > table:last-child > tbody > tr:nth-child(2) > td > table > tbody > tr > td:last-child
+disk.yandex.ru###app > div.public__root > div.top-banner.top-banner_desktop:nth-child(2) > div.DesktopBanner_DesktopBanner_XjXmr.Theme.Theme_color_ps-dark.Theme_root_ps-dark > div.DesktopBanner_DesktopBanner__Foreground_B9EQN:last-child
+russianfood.com###layout > div.layout > div.wrapper > noindex:last-child > div.ab_detect:nth-child(2)
+myrusakov.ru###right > div.block:nth-child(2)
+myrusakov.ru###left > div.block:nth-child(2)
+myrusakov.ru###right > div.block:first-child
+myrusakov.ru###slider
+rbkgames.com###global-wrapper > div.main-content:nth-child(7) > div.centered.centered-with-banner:first-child > div.right-part:last-child
+rbkgames.com##.quick-bar
+mag.103.by##.cookiesNotificationBy
+gemotest.ru##div.content-inner:nth-child(6) > main.content-section.content-wrapper_info-article:nth-child(5) > div.container__flex:first-child > aside.sidebar.mobile--hidden:last-child > div.sidebar-inner.sticky--widget:last-child > a.sidebar__widget.telegram-widget:first-child
+##a[href*="//www.1c-bitrix.ru/composite/"]
+!
+! Баннер насчёт cookie файлов (сайт ресторанов Rostic's (ex. KFC))
+rostics.ru##div._3l3oK3nIbnZ
+! Рекламные баннеры-слайдеры (сайт ресторанов Rostic's (ex. KFC))
+rostics.ru##div._16TFR6yWKNl
+!
+gazeta.ru##div.b_telegram_subscriber
+!
+! Пустое место под рекламу (новостной сайт Комсомольская правда, Молдовское подразделение)
+md.kp.media##div.sc-1a8tb7h-0
+!
+!
+championat.com##div.header-bottom__adv
+! bxbox.bxb.delivery###content > div.sidebar:first-child > div.itc-slider:last-child
+bxbox.bxb.delivery##.itc-slider
+global.cdek.ru##a.shopping-banner:nth-child(5)
+tumentoday.ru##main:nth-child(2) > div.content > div.container.news-lazy-load-container > div.news-details-container:first-child > div.news-detail > div.social-links:nth-child(6)
+sputnik-georgia.ru###endless > div.endless__item > div.container.m-content:last-child > div.layout > div.article:first-child > div.article__body:nth-child(3) > div.article__block:last-child > div.article__text > strong > em > a
+!
+! Предупреждение об использовании cookie (сайт развлек. парка Атмосфера)
+*.atmosferapark.ru##.user-cookie
+!
+! Предупреждение об использовании cookie (сайт развлек. центра Максилэнд 72)
+maxiland72.ru###rec782509983 > div.t657.t657_rectangle:first-child
+!
+!
+!
+!
+! Предупреждение об использовании cookie и Яндекс.Метрики (интернет-магазин Амодей (Amodei.ru))
+amodei.ru##div[class^="concept-banner  lato   cb-bottom cb-fixed  cb-long  light  cb-close-on animated light-gray slideInUp"]
+!
+! Блок с рекомендуемыми поисковыми запросами внизу на странице объявления (сервис объявлений Авито (avito .ru))
+avito.ru##div[class^="styles-module-root-XfPi7 styles-module-margin-top_none-_c4I_ styles-module-margin-bottom_32-kQ_OA styles-module-root_direction_vertical-zyzdU styles-module-root_fullWidth-ariEk"]
+!
+! Рекламный баннер сверху сайта (сайт ювелирных товаров Соколов (sokolov .ru))
+sokolov.ru##div[class^="AuthBanner_banner__rKnfp"]
+!
+! Рекламный баннер сверху сайта (сайт оператора связа билайн (beeline .ru))
+beeline.ru##div[class^="BJOeQ"]
+!
+! Блок о подписке на email рассылку в подвале сайта (сайт оператора связи билайн (beeline .ru))
+beeline.ru##div[class^="dRwBs"]
+!
+! Сообщение об использовании блокировщика рекламы (сайт логистической компании (грузоперевозчика) Деловые Линии (dellin .ru))
+dellin.ru##div[class^="Notifications__PopupRoot-sc-ry41v1-0 dDPidn"]
+!
+! Реклама подписки онлайн-кинотеатра Кион в подвале сайта МТС (раздел про МТС ТВ (сайт оператора связи и провайдера МТС (mtsru .ru)))
+mtsru.ru##div[id="b20950"]
+! Реклама телеграм канала в подвале сайта МТС (раздел про МТС ТВ (сайт оператора связи и провайдера МТС (mtsru .ru)))
+mtsru.ru##div[id="i7050"]
+!
+! Реклама телеграм канала (новостной сайт iguides .ru)
+iguides.ru##.i-box-cta_tg
+!
+! Блок с популярными запросами внизу у подвала страницы результатов поискового запроса + внизу на странице объявления (сайт объявлений Авито (avito .ru))
+! avito.ru##div[class^="styles-module-root-fTGxT styles-module-margin-top_none-P0ihW styles-module-margin-bottom_none-ZFm_8"] (23.11.2024 ломает поисковые фильтры)
+!
+! Поп-ап насчёт розыгрыши призов за просмотр сериалов (на момент понедельник, 18.11.2024) в правом нижнем углу на главной странице сайта телеканала Домашний (Россия) (domashniy .ru).
+domashniy.ru##div[class^="wcBWDEpAog3Py-ShnqRIvw=="]
+!
+!
+chefmarket.ru##div[class^="small-social__subscribe"]
+xn----7sbaj2agca3agfevjs7cwg.xn--p1ai##div[class^="cookie__info"]
+! санаторий-хвойный .рф
+!
+! Подписка на email рассылку (сайт evro-sport .ru)
+evro-sport.ru##div[class="subscribe"]
+!
+! -
+! Сайт интернет-магазина Холодильник.ру (holodilnik .ru)
+! Промо баннеры
+! От первого правила против промо баннера сверху сайта имеет «побочный эффект» - остаётся «пустое место».
+holodilnik.ru##div[class^="alert-container"]
+holodilnik.ru##div[class^="promo-box-container container"]
+! Предупреждение об использовании cookie
+holodilnik.ru##div[class^="notify-layer notify-layer--dark notify-layer--cookie"]
+! -
+!
+sports-tech.ru##div[class="subscribe_wrap info contacts_block_footer"]
+sportmoda.ru##div[class="subscribe_button"]
+intex.ru##div[class="menu__field_news"]
+ortix.ru##aside.ortix-info.ortix-subscribe__container:nth-child(5)
+!
+! Рекламный баннер сверху сайта (сайт интернет-магазина Технопарк)
+technopark.ru##div[class="header-topper app-header__topper"]
+!
+!
+jet.bank.uz###post-body-el > div.post-bot.tw-max-w-\[44rem\].tw-mx-auto:nth-child(4) > div.tw-mb-3.tw-flex.tw-flex-col.xl\:tw-flex-row.lg\:tw-flex-row.tw-justify-start.lg\:tw-justify-between.xl\:tw-justify-between.tw-items-start.lg\:tw-items-center.xl\:tw-items-center:nth-child(2) > div.tw-mb-5.xl\:tw-mb-0.lg\:tw-mb-0:first-child
+vsluh.ru##div.content:nth-child(9) > div.container:nth-child(3) > div.content-detail__wrapper > div.content-detail__right:last-child > div.recomend:nth-child(7)
+!
+!
+! Предупреждение об использовании cookie
+prudlesnoy.ru##div[class="t657 t657_rectangle"]
+!
+! Блок о подписке на email рассылку в подвале сайта
+sibinformburo.ru##div[class="col-lg-4 col-md-4 col-sm-6"]
+!
+! Предупреждение об использовании cookie (сайт логистической (транспортной) компании ДПД (DPD) (dpd .ru))
+dpd.ru##div[class="root_UnCiX"]
+!
+xn----7sbaj2agca3agfevjs7cwg.xn--p1ai##div[class^="cookie__info"]
+! санаторий-хвойный.рф
+!
+newprospect.ru##div[class="notification"]
+newprospect.ru##div[class="telegram"]
+rg.ru##div[class="Subscribe_root__oarin Footer_subscribe__awe1E"]
+rg.ru##div[class="Footer_counters__5YSwr"]
+rg.ru##div[class="Footer_rss__ecqdR"]
+tbank.ru##div[data-page-name="adBlockedPage"]
+ru-minecraft.ru##div[class="klauncher-wrapper"]
+ru-m.org##div[class^="ramka"]
+misterlauncher.org##div[class^="alert alert-success text-center"]
+misterlauncher.org,minecraftrating.ru##div[class="text-center mt-4 font-weight-bold"]
+misterlauncher.org##div[class="block-try"]
+misterlauncher.org##div[class="page-header page-header-fixed hidden-xs page-header-fixed-show"]
+misterlauncher.org##div[class^="col-right"]
+minecraftrating.ru##div[class^="mrlauncher-banner"]
+inside.lemoncraft.ru,lemoncraft.ru##div[class^="discord-dialog discord-dialog--active"]
+tmonitoring.com##div[class^="metriks"]
+minecraftexpert.ru##div[class^="download-button klaun-button"]
+minecraftexpert.ru##div[class="download-button tg-button"]
+##div[class*="footer-counts"]
+! ~hlebs.ru##div[class*="counts"]
+##div[class^="counts"]
+##a[href$="klauncher"]
+minecraftpatch.ru##div[style="margin-top:20px;text-align: center;display: flex;flex-direction: column;justify-content: center;width: 100%;border-bottom: 1px solid #777;"]
+mcpehub.net##div[id="custom-7543-particle"]
+hotmc.ru##div[class^="banner-video-container"]
+minecraft-inside.ru##div[class^="footer__counters"]
+mody-minecraft.ru##div[class^="footer-conter"]
+ru-minecraft.ru##div[class^="ministat"]
+russiatoday.ru##div[class^="follows-channel follows-channel_top-middle follows-channel_djen"]
+russiatoday.ru##div[class^="article__facebook article__facebook_article-page_news"]
+minecraftch.ru##div[class^="vkgroup"]
+##a[href$="//mcservers.top/"]
+xenolith.ru##div[class^="f_banners"]
+vlauncher.ru##div[class^="counters-box"]
+~demix.ru,~sportmaster.ru,~habr.com,~iphones.ru,~vprok.ru##div[class*="counter"]
+##a[href*="//statcounter.com/"]
+minecraftkwiki.online##div[class="widget rounded overflow-hidden filter-field shadow mb-3 bg-gray mt-xs-0 mb-3 widget_cabinet_comment_widget"]
+minecraftpatch.ru##section:nth-child(2) > div.wrapper:last-child > div.post_box:last-child > div.post_text:last-child > div.description:last-child > div:first-child > p:nth-child(2)
+minecraftkwiki.online##li[class^="menu-item menu-item-type-custom menu-item-object-custom menu-item-18959 nav-item"]
+mcmodspc.com##div[class^="site-main__single-header-right-bottom grid__row"]
+mody4mine.ru##div[class^="vk_groups"]
+! misterlauncher.org##a[href^="https://misterlauncher.org/"] (09.12.24 некоторые кнопки и разделы сайта ломаются)
+gamewith.net##div[class="game-announce"]
+minecraftonly.com##a[href="/start.html"]
+minecraftonly.com##div[class="streams-sidebar position-fixed"]
+modscraft.net##div[class="content-listen-body"]
+topcraft.club##div[class="row zverinco"]
+topcraft.club##div[class="visible-lg left-big-zebra"]
+minecraftheat.ru##div[class="block-section social-block"]
+minecraftheat.ru##.obfuscated-link, .launcher-link
+##div[class*="counters"]
+##a[href*="//plus.google.com/"]
+##.counters
+minecraftmain.ru###custom_html-5 > div.textwidget.custom-html-widget:last-child > div.widget.gp-social-buttons-widget.gp-clearfix > ul.gp-social-icons > li:last-child > a.social-google-news.ext-link
+alfabank.by##div[class="sendpulse"]
+russianfood.com##div[align="center"]
+life.ru##div[class="styles_email__2Wd0i"]
+raiffeisen.ru##div[class="CookieDialog"]
+baby.ru##div[id^="adriver_banner_side"]
+baby.ru##div[class^="learn-and-participate"]
+osnmedia.ru##div[style^="padding: 15px 10px; border-top: 1px solid rgb(179, 182, 187); font-size: 14px; font-weight: 600; line-height: 1.4;"]
+##img[src*="counter.rambler.ru"]
+##a[href*="www.liveinternet.ru"]
+androidinsider.ru###content > article.article:first-child > div.article-body:nth-child(4) > p:nth-child(8) > code.small-text
+energizelab.com##div[class^="getemail"]
+wifigid.ru##a[class^="telegram-channel"]
+wifigid.ru##div[class^="wifigid-test-block"]
+wifigid.ru##a[href*="//t.me/wifigid"]
+pdalife.to##div[class*="ads-popup"]
+uptodown.com##div.content:first-child > section.vpn:nth-child(7)
+androeed.ru##div[class="vacancies"]
+5play.org##div[class="f-telegram"]
+apkpure.net,apkpure.com##a[class*="telegram-btn"]
+apkpure.net##main.main-container:nth-child(2) > div.home-main-container.auto-container:nth-child(2) > div.module-card-container.dt-hot-topics:nth-child(6)
+apkpure.com##div[class="social-network"]
+mynickname.com##a[class="btn nft"]
+##div[class^="CookieWarning"]
+tochka.com##div[class^="footer_subscription"]
+mtsbank.ru##div[class^="styled__Wrapper-sc-37ac7ba-0 hhBONQ"]
+mtsbank.ru##div[class^="styled__Wrapper-sc-67d955a5-0 ezVDaK"]
+mtsbank.ru##div[class^="sc-42b79eba-0 bmZTQS"]
+sovcombank.ru##div[class^="fixed bottom-0 left-0 right-0 z-20 w-full border-none bg-white shadow-cookie"]
+unistream.ru##div[class^="cc-window cc-banner cc-type-info cc-theme-classic cc-bottom cc-color-override-1028359685"]
+kp.ru##div[class^="sc-11vvdi3-20 cIvLXI"]
+ip.osnova.news##a[href^="/vpn/ip.html"]
+ip.osnova.news##a[href^="/vpn/hosting.html"]
+##a[href*="//ping-admin.ru"]
+mikhail-yudin.ru##footer.footer:nth-child(6) > div.footer__line:nth-child(2)
+easylauncher.org##div[class="widget"]
+richfamily.ru##div[id^="notification"]
+desport.ru##div[class*="Cookies_cookie"]
+desport.ru##div[class*="WebimButton"]
+outsidethebox.ms##div.site-container:first-child > div.site-inner:nth-child(2) > div.wrap > div.content-sidebar-wrap > main.content:first-child > section.author-box.tg-box:nth-child(7)
+info.agt72.ru##dialog[class="popup"]
+journal.tinkoff.ru##div[class^="_wrapper_d7xut_4"][data-with-emoji="false"]
+journal.tinkoff.ru##div[class="_subscription_1qfgu_16"]
+mywot.com##div[class="StyledUtils__FlexColumn-sc-14r66vj-1 StyledScorecard__SideBarContainer-sc-1id9k6z-1 jMQSPi"]
+mywot.com##div[class="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__InstallButtonContainerRow-sc-jubsjz-3 chPpOm"]
+proza.ru###footer > table:nth-child(2)
+bankinform.ru##div[class^="d-flex gap-3 flex-wrap align-content-center page_block fs-14 "]
+rsload.net##div[class="tgwrap"]
+5play.org##div[class="telegram-cdn-btn"]
+onlinetrade.ru##div[class^="cookiePanel"]
+blog.okko.tv##div:first-child > div.ad-site-wrapper:first-child > div.jsx-970602695.site-overlay.usDsuMBs > div > div.jsx-1539320767.content-background:first-child > div.S6B6PsCH > div.c4KiWuNi:first-child > div.jsx-3573993002.wideWrapper > header.jsx-1657880382.fHzZWEMd > div.jsx-1657880382.KKBSY_9z:last-child > a.mH7saeqi:last-child
+promokodi.net##div[class^="cashback-store-leftcol-banner hidden-xs hidden-sm"]
+mail.ru##div[class^="the-cookie"]
+promocodes.hi-tech.mail.ru##div[class^="retailer-coupon--banner"]
+promocodes.hi-tech.mail.ru##div[class^="retailer-telegram"]
+promocodes.hi-tech.mail.ru##div[class^="coupon-modal__banners"]
+promocodes.hi-tech.mail.ru##div[class^="scroll-banner"]
+promocodes.hi-tech.mail.ru##div[class^="retailer-coupon--partner"]
+mega.comfortkino.ru##div[class^="popup-wrap"]
+xiaomitime.com##a[class^="our_app"]
+sportmaster.ru##div[class^="sm-cookie-agreement-old"]
+sportmaster.ru##a[class^="sm-plate sm-plate--target"]
+demix.ru##div[class^="product-bnpl product-page__bnpl"]
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru##div[class^="ml-5"]
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru##div[data-adv-mark-informer]
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru##div[class^="py-4 px-6 uiArticleBlockLinks_yf3eW hasTopBottomLines_yf3eW hasBackground_yf3eW block_fefJj"]
+trial-sport.ru##div[style="border-top: 1px solid #d7d7d7; margin-top: 37px; padding-top: 37px; position: relative; z-index: 1;"]
+trial-sport.ru##div[class^="col_right"]
+desport.ru##div[class^="PopupAppDesktop_PopupAppDesktop__v6Jyd PopupAppDesktop_PopupAppDesktopExpanded__qZHxe"]
+terabox.com##div.page:first-child > div.main-page > div.operate-popup-box:last-child
+terabox.com##div.page:first-child > div.main-page > div.operate-top-notice:first-child
+spravportal.ru##div[style^="margin-top:8px;margin-bottom:8px"]
+spravportal.ru##div[class^="alert alert-info"]
+spravportal.ru##a[class^="btn btn-ar btn-info"]
+kiprinform.com##div[class^="news_send_block hide_on_touch"]
+thesecmaster.com##div[class^="hidden cmd:block"]
+thesecmaster.com##div[id^="newsLetterBoxSectionGlobal"]
+kupigolos.ru##div[class^="promo-block"]
+kupigolos.ru##div[class^="s-place__right"]
+kupigolos.ru##div[class^="tg"]
+kupigolos.ru##a[class^="telegram"]
+savefrom.net##div[data-href*="televzr.com"]
+savefrom.net##div[data-ga-event*="send;event;vidacha;helper-promo-click"]
+savefrom.net##div[class^="second-btn-box"]
+9xbuddy.com,offmp3.net##section[class^="fixed bottom-0 bg-white dark:bg-night-400 shadow rounded border dark:border-night-300 m-4 text-gray-600 dark:text-gray-200 transition-transform delay-100"]
+esports.ru##div[class^="bg-gray-chg flex items-center relative select-none h-12.5 w-full "]
+esports.ru##aside[class^="t-lg:col-start-4 t-lg:col-end-4 px-4 t-sm:px-0"]
+esports.ru##div[class^="flex rounded-tl-xl rounded-tr-xl fixed left-0 right-0 bottom-0 z-10 overflow-hidden h-15 mx-auto w-295 max-w-full js-catfish  hidden t-sm:block"]
+esports.ru##div[class^="cursor-default absolute top-7 t-lg:top-8 z-10 js-present-popover  "]
+sibdroid.ru##div[class^="telegram_giveaway js_telegram_giveaway open"]
+dtf.ru##a[class^="sidebar-item sidebar-item--narrow"]
+dtf.ru##a[href*="/pay/steam"]
+pikabu.ru##div[class*="ny2024"]
+iphones.ru##div[class*="post__adsbygoogle adfox"]
+iphones.ru##div[class^="footer__line3"]
+it-world.ru##div[class^="left-magazines"]
+it-world.ru##div[class^="news-more"]
+alfabank.by##section[id^="subscribes"]
+vprok.ru##div[class^="Tooltip_root__EMk_3 Tooltip_whiteTheme__bkjSb"]
+lifemart.ru##div[class^="product-list__empty-card"]
+curseforge.com###__next > div.__variable_f4926d.__variable_5c52a9.__className_f4926d > header.curseforge-header:first-child > nav > ul.top-actions:nth-child(4) > li:last-child > a.link-btn.btn-primary.link-btn-icon
+curseforge.com###__next > div.__variable_f4926d.__variable_5c52a9.__className_f4926d > header.curseforge-header:first-child > nav > ul.top-actions:nth-child(4) > li:first-child > a.link-btn.btn-secondary.premium-button-container.link-btn-icon
+rbc.ru###maincontent > div.l-col-center-590.article__content:first-child > div.article__text.article__text_free:nth-child(2) > p:nth-child(11)
+tourister.ru##div[class^="nt-foot-count"]
+tourister.ru##div[id^="pop-up-banner"]
+tourister.ru##div[class*="adver"]
+! - Scripts -
+vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
+tbank.ru,tinkoff.ru#%#//scriptlet('remove-cookie', '/dsp_click_id|pageLanding|mediaInfo/')
+journal.tinkoff.ru#%#//scriptlet('set-local-storage-item', 'visitedArticles', '$remove$')
+tbank.ru#%#//scriptlet('set-local-storage-item', 'twt_wuid_visit_storage', 'null')
+tbank.ru#%#//scriptlet('set-local-storage-item', 'dco_general_ids', 'null')
+rbc.ru#%#//scriptlet('set-cookie', 'livetv-autoplay', 'off', 'none')
+yoomoney.ru#%#//scriptlet('set-local-storage-item', 'poll-timer', '')
+yoomoney.ru#%#//scriptlet('set-session-storage-item', 'poll-timer', 'null')
+2x2tv.ru#%#//scriptlet('set-local-storage-item', 'def_banner_open', '')
+2x2tv.ru#%#//scriptlet('set-local-storage-item', 'bx-compositeCache', 'emptyObj')
+rutube.ru#%#//scriptlet('set-local-storage-item', 'def_banner_open', '')
+rutube.ru#%#//scriptlet('set-local-storage-item', 'fingerprintId', 'null')
+rutube.ru#%#//scriptlet('set-local-storage-item', 'muted', '1')
+1tv.ru#%#//scriptlet('set-local-storage-item', 'eump_ab_data', 'emptyObj')
+static.1tv.ru#%#//scriptlet('set-local-storage-item', 'eump_ab_data', 'emptyObj')
+shopogolic.net#%#//scriptlet('set-local-storage-item', 'dashly_last_activity', 'emptyObj')
+irecommend.ru#%#//scriptlet('set-local-storage-item', 'fullTeasersTracker_1', 'emptyObj')
+! -
+!
+!
+!
+!
+! ===
+!
+!
+!
+!
+!
+!
+!
+!
+||adserv.ai^
+||tapulsads.ru^
+||gonet-ads.com^
+||telecid.ru^
+||www.tttturbonet.com^$app=com.dubox.drive
+||*pavo*^$app=com.dubox.drive
+||fancybox.in^
+||adlooxtracking.ru^
+||rixengine.com^
+||weborama-tech.ru^
+||trk.mail.ru^$important
+||svr-algorix.com^
+||kayzen.io^
+||adinfinitum.in^
+||disk.akamaized.net^$app=com.dubox.drive
+||*gamerplay*.space^
+!
+||content-autofill.googleapis.com^$app=com.dubox.drive
+!
+!
+||stun.services.mozilla.com^
+!
+!
+||widget-sweettv.kwizbot.io/kwjs.js^$script
+!
+!
+||checkip.amazonaws.col^
+!
+||n3k1t4_1996^
+||ikorrpa^
+||uisp.lan^
+||v1^
+||router.silotis.us^
+||=^
+||initplayback^
+||iptv.local^
+||ip-api.com^
+||ifconfig.co^
+!
+!
+!
+! == Microsoft Analytics ==
+! == Аналитика Microsoft (Майкрософт) ==
+! mobile.events.data.microsoft.com^$important
+! self.events.data.microsoft.com^$important
+! mobile.pipe.aria.microsoft.com^$important
+! mobile.events.data.microsoft.com^$important
+! eu-mobile.events.data.microsoft.com^
+! self.pipe.aria.microsoft.com^
+||*pipe.aria.microsoft.com^$important
+||*events.data.microsoft.com^$important
+!
+! = For Windows =
+! = Для Виндовс =
+!
+||query.prod.cms.rt.microsoft.com^
+||inputsuggestions.msdxcdn.microsoft.com^
+||settings-win.data.microsoft.com^
+||dcg.microsoft.com^
+||*choice.microsoft.com^
+||*choice.microsoft.com.nsatc.net^
+||corpext.msitadfs.glbdns2.microsoft.com^
+||*metaservices.microsoft.com^
+||*df.telemetry.microsoft.com^
+||settings-sandbox.data.microsoft.com^
+||sls.update.microsoft.com.akadns.net^
+||*telemetry.microsoft.com.nsatc.net^
+||*telemetry.microsoft.com^
+||*statsfe2.ws.microsoft.com^
+||*telemetry.appex.bing.net^
+||*telemetry.urs.microsoft.com^
+||vortex*.data.microsoft.com^
+||*telemetry.appex.bing.net^
+||fp-afd-nocache-ccp.azureedge.net^
+! =
+!
+!
+!
+! ===
+!
+!
+! == Подключения к рекомендованным серверам (Minecraft BE) ==
+! == Connections to recommended servers (Minecraft BE) ==
+!
+||play.inpvp.net^
+||mco.lbsg.net^
+||play.galaxite.net^
+||geo.hivebedrock.network^
+||mco.cubecraft.net^
+||us.mineplex.com^
+||play.vexalmc.co^
+||play.pioneersurvival.net^
+||_minecraft._tcp.play.pioneersurvival.net^
+||_minecraft._tcp.us.mineplex.com^
+||play.pixelparadise.gg^
+||mco.mineplex.com^
+!
+!
+! RIP Mineplex 26.01.2013-12.05.2023
+! Сохранил запросы т.к. могут всё равно идти запросы (со старых версий, к примеру, где Mineplex есть)..
+! I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)..
+!
+! ===
+!
+!
+!
+! == Браузерные запросы ==
+! == Browser requests ==
+!
+||settings.kiwibrowser.com/search/getrecommendedsearch^$important,app=com.kiwibrowser.browser
+||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$important
+!
+||news.google.com^$important
+||enjoyxstudy.com^$important
+!
+! =Opera=
+! =Опера=
+!
+||feednews.com^$removeparam,important
+||oleads.com^$removeparam,important
+||sitesuggestion.opera-api2.com^$important
+||oscore.operacdn.com^$important
+||ft-oscore.opera-api2.com^$important
+||ws-oscore.opera-api2.com^$websocket,important
+||oscore.opera-api2.com^important
+||pns-sdk.opera-api2.com^$removeparam,important
+||ofa-2-sub.osp.opera.software^$removeparam,important
+||mcp.opera-api2.com^$removeparam,important
+||mykonf.com^$important,important
+||ofa-b-sub.osp.opera.software^$removeparam,important
+! *cdninstagram.com^$removeparam,important,domain=~instagram.com,app=com.opera.browser
+! =
+!
+!
+! =Other=
+! =Прочее=
+!
+||sf-helper.com^$important
+||*analytics-toolbar*^$important
+||*analytics.faregy.com^$important
+||analytics.1clickvpn.com^
+! =
+!
+!
+!
+!
+! ===
+!
+!
+! == Google Firebase ==
+!
+||firebaseinstallations.googleapis.com^$important
+||firebaselogging.googleapis.com^
+||firebaseremoteconfig.googleapis.com^
+||firebaselogging-pa.googleapis.com^
+||firebaseinappmessaging.googleapis.com^$important
+||firebaseremoteconfigrealtime.googleapis.com^
+||firebase.googleapis.com^
+! firebase.google.com^
+||firestore.googleapis.com^
+! ===
+!
+!
+! == Google Crashlytics + Firebase ==
+!
+||firebase-settings.crashlytics.com^$important
+||reports.crahlytics.com^
+! report.crashlytics.com^
+||e.crashlytics.co^
+||settings.crashlytics.com^
+||firebase-settings.crashlytics.col^$important
+||crashlytics*-pa.googleapis.com^$important
+! ===
+!
+!
+!
+!
+! == Yandex: Analytics, Ads and other ==
+! == Яндекс: Аналитика, реклама и прочее. ==
+!
+||banners*mobile.yandex.net^$important
+||appmetrica.yandex.net^$important
+||appmetrica.yandex.ru^$important
+||bs.yandex.ru^$important
+||direct.yandex.ru^$important
+||tracking.ott.yandex.net^$important
+||*adfox*^$important
+||startup.mobile.yandex.net^$important
+||startup-mobile.ap.yandex-net.ru^$important
+||yandexadexchange.net^$important
+||webvisor.com^$important
+||appmetrica.yango.com^$important
+||adfstat.yandex.ru^$important
+||push.yandex.ru/v*/subscribe/$websocket,important
+||csp.yandex.net/csp?from=messenger$xhr
+||http-check-headers.yandex.ru^$important
+||yandex.ru/messenger/api/$xhr,important
+||*extmaps-api.yandex.net^$important
+||metrika.yandex.*^$important
+||offerwall.yandex.net^$important
+! push.yandex.ru^$important
+||yastatic.net/s*/liza/_/promo-*.css^$css,domain=mail.yandex.ru
+||yastatic.net/s*/liza/_/*ad-message.ogg^$media,domain=mail.yandex.ru
+||yastatic.net/s*/distribution/yanalytics/v*/$document,script
+||yastatic.net/s*/market-static/export-static/admon/frame.html^$document,domain=market.yandex.ru
+||yastatic.net/s*/psf/mail-liza-react-client/*.mail-liza.react-promo.*.js^$script,domain=mail.yandex.ru
+||mail.yandex.ru/web-api/journal/v*^$ping,domain=mail.yandex.ru
+||media-adv.market.yandex.ru^$important
+! @@||yandex.ru/clck/click^$domain=mail.yandex.ru
+||yastatic.net/partner-code-bundles/*.js^$script,important,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.ua
+||yastatic.net/nearest.js^$script
+||browser.pay.yandex.ru/api/v*/split-status^$important
+||paybro-static.s*.yandex.net/paybro/v*/widget-*.*^$script,css
+||paybro-static.s*.yandex.net/paybro/v*/8a4cff28d9bf287197a4.png^$image
+||yastatic.net/safeframe-bundles/*/host.js^$script,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.ua
+||pay.yandex.ru/web/cl/click$important
+||yastatic.net/pcode/adfox/$important
+||site.yandex.net/*/js/suggest.js^$script,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.ua
+||avatars.mds.yandex.net/get-market-adv/*/banner
+!
+! = Cosmetic rules =
+! = Косметические правила =
+! market.yandex.ru###profitable_goods_tab-RecommendationRoll > div._1QNtS:nth-child(5)
+! market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/recommendationRolls\/profitable_goods_tab\/content\/lazyGenerator\/initialContent\/recomLayoutItem_21\#58\:153_4 > div._3dfdb:first-child
+! В последнее время перестали помогать косметические правила против рекомендаций на главной странице Я.Маркета, буду экспериментировать. (03.12.2024)
+!
+!
+market.yandex.ru##._2wiey, ._1Ha5w, .r_nt5
+market.yandex.ru##._2sksL, _3Je9o, _1jXXo, _1MOwX, _1bCJz
+market.yandex.ru##._2jB0Q, _1MOwX, _1bCJz
+market.yandex.ru##div[class^="HBydy cia-vs cia-cs"]
+market.yandex.ru##div[id^="/content/header/headerPromo"]
+market.yandex.ru##div[data-apiary-widget-name="@monetize/IncutConstructor/MadvBasicCarouselPlain"]
+market.yandex.ru##div[class^="_1u4JH cia-vs"]
+!
+!
+! =
+!
+!
+! ===
+!
+!
+!
+!
+! == Google ==
+! == Гугл ==
+!
+||www.googleadservices.com^$important
+||www.google-analytics.com^$important
+||www.googletagmanager.com^$important
+||googletagmanager.com^
+||googleadservices.com^$important
+||google-analytics.com^$important
+||*ds.metric.gstatic.com^$important
+||analytics.google.com^$important
+||doubleclick.net^$important
+||googlesyndication.com^$important
+||adservice.google.com^$important
+||s.youtube.com^$important
+||appsgrowthpromo*.clients*.google.com^$important
+||jnn-pa.googleapis.com/*/Create^$xhr,other
+||ssl.gstatic.com/*/blank_1x.png^$image
+! accounts.google.com/_/IdpIFrameHttp/cspreport$xhr,other (06.12.24 не работает правило, 07.12.24 для безопасности разблокирован)
+||accounts.youtube.com/RotateCookies^$xhr,important
+!
+! ===
+!
+!
+!
+!
+!
+!
+! - Domains that are only in the AdGuard DNS filter.. -
+! Added to be blocked not only at the DNS level..
+! Домены, которые находятся только в фильтре AdGuard DNS..
+! Добавлено, чтобы блокировались не только на уровне DNS..
+!
+!
+||ad.mail.ru^$important
+||buzzoola.com^$important
+||stats.rustore.ru^$important
+||log.strm.yandex.ru^$important
+||amc.yandex.ru^$important
+||applovin.com^$important
+||hybrid.ai^$important
+||silvermob.com^$important
+||adrta.com^$important
+||adriver.ru^$important
+||app-measurement.com^$important
+||umengcloud.com^$important
+||bdstatic.com^$important
+||gvt2.com^$important
+||tracker-api.my.com^$important
+||ad.intl.xiaomi.com^$important
+||ms.vk.com^$important
+||aemetrics.aliexpress.ru^$important
+||tnc*.byteoversea.com^$important
+||tnc*.isnssdk.com^$important
+||pangle.io^$important
+||adashx4ae.ut.taobao.com^$important
+||*iad-*.braze.com^$important
+||logs.unchecky.com^$important
+||*infeng.site^$important
+||*iad.appboy.com^$important
+||accscdn.m.taobao.com^
+||*ads.unity3d.com^$important
+||*mediation.unity3d.com^$important
+||mc.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua
+||an.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~e.mail.ru
+||analytics.mobile.yandex.net^$important
+||*footprintdns.com^$important
+||inmobi.com^$important
+||vungle.com^$important
+||mtgglobals.com^$important
+||sbermarketing.ru^$important
+||mobileapptracking.com^$important
+!
+! --
+!
+!
+!
+!
+!
+! === Белый список ===
+! === Whitelist ===
+!
+@@||tc.mobile.yandex.net^
+@@||*assets.2gis.*/react.*ad.js^$script,domain=2gis.*
+@@||i*.wp.com/living.ai/wp-content/uploads/2024/08/2024082902-scaled.jpg$image,domain=living.ai
+@@||irecommend.ru/injector/botbot.js^$script,domain=irecommend.ru
+@@||api.smotrim.ru/api/v*/geo^$xhr
+@@||player.smotrim.ru/js/vendor.js$script
+@@||player.smotrim.ru/js/manifest.js$script
+@@||player.smotrim.ru/js/app.js$script
+@@||returnyoutubedislikeapi.com
+@@||sponsor.ajay.app
+@@||digiseller.market^
+@@||iptvx.one^
+@@||captcha-api.yandex.ru^
+@@||esa-res.online.sberbank.ru/ESA/bizone/*/antifraud.min.js^$script,domain=online.sberbank.ru
+@@||cdnweb.sberbank.ru/*/*.*^$image,xhr,domain=online.sberbank.ru
+@@||esa-res.online.sberbank.ru/ESA/sbol/r-*/unallowedbrowsers.js^$script,domain=online.sberbank.ru
+@@||esa-res.online.sberbank.ru/ESA/sbol/r-*/bowser.*.js^$script,domain=online.sberbank.ru
+@@||pl-res.online.sberbank.ru/lib.analytics/*/index.js^$script,domain=online.sberbank.ru
+! @@||pikabu.ru/.well-known/ddos-guard/$script,domain=pikabu.ru (новое правило, строка 1695)
+@@||google.com/js/bg/*.js^$xhr,script
+@@||google.com/recaptcha/
+@@||googlevideo.com^
+@@||csp.yandex.net/csp
+@@||pay.yandex.ru/sdk/v*/pay.js^$script,xhr
+@@||uglyemail.com^
+@@||google.com/*/cleardot.gif$image,important,domain=google.com|mail.google.com
+@@||cdn*.vedomosti.ru/*/assets/Banner-*.*^$script,css,domain=vedomosti.ru
+@@||hcaptcha.com^
+@@||iphones.ru/wp-content/themes/simpla2/images/sprites/ir-a18a0.png^$xhr,domain=iphones.ru
+@@||a.apkpure.net/captcha
+@@||accounts.google.com/*/cspreport$xhr,other
+@@||msftconnecttest.com^
+@@||pay.yandex.ru^
+@@/.well-known/ddos-guard/$xhr,script,websocket
+@@||galamart.ru^$ghide
+! @@||widgets.mango-office.ru/widgets/mango.js^$script,domain=galamart.ru
+@@||ozon.ru^$ghide
+@@||onlinetrade.ru^$ghide
+@@||onlinetrade.ru/xpvnsulc/sp_rotated_captcha/
+! @@||onlinetrade.ru^
+@@||s09.stc.yc.kpcdn.net/share/i/beige/325472601571f31e1bf00674c368d335.gif^$domain=kp.ru
+@@||group-ib.com^
+@@||smartcaptcha.yandexcloud.net/captcha.js
+@@||smartcaptcha.yandexcloud.net^
+@@||mega.nz^$ghide
+@@||hd.kinopoisk.ru^$important,document
+@@||kinopoisk.ru/install?
+@@||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/*Sticky*Adv*.*^$script,stylesheet,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+@@||support.avito.ru^
+mi.com#@$#body { overflow: visible !important; }
+!
+!
+! -
+! Ломается сайт DeepL при применении правил блокировки к скриптам tracking-*.js, late-cookieBannerLax.*.js и стилю late-cookieBannerLax.*.css, которые приведены ниже и разрешены.
+! The site DeepL crashes when applying blocking rules to the tracking-*.js, late-cookieBannerLax.*.js and late-cookieBannerLax.*.css scripts, which are listed below and allowed.
+@@||static.deepl.com/gatsby/tracking-*.js^$domain=deepl.com
+@@||static.deepl.com/gatsby/*cookieBanner*.*^$script,css,domain=deepl.com
+! -
+!
+!
+!
+!
+! ===
+!
+!
+!
+!
+!
+!
+!
+! ---
+!
+!
+!
+! -- Non-understandable addresses, but undesirable --
+! -- Непонятные адреса, но нежелательные --
+!
+||tobipovsem.com^$important
+||largestloitering.com^
+||f1e4fcff2b.27640ea29d.com^
+||d157c90939.1b384556ae.com^
+||*vesmaveselo*^$third-party
+||myroledance.com^
+||*.vaterlines.com^
+||otnolatrnup.com^$important
+||resp.us^
+||meshuradres.best^
+||bit.ly*vaylakazan^
+||tinyurl.com/vaylakzan^
+||t2m.io/2254777^
+||bonuscudede.com^
+||lavatoryyourself.com^
+||antpeak.com^
+||t2m.io^
+||vaycasino*.com^
+||87h6.cfd^
+!
+!
+! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 по 30.11.24 был «жертвой» такого массового спама)..
+||s*.*.*.mydomain.zone^
+||afrounitedsalon.de^
+!
+!
+! Фишинг и мошенничество с спам рассылок (типа Столото) (с начала 2024 по 2.01.25 стал «жертвой» такого массового спама)..
+||fgnrthgre.buzz^
+!
+!
+! Адреса с спам-писем с содержанием 18+ (с 14.11.24 по 2.05.25 стал «жертвой» такого массового спама)..
+! Разблокировка допустима ТОЛЬКО для отписки с рассылки! (если вообще сработает..)
+! Набралось писем со спамом 1000+ - разбирать их нет смысла, поменял почту и аккаунт. (2.01.2025)
+!
+||arumism.com^
+||furixor.com^
+||vatomno.com^
+||kwageon.com^
+||aartaid.com^
+||adjurve.com^
+||barabalo.com^
+! fuckbookflirt.com^
+||peachdates.com^
+||spmailtechno.com^
+||mrflirty.com^
+! localswebflirt.com^
+||wildblossoms.top^
+||lunarlifepromo.com^
+||moontrekadventures.com^
+||todayfundate.com^
+||summitquestadventure.com^
+||clifftops.top^
+||meetmarvel.com^
+||lovetimenow.com^
+||horizonpulserise.com^
+||*flirt*.com^
+||webbursthub.com^
+||stellartrippromo.com^
+||lunarhypeads.com^
+||moonlurepromo.com^
+||cherrychitchat.com^
+||jonoicu.com^
+||abderim.space^
+||adsoccl.com^
+||husperm.space^
+||udotype.com^
+||scosio.click^
+!
+||purechats.com^
+||prettywomenco.com^
+! ---
+||trodsimni.ru^
+||gichenisatcilaw.ru^
+||bersvirla.ru^
+||lacsaimo.ru^
+||garisgoculutan.ru^
+||hoolassnire.ru^
+||profellleadvesthof.ru^
+||granlarmdant.ru^
+||exnanung.ru^
+||saapremevpel.ru^
+||lecparkterccypartni.ru^
+||locachi.ru^
+||longgrunwirspe.ru^
+||etdemothee.ru^
+||jarecom.ru^
+||cfqndvmyttega.ru^
+||itabpresunlan.ru^
+||inamalclonsuppscutev.ru^
+||cennarasetitabwai.ru^
+||chickflexisidultavi.ru^
+||aspesceremobird.ru^
+||milmeke.ru^
+||scherbinsogingnehal.ru^
+||crusricbeispormenasi.ru^
+||pacalageab.ru^
+||zowymoro.ru^
+||ewadma.ru^
+||jnmdveawb.ru^
+||dayhorgehard.ru^
+||joiconfcordumbfilica.ru^
+||ficbsincxyhasilapho.ru^
+!
+||mencontstarrott.ru^
+||dreadperspecma.ru^
+||indeathquireamosto.ru^
+||guarwamocellitorcry.ru^
+||thommaterhietrovpugg.ru^
+!
+! - Contains virus + phishing
+||datehiker.com^
+! -
+!
+||exatstoug.ru^
+||cudddenane.ru^
+||chamradesemb.ru^
+||peuhomacilassde.ru^
+||adtiasoge.ru^
+||ditonoraberel.ru^
+||igdowheker.ru^
+||roriwildra.ru^
+||longgrunwirspe.ru^
+||balltraninssilbutmete.ru^
+||flumeepmenwei.ru^
+||sonimaconredica.ru^
+||garsubstruceathatbacon.ru^
+||blacesren.ru^
+||thralresliocheating.ru^
+||tteladheadmivimafo.ru^
+||muemopurandlottibi.ru^
+||contibedntaper.ru^
+||loimesgetemas.ru^
+||geshilehusesint.ru^
+||membbimacbibilfens.ru^
+||nysbullveerphycyn.ru^
+||headdnaldraserextydi.ru^
+||tepertiburdiwho.ru^
+||encotsamuf.ru^
+||giesuelea.ru^
+||gladitolposesorguang.ru^
+||stanfecpairril.ru^
+||softvarlandcasis.ru^
+||thralresliocheating.ru^
+||zozlil.com^
+||yzchavoulunsoft.ru^
+||blinisla.ru^
+||quiresvi.ru^
+||tacklemo.ru^
+||tyouterfansrenle.ru^
+||hopcourone.ru^
+||estoduccaiheart.ru^
+||liobroththesnoewebpasac.ru^
+||pummesamin.ru^
+||devasinesepalb.ru^
+||spurdovebacknonecwa.ru^
+||cycmekillcomvila.ru^
+||liawoumelaher.ru^
+||hargstagidasunin.ru^
+||percobethems.ru^
+||lelangbackban.ru^
+||lingderglarytpost.ru^
+||sveralsoforti.ru^
+||adexposvaramsmedee.ru^
+||cournacheck.ru^
+||newohed.ru^
+||newsversdistedeter.ru^
+||difkingta.ru^
+||labfilyds.ru^
+||famssterdufdeduheadsso.ru^
+||wacroli.ru^
+!
+||uphunreca.ru^
+||repguiri.ru^
+||stemolcipdede.ru^
+||chamradesemb.ru^
+||abniphinib.ru^
+||chabtempsingrigtine.ru^
+||preemnanoduc.ru^
+||siterfmalica.ru^
+||chetinharddispdrivatev.ru^
+||pesapa.ru^
+||gilrachildwilltemptrapov.ru^
+||profellleadvesthof.ru^
+||prillam.com^
+||guenihendcheckthesronet.ru^
+||quiprotanorepjhon.ru^
+||avgethatothecomp.ru^
+||storviapatel.ru^
+||hohurve.ru^
+||smalsuppnessipere.ru^
+||gladitolposesorguang.ru^
+||losdietindebujici.ru^
+||sovolbersvewell.ru^
+||pejoport.ru^
+||nysbullveerphycyn.ru^
+||elemowar.ru^
+||barctrupkikamurent.ru^
+||tincdeedbiotwor.ru^
+||anecsalobo.ru^
+||lockrentsynpanato.ru^
+||zuchriribesurf.ru^
+||yzchavoulunsoft.ru^
+||castpanphuhafir.ru^
+||nvovboubemisaverho.ru^
+||aurflzstvigdt.ru^
+||povnilimemogurta.ru^
+||esfreehilbee.ru^
+||restrarresctringen.ru^
+||tenpimaca.ru^
+||fihonbisota.ru^
+||miokendgomesign.ru^
+||boozfanucigi.ru^
+||neydorebtotags.ru^
+||critrouglynd.ru^
+||fihonbisota.ru^
+||kingkafib.ru^
+||liecredvast.ru^
+||scutvesvietext.ru^
+||matchire.ru^
+||spirguahelzlochemomor.ru^
+||torscropen.ru^
+||togbadoorko.ru^
+||hocomsodorjocongui.ru^
+||wallsopon.ru^
+||prodperreresta.ru^
+||wirsgoogsa.ru^
+||urdeepwordslipapmontaxb.ru^
+||dayprovrepsobibdia.ru^
+||atuninetvisaguzz.ru^
+||torscropen.ru^
+||cournacheck.ru^
+||headdnaldraserextydi.ru^
+||seacorhayverrads.ru^
+||unevdon.ru^
+||halfpreslynchdarktonli.ru^
+||pigmalis.ru^
+||outarci.ru^
+||hopcourone.ru^
+||nysbullveerphycyn.ru^
+||olcupismi.ru^
+||sonbuspgabb.ru^
+||techarddipitab.ru^
+||mittdendnivirotu.ru^
+||seisicar.ru^
+||nicknajingbourf.ru^
+||raustarin.ru^
+||suamk.com^
+||farscapaxilagaban.ru^
+||thouculpgas.ru^
+||pejoport.ru^
+||chloroutinophbromme.ru^
+||ritabtebackrofor.ru^
+||waystalar.ru^
+||ampaystup.ru^
+||beytangwobelotimil.ru^
+||lesbihochconf.ru^
+||firpepor.ru^
+||cepgirdfotagdianadu.ru^
+||taslipetducalca.ru^
+||speechfeiconromyb.ru^
+||ciaspeedbelidespoto.ru^
+||keilintiebeca.ru^
+||perhupedincari.ru^
+||biwardcums.ru^
+||neckcesaltzah.ru^
+||glidriderhambpec.ru^
+||menhoconsfolgperswhirfi.ru^
+||getisnugobbtripmossmis.ru^
+||gayrarese.ru^
+||gendayfreakdodgdigmant.ru^
+||suppworkscolacpasa.ru^
+||pliclopjoizagarsoy.ru^
+||distperglosihan.ru^
+||obbxanreismariz.ru^
+||apindotmisearwa.ru^
+||recmortdellaybonon.ru^
+||confeacatehyhea.ru^
+||boeblusisunderthau.ru^
+||dibomuk.ru^
+||osgisriburtaigo.ru^
+||leovumeddbotpa.ru^
+||edrefehamantui.ru^
+||bonfasedvernnounjudgfreed.ru^
+||bestgimmipetcagogod.ru^
+||dracterlyst.ru^
+||teotucontdramcomsuppsis.ru^
+||vcalerdiepros.ru^
+||nilouvirneuro.ru^
+||ticodee.ru^
+||enkeberchealth.ru^
+||extedmatchra.ru^
+||hardfidddomsync.ru^
+||speedapscher.ru^
+||lebestde.ru^
+||lackchurchnounphylipon.ru^
+||oututipmabileb.ru^
+||tiabermi.ru^
+||carammarenunde.ru^
+||gehdikarremona.ru^
+||surpodescfasraradloy.ru^
+||subsmopentesa.ru^
+||telemcida.ru^
+||tranlesnecknesrenoun.ru^
+||natebgetitualesqi.ru^
+||longsaxtatonpaycanra.ru^
+||schematallipotkeybit.ru^
+||toaselfhugitoverde.ru^
+||ballrohotdeealern.ru^
+||rutyrur.ru^
+||breakquigoladignahrre.ru^
+||spirguahelzlochemomor.ru^
+||dasirabo.ru^
+||gobbxanreismariz.ru^
+||ziplozi.ru^
+||bounkorasegdobafir.ru^
+||boatrepargsys.ru^
+||meyretitiliwestrakamerk.ru^
+||edanmoutbiopia.ru^
+||presapcon.ru^
+||uwcalfyostenourtituthade.ru^
+||myohydgasymdistthera.ru^
+||gambdaresdo.ru^
+||cheerwaquarmeraperma.ru^
+||cesslanapho.ru^
+||ziofiltcothanviwitergee.ru^
+||lingpapsedeste.ru^
+||rachigtekin.ru^
+||ifanulitopgeper.ru^
+||prembattpylzeberbirthri.ru^
+||gulsbafanec.ru^
+||riatabcilinhelepji.ru^
+||swerucanmameli.ru^
+||ylofcoun.ru^
+||creatbabsonorrcestlim.ru^
+||teasrarekon.ru^
+||gopercekecagard.ru^
+||lighwohnnus.ru^
+||kontmindceelotamolasib.ru^
+||wantcarcalepofitsde.ru^
+||ettylzakhbuftafat.ru^
+||proxophalivem.ru^
+||techjarec.ru^
+||heagtodilasi.ru^
+||pindepidilafasro.ru^
+||ilinterfifodiscrads.ru^
+||poibeha.ru^
+||fectsonvingdyspwellsantwil.ru^
+||kemipurrarohiltting.ru^
+||reverkonfcaf.ru^
+||middgnutphisticolarfirsplac.ru^
+||viaditabneu.ru^
+||zithedesilkhenversco.ru^
+||climbire.ru^
+||ritiguze.ru^
+||seoritiburtima.ru^
+||opylciwoodforth.ru^
+||worthtesteracongwerthill.ru^
+||gadeverphepark.ru^
+||terpmilagar.ru^
+||inadescuspali.ru^
+||maipassdreamterlessnund.ru^
+||ringnivivitticast.ru^
+||debtloburchooroten.ru^
+||hodewinreisufyrevast.ru^
+||wallsticesproctioulauty.ru^
+||mwinabplicinouthizgram.ru^
+||quipacaransiozy.ru^
+||daynisi.ru^
+||galyrup.ru^
+||qoirecocusunrinira.ru^
+||subsuisympcirlnambre.ru^
+||trinpatwhistglobicinman.ru^
+||mingmendemitines.ru^
+||alzulmilongslopesonimse.ru^
+||rougbeycons.ru^
+||beityageatiturk.ru^
+||tirajgolfrentsidustsi.ru^
+||chalsusophofapodyscentpen.ru^
+||waminjuncprodic.ru^
+||otichimsitermarp.ru^
+||consnulabobsipop.ru^
+||soinoidiowritak.ru^
+||fratleiwebcver.ru^
+||dollmeligenitroacrat.ru^
+||soytitibrefilyhurcori.ru^
+||rumbpasub.ru^
+||keyracecan.ru^
+||koglighwolfarb.ru^
+||mentiotina.ru^
+||qucilorisenrai.ru^
+||moavercaletztiwir.ru^
+||vaworlacyssubskente.ru>^
+||countwathosubpazukafourti.ru^
+||dimquidenanro.ru^
+||evwortaloo.ru^
+||wnydvkrhiq.ru^
+||jampwritpho.ru^
+||statamach.ru^
+||piwoolweabur.ru^
+||latilafib.ru^
+||backthernsicklogan.ru^
+||postcoolhand.ru^
+||ofniarenasanreisar.ru^
+||guiklasnura.ru^
+||gobbxanreismariz.ru^
+||dogentlanma.ru^
+||gersconmiterij.ru^
+||pilballref.ru^
+||kjomj.ru^
+||vildayphentsa.ru^
+||sinboda.ru^
+||promaber.ru^
+||ritiguze.ru^
+||vbvqwrj.ru^
+||emkjysvush.ru^
+||faifranverpaiplet.ru^
+||ilomtaraposc.ru^
+||backbatennwhittcica.ru^
+||wordrasamcomplove.ru^
+||punccalgestrinasacon.ru^
+||ivkbmxlh.ru^
+||almamsawalgglosarap.ru^
+||unpabvaperhelpnavicare.ru^
+||goldsteelinear.ru^
+||northnalogtio.ru^
+||kerpbirthnoncomarri.ru^
+||pharrunsfa.ru^
+||precamthasciserbemen.ru^
+||ygwzzxpucae.ru^
+||lumuscter.ru^
+||erpocagastfelere.ru^
+||nqcvfw.ru^
+||harzato.ru^
+||porrolupoharpacor.ru^
+||postsunsteacamrelad.ru^
+||chrisbadilyppgens.ru^
+||xbzxh.ru^
+||anothiraticune.ru^
+||adbloktivifast.ru^
+||bnvcnm.ru^
+||velbogyschechar.ru^
+||tempsacaterfa.ru^
+||akcogzqozocv.ru^
+||prechfootppapasugina.ru^
+||amadmanringveglo.ru^
+||besttingpres.ru^
+||chautranisunubedpes.ru^
+||tiolarwinksandskinalpran.ru^
+||adizelevatres.ru^
+||lzuaiiuljkf.ru^
+||learnramsgavis.ru^
+||nivinsorjustmitta.ru^
+||downtocalvansvadile.ru^
+||goskulisu.ru^
+||plumodinafderleadowngime.ru^
+||spoksingmispnel.ru^
+||kaisusvtter.ru^
+||diokirslordglenmedentha.ru^
+||cairisinendconferea.ru^
+||hqqfnsgsn.ru^
+||dinehartsund.ru^
+||psychadden.ru^
+||creedhedifmicic.ru^
+||lantichir.ru^
+||resmepost.ru^
+||corhealthmajump.ru^
+||nalterslotipgaiders.ru^
+||subnewsmalttowocon.ru^
+||utacqsip.ru^
+||ritabtebackrofor.ru^
+||weisalerectle.ru^
+||temhotolto.ru^
+||jlbqk.ru^
+||resnagestdeskminsfamesgingcryp.ru^
+||odviomanotesttrodpors.ru^
+||virrdalcilecaldutili.ru^
+||lydoni.ru^
+||unazba.ru^
+||sosunthepalafunkcrun.ru^
+||bracustrogogbal.ru^
+||acalacasleg.ru^
+||ceigarpe.ru^
+||lieworlporpahercpatti.ru^
+||ebrule.ru^
+||schadeawusarro.ru^
+||erenmansa.ru^
+||neailynchtran.ru^
+||flakininosrimidbald.ru^
+||wirkroomworthlismedis.ru^
+||neygeililigacaplu.ru^
+||drunwoodssingpertponihap.ru^
+||apkachewipo.ru^
+||camirestreba.ru^
+||asellydest.ru^
+||nihydtaocasi.ru^
+||lantrerenlimenhutan.ru^
+||amunguefe.ru^
+||thaibuttre.ru^
+||sunochmacu.ru^
+||precamthasciserbemen.ru^
+||lrfbsndhgqrz.ru^
+||pasnacegilesla.ru^
+||tanage.ru^
+||chatxtonights.com^
+||snapbertca.ru^
+||tioforhi.ru^
+||feaegddh.ru^
+||conlabika.ru^
+||ekjqh.ru^
+||ualsatpesi.ru^
+||blocodbreachinin.ru^
+||jubjgj.ru^
+||arfussurpbaga.ru^
+||tripcomrevecykilli.ru^
+||macuvertattbulami.ru^
+||sxrxjvpnol.ru^
+||bioresrobibovelsaa.ru^
+||seytatufib.ru^
+||atnoarazy.ru^
+||hitchgoldfolkpidyparlabe.ru^
+||perchitisekidite.ru^
+||necsoher.ru^
+||enwronemarinprof.ru^
+||lunqosuzsgx.ru^
+||neugodepilswebs.ru^
+||magdunnlisfanutlynn.ru^
+||wmxqcvone.ru^
+||cbkgd.ru^
+||eastigweaberchothou.ru^
+||cociporque.ru^
+||hlzizngjnpkqt.ru^
+||kapesol.ru^
+||malneramma.ru^
+||hcrpldwqys.ru^
+||reimalrabinenri.ru^
+||boggrimencedeckrepisve.ru^
+||rburathnocesre.ru^
+||eascamlotoomoti.ru^
+||nguritceredetmeo.ru^
+||ruethoughmaleterneu.ru^
+||carnewpgawethecom.ru^
+||diepredeninra.ru^
+||buhyifvprrq.ru^
+||progubinroa.ru^
+||alhtqubknsce.ru^
+||shaafzrfd.ru^
+||transubcatherssemb.ru^
+||dwelabma.ru^
+||erreirachicesciatleb.ru>^
+||chlagmiccuman.ru^
+||fivdims.ru^
+||sleavamhogypbimulnuall.ru^
+||kersxykerdujehoha.ru^
+||glesunhouter.ru^
+||sculunpalitoless.ru^
+||readivipocompcor.ru^
+||racecaquat.ru^
+||nyaprogserrelosback.ru^
+||sandbursovatoncutth.ru^
+||drivmaropikamva.ru^
+||rarevamur.ru^
+||rochanglegagcongwerkcaciti.ru^
+||pregbucktensosiberse.ru^
+||xsudesipgb.ru^
+||liebahquirescollcabe.ru^
+||notagut.ru^
+||bqvsdhl.ru^
+||proturbowwheelcpho.ru^
+||ezjxmbbmrdjn.ru^
+||flyzberje.ru^
+||alflasramentmis.ru^
+||sinsconputo.ru^
+||sumpcalciabraglunriffte.ru^
+||cilfundninophipergambsir.ru^
+||andilawarhykifi.ru^
+||reogerpowarc.ru^
+||complanostkerivdiecal.ru^
+||raicharlbical.ru^
+||rvorwwagk.ru^
+||beverfigopelinnau.ru^
+||jeoklasafpayter.ru^
+||egceceroxaho.ru^
+||snowerarmlerodin.ru^
+||tinriospormevitang.ru^
+||tiotipufncalhwagi.ru^
+||tribinerannirestwhel.ru^
+||mduhi.ru^
+||cadocane.ru^
+||extedmatchra.ru^
+||bdmilhlemwasm.ru^
+||inicalne.ru^
+||oezwhuq.ru^
+||raiprommezcsefenanachant.ru^
+||provonovikin.ru^
+||tobayduu.ru^
+||diatuwalmo.ru^
+||panstabar.ru^
+||vanirilibet.ru^
+||bausticthiforsynch.ru^
+||mondcebegoodceisearchmertua.ru^
+||adtanic.ru^
+||waulenbauta.ru^
+||hididerguzzboots.ru^
+||rzrza.ru^
+||rehodthacostsua.ru^
+||utdecunelchungnetsiper.ru^
+||eremedpofergiri.ru^
+||ebdiheartproptex.ru^
+||scurpaymyhandpukeelryaprin.ru^
+||repicmi.ru^
+||taradili.ru^
+||ivprosnaktauthirlle.ru^
+||pragamoltelpecon.ru^
+||newslongractnar.ru^
+||erconcomsrelomagpidd.ru^
+||delogenwea.ru^
+||trosadourbapo.ru^
+||necheadebpemoushumb.ru^
+||ruckpuprewipe.ru^
+||sunenacdenogocent.ru^
+||guisysnetf.ru^
+||dresloasimonrocall.ru^
+||haypeldest.ru^
+||lesssarfayperto.ru^
+||ltesinpasole.ru^
+||bloomecurhodornigeartisi.ru^
+||hgotbtt.ru^
+||tayprobporrotamafat.ru^
+||stilnewsa.ru^
+||blpbf.ru^
+||procormalala.ru^
+||worlplanatimlaphomar.ru^
+||siorieskiloporpolandpletin.ru^
+||sesusereacam.ru^
+||gopxle.ru^
+||ercilmomatpofama.ru^
+||edimquidenanro.ru^
+||ozsetmayclinitintade.ru^
+||uniztechdia.ru^
+||sungkesttiticountragite.ru^
+||nerscutsapp.ru^
+||perffolocrasearketkkeng.ru^
+||vacguirabackmandoli.ru^
+||teydemertotadea.ru^
+||comppentamonidelo.ru^
+||contpolesshaflo.ru^
+||camenmirosub.ru^
+||nauniewalreivahalme.ru^
+||chesnorsde.ru^
+||wimdototabrepuawhi.ru^
+||creepasstocperscons.ru^
+||isulristingsubshard.ru^
+||sancharmburg.ru^
+||puncdustgusra.ru^
+||tranmismiesantli.ru^
+||draksanetsehelprape.ru^
+||esanunemto.ru^
+||obakulenasbo.ru^
+||kdbffcdpxc.ru^
+||derdusamortchildfapalo.ru^
+||afinwarcacur.ru^
+||cemathalisrewabmiwor.ru^
+||lieblogacamdotitipinde.ru^
+||sterthiogroovendebbio.ru^
+||prolconhaugedeaso.ru^
+||lanslinkco.ru^
+||dialicagipawste.ru^
+||tergsublelocountdexrijc.ru^
+||seicehuarawafwi.ru^
+||feemulandownbibcent.ru^
+||dtoctipemerdiscxa.ru^
+||venchestpaba.ru^
+||starpormixicesta.ru^
+||leticte.ru^
+||prewididsleevusuntam.ru^
+||inulecdisliabiavi.ru^
+||mapositralo.ru^
+||weideriddtyststubox.ru^
+||anrinxosamsmo.ru^
+||arweilogsurp.ru^
+||noifancie.ru^
+||datoranenifoot.ru^
+||tetifulgiostud.ru^
+||leowebstegealipor.ru^
+||liseesihilu.ru^
+||omurfreedcallribogammist.ru^
+||hurtgoken.ru^
+||bionilere.ru^
+||porrayhonaherdyorea.ru^
+||beudolsaremorttisen.ru^
+||tiogratga.ru^
+||krstnqm.ru^
+||premtangachansicontschelasvic.ru^
+||hocniheart.ru^
+||breafrikoboh.ru^
+||harvateveahyla.ru^
+||diconeappfinbapanva.ru^
+||ciagorifadetursu.ru^
+||omanrilmetztewers.ru^
+||comlisttem.ru^
+||justreelituscau.ru^
+||emagymagbrahistai.ru^
+||goonadisprinfperspopwhoa.ru^
+||piolpurdoub.ru^
+||inashisteneck.ru^
+||niaprinocjasvanisthe.ru^
+||hzsasc.ru^
+||breafrikoboh.ru^
+||poragesho.ru^
+||wavawil.ru^
+||qixknvce.ru^
+||contaboscastfosquicy.ru^
+||viegrunerhalsoping.ru^
+||subscachondlufulhame.ru^
+||icinturriagraspol.ru^
+||rehowfeze.ru^
+||terasatenjunk.ru^
+||lidodinontiwhe.ru^
+||inexithexar.ru^
+||epimalti.ru^
+||thrownocheckceaxisyscu.ru^
+||reitremar.ru^
+||zmozdbgcqfmvx.ru^
+||irtamra.ru^
+||cannichanriemenga.ru^
+||trekabranorthgranlaptio.ru^
+||moldpledelapazoxut.ru^
+||apombras.ru^
+||vymrlmstpvb.ru^
+||acacvedist.ru^
+||probneumosake.ru^
+||withcompcu.ru^
+||bluferliuvere.ru^
+||nieflatmendgotvpodidpha.ru^
+||linticalkai.ru^
+||tiotabko.ru^
+! I got 1000+ spam emails - there's no point in sorting them, I changed my email and account. (2.01.2025)
+!
+! --
+||mlnsprofiles.cc^
+! - Phishing
+||dateflng.com^
+||loosechicksgh7e.com^
+||lonalamimerk.biz^
+||joysmarranebenspicon.biz^
+!
+! - Contains virus + phishing
+||beamingdate.net^
+!
+||xerualsrak.biz^
+||highheelsjenna.xyz^
+||123myoffer.club^
+! --
+!
+||jenkinj.*^
+! jenkinj.cfd^
+||eodkiewicz.*^
+! eodkiewicz.cfd^
+||rb.gy^
+||steeber.*^
+! steeber.cfd^
+! tillaan.cyou^
+||tillaan.*^
+! tillaan.cfd^
+||wingand.*^
+! wingand.cfd^
+||schpppe.*^
+! schpppe.sbs^
+||langwortr.top^
+||barrowr.*^
+! barrowr.sbs^
+||predovio.*^
+! predovio.sbs^
+||schimcel.*^
+! schimcel.cfd^
+||paaocha.*^
+||steeber.cfd^
+||barrowr.*^
+! barrowr.sbs^
+||cndricka.rest^
+||ononner.top^
+||aaocha.cfd^
+! -
+||schulist.click^
+||dolyst.click^
+||blefin.click^
+||huttat.click^
+||tesclo.click^
+||izathi.click^
+||cukoneu.click^
+||dookins.click^
+||cumilp.click^
+||sotivet.click^
+||senara.click^
+||quenta.click^
+||rustro.click^
+||oocons.click^
+||fasiand.click^
+||menduce.click^
+||nistyp.click^
+||exorpol.click^
+||unject.click^
+||ablebr.click^
+||ossica.click^
+||aluant.click^
+||hazocy.click^
+||oofultr.click^
+||jumenul.click^
+||helastc.click^
+||netoodi.click^
+||unistel.click^
+||menduce.click^
+!
+! --
+||*-sg.callback.cloudses.com/campaigns
+||*-sg.callback.cloudses.com/api/webhook?
+||wewlep.com^
+||escplad.com^
+||greatdeposit.com^
+||lawkj.com^
+||100percentopenrate-int.com^
+||pantydownbet.com^
+||rodartorial.com^
+||alamojapan.com^
+||zenerl.com^
+||slysif.com^
+||guellit.com^
+||bevolis.com^
+||quickcupidweb.com^
+||coincast.org^
+! -
+||aartaid.com^
+||utocoman.com^
+||nudosma.xyz^
+||tofersp.space^
+||podaxt.com^
+||edgecooker.com^
+||*journeys.com^
+||enchantedmysticpaths.com^
+! blissfulechojourneys.com^
+||serendipityrealmtrails.com^
+||mojecti.com^
+||byyy.org^
+||hzzz.org^
+||arumism.com^
+||phtfula.space^
+||husphewo.com^
+||funomin.com^
+||turixia.com^
+||ickcrai.com^
+||spodate.space^
+||onticei.xyz^
+||tipture.space^
+||hookupmadeeasy.com^
+||connecthookup.com/campaigns
+||urgative.com^
+! fastmailerwizz.com^
+||microtone.org^
+||orangeinnjoy.com^
+||visitrunner.com^
+||arviona.com^
+||fantasy-night.com^
+||pomimet.com^
+||itiseasy.org^
+||lemonads.org^
+||jyyy.org^
+||yzzz.org^
+||kkky.org^
+||sideview.org^
+||craigwubben.com^
+||sicsfandom.com^
+||updateflew.com^
+||uthehouse.com^
+||shokherstore.com^
+||endlety.com^
+||wilnt.com^
+||dlscdn.com^
+||app.cloakerly.com/link.php
+||trafficbiz.site^
+||go-fr-dt.com^
+||sheneedstoblow.com^
+||awesomesiteever.site^
+||rawepcoffers.site^
+||clicktracking.site^
+||trdt.online^
+||trckopti.com^
+||wilnt.com^
+||cleartonixx.com^
+||cheetahkash.com^
+||secret4youdreams.com^
+!
+||helendtkevink4704.xyz^
+||velvethorizon.xyz^
+||sunnyglimmer.xyz^
+||gracefulglimpses.xyz^
+||serenestories2.xyz^
+||*diaries.xyz^
+||gracefulwhispers.xyz^
+||rosepetaldreams.xyz^
+||gracefulglimpses.xyz^
+||mysteriousglances.xyz^
+||intimateworld.xyz^
+||ameliasjourney.xyz^
+||blissfulechoes.xyz^
+||ameliasjourney.xyz^
+||ladylikewisdom.xyz^
+||tendertouches.xyz^
+||eleganceexpressed.xyz^
+||spicymoments.xyz^
+||moonlightmusings.xyz^
+||nightandpassion.xyz^
+||AnnaPrivateGallery.xyz^
+! -
+||xattract.com^
+||xn3j2k.com^
+! --
+!
+!
+!
+! ---
+!
+!
+!
+!
+!
+!
+@@||local.adguard.org^
+@@||injections.adguard.org^$important
+!
+!
+!
+! dzen.ru,auto.ru,avito.ru,baby.ru,businessman.ru,dni.ru,e1.ru,echo.msk.ru,fb.ru,forexpf.ru,gismeteo.by,gismeteo.kz,gismeteo.md,gismeteo.ru,gorodrabot.ru,infoniac.ru,it-tehnik.ru,kakprosto.ru,kinopoisk.ru,liveinternet.ru,mathb-ege.sdamgia.ru,mk.ru,nkj.ru,ohotniki.ru,oko-planet.su,otzovik.com,razlozhi.ru,sdamgia.ru,syl.ru,vz.ru#%#//scriptlet('remove-cookie', '/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/')
+! ^$cookie= ^$cookie=/|/
+! #%#//scriptlet('remove-cookie', '/||||/')
+! #%#//scriptlet('set-local-storage-item', '', '')
+! #%#//scriptlet('set-session-storage-item', '', '')
+! #%#//scriptlet('set-cookie', '', '', 'none')
+!
+!
+!
+! Соцсети Facebook и Instagram заблокированы и запрещены на территории РФ, владеющая ими компания Meta признана экстремисткой и деятельность в РФ запрещена.
+! Соцсеть X (бывший Twitter) заблокирован на территории РФ.
+! Social networks Facebook and Instagram are blocked and banned in the Russian Federation, the company that owns them, Meta, is recognized as extremist and its activities in the Russian Federation are prohibited.
+! Social network X (formerly Twitter) is blocked in the Russian Federation.
+!
+!
