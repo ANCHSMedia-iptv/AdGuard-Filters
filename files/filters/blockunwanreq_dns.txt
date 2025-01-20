@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.0.2-R
+! Version: 3.0.4-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-01-18T17:20:00+00:00
+! TimeUpdated: 2025-01-20T16:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 18.01.2025 17:20 UTC
+! Last Modified: 20.01.2025 16:20 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -114,9 +114,9 @@
 ! -- == Microsoft Analytics ==
 ! -- == Аналитика Microsoft (Майкрософт) ==
 !
-||*events.data.microsoft.com^$important
+||events.data.microsoft.com^$important
 ! self.events.data.microsoft.com^
-||*pipe.aria.microsoft.com^$important
+||pipe.aria.microsoft.com^$important
 ! mobile.events.data.microsoft.com^
 ! self.pipe.aria.microsoft.com^
 !
@@ -431,6 +431,7 @@
 ||analytics.e1.ru^$important
 ||analytics.ngs55.ru^$important
 ||analytics.metro-cc.ru^$important
+||adv-cdn.tnt-online.ru^
 !
 !
 !
@@ -502,13 +503,13 @@
 ||pns-sdk.opera-api2.com^$dnsrewrite=REFUSED
 ||ofa-2-sub.osp.opera.software^$dnsrewrite=REFUSED
 ||mcp.opera-api2.com^$dnsrewrite=REFUSED
-||*mykonf.com^$dnsrewrite=REFUSED
+||mykonf.com^$dnsrewrite=REFUSED
 ||ofa-b-sub.osp.opera.software^
 ! *cdninstagram.com^$domain=~instagram.com
 !
 ! -- =Other=
 !
-||*sf-helper.com^
+||sf-helper.com^
 ||*analytics-toolbar*^
 ||*analytics.faregy.com^
 ||analytics.1clickvpn.com^
@@ -528,14 +529,13 @@
 @@||digiseller.market^
 @@||iptvx.one^
 @@||captcha-api.yandex.ru^
-! @@||websbol.clickstream.sberbank.ru^
 @@||googlevideo.com^
 @@||pay.yandex.ru^
 @@||uglyemail.com^
 @@||hcaptcha.com^
-@@||www.msftconnecttest.com^
+@@||msftconnecttest.com^
 @@||*-*.*.global.*.sharepoint.com^
-@@||*.id.group-ib.com^
+@@||group-ib.com^
 @@||smartcaptcha.yandexcloud.net
 @@||support.avito.ru
 !
