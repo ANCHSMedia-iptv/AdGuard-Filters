@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.0.4-R
-! TimeUpdated: 2025-01-20T16:20:00+00:00
+! Version: 3.0.5-R
+! TimeUpdated: 2025-01-21T17:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -166,7 +166,7 @@
 /wp-content/plugins/*/assets/js/tracks.js$script,important
 /ad.js^$script,important
 /empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru
-/adv/$image,xhr,script,important
+/adv/$image,xhr,script,domain=~pinterest.com,important
 ! *empty*.*^$image,important
 ||store.bankiros.ru/js/metrics/*.js^$script,domain=bankiros.ru,important
 ||adhigh.net^$important
@@ -704,6 +704,14 @@ $cookie=/dsp_click_id|mediaInfo|pageLanding/,domain=tbank.ru|tinkoff.ru,importan
 ||otzovik.com^$cookie=cgreg
 ||otzovik.com^$cookie=refreg
 ||otzovik.com^$cookie=ROBINBOBIN
+||knife.media/analytics/shares/$xhr,domain=knife.media
+||cdn-ru.bitrix24.ru/*/crm/site_button/loader_*.js$script,domain=tvoe.live
+||playground.ru^$cookie=/yashr|yandexuid|ad_block/
+||playground.ru/api/error_front.send^$xhr,domain=playground.ru
+||playground.ru/service/callback/google/iframe^$domain=playground.ru
+||playground.ru/build/28.5d043caa.js^$script,domain=playground.ru
+||ixbt.com^$cookie=/__ddg*/
+||ichip.ru/img/v_sharing.png^$image,domain=ichip.ru
 !
 !
 !
@@ -975,6 +983,7 @@ otzovik.com##div[class^="produkt"][class$="sortable"]
 ||st.aestatic.net/mixer/widgets/bx/RedOrderRecommendationFeedModal/*/system/RedOrderRecommendationFeedModal.*^$css,script,domain=aliexpress.ru
 ||st.aestatic.net/mixer/widgets/bx/RecommendationFeedOrderSimilarWrapper/*/system/RecommendationFeedOrderSimilarWrapper.js^$script,domain=aliexpress.ru
 ||aliexpress.ru/aer-jsonapi/bx/web/recommend/just-for-you-new-ru-sell^$xhr,domain=aliexpress.ru
+||aliexpress.ru^$cookie=_yasc
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -1340,6 +1349,9 @@ rbc.ru###maincontent > div.l-col-center-590.article__content:first-child > div.a
 tourister.ru##div[class^="nt-foot-count"]
 tourister.ru##div[id^="pop-up-banner"]
 tourister.ru##div[class*="adver"]
+##div[id*="adfox"]
+mobile-review.com##div[class^="adv"]
+mobile-review.com##div[id^="counters"]
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
 tbank.ru,tinkoff.ru#%#//scriptlet('remove-cookie', '/dsp_click_id|pageLanding|mediaInfo/')
@@ -1358,6 +1370,9 @@ rutube.ru#%#//scriptlet('set-local-storage-item', 'muted', '1')
 static.1tv.ru#%#//scriptlet('set-local-storage-item', 'eump_ab_data', 'emptyObj')
 shopogolic.net#%#//scriptlet('set-local-storage-item', 'dashly_last_activity', 'emptyObj')
 irecommend.ru#%#//scriptlet('set-local-storage-item', 'fullTeasersTracker_1', 'emptyObj')
+playground.ru#%#//scriptlet('set-session-storage-item', 'sessionIdAudio', 'null')
+playground.ru#%#//scriptlet('set-local-storage-item', 'activeSessionId', 'null')
+playground.ru#%#//scriptlet('remove-cookie', '/pg_device/')
 ! -
 !
 !
