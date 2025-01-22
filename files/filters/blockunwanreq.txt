@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.0.5-R
-! TimeUpdated: 2025-01-21T17:20:00+00:00
+! Version: 3.0.6-R
+! TimeUpdated: 2025-01-22T18:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -302,7 +302,7 @@
 ||static.beeline.ru/upload/images/*QR*.png^$image,domain=beeline.ru
 ||beeline.gestalt.email^$domain=beeline.ru
 ||lenta.com/api-gateway/v*/banners/adhweb^$xhr,domain=lenta.com
-||fp.kaspersky-labs.com^$domain=lenta.com,third-party
+! fp.kaspersky-labs.com^$third-party (23.01.24: сомнения, временно отключён)
 ||otel-collector.lenta.tech/v*/traces^$xhr,domain=lenta.com
 ||cdn*.helpdeskeddy.com//js/modules/chat_widget/hde.js^$script
 ||sitecdn.api.lenta.com/assets-ng/footer/lenta-app-qr.svg^$image,domain=lenta.com
@@ -620,7 +620,7 @@
 ||sfr7ag.ru^
 ||samokat.ru/weborama.html^$domain=samokat.ru
 ||api-web.samokat.ru/showcase/recommendations/whatToTryProducts$xhr,domain=samokat.ru
-! /_vercel/speed-insights/script.js^$script,important (новое правило, строчка 500)
+! /_vercel/speed-insights/script.js^$script,important (новое правило, строка 500)
 ||zen.yandex.ru/widget-loader^$script,domain=3dnews.ru
 ||kupigolos.ru/img/info/710%D1%85294.webp^$image,domain=kupigolos.ru
 ||kupigolos.ru/img/info/180x1270.webp^$image,domain=kupigolos.ru
@@ -654,7 +654,7 @@
 ||esports.ru/wp-content/uploads/2025/01/414x60.gif^$image,domain=esports.ru
 ! matomo-el5.x5.ru^$important (новое правило, строка 676)
 ||frontlogger.dodois.io^
-$cookie=/adtech_uid|top100_id|dco.id/
+$cookie=/adtech_uid|top100_id|dco.id|__ddg*|PHPSESSID|KIykI|L|bltsr|bh|coockoos|my/
 ||sibdroid.ru/upload/is/settings/c52/k8m6dcpmm5aqnx6nu8hn2t16va4e404l/TG%20desktop%20(2).png^$image,domain=sibdroid.ru
 /wp-admin/admin-ajax.php?*views*$xhr
 ||api.zadarma.com/calltracker$xhr
@@ -701,17 +701,26 @@ $cookie=/dsp_click_id|mediaInfo|pageLanding/,domain=tbank.ru|tinkoff.ru,importan
 ||smotrim.ru^$cookie=/yandexuid|yashr/
 ||shopogolic.net^$cookie=dashly_device_guid
 ||irecommend.ru^$cookie=/statsactivity|statstimer/
-||otzovik.com^$cookie=cgreg
-||otzovik.com^$cookie=refreg
-||otzovik.com^$cookie=ROBINBOBIN
+||otzovik.com^$cookie=/cgreg|refreg|ROBINBOBIN/
 ||knife.media/analytics/shares/$xhr,domain=knife.media
 ||cdn-ru.bitrix24.ru/*/crm/site_button/loader_*.js$script,domain=tvoe.live
 ||playground.ru^$cookie=/yashr|yandexuid|ad_block/
 ||playground.ru/api/error_front.send^$xhr,domain=playground.ru
 ||playground.ru/service/callback/google/iframe^$domain=playground.ru
 ||playground.ru/build/28.5d043caa.js^$script,domain=playground.ru
-||ixbt.com^$cookie=/__ddg*/
 ||ichip.ru/img/v_sharing.png^$image,domain=ichip.ru
+||portal.noc.gov.ru^$cookie=/s3cdn_sess/
+||vstat.rtr-vesti.ru
+$cookie=/is-ads-disabled|adblock-state|fingerprint|osnova-aid|stickydude/,domain=dtf.ru|vc.ru
+||otzyvru.com^$cookie=/_yasc|maps_routes_travel_mode|yandex_login|yandexuid|yashr|ymex|yp|ys|yuidss|sae|sessar/
+||api.*.ru/v*/content/read^$domain=dtf.ru|vc.ru
+support/widget_*.html^$domain=kontur.ru
+||pikabu.ru^$cookie=/Tas|Uas|tvkuid|pcid|abccv|clpr1|fps|la|7xkodguI|vn_buff|9k7MtyP/
+||habr.com^$cookie=/_yasc|i|maps_routes_travel_mode|remixdt|remixlgck|remixlgck|remixlgck|remixstlid|remixua|sae|sessar|skid|yandex_login|yandexuid|yashr|ymex|yp|ys|yuidss/
+||habr.com/kek/v*/articles/most-reading$xhr,domain=habr.com
+||habr.com/kek/v*/actual_events^$xhr,domain=habr.com
+||gymebyl.com^
+$cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 !
 !
 !
@@ -742,10 +751,35 @@ $cookie=/dsp_click_id|mediaInfo|pageLanding/,domain=tbank.ru|tinkoff.ru,importan
 !
 ! Blocking hidden images in one pixel (1 x 1).
 ! Блокировка скрытых изображений в один пиксель (1 x 1).
-! *4pda.to/s/*.gif*^$image,xhr,domain=4pda.to  (03.12.202 не грузятся иконки, скрытые изображения в один пиксель будут блокироваться отдельно)
+! *4pda.to/s/*.gif*^$image,xhr,domain=4pda.to  (03.12.24: не грузятся иконки, скрытые изображения в один пиксель будут блокироваться отдельно)
 ||*4pda.to/s/j7790osz2tCgk6fYcxz2yqeM8NXMm.png^$image,domain=4pda.to
 ||*4pda.to/s/vIBCbXoJxOYy9Rr4CXbD5HkEyfQ.png^$image,domain=4pda.to
 ||4pda.to/static/module/lytebox/images/blank.gif^$image,domain=4pda.to
+!
+||4pda.to/s/PXtibvsZpqz1qMv8AkyZ98Z6tlz0MY.gif$xhr,domain=4pda.to
+||4pda.to/s/PXtiiz1GkAPpOUkidN41gPh2j5DY.gif^$image,domain=4pda.to
+||4pda.to/s/PXtiiY82DndJFGb7J9ANRDD5Iuz2b.gif^$image,domain=4pda.to
+||4pda.to/s/PXtiZvWEw1FkD22i4gAOaEx2DPW.gif^$image,domain=4pda.to
+||4pda.to/s/PXtinySjOwLgFhshrMlZ4p.gif^$xhr,domain=4pda.to
+||4pda.to/s/PXtiiwuw1F4bOKlMuBlkKrXB9YcQ.gif^$image,domain=4pda.to
+||4pda.to/s/PXtiW6Ce19RSz1dL8mp2z0z0z0Hz2iP.gif^$image,domain=4pda.to
+||4pda.to/s/PXtibDEdQoXSNCp0Vtf1S1pc4z2JB.gif^$image,domain=4pda.to
+||4pda.to/s/PXticA2vfCIPytLVlJjwMm8CbCj8.gif^$image,domain=4pda.to
+||4pda.to/s/PXtibDEdQoXSNCp0Vtf1S1pc4z2JB.gif^$image,domain=4pda.to
+||4pda.to/s/PXtiWz1iIBvpnQHc1SHsnajTDcAYG.gif^$image,domain=4pda.to
+! (22.01.25: скрытые изображения исходят через image запрос, важные через xhк - экпсерименты)
+! 4pda.to/s/PX*.gif^$image,domain=4pda.to
+!
+!
+! Рекл. изображения
+||i.4pda.ws/s/PXtiYwc0on07Ulhubur6ENhekl6YcFu0dz2PDMhDoh408tGXwU8mJwZgh.jpg^$image,domain=4pda.to
+||i.4pda.ws/s/PXtijvk*iot.jpg^$image,domain=4pda.to
+||i.4pda.ws/s/PXtisFfrIDpNV9cZ6scLvJjg6WQKt3KdRX3oENlcMlICSMfivqMCAxsz0.jpg^$image,domain=4pda.to
+||i.4pda.ws/s/PXtidDCrge8SjuUYtSvaGeuywxz2IcZ1akevfcVyOTDOMyBPsWBsS2lqu.jpg^$image,domain=4pda.to
+||i.4pda.ws/s/PXtisFfrIDpNV9cZ6scLvJjg6WQKt3KdRX3oENlcMlICSMfivqMCAxsz0.jpg^$image,domain=4pda.to
+||i.4pda.ws/s/PXtijnxtIQgcuz21iiBSz1EuGfAMSY0z23e3XedINq2yc2JD4gAc4EGyiId.jpg^$image,domain=4pda.to
+!
+!
 !
 @@||i.4pda.ws/s/*.jpg?v=*^$domain=4pda.to
 @@||*4pda.to/s/*.js?_=*^$domain=4pda.to
@@ -927,7 +961,7 @@ ozon.ru###layoutPage > div.b6:first-child > div.d0m_9 > div > div.container.c:nt
 ! Зато от блокировки некоторых скриптов сломался подвал сайта (footer) на главной странице XD (к примеру, в разделе Корзина подвал сайта работает).
 ! But from blocking some scripts broke the site basement (footer) on the main page XD (for example, in the Shopping Cart section the site basement works).
 ! -
-! ** - Пришлось отключить т.к. глючит сайт. (08.12.24)
+! ** - 08.12.24: Пришлось отключить т.к. глючит сайт.
 !
 ! ===
 !
@@ -1142,7 +1176,7 @@ mtsru.ru##div[id="i7050"]
 iguides.ru##.i-box-cta_tg
 !
 ! Блок с популярными запросами внизу у подвала страницы результатов поискового запроса + внизу на странице объявления (сайт объявлений Авито (avito .ru))
-! avito.ru##div[class^="styles-module-root-fTGxT styles-module-margin-top_none-P0ihW styles-module-margin-bottom_none-ZFm_8"] (23.11.2024 ломает поисковые фильтры)
+! avito.ru##div[class^="styles-module-root-fTGxT styles-module-margin-top_none-P0ihW styles-module-margin-bottom_none-ZFm_8"] (23.11.2024: ломает поисковые фильтры, отключён)
 !
 ! Поп-ап насчёт розыгрыши призов за просмотр сериалов (на момент понедельник, 18.11.2024) в правом нижнем углу на главной странице сайта телеканала Домашний (Россия) (domashniy .ru).
 domashniy.ru##div[class^="wcBWDEpAog3Py-ShnqRIvw=="]
@@ -1151,6 +1185,7 @@ domashniy.ru##div[class^="wcBWDEpAog3Py-ShnqRIvw=="]
 chefmarket.ru##div[class^="small-social__subscribe"]
 xn----7sbaj2agca3agfevjs7cwg.xn--p1ai##div[class^="cookie__info"]
 ! санаторий-хвойный .рф
+!
 !
 ! Подписка на email рассылку (сайт evro-sport .ru)
 evro-sport.ru##div[class="subscribe"]
@@ -1187,32 +1222,30 @@ sibinformburo.ru##div[class="col-lg-4 col-md-4 col-sm-6"]
 ! Предупреждение об использовании cookie (сайт логистической (транспортной) компании ДПД (DPD) (dpd .ru))
 dpd.ru##div[class="root_UnCiX"]
 !
-xn----7sbaj2agca3agfevjs7cwg.xn--p1ai##div[class^="cookie__info"]
-! санаторий-хвойный.рф
 !
-newprospect.ru##div[class="notification"]
-newprospect.ru##div[class="telegram"]
+newprospect.ru##div[class^="notification"]
+newprospect.ru##div[class^="telegram"]
 rg.ru##div[class="Subscribe_root__oarin Footer_subscribe__awe1E"]
 rg.ru##div[class="Footer_counters__5YSwr"]
 rg.ru##div[class="Footer_rss__ecqdR"]
 tbank.ru##div[data-page-name="adBlockedPage"]
-ru-minecraft.ru##div[class="klauncher-wrapper"]
+ru-minecraft.ru##div[class^="klauncher-wrapper"]
 ru-m.org##div[class^="ramka"]
 misterlauncher.org##div[class^="alert alert-success text-center"]
-misterlauncher.org,minecraftrating.ru##div[class="text-center mt-4 font-weight-bold"]
-misterlauncher.org##div[class="block-try"]
-misterlauncher.org##div[class="page-header page-header-fixed hidden-xs page-header-fixed-show"]
+misterlauncher.org,minecraftrating.ru##div[class^="text-center mt-4 font-weight-bold"]
+misterlauncher.org##div[class^="block-try"]
+misterlauncher.org##div[class^="page-header page-header-fixed hidden-xs page-header-fixed-show"]
 misterlauncher.org##div[class^="col-right"]
 minecraftrating.ru##div[class^="mrlauncher-banner"]
 inside.lemoncraft.ru,lemoncraft.ru##div[class^="discord-dialog discord-dialog--active"]
 tmonitoring.com##div[class^="metriks"]
 minecraftexpert.ru##div[class^="download-button klaun-button"]
-minecraftexpert.ru##div[class="download-button tg-button"]
+minecraftexpert.ru##div[class^="download-button tg-button"]
 ##div[class*="footer-counts"]
-! ~hlebs.ru##div[class*="counts"]
+! ~hlebs.ru##div[class*="counts"] (01.24: ломаются элементы сайтов, отключён)
 ##div[class^="counts"]
 ##a[href$="klauncher"]
-minecraftpatch.ru##div[style="margin-top:20px;text-align: center;display: flex;flex-direction: column;justify-content: center;width: 100%;border-bottom: 1px solid #777;"]
+minecraftpatch.ru##div[style^="margin-top:20px;text-align: center;display: flex;flex-direction: column;justify-content: center;width: 100%;border-bottom: 1px solid #777;"]
 mcpehub.net##div[id="custom-7543-particle"]
 hotmc.ru##div[class^="banner-video-container"]
 minecraft-inside.ru##div[class^="footer__counters"]
@@ -1226,28 +1259,28 @@ xenolith.ru##div[class^="f_banners"]
 vlauncher.ru##div[class^="counters-box"]
 ~demix.ru,~sportmaster.ru,~habr.com,~iphones.ru,~vprok.ru##div[class*="counter"]
 ##a[href*="//statcounter.com/"]
-minecraftkwiki.online##div[class="widget rounded overflow-hidden filter-field shadow mb-3 bg-gray mt-xs-0 mb-3 widget_cabinet_comment_widget"]
+minecraftkwiki.online##div[class^="widget rounded overflow-hidden filter-field shadow mb-3 bg-gray mt-xs-0 mb-3 widget_cabinet_comment_widget"]
 minecraftpatch.ru##section:nth-child(2) > div.wrapper:last-child > div.post_box:last-child > div.post_text:last-child > div.description:last-child > div:first-child > p:nth-child(2)
 minecraftkwiki.online##li[class^="menu-item menu-item-type-custom menu-item-object-custom menu-item-18959 nav-item"]
 mcmodspc.com##div[class^="site-main__single-header-right-bottom grid__row"]
 mody4mine.ru##div[class^="vk_groups"]
-! misterlauncher.org##a[href^="https://misterlauncher.org/"] (09.12.24 некоторые кнопки и разделы сайта ломаются)
-gamewith.net##div[class="game-announce"]
-minecraftonly.com##a[href="/start.html"]
-minecraftonly.com##div[class="streams-sidebar position-fixed"]
-modscraft.net##div[class="content-listen-body"]
-topcraft.club##div[class="row zverinco"]
-topcraft.club##div[class="visible-lg left-big-zebra"]
-minecraftheat.ru##div[class="block-section social-block"]
+! misterlauncher.org##a[href^="https://misterlauncher.org/"] (09.12.24: некоторые кнопки и разделы сайта ломаются)
+gamewith.net##div[class^="game-announce"]
+minecraftonly.com##a[href*="/start.html"]
+minecraftonly.com##div[class^="streams-sidebar position-fixed"]
+modscraft.net##div[class^="content-listen-body"]
+topcraft.club##div[class^="row zverinco"]
+topcraft.club##div[class^="visible-lg left-big-zebra"]
+minecraftheat.ru##div[class^="block-section social-block"]
 minecraftheat.ru##.obfuscated-link, .launcher-link
 ##div[class*="counters"]
 ##a[href*="//plus.google.com/"]
 ##.counters
 minecraftmain.ru###custom_html-5 > div.textwidget.custom-html-widget:last-child > div.widget.gp-social-buttons-widget.gp-clearfix > ul.gp-social-icons > li:last-child > a.social-google-news.ext-link
-alfabank.by##div[class="sendpulse"]
-russianfood.com##div[align="center"]
-life.ru##div[class="styles_email__2Wd0i"]
-raiffeisen.ru##div[class="CookieDialog"]
+alfabank.by##div[class^="sendpulse"]
+russianfood.com##div[align^="center"]
+life.ru##div[class^="styles_email__2Wd0i"]
+raiffeisen.ru##div[class^="CookieDialog"]
 baby.ru##div[id^="adriver_banner_side"]
 baby.ru##div[class^="learn-and-participate"]
 osnmedia.ru##div[style^="padding: 15px 10px; border-top: 1px solid rgb(179, 182, 187); font-size: 14px; font-weight: 600; line-height: 1.4;"]
@@ -1261,11 +1294,11 @@ wifigid.ru##a[href*="//t.me/wifigid"]
 pdalife.to##div[class*="ads-popup"]
 uptodown.com##div.content:first-child > section.vpn:nth-child(7)
 androeed.ru##div[class="vacancies"]
-5play.org##div[class="f-telegram"]
+5play.org##div[class^="f-telegram"]
 apkpure.net,apkpure.com##a[class*="telegram-btn"]
 apkpure.net##main.main-container:nth-child(2) > div.home-main-container.auto-container:nth-child(2) > div.module-card-container.dt-hot-topics:nth-child(6)
-apkpure.com##div[class="social-network"]
-mynickname.com##a[class="btn nft"]
+apkpure.com##div[class^="social-network"]
+mynickname.com##a[class^="btn nft"]
 ##div[class^="CookieWarning"]
 tochka.com##div[class^="footer_subscription"]
 mtsbank.ru##div[class^="styled__Wrapper-sc-37ac7ba-0 hhBONQ"]
@@ -1283,15 +1316,15 @@ richfamily.ru##div[id^="notification"]
 desport.ru##div[class*="Cookies_cookie"]
 desport.ru##div[class*="WebimButton"]
 outsidethebox.ms##div.site-container:first-child > div.site-inner:nth-child(2) > div.wrap > div.content-sidebar-wrap > main.content:first-child > section.author-box.tg-box:nth-child(7)
-info.agt72.ru##dialog[class="popup"]
+info.agt72.ru##dialog[class^="popup"]
 journal.tinkoff.ru##div[class^="_wrapper_d7xut_4"][data-with-emoji="false"]
-journal.tinkoff.ru##div[class="_subscription_1qfgu_16"]
-mywot.com##div[class="StyledUtils__FlexColumn-sc-14r66vj-1 StyledScorecard__SideBarContainer-sc-1id9k6z-1 jMQSPi"]
-mywot.com##div[class="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__InstallButtonContainerRow-sc-jubsjz-3 chPpOm"]
+journal.tinkoff.ru##div[class^="_subscription_1qfgu_16"]
+mywot.com##div[class^="StyledUtils__FlexColumn-sc-14r66vj-1 StyledScorecard__SideBarContainer-sc-1id9k6z-1 jMQSPi"]
+mywot.com##div[class^="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__InstallButtonContainerRow-sc-jubsjz-3 chPpOm"]
 proza.ru###footer > table:nth-child(2)
 bankinform.ru##div[class^="d-flex gap-3 flex-wrap align-content-center page_block fs-14 "]
-rsload.net##div[class="tgwrap"]
-5play.org##div[class="telegram-cdn-btn"]
+rsload.net##div[class^="tgwrap"]
+5play.org##div[class^="telegram-cdn-btn"]
 onlinetrade.ru##div[class^="cookiePanel"]
 blog.okko.tv##div:first-child > div.ad-site-wrapper:first-child > div.jsx-970602695.site-overlay.usDsuMBs > div > div.jsx-1539320767.content-background:first-child > div.S6B6PsCH > div.c4KiWuNi:first-child > div.jsx-3573993002.wideWrapper > header.jsx-1657880382.fHzZWEMd > div.jsx-1657880382.KKBSY_9z:last-child > a.mH7saeqi:last-child
 promokodi.net##div[class^="cashback-store-leftcol-banner hidden-xs hidden-sm"]
@@ -1333,7 +1366,6 @@ esports.ru##aside[class^="t-lg:col-start-4 t-lg:col-end-4 px-4 t-sm:px-0"]
 esports.ru##div[class^="flex rounded-tl-xl rounded-tr-xl fixed left-0 right-0 bottom-0 z-10 overflow-hidden h-15 mx-auto w-295 max-w-full js-catfish  hidden t-sm:block"]
 esports.ru##div[class^="cursor-default absolute top-7 t-lg:top-8 z-10 js-present-popover  "]
 sibdroid.ru##div[class^="telegram_giveaway js_telegram_giveaway open"]
-dtf.ru##a[class^="sidebar-item sidebar-item--narrow"]
 dtf.ru##a[href*="/pay/steam"]
 pikabu.ru##div[class*="ny2024"]
 iphones.ru##div[class*="post__adsbygoogle adfox"]
@@ -1352,6 +1384,11 @@ tourister.ru##div[class*="adver"]
 ##div[id*="adfox"]
 mobile-review.com##div[class^="adv"]
 mobile-review.com##div[id^="counters"]
+portal.noc.gov.ru##div.site-wrap:nth-child(2) > main.main:nth-child(3) > section.section-page-news-in.news-block.news-block-in > div.container:last-child > div.content > div.news-block-inner:last-child > ul.links-list:last-child > li.link-item:first-child
+portal.noc.gov.ru##div.site-wrap:nth-child(2) > main.main:nth-child(3) > section.section-page-news-in.news-block.news-block-in > div.container:last-child > div.content > div.news-block-inner:last-child > ul.links-list:last-child > li.link-item:nth-child(2)
+portal.noc.gov.ru##div.site-wrap:nth-child(2) > main.main:nth-child(3) > section.section-page-news-in.news-block.news-block-in > div.container:last-child > div.content > div.news-block-inner:last-child > ul.links-list:last-child > li.link-item:nth-child(3)
+unixtimestamp.com##div[class^="ad-rail-top"]
+4pda.to##div[class^="count-visitor"]
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
 tbank.ru,tinkoff.ru#%#//scriptlet('remove-cookie', '/dsp_click_id|pageLanding|mediaInfo/')
@@ -1366,13 +1403,32 @@ yoomoney.ru#%#//scriptlet('set-session-storage-item', 'poll-timer', 'null')
 rutube.ru#%#//scriptlet('set-local-storage-item', 'def_banner_open', '')
 rutube.ru#%#//scriptlet('set-local-storage-item', 'fingerprintId', 'null')
 rutube.ru#%#//scriptlet('set-local-storage-item', 'muted', '1')
-1tv.ru#%#//scriptlet('set-local-storage-item', 'eump_ab_data', 'emptyObj')
-static.1tv.ru#%#//scriptlet('set-local-storage-item', 'eump_ab_data', 'emptyObj')
+1tv.ru,static.1tv.ru#%#//scriptlet('set-local-storage-item', 'eump_ab_data', 'emptyObj')
 shopogolic.net#%#//scriptlet('set-local-storage-item', 'dashly_last_activity', 'emptyObj')
 irecommend.ru#%#//scriptlet('set-local-storage-item', 'fullTeasersTracker_1', 'emptyObj')
 playground.ru#%#//scriptlet('set-session-storage-item', 'sessionIdAudio', 'null')
 playground.ru#%#//scriptlet('set-local-storage-item', 'activeSessionId', 'null')
 playground.ru#%#//scriptlet('remove-cookie', '/pg_device/')
+dtf.ru,vc.ru#%#//scriptlet('set-local-storage-item', 'boosterUid', '')
+#%#//scriptlet('set-local-storage-item', 'hawk-user-id', '$remove$')
+dtf.ru,vc.ru#%#//scriptlet('set-local-storage-item', 'lc-logs', 'emptyObj')
+pikabu.ru#%#//scriptlet('set-local-storage-item', 'fps', 'null')
+pikabu.ru#%#//scriptlet('set-local-storage-item', 'pkb_Cmi', 'undefined')
+pikabu.ru#%#//scriptlet('set-local-storage-item', 'pkbAR', 'null')
+pikabu.ru#%#//scriptlet('set-local-storage-item', 'pkb_Sr', 'null')
+pikabu.ru#%#//scriptlet('set-local-storage-item', 'pkb_ach_open5', '')
+pikabu.ru#%#//scriptlet('set-local-storage-item', 'pkb_rud', 'null')
+pikabu.ru#%#//scriptlet('set-session-storage-item', 'pkb_sst', 'null')
+pikabu.ru#%#//scriptlet('set-local-storage-item', 'pkb_svce', 'null')
+pikabu.ru#%#//scriptlet('set-local-storage-item', 'pkb_sve', 'null')
+pikabu.ru#%#//scriptlet('set-local-storage-item', 'pkb_Pt', 'null')
+pikabu.ru#%#//scriptlet('set-local-storage-item', 'pkb_ave', 'null')
+ligaudio.ru#%#//scriptlet('remove-cookie', '/tc/')
+curseforge.com#%#//scriptlet('set-session-storage-item', 'activityTrace', 'null')
+curseforge.com#%#//scriptlet('set-session-storage-item', 'analytics-percentage', 'null')
+curseforge.com#%#//scriptlet('set-local-storage-item', 'cf_ranAdBlockerDetection', '0')
+4pda.to#%#//scriptlet('set-local-storage-item', '__adfstate', '$remove$')
+!
 ! -
 !
 !
@@ -1436,8 +1492,8 @@ playground.ru#%#//scriptlet('remove-cookie', '/pg_device/')
 ! mobile.events.data.microsoft.com^$important
 ! eu-mobile.events.data.microsoft.com^
 ! self.pipe.aria.microsoft.com^
-||*pipe.aria.microsoft.com^$important
-||*events.data.microsoft.com^$important
+||pipe.aria.microsoft.com^$important
+||events.data.microsoft.com^$important
 !
 ! = For Windows =
 ! = Для Виндовс =
@@ -1611,7 +1667,7 @@ playground.ru#%#//scriptlet('remove-cookie', '/pg_device/')
 ! = Косметические правила =
 ! market.yandex.ru###profitable_goods_tab-RecommendationRoll > div._1QNtS:nth-child(5)
 ! market.yandex.ru###\/content\/page\/fancyPage\/cms\/CmsPageLayout-0\/138584181\/recommendationRolls\/profitable_goods_tab\/content\/lazyGenerator\/initialContent\/recomLayoutItem_21\#58\:153_4 > div._3dfdb:first-child
-! В последнее время перестали помогать косметические правила против рекомендаций на главной странице Я.Маркета, буду экспериментировать. (03.12.2024)
+! 03.12.2024: В последнее время перестали помогать косметические правила против рекомендаций на главной странице Я.Маркета, буду экспериментировать.
 !
 !
 market.yandex.ru##._2wiey, ._1Ha5w, .r_nt5
@@ -1649,7 +1705,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||appsgrowthpromo*.clients*.google.com^$important
 ||jnn-pa.googleapis.com/*/Create^$xhr,other
 ||ssl.gstatic.com/*/blank_1x.png^$image
-! accounts.google.com/_/IdpIFrameHttp/cspreport$xhr,other (06.12.24 не работает правило, 07.12.24 для безопасности разблокирован)
+! accounts.google.com/_/IdpIFrameHttp/cspreport$xhr,other (06.12.24: не работает правило, 07.12.24: для безопасности разблокирован (включён))
 ||accounts.youtube.com/RotateCookies^$xhr,important
 !
 ! ===
