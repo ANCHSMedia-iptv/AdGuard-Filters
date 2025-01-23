@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.0.6-R
-! TimeUpdated: 2025-01-22T18:20:00+00:00
+! Version: 3.0.7-R
+! TimeUpdated: 2025-01-23T11:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -109,7 +109,7 @@
 ||clck.dzen.ru^$important
 !
 ! GitHub Analytics
-||api.github.com/_private/browser/stats^$xhr,important
+||api.github.com/_private/browser/$xhr,important
 ||collector.github.com/github/collect^$xhr,important
 !
 !
@@ -131,7 +131,7 @@
 /generate_204$domain=~youtube.com|~googlevideo.com
 ||adlook.me^$important
 ||betweendigital.com^$important
-/api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru
+*/api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru
 ||vk.com/js/api/openapi.js^$script,domain=~vk.com,important
 ||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com
 ||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com
@@ -204,7 +204,7 @@
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru,important
+*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru,important
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com,important
@@ -246,7 +246,7 @@
 ||ad-tech.ru^
 ||championat.com/atlas/metrics/^$xhr,domain=championat.com,important
 ||cdn-assets.matchtv.ru/build/assets/external/matchtv-stat.*.js^$domain=matchtv.ru,important
-/api/*/store/$ping,xhr,important
+*/api/*/store/$ping,xhr,important
 ||matchtv.ru/recommendation$xhr,domain=matchtv.ru,important
 ||static*.ntv.ru/assets/*/ad-side-bar*.*^$css,script,domain=ntv.ru,important
 ||static*.ntv.ru/assets/*/social-share*.*^$css,script,domain=ntv.ru,important
@@ -325,7 +325,7 @@
 !
 ||notebookcheck-ru.com/fileadmin/Notebooks/*/*_pixel.gif^$image,domain=notebookcheck-ru.com
 ||my.zadarma.com/callmewidget/v*/loader.js^$script
-/rest/analytics/*$ping,domain=ntvplus.ru|ntvplus.tv,important
+*/rest/analytics/$ping,domain=ntvplus.ru|ntvplus.tv,important
 ||browserleaks.com/res/screenshot.mp3^$media,domain=browserleaks.com
 ||api.fix-price.com/buyer/v*/cookie-config^$xhr,domain=fix-price.com
 ||rm.fix-price.com/intake/v*/rum/events^$xhr,domain=fix-price.com
@@ -377,7 +377,7 @@
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^
-/graphql$xhr,important
+/graphql*$xhr,important
 ||getrcmx.com^
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.*.js^$script,domain=xcom-shop.ru
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -584,7 +584,7 @@
 ||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/zen-subscribe.js^$script,domain=kp.ru
 ||assets.habr.com/habr-web/img/*.webp^$image,domain=habr.com
 ||habr.com/kek/v*/reactions/counters$xhr,domain=habr.com
-/api/fl$xhr,other,important
+*/api/fl$xhr,other,important
 ||eaglercraft.com/js/fb.js^$script,domain=eaglercraft.com
 ||s.basicconfig.com/channel/20$script,domain=gid-minecraft.ru
 ||ixbt.com/site*/resources/javascript/kocmoc.js^$script,domain=ixbt.com
@@ -721,6 +721,17 @@ support/widget_*.html^$domain=kontur.ru
 ||habr.com/kek/v*/actual_events^$xhr,domain=habr.com
 ||gymebyl.com^
 $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
+||s*.teraboxcdn.*/fe-opera-static/node-static-v*/fe-webv*-main/assets/libs/facebook.*.js^$script,domain=terabox.*
+||sofire.terabox.*/h*/t$xhr,domain=terabox.*
+||dropbox.com^$cookie=/dbx_js_analytics_id|t/
+||dropbox.com/*/pap_event_logging$ping,xhr,domain=dropbox.com
+||static.richfamily.ru/media/home/23/*.webm^$media,domain=richfamily.ru
+||kp.ru/boom/api/*/metrics/adaptive/$image,domain=kp.ru
+||static*.banki.ru/upload/ads/*.png^$image,domain=banki.ru
+||banki.ru/mybanki/api/*/send-event^$xhr,domain=banki.ru
+||banki.ru^$cookie=/banki_prev_page|BANKI_RU_USER_IDENTITY_UID|_flpt_main_page_personalization_absegment/
+||i.hizliresim.com/fxiyl01.png^$image,domain=flysat.com
+||cbctv.az^$cookie=/_yasc|i|bltsr|bh|laravel_session|yandexuid|yashr|yp|ys|yuidss/
 !
 !
 !
@@ -1257,7 +1268,7 @@ minecraftch.ru##div[class^="vkgroup"]
 ##a[href$="//mcservers.top/"]
 xenolith.ru##div[class^="f_banners"]
 vlauncher.ru##div[class^="counters-box"]
-~demix.ru,~sportmaster.ru,~habr.com,~iphones.ru,~vprok.ru##div[class*="counter"]
+! ~demix.ru,~sportmaster.ru,~habr.com,~iphones.ru,~vprok.ru##div[class*="counter"] (23.01.25: ломаются сайты, сомнения, отключён)
 ##a[href*="//statcounter.com/"]
 minecraftkwiki.online##div[class^="widget rounded overflow-hidden filter-field shadow mb-3 bg-gray mt-xs-0 mb-3 widget_cabinet_comment_widget"]
 minecraftpatch.ru##section:nth-child(2) > div.wrapper:last-child > div.post_box:last-child > div.post_text:last-child > div.description:last-child > div:first-child > p:nth-child(2)
@@ -1273,7 +1284,7 @@ topcraft.club##div[class^="row zverinco"]
 topcraft.club##div[class^="visible-lg left-big-zebra"]
 minecraftheat.ru##div[class^="block-section social-block"]
 minecraftheat.ru##.obfuscated-link, .launcher-link
-##div[class*="counters"]
+! ##div[class*="counters"] (23.01.25: ломаются сайты, сомнения, отключён)
 ##a[href*="//plus.google.com/"]
 ##.counters
 minecraftmain.ru###custom_html-5 > div.textwidget.custom-html-widget:last-child > div.widget.gp-social-buttons-widget.gp-clearfix > ul.gp-social-icons > li:last-child > a.social-google-news.ext-link
@@ -1389,6 +1400,10 @@ portal.noc.gov.ru##div.site-wrap:nth-child(2) > main.main:nth-child(3) > section
 portal.noc.gov.ru##div.site-wrap:nth-child(2) > main.main:nth-child(3) > section.section-page-news-in.news-block.news-block-in > div.container:last-child > div.content > div.news-block-inner:last-child > ul.links-list:last-child > li.link-item:nth-child(3)
 unixtimestamp.com##div[class^="ad-rail-top"]
 4pda.to##div[class^="count-visitor"]
+tmonitoring.com##div[class^="upgrade pull-right"]
+tmonitoring.com##a[id*="btn--t-launcher"]
+richfamily.ru##div[class^="q-carousel q-panel-parent q-carousel--without-padding"]
+flysat.com##a[href^="//www.flysat-live.com/]
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
 tbank.ru,tinkoff.ru#%#//scriptlet('remove-cookie', '/dsp_click_id|pageLanding|mediaInfo/')
@@ -1428,6 +1443,21 @@ curseforge.com#%#//scriptlet('set-session-storage-item', 'activityTrace', 'null'
 curseforge.com#%#//scriptlet('set-session-storage-item', 'analytics-percentage', 'null')
 curseforge.com#%#//scriptlet('set-local-storage-item', 'cf_ranAdBlockerDetection', '0')
 4pda.to#%#//scriptlet('set-local-storage-item', '__adfstate', '$remove$')
+terabox.*#%#//scriptlet('set-local-storage-item', '/has_coupon_showed*/', '$remove$')
+terabox.*#%#//scriptlet('set-local-storage-item', '/has_frequency_show*/', '$remove$')
+terabox.*#%#//scriptlet('set-local-storage-item', '/reportRecordV*/', '$remove$')
+terabox.*#%#//scriptlet('set-local-storage-item', 's', '$remove$')
+terabox.*#%#//scriptlet('set-local-storage-item', 'duboxLoginEmailHistorys', '')
+terabox.*#%#//scriptlet('remove-cookie', '/browserid|__stripe_mid/')
+dropbox.com#%#//scriptlet('set-session-storage-item', 'uxa.previous_url', '')
+dropbox.com#%#//scriptlet('set-session-storage-item', 'uxa.visit_id', '')
+dropbox.com#%#//scriptlet('set-session-storage-item', 'uxa.last_active_time', '')
+dropbox.com#%#//scriptlet('set-local-storage-item', 'pap_session_last_used', '$remove$')
+dropbox.com#%#//scriptlet('set-local-storage-item', 'pap_session_value', '$remove$')
+dropbox.com#%#//scriptlet('set-session-storage-item', 'udcl', '$remove$')
+banki.ru#%#//scriptlet('set-local-storage-item', 'adBlockChecking', 'unchecked')
+banki.ru#%#//scriptlet('set-local-storage-item', 'myb_tracker:unsaved_events', 'null')
+banki.ru#%#//scriptlet('set-local-storage-item', 'hidden_timeout_id', '$remove$')
 !
 ! -
 !
@@ -1584,6 +1614,7 @@ curseforge.com#%#//scriptlet('set-local-storage-item', 'cf_ranAdBlockerDetection
 ||*analytics-toolbar*^$important
 ||*analytics.faregy.com^$important
 ||analytics.1clickvpn.com^
+||stats.1clickvpn.com^
 ! =
 !
 !
