@@ -778,8 +778,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||4pda.to/s/PXticA2vfCIPytLVlJjwMm8CbCj8.gif^$image,domain=4pda.to
 ||4pda.to/s/PXtibDEdQoXSNCp0Vtf1S1pc4z2JB.gif^$image,domain=4pda.to
 ||4pda.to/s/PXtiWz1iIBvpnQHc1SHsnajTDcAYG.gif^$image,domain=4pda.to
-! (22.01.25: скрытые изображения исходят через image запрос, важные через xhк - экпсерименты)
-! 4pda.to/s/PX*.gif^$image,domain=4pda.to
+! (22.01.25: скрытые изображения исходят через image запрос, важные через xhr - экпсерименты)
+||4pda.to/s/*.gif^$image,xhr,domain=4pda.to
 !
 !
 ! Рекл. изображения
