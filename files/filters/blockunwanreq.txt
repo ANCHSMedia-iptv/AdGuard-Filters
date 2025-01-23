@@ -1724,7 +1724,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||www.googleadservices.com^$important
 ||www.google-analytics.com^$important
 ||www.googletagmanager.com^$important
-||googletagmanager.com^
+||googletagmanager.com^$important
 ||googleadservices.com^$important
 ||google-analytics.com^$important
 ||*ds.metric.gstatic.com^$important
