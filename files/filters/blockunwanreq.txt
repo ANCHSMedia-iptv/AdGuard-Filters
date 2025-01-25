@@ -654,7 +654,17 @@
 ||esports.ru/wp-content/uploads/2025/01/414x60.gif^$image,domain=esports.ru
 ! matomo-el5.x5.ru^$important (новое правило, строка 676)
 ||frontlogger.dodois.io^
-$cookie=/adtech_uid|top100_id|dco.id|__ddg*|PHPSESSID|KIykI|L|bltsr|bh|coockoos|my/
+$cookie=adtech_uid
+$cookie=top100_id
+$cookie=dco.id
+$cookie=PHPSESSID
+$cookie=KIykI
+$cookie=L
+$cookie=bltsr
+$cookie=bh
+$cookie=coockoos
+$cookie=my
+$cookie=__ddg*
 ||sibdroid.ru/upload/is/settings/c52/k8m6dcpmm5aqnx6nu8hn2t16va4e404l/TG%20desktop%20(2).png^$image,domain=sibdroid.ru
 /wp-admin/admin-ajax.php?*views*$xhr
 ||api.zadarma.com/calltracker$xhr
@@ -1853,6 +1863,7 @@ mi.com#@$#body { overflow: visible !important; }
 @@||stats.1clickvpn.com^
 @@||github.com^$cookie
 @@||yandex.net^$cookie
+@@||aliexpress.ru^$cookie
 !
 !
 ! -
