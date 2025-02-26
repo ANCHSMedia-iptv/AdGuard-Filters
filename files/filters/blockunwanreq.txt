@@ -698,7 +698,7 @@ $cookie=/__ddg*_/
 ||tochka.com^$cookie=tochka_analytics_client_uid
 ||alfabank.ru^$cookie=/last_tags_of_interest|lastVisitDate/
 ||vtb.ru^$cookie=rxvt
-$cookie=/dsp_click_id|mediaInfo|pageLanding/,domain=tbank.ru|tinkoff.ru,important
+$cookie=/dsp_click_id|mediaInfo|pageLanding/,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 ||static.shopotam.ru/ad_dir/advert.js$script,domain=shopotam.ru
 ||shopotam.ru^$cookie=/view_counter|z_ref_url|z_ref_target|z_ref_date|last_date/
 ||rbc.ru^$cookie=qrator_msid2
