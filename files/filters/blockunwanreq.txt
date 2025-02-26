@@ -1475,7 +1475,7 @@ rutube.ru#%#//scriptlet('set-local-storage-item', 'fingerprintId', 'null')
 rutube.ru#%#//scriptlet('set-local-storage-item', 'muted', '1')
 1tv.ru,static.1tv.ru#%#//scriptlet('set-local-storage-item', 'eump_ab_data', 'emptyObj')
 shopogolic.net#%#//scriptlet('set-local-storage-item', 'dashly_last_activity', 'emptyObj')
-irecommend.ru#%#//scriptlet('set-local-storage-item', 'fullTeasersTracker_1', 'emptyObj')
+irecommend.ru#%#//scriptlet('set-local-storage-item', '/fullTeasersTracker_*/', 'emptyObj')
 playground.ru#%#//scriptlet('set-session-storage-item', 'sessionIdAudio', 'null')
 playground.ru#%#//scriptlet('set-local-storage-item', 'activeSessionId', 'null')
 playground.ru#%#//scriptlet('remove-cookie', '/pg_device/')
@@ -1685,11 +1685,11 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ! == Google Firebase ==
 !
 ||firebaseinstallations.googleapis.com^$important
-||firebaselogging.googleapis.com^
-||firebaseremoteconfig.googleapis.com^
-||firebaselogging-pa.googleapis.com^
+||firebaselogging.googleapis.com^$important
+||firebaseremoteconfig.googleapis.com^$important
+||firebaselogging-pa.googleapis.com^$important
 ||firebaseinappmessaging.googleapis.com^$important
-||firebaseremoteconfigrealtime.googleapis.com^
+||firebaseremoteconfigrealtime.googleapis.com^$important
 ||firebase.googleapis.com^
 ! firebase.google.com^
 ||firestore.googleapis.com^
