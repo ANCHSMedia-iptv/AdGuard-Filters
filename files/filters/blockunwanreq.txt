@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.1.5-R
-! TimeUpdated: 2025-02-26T07:20:00+00:00
+! Version: 3.1.6-R
+! TimeUpdated: 2025-02-26T11:28:40+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -182,7 +182,7 @@
 ||stat*.russianfood.com/tapi^$domain=russianfood.com,important
 ||russianfood.com/images/blg.png^$image,domain=russianfood.com,important
 ||rbc.ru/v*/geoinfo/by-ip/$xhr,domain=rbc.ru
-||ext.clickstream.sberbank.ru/metrics/$xhr,important
+! ext.clickstream.sberbank.ru/metrics/$xhr,important (новое правило, строка 769)
 ||servicepipe.ru/static/*.js^$script,domain=~onlinetrade.ru
 ||player.twitch.tv/js/embed/v*.js^$script,domain=~twitch.tv,important
 ||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com,important
@@ -314,7 +314,7 @@
 ! dostavista.ru/backend/browser-error-log^$xhr,domain=dostavista.ru (новое правило, строка 312)
 ||express.dhl.ru/local/templates/dhl/components/bitrix/menu/*menu/images/left_menu_bg.gif^$xhr,domain=express.dhl.ru
 ||api.flocktory.com^$third-party,important
-||websbol.clickstream.sberbank.ru/metrics/sbol^$xhr,domain=sberbank.ru
+! websbol.clickstream.sberbank.ru/metrics/sbol^$xhr,domain=sberbank.ru (новое правило, строка 769)
 /bitrix/js/yandex.metrika/script.js$script,important
 ||iguides.ru/local/components/iguides/notifications.subscribe/manifest.json^$other,domain=iguides.ru
 ! cs*.pikabu.ru/apps/ub/*/*/sprite.svg^$xhr,domain=pikabu.ru (ломает сайт 18.01.25)
@@ -759,6 +759,16 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||tenpimaca.ru^$important
 ||gulsbafanec.ru^$important
 ||consficam.ru^$important
+||satkurier.pl/banery/750x100_2019_AntenaNEO.gif^$domain=satkurier.pl,removeparam
+||prodoctorov.ru/api/v*/fingerprint^$domain=probolezny.ru
+||probolezny.ru/static/*/favicons/probolezny/apple_touch_icon/favicon_*.png$domain=probolezny.ru
+||d1n8hflz8lhynp.cloudfront.net^
+||apptornado.com^$important
+||bugly.qq.com^$important
+||graphgl.kinopoisk.ru^$important
+||clickstream.sberbank.ru^$important
+||check.unity.*^$important
+||appbrain.com^
 !
 !
 !
@@ -884,6 +894,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||ads.pinterest.com^$important
 ||log.pinterest.com^$important
 ||analytics.pinterest.com^$important
+||ct.pinterest.com^$important
 !
 ! ===
 !
@@ -1853,8 +1864,8 @@ ya.ru##div[class^="VanillaReact AliceFabContainer"]
 @@||player.smotrim.ru/js/vendor.js$script
 @@||player.smotrim.ru/js/manifest.js$script
 @@||player.smotrim.ru/js/app.js$script
-@@||returnyoutubedislikeapi.com
-@@||sponsor.ajay.app
+@@||returnyoutubedislikeapi.com^
+@@||sponsor.ajay.app^
 @@||digiseller.market^
 @@||iptvx.one^
 @@||captcha-api.yandex.ru^
@@ -1871,6 +1882,7 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||csp.yandex.net/csp
 @@||pay.yandex.ru/sdk/v*/pay.js^$script,xhr
 @@||uglyemail.com^
+@@||trackers.uglymail.com^
 @@||google.com/*/cleardot.gif$image,important,domain=google.com|mail.google.com
 @@||cdn*.vedomosti.ru/*/assets/Banner-*.*^$script,css,domain=vedomosti.ru
 @@||hcaptcha.com^
@@ -1900,6 +1912,12 @@ mi.com#@$#body { overflow: visible !important; }
 @@||github.com^$cookie
 @@||yandex.net^$cookie
 @@||aliexpress.ru^$cookie
+@@||stacks.vk-portal.net^
+@@||clearurls.xyz^
+@@||api.catcast.tv^
+@@||vgtrk.cdnvideo.ru^
+@@||icecast.vgtrk.cdnvideo.ru^
+@@||player.smotrim.ru^
 !
 !
 ! -
@@ -1946,6 +1964,8 @@ mi.com#@$#body { overflow: visible !important; }
 ||t2m.io^
 ||vaycasino*.com^
 ||87h6.cfd^
+||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^
+||freeman42.ru^
 !
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 по 30.11.24 был «жертвой» такого массового спама)..

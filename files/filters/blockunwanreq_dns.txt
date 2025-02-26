@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.0.7-R
+! Version: 3.1.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-01-25T10:20:00+00:00
+! TimeUpdated: 2025-02-26T11:28:40+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 25.01.2025 10:20 UTC
+! Last Modified: 26.02.2025 11:28 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -434,6 +434,19 @@
 ||adv-cdn.tnt-online.ru^
 ||metrika.kontur.ru^$important
 ||vstat.rtr-vesti.ru^$important
+||statistics.fppressa.ru^$important
+||tenpimaca.ru^$important
+||gulsbafanec.ru^$important
+||consficam.ru^$important
+||d1n8hflz8lhynp.cloudfront.net^
+||apptornado.com^$important
+||bugly.qq.com^$important
+||stats.rustore.ru^$important
+||graphgl.kinopoisk.ru^$important
+||clickstream.sberbank.ru^$important
+||ct.pinterest.com^$important
+||check.unity.*^$important
+||appbrain.com^
 !
 !
 !
@@ -534,6 +547,7 @@
 @@||googlevideo.com^
 @@||pay.yandex.ru^
 @@||uglyemail.com^
+@@||trackers.uglymail.com^
 @@||hcaptcha.com^
 @@||msftconnecttest.com^
 @@||*-*.*.global.*.sharepoint.com^
@@ -541,6 +555,12 @@
 @@||smartcaptcha.yandexcloud.net
 @@||support.avito.ru
 @@||stats.1clickvpn.com^
+@@||stacks.vk-portal.net^
+@@||clearurls.xyz^
+@@||api.catcast.tv^
+@@||vgtrk.cdnvideo.ru^
+@@||icecast.vgtrk.cdnvideo.ru^
+@@||player.smotrim.ru^
 !
 ! ===
 !
@@ -572,6 +592,8 @@
 ||t2m.io^
 ||vaycasino*.com^
 ||87h6.cfd^
+||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^
+||freeman42.ru^
 !
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 по 30.11.24 был «жертвой» такого массового спама)..
