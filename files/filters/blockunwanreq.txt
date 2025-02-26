@@ -759,8 +759,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||tenpimaca.ru^$important
 ||gulsbafanec.ru^$important
 ||consficam.ru^$important
-||satkurier.pl/banery/750x100_2019_AntenaNEO.gif^$domain=satkurier.pl,removeparam
-||prodoctorov.ru/api/v*/fingerprint^$domain=probolezny.ru
+||satkurier.pl/banery/750x100_2019_AntenaNEO.gif^$domain=satkurier.pl
+||*.ru/api/v*/fingerprint^$xhr,domain=probolezny.ru|prodoctorov.ru
 ||probolezny.ru/static/*/favicons/probolezny/apple_touch_icon/favicon_*.png$domain=probolezny.ru
 ||d1n8hflz8lhynp.cloudfront.net^
 ||apptornado.com^$important
@@ -769,6 +769,11 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||clickstream.sberbank.ru^$important
 ||check.unity.*^$important
 ||appbrain.com^
+||js.memberful.com/embed.js^$script
+||disqus.com/count.js$script,xhr
+||disqus.com/count-data.js$script,xhr
+||ads.pro-market.net^$important
+||cloudflare.com/cdn-cgi/trace
 !
 !
 !
@@ -1787,7 +1792,7 @@ ya.ru##div[class^="VanillaReact AliceFabContainer"]
 ||doubleclick.net^$important
 ||googlesyndication.com^$important
 ||adservice.google.com^$important
-||s.youtube.com^$important
+!
 ||appsgrowthpromo*.clients*.google.com^$important
 ||jnn-pa.googleapis.com/*/Create^$xhr,other
 ||ssl.gstatic.com/*/blank_1x.png^$image
@@ -1918,6 +1923,7 @@ mi.com#@$#body { overflow: visible !important; }
 @@||vgtrk.cdnvideo.ru^
 @@||icecast.vgtrk.cdnvideo.ru^
 @@||player.smotrim.ru^
+@@||s.youtube.com^$important
 !
 !
 ! -

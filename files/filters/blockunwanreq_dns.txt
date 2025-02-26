@@ -162,7 +162,7 @@
 ||doubleclick.net^$important
 ||googlesyndication.com^$important
 ||adservice.google.com^$important
-||s.youtube.com^$important
+!
 ||appsgrowthpromo*.clients*.google.com^$important
 ||mail-ads.google.com^$important
 ||imasdk.googleapis.com^$important
@@ -308,6 +308,7 @@
 ||artfut.com^$important
 ||d1tracker.ru^$important
 ||adpod.in^
+||logs.unchecky.com^$important
 ||cpa.hh.ru^$important
 ||s*.wi-fi.ru^$important
 ||static.addtoany.com^$important
@@ -447,6 +448,7 @@
 ||ct.pinterest.com^$important
 ||check.unity.*^$important
 ||appbrain.com^
+||ads.pro-market.net^$important
 !
 !
 !
@@ -561,6 +563,7 @@
 @@||vgtrk.cdnvideo.ru^
 @@||icecast.vgtrk.cdnvideo.ru^
 @@||player.smotrim.ru^
+@@||s.youtube.com^$important
 !
 ! ===
 !
