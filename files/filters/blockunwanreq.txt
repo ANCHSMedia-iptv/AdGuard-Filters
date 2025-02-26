@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.1.1-R
-! TimeUpdated: 2025-01-29T17:20:00+00:00
+! Version: 3.1.5-R
+! TimeUpdated: 2025-02-26T07:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -204,7 +204,7 @@
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru,important
+*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me,important
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com,important
@@ -219,7 +219,7 @@
 /adv.gif^$image,important
 ! */adv.*^$image,important
 ||ura.news/widgets/banner_loader/loader.php$xhr,domain=ura.news,important
-||telegram.org/js/*widget*.js$script,domain=~telegram.org
+||telegram.org/js/*widget*.js$script,domain=~telegram.org|~t.me
 ||vk.com/al_video.php$xhr,domain=~vk.com
 ||vk.com/dist/web/ads_light.*.js^$script,important
 ||s.ura.news/js/dist/ccc.bundle.js$script,domain=ura.news,important
@@ -664,7 +664,7 @@ $cookie=bltsr
 $cookie=bh
 $cookie=coockoos
 $cookie=my
-$cookie=__ddg*
+$cookie=/__ddg*_/
 ||sibdroid.ru/upload/is/settings/c52/k8m6dcpmm5aqnx6nu8hn2t16va4e404l/TG%20desktop%20(2).png^$image,domain=sibdroid.ru
 /wp-admin/admin-ajax.php?*views*$xhr
 ||api.zadarma.com/calltracker$xhr
@@ -692,7 +692,7 @@ $cookie=__ddg*
 ||t.rbc.ru/track/*/*/$xhr,domain=rbc.ru
 ||s.rbk.ru/*rbcnews_static/rbcnews-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru
 ||t.rbc.ru/rbcmetr/stat/regional/$xhr,domain=rbc.ru
-||telegram.org/css/*widget*.css$css,domain=~telegram.org
+||telegram.org/css/*widget*.css$css,domain=~telegram.org|~t.me
 ||iguides.ru/bitrix/templates/iguides-2015/js/tg-widget.js$xhr,domain=iguides.ru
 ||tourister.ru^$cookie=dis_is_retina
 ||tochka.com^$cookie=tochka_analytics_client_uid
@@ -742,7 +742,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||banki.ru^$cookie=/banki_prev_page|BANKI_RU_USER_IDENTITY_UID|_flpt_main_page_personalization_absegment/
 ||i.hizliresim.com/fxiyl01.png^$image,domain=flysat.com
 ||cbctv.az^$cookie=/_yasc|i|bltsr|bh|laravel_session|yandexuid|yashr|yp|ys|yuidss/
-||telegram.org/js/telegram-web-app.js^$script,domain=~telegram.org
+||telegram.org/js/telegram-web-app.js^$script,domain=~telegram.org|~t.me
 /chtm/s/metric/*.gif$image
 ||feeds.tildacdn.com/api/setpostviewed/$xhr
 /chtm/s/metric/clarity.js^$script
@@ -750,6 +750,15 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||postium.ru/wp-content/themes/typer-child/assets/js/utm.js^$script,domain=postium.ru
 ||wondershare.com/ga360/js/ga360-add.js^$domain=wondershare.com.ru|wondershare.com
 ||neveragain.allstatics.com/2019/assets/plugin/wsc-adnew.js$script,domain=wondershare.com.ru|wondershare.com
+||stolicaonego.ru/ajax_stat.php^$xhr,domain=stolicaonego.ru
+||stolicaonego.ru^$cookie=evening
+||stolicaonego.ru^$cookie=geobase
+||thevoicemag.ru^$cookie
+||thevoicemag.ru/_nuxt/js/ad/*.js^$script,domain=thevoicemag.ru
+||thevoicemag.ru/_nuxt/js/AdStoriesBanner_*.js^$script,domain=thevoicemag.ru
+||tenpimaca.ru^$important
+||gulsbafanec.ru^$important
+||consficam.ru^$important
 !
 !
 !
@@ -1068,29 +1077,29 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 !
 !
 ! == "Superfluous garbage" from the website (personal cabinet) of T-Bank (ex. Tinkoff). ==
-! == «Лишний мусор» с сайта (личного кабинета) Т-Банка (ex. Тинькофф). + сервисов самого банка и журнала Т-Ж (journal .tinkoff .ru) ==
+! == «Лишний мусор» с сайта (личного кабинета) Т-Банка (ex. Тинькофф). + сервисов самого банка и журнала Т-Ж (journal .tinkoff .ru, new address (from 02.25) t-j .ru) ==
 !
-.ru/api/front/$xhr,domain=tbank.ru|tinkoff.ru
-.ru/gateway/v*/event$ping,xhr,domain=tbank.ru|tinkoff.ru
-! tbank.ru/api/front/supreme-beer/$xhr,domain=tbank.ru|tinkoff.ru
-.ru/api/v*/log^$ping,xhr,domain=tbank.ru|tinkoff.ru
-.ru/resources?name=analytics_config$xhr,domain=tbank.ru|tinkoff.ru
-/tracking/mappings/test/active-mapping.json^$script,xhr,domain=tbank.ru|tinkoff.ru
-.ru/api/cfg/web-gateway/getResponse^$xhr,domain=tbank.ru|tinkoff.ru
-||cfg.*.ru/api-gateway/v*/getToggles^$xhr,domain=tbank.ru|tinkoff.ru
-.ru/twa/hosted-libs/top-mail/v*/code.js^$script,domain=tbank.ru|tinkoff.ru
-.ru/twa/hosted-libs/target-ads/v*/targetads-sdk-*.js^$script,domain=tbank.ru|tinkoff.ru
-.ru/twa/ad-hoc/pixel-iframe/index.html^$domain=tbank.ru|tinkoff.ru
-.ru/twa/hosted-libs/vk/v*/openapi.js$script,domain=tbank.ru|tinkoff.ru
-||cdn.*.ru/eventea/v*/eventea.json^$xhr,domain=tbank.ru|tinkoff.ru
-/hedge/v*/yandex-metrika*.js^$script,domain=tbank.ru|tinkoff.ru
-||cdn.*.ru/eventea/v*/pwa.json^$xhr,domain=tbank.ru|tinkoff.ru
-||cdn.*.ru/eventea/v*/tj.json^$xhr,domain=tbank.ru|tinkoff.ru
-/hedge/v*/vk-counter*.js^$script,domain=tbank.ru|tinkoff.ru
-/hedge/v*/mercury-tracking-event.js^$script,domain=tbank.ru|tinkoff.ru
-||cdn.*.ru/twa/ttm/tinkoff-pwa/*/*/index.js^$script,domain=tbank.ru|tinkoff.ru
-||acdn.*.ru/eventea/bundle/eventea.bundle.js$script,domain=tbank.ru|tinkoff.ru
-||cdn.*.ru/eventea/v*/tjournal.json^$xhr,domain=tbank.ru|tinkoff.ru
+.ru/api/front/$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
+.ru/gateway/v*/event$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
+! tbank.ru/api/front/supreme-beer/$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
+.ru/api/v*/log^$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
+.ru/resources?name=analytics_config$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
+/tracking/mappings/test/active-mapping.json^$script,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
+.ru/api/cfg/web-gateway/getResponse^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
+||cfg.*.ru/api-gateway/v*/getToggles^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
+.ru/twa/hosted-libs/top-mail/v*/code.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru
+.ru/twa/hosted-libs/target-ads/v*/targetads-sdk-*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru
+.ru/twa/ad-hoc/pixel-iframe/index.html^$domain=tbank.ru|tinkoff.ru|t-j.ru
+.ru/twa/hosted-libs/vk/v*/openapi.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru
+||cdn.*.ru/eventea/v*/eventea.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
+/hedge/v*/yandex-metrika*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru
+||cdn.*.ru/eventea/v*/pwa.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
+||cdn.*.ru/eventea/v*/tj.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
+/hedge/v*/vk-counter*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru
+/hedge/v*/mercury-tracking-event.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru
+||cdn.*.ru/twa/ttm/tinkoff-pwa/*/*/index.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru
+||acdn.*.ru/eventea/bundle/eventea.bundle.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru
+||cdn.*.ru/eventea/v*/tjournal.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
 !
 ! ===
 !
@@ -1346,8 +1355,8 @@ desport.ru##div[class*="Cookies_cookie"]
 desport.ru##div[class*="WebimButton"]
 outsidethebox.ms##div.site-container:first-child > div.site-inner:nth-child(2) > div.wrap > div.content-sidebar-wrap > main.content:first-child > section.author-box.tg-box:nth-child(7)
 info.agt72.ru##dialog[class^="popup"]
-journal.tinkoff.ru##div[class^="_wrapper_d7xut_4"][data-with-emoji="false"]
-journal.tinkoff.ru##div[class^="_subscription_1qfgu_16"]
+journal.tinkoff.ru,t-j.ru##div[class^="_wrapper_d7xut_4"][data-with-emoji="false"]
+journal.tinkoff.ru,t-j.ru##div[class^="_subscription_1qfgu_16"]
 mywot.com##div[class^="StyledUtils__FlexColumn-sc-14r66vj-1 StyledScorecard__SideBarContainer-sc-1id9k6z-1 jMQSPi"]
 mywot.com##div[class^="StyledUtils__FlexRow-sc-14r66vj-0 StyledInstallContainer__InstallButtonContainerRow-sc-jubsjz-3 chPpOm"]
 proza.ru###footer > table:nth-child(2)
@@ -1371,7 +1380,7 @@ demix.ru##div[class^="product-bnpl product-page__bnpl"]
 116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru##div[class^="ml-5"]
 116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru##div[data-adv-mark-informer]
 116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru##div[class^="py-4 px-6 uiArticleBlockLinks_yf3eW hasTopBottomLines_yf3eW hasBackground_yf3eW block_fefJj"]
-trial-sport.ru##div[style="border-top: 1px solid #d7d7d7; margin-top: 37px; padding-top: 37px; position: relative; z-index: 1;"]
+trial-sport.ru##div[style^="border-top: 1px solid #d7d7d7; margin-top: 37px; padding-top: 37px; position: relative; z-index: 1;"]
 trial-sport.ru##div[class^="col_right"]
 desport.ru##div[class^="PopupAppDesktop_PopupAppDesktop__v6Jyd PopupAppDesktop_PopupAppDesktopExpanded__qZHxe"]
 terabox.com##div.page:first-child > div.main-page > div.operate-popup-box:last-child
@@ -1386,7 +1395,7 @@ kupigolos.ru##div[class^="promo-block"]
 kupigolos.ru##div[class^="s-place__right"]
 kupigolos.ru##div[class^="tg"]
 kupigolos.ru##a[class^="telegram"]
-savefrom.net##div[data-href*="televzr.com"]
+savefrom.net##div[data-href*="://televzr.com/"]
 savefrom.net##div[data-ga-event*="send;event;vidacha;helper-promo-click"]
 savefrom.net##div[class^="second-btn-box"]
 9xbuddy.com,offmp3.net##section[class^="fixed bottom-0 bg-white dark:bg-night-400 shadow rounded border dark:border-night-300 m-4 text-gray-600 dark:text-gray-200 transition-transform delay-100"]
@@ -1422,17 +1431,22 @@ tmonitoring.com##div[class^="upgrade pull-right"]
 tmonitoring.com##a[id*="btn--t-launcher"]
 richfamily.ru##div[class^="q-carousel q-panel-parent q-carousel--without-padding"]
 flysat.com##a[href^="//www.flysat-live.com/]
-securelist.ru##div[class^="c-widget-subscribe js-sticky-widget"]
+! securelist.ru##div[class^="c-widget-subscribe js-sticky-widget"] (28.01.25: нестабильность сайта, сомнения, отключён)
 blog.getproff.ru##div[class^="wp-block-group"]
 wondershare.com.ru,wondershare.com##div[class^="ws-ad-new-container"]
 wondershare.com.ru,wondershare.com##div[class^="border-radius pt-4 h-100"]
 wondershare.com.ru,wondershare.com##div[class^="ws-article-download"]
 wondershare.com.ru,wondershare.com##div[class^="ws-article-des-sub text-center"]
 rsload.net##div.main-wrap:nth-child(3) > div.main-block > div.link-block:nth-child(2) > div:last-child > div:last-child > a > span.marker
+stolicaonego.ru##div[style^="padding: 10px; margin-top: 20px; margin-bottom: 20px; font-size: 16px; border-width: 1px 1px 1px 5px; border-style: solid; border-color: rgb(237, 31, 36); border-image: initial;"]
+stolicaonego.ru##div[class^="footer_right_counters"]
+stolicaonego.ru##div[class^="top_bl"]
+stolicaonego.ru##div[class^="yandex_ad_one"]
+thevoicemag.ru##div[class^="carousel-vertical-videos detail-page__carousel-vertical-videos"]
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
-tbank.ru,tinkoff.ru#%#//scriptlet('remove-cookie', '/dsp_click_id|pageLanding|mediaInfo/')
-journal.tinkoff.ru#%#//scriptlet('set-local-storage-item', 'visitedArticles', '$remove$')
+tbank.ru,tinkoff.ru,t-j.ru#%#//scriptlet('remove-cookie', '/dsp_click_id|pageLanding|mediaInfo/')
+journal.tinkoff.ru,t-j.ru#%#//scriptlet('set-local-storage-item', 'visitedArticles', '$remove$')
 tbank.ru#%#//scriptlet('set-local-storage-item', 'twt_wuid_visit_storage', 'null')
 tbank.ru#%#//scriptlet('set-local-storage-item', 'dco_general_ids', 'null')
 rbc.ru#%#//scriptlet('set-cookie', 'livetv-autoplay', 'off', 'none')
@@ -1463,7 +1477,7 @@ pikabu.ru#%#//scriptlet('set-local-storage-item', 'pkb_svce', 'null')
 pikabu.ru#%#//scriptlet('set-local-storage-item', 'pkb_sve', 'null')
 pikabu.ru#%#//scriptlet('set-local-storage-item', 'pkb_Pt', 'null')
 pikabu.ru#%#//scriptlet('set-local-storage-item', 'pkb_ave', 'null')
-ligaudio.ru#%#//scriptlet('remove-cookie', '/tc/')
+ligaudio.ru,lightaudio.ru#%#//scriptlet('remove-cookie', '/tc/')
 curseforge.com#%#//scriptlet('set-session-storage-item', 'activityTrace', 'null')
 curseforge.com#%#//scriptlet('set-session-storage-item', 'analytics-percentage', 'null')
 curseforge.com#%#//scriptlet('set-local-storage-item', 'cf_ranAdBlockerDetection', '0')
@@ -1483,6 +1497,11 @@ dropbox.com#%#//scriptlet('set-session-storage-item', 'udcl', '$remove$')
 banki.ru#%#//scriptlet('set-local-storage-item', 'adBlockChecking', 'unchecked')
 banki.ru#%#//scriptlet('set-local-storage-item', 'myb_tracker:unsaved_events', 'null')
 banki.ru#%#//scriptlet('set-local-storage-item', 'hidden_timeout_id', '$remove$')
+thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'appVariant', 'null')
+thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'dmp_geo', 'null')
+thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'longVisits', '$remove$')
+thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'watchedVideoArticles', 'null')
+thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/', '$remove$')
 !
 ! -
 !
@@ -1732,6 +1751,7 @@ market.yandex.ru##div[class^="HBydy cia-vs cia-cs"]
 market.yandex.ru##div[id^="/content/header/headerPromo"]
 market.yandex.ru##div[data-apiary-widget-name="@monetize/IncutConstructor/MadvBasicCarouselPlain"]
 market.yandex.ru##div[class^="_1u4JH cia-vs"]
+ya.ru##div[class^="VanillaReact AliceFabContainer"]
 !
 !
 ! =
@@ -1802,7 +1822,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||logs.unchecky.com^$important
 ||*infeng.site^$important
 ||*iad.appboy.com^$important
-||accscdn.m.taobao.com^
+||accscdn.m.taobao.com^$important
 ||*ads.unity3d.com^$important
 ||*mediation.unity3d.com^$important
 ||mc.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua
@@ -1814,6 +1834,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||mtgglobals.com^$important
 ||sbermarketing.ru^$important
 ||mobileapptracking.com^$important
+||acs.m.taobao.com^$important
 !
 ! --
 !
