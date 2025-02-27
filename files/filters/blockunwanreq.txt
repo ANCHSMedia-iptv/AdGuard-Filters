@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.1.6-R
-! TimeUpdated: 2025-02-26T11:28:40+00:00
+! Version: 3.1.7-R
+! TimeUpdated: 2025-02-28T17:14:40+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -459,7 +459,7 @@
 ||ru-minecraft.ru/uploads/forum/images/*/*_ad_sign.png^$image,domain=ru-minecraft.ru
 ||api.expf.ru/api/v*/geo^$xhr
 ||rutube.ru/api/video/recommendation$xhr,domain=rutube.ru
-||rutube.ru/static/img/png/adsdkbanner.png^$xhr,domain=rutube.ru
+! rutube.ru/static/img/png/adsdkbanner.png^$xhr,domain=rutube.ru
 ||api.carrotquest.app/v*/users/*self_user/$ping,xhr,domain=tochka.com
 ||cdn.rt.com/scripts/adfox/*.js^$script,important,domain=russiatoday.ru
 ||mediator.mail.ru/script/*/^$script,xhr,important
@@ -760,7 +760,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||gulsbafanec.ru^$important
 ||consficam.ru^$important
 ||satkurier.pl/banery/750x100_2019_AntenaNEO.gif^$domain=satkurier.pl
-||*.ru/api/v*/fingerprint^$xhr,domain=probolezny.ru|prodoctorov.ru
+||*.ru/api/v*/fingerprint^$xhr,important,domain=probolezny.ru|prodoctorov.ru
 ||probolezny.ru/static/*/favicons/probolezny/apple_touch_icon/favicon_*.png$domain=probolezny.ru
 ||d1n8hflz8lhynp.cloudfront.net^
 ||apptornado.com^$important
@@ -769,11 +769,16 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||clickstream.sberbank.ru^$important
 ||check.unity.*^$important
 ||appbrain.com^
-||js.memberful.com/embed.js^$script
-||disqus.com/count.js$script,xhr
-||disqus.com/count-data.js$script,xhr
+||js.memberful.com/embed.js^$script,important
+||disqus.com/count.js$script,xhr,important
+||disqus.com/count-data.js$script,xhr,important
 ||ads.pro-market.net^$important
-||cloudflare.com/cdn-cgi/trace
+||cloudflare.com/cdn-cgi/trace$important
+||tele-satinfo.ru/img/1.gif^$image,domain=tele-satinfo.ru
+||api.vigo.one/uxzoom/*/notify$xhr
+||cableman.ru/ad/content/render$xhr,important,domain=cableman.ru
+||cableman.ru/themes/custom/initlab_cab/images/click-icon.png^$image,domain=cableman.ru
+||cableman.ru/themes/custom/initlab_cab/images/k-icon.png^$image,domain=cableman.ru
 !
 !
 !
@@ -1459,6 +1464,13 @@ stolicaonego.ru##div[class^="footer_right_counters"]
 stolicaonego.ru##div[class^="top_bl"]
 stolicaonego.ru##div[class^="yandex_ad_one"]
 thevoicemag.ru##div[class^="carousel-vertical-videos detail-page__carousel-vertical-videos"]
+~yandex.by,~yandex.com,~yandex.kz,~yandex.ru##a[href^="://yandex.ru/cy"]
+tele-satinfo.ru##div:last-child > table:nth-child(4) > tbody > tr > td:first-child > div > table:nth-child(41) > tbody > tr > td > center:last-child
+tele-satinfo.ru##div:last-child > table:nth-child(6) > tbody > tr > td:first-child
+tele-satinfo.ru##div:last-child > table:nth-child(6) > tbody > tr > td:nth-child(2)
+tele-satinfo.ru##div:last-child > table:nth-child(6) > tbody > tr > td:nth-child(3)
+cableman.ru##div[class^="footer-metrics"]
+cableman.ru##div[class^="col-lg-4"]
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
 tbank.ru,tinkoff.ru,t-j.ru#%#//scriptlet('remove-cookie', '/dsp_click_id|pageLanding|mediaInfo/')
