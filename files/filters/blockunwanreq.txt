@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.1.8-R
-! TimeUpdated: 2025-02-28T09:14:40+00:00
+! Version: 3.1.9-R
+! TimeUpdated: 2025-02-28T09:20:40+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -339,7 +339,7 @@
 /GoogleAnalytics/content/scripts/tracking.js$script,important
 ||cdn.antisov.ru/advisor.js^$script
 ||goodmod.ru/scripts/*/api.js^$script
-/bitrix/tools/conversion/ajax_counter.php^$xhr
+/conversion/ajax_counter.php^$xhr
 ||ekip-sport.ru/assets/template/js/cooki.js^$script,domain=ekip-sport.ru
 ||assets-cdn.mvideo.ru/*/sprites/sprite.css.svg^$image,domain=mvideo.ru
 ||mvideo.ru/bff/recommendations/$xhr,domain=mvideo.ru
@@ -625,7 +625,7 @@
 ||kupigolos.ru/img/info/710%D1%85294.webp^$image,domain=kupigolos.ru
 ||kupigolos.ru/img/info/180x1270.webp^$image,domain=kupigolos.ru
 ||yastatic.net/market-export/_/i/favicon/ymnew/558.png^$image
-||click-or-die.ru/wp-json/post-views-counter/view-post/$xhr,domain=click-or-die.ru
+/wp-json/post-views-counter/view-post/$xhr
 ||aads.com^$important
 ||infird.com/cdn/$script,xhr
 ||savefrom.net/img/ext-advice/ext-advice__icon-yabro.png^$xhr,domain=savefrom.net
@@ -780,7 +780,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||cableman.ru/themes/custom/initlab_cab/images/click-icon.png^$image,domain=cableman.ru
 ||cableman.ru/themes/custom/initlab_cab/images/k-icon.png^$image,domain=cableman.ru
 ||wifika.ru/wp-content/plugins/wp-fastest-cache-premium/pro/images/blank.gif^$image,domain=wifika.ru
-/wp-admin/admin-ajax.php?*action=*views_counter$xhr
+/admin-ajax.php$xhr
+||userway.org^$third-party
 !
 !
 !
@@ -1478,6 +1479,10 @@ wifika.ru###text-35
 dnsleaktest.com##div.container_12:nth-child(2) > p:last-child
 ##a[href*="://www.ivpn.net/"]
 browserscan.net###browserscan > main._v2yk82:nth-child(3) > a._8aq5gj:nth-child(3)
+5drops.ru###footer > div.footer-v3.wide-subscribe > div.subscribe-block-wrapper:first-child > div.maxwidth-theme > div.row > div.col-md-12 > div.outer-wrapper
+foodandhealth.ru##div[class^="social-info social-info__header"]
+foodandhealth.ru##div[class^="telegram_inf"]
+foodandhealth.ru###ag_share_btn > div:first-child
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
 tbank.ru,tinkoff.ru,t-j.ru#%#//scriptlet('remove-cookie', '/dsp_click_id|pageLanding|mediaInfo/')
