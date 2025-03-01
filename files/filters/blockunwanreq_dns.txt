@@ -487,12 +487,12 @@
 ||checkip.amazonaws.col^
 !
 !
-||ikorrpa^$dnsrewrite=REFUSED
-||uisp.lan^$dnsrewrite=REFUSED
-||n3k1t4_1996^$dnsrewrite=REFUSED
-||v1^$dnsrewrite=REFUSED
-||router.silotis.us^$dnsrewrite=REFUSED
-||=^$dnsrewrite=REFUSED
+||ikorrpa^
+||uisp.lan^
+||n3k1t4_1996^
+||v1^
+||router.silotis.us^
+||=^
 ||initplayback^
 ||iptv.local^
 ||ip-api.com^
@@ -505,7 +505,7 @@
 ! -- ==Браузерные запросы ==
 ! -- == Browser requests ==
 !
-||news.google.com^$dnsrewrite=SERVFAIL
+||news.google.com^$dnsrewrite=REFUSED
 ||enjoyxstudy.com^$dnsrewrite=REFUSED
 !
 !

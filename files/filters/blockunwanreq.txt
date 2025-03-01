@@ -317,7 +317,7 @@
 ! websbol.clickstream.sberbank.ru/metrics/sbol^$xhr,domain=sberbank.ru (новое правило, строка 769)
 /bitrix/js/yandex.metrika/script.js$script,important
 ||iguides.ru/local/components/iguides/notifications.subscribe/manifest.json^$other,domain=iguides.ru
-! cs*.pikabu.ru/apps/ub/*/*/sprite.svg^$xhr,domain=pikabu.ru (ломает сайт 18.01.25)
+! cs*.pikabu.ru/apps/ub/*/*/sprite.svg^$xhr,domain=pikabu.ru (18.01.25: ломает сайт)
 ||avito.ru/dstatic/build/client/fingerprint.*^$script,domain=avito.ru
 !
 ! Рекомендации в виде блока Популярное (популярных объявлений) внизу у подвала страницы результатов поискового запроса (сайт объявлений Авито (avito .ru)).
@@ -720,7 +720,7 @@ $cookie=/dsp_click_id|mediaInfo|pageLanding/,domain=tbank.ru|tinkoff.ru|t-j.ru,i
 ||playground.ru/build/28.5d043caa.js^$script,domain=playground.ru
 ||ichip.ru/img/v_sharing.png^$image,domain=ichip.ru
 ||portal.noc.gov.ru^$cookie=/s3cdn_sess/
-||vstat.rtr-vesti.ru
+||vstat.rtr-vesti.ru^
 $cookie=/is-ads-disabled|adblock-state|fingerprint|osnova-aid|stickydude/,domain=dtf.ru|vc.ru
 ||otzyvru.com^$cookie=/_yasc|maps_routes_travel_mode|yandex_login|yandexuid|yashr|ymex|yp|ys|yuidss|sae|sessar/
 ||api.*.ru/v*/content/read^$domain=dtf.ru|vc.ru
