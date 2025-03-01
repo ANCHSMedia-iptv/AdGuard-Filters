@@ -377,7 +377,7 @@
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^
-/graphql*$xhr,important
+/graphql*$xhr,other,important
 ||getrcmx.com^
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.*.js^$script,domain=xcom-shop.ru
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -652,7 +652,7 @@
 ||esports.ru/wp-content/uploads/2024/05/pari-logo-backing.svg^$image,domain=esports.ru
 ||esports.ru/wp-content/uploads/2024/12/freebet_5x1000_*.gif^$image,domain=esports.ru
 ||esports.ru/wp-content/uploads/2025/01/414x60.gif^$image,domain=esports.ru
-! matomo-el5.x5.ru^$important (новое правило, строка 676)
+! matomo-el5.x5.ru^$important (новое правило, строка 686)
 ||frontlogger.dodois.io^
 $cookie=adtech_uid
 $cookie=top100_id
@@ -782,6 +782,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||wifika.ru/wp-content/plugins/wp-fastest-cache-premium/pro/images/blank.gif^$image,domain=wifika.ru
 /admin-ajax.php$xhr
 ||userway.org^$third-party
+||files.vm.ru/pdf/2025.02/original/thumb_1280_67c0a45f82682c09ce62d1a1.jpg^$image,xhr,domain=vm.ru
+||stats.wp.com^
 !
 !
 !
@@ -1483,6 +1485,8 @@ browserscan.net###browserscan > main._v2yk82:nth-child(3) > a._8aq5gj:nth-child(
 foodandhealth.ru##div[class^="social-info social-info__header"]
 foodandhealth.ru##div[class^="telegram_inf"]
 foodandhealth.ru###ag_share_btn > div:first-child
+vm.ru##div[class^="wrp_col subscribe_form"]
+vm.ru##div[class^="wrp_col newspaper_col"]
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
 tbank.ru,tinkoff.ru,t-j.ru#%#//scriptlet('remove-cookie', '/dsp_click_id|pageLanding|mediaInfo/')
@@ -1749,7 +1753,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||yandexadexchange.net^$important
 ||webvisor.com^$important
 ||appmetrica.yango.com^$important
-||adfstat.yandex.ru^$important
+||adfstat.yandex.ru^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua
 ||push.yandex.ru/v*/subscribe/$websocket,important
 ||csp.yandex.net/csp?from=messenger$xhr
 ||http-check-headers.yandex.ru^$important
@@ -1904,15 +1908,15 @@ ya.ru##div[class^="VanillaReact AliceFabContainer"]
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/unallowedbrowsers.js^$script,domain=online.sberbank.ru
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/bowser.*.js^$script,domain=online.sberbank.ru
 @@||pl-res.online.sberbank.ru/lib.analytics/*/index.js^$script,domain=online.sberbank.ru
-! @@||pikabu.ru/.well-known/ddos-guard/$script,domain=pikabu.ru (новое правило, строка 1835)
+! @@||pikabu.ru/.well-known/ddos-guard/$script,domain=pikabu.ru (новое правило, строка 1928)
 @@||google.com/js/bg/*.js^$xhr,script
 @@||google.com/recaptcha/
 @@||googlevideo.com^
 aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||csp.yandex.net/csp
 @@||pay.yandex.ru/sdk/v*/pay.js^$script,xhr
-@@||uglyemail.com^
-@@||trackers.uglymail.com^
+@@||uglyemail.com
+! @@||trackers.uglymail.com^
 @@||google.com/*/cleardot.gif$image,important,domain=google.com|mail.google.com
 @@||cdn*.vedomosti.ru/*/assets/Banner-*.*^$script,css,domain=vedomosti.ru
 @@||hcaptcha.com^
@@ -1943,7 +1947,7 @@ mi.com#@$#body { overflow: visible !important; }
 @@||yandex.net^$cookie
 @@||aliexpress.ru^$cookie
 @@||stacks.vk-portal.net^
-@@||clearurls.xyz^
+@@||clearurls.xyz
 @@||api.catcast.tv^
 @@||vgtrk.cdnvideo.ru^
 @@||icecast.vgtrk.cdnvideo.ru^

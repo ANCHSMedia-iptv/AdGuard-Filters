@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.1.2-R
+! Version: 3.1.3-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-02-28T17:14:40+00:00
+! TimeUpdated: 2025-03-01T13:14:40+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 28.02.2025 17:14 UTC
+! Last Modified: 01.03.2025 13:14 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -36,7 +36,6 @@
 ||firebaseinappmessaging.googleapis.com^$important
 ||firebaseremoteconfigrealtime.googleapis.com^$important
 ||firebase.googleapis.com^
-! firebase.google.com^
 ||firestore.googleapis.com^
 ! ===
 !
@@ -67,7 +66,7 @@
 ||yandexadexchange.net^$important
 ||webvisor.com^$important
 ||appmetrica.yango.com^$important
-||adfstat.yandex.ru^$important
+! ||adfstat.yandex.ru^$important
 ||push.yandex.ru^$important
 ||http-check-headers.yandex.ru^$important
 ||extmaps-api.yandex.net^$important
@@ -370,7 +369,7 @@
 ||code.rkjs.net^
 ||vercel-insights.com^$important
 ||webstats.gnome.org^$important
-||matomo.alfabank.by^$important
+||matomo*.*^$important
 ||beacon.wikia-services.com^
 ||news.mirtesen.ru^
 ||counter.rambler.ru^$important
@@ -420,7 +419,6 @@
 ||t*.zcvh.net^$important
 ||stats.myangular.life^$important
 ||ws.getzend.digital^$important
-||matomo-el5.x5.ru^$important
 ||apptracer.ru^$important
 ||frontlogger.dodois.io^
 ||rocket.ivi.ru^$important
@@ -450,6 +448,8 @@
 ||appbrain.com^
 ||ads.pro-market.net^$important
 ||ssp.rutube.ru^
+||lenta.sparrow.ru^$important
+||stats.wp.com^$important
 !
 !
 !
@@ -549,8 +549,8 @@
 @@||captcha-api.yandex.ru^
 @@||googlevideo.com^
 @@||pay.yandex.ru^
-@@||uglyemail.com^
-@@||trackers.uglymail.com^
+@@||uglyemail.com
+! @@||trackers.uglymail.com^
 @@||hcaptcha.com^
 @@||msftconnecttest.com^
 @@||*-*.*.global.*.sharepoint.com^
@@ -559,7 +559,7 @@
 @@||support.avito.ru
 @@||stats.1clickvpn.com^
 @@||stacks.vk-portal.net^
-@@||clearurls.xyz^
+@@||clearurls.xyz
 @@||api.catcast.tv^
 @@||vgtrk.cdnvideo.ru^
 @@||icecast.vgtrk.cdnvideo.ru^
