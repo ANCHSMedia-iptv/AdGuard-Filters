@@ -636,8 +636,8 @@
 ||savefrom.net/build/js/chunk~propellerPush-js-main-js.js$script,domain=savefrom.net
 ||savefrom.net/img/favicons/thumb/*.png^$xhr,domain=savefrom.net
 ||savefrom.net/img/ummy_icon_*.png^$image,domain=savefrom.net
-||savefrom.net/build/js/chunk~rsya-js-main-js.js$script,domain=savefrom.net
-||savefrom.net/build/js/chunk~rsyaRuBanners-js-main-js.js$script,domain=savefrom.net
+||savefrom.net/build/js/chunk~rsya*-main-js.js$script,domain=savefrom.net
+! ||savefrom.net/build/js/chunk~rsyaRuBanners-js-main-js.js$script,domain=savefrom.net (новое правило, строка 639)
 ||savefrom.net/msec^$xhr,domain=savefrom.net
 /build/2f216d687fe39ac06f55.png^$image,domain=9xbuddy.com|offmp3.net
 ||kanobu.ru/api/v*/ainfo/toplink-and-informer^$xhr,domain=kanobu.ru
