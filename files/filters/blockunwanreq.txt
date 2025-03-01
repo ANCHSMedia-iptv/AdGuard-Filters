@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.1.9-R
-! TimeUpdated: 2025-02-28T09:20:40+00:00
+! Version: 3.2.0-R
+! TimeUpdated: 2025-01-03T15:20:40+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -784,6 +784,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||userway.org^$third-party
 ||files.vm.ru/pdf/2025.02/original/thumb_1280_67c0a45f82682c09ce62d1a1.jpg^$image,xhr,domain=vm.ru
 ||stats.wp.com^
+||sp72ru.ru/wp-content/uploads/2022/08/alhakk.jpg^$image,domain=sp72ru.ru
+://connect.ok.ru^
 !
 !
 !
@@ -1487,6 +1489,10 @@ foodandhealth.ru##div[class^="telegram_inf"]
 foodandhealth.ru###ag_share_btn > div:first-child
 vm.ru##div[class^="wrp_col subscribe_form"]
 vm.ru##div[class^="wrp_col newspaper_col"]
+##a[href*="://alhakk.ru"]
+sp72ru.ru###custom_html-21
+sp72ru.ru###custom_html-11
+sp72ru.ru###custom_html-7
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
 tbank.ru,tinkoff.ru,t-j.ru#%#//scriptlet('remove-cookie', '/dsp_click_id|pageLanding|mediaInfo/')
