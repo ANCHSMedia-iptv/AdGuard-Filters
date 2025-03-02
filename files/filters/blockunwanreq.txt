@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.2.0-R
-! TimeUpdated: 2025-01-03T15:20:40+00:00
+! Version: 3.2.1-R
+! TimeUpdated: 2025-01-02T15:20:40+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -101,7 +101,7 @@
 ||avito.ru/stat/radar*^$image,domain=avito.ru
 ! avito.ru/web/*/adv/network/creative^$xhr,domain=avito.ru
 ||*advert*^$image,important
-/firebase*.*^$script,xhr
+/firebase*.*^$script,xhr,important
 ||d3c8j8snkzfr1n.cloudfront.net^$important
 ||adskeeper.co.uk^$important
 ||metrika-informer.com^$important
@@ -152,10 +152,10 @@
 /cycounter.png^$image
 !
 /liru.gif^$image
-/1px.*^$image,xhr,important
-/px.*^$image,xhr,important
-/blank.*^$image,xhr,important
-/analytics.js^$script,domain=~analytics.google.com|~www.google-analytics.com
+/1px.*$image,xhr,important
+/px.*$image,xhr,important
+/blank.*$image,xhr,important
+/analytics.js$script,domain=~analytics.google.com|~www.google-analytics.com
 ! */analytics.*^$script,important
 ! ddlbots.com/cdn/shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,domain=ddlbots.com,important
 ||*shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
@@ -583,7 +583,7 @@
 ||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/share.js^$script,domain=kp.ru
 ||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/zen-subscribe.js^$script,domain=kp.ru
 ||assets.habr.com/habr-web/img/*.webp^$image,domain=habr.com
-||habr.com/kek/v*/reactions/counters$xhr,domain=habr.com
+! habr.com/kek/v*/reactions/counters$xhr,domain=habr.com (01.25: ломает счётчики на сайте)
 */api/fl$xhr,other,important
 ||eaglercraft.com/js/fb.js^$script,domain=eaglercraft.com
 ||s.basicconfig.com/channel/20$script,domain=gid-minecraft.ru
@@ -786,6 +786,20 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||stats.wp.com^
 ||sp72ru.ru/wp-content/uploads/2022/08/alhakk.jpg^$image,domain=sp72ru.ru
 ://connect.ok.ru^
+||cdn.consentmanager.net/delivery/autoblocking/*.js$script,xhr
+||easeus.com/default/js/ad_download.js^$script,domain=easeus.com
+||mail.easeus.com/common-api/share/count^$xhr,domain=easeus.com
+||easeus.com/default/js/sensorsdata/abtest.min.js^$script,domain=easeus.com
+||easeus.recovery-soft.com/sa$ping,domain=easeus.com
+||easeus.com/default/js/globle.js^$script,domain=easeus.com
+||easeus.com/default/js/other.js^$script,domain=easeus.com
+/ezais/analytics$xhr,important
+/utilcave_com/*/recommended_pages.js$script
+/ezoic/app-ajax$xhr
+/wordpress-popular-posts/$xhr,script
+/_jb_static/$script,xhr
+||media.kasperskycontenthub.com/wp-content/uploads/sites/58/2023/11/29122455/Telegram-2trojana_banner_*_RU.jpg^$image,domain=securelist.ru
+||media.kasperskycontenthub.com/wp-content/uploads/sites/58/2020/12/21144042/purple_shift_banner_*_*.jpg^$image,domain=securelist.ru
 !
 !
 !
@@ -1493,6 +1507,13 @@ vm.ru##div[class^="wrp_col newspaper_col"]
 sp72ru.ru###custom_html-21
 sp72ru.ru###custom_html-11
 sp72ru.ru###custom_html-7
+easeus.com##div[class^="button_box_20201208"]
+remontka.pro##a[href*="://t.me/remontka_pro"]
+##link[href*="//feeds.feedburner.com/"]
+remontka.pro##div.uk-container.uk-container-center.rem-container:nth-child(4) > div.tm-middle.uk-grid:first-child > div.tm-main.uk-width-medium-1-1 > div.rem-main > main.tm-content:last-child > article.uk-article.rem-singlearticle:first-child > aside:last-child > div:nth-child(3) > a.uk-button.rem-leftbutton
+##div[id="stickad_ya"]
+remontka.pro##aside[class^="rem-rightbar"]
+securelist.ru##div[class^="o-col-4@sm u-hidden u-block@sm"]
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
 tbank.ru,tinkoff.ru,t-j.ru#%#//scriptlet('remove-cookie', '/dsp_click_id|pageLanding|mediaInfo/')

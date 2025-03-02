@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.1.4-R
+! Version: 3.1.5-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-01T15:20:40+00:00
+! TimeUpdated: 2025-03-02T15:20:40+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 01.03.2025 15:20 UTC
+! Last Modified: 02.03.2025 15:20 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -197,8 +197,7 @@
 ||cellrebel.com^$important
 ||onesignal.com^$important
 ||cdn.viglink.com^
-||connect.facebook.net^$dnsrewrite=REFUSED,domain=~facebook.com
-||connect.ok.ru^$domain=~ok.ru
+||connect.facebook.net^
 ||inappstory.ru^$dnsrewrite=REFUSED
 ||inappstory.com^$dnsrewrite=REFUSED
 ||appsflyersdk.com^$important
@@ -452,6 +451,8 @@
 ||stats.wp.com^$important
 ||xn--r1a.website^$important
 ||connect.ok.ru^$important
+||prdredir.com^$important
+||g.ezoic.net^$important
 !
 !
 !
