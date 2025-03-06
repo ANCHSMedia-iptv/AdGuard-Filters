@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.2.1-R
-! TimeUpdated: 2025-01-02T15:20:40+00:00
+! Version: 3.2.2-R
+! TimeUpdated: 2025-03-03T12:10:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -80,7 +80,7 @@
 ||tiqcdn.com^$important
 ||*analytics.tele2.ru^$important
 ! analytics.tele2.ru^$important
-||cdn.bcebos.com^
+||bcebos.com^$important
 ||*adjust*^$important
 ||rutrk.org^$important
 ||stat-analytics.mediavitrina.ru^$important
@@ -800,6 +800,28 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 /_jb_static/$script,xhr
 ||media.kasperskycontenthub.com/wp-content/uploads/sites/58/2023/11/29122455/Telegram-2trojana_banner_*_RU.jpg^$image,domain=securelist.ru
 ||media.kasperskycontenthub.com/wp-content/uploads/sites/58/2020/12/21144042/purple_shift_banner_*_*.jpg^$image,domain=securelist.ru
+||unagi.amazon.com^$important
+||unagi-na.amazon.com^$important
+||cdn-advert.smi2.net^$important
+||mradx.net^
+||pixelwhirl.com^
+||staticcdn.duckduckgo.com^$important
+||abtest.alibaba.com^$important
+||howlapm.com^$important
+||minotar.net^$important
+||*goforandroid.com^$important
+||goload.wecloud.io^$important
+||*3g.cn^$important
+||*ppmobiles.com^$important
+||vmnews.ru/ajax/?action=news_vcount$xhr,domain=vmnews.ru
+||acjs.aliyun.com/error$image,domain=cainiao.ru
+||at.cbsi.com/lib/api/client-info$domain=last.fm
+||cdn.privacy.paramount.com^$domain=last.fm
+||promo-images.prod.ya.magnit.ru^
+||cdn.dmtgvn.com/wrapper/js/manager.js$script,xhr,domain=infourok.ru
+||pushmarketing.sberbank-tele.com^
+||msg-global.m.taobao.com^
+||rutube.ru/api/v*/video/end-screen/$xhr
 !
 !
 !
@@ -955,7 +977,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||*basket*.wbbasket.ru/vol*/data/banners-main-*-*.json^$script,xhr,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/site/*/*/*/*recommendationsList*.js^$script,xhr,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/site/t/*/cookies.*.json^$xhr,domain=wildberries.ru
-! a.wb.ru/sdk/sdk.js^$script,domain=wildberries.ru (soon..)
+||a.wb.ru^
+||wbx-logs.wildberries.ru^
 !
 !
 !
@@ -968,13 +991,13 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 !
 ! - Global version (Глобальная версия). -
 ||*basket*.wbbasket.ru/vol*/data/promo-panel-data-*.json^$script,xhr,domain=global.wildberries.ru
-||wbx-logs.wildberries.ru/api/v*/log^$xhr,domain=global.wildberries.ru
+! wbx-logs.wildberries.ru/api/v*/log^$xhr,domain=global.wildberries.ru
 ||static-basket-*.wbbasket.ru/vol*/wbx-static/prod/assets/images/qr-code/qr-code.png^$image,domain=global.wildberries.ru
 ! -
 !
 ! - Вперемешку с Глобальной и Российской версией (Interspersed with the Global and Russian versions). -
 ||banners-website.wildberries.ru/public/v*/banners*^$xhr,domain=wildberries.ru|global.wildberries.ru
-||a.wb.ru/e/*^$ping,domain=wildberries.ru|global.wildberries.ru
+! a.wb.ru/e/*^$ping,domain=wildberries.ru|global.wildberries.ru
 ||*/i/v*/apps/qr*.svg^$image,domain=wildberries.ru|global.wildberries.ru
 ! -
 !
@@ -1315,7 +1338,7 @@ ru-m.org##div[class^="ramka"]
 misterlauncher.org##div[class^="alert alert-success text-center"]
 misterlauncher.org,minecraftrating.ru##div[class^="text-center mt-4 font-weight-bold"]
 misterlauncher.org##div[class^="block-try"]
-misterlauncher.org##div[class^="page-header page-header-fixed hidden-xs page-header-fixed-show"]
+misterlauncher.org##div[class^="page-header page-header-fixed hidden-xs page-header-fixed-s"]
 misterlauncher.org##div[class^="col-right"]
 minecraftrating.ru##div[class^="mrlauncher-banner"]
 inside.lemoncraft.ru,lemoncraft.ru##div[class^="discord-dialog discord-dialog--active"]
@@ -1661,7 +1684,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||*telemetry.urs.microsoft.com^
 ||vortex*.data.microsoft.com^
 ||*telemetry.appex.bing.net^
-||fp-afd-nocache-ccp.azureedge.net^
+||fp-afd-*-ccp.azureedge.net^
 ! =
 !
 !
@@ -1719,6 +1742,8 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||mykonf.com^$important,important
 ||ofa-b-sub.osp.opera.software^$removeparam,important
 ! *cdninstagram.com^$removeparam,important,domain=~instagram.com,app=com.opera.browser
+||xml.opera.com^$important
+||thumbnails*opera.com^
 ! =
 !
 !
@@ -1780,7 +1805,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||yandexadexchange.net^$important
 ||webvisor.com^$important
 ||appmetrica.yango.com^$important
-||adfstat.yandex.ru^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua
+||adfstat.yandex.ru^$domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~ya.ru,important
 ||push.yandex.ru/v*/subscribe/$websocket,important
 ||csp.yandex.net/csp?from=messenger$xhr
 ||http-check-headers.yandex.ru^$important
@@ -1806,9 +1831,14 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||pay.yandex.ru/web/cl/click$important
 ||yastatic.net/pcode/adfox/$important
 ||site.yandex.net/*/js/suggest.js^$script,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.ua
-||avatars.mds.yandex.net/get-market-adv/*/banner
+||avatars.mds.yandex.net/get-market-adv/$important
 ||yabs.yandex.*/resource/spacer.gif
-!
+||market.yandex.net/ping
+||yastatic.net/s*/market-static/export-static/admon/
+||yastatic.net/s*/market-b2c-static-production/white-desktop/browser-light/browser-light.browser.analytics.*.js$script
+||yastatic.net/s*/market-b2c-static-production/white-desktop/browser-light/browser-light.browser.baseError.*.js$script
+||avatars.mds.yandex.net/get-marketcms/$image
+||avatars.mds.yandex.net/get-direct/$domain=~e.mail.ru
 ! = Cosmetic rules =
 ! = Косметические правила =
 ! market.yandex.ru###profitable_goods_tab-RecommendationRoll > div._1QNtS:nth-child(5)
@@ -1854,6 +1884,9 @@ ya.ru##div[class^="VanillaReact AliceFabContainer"]
 ||ssl.gstatic.com/*/blank_1x.png^$image
 ! accounts.google.com/_/IdpIFrameHttp/cspreport$xhr,other (06.12.24: не работает правило, 07.12.24: для безопасности разблокирован (включён))
 ||accounts.youtube.com/RotateCookies^$xhr,important
+||gvt1.com^
+||mail-ads.google.com^$important
+||imasdk.googleapis.com^$important
 !
 ! ===
 !
@@ -1897,8 +1930,8 @@ ya.ru##div[class^="VanillaReact AliceFabContainer"]
 ||accscdn.m.taobao.com^$important
 ||*ads.unity3d.com^$important
 ||*mediation.unity3d.com^$important
-||mc.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua
-||an.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~e.mail.ru
+||mc.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~ya.ru
+||an.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~e.mail.ru|~ya.ru
 ||analytics.mobile.yandex.net^$important
 ||*footprintdns.com^$important
 ||inmobi.com^$important
@@ -1907,6 +1940,11 @@ ya.ru##div[class^="VanillaReact AliceFabContainer"]
 ||sbermarketing.ru^$important
 ||mobileapptracking.com^$important
 ||acs.m.taobao.com^$important
+||market-click-baobab.yandex.ru^$important
+||uaas.yandex.ru^$important
+||ssp.rutube.ru^$important
+||informer.yandex.ru^
+||pangolin16.sgsnssdk.com^
 !
 ! --
 !
@@ -1980,6 +2018,8 @@ mi.com#@$#body { overflow: visible !important; }
 @@||icecast.vgtrk.cdnvideo.ru^
 @@||player.smotrim.ru^
 @@||s.youtube.com^$important
+@@||time.windows.com^
+@@||email-link.adtidy.org^
 !
 !
 ! -

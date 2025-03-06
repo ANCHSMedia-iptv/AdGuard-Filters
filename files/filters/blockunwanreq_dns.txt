@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.1.5-R
+! Version: 3.1.6-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-02T15:20:40+00:00
+! TimeUpdated: 2025-03-06T12:10:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -74,9 +74,9 @@
 ||offerwall.yandex.net^$important
 ||abt.s*.yandex.net^$important
 ||media-adv.market.yandex.ru^$important
-||mc.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua
-||an.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~e.mail.ru
-||abt.s3.yandex.net^
+||mc.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~ya.ru
+||an.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~e.mail.ru|~ya.ru
+
 !
 ! ===
 !
@@ -140,7 +140,7 @@
 ||*telemetry.urs.microsoft.com^
 ||vortex*.data.microsoft.com^
 ||*telemetry.appex.bing.net^
-||fp-afd-nocache-ccp.azureedge.net^
+||fp-afd-*-ccp.azureedge.net^
 ! =
 !
 ! ===
@@ -165,6 +165,7 @@
 ||appsgrowthpromo*.clients*.google.com^$important
 ||mail-ads.google.com^$important
 ||imasdk.googleapis.com^$important
+||gvt1.com^
 !
 ! ===
 !
@@ -190,7 +191,7 @@
 ||ad.mail.ru^$important,dnsrewrite=REFUSED
 ||*dbankcloud*^$important
 ||rayjump.com^$important
-||smi2.ru^$important,domain=~smi2.ru
+||smi2.ru^$important
 ||24smi.net^$important
 ||umeng.com^$important
 ! api.bing.com^$domain=~bing.com
@@ -219,8 +220,7 @@
 ||*analytics.tele2.ru^$important
 ! analytics.tele2.ru^$important
 ||*adjust*^$important
-||app.adjust.com^$important
-||cdn.bcebos.com^
+||bcebos.com^$important
 ||rutrk.org^$important
 ||pglstatp.com^$dnsrewrite=REFUSED,important
 ||stat-analytics.mediavitrina.ru^
@@ -407,8 +407,8 @@
 ||widget.sparrow.ru^$important
 ||sfr7ag.ru^
 ||core-colibri-api.samokat.ru^
-! a.wb.ru^ (soon..)
-! wbx-logs.wildberries.ru^ (soon..)
+||a.wb.ru^
+||wbx-logs.wildberries.ru^
 ||aads.com^$important
 ||itweepinbelltor.com^
 ||blearspellaea.shop^
@@ -446,13 +446,32 @@
 ||check.unity.*^$important
 ||appbrain.com^
 ||ads.pro-market.net^$important
-||ssp.rutube.ru^
 ||lenta.sparrow.ru^$important
 ||stats.wp.com^$important
 ||xn--r1a.website^$important
 ||connect.ok.ru^$important
 ||prdredir.com^$important
 ||g.ezoic.net^$important
+||vp.rambler.ru^
+||unagi-na.amazon.com^$important
+||unagi.amazon.com^$imporwant
+||cdn-advert.smi2.net^$important
+||mradx.net^
+||pixelwhirl.com^
+||staticcdn.duckduckgo.com^$important
+||minotar.net^$dnsrewrite=NXDOMAIN,important
+||abtest.alibaba.com^$important
+||howlapm.com^$dnsrewrite=NXDOMAIN,important
+||*goforandroid.com^$dnsrewrite=REFUSED,important
+||goload.wecloud.io^$dnsrewrite=NXDOMAIN,important
+||*3g.cn^$dnsrewrite=NXDOMAIN,important
+||*ppmobiles.com^$dnsrewrite=NXDOMAIN,important
+||promo-images.prod.ya.magnit.ru^
+||ads.rustore.ru^$important
+||tracker-api.my.com^$important
+||pushmarketing.sberbank-tele.com^
+||cust-service.com^$dnsrewrite=REFUSED,important
+||msg-global.m.taobao.com^
 !
 !
 !
@@ -527,6 +546,8 @@
 ||mykonf.com^$dnsrewrite=REFUSED
 ||ofa-b-sub.osp.opera.software^
 ! *cdninstagram.com^$domain=~instagram.com
+||xml.opera.com^$important
+||thumbnails*opera.com^
 !
 ! -- =Other=
 !
@@ -568,6 +589,8 @@
 @@||icecast.vgtrk.cdnvideo.ru^
 @@||player.smotrim.ru^
 @@||s.youtube.com^$important
+@@||time.windows.com^
+@@||email-link.adtidy.org^
 !
 ! ===
 !
