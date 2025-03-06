@@ -302,7 +302,7 @@
 ||static.beeline.ru/upload/images/*QR*.png^$image,domain=beeline.ru
 ||beeline.gestalt.email^$domain=beeline.ru
 ||lenta.com/api-gateway/v*/banners/adhweb^$xhr,domain=lenta.com
-! fp.kaspersky-labs.com^$third-party (23.01.24: сомнения, временно отключён)
+! fp.kaspersky-labs.com^$third-party (23.01.25: сомнения, временно отключён)
 ||otel-collector.lenta.tech/v*/traces^$xhr,domain=lenta.com
 ||cdn*.helpdeskeddy.com//js/modules/chat_widget/hde.js^$script
 ||sitecdn.api.lenta.com/assets-ng/footer/lenta-app-qr.svg^$image,domain=lenta.com
