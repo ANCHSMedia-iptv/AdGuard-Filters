@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.2.2-R
-! TimeUpdated: 2025-03-03T12:10:00+00:00
+! Version: 3.2.3-R
+! TimeUpdated: 2025-03-07T14:10:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -18,6 +18,7 @@
 !
 ! Подойдёт для мобильных устройств и компьютеров.
 ! Suitable for mobile devices and computers.
+! Некоторые домены для блокировки взяты из других источников.
 !
 !
 !
@@ -92,7 +93,7 @@
 ||adtech.com^$important
 ||statad.ru^$important
 ||mixpanel.com^$important
-||mixpanel.cdn.viber.com^$important
+||mixpanel.*.com^$important
 ||btloader.com^$important
 ||digitalcaramel.com^$important
 ||ads-twitter.com^$important
@@ -255,7 +256,7 @@
 ||otr-online.ru/public/scripts/5714.js^$script,domain=otr-online.ru,important
 ||ctc.ru/turms/mediascope/counter/audience$xhr,domain=ctc.ru,important
 ||static-api.mediavitrina.ru/v*/epg/*/ad-injections.json^$xhr,script,important
-! /mediascope/counter/audience$xhr,important
+/mediascope/counter/$xhr,script,,important
 ||tv3.ru/_nuxt/adfox-*.js^$script,domain=tv3.ru,important
 ||domashniy.ru/dist/assets/img/contest/pop-up-compilation.webp^$image,domain=domashniy.ru
 ||domashniy.ru/dist/js/before.js^$script,domain=domashniy.ru
@@ -313,7 +314,7 @@
 ||dostavista.ru/write-analytics^$xhr,domain=dostavista.ru
 ! dostavista.ru/backend/browser-error-log^$xhr,domain=dostavista.ru (новое правило, строка 312)
 ||express.dhl.ru/local/templates/dhl/components/bitrix/menu/*menu/images/left_menu_bg.gif^$xhr,domain=express.dhl.ru
-||api.flocktory.com^$third-party,important
+||flocktory.com^$third-party,important
 ! websbol.clickstream.sberbank.ru/metrics/sbol^$xhr,domain=sberbank.ru (новое правило, строка 769)
 /bitrix/js/yandex.metrika/script.js$script,important
 ||iguides.ru/local/components/iguides/notifications.subscribe/manifest.json^$other,domain=iguides.ru
@@ -604,7 +605,7 @@
 ||static-s.kinorium.com/img/blank100.png^$image,domain=kinorium.com
 ||images.promokodi.net/iblock/*/*/promokod_yandex_puteshestviya.png^$image,domain=promokodi.net
 ||res.cloudinary.com/admitad-gmbh/image/upload/f_auto/v1732718726/2d472d9dfad055168d11f98741a3fa14.png^$image,domain=promocodes.hi-tech.mail.ru
-!
+||eventstream.dodopizza.com^$important
 ||krasotaimedicina.ru/bitrix/templates/adaptive_main/images/ulli.gif^$image,xhr,domain=krasotaimedicina.ru
 -push-notifications/$xhr,important
 ||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/ViqeoFlyrollAdv*.js^$script,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
@@ -762,7 +763,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||satkurier.pl/banery/750x100_2019_AntenaNEO.gif^$domain=satkurier.pl
 ||*.ru/api/v*/fingerprint^$xhr,important,domain=probolezny.ru|prodoctorov.ru
 ||probolezny.ru/static/*/favicons/probolezny/apple_touch_icon/favicon_*.png$domain=probolezny.ru
-||d1n8hflz8lhynp.cloudfront.net^
+||d1n8hflz8lhynp.cloudfront.net^$important
 ||apptornado.com^$important
 ||bugly.qq.com^$important
 ||graphgl.kinopoisk.ru^$important
@@ -787,11 +788,11 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||sp72ru.ru/wp-content/uploads/2022/08/alhakk.jpg^$image,domain=sp72ru.ru
 ://connect.ok.ru^
 ||cdn.consentmanager.net/delivery/autoblocking/*.js$script,xhr
-||easeus.com/default/js/ad_download.js^$script,domain=easeus.com
-||mail.easeus.com/common-api/share/count^$xhr,domain=easeus.com
-||easeus.com/default/js/sensorsdata/abtest.min.js^$script,domain=easeus.com
-||easeus.recovery-soft.com/sa$ping,domain=easeus.com
-||easeus.com/default/js/globle.js^$script,domain=easeus.com
+||easeus.com/default/js/ad_download.js^$script,domain=easeus.com|easeus.*.com
+||mail.easeus.com/common-api/share/count^$xhr,domain=easeus.com|easeus.*.com
+||easeus.com/default/js/sensorsdata/abtest.min.js^$script,domain=easeus.com|easeus.*.com
+||easeus.recovery-soft.com/sa$ping,domain=easeus.com|easeus.*.com
+||easeus.com/default/js/globle.js^$script,domain=easeus.com|easeus.*.com
 ||easeus.com/default/js/other.js^$script,domain=easeus.com
 /ezais/analytics$xhr,important
 /utilcave_com/*/recommended_pages.js$script
@@ -800,10 +801,9 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 /_jb_static/$script,xhr
 ||media.kasperskycontenthub.com/wp-content/uploads/sites/58/2023/11/29122455/Telegram-2trojana_banner_*_RU.jpg^$image,domain=securelist.ru
 ||media.kasperskycontenthub.com/wp-content/uploads/sites/58/2020/12/21144042/purple_shift_banner_*_*.jpg^$image,domain=securelist.ru
-||unagi.amazon.com^$important
-||unagi-na.amazon.com^$important
+||unagi*.amazon.com^$important
 ||cdn-advert.smi2.net^$important
-||mradx.net^
+||mradx.net^$important
 ||pixelwhirl.com^
 ||staticcdn.duckduckgo.com^$important
 ||abtest.alibaba.com^$important
@@ -815,13 +815,71 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||*ppmobiles.com^$important
 ||vmnews.ru/ajax/?action=news_vcount$xhr,domain=vmnews.ru
 ||acjs.aliyun.com/error$image,domain=cainiao.ru
-||at.cbsi.com/lib/api/client-info$domain=last.fm
+||at.cbsi.com/lib/api/client-info$xhr,domain=last.fm
 ||cdn.privacy.paramount.com^$domain=last.fm
 ||promo-images.prod.ya.magnit.ru^
 ||cdn.dmtgvn.com/wrapper/js/manager.js$script,xhr,domain=infourok.ru
 ||pushmarketing.sberbank-tele.com^
 ||msg-global.m.taobao.com^
 ||rutube.ru/api/v*/video/end-screen/$xhr
+||mopub.com^$important
+||adkmob.com^$important
+||appodeal.com^$important
+||pubnative.net^$important
+||dwxjayoxbnyrr.cloudfront.net^$important
+||applifier.com^$important
+||live.chartboost.com^$important
+||my.com^$important
+|||s3.amazonaws.com/appodeal-externallibs/$important
+||inmobicdn.net^$important
+||analytics.localytics.com^$important
+||taboola.map.fastly.net^
+||idm.iot.mi.com^
+||flurry.com^
+||api.sms.*.miui.com^
+||top-fwz1.mail.ru^$important
+||alt-ad.mail.ru^$important
+||connect.mail.ru^$important
+||media-*.mail.ru^$important
+||rs.mail.ru^$important
+||push-me.mail.ru^
+||alt-push-me.mail.ru^
+||pushapi.mail.ru^
+||events.maps.mail.ru^$important
+||ms.ok.ru^$important
+||ingest*.sentry.io^$important
+||cdn.aaacdn.net^
+||sentry.x5.ru^$important
+||tabun.info^
+||in.appcenter.ms/logs^$important
+||ads.vk.com^$important
+||events.maps.vk.com^$important
+||madnet.ru^$important
+||mydas.mobi^$important
+||greystripe.com^$important
+||nexage.com^$important
+||mobfox.com^$important
+||wapstart.ru^$important
+||millennialmedia.com^$important
+||appsdt.com^$important
+||admost.com^$important
+||appnext.com^$important
+! ||*moatads*^$important (soon..)
+! ||*mobile-static.adsafeprotected*^$important (soon..)
+||adcolony.com^$important
+! ||appnext.hs^$important (soon..)
+||supersonicads.com^$important
+||startappservice.com^$important
+||adz.wattpad.com^$important
+! ||ad.api.kaffnet.com^$important (soon..)
+||batmobil.net^$important
+! ||61.145.124.238^$important (soon..)
+||eqmob.com^$important
+! ||duapps.com^$important (soon..)
+! ||smaato.*^$important (soon..)
+||tapas.net^$important
+||tapjoyads.com^$important
+||tapjoy.com^$important
 !
 !
 !
@@ -897,12 +955,12 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ! Blocking ads, analytics and other “garbage”.
 ! Блокировка рекламы, аналитики и прочего «мусора».
 !
-||megamarket.ru/api/mobile/v*/analyticsDataService/$xhr
-||megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr
+||megamarket.ru/api/*/v*/analyticsDataService/$xhr
+! megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr
 ! megamarket.ru/api/fl/idw-smm^$xhr (новое правило, строка 587)
-||api.megamarket.tech/api/colibri/events/$xhr
-||megamarket.ru/api/mobile/v*/promoContentService/$xhr
-||api.megamarket.tech/api/events/config^$xhr
+||api.megamarket.tech/api/colibri/events/$xhr,important
+||megamarket.ru/api/*/v*/promoContentService/$xhr
+||api.megamarket.tech/api/events/config$xhr,important
 !
 ! Rule for blocking banner ad images (new design) (PC version).
 ! Правило блокировки рекламных баннеров (новый дизайн) (ПК версия).
@@ -1611,24 +1669,24 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 !
 !
 !
-||adserv.ai^
-||tapulsads.ru^
-||gonet-ads.com^
+||adserv.ai^$important
+||tapulsads.ru^$important
+||gonet-ads.com^$important
 ||telecid.ru^
 ||www.tttturbonet.com^$app=com.dubox.drive
 ||*pavo*^$app=com.dubox.drive
 ||fancybox.in^
-||adlooxtracking.ru^
+||adlooxtracking.ru^$important
 ||rixengine.com^
-||weborama-tech.ru^
+||weborama-tech.ru^$important
 ||trk.mail.ru^$important
 ||svr-algorix.com^
 ||kayzen.io^
-||adinfinitum.in^
+||adinfinitum.in^$important
 ||disk.akamaized.net^$app=com.dubox.drive
 ||*gamerplay*.space^
 !
-||content-autofill.googleapis.com^$app=com.dubox.drive
+! content-autofill.googleapis.com^$app=com.dubox.drive
 !
 !
 ||stun.services.mozilla.com^
@@ -1710,6 +1768,8 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 !
 !
 ! RIP Mineplex 26.01.2013-12.05.2023
+! UPD: Сервер перезапущен под другим названием..
+! UPD: The server has been restarted under a different name..
 ! Сохранил запросы т.к. могут всё равно идти запросы (со старых версий, к примеру, где Mineplex есть)..
 ! I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)..
 !
@@ -1765,26 +1825,25 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ! == Google Firebase ==
 !
 ||firebaseinstallations.googleapis.com^$important
-||firebaselogging.googleapis.com^$important
-||firebaseremoteconfig.googleapis.com^$important
-||firebaselogging-pa.googleapis.com^$important
+||firebaselogging*.googleapis.com^$important
+||firebaseremoteconfig*.googleapis.com^$important
 ||firebaseinappmessaging.googleapis.com^$important
 ||firebaseremoteconfigrealtime.googleapis.com^$important
 ||firebase.googleapis.com^
-! firebase.google.com^
 ||firestore.googleapis.com^
+||firebaseperusertopics*.googleapis.com^$important
+||firebasestorage.googleapis.com^
+||firebasedynamiclinks*.googleapis.com^
 ! ===
 !
 !
 ! == Google Crashlytics + Firebase ==
 !
-||firebase-settings.crashlytics.com^$important
-||reports.crahlytics.com^
-! report.crashlytics.com^
-||e.crashlytics.co^
-||settings.crashlytics.com^
-||firebase-settings.crashlytics.col^$important
-||crashlytics*-pa.googleapis.com^$important
+||firebase-settings.crashlytics.*^$important
+||report*.crahlytics.com^$important
+||e.crashlytics.*^$important
+||settings.crashlytics.com^$important
+||crashlytics*.googleapis.com^$important
 ! ===
 !
 !
@@ -1816,8 +1875,8 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ! push.yandex.ru^$important
 ||yastatic.net/s*/liza/_/promo-*.css^$css,domain=mail.yandex.ru
 ||yastatic.net/s*/liza/_/*ad-message.ogg^$media,domain=mail.yandex.ru
-||yastatic.net/s*/distribution/yanalytics/v*/$document,script
-||yastatic.net/s*/market-static/export-static/admon/frame.html^$document,domain=market.yandex.ru
+||yastatic.net/s*/distribution/yanalytics/$important
+! yastatic.net/s*/market-static/export-static/admon/frame.html^$document,domain=market.yandex.ru
 ||yastatic.net/s*/psf/mail-liza-react-client/*.mail-liza.react-promo.*.js^$script,domain=mail.yandex.ru
 ||mail.yandex.ru/web-api/journal/v*^$ping,domain=mail.yandex.ru
 ||media-adv.market.yandex.ru^$important
@@ -1830,15 +1889,22 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||yastatic.net/safeframe-bundles/*/host.js^$script,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.ua
 ||pay.yandex.ru/web/cl/click$important
 ||yastatic.net/pcode/adfox/$important
-||site.yandex.net/*/js/suggest.js^$script,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.ua
+||site.yandex.net/*/js/suggest.js^$third-party
 ||avatars.mds.yandex.net/get-market-adv/$important
 ||yabs.yandex.*/resource/spacer.gif
-||market.yandex.net/ping
-||yastatic.net/s*/market-static/export-static/admon/
-||yastatic.net/s*/market-b2c-static-production/white-desktop/browser-light/browser-light.browser.analytics.*.js$script
-||yastatic.net/s*/market-b2c-static-production/white-desktop/browser-light/browser-light.browser.baseError.*.js$script
+||market.yandex.*/ping
+||yastatic.net/s*/*/export-static/admon/
+||yastatic.net/s*/*/white-desktop/browser-light/browser-light.browser.analytics.*.js$script
+||yastatic.net/s*/*/white-desktop/browser-light/browser-light.browser.baseError.*.js$script
 ||avatars.mds.yandex.net/get-marketcms/$image
 ||avatars.mds.yandex.net/get-direct/$domain=~e.mail.ru
+||certificate.mobile.yandex.net/api/v*/
+||startup.mob.*.yandex.net^$important
+||uxfeedback-cdn.s*.yandex.net^
+||taxi-promotions.s*yandex.net^
+||click.sender.yandex.ru^
+||mc.webvisor.org^$important
+!
 ! = Cosmetic rules =
 ! = Косметические правила =
 ! market.yandex.ru###profitable_goods_tab-RecommendationRoll > div._1QNtS:nth-child(5)
@@ -1887,6 +1953,13 @@ ya.ru##div[class^="VanillaReact AliceFabContainer"]
 ||gvt1.com^
 ||mail-ads.google.com^$important
 ||imasdk.googleapis.com^$important
+||ogads*.googleapis.com^
+||androidtvgtvmfe*.googleapis.com^
+||playmoviesdfe*.googleapis.com^
+||calendarpushnotification*.googleapis.com^
+||code.google.com/*/*/issues/detail$important
+||googleapis.com/auth/games$important
+||google.com/dfp$important
 !
 ! ===
 !
@@ -1944,7 +2017,7 @@ ya.ru##div[class^="VanillaReact AliceFabContainer"]
 ||uaas.yandex.ru^$important
 ||ssp.rutube.ru^$important
 ||informer.yandex.ru^
-||pangolin16.sgsnssdk.com^
+||pangolin*.sgsnssdk.com^$important
 !
 ! --
 !
@@ -1981,7 +2054,7 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||csp.yandex.net/csp
 @@||pay.yandex.ru/sdk/v*/pay.js^$script,xhr
 @@||uglyemail.com
-! @@||trackers.uglymail.com^
+@@||trackers.uglymail.com^
 @@||google.com/*/cleardot.gif$image,important,domain=google.com|mail.google.com
 @@||cdn*.vedomosti.ru/*/assets/Banner-*.*^$script,css,domain=vedomosti.ru
 @@||hcaptcha.com^

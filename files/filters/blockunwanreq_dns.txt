@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.1.6-R
+! Version: 3.1.7-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-06T12:10:00+00:00
+! TimeUpdated: 2025-03-07T14:10:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 02.03.2025 15:20 UTC
+! Last Modified: 07.03.2025 14:10 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -30,24 +30,24 @@
 ! -- == Google Firebase ==
 !
 ||firebaseinstallations.googleapis.com^$important
-||firebaselogging.googleapis.com^$important
-||firebaseremoteconfig.googleapis.com^$important
-||firebaselogging-pa.googleapis.com^$important
+||firebaselogging*.googleapis.com^$important
+||firebaseremoteconfig*.googleapis.com^$important
 ||firebaseinappmessaging.googleapis.com^$important
 ||firebaseremoteconfigrealtime.googleapis.com^$important
 ||firebase.googleapis.com^
 ||firestore.googleapis.com^
+||firebaseperusertopics*.googleapis.com^$important
+||firebasestorage.googleapis.com^
+||firebasedynamiclinks*.googleapis.com^
 ! ===
 !
 ! -- == Google Crashlytics + Firebase ==
 !
-||firebase-settings.crashlytics.com^$important
-||reports.crahlytics.com^$important
-||e.crashlytics.co^$important
-! report.crashlytics.com^
+||firebase-settings.crashlytics.*^$important
+||report*.crahlytics.com^$important
+||e.crashlytics.*^$important
 ||settings.crashlytics.com^$important
-||firebase-settings.crashlytics.col^$important
-||crashlytics*-pa.googleapis.com^$important
+||crashlytics*.googleapis.com^$important
 ! ===
 !
 !
@@ -76,7 +76,12 @@
 ||media-adv.market.yandex.ru^$important
 ||mc.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~ya.ru
 ||an.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~e.mail.ru|~ya.ru
-
+||startup.mob.*.yandex.net^$important
+||uxfeedback-cdn.s*.yandex.net^
+||taxi-promotions.s*yandex.net^
+||click.sender.yandex.ru^
+||mc.webvisor.org^$important
+!
 !
 ! ===
 !
@@ -104,6 +109,8 @@
 !
 !
 ! -- RIP Mineplex 26.01.2013-12.05.2023
+! -- UPD: Сервер перезапущен под другим названием..
+! -- UPD: The server has been restarted under a different name..
 ! -- Сохранил запросы т.к. могут всё равно идти запросы (со старых версий к примеру где Mineplex есть)..
 ! -- I saved the requests because there may still be requests (from older versions, for example, where there is a Mineplex)..
 !
@@ -166,6 +173,10 @@
 ||mail-ads.google.com^$important
 ||imasdk.googleapis.com^$important
 ||gvt1.com^
+||ogads*.googleapis.com^
+||androidtvgtvmfe*.googleapis.com^
+||playmoviesdfe*.googleapis.com^
+||calendarpushnotification*.googleapis.com^
 !
 ! ===
 !
@@ -183,12 +194,12 @@
 ||gravatar.com^
 ||amplreq.com^$important
 ||amplitude.com^$important
-|! *bugsnag.com^$important
+! *bugsnag.com^$important
 ||*bugsnag*^$important
 ||vk-analytics.ru^$important
 ||*instabug*^$important
-||xray.mail.ru^$important,dnsrewrite=REFUSED
-||ad.mail.ru^$important,dnsrewrite=REFUSED
+||xray.mail.ru^$important,dnsrewrite=NXDOMAIN
+||ad.mail.ru^$important,dnsrewrite=NXDOMAIN
 ||*dbankcloud*^$important
 ||rayjump.com^$important
 ||smi2.ru^$important
@@ -215,7 +226,7 @@
 ||flowerpla.com^$dnsrewrite=REFUSED,important
 ||amocrm.ru^$dnsrewrite=REFUSED,important
 ||gtrxlnd2.com^$dnsrewrite=REFUSED,important
-||*uxfeedback*^$dnsrewrite=REFUSED,important
+||*uxfeedback*^$dnsrewrite=NXDOMAIN,important
 ||tiqcdn.com^$important
 ||*analytics.tele2.ru^$important
 ! analytics.tele2.ru^$important
@@ -237,13 +248,13 @@
 ||adtech.com^$important
 ||statad.ru^$important
 ||mixpanel.com^$important
-||mixpanel.cdn.viber.com^$important
+||mixpanel.*.com^$important
 ||d3c8j8snkzfr1n.cloudfront.net^$important
 ||d1tru86qrby720.cloudfront.net^$important
 ||btloader.com^$important
 ||adskeeper.co.uk^$important
 ||digitalcaramel.com^$important$important
-||ads-twitter.com^$dnsrewrite=REFUSED
+||ads-twitter.com^$dnsrewrite=REFUSED,important
 ||ms.vk.com^$important
 ||*ad.*.xiaomi.com^$important
 ||d3c8j8snkzfr1n.cloudfront.net^
@@ -277,7 +288,7 @@
 ||trafffgen.rambler.ru^$important
 ||ddmanager.ru^$important
 ||*.weborama.*^$important
-||d31j93rd8oukbv.cloudfront.net^$important
+||d31j93rd8oukbv.cloudfront.net^$dnsrewrite=REFUSED,important
 ||mod.calltouch.ru^$important
 ||tracking.diginetica.net^$important
 ||quantserve.com^
@@ -329,7 +340,7 @@
 ||newrelic.com^$important
 ||targetads.io^$important
 ||livetex.ru^
-||api.flocktory.com^$important
+||flocktory.com^$important
 ||visor.sberbank.ru^
 ||widget.replain.cc^
 ||begun.ru^
@@ -436,7 +447,7 @@
 ||tenpimaca.ru^$important
 ||gulsbafanec.ru^$important
 ||consficam.ru^$important
-||d1n8hflz8lhynp.cloudfront.net^
+||d1n8hflz8lhynp.cloudfront.net^$important
 ||apptornado.com^$important
 ||bugly.qq.com^$important
 ||stats.rustore.ru^$important
@@ -453,10 +464,9 @@
 ||prdredir.com^$important
 ||g.ezoic.net^$important
 ||vp.rambler.ru^
-||unagi-na.amazon.com^$important
-||unagi.amazon.com^$imporwant
+||unagi*.amazon.com^$important
 ||cdn-advert.smi2.net^$important
-||mradx.net^
+||mradx.net^$important
 ||pixelwhirl.com^
 ||staticcdn.duckduckgo.com^$important
 ||minotar.net^$dnsrewrite=NXDOMAIN,important
@@ -472,6 +482,61 @@
 ||pushmarketing.sberbank-tele.com^
 ||cust-service.com^$dnsrewrite=REFUSED,important
 ||msg-global.m.taobao.com^
+||mopub.com^$important
+||adkmob.com^$important
+||appodeal.com^$important
+||pubnative.net^$important
+||dwxjayoxbnyrr.cloudfront.net^$important
+||applifier.com^$dnsrewrite=REFUSED,important
+||live.chartboost.com^$dnsrewrite=REFUSED,important
+||my.com^$important
+||inmobicdn.net^$dnsrewrite=REFUSED,important
+||analytics.localytics.com^$important
+||taboola.map.fastly.net^
+||idm.iot.mi.com^
+||flurry.com^$dnsrewrite=REFUSED,important
+||api.sms.*.miui.com^$important
+||alt-ad.mail.ru^$important
+||connect.mail.ru^$important
+||media-*.mail.ru^$important
+||rs.mail.ru^$important
+||push-me.mail.ru^
+||alt-push-me.mail.ru^
+||pushapi.mail.ru^
+||events.maps.mail.ru^$important
+||ms.ok.ru^$important
+||ingest*.sentry.io^$important
+||cdn.aaacdn.net^
+||sentry.x5.ru^$important
+||tabun.info^
+||ads.vk.com^$important
+||events.maps.vk.com^$important
+||madnet.ru^$dnsrewrite=REFUSED,important
+||mydas.mobi^$dnsrewrite=NXDOMAIN,important
+||greystripe.com^$dnsrewrite=REFUSED,important
+||nexage.com^$dnsrewrite=NXDOMAIN,important
+||mobfox.com^$dnsrewrite=NXDOMAIN,important
+||wapstart.ru^$dnsrewrite=REFUSED,important
+||millennialmedia.com^$dnsrewrite=REFUSED,important
+||appsdt.com^$dnsrewrite=NXDOMAIN,important
+||admost.com^$important
+||appnext.com^$dnsrewrite=REFUSED,important
+! ||*moatads*^$dnsrewrite=MXDOMAIN,important (soon..)
+! ||*mobile-static.adsafeprotected*^$important (soon..)
+||adcolony.com^$important
+! ||appnext.hs^$dnsrewrite=NXDOMAIN,important (soon..)
+||supersonicads.com^$dnsrewrite=REFUSED,important
+||startappservice.com^$dnsrewrite=REFUSED,important
+||adz.wattpad.com^$important
+! ||ad.api.kaffnet.com^$dnsrewrite=REFUSED,important (soon..)
+||batmobil.net^$dnsrewrite=NXDOMAIN,important
+! ||61.145.124.238^$important (soon..)
+||eqmob.com^$important
+! ||duapps.com^$dnsrewrite=NXDOMAIN,important (soon..)
+! ||smaato.*^$dnsrewrite=NXDOMAIN,important (soon..)
+||tapas.net^$dnsrewrite=NXDOMAIN,important
+||tapjoyads.com^$dnsrewrite=NXDOMAIN,important
+||tapjoy.com^$dnsrewrite=NXDOMAIN,important
 !
 !
 !
@@ -479,22 +544,22 @@
 !
 !
 !
-||adserv.ai^$dnsrewrite=REFUSED
-||tapulsads.ru^$dnsrewrite=REFUSED
-||gonet-ads.com^$dnsrewrite=REFUSED
+||adserv.ai^$dnsrewrite=REFUSED,important
+||tapulsads.ru^$dnsrewrite=REFUSED,important
+||gonet-ads.com^$dnsrewrite=REFUSED,important
 ||telecid.ru^$dnsrewrite=REFUSED
 ||www.tttturbonet.com^
 ||*pavo*^
 ||fancybox.in^
-||adlooxtracking.ru^$dnsrewrite=REFUSED
+||adlooxtracking.ru^$dnsrewrite=REFUSED,important
 ||rixengine.com^$dnsrewrite=REFUSED
-||weborama-tech.ru^$dnsrewrite=REFUSED
-||trk.mail.ru^
+||weborama-tech.ru^$dnsrewrite=REFUSED,important
+||trk.mail.ru^$important
 ||svr-algorix.com^$dnsrewrite=REFUSED
 ||kayzen.io^$dnsrewrite=REFUSED
 ||disk.akamaized.net^$app=com.dubox.drive
 ! disk.akamaized.net^
-||adinfinitum.in^$dnsrewrite=REFUSED
+||adinfinitum.in^$dnsrewrite=REFUSED,important
 ||*gamerplay*.space^$dnsrewrite=REFUSED
 !
 !
@@ -574,7 +639,7 @@
 @@||googlevideo.com^
 @@||pay.yandex.ru^
 @@||uglyemail.com
-! @@||trackers.uglymail.com^
+@@||trackers.uglymail.com^
 @@||hcaptcha.com^
 @@||msftconnecttest.com^
 @@||*-*.*.global.*.sharepoint.com^
