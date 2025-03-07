@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.2.3-R
-! TimeUpdated: 2025-03-07T14:10:00+00:00
+! Version: 3.2.4-R
+! TimeUpdated: 2025-03-07T16:10:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1707,6 +1707,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||iptv.local^
 ||ip-api.com^
 ||ifconfig.co^
+||odc.null^
 !
 !
 !
@@ -1804,6 +1805,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ! *cdninstagram.com^$removeparam,important,domain=~instagram.com,app=com.opera.browser
 ||xml.opera.com^$important
 ||thumbnails*opera.com^
+||af.opera.com^
 ! =
 !
 !
@@ -1832,7 +1834,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||firebase.googleapis.com^
 ||firestore.googleapis.com^
 ||firebaseperusertopics*.googleapis.com^$important
-||firebasestorage.googleapis.com^
+||firebasestorage*.googleapis.com^
 ||firebasedynamiclinks*.googleapis.com^
 ! ===
 !
@@ -1901,7 +1903,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||certificate.mobile.yandex.net/api/v*/
 ||startup.mob.*.yandex.net^$important
 ||uxfeedback-cdn.s*.yandex.net^
-||taxi-promotions.s*yandex.net^
+||taxi-promotions.s*.yandex.net^
 ||click.sender.yandex.ru^
 ||mc.webvisor.org^$important
 !
