@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.2.5-R
-! TimeUpdated: 2025-03-08T13:00:00+00:00
+! Version: 3.2.6-R
+! TimeUpdated: 2025-03-08T14:00:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -45,10 +45,10 @@
 ||xray.mail.ru^
 ||*dbankcloud*^$important
 ||rayjump.com^$important
-||smi2.ru^$important,third-party,domain=~smi2.ru
+||smi2.ru^$third-party,domain=~smi2.ru,important
 ||24smi.net^$important,third-party
 ||umeng.com^$important
-||api.bing.com^$third-party,domain=~bing.com
+||api.bing.com^$third-party,important,domain=~bing.com
 ||cellrebel.com^$important
 ||onesignal.com^$important
 ||cdn.viglink.com^$important
@@ -1993,7 +1993,7 @@ ya.ru##div[class^="VanillaReact AliceFabContainer"]
 ||umengcloud.com^$important
 ||bdstatic.com^$important
 ||gvt2.com^$important
-||tracker-api.my.com^$important
+! tracker-api.my.com^$important
 ||ad.intl.xiaomi.com^$important
 ||ms.vk.com^$important
 ||aemetrics.aliexpress.ru^$important
@@ -2113,6 +2113,29 @@ mi.com#@$#body { overflow: visible !important; }
 ! ===
 !
 !
+!
+!
+! =Tracking the IP addresses of visitors on websites - protection against tracking and leakage.=
+! =Отслеживание IP-адресов посетителей на сайтах - защита от отслеживания и утечки.=
+! Список от ув. RussianRice (4pda) [https://4pda.to/forum/index.php?s=&showtopic=275091&view=findpost&p=98500074]
+! 8.03.25: Добавлен экспериментально.
+!
+!
+||ezstat.ru^
+||iplogger.org^
+||2no.co^
+||iplogger.com^
+||iplogger.ru^
+||yip.su^
+||iplogger.co^
+||iplogger.info^
+||ipgrabber.ru^
+||ipgraber.ru^
+||iplis.ru^
+||02ip.ru^
+!
+!
+! ===
 !
 !
 !

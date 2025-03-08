@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.1.9-R
+! Version: 3.2.0-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-08T13:00:00+00:00
+! TimeUpdated: 2025-03-08T14:00:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 08.03.2025 13:10 UTC
+! Last Modified: 08.03.2025 14:00 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -540,6 +540,33 @@
 ||zap^
 ||burp^
 ||*.rt.avito.ru^
+!
+!
+!
+!
+!
+!
+! —— =Tracking the IP addresses of visitors on websites - protection against tracking and leakage.=
+! —— =Отслеживание IP-адресов посетителей на сайтах - защита от отслеживания и утечки.=
+! —— Список от ув. RussianRice (4pda) [https://4pda.to/forum/index.php?s=&showtopic=275091&view=findpost&p=98500074]
+! —— 8.03.25: Добавлен экспериментально.
+!
+!
+||ezstat.ru^
+||iplogger.org^
+||2no.co^
+||iplogger.com^
+||iplogger.ru^
+||yip.su^
+||iplogger.co^
+||iplogger.info^
+||ipgrabber.ru^
+||ipgraber.ru^
+||iplis.ru^
+||02ip.ru^
+!
+!
+! ===
 !
 !
 !
