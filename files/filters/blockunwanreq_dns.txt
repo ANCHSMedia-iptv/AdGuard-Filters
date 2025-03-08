@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.1.8-R
+! Version: 3.1.9-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-07T16:10:00+00:00
+! TimeUpdated: 2025-03-08T13:00:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 07.03.2025 16:10 UTC
+! Last Modified: 08.03.2025 13:10 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -189,7 +189,7 @@
 ||scorecardresearch.com^$important
 ||metricell.com^$important
 ||bronze.systems^$important
-||graph.facebook.com^
+||graph.facebook.com^$dnsrewrite=REFUSED
 ||optifyr.com^
 ||gravatar.com^
 ||amplreq.com^$important
@@ -209,7 +209,7 @@
 ||cellrebel.com^$important
 ||onesignal.com^$important
 ||cdn.viglink.com^
-||connect.facebook.net^
+||connect.facebook.net^$dnsrewrite=REFUSED
 ||inappstory.ru^$dnsrewrite=REFUSED
 ||inappstory.com^$dnsrewrite=REFUSED
 ||appsflyersdk.com^$important
@@ -288,7 +288,7 @@
 ||trafffgen.rambler.ru^$important
 ||ddmanager.ru^$important
 ||*.weborama.*^$important
-||d31j93rd8oukbv.cloudfront.net^$dnsrewrite=REFUSED,important
+||d31j93rd8oukbv.cloudfront.net^$dnsrewrite=NXDOMAIN,important
 ||mod.calltouch.ru^$important
 ||tracking.diginetica.net^$important
 ||quantserve.com^
@@ -395,7 +395,6 @@
 ||static-tracking.klaviyo.com^$important
 ||otlp-http-production.shopifysvc.com^$important
 ||stats.llaun.ch^
-||beacon.shazam.com^$important
 ||stats.iobit.com^$important
 ||rotor.overclockers.ru^$important
 ||ssm.codes^$important
@@ -537,6 +536,10 @@
 ||tapas.net^$dnsrewrite=NXDOMAIN,important
 ||tapjoyads.com^$dnsrewrite=NXDOMAIN,important
 ||tapjoy.com^$dnsrewrite=NXDOMAIN,important
+||cdn.cookielaw.org^
+||zap^
+||burp^
+||*.rt.avito.ru^
 !
 !
 !

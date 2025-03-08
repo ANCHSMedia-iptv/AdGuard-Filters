@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.2.4-R
-! TimeUpdated: 2025-03-07T16:10:00+00:00
+! Version: 3.2.5-R
+! TimeUpdated: 2025-03-08T13:00:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -200,8 +200,8 @@
 ||invitro.ru/edna/assets/multibutton.js*^$script,domain=invitro.ru
 ||invitro.ru/local/templates/invitro_main/webrtc/*/*.js^$script,domain=invitro.ru
 ||invitro.ru/*.gif^$image,domain=invitro.ru,important
-||burp/favicon.ico^$image,important
-||zap/favicon.ico^$image,important
+||burp^$important
+||zap^$important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,important
 ||widget.7medica.ru/*.*^$script,xhr,important
@@ -833,7 +833,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 |||s3.amazonaws.com/appodeal-externallibs/$important
 ||inmobicdn.net^$important
 ||analytics.localytics.com^$important
-||taboola.map.fastly.net^
+||taboola*fastly.net^
 ||idm.iot.mi.com^
 ||flurry.com^
 ||api.sms.*.miui.com^
@@ -880,6 +880,9 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||tapas.net^$important
 ||tapjoyads.com^$important
 ||tapjoy.com^$important
+||college.72to.ru/*.gif^$image,domain=college.72to.ru
+||cdn.cookielaw.org^
+||*.rt.avito.ru^
 !
 !
 !
