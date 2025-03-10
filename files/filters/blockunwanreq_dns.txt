@@ -473,7 +473,7 @@
 ||minotar.net^$dnsrewrite=NXDOMAIN,important
 ||abtest.alibaba.com^$important
 ||howlapm.com^$dnsrewrite=NXDOMAIN,important
-||*goforandroid.com^$dnsrewrite=REFUSED,important
+||*goforandroid.com^$dnsrewrite=NXDOMAIN,important
 ||goload.wecloud.io^$dnsrewrite=NXDOMAIN,important
 ||*3g.cn^$dnsrewrite=NXDOMAIN,important
 ||*ppmobiles.com^$dnsrewrite=NXDOMAIN,important
