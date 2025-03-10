@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 3.2.9-R
-! TimeUpdated: 2025-03-10T12:20:00+00:00
+! TimeUpdated: 2025-03-10T13:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -395,7 +395,7 @@
 ! *.lmcdn.ru/static/*/assets/*cookie*.css^$css,domain=lamoda.ru (новое правило, строка 417)
 ||hdeapi.lamoda.ru/js/modules/chat_widget/hde.js^$script,domain=lamoda.ru
 ||sravni.ru/v*/advertising/banners/$xhr,domain=sravni.ru
-||graphql.kazanexpress.ru^
+! ||graphql.kazanexpress.ru^ (новое правило, строка 381)
 ||api.kazanexpress.ru/api/analytics/$xhr,domain=mm.ru|kazanexpress.ru
 ||partners.*.ru/api/tracker/$script,ping,domain=lemanapro.ru|leroymerlin.ru
 .ru/5sgdmfD2wXGnNsQMcywx*^$domain=lemanapro.ru|leroymerlin.ru
@@ -766,7 +766,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||d1n8hflz8lhynp.cloudfront.net^$important
 ||apptornado.com^$important
 ||bugly.qq.com^$important
-||graphgl.kinopoisk.ru^$important
+! ||graphql.kinopoisk.ru^$important (новое правило, строка 381)
 ||clickstream.sberbank.ru^$important
 ||check.unity.*^$important
 ||appbrain.com^
