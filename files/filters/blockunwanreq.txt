@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.2.6-R
-! TimeUpdated: 2025-03-08T14:00:00+00:00
+! Version: 3.2.7-R
+! TimeUpdated: 2025-03-10T06:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -127,7 +127,7 @@
 ||singular.net^$important
 ||alb.reddit.com^
 ||rudderstack.com^$important
-! hh.ru/api/fl/logs/^$other,important,domain=hh.ru (новое правило, строка 587)
+! hh.ru/api/fl/logs/^$other,important,domain=hh.ru (новое правило, строка 588)
 ||cedexis.com^$important
 /generate_204$domain=~youtube.com|~googlevideo.com|api.browser.yandex.*
 ||adlook.me^$important
@@ -163,7 +163,7 @@
 ||otlp-http-production.shopifysvc.com/v*/metrics$xhr,important
 ! *web-pixel-shopify-*-pixel*^$domain=ddlbots.com,important
 ||*web-pixel-shopify-*-pixel*^$important
-! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.*.js^$script,important (новое правило, строка 136 и 137)
+! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.*.js^$script,important (новое правило, строка 137 и 138)
 /wp-content/plugins/*/assets/js/tracks.js$script,important
 /ad.js^$script,important
 /empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru
@@ -173,7 +173,7 @@
 ||adhigh.net^$important
 ||rutarget.ru^$important
 ||api.mindbox.ru^$important
-! */api/fl/id*^$xhr,important (новое правило, строка 587)
+! */api/fl/id*^$xhr,important (новое правило, строка 588)
 ||s.rbk.ru/*quote_static/quote-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru,important
 ||trafffgen.rambler.ru^$important
 ||gotovim-doma.ru/img/*/*.gif^$image,domain=gotovim-doma.ru,important
@@ -190,8 +190,8 @@
 ||cdn.gamestatic.net/files/pictures/promo_banner_*.png^$image,domain=rbkgames.com,important
 ||alicdn.com/AWSC/et/*/et_f.js^$script,important
 ||cpa.hh.ru^
-! *.103.*/css/cookiesNotification*.css^$css,important,domain=mag.103.* (новое правило, строка 416)
-! *.103.*/js/cookiesNotificationBy.js^$script,important,domain=mag.103.* (новое правило, строка 136 и 137)
+! *.103.*/css/cookiesNotification*.css^$css,important,domain=mag.103.* (новое правило, строка 417)
+! *.103.*/js/cookiesNotificationBy.js^$script,important,domain=mag.103.* (новое правило, строка 137 и 138)
 ||d31j93rd8oukbv.cloudfront.net^$important
 ||d1tru86qrby720.cloudfront.net^$important
 ||*site-chat.me/support/support.int.js*^$script,important
@@ -264,7 +264,7 @@
 ||nets-api.gpmdata.ru/api/v*/counters/counter/$xhr,important
 ||trex-receiver.gpmdata.ru/net/*/*/events^$xhr,important
 ||static.tnt-online.ru/getintent_pixel.js^$script,domain=tnt-online.ru,important
-! static.tnt-online.ru/accept_cookie.js^$script,domain=tnt-online.ru,important (новое правило, строка 136 и 137)
+! static.tnt-online.ru/accept_cookie.js^$script,domain=tnt-online.ru,important (новое правило, строка 137 и 138)
 ||tnt-online.ru/images/*/icons/sprite.svg$image,domain=tnt-online.ru,important
 ||rutube.ru/static/img/png/adsdkbanner.png^$xhr,important
 /pixel.*^$image,xhr,script,important,domain=~statad.ru
@@ -275,14 +275,14 @@
 ! addtoany.com^
 ||gazprom-neft.*/*.gif^$image,domain=gazprom-neft.ru|gazprom-neft.com
 ||zoon.ru/images/border.gif^$image,domain=zoon.ru
-! (новое правило, строка 136 и 137)
-! (новое правило, строка 136 и 137)
+! (новое правило, строка 137 и 138)
+! (новое правило, строка 137 и 138)
 ||userapi.com/js/api/openapi.js$script,domain=~vk.com,important
 ||analytics.vsem-edu-oblako.ru*/track^$xhr,important
 ||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,important
 ||sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com
 ! sa.hoodmaps.com^
-! citilink.ru/graphql/^$xhr,domain=citilink.ru (новое правило, строка 380)
+! citilink.ru/graphql/^$xhr,domain=citilink.ru (новое правило, строка 381)
 ||fga.citilink.ru/collect^$xhr,domain=citilink.ru
 ||dns-shop.ru/banner/get-header-banner/^$xhr,domain=dns-shop.ru
 ||alfastrah.ru/js/detectPrivateMode.*.js^$script,domain=alfastrah.ru
@@ -312,10 +312,10 @@
 ||targetads.io^$important
 ||dostavista.ru/backend/$xhr,domain=dostavista.ru
 ||dostavista.ru/write-analytics^$xhr,domain=dostavista.ru
-! dostavista.ru/backend/browser-error-log^$xhr,domain=dostavista.ru (новое правило, строка 312)
+! dostavista.ru/backend/browser-error-log^$xhr,domain=dostavista.ru (новое правило, строка 313)
 ||express.dhl.ru/local/templates/dhl/components/bitrix/menu/*menu/images/left_menu_bg.gif^$xhr,domain=express.dhl.ru
 ||flocktory.com^$third-party,important
-! websbol.clickstream.sberbank.ru/metrics/sbol^$xhr,domain=sberbank.ru (новое правило, строка 769)
+! websbol.clickstream.sberbank.ru/metrics/sbol^$xhr,domain=sberbank.ru (новое правило, строка 770)
 /bitrix/js/yandex.metrika/script.js$script,important
 ||iguides.ru/local/components/iguides/notifications.subscribe/manifest.json^$other,domain=iguides.ru
 ! cs*.pikabu.ru/apps/ub/*/*/sprite.svg^$xhr,domain=pikabu.ru (18.01.25: ломает сайт)
@@ -345,7 +345,7 @@
 ||assets-cdn.mvideo.ru/*/sprites/sprite.css.svg^$image,domain=mvideo.ru
 ||mvideo.ru/bff/recommendations/$xhr,domain=mvideo.ru
 ||mvideo.ru/bff/settings/promo-blocks$xhr,domain=mvideo.ru
-! holodilnik.ru/ajax/getRecommendsMB.php*^$xhr,domain=holodilnik.ru (новое правило, строка 356)
+! holodilnik.ru/ajax/getRecommendsMB.php*^$xhr,domain=holodilnik.ru (новое правило, строка 357)
 /mindbox*.js^$script
 ||holodilnik.ru/js/credit*.js$script,domain=holodilnik.ru
 ||dashboard.fstrk.io/widget*/*.js^$script
@@ -392,7 +392,7 @@
 ||newprospect.ru/assets/filesmanager/upload/iblock/*/*.gif^$image,domain=newprospect.ru
 ||newprospect.ru/assets/templates/default/img/*.gif^$image,domain=newprospect.ru
 ||lmcdn.ru/static/permanent/libs/ad-blocker.js^$script,domain=lamoda.ru
-! *.lmcdn.ru/static/*/assets/*cookie*.css^$css,domain=lamoda.ru (новое правило, строка 416)
+! *.lmcdn.ru/static/*/assets/*cookie*.css^$css,domain=lamoda.ru (новое правило, строка 417)
 ||hdeapi.lamoda.ru/js/modules/chat_widget/hde.js^$script,domain=lamoda.ru
 ||sravni.ru/v*/advertising/banners/$xhr,domain=sravni.ru
 ||graphql.kazanexpress.ru^
@@ -501,7 +501,7 @@
 /_vercel/*/script.js^$script,important
 ||event.playground.ru*/.well-known/mercure?$xhr,domain=playground.ru
 ||alfabank.by/api/cookies/getCookieByLocalstorage.php^$xhr,domain=alfabank.by
-! matomo.alfabank.by^$domain=alfabank.by (новое правило, строка 676)
+! matomo.alfabank.by^$domain=alfabank.by (новое правило, строка 686)
 ||st.babysfera.ru/*/static/assets/Components/*/Shared/ShareButton/ShareButton.js^$script,domain=baby.ru
 ||hoff.ru/vue/analytics/$ping,domain=hoff.ru
 /tilda-stat-*.*.js^$script
@@ -621,7 +621,7 @@
 ||sfr7ag.ru^
 ||samokat.ru/weborama.html^$domain=samokat.ru
 ||api-web.samokat.ru/showcase/recommendations/whatToTryProducts$xhr,domain=samokat.ru
-! /_vercel/speed-insights/script.js^$script,important (новое правило, строка 500)
+! /_vercel/speed-insights/script.js^$script,important (новое правило, строка 501)
 ||zen.yandex.ru/widget-loader^$script,domain=3dnews.ru
 ||kupigolos.ru/img/info/710%D1%85294.webp^$image,domain=kupigolos.ru
 ||kupigolos.ru/img/info/180x1270.webp^$image,domain=kupigolos.ru
@@ -638,7 +638,7 @@
 ||savefrom.net/img/favicons/thumb/*.png^$xhr,domain=savefrom.net
 ||savefrom.net/img/ummy_icon_*.png^$image,domain=savefrom.net
 ||savefrom.net/build/js/chunk~rsya*-main-js.js$script,domain=savefrom.net
-! ||savefrom.net/build/js/chunk~rsyaRuBanners-js-main-js.js$script,domain=savefrom.net (новое правило, строка 639)
+! ||savefrom.net/build/js/chunk~rsyaRuBanners-js-main-js.js$script,domain=savefrom.net (новое правило, строка 640)
 ||savefrom.net/msec^$xhr,domain=savefrom.net
 /build/2f216d687fe39ac06f55.png^$image,domain=9xbuddy.com|offmp3.net
 ||kanobu.ru/api/v*/ainfo/toplink-and-informer^$xhr,domain=kanobu.ru
@@ -883,6 +883,11 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||college.72to.ru/*.gif^$image,domain=college.72to.ru
 ||cdn.cookielaw.org^
 ||*.rt.avito.ru^
+||coop-land.ru/templates/CoopLand2016/js/adriver.*.js^$script,domain=coop-land.ru
+! /adriver$script,xhr
+! ||*adc3-launch*^$important (soon..)
+||applvn.com^$important
+! ||61.145.124.238$network,important (soon..)
 !
 !
 !
@@ -960,7 +965,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 !
 ||megamarket.ru/api/*/v*/analyticsDataService/$xhr
 ! megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr
-! megamarket.ru/api/fl/idw-smm^$xhr (новое правило, строка 587)
+! megamarket.ru/api/fl/idw-smm^$xhr (новое правило, строка 588)
 ||api.megamarket.tech/api/colibri/events/$xhr,important
 ||megamarket.ru/api/*/v*/promoContentService/$xhr
 ||api.megamarket.tech/api/events/config$xhr,important
@@ -1003,7 +1008,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||*pinterest.com/_/_/trace/trace/^$xhr,important
 ||*pinterest.com/_/_/storage_report/^$xhr,important
 ||*pinterest.com/_/_/logClientError/^$xhr,important
-! *pinterest.com/_/graphql/^$xhr,important (новое правило, строка 380)
+! *pinterest.com/_/graphql/^$xhr,important (новое правило, строка 381)
 ||*pinterest.com/_/_/csp_report/^$xhr,important
 ||trk.pinterest.com^$important
 ||ads.pinterest.com^$important
@@ -1905,10 +1910,14 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||avatars.mds.yandex.net/get-direct/$domain=~e.mail.ru
 ||certificate.mobile.yandex.net/api/v*/
 ||startup.mob.*.yandex.net^$important
-||uxfeedback-cdn.s*.yandex.net^
+! uxfeedback-cdn.s*.yandex.net^
 ||taxi-promotions.s*.yandex.net^
 ||click.sender.yandex.ru^
 ||mc.webvisor.org^$important
+||yandetruckingservices.com^
+||yandexmetric*.com^
+||yastatic.net/pcode/adfox/$script
+||yastatic.net/share*/$script,xhr
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -1925,6 +1934,7 @@ market.yandex.ru##div[id^="/content/header/headerPromo"]
 market.yandex.ru##div[data-apiary-widget-name="@monetize/IncutConstructor/MadvBasicCarouselPlain"]
 market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ya.ru##div[class^="VanillaReact AliceFabContainer"]
+yandex.ru##div[class^="VanillaReact AliceFabContainer"]
 !
 !
 ! =
