@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.2.7-R
-! TimeUpdated: 2025-03-10T06:20:00+00:00
+! Version: 3.2.8-R
+! TimeUpdated: 2025-03-10T08:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -761,7 +761,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||gulsbafanec.ru^$important
 ||consficam.ru^$important
 ||satkurier.pl/banery/750x100_2019_AntenaNEO.gif^$domain=satkurier.pl
-||*.ru/api/v*/fingerprint^$xhr,important,domain=probolezny.ru|prodoctorov.ru
+! *.ru/api/v*/fingerprint^$xhr,important,domain=probolezny.ru|prodoctorov.ru (новое правило, строка 893)
 ||probolezny.ru/static/*/favicons/probolezny/apple_touch_icon/favicon_*.png$domain=probolezny.ru
 ||d1n8hflz8lhynp.cloudfront.net^$important
 ||apptornado.com^$important
@@ -887,6 +887,11 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ! /adriver$script,xhr
 ! ||*adc3-launch*^$important (soon..)
 ||applvn.com^$important
+||freeman42.ru^
+! wsd-fingerprint.kontur.ru/api/v*/fingerprint^$xhr,domain=kontur.ru (новое правило, строка 893)
+||tp.kontur.ru/support/support_center.js^$script,domain=kontur.ru
+*/api/v*/fingerprint$xhr
+||time.is/js/7/jquary.ad.js$script,domain=time.is
 !
 !
 !
@@ -2032,6 +2037,7 @@ yandex.ru##div[class^="VanillaReact AliceFabContainer"]
 ||ssp.rutube.ru^$important
 ||informer.yandex.ru^
 ||pangolin*.sgsnssdk.com^$important
+||tealiumiq.com^$important
 !
 ! --
 !
@@ -2177,7 +2183,6 @@ mi.com#@$#body { overflow: visible !important; }
 ||vaycasino*.com^
 ||87h6.cfd^
 ||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^
-||freeman42.ru^
 !
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 по 30.11.24 был «жертвой» такого массового спама)..

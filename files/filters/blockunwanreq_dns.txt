@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.2.1-R
+! Version: 3.2.2-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-10T06:20:00+00:00
+! TimeUpdated: 2025-03-10T08:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 10.03.2025 06:20 UTC
+! Last Modified: 10.03.2025 08:20 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -212,8 +212,8 @@
 ||onesignal.com^$important
 ||cdn.viglink.com^
 ||connect.facebook.net^$dnsrewrite=REFUSED
-||inappstory.ru^$dnsrewrite=REFUSED
-||inappstory.com^$dnsrewrite=REFUSED
+||inappstory.ru^$dnsrewrite=REFUSED,important
+||inappstory.com^$dnsrewrite=REFUSED,important
 ||appsflyersdk.com^$important
 ! facebook.com^$dnsrewrite=REFUSED,domain=~facebook.com
 ! www.facebook.com^$dnsrewrite=REFUSED,domain=~facebook.com
@@ -545,6 +545,9 @@
 ||acs.m.taobao.com^$important
 ! ||*adc3-launch*^$important (soon..)
 ||applvn.com^$important
+||freeman42.ru^
+||tealiumiq.com^$important
+||confiant-integrations.global.ssl.fastly.net^
 !
 !
 !
@@ -724,9 +727,7 @@
 ||t2m.io^
 ||vaycasino*.com^
 ||87h6.cfd^
-||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^
-||freeman42.ru^
-!
+||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^!
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 по 30.11.24 был «жертвой» такого массового спама)..
 ||s*.*.*.mydomain.zone^
