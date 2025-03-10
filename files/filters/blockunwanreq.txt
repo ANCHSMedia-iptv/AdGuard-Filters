@@ -667,7 +667,7 @@ $cookie=coockoos
 $cookie=my
 $cookie=/__ddg*_/
 ||sibdroid.ru/upload/is/settings/c52/k8m6dcpmm5aqnx6nu8hn2t16va4e404l/TG%20desktop%20(2).png^$image,domain=sibdroid.ru
-/wp-admin/admin-ajax.php?*views*$xhr
+! /wp-admin/admin-ajax.php?*views*$xhr (новое правило, строка 784)
 ||api.zadarma.com/calltracker$xhr
 ||effect.habr.com^$important,domain=habr.com
 ||habr.com/kek/v*/articles/*/pageview$xhr,domain=habr.com
