@@ -873,7 +873,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||adz.wattpad.com^$important
 ! ||ad.api.kaffnet.com^$important (soon..)
 ||batmobil.net^$important
-! ||61.145.124.238^$important (soon..)
+! ||61.145.124.238^$network,important (soon..)
 ||eqmob.com^$important
 ! ||duapps.com^$important (soon..)
 ! ||smaato.*^$important (soon..)
@@ -887,7 +887,6 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ! /adriver$script,xhr
 ! ||*adc3-launch*^$important (soon..)
 ||applvn.com^$important
-! ||61.145.124.238$network,important (soon..)
 !
 !
 !

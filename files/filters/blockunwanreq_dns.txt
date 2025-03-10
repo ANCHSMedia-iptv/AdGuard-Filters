@@ -531,7 +531,7 @@
 ||adz.wattpad.com^$important
 ! ||ad.api.kaffnet.com^$dnsrewrite=REFUSED,important (soon..)
 ||batmobil.net^$dnsrewrite=NXDOMAIN,important
-! ||61.145.124.238^$important (soon..)
+! ||61.145.124.238^$network,important (soon..)
 ||eqmob.com^$important
 ! ||duapps.com^$dnsrewrite=NXDOMAIN,important
 ! ||smaato.*^$dnsrewrite=NXDOMAIN,important (soon..)
