@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.2.2-R
+! Version: 3.2.3-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-10T08:20:00+00:00
+! TimeUpdated: 2025-03-10T12:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 10.03.2025 08:20 UTC
+! Last Modified: 10.03.2025 12:20 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, scripts, etc. at the DNS level.
@@ -72,7 +72,7 @@
 ||extmaps-api.yandex.net^$important
 ||metrika.yandex.*^$important
 ||offerwall.yandex.net^$important
-||abt.s*.yandex.net^$important
+||abt.*yandex.net^$important
 ||media-adv.market.yandex.ru^$important
 ||mc.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~ya.ru
 ||an.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~e.mail.ru|~ya.ru
@@ -548,6 +548,8 @@
 ||freeman42.ru^
 ||tealiumiq.com^$important
 ||confiant-integrations.global.ssl.fastly.net^
+||wsd-fingerprint.kontur.ru^$important
+||provision.app.devapps.ru^
 !
 !
 !

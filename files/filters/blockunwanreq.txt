@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.2.8-R
-! TimeUpdated: 2025-03-10T08:20:00+00:00
+! Version: 3.2.9-R
+! TimeUpdated: 2025-03-10T12:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -890,8 +890,9 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||freeman42.ru^
 ! wsd-fingerprint.kontur.ru/api/v*/fingerprint^$xhr,domain=kontur.ru (новое правило, строка 893)
 ||tp.kontur.ru/support/support_center.js^$script,domain=kontur.ru
-*/api/v*/fingerprint$xhr
+/api/v*/fingerprint$xhr
 ||time.is/js/7/jquary.ad.js$script,domain=time.is
+||provision.app.devapps.ru^
 !
 !
 !
@@ -1922,6 +1923,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||yandexmetric*.com^
 ||yastatic.net/pcode/adfox/$script
 ||yastatic.net/share*/$script,xhr
+||abt.*.yandex.net^$important
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
