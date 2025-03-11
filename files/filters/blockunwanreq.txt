@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.2.9-R
-! TimeUpdated: 2025-03-10T13:20:00+00:00
+! Version: 3.3.0-R
+! TimeUpdated: 2025-03-11T09:11:40+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -893,6 +893,60 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 /api/v*/fingerprint$xhr
 ||time.is/js/7/jquary.ad.js$script,domain=time.is
 ||provision.app.devapps.ru^
+/files/tgparser/*.html$subdocument,domain=armeniasputnik.am|sputnikankhazia.info|sputnik-abkhazia.ru|sputnik-georgia.com|sputnik-georgia.ru|sputnik-news.ee|sputnik-ossetia.com|sputnik-ossetia.com|sputnik-tj.com|sputnik.az|sputnik.by|sputnik.kg|sputnik.kz|sputnik.md|sputniknews-uz.com|sputniknews.cn|sputniknews.com|sputniknews.gr
+||img.sputnik.*/min/js/libs/banners/adfx.loader.bind.js$script,domain=armeniasputnik.am|sputnikankhazia.info|sputnik-abkhazia.ru|sputnik-georgia.com|sputnik-georgia.ru|sputnik-news.ee|sputnik-ossetia.com|sputnik-ossetia.com|sputnik-tj.com|sputnik.az|sputnik.by|sputnik.kg|sputnik.kz|sputnik.md|sputniknews-uz.com|sputniknews.cn|sputniknews.com|sputniknews.gr
+!
+||adad.ir^
+||dgad.ir^
+||cs*.trafmag.com^
+||rarenol.biz
+||kudato.link^
+||hgads.com^
+||imgg.marketgid.com^
+||hgad.silvercdn.com^
+||adnxs.com^
+||ads.2xpub.com^
+||hits.netgeography.net^
+||ad45.com^
+||adserver.gruprc.ro^
+||51yes.com^
+||intellitxt.com^
+||internet-inspection.com^
+||ads.pacific.net.sg^
+||ww150.smartadserver.com^
+||smartadserver.com^
+——
+||lkqd.net^
+||lnkxfer8.com^
+||looktest.win^
+||lzxrz.net^
+||mb103.com^
+||mediaforce.com^
+||mediawhirl.com^$important
+||medio.com^
+||metabesttours.com^
+||metricskey.net^
+||qimz.com^
+||wwclickroot.club^
+||tneduf.com^
+||ybcrwm.com^
+||tsyndicate.com^
+||gothailand.xyz^
+||exosrv.com^$important
+||qywfe.com^
+!
+||exoclick.com^$important
+||metricwpsh.com^$important
+||nereserv.com^$important
+||zog.link^$important
+||pix-cdn.org*^$important
+||magsrv.com^$important
+||m3pd.com^$important
+||multstorage.com^$important
+||polotrex.com^$important
+||olopruy.com^$important
+||yomeno.xyz^$important
+||vstserv.com^$important
 !
 !
 !

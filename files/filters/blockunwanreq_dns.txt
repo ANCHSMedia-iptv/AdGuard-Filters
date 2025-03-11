@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.2.3-R
+! Version: 3.2.4-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-10T13:20:00+00:00
+! TimeUpdated: 2025-03-11T09:11:40+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 10.03.2025 13:20 UTC
+! Last Modified: 11.03.2025 09:11 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -494,7 +494,7 @@
 ||my.com^$important
 ||inmobicdn.net^$dnsrewrite=REFUSED,important
 ||analytics.localytics.com^$important
-||taboola.map.fastly.net^
+||taboola*fastly.net^
 ||idm.iot.mi.com^
 ||flurry.com^$dnsrewrite=REFUSED,important
 ||api.sms.*.miui.com^$important
@@ -552,6 +552,58 @@
 ||wsd-fingerprint.kontur.ru^$important
 ||provision.app.devapps.ru^
 ||graphql*^$important
+!
+||adad.ir^
+||dgad.ir^
+||cs*.trafmag.com^
+||rarenol.biz
+||kudato.link^
+||hgads.com^
+||imgg.marketgid.com^
+||hgad.silvercdn.com^
+||adnxs.com^
+||ads.2xpub.com^
+||hits.netgeography.net^
+||ad45.com^
+||adserver.gruprc.ro^
+||51yes.com^
+||intellitxt.com^
+||internet-inspection.com^
+||ads.pacific.net.sg^
+||ww150.smartadserver.com^
+||smartadserver.com^
+——
+||lkqd.net^
+||lnkxfer8.com^
+||looktest.win^
+||lzxrz.net^
+||mb103.com^
+||mediaforce.com^
+||mediawhirl.com^$important
+||medio.com^
+||metabesttours.com^
+||metricskey.net^
+||qimz.com^
+||wwclickroot.club^
+||tneduf.com^
+||ybcrwm.com^
+||tsyndicate.com^
+||gothailand.xyz^
+||exosrv.com^$important
+||qywfe.com^
+!
+||exoclick.com^$important
+||metricwpsh.com^$important
+||nereserv.com^$important
+||zog.link^$important
+||pix-cdn.org*^$important
+||magsrv.com^$important
+||m3pd.com^$important
+||multstorage.com^$important
+||polotrex.com^$important
+||olopruy.com^$important
+||yomeno.xyz^$important
+||vstserv.com^$important
 !
 !
 !
