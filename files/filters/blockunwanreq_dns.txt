@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.2.4-R
+! Version: 3.2.5-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-11T09:11:40+00:00
+! TimeUpdated: 2025-03-11T11:20:10+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 11.03.2025 09:11 UTC
+! Last Modified: 11.03.2025 11:20 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -420,8 +420,8 @@
 ||widget.sparrow.ru^$important
 ||sfr7ag.ru^
 ||core-colibri-api.samokat.ru^
-||a.wb.ru^
-||wbx-logs.wildberries.ru^
+||a.wb.ru^$important
+||wbx-logs.wildberries.ru^$important
 ||aads.com^$important
 ||itweepinbelltor.com^
 ||blearspellaea.shop^
@@ -605,6 +605,9 @@
 ||yomeno.xyz^$important
 ||vstserv.com^$important
 !
+||sentry.ozon.ru^
+! ||browser.sentry-cdn.com^ (soon..)
+!
 !
 !
 !
@@ -783,7 +786,8 @@
 ||t2m.io^
 ||vaycasino*.com^
 ||87h6.cfd^
-||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^!
+||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^
+!
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 по 30.11.24 был «жертвой» такого массового спама)..
 ||s*.*.*.mydomain.zone^

@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.3.0-R
-! TimeUpdated: 2025-03-11T09:11:40+00:00
+! Version: 3.3.1-R
+! TimeUpdated: 2025-03-11T11:20:00+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -280,8 +280,8 @@
 ||userapi.com/js/api/openapi.js$script,domain=~vk.com,important
 ||analytics.vsem-edu-oblako.ru*/track^$xhr,important
 ||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,important
-||sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com
-! sa.hoodmaps.com^
+|! sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com (новое правило, строка 284)
+||sa.hoodmaps.com^$important,domain=hoodmaps.com
 ! citilink.ru/graphql/^$xhr,domain=citilink.ru (новое правило, строка 381)
 ||fga.citilink.ru/collect^$xhr,domain=citilink.ru
 ||dns-shop.ru/banner/get-header-banner/^$xhr,domain=dns-shop.ru
@@ -611,7 +611,7 @@
 ||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/ViqeoFlyrollAdv*.js^$script,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||cm*api.chefmarket.ru/api/v*/settings/dishes-statistic^$xhr,domain=chefmarket.ru
 ||trial-sport.ru/images_g/2019/7/22/5417489_s.jpg^$image,domain=trial-sport.ru
-||static.line-scdn.net/liff/*/sdk.js^$script,xhr
+||static.line-scdn.net/liff/*/sdk.js^$script,xhr,important
 ||cdn*.spravportal.ru/Images/Creatives/fl_getgift.png^$image,domain=spravportal.ru
 ||cdn*.spravportal.ru/Images/Creatives/WCBot_RC.jpg^$image,domain=spravportal.ru
 ||8sot.su/js/other/advisvisble.js^$script,domain=8sot.su
@@ -651,7 +651,7 @@
 ||hye1eaipby4w.matham.ws^
 ||esports.ru/wp-content/uploads/2024/12/winline_logo_main_rgb.svg^$image,domain=esports.ru
 ||esports.ru/wp-content/uploads/2024/05/pari-logo-backing.svg^$image,domain=esports.ru
-||esports.ru/wp-content/uploads/2024/12/freebet_5x1000_*.gif^$image,domain=esports.ru
+||esports.ru/wp-content/uploads/2024/12/freebet_*.gif^$image,domain=esports.ru
 ||esports.ru/wp-content/uploads/2025/01/414x60.gif^$image,domain=esports.ru
 ! matomo-el5.x5.ru^$important (новое правило, строка 686)
 ||frontlogger.dodois.io^
@@ -669,13 +669,13 @@ $cookie=/__ddg*_/
 ||sibdroid.ru/upload/is/settings/c52/k8m6dcpmm5aqnx6nu8hn2t16va4e404l/TG%20desktop%20(2).png^$image,domain=sibdroid.ru
 ! /wp-admin/admin-ajax.php?*views*$xhr (новое правило, строка 784)
 ||api.zadarma.com/calltracker$xhr
-||effect.habr.com^$important,domain=habr.com
+||effect.habr.com^$important
 ||habr.com/kek/v*/articles/*/pageview$xhr,domain=habr.com
 ||hawk.so/ws$websocket,important
-.ru/assets/hawk*.js^$script,domain=dtf.ru|vc.ru
+.ru/assets/hawk*.js^$script,domain=dtf.ru|vc.ru,important
 ||cs15.pikabu.ru/post_img/2025/01/14/8/17368606351450798.png^$image,domain=pikabu.ru
 ||d.pikabu.ru/counters/$xhr,domain=pikabu.ru
-||matchtv.ru/api/v*/banners?$xhr,domain=matchtv.ru
+||matchtv.ru/api/v*/banners?$xhr,domain=matchtv.ru,important
 ||idam.metro-cc.ru/authorize/api/oauth2/check_cookie_iframe^$domain=metro-cc.ru
 ||calc.ru/include/ads.php$xhr,domain=calc.ru
 ||calc.ru/js/informer.js$script,domain=calc.ru
@@ -749,8 +749,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 /chtm/s/metric/clarity.js^$script
 /chtm/s/metric/behaviourBeacon$xhr
 ||postium.ru/wp-content/themes/typer-child/assets/js/utm.js^$script,domain=postium.ru
-||wondershare.com/ga360/js/ga360-add.js^$domain=wondershare.com.ru|wondershare.com
-||neveragain.allstatics.com/2019/assets/plugin/wsc-adnew.js$script,domain=wondershare.com.ru|wondershare.com
+||wondershare.*/ga360/js/ga360-add.js^$domain=wondershare.com.ru|wondershare.com|wondershare.com.*
+||neveragain.allstatics.com/2019/assets/plugin/wsc-adnew.js$script,domain=wondershare.com.ru|wondershare.com|wondershare.com.*
 ||stolicaonego.ru/ajax_stat.php^$xhr,domain=stolicaonego.ru
 ||stolicaonego.ru^$cookie=evening
 ||stolicaonego.ru^$cookie=geobase
@@ -793,7 +793,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||easeus.com/default/js/sensorsdata/abtest.min.js^$script,domain=easeus.com|easeus.*.com
 ||easeus.recovery-soft.com/sa$ping,domain=easeus.com|easeus.*.com
 ||easeus.com/default/js/globle.js^$script,domain=easeus.com|easeus.*.com
-||easeus.com/default/js/other.js^$script,domain=easeus.com
+||easeus.com/default/js/other.js^$script,domain=easeus.com|easeus.*.com
 /ezais/analytics$xhr,important
 /utilcave_com/*/recommended_pages.js$script
 /ezoic/app-ajax$xhr
@@ -947,6 +947,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||olopruy.com^$important
 ||yomeno.xyz^$important
 ||vstserv.com^$important
+!
+||sentry.ozon.ru^
 !
 !
 !
@@ -1624,17 +1626,17 @@ richfamily.ru##div[class^="q-carousel q-panel-parent q-carousel--without-padding
 flysat.com##a[href^="://www.flysat-live.com/]
 ! securelist.ru##div[class^="c-widget-subscribe js-sticky-widget"] (28.01.25: нестабильность сайта, сомнения, отключён)
 blog.getproff.ru##div[class^="wp-block-group"]
-wondershare.com.ru,wondershare.com##div[class^="ws-ad-new-container"]
-wondershare.com.ru,wondershare.com##div[class^="border-radius pt-4 h-100"]
-wondershare.com.ru,wondershare.com##div[class^="ws-article-download"]
-wondershare.com.ru,wondershare.com##div[class^="ws-article-des-sub text-center"]
+wondershare.com.ru,wondershare.com,wondershare.com.*##div[class^="ws-ad-new-container"]
+wondershare.com.ru,wondershare.com,wondershare.com.*##div[class^="border-radius pt-4 h-100"]
+wondershare.com.ru,wondershare.com,wondershare.com.*##div[class^="ws-article-download"]
+wondershare.com.ru,wondershare.com,wondershare.com.*##div[class^="ws-article-des-sub text-center"]
 rsload.net##div.main-wrap:nth-child(3) > div.main-block > div.link-block:nth-child(2) > div:last-child > div:last-child > a > span.marker
 stolicaonego.ru##div[style^="padding: 10px; margin-top: 20px; margin-bottom: 20px; font-size: 16px; border-width: 1px 1px 1px 5px; border-style: solid; border-color: rgb(237, 31, 36); border-image: initial;"]
 stolicaonego.ru##div[class^="footer_right_counters"]
 stolicaonego.ru##div[class^="top_bl"]
 stolicaonego.ru##div[class^="yandex_ad_one"]
 thevoicemag.ru##div[class^="carousel-vertical-videos detail-page__carousel-vertical-videos"]
-~yandex.by,~yandex.com,~yandex.kz,~yandex.ru##a[href*="://yandex.ru/cy"]
+~yandex.by,~yandex.com,~yandex.kz,~yandex.ru,~ya.ru##a[href*="://yandex.ru/cy"]
 tele-satinfo.ru##div:last-child > table:nth-child(4) > tbody > tr > td:first-child > div > table:nth-child(41) > tbody > tr > td > center:last-child
 tele-satinfo.ru##div:last-child > table:nth-child(6) > tbody > tr > td:first-child
 tele-satinfo.ru##div:last-child > table:nth-child(6) > tbody > tr > td:nth-child(2)
@@ -1655,7 +1657,7 @@ vm.ru##div[class^="wrp_col newspaper_col"]
 sp72ru.ru###custom_html-21
 sp72ru.ru###custom_html-11
 sp72ru.ru###custom_html-7
-easeus.com##div[class^="button_box_20201208"]
+easeus.com,easeus.*.com##div[class^="button_box_20201208"]
 remontka.pro##a[href*="://t.me/remontka_pro"]
 ##link[href*="//feeds.feedburner.com/"]
 remontka.pro##div.uk-container.uk-container-center.rem-container:nth-child(4) > div.tm-middle.uk-grid:first-child > div.tm-main.uk-width-medium-1-1 > div.rem-main > main.tm-content:last-child > article.uk-article.rem-singlearticle:first-child > aside:last-child > div:nth-child(3) > a.uk-button.rem-leftbutton
@@ -1950,7 +1952,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||mail.yandex.ru/web-api/journal/v*^$ping,domain=mail.yandex.ru
 ||media-adv.market.yandex.ru^$important
 ! @@||yandex.ru/clck/click^$domain=mail.yandex.ru
-||yastatic.net/partner-code-bundles/*.js^$script,important,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.ua
+||yastatic.net/partner-code-bundles/$script,important,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.ua
 ||yastatic.net/nearest.js^$script
 ||browser.pay.yandex.ru/api/v*/split-status^$important
 ||paybro-static.s*.yandex.net/paybro/v*/widget-*.*^$script,css
@@ -3152,7 +3154,7 @@ mi.com#@$#body { overflow: visible !important; }
 !
 !
 ! dzen.ru,auto.ru,avito.ru,baby.ru,businessman.ru,dni.ru,e1.ru,echo.msk.ru,fb.ru,forexpf.ru,gismeteo.by,gismeteo.kz,gismeteo.md,gismeteo.ru,gorodrabot.ru,infoniac.ru,it-tehnik.ru,kakprosto.ru,kinopoisk.ru,liveinternet.ru,mathb-ege.sdamgia.ru,mk.ru,nkj.ru,ohotniki.ru,oko-planet.su,otzovik.com,razlozhi.ru,sdamgia.ru,syl.ru,vz.ru#%#//scriptlet('remove-cookie', '/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/')
-! ^$cookie= ^$cookie=/|/
+! ^$cookie= ^$cookie=/|/ $cookie=
 ! #%#//scriptlet('remove-cookie', '/||||/')
 ! #%#//scriptlet('set-local-storage-item', '', '')
 ! #%#//scriptlet('set-session-storage-item', '', '')
