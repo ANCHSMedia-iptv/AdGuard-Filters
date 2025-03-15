@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.3.2-R
-! TimeUpdated: 2025-03-15T10:33:31+00:00
+! Version: 3.3.3-R
+! TimeUpdated: 2025-03-15T17:21:30+00:00
 ! Expires: 48 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -115,9 +115,9 @@
 !
 !
 ||unpkg.com/pwacompat^$script,xhr
-||api.x.com/*/jot/error_log.json^$xhr
-||api.x.com/*/jot/ces/p2^$xhr
-||api.x.com/*/jot/client_event.json^$xhr
+||api.x.com/*/jot/error_log.json^$xhr,important
+||api.x.com/*/jot/ces/p2^$xhr,important
+||api.x.com/*/jot/client_event.json^$xhr,important
 ||tns-counter.ru^$important
 .ru/geo-context^$other,xhr,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||geo.geosurf.io^$important
@@ -125,14 +125,14 @@
 ||instagram.com/embed.js^$script,important,domain=~instagram.com
 ||tiktok.com/embed.js^$script,important,domain=~tiktok.com
 ||singular.net^$important
-||alb.reddit.com^
+||alb.reddit.com^$important
 ||rudderstack.com^$important
 ! hh.ru/api/fl/logs/^$other,important,domain=hh.ru (новое правило, строка 588)
 ||cedexis.com^$important
 /generate_204$domain=~youtube.com|~googlevideo.com|api.browser.yandex.*
 ||adlook.me^$important
 ||betweendigital.com^$important
-*/api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru
+*/api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru,important
 ||vk.com/js/api/openapi.js^$script,domain=~vk.com,important
 ||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com
 ||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com
@@ -196,7 +196,7 @@
 ||d1tru86qrby720.cloudfront.net^$important
 ||*site-chat.me/support/support.int.js*^$script,important
 ! gemotest.ru/local/templates/main/img/chat.svg^$image,domain=gemotest.ru
-||probolezny.ru/api/v*/fingerprint^$xhr,domain=probolezny.ru,important
+! ||probolezny.ru/api/v*/fingerprint^$xhr,domain=probolezny.ru,important (новое правило, строка 893)
 ||invitro.ru/edna/assets/multibutton.js*^$script,domain=invitro.ru
 ||invitro.ru/local/templates/invitro_main/webrtc/*/*.js^$script,domain=invitro.ru
 ||invitro.ru/*.gif^$image,domain=invitro.ru,important
