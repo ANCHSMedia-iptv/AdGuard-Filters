@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.2.5-R
+! Version: 3.2.6-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-11T11:20:10+00:00
+! TimeUpdated: 2025-03-15T10:33:30+00:00
 ! Expires: 48 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 11.03.2025 11:20 UTC
+! Last Modified: 15.03.2025 10:33 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -55,7 +55,7 @@
 ! -- == Yandex Analytics, Ads and other ==
 ! -- == Яндекс: Аналитика, реклама и прочее. ==
 !
-||banners*mobile.yandex.net^$important
+||banners*.yandex.net^$important
 ||appmetrica.yandex.net^$important
 ||appmetrica.yandex.ru^$important
 ||bs.yandex.ru^$important
@@ -344,10 +344,10 @@
 ||targetads.io^$important
 ||livetex.ru^
 ||flocktory.com^$important
-||visor.sberbank.ru^
+||visor.sberbank.ru^$important
 ||widget.replain.cc^
 ||begun.ru^
-||tags.soloway.ru^
+||tags.soloway.ru^$important
 ||code.2ypkht.ru^
 ||marketplace.ur1s.ru^
 ||suggestions.dadata.ru^
@@ -356,29 +356,29 @@
 ||leadhit.io^
 ||to.getnitropack.com^
 ||getrcmx.com^
-||dpd-site-analytics-backend-api-prod.dpd.ru^
-||js-agent.newrelic.com^
+||dpd-site-analytics-backend-api-prod.dpd.ru^$important
+||js-agent.newrelic.com^$important
 ! ||graphql.kazanexpress.ru^
 ||hc.uralweb.ru^$important
 ||clarity.ms^
 ||cadmus.script.ac^$important
 ||dn0qt3r0xannq.cloudfront.net^$important
 ||bservr.com^$important
-||cpmstar.com^$domain=~cpmstar.com,important
-||prft1pub.com^
+! ||cpmstar.com^$domain=~cpmstar.com,important
+||prft1pub.com^$important
 ||2ruoe1cm.ru^
 ||zcode*.com^
 ||r.stripe.com^$important
 ||mc.webvisor.org^$important
 ||speraspace.com^
-||vsesvets.com^
-||yapx.ru^
+||vsesvets.com^$important
+||yapx.ru^$important
 ||log.rutube.ru^$important
 ||pingdom.net^
 ||rb.infox.sg^
-||mediametrics.ru^
+||mediametrics.ru^$important
 ||ads.pubmatic.com^$important
-||rassilkatest.ru^
+||rassilkatest.ru^$important
 ||code.rkjs.net^
 ||vercel-insights.com^$important
 ||webstats.gnome.org^$important
@@ -397,7 +397,7 @@
 ||monorail-edge.shopifysvc.com^$important
 ||static-tracking.klaviyo.com^$important
 ||otlp-http-production.shopifysvc.com^$important
-||stats.llaun.ch^
+||stats.llaun.ch^$important
 ||stats.iobit.com^$important
 ||rotor.overclockers.ru^$important
 ||ssm.codes^$important
@@ -432,7 +432,7 @@
 ||stats.myangular.life^$important
 ||ws.getzend.digital^$important
 ||apptracer.ru^$important
-||frontlogger.dodois.io^
+||frontlogger.dodois.io^$important
 ||rocket.ivi.ru^$important
 ||a.lifehacker.ru^$important
 ||analytics.fontanka.ru^$important
@@ -469,7 +469,7 @@
 ||unagi*.amazon.com^$important
 ||cdn-advert.smi2.net^$important
 ||mradx.net^$important
-||pixelwhirl.com^
+||pixelwhirl.com^$important
 ||staticcdn.duckduckgo.com^$important
 ||minotar.net^$dnsrewrite=NXDOMAIN,important
 ||abtest.alibaba.com^$important
@@ -550,45 +550,45 @@
 ||tealiumiq.com^$important
 ||confiant-integrations.global.ssl.fastly.net^
 ||wsd-fingerprint.kontur.ru^$important
-||provision.app.devapps.ru^
+||provision.app.devapps.ru^$important
 ||graphql*^$important
 !
-||adad.ir^
-||dgad.ir^
-||cs*.trafmag.com^
-||rarenol.biz
-||kudato.link^
+||adad.ir^$dnsrewrite=REFUSED
+||dgad.ir^$dnsrewrite=REFUSED
+||cs*.trafmag.com^$dnsrewrite=NXDOMAIN
+||rarenol.biz$dnsrewrite=NXDOMAIN
+||kudato.link^$dnsrewrite=NXDOMAIN
 ||hgads.com^
 ||imgg.marketgid.com^
 ||hgad.silvercdn.com^
 ||adnxs.com^
 ||ads.2xpub.com^
-||hits.netgeography.net^
+||hits.netgeography.net^$dnsrewrite=REFUSED
 ||ad45.com^
 ||adserver.gruprc.ro^
-||51yes.com^
+||51yes.com^$dnsrewrite=NXDOMAIN
 ||intellitxt.com^
-||internet-inspection.com^
-||ads.pacific.net.sg^
-||ww150.smartadserver.com^
-||smartadserver.com^
+||internet-inspection.com^$dnsrewrite=REFUSED
+||ads.pacific.net.sg^$dnsrewrite=REFUSED
+||ww150.smartadserver.com^$dnsrewrite=NXDOMAIN
+||smartadserver.com^$dnsrewrite=NXDOMAIN
 ——
 ||lkqd.net^
 ||lnkxfer8.com^
-||looktest.win^
+||looktest.win^$dnsrewrite=NXDOMAIN
 ||lzxrz.net^
 ||mb103.com^
 ||mediaforce.com^
 ||mediawhirl.com^$important
 ||medio.com^
-||metabesttours.com^
+||metabesttours.com^$dnsrewrite=NXDOMAIN
 ||metricskey.net^
 ||qimz.com^
-||wwclickroot.club^
+||wwclickroot.club^$dnsrewrite=NXDOMAIN
 ||tneduf.com^
 ||ybcrwm.com^
 ||tsyndicate.com^
-||gothailand.xyz^
+||gothailand.xyz^$dnsrewrite=NXDOMAIN
 ||exosrv.com^$important
 ||qywfe.com^
 !
@@ -698,20 +698,20 @@
 !
 ||feednews.com^$dnsrewrite=REFUSED
 ||oleads.com^$dnsrewrite=REFUSED,important
-||sitesuggestion.opera-api2.com^$dnsrewrite=REFUSED
-||oscore.operacdn.com^
-||ws-oscore.opera-api2.com^
-||ft-oscore.opera-api2.com^
-||oscore.opera-api2.com^
-||pns-sdk.opera-api2.com^$dnsrewrite=REFUSED
-||ofa-2-sub.osp.opera.software^$dnsrewrite=REFUSED
-||mcp.opera-api2.com^$dnsrewrite=REFUSED
-||mykonf.com^$dnsrewrite=REFUSED
-||ofa-b-sub.osp.opera.software^
-! *cdninstagram.com^$domain=~instagram.com
+||sitesuggestion.opera-api*.com^$dnsrewrite=REFUSED
+||oscore.operacdn.com^$important
+||ws-oscore.opera-api*.com^$important
+||ft-oscore.opera-api*.com^$important
+||oscore.opera-api*.com^$important
+||pns-sdk.opera-api*.com^$dnsrewrite=REFUSED,important
+||ofa-*-sub.osp.opera.software^$dnsrewrite=REFUSED,important
+||mcp.opera-api*.com^$dnsrewrite=REFUSED,important
+||mykonf.com^$dnsrewrite=REFUSED,important
+! ofa-b-sub.osp.opera.software^
 ||xml.opera.com^$important
-||thumbnails*opera.com^
-||af.opera.com^
+||thumbnails*opera.com^$important
+||af.opera.com^$important
+||sitecheck.opera.com^$important
 !
 ! -- =Other=
 !
@@ -787,6 +787,7 @@
 ||vaycasino*.com^
 ||87h6.cfd^
 ||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^
+||clicks.af-pb06e2.com^
 !
 !
 ! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 по 30.11.24 был «жертвой» такого массового спама)..
