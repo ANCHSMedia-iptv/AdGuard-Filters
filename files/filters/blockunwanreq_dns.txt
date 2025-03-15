@@ -700,7 +700,7 @@
 !
 ||feednews.com^$dnsrewrite=REFUSED
 ||oleads.com^$dnsrewrite=REFUSED,important
-||sitesuggestion.opera-api*.com^$dnsrewrite=REFUSED
+||sitesuggestion.opera-api*.com^$dnsrewrite=REFUSED,important
 ||oscore.operacdn.com^$important
 ||ws-oscore.opera-api*.com^$important
 ||ft-oscore.opera-api*.com^$important
