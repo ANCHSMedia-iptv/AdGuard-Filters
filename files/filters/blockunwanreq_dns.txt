@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.2.8-R
+! Version: 3.2.9-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-16T10:11:48+00:00
+! TimeUpdated: 2025-03-16T14:38:48+00:00
 ! Expires: 72 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 16.03.2025 10:11 UTC
+! Last Modified: 16.03.2025 14:38 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -61,7 +61,7 @@
 ||bs.yandex.ru^$important
 ||direct.yandex.ru^$important
 ||tracking.ott.yandex.net^$important
-||*adfox.ru^$important
+||*adfox*^$important
 ||startup.mobile.yandex.net^$important
 ||startup-mobile.ap.yandex-net.ru^$important
 ||yandexadexchange.net^$important
@@ -70,20 +70,19 @@
 ! ||adfstat.yandex.ru^$important
 ||push.yandex.ru^$important
 ||http-check-headers.yandex.ru^$important
-||extmaps-api.yandex.net^$important
+||*extmaps-api.yandex.net^$important
 ||metrika.yandex.*^$important
 ||offerwall.yandex.net^$important
 ||abt.*.yandex.net^$important
 ||media-adv.market.yandex.ru^$important
-||mc.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~ya.ru
-||an.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~yandex.ua|~e.mail.ru|~ya.ru
+||mc.yandex.*^$important
+||an.yandex.*^$important
 ||startup.mob.*.yandex.net^$important
-! uxfeedback-cdn.s*.yandex.net^
 ||taxi-promotions.s*yandex.net^
 ||click.sender.yandex.ru^
 ||mc.webvisor.org^$important
 ||yandetruckingservices.com^
-||yandexmetric*.com^
+||yandexmetri*.com^
 ||trends.yandex.net^
 ||click.sender.yandex.ru^
 !
@@ -178,7 +177,7 @@
 ||mail-ads.google.com^$important
 ||imasdk.googleapis.com^$important
 ||gvt1.com^
-||ogads*.googleapis.com^
+||ogads*.googleapis.com^$important
 ||androidtvgtvmfe*.googleapis.com^
 ||playmoviesdfe*.googleapis.com^
 ||calendarpushnotification*.googleapis.com^
@@ -555,42 +554,42 @@
 ||provision.app.devapps.ru^$important
 ||graphql*^$important
 !
-||adad.ir^$dnsrewrite=REFUSED
-||dgad.ir^$dnsrewrite=REFUSED
-||cs*.trafmag.com^$dnsrewrite=NXDOMAIN
-||rarenol.biz$dnsrewrite=NXDOMAIN
-||kudato.link^$dnsrewrite=NXDOMAIN
+||adad.ir^$dnsrewrite=REFUSED,important
+||dgad.ir^$dnsrewrite=REFUSED,important
+||cs*.trafmag.com^$dnsrewrite=NXDOMAIN,important
+||rarenol.biz$dnsrewrite=NXDOMAIN,important
+||kudato.link^$dnsrewrite=NXDOMAIN,important
 ||hgads.com^
 ||imgg.marketgid.com^
 ||hgad.silvercdn.com^
 ||adnxs.com^
 ||ads.2xpub.com^
-||hits.netgeography.net^$dnsrewrite=REFUSED
+||hits.netgeography.net^$dnsrewrite=REFUSED,important
 ||ad45.com^
 ||adserver.gruprc.ro^
-||51yes.com^$dnsrewrite=NXDOMAIN
-||intellitxt.com^
-||internet-inspection.com^$dnsrewrite=REFUSED
-||ads.pacific.net.sg^$dnsrewrite=REFUSED
-||ww150.smartadserver.com^$dnsrewrite=NXDOMAIN
-||smartadserver.com^$dnsrewrite=NXDOMAIN
+||51yes.com^$dnsrewrite=NXDOMAIN,important
+||intellitxt.com^$important
+||internet-inspection.com^$dnsrewrite=REFUSED,important
+||ads.pacific.net.sg^$dnsrewrite=REFUSED,important
+||ww150.smartadserver.com^$dnsrewrite=NXDOMAIN,important
+||smartadserver.com^$dnsrewrite=NXDOMAIN,important
 ——
 ||lkqd.net^
 ||lnkxfer8.com^
-||looktest.win^$dnsrewrite=NXDOMAIN
+||looktest.win^$dnsrewrite=NXDOMAIN,important
 ||lzxrz.net^
 ||mb103.com^
 ||mediaforce.com^
 ||mediawhirl.com^$important
 ||medio.com^
-||metabesttours.com^$dnsrewrite=NXDOMAIN
+||metabesttours.com^$dnsrewrite=NXDOMAIN,important
 ||metricskey.net^
 ||qimz.com^
-||wwclickroot.club^$dnsrewrite=NXDOMAIN
+||wwclickroot.club^$dnsrewrite=NXDOMAIN,important
 ||tneduf.com^
 ||ybcrwm.com^
 ||tsyndicate.com^
-||gothailand.xyz^$dnsrewrite=NXDOMAIN
+||gothailand.xyz^$dnsrewrite=NXDOMAIN,important
 ||exosrv.com^$important
 ||qywfe.com^
 !
@@ -607,10 +606,15 @@
 ||yomeno.xyz^$important
 ||vstserv.com^$important
 !
-||sentry.ozon.ru^
+||sentry.ozon.ru^$important
 ! ||browser.sentry-cdn.com^ (soon..)
 ||event-stream-api.magnit.ru^$important
 ||sentry-mobile.prod.ya.magnit.ru^$important
+||sentry.lenta.tech^$important
+||socium.in^$important
+||console.userx.pro^
+||*-stream.lenta.tech^
+||sentry.tibibox.com^$important
 !
 !
 !
@@ -672,7 +676,7 @@
 ||widget-sweettv.kwizbot.io^
 !
 !
-||checkip.amazonaws.col^
+||checkip.amazonaws.*^
 !
 !
 ||ikorrpa^
@@ -704,8 +708,8 @@
 ||oleads.com^$dnsrewrite=REFUSED,important
 ||sitesuggestion.opera-api*.com^$dnsrewrite=REFUSED,important
 ||oscore.operacdn.com^$important
-||ws-oscore.opera-api*.com^$important
-||ft-oscore.opera-api*.com^$important
+! ws-oscore.opera-api*.com^$important
+||*-oscore.opera-api*.com^$important
 ||oscore.opera-api*.com^$important
 ||pns-sdk.opera-api*.com^$dnsrewrite=REFUSED,important
 ||ofa-*-sub.osp.opera.software^$dnsrewrite=REFUSED,important
@@ -756,7 +760,7 @@
 @@||vgtrk.cdnvideo.ru^
 @@||icecast.vgtrk.cdnvideo.ru^
 @@||player.smotrim.ru^
-@@||s.youtube.com^$important
+@@||s.youtube.com^
 @@||time.windows.com^
 @@||email-link.adtidy.org^
 !

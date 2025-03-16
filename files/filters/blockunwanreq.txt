@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.3.4-R
+! Version: 3.3.5-R
 ! TimeUpdated: 2025-03-16T10:11:49+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
@@ -303,7 +303,7 @@
 ||static.beeline.ru/upload/images/*QR*.png^$image,domain=beeline.ru
 ||beeline.gestalt.email^$domain=beeline.ru,important
 ||lenta.com/api-gateway/v*/banners/adhweb^$xhr,domain=lenta.com,important
-! fp.kaspersky-labs.com^$third-party (23.01.25: сомнения, временно отключён)
+||fp.kaspersky-labs.com^$domain=lenta.com,app=com.icemobile.lenta.prod
 ||otel-collector.lenta.tech/v*/traces^$xhr,domain=lenta.com,important
 ||cdn*.helpdeskeddy.com//js/modules/chat_widget/hde.js^$script
 ||sitecdn.api.lenta.com/assets-ng/footer/lenta-app-qr.svg^$image,domain=lenta.com
@@ -429,7 +429,7 @@
 ||api.modrinth.com/analytics/$xhr,domain=modrinth.com,important
 ||img.ru-minecraft.ru/logokl2.png^$image,domain=ru-minecraft.ru
 /wp-content/plugins/thirstyaffiliates-pro/js/app/tap-gct.js$script
-/js/share*.js^$script,domain=~teraboxcdn.com|~terabox.com,important
+/js/share*.js^$script,domain=~teraboxcdn.com|~terabox.com|~terabox*,important
 ||cubixworld.net/api/freepromo^$xhr,domain=cubixworld.net
 ||cubixworld.net/scripts/ga.js^$script,domain=cubixworld.net,important
 ||vk.com/widget_comments.php$important,xhr,domain=~vk.com
@@ -791,7 +791,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||easeus.com/default/js/ad_download.js^$script,domain=easeus.com|easeus.*.com,important
 ||mail.easeus.com/common-api/share/count^$xhr,domain=easeus.com|easeus.*.com
 ||easeus.com/default/js/sensorsdata/abtest.min.js^$script,domain=easeus.com|easeus.*.com
-||easeus.recovery-soft.com/sa$ping,domain=easeus.com|easeus.*.com
+||easeus.*.com/sa$ping,domain=easeus.com|easeus.*.com
 ||easeus.com/default/js/globle.js^$script,domain=easeus.com|easeus.*.com,important
 ||easeus.com/default/js/other.js^$script,domain=easeus.com|easeus.*.com,important
 /ezais/analytics$xhr,important
@@ -896,42 +896,42 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 /files/tgparser/*.html$subdocument,domain=armeniasputnik.am|sputnikankhazia.info|sputnik-abkhazia.ru|sputnik-georgia.com|sputnik-georgia.ru|sputnik-news.ee|sputnik-ossetia.com|sputnik-ossetia.com|sputnik-tj.com|sputnik.az|sputnik.by|sputnik.kg|sputnik.kz|sputnik.md|sputniknews-uz.com|sputniknews.cn|sputniknews.com|sputniknews.gr
 ||img.sputnik.*/min/js/libs/banners/adfx.loader.bind.js$script,domain=armeniasputnik.am|sputnikankhazia.info|sputnik-abkhazia.ru|sputnik-georgia.com|sputnik-georgia.ru|sputnik-news.ee|sputnik-ossetia.com|sputnik-ossetia.com|sputnik-tj.com|sputnik.az|sputnik.by|sputnik.kg|sputnik.kz|sputnik.md|sputniknews-uz.com|sputniknews.cn|sputniknews.com|sputniknews.gr
 !
-||adad.ir^
-||dgad.ir^
-||cs*.trafmag.com^
-||rarenol.biz
-||kudato.link^
+||adad.ir^$important
+||dgad.ir^$important
+||cs*.trafmag.com^$important
+||rarenol.biz^$important
+||kudato.link^$important
 ||hgads.com^
 ||imgg.marketgid.com^
-||hgad.silvercdn.com^
+||hgad.silvercdn.com^$important
 ||adnxs.com^
 ||ads.2xpub.com^
-||hits.netgeography.net^
+||hits.netgeography.net^$important
 ||ad45.com^
 ||adserver.gruprc.ro^
-||51yes.com^
-||intellitxt.com^
-||internet-inspection.com^
-||ads.pacific.net.sg^
-||ww150.smartadserver.com^
-||smartadserver.com^
+||51yes.com^$important
+||intellitxt.com^$important
+||internet-inspection.com^$important
+||ads.pacific.net.sg^$important
+||ww150.smartadserver.com^$important
+||smartadserver.com^$important
 ——
 ||lkqd.net^
 ||lnkxfer8.com^
-||looktest.win^
+||looktest.win^$important
 ||lzxrz.net^
 ||mb103.com^
 ||mediaforce.com^
 ||mediawhirl.com^$important
 ||medio.com^
-||metabesttours.com^
+||metabesttours.com^$important
 ||metricskey.net^
 ||qimz.com^
-||wwclickroot.club^
+||wwclickroot.club^$important
 ||tneduf.com^
 ||ybcrwm.com^
 ||tsyndicate.com^
-||gothailand.xyz^
+||gothailand.xyz^$important
 ||exosrv.com^$important
 ||qywfe.com^
 !
@@ -948,13 +948,17 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||yomeno.xyz^$important
 ||vstserv.com^$important
 !
-||sentry.ozon.ru^
+||sentry.ozon.ru^$important
 ! ||browser.sentry-cdn.com^ (soon..)
 ||xn--b1ajefikec6a.online/wp-content/uploads/2025/03/pari_freebet.png^$image,domain=xn--b1ajefikec6a.online
 ||xn--b1ajefikec6a.online/wp-content/uploads/2025/03/bannerparo.jpg^$image,domain=xn--b1ajefikec6a.online
 ||event-stream-api.magnit.ru^$important
 ||sentry-mobile.prod.ya.magnit.ru^$important
-||savefrom.net/goodbye.php
+||socium.in^$important
+||sentry.lenta.tech^$important
+||console.userx.pro^
+||*-stream.lenta.tech^
+||sentry.tibibox.com^$app=com.dubox.drive,domain=terabox.*,important
 !
 !
 !
@@ -977,11 +981,11 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 !
 ! Blocking hidden html component of Yandex analytics.
 ! Блокировка скрытого html компонента аналитики Яндекса.
-||*4pda.to/s/*.html^$domain=4pda.to
+||*4pda.to/s/*.html^$domain=4pda.to,important
 !
 ! Blocking the script responsible for advertising (despite other filters blocking URLs of advertisements).
 ! Блокировка скрипта, отвечающего за рекламу (несмотря на блокировку URL адресов рекламы другими фильтрами).
-||*4pda.to/s/j7793LgWtPTV.js*^$script,domain=4pda.to
+||*4pda.to/s/j7793LgWtPTV.js$script,domain=4pda.to,important
 
 !
 ! Blocking hidden images in one pixel (1 x 1).
@@ -1030,18 +1034,18 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ! Blocking ads, analytics and other “garbage”.
 ! Блокировка рекламы, аналитики и прочего «мусора».
 !
-||megamarket.ru/api/*/v*/analyticsDataService/$xhr
-! megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr
+||megamarket.ru/api/*/v*/analyticsDataService/$xhr,domain=megamarket.ru,important
+! megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr,domain=megamarket.ru,important
 ! megamarket.ru/api/fl/idw-smm^$xhr (новое правило, строка 588)
-||api.megamarket.tech/api/colibri/events/$xhr,important
-||megamarket.ru/api/*/v*/promoContentService/$xhr
-||api.megamarket.tech/api/events/config$xhr,important
+||api.megamarket.tech/api/colibri/events/$xhr,domain=megamarket.ru,important
+||megamarket.ru/api/*/v*/promoContentService/$xhr,domain=megamarket.ru,important
+||api.megamarket.tech/api/events/config$xhr,domain=megamarket.ru,important
 !
 ! Rule for blocking banner ad images (new design) (PC version).
 ! Правило блокировки рекламных баннеров (новый дизайн) (ПК версия).
-||main-cdn.sbermegamarket.ru/upload/mnt/*.jpg^$image
+||main-cdn.sbermegamarket.ru/upload/mnt/*.jpg^$image,domain=megamarket.ru
 !
-||megamarket.ru/static/dist/images/cookies.*.webp^$image
+||megamarket.ru/static/dist/images/cookies.*.webp^$image,domain=megamarket.ru,important
 !
 ! ===
 !
@@ -1057,7 +1061,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||finance.ozon.ru/api/v*/loyalty_promotions_getBanners^$xhr,domain=finance.ozon.ru
 ||finance.ozon.ru/api/v*/loyalty_stars_getPromotionStatus^$xhr,domain=finance.ozon.ru
 ||cdn*.ozone.ru/s*/ob-frontend/prod/release/all/static/assets/_app/immutable/assets/new-ozon-app-qr.*.svg^$image,domain=finance.ozon.ru
-||finance.ozon.ru/api/v*/performance^$xhr,ping,domain=finance.ozon.ru
+||finance.ozon.ru/api/v*/performance^$xhr,ping,domain=finance.ozon.ru,important
 ||finance.ozon.ru/api/v*/loyalty_promotions_getCurtain^$xhr,domain=finance.ozon.ru
 !
 ! От блокировки картинки с QR кодом для скачивания приложения Ozon Банка, текст справа немного съехал налево 0_0.
@@ -1099,17 +1103,17 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ! Присутствуют правила блокировки рекламы на главной странице, а также аналитики.
 !
 ||points.wb.ru/points-users-api/api/v*/*/promotion/available^$xhr,domain=wildberries.ru
-||static*.wbbasket.*/vol*/j/performanceAnalytics.*.js^$script,domain=wildberries.ru
-||wildberries.ru/webapi/stats/$xhr,domain=wildberries.ru
-||wildberries.ru/webapi/logging/$xhr,domain=wildberries.ru
+||static*.wbbasket.*/vol*/j/performanceAnalytics.*.js^$script,domain=wildberries.ru,important
+||wildberries.ru/webapi/stats/$xhr,domain=wildberries.ru,important
+||wildberries.ru/webapi/logging/$xhr,domain=wildberries.ru,important
 ||*basket*.wbbasket.ru/vol*/crm-bnrs/adsf/*.webp^$image,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/data/promotion-creatives.json.hash^$xhr,domain=wildberries.ru
 ! *basket*.wbbasket.ru/vol*/data/promotion-creatives.json^$script,domain=wildberries.ru
-||static.wbstatic.net/j/performanceAnalytics.*.js^$script,domain=wildberries.ru
+||static.wbstatic.net/j/performanceAnalytics.*.js^$script,domain=wildberries.ru,important
 ||*basket*.wbbasket.ru/vol*/crm-bnrs/bners*/*.webp^$image,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/data/banners-main-*-*.json^$script,xhr,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/site/*/*/*/*recommendationsList*.js^$script,xhr,domain=wildberries.ru
-||*basket*.wbbasket.ru/vol*/site/t/*/cookies.*.json^$xhr,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/site/t/*/cookies.*.json^$xhr,domain=wildberries.ru,important
 ||a.wb.ru^$important
 ||wbx-logs.wildberries.ru^$important
 !
@@ -1131,7 +1135,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ! - Вперемешку с Глобальной и Российской версией (Interspersed with the Global and Russian versions). -
 ||banners-website.wildberries.ru/public/v*/banners*^$xhr,domain=wildberries.ru|global.wildberries.ru
 ! a.wb.ru/e/*^$ping,domain=wildberries.ru|global.wildberries.ru
-||*/i/v*/apps/qr*.svg^$image,domain=wildberries.ru|global.wildberries.ru
+/i/v*/apps/qr*.svg^$image,domain=wildberries.ru|global.wildberries.ru
 ! -
 !
 @@||*basket*.wbbasket.ru/vol*/site/j/spa/customTags/banners.*.js^$domain=wildberries.ru
@@ -1209,16 +1213,16 @@ ozon.ru###layoutPage > div.b6:first-child > div.d0m_9 > div > div.container.c:nt
 ! Blocking analytics and other “garbage”.
 ! Блокировка аналитики и прочего «мусора».
 !
-||*-irec.r-*.com/collect^$xhr,domain=irecommend.ru
-||irecommend.ru/ss_t/collect^$xhr,domain=irecommend.ru
+||*-irec.r-*.com/collect^$xhr,domain=irecommend.ru,important
+||irecommend.ru/ss_t/collect^$xhr,domain=irecommend.ru,important
 !
 ! Блокировка скрипта, отвечающего за рекламу (несмотря на блокировку URL адресов рекламы другими фильтрами).
-||irecommend.ru/injector/reklamko.js^$script,domain=irecommend.ru
+||irecommend.ru/injector/reklamko.js^$script,domain=irecommend.ru,important
 !
 ! Блокировка скрипта, отвечающего за аналитику Яндекс Метрики (несмотря на блокировку URL адресов другими фильтрами).
-||irecommend.ru/injector/metrika-config.js^$script,domain=irecommend.ru
+||irecommend.ru/injector/metrika-config.js^$script,domain=irecommend.ru,important
 !
-||irecommend.ru/injector/gpu.js^$script,domain=irecommend.ru
+||irecommend.ru/injector/gpu.js^$script,domain=irecommend.ru,important
 !
 ! ===
 !
@@ -1230,7 +1234,7 @@ ozon.ru###layoutPage > div.b6:first-child > div.d0m_9 > div > div.container.c:nt
 ! Но одна есть прям на главной странице - реклама Альфа банка, которая находится прямо в блоке Промоакции.. 
 ||*otzovik.com/services/20*/*/*.*^$image,domain=otzovik.com
 !
-||yabs.yandex.ru^$domain=otzovik.com
+||yabs.yandex.ru^$domain=otzovik.com,important
 !
 ! - Cosmetic rules -
 ! - Косметические правила -
@@ -1278,27 +1282,27 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 ! == "Superfluous garbage" from the website (personal cabinet) of T-Bank (ex. Tinkoff). ==
 ! == «Лишний мусор» с сайта (личного кабинета) Т-Банка (ex. Тинькофф). + сервисов самого банка и журнала Т-Ж (journal .tinkoff .ru, new address (from 02.25) t-j .ru) ==
 !
-.ru/api/front/$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
-.ru/gateway/v*/event$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
-! tbank.ru/api/front/supreme-beer/$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
-.ru/api/v*/log^$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
-.ru/resources?name=analytics_config$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
-/tracking/mappings/test/active-mapping.json^$script,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
-.ru/api/cfg/web-gateway/getResponse^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
-||cfg.*.ru/api-gateway/v*/getToggles^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
-.ru/twa/hosted-libs/top-mail/v*/code.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru
-.ru/twa/hosted-libs/target-ads/v*/targetads-sdk-*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru
-.ru/twa/ad-hoc/pixel-iframe/index.html^$domain=tbank.ru|tinkoff.ru|t-j.ru
-.ru/twa/hosted-libs/vk/v*/openapi.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru
-||cdn.*.ru/eventea/v*/eventea.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
-/hedge/v*/yandex-metrika*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru
-||cdn.*.ru/eventea/v*/pwa.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
-||cdn.*.ru/eventea/v*/tj.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
-/hedge/v*/vk-counter*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru
-/hedge/v*/mercury-tracking-event.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru
-||cdn.*.ru/twa/ttm/tinkoff-pwa/*/*/index.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru
-||acdn.*.ru/eventea/bundle/eventea.bundle.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru
-||cdn.*.ru/eventea/v*/tjournal.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
+.ru/api/front/$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/gateway/v*/event$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+! tbank.ru/api/front/supreme-beer/$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/api/v*/log^$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/resources?name=analytics_config$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+/tracking/mappings/test/active-mapping.json^$script,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/api/cfg/web-gateway/getResponse^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+||cfg.*.ru/api-gateway/v*/getToggles^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/twa/hosted-libs/top-mail/v*/code.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/twa/hosted-libs/target-ads/v*/targetads-sdk-*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/twa/ad-hoc/pixel-iframe/index.html^$domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/twa/hosted-libs/vk/v*/openapi.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+||cdn.*.ru/eventea/v*/eventea.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+/hedge/v*/yandex-metrika*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+||cdn.*.ru/eventea/v*/pwa.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+||cdn.*.ru/eventea/v*/tj.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+/hedge/v*/vk-counter*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+/hedge/v*/mercury-tracking-event.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+||cdn.*.ru/twa/ttm/tinkoff-pwa/*/*/index.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+||acdn.*.ru/eventea/*/eventea*.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+||cdn.*.ru/eventea/v*/tjournal.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 !
 ! ===
 !
@@ -1323,9 +1327,9 @@ detmir.ru##div[data-testid="advContainer"]
 !
 ! == Сайт провайдера Дом.ру (dom .ru) ==
 !
-||dom.ru/static/js/calltouch.js^$script,domain=dom.ru
-||dom.ru/static/js/googleTagManager.js^$script,domain=dom.ru
-||dom.ru/static/js/mailRuCounter.js^$script,domain=dom.ru
+||dom.ru/static/js/calltouch.js^$script,domain=dom.ru,important
+||dom.ru/static/js/googleTagManager.js^$script,domain=dom.ru,important
+||dom.ru/static/js/mailRuCounter.js^$script,domain=dom.ru,important
 ||api-content.web-api.dom.ru/v*/promo-line^$xhr,domain=dom.ru
 !
 ! - Косметические правила -
@@ -1405,9 +1409,9 @@ beeline.ru##div[class^="dRwBs"]
 dellin.ru##div[class^="Notifications__PopupRoot-sc-ry41v1-0 dDPidn"]
 !
 ! Реклама подписки онлайн-кинотеатра Кион в подвале сайта МТС (раздел про МТС ТВ (сайт оператора связи и провайдера МТС (mtsru .ru)))
-mtsru.ru##div[id="b20950"]
+mtsru.ru##div[id^="b20950"]
 ! Реклама телеграм канала в подвале сайта МТС (раздел про МТС ТВ (сайт оператора связи и провайдера МТС (mtsru .ru)))
-mtsru.ru##div[id="i7050"]
+mtsru.ru##div[id^="i7050"]
 !
 ! Реклама телеграм канала (новостной сайт iguides .ru)
 iguides.ru##.i-box-cta_tg
@@ -1425,7 +1429,7 @@ xn----7sbaj2agca3agfevjs7cwg.xn--p1ai##div[class^="cookie__info"]
 !
 !
 ! Подписка на email рассылку (сайт evro-sport .ru)
-evro-sport.ru##div[class="subscribe"]
+evro-sport.ru##div[class^="subscribe"]
 !
 ! -
 ! Сайт интернет-магазина Холодильник.ру (holodilnik .ru)
@@ -1437,13 +1441,13 @@ holodilnik.ru##div[class^="promo-box-container container"]
 holodilnik.ru##div[class^="notify-layer notify-layer--dark notify-layer--cookie"]
 ! -
 !
-sports-tech.ru##div[class="subscribe_wrap info contacts_block_footer"]
-sportmoda.ru##div[class="subscribe_button"]
-intex.ru##div[class="menu__field_news"]
+sports-tech.ru##div[class^="subscribe_wrap info contacts_block_footer"]
+sportmoda.ru##div[class^="subscribe_button"]
+intex.ru##div[class^="menu__field_news"]
 ortix.ru##aside.ortix-info.ortix-subscribe__container:nth-child(5)
 !
 ! Рекламный баннер сверху сайта (сайт интернет-магазина Технопарк)
-technopark.ru##div[class="header-topper app-header__topper"]
+technopark.ru##div[class^="header-topper app-header__topper"]
 !
 !
 jet.bank.uz###post-body-el > div.post-bot.tw-max-w-\[44rem\].tw-mx-auto:nth-child(4) > div.tw-mb-3.tw-flex.tw-flex-col.xl\:tw-flex-row.lg\:tw-flex-row.tw-justify-start.lg\:tw-justify-between.xl\:tw-justify-between.tw-items-start.lg\:tw-items-center.xl\:tw-items-center:nth-child(2) > div.tw-mb-5.xl\:tw-mb-0.lg\:tw-mb-0:first-child
@@ -1451,13 +1455,13 @@ vsluh.ru##div.content:nth-child(9) > div.container:nth-child(3) > div.content-de
 !
 !
 ! Предупреждение об использовании cookie
-prudlesnoy.ru##div[class="t657 t657_rectangle"]
+prudlesnoy.ru##div[class^="t657 t657_rectangle"]
 !
 ! Блок о подписке на email рассылку в подвале сайта
-sibinformburo.ru##div[class="col-lg-4 col-md-4 col-sm-6"]
+sibinformburo.ru##div[class^="col-lg-4 col-md-4 col-sm-6"]
 !
 ! Предупреждение об использовании cookie (сайт логистической (транспортной) компании ДПД (DPD) (dpd .ru))
-dpd.ru##div[class="root_UnCiX"]
+dpd.ru##div[class^="root_UnCiX"]
 !
 !
 newprospect.ru##div[class^="notification"]
@@ -1582,8 +1586,8 @@ demix.ru##div[class^="product-bnpl product-page__bnpl"]
 trial-sport.ru##div[style^="border-top: 1px solid #d7d7d7; margin-top: 37px; padding-top: 37px; position: relative; z-index: 1;"]
 trial-sport.ru##div[class^="col_right"]
 desport.ru##div[class^="PopupAppDesktop_PopupAppDesktop__v6Jyd PopupAppDesktop_PopupAppDesktopExpanded__qZHxe"]
-terabox.com##div.page:first-child > div.main-page > div.operate-popup-box:last-child
-terabox.com##div.page:first-child > div.main-page > div.operate-top-notice:first-child
+terabox.*##div.page:first-child > div.main-page > div.operate-popup-box:last-child
+terabox.*##div.page:first-child > div.main-page > div.operate-top-notice:first-child
 spravportal.ru##div[style^="margin-top:8px;margin-bottom:8px"]
 spravportal.ru##div[class^="alert alert-info"]
 spravportal.ru##a[class^="btn btn-ar btn-info"]
@@ -1770,7 +1774,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||widget-sweettv.kwizbot.io^
 !
 !
-||checkip.amazonaws.col^
+||checkip.amazonaws.*^
 !
 ||n3k1t4_1996^
 ||ikorrpa^
@@ -1869,8 +1873,8 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||oleads.com^$removeparam,important
 ||sitesuggestion.opera-api*.com^$important
 ||oscore.operacdn.com^$important
-||ft-oscore.opera-api*.com^$important
-||ws-oscore.opera-api*.com^$websocket,important
+||*-oscore.opera-api*.com^$important
+! ws-oscore.opera-api*.com^$websocket,important
 ||oscore.opera-api*.com^important
 ||pns-sdk.opera-api*.com^$removeparam,important
 ||ofa-*-sub.osp.opera.software^$removeparam,important
@@ -1891,6 +1895,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||*analytics-toolbar*^$important
 ||*analytics.faregy.com^$important
 ||analytics.1clickvpn.com^
+||savefrom.net/goodbye.php
 ! =
 !
 !
@@ -1976,12 +1981,11 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||avatars.mds.yandex.net/get-direct/$domain=~e.mail.ru
 ||certificate.mobile.yandex.net/api/v*/$important
 ||startup.mob.*.yandex.net^$important
-! uxfeedback-cdn.s*.yandex.net^
 ||taxi-promotions.s*.yandex.net^
 ||click.sender.yandex.ru^
 ||mc.webvisor.org^$important
 ||yandetruckingservices.com^
-||yandexmetric*.com^
+||yandexmetri*.com^
 ||yastatic.net/pcode/adfox/$script,important
 ||yastatic.net/share*/$script,xhr,important
 ||abt.*.yandex.net^$important
@@ -2039,7 +2043,7 @@ yandex.ru##div[class^="VanillaReact AliceFabContainer"]
 ||gvt1.com^
 ||mail-ads.google.com^$important
 ||imasdk.googleapis.com^$important
-||ogads*.googleapis.com^
+||ogads*.googleapis.com^$important
 ||androidtvgtvmfe*.googleapis.com^
 ||playmoviesdfe*.googleapis.com^
 ||calendarpushnotification*.googleapis.com^
@@ -2164,7 +2168,7 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||mega.nz^$ghide
 @@||hd.kinopoisk.ru^$important,document
 @@||kinopoisk.ru/install?
-@@||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/*Sticky*Adv*.*^$script,stylesheet,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+@@||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/*Sticky*Adv*.*^$script,css,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 @@||support.avito.ru^
 mi.com#@$#body { overflow: visible !important; }
 @@||stats.1clickvpn.com^
@@ -2177,7 +2181,7 @@ mi.com#@$#body { overflow: visible !important; }
 @@||vgtrk.cdnvideo.ru^
 @@||icecast.vgtrk.cdnvideo.ru^
 @@||player.smotrim.ru^
-@@||s.youtube.com^$important
+@@||s.youtube.com^
 @@||time.windows.com^
 @@||email-link.adtidy.org^
 !
