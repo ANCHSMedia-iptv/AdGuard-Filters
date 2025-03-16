@@ -883,7 +883,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||college.72to.ru/*.gif^$image,domain=college.72to.ru
 ||cdn.cookielaw.org^
 ||*.rt.avito.ru^
-||coop-land.ru/templates/CoopLand2016/js/adriver.*.js^$script,domain=coop-land.ru
+||coop-land.ru/templates/CoopLand2016/js/adriver.*.js^$script,domain=coop-land.ru,important
 ! /adriver$script,xhr
 ! ||*adc3-launch*^$important (soon..)
 ||applvn.com^$important
@@ -954,6 +954,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||xn--b1ajefikec6a.online/wp-content/uploads/2025/03/bannerparo.jpg^$image,domain=xn--b1ajefikec6a.online
 ||event-stream-api.magnit.ru^$important
 ||sentry-mobile.prod.ya.magnit.ru^$important
+||savefrom.net/goodbye.php
 !
 !
 !
