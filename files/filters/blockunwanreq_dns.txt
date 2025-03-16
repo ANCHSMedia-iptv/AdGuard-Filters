@@ -1,16 +1,16 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.2.7-R
+! Version: 3.2.8-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-15T17:21:31+00:00
-! Expires: 48 hours (updated almost every day)
+! TimeUpdated: 2025-03-16T10:11:48+00:00
+! Expires: 72 hours (updated almost every day)
 !
 !
 !
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 15.03.2025 17:21 UTC
+! Last Modified: 16.03.2025 10:11 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -609,6 +609,8 @@
 !
 ||sentry.ozon.ru^
 ! ||browser.sentry-cdn.com^ (soon..)
+||event-stream-api.magnit.ru^$important
+||sentry-mobile.prod.ya.magnit.ru^$important
 !
 !
 !

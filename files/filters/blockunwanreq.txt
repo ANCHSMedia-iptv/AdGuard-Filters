@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.3.3-R
-! TimeUpdated: 2025-03-15T17:21:30+00:00
-! Expires: 48 hours (updated almost every day)
+! Version: 3.3.4-R
+! TimeUpdated: 2025-03-16T10:11:49+00:00
+! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
 !
@@ -952,6 +952,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ! ||browser.sentry-cdn.com^ (soon..)
 ||xn--b1ajefikec6a.online/wp-content/uploads/2025/03/pari_freebet.png^$image,domain=xn--b1ajefikec6a.online
 ||xn--b1ajefikec6a.online/wp-content/uploads/2025/03/bannerparo.jpg^$image,domain=xn--b1ajefikec6a.online
+||event-stream-api.magnit.ru^$important
+||sentry-mobile.prod.ya.magnit.ru^$important
 !
 !
 !
