@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.2.9-R
+! Version: 3.3.0-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-16T14:38:48+00:00
+! TimeUpdated: 2025-03-17T06:20:30+00:00
 ! Expires: 72 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 16.03.2025 14:38 UTC
+! Last Modified: 17.03.2025 06:20 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -181,6 +181,7 @@
 ||androidtvgtvmfe*.googleapis.com^
 ||playmoviesdfe*.googleapis.com^
 ||calendarpushnotification*.googleapis.com^
+||1e100.net^
 !
 ! ===
 !
@@ -590,21 +591,21 @@
 ||ybcrwm.com^
 ||tsyndicate.com^
 ||gothailand.xyz^$dnsrewrite=NXDOMAIN,important
-||exosrv.com^$important
+||exosrv.com^$important,dnsrewrite=REFUSED
 ||qywfe.com^
 !
-||exoclick.com^$important
-||metricwpsh.com^$important
-||nereserv.com^$important
-||zog.link^$important
-||pix-cdn.org*^$important
-||magsrv.com^$important
-||m3pd.com^$important
-||multstorage.com^$important
-||polotrex.com^$important
-||olopruy.com^$important
-||yomeno.xyz^$important
-||vstserv.com^$important
+||exoclick.com^$important,dnsrewrite=REFUSED
+||metricwpsh.com^$important,dnsrewrite=REFUSED
+||nereserv.com^$important,dnsrewrite=REFUSED
+||zog.link^$important,dnsrewrite=REFUSED
+||pix-cdn.org*^$important,dnsrewrite=REFUSED
+||magsrv.com^$important,dnsrewrite=REFUSED
+||m3pd.com^$important,dnsrewrite=REFUSED
+||multstorage.com^$important,dnsrewrite=REFUSED
+||polotrex.com^$important,dnsrewrite=REFUSED
+||olopruy.com^$important,dnsrewrite=REFUSED
+||yomeno.xyz^$important,dnsrewrite=REFUSED
+||vstserv.com^$important,dnsrewrite=REFUSED
 !
 ||sentry.ozon.ru^$important
 ! ||browser.sentry-cdn.com^ (soon..)
@@ -615,6 +616,8 @@
 ||console.userx.pro^
 ||*-stream.lenta.tech^
 ||sentry.tibibox.com^$important
+||collector.github.com^$important
+||otel-collector.lenta.tech^$important
 !
 !
 !
