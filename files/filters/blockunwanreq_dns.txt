@@ -2,7 +2,7 @@
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Version: 3.3.0-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-17T06:20:30+00:00
+! TimeUpdated: 2025-03-17T11:59:19+00:00
 ! Expires: 72 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 17.03.2025 06:20 UTC
+! Last Modified: 17.03.2025 11:59 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -42,7 +42,7 @@
 ||firebasedynamiclinks*.googleapis.com^
 ! ===
 !
-! -- == Google Crashlytics + Firebase ==
+! -- == Google Crashlytics ==
 !
 ||firebase-settings.crashlytics.*^$important
 ||report*.crahlytics.com^$important
@@ -214,7 +214,7 @@
 ||cellrebel.com^$important
 ||onesignal.com^$important
 ||cdn.viglink.com^
-||connect.facebook.net^$dnsrewrite=REFUSED
+||connect.facebook.net^$dnsrewrite=REFUSED,important
 ||inappstory.ru^$dnsrewrite=REFUSED,important
 ||inappstory.com^$dnsrewrite=REFUSED,important
 ||appsflyersdk.com^$important
@@ -331,7 +331,7 @@
 ||roistat.com^$important
 ||*retailrocket.*^$important
 ||botfaqtor.ru^$important
-||stat.sputnik.ru^$important
+||stat.sputnik.*^$important
 ||sa.hoodmaps.com^$important
 ||analytics.dns-shop.ru^$important
 ||stats.vk-portal.net^$important
@@ -421,7 +421,7 @@
 ||newrotatormarch23.bid^$important
 ||widget.sparrow.ru^$important
 ||sfr7ag.ru^
-||core-colibri-api.samokat.ru^
+||core-colibri-api.samokat.ru^$important
 ||a.wb.ru^$important
 ||wbx-logs.wildberries.ru^$important
 ||aads.com^$important
@@ -455,7 +455,7 @@
 ||apptornado.com^$important
 ||bugly.qq.com^$important
 ||stats.rustore.ru^$important
-||graphgl.kinopoisk.ru^$important
+! graphgl.kinopoisk.ru^$important
 ||clickstream.sberbank.ru^$important
 ||ct.pinterest.com^$important
 ||check.unity.*^$important
@@ -553,7 +553,7 @@
 ||confiant-integrations.global.ssl.fastly.net^
 ||wsd-fingerprint.kontur.ru^$important
 ||provision.app.devapps.ru^$important
-||graphql*^$important
+||graphgl*^$important
 !
 ||adad.ir^$dnsrewrite=REFUSED,important
 ||dgad.ir^$dnsrewrite=REFUSED,important
@@ -618,6 +618,7 @@
 ||sentry.tibibox.com^$important
 ||collector.github.com^$important
 ||otel-collector.lenta.tech^$important
+||performance.radar.cloudflare.com^$important
 !
 !
 !
