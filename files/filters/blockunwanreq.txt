@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.3.8-R
-! TimeUpdated: 2025-03-18T08:10:10+00:00
+! Version: 3.3.9-R
+! TimeUpdated: 2025-03-18T08:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -303,7 +303,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||static.beeline.ru/upload/images/*QR*.png^$image,domain=beeline.ru
 ||beeline.gestalt.email^$domain=beeline.ru,important
 ||lenta.com/api-gateway/v*/banners/adhweb^$xhr,domain=lenta.com,important
-||fp.kaspersky-labs.com^$domain=lenta.com,app=com.icemobile.lenta.prod
+||kaspersky-labs.com^$domain=lenta.com
 ||otel-collector.lenta.tech^$domain=lenta.com,important
 ||cdn*.helpdeskeddy.com//js/modules/chat_widget/hde.js^$script
 ||sitecdn.api.lenta.com/assets-ng/footer/lenta-app-qr.svg^$image,domain=lenta.com
@@ -958,11 +958,15 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||sentry.lenta.tech^$important
 ||console.userx.pro^
 ||*-stream.lenta.tech^
-||sentry.tibibox.com^$app=com.dubox.drive,domain=terabox.*,important
+||sentry.tibibox.com^$domain=terabox.*,important
 .ru/assets/AboutTelegramBot-*.js^$script,domain=vc.ru|dtf.ru
 ||mck72.ru/wp-content/plugins/tp-event/assets/autoload/site/js/events.js^$script,domain=mck72.ru
 ||sentry-tech.cdek.ru^$important
 ||s3.eu-central-1.amazonaws.com^$important
+||collector-prod.perek.epoch8.ru^$important
+||fda.middle-api.magnit.ru^
+||kaspersky-labs.com^$app=com.icemobile.lenta.prod
+||sentry.tibibox.com^$app=com.dubox.drive,important
 !
 !
 !
