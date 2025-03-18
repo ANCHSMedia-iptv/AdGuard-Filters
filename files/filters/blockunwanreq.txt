@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.3.6-R
-! TimeUpdated: 2025-03-17T11:59:19+00:00
+! Version: 3.3.7-R
+! TimeUpdated: 2025-03-18T07:10:10+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -961,6 +961,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||sentry.tibibox.com^$app=com.dubox.drive,domain=terabox.*,important
 .ru/assets/AboutTelegramBot-*.js^$script,domain=vc.ru|dtf.ru
 ||mck72.ru/wp-content/plugins/tp-event/assets/autoload/site/js/events.js^$script,domain=mck72.ru
+||sentry-tech.cdek.ru^$important
+||s3.eu-central-1.amazonaws.com^$important
 !
 !
 !
@@ -2112,6 +2114,11 @@ yandex.ru##div[class^="VanillaReact AliceFabContainer"]
 ||informer.yandex.ru^
 ||pangolin*.sgsnssdk.com^$important
 ||tealiumiq.com^$important
+||minerva.devices.a2z.com^$important
+||device-metrics-*.amazon.com^$important
+||mobiletelemetry.ebay.com^$important
+||applog.uc.cn^$important
+||audid-api.taobao.com^$important
 !
 ! --
 !
