@@ -1892,7 +1892,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ! ofa-b-sub.osp.opera.software^$removeparam,important
 ||xml.opera.com^$important
 ||thumbnails*opera.com^$important
-||af.opera.com^$iimportant
+||af.opera.com^$important
 ||sitecheck.opera.com^$important
 ! =
 !
