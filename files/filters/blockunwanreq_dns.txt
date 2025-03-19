@@ -553,7 +553,7 @@
 ||confiant-integrations.global.ssl.fastly.net^
 ||wsd-fingerprint.kontur.ru^$important
 ||provision.app.devapps.ru^$important
-||graphgl*^$important
+||graphql*^$important
 !
 ||adad.ir^$dnsrewrite=REFUSED,important
 ||dgad.ir^$dnsrewrite=REFUSED,important
