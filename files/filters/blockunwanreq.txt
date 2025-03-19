@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 3.4.0-R
-! TimeUpdated: 2025-03-18T16:30:30+00:00
+! TimeUpdated: 2025-03-19T07:20:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1762,7 +1762,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||gonet-ads.com^$important
 ||telecid.ru^
 ||www.tttturbonet.com^$app=com.dubox.drive
-||*pavo*^$app=com.dubox.drive
+||*pavo*^$important
 ||fancybox.in^
 ||adlooxtracking.ru^$important
 ||rixengine.com^
