@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.4.0-R
-! TimeUpdated: 2025-03-19T07:20:30+00:00
+! Version: 3.4.1-R
+! TimeUpdated: 2025-03-20T08:20:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -830,7 +830,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||applifier.com^$important
 ||live.chartboost.com^$important
 ||my.com^$important
-|||s3.amazonaws.com/appodeal-externallibs/$important
+|||s3.amazonaws.com/appodeal-externallibs/$important # подгрузка рекламных библиотек от Appodeal э
 ||inmobicdn.net^$important
 ||analytics.localytics.com^$important
 ||taboola*fastly.net^
@@ -962,11 +962,23 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 .ru/assets/AboutTelegramBot-*.js^$script,domain=vc.ru|dtf.ru
 ||mck72.ru/wp-content/plugins/tp-event/assets/autoload/site/js/events.js^$script,domain=mck72.ru
 ||sentry-tech.cdek.ru^$important
-||s3.eu-central-1.amazonaws.com^$important
+||s3.eu-central-1.amazonaws.com^$important # отсюда грузятся реклама и аналитика
 ||collector-prod.perek.epoch8.ru^$important
 ||fda.middle-api.magnit.ru^
-||kaspersky-labs.com^$app=com.icemobile.lenta.prod
+||kaspersky-labs.com^$app=com.icemobile.lenta.prod # фиг пойми, для чего приложению подключаться к домену Касперского, в том числе и сайту..
 ||sentry.tibibox.com^$app=com.dubox.drive,important
+/__qrator/qauth.js$script,important
+/__qrator/validate$xhr,important
+||ad-source.pro^$important
+||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/radio_vesti_fm/promoblock.json^$xhr,app=mobi.mpk.vestifm|mobi.mpk.radiorus
+! ://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore # soon...
+! ||/^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore # soon...
+! ://yastatic.net^$app=com.radioapp.mayakradio # soon...
+! ||/^5\.255\.255\.77/^$app=ru.pyaterochka.app.browser # soon...
+||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm # подгрузка рекламы
+||s3.amazonaws.com^$app=com.viber.voip
+||bing.com^$app=com.viber.voip
+||youtube.com^$app=www.metro.com
 !
 !
 !
@@ -2002,7 +2014,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||yastatic.net/s*/home-static/feeds/*/market/*/market-feed.*$script,css,domain=ya.ru
 ||ya.ru/portal/proxy?blocks=Market_cart$xhr,script,domain=ya.ru
 ||ya.ru/portal/feed?feed_geo=*&id=market&page=1&session-unique-id=*&geo=*&platform=*&shown=market$xhr,domain=ya.ru
-||dr.yandex.net/ya360/nel$other,xhr
+||dr.yandex.net/*nel$other,xhr
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
