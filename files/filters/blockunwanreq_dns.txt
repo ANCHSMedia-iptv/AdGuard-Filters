@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.3.5-R
+! Version: 3.3.7-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-20T08:20:30+00:00
+! TimeUpdated: 2025-03-22T10:40:30+00:00
 ! Expires: 72 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 20.03.2025 08:20 UTC
+! Last Modified: 22.03.2025 10:40 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -67,7 +67,7 @@
 ||yandexadexchange.net^$important
 ||webvisor.com^$important
 ||appmetrica.yango.com^$important
-! ||adfstat.yandex.ru^$important
+||adfstat.yandex.ru^$important
 ||push.yandex.ru^$important
 ||http-check-headers.yandex.ru^$important
 ||*extmaps-api.yandex.net^$important
@@ -85,6 +85,7 @@
 ||yandexmetri*.com^
 ||trends.yandex.net^
 ||click.sender.yandex.ru^
+||advertising.yandex.ru^
 !
 !
 ! ===
@@ -259,7 +260,7 @@
 ||btloader.com^$important
 ||adskeeper.co.uk^$important
 ||digitalcaramel.com^$important$important
-||ads-twitter.com^$dnsrewrite=REFUSED,important
+||ads*.twitter.com^$dnsrewrite=REFUSED,important
 ||ms.vk.com^$important
 ||*ad.*.xiaomi.com^$important
 ||d3c8j8snkzfr1n.cloudfront.net^
@@ -281,7 +282,7 @@
 ||adlook.me^$important
 ||betweendigital.com^$important
 ||stracker.rmg.ru^$important
-! *instreamatic.com^
+||instreamatic.com^
 ||cedexis.com^$dnsrewrite=REFUSED,important
 ||improving.duckduckgo.com^$important
 ||*hicloud*^$important
@@ -608,7 +609,7 @@
 ||vstserv.com^$important,dnsrewrite=REFUSED
 !
 ||sentry.ozon.ru^$important
-! ||browser.sentry-cdn.com^ (soon..)
+||browser.sentry-cdn.com^$important
 ||event-stream-api.magnit.ru^$important
 ||sentry-mobile.prod.ya.magnit.ru^$important
 ||sentry.lenta.tech^$important
@@ -630,7 +631,21 @@
 ||confiant-integrations.net^$important
 ||ad-source.pro^$important
 ||b2.mail.ru^$important
-||an.mail.ru^$important'
+||an.mail.ru^$important
+||advertising.yahoo.com^
+||gemini.yahoo.com^
+||log.fc.yahoo.com^
+||business-api.tiktok.com^
+||ads-api.tiktok.com^
+||advertising.apple.com^
+||widgets.pinterest.com^
+||advertising-api-eu.amazon.com^
+||udcm.yahoo.com^
+||ads-sg.tiktok.com^
+||advertising.yahooinc.com^
+||adtech.yahooinc.com^
+||d2wy8f7a9ursnm.cloudfront.net^
+||ymatuhin.ru^
 !
 !
 !
