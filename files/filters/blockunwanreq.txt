@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 3.4.4-R
-! TimeUpdated: 2025-03-24T09:15:30+00:00
+! TimeUpdated: 2025-03-24T09:42:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2229,7 +2229,7 @@ mi.com#@$#body { overflow: visible !important; }
 @@||anketolog.ru/api/front/v*/gql$xhr,domain=anketolog.ru # 17.03.25: сайт нестабильно отображается при блокировке этого запроса, в белом списке.
 @@||obfusgated.com/*/tools/ad-block-test$domain=obfusgated.com,badfilter # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
 @@||obfusgated.com/_next/static/chunks/$script,domain=obfusgated.com,badfilter # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
-@@||radio_vgtrk.hb.ru-msk.vkcs.cloud^
+@@||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/onair.json^$xhr,app=mobi.mpk.vestifm|mobi.mpk.radiorus
 @@||vgtrkregion-reg.cdnvideo.ru^
 @@||connectivitycheck.gstatic.com^
 @@||russianpost.ru^
