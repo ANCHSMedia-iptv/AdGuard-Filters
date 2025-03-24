@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.4.3-R
-! TimeUpdated: 2025-03-24T05:45:30+00:00
+! Version: 3.4.4-R
+! TimeUpdated: 2025-03-24T09:15:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -830,7 +830,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||applifier.com^$important
 ||live.chartboost.com^$important
 ||my.com^$important
-|||s3.amazonaws.com/appodeal-externallibs/$important # подгрузка рекламных библиотек от Appodeal в приложения.
+||s3.amazonaws.com/appodeal-externallibs/$important # подгрузка рекламных библиотек от Appodeal в приложения.
 ||inmobicdn.net^$important
 ||analytics.localytics.com^$important
 ||taboola*fastly.net^
@@ -873,7 +873,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||adz.wattpad.com^$important
 ! ||ad.api.kaffnet.com^$important (soon..)
 ||batmobil.net^$important
-! ||61.145.124.238$network,important (soon..)
+! 61.145.124.238$network,important (soon..)
 ||eqmob.com^$important
 ! ||duapps.com^$important (soon..)
 ! ||smaato.*^$important (soon..)
@@ -970,7 +970,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 /__qrator/qauth.js$script,important
 /__qrator/validate$xhr,important
 ||ad-source.pro^$important
-||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$xhr,app=mobi.mpk.vestifm|mobi.mpk.radiorus # загрузка промоблоков в приложениях Вести ФМ и Радио России.
+||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$xhr,app=mobi.mpk.vestifm|mobi.mpk.radiorus # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
 ! ://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # soon...
 ! /^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # soon...
 ! ://yastatic.net^$app=com.radioapp.mayakradio # soon...
@@ -991,6 +991,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||ads-sg.tiktok.com^
 ||adtech.yahooinc.com^
 ||d2wy8f7a9ursnm.cloudfront.net^
+||autocomplete.diginetica.net^
 !
 !
 !
@@ -2187,8 +2188,7 @@ yandex.ru##div[class^="VanillaReact AliceFabContainer"]
 aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||csp.yandex.net/csp
 @@||pay.yandex.ru/sdk/v*/pay.js^$script,xhr
-@@||uglyemail.com
-@@||trackers.uglymail.com^
+@@||uglyemail.com^
 @@||google.com/*/cleardot.gif$image,important,domain=google.com|mail.google.com
 @@||cdn*.vedomosti.ru/*/assets/Banner-*.*^$script,css,domain=vedomosti.ru
 @@||hcaptcha.com^
@@ -2219,10 +2219,9 @@ mi.com#@$#body { overflow: visible !important; }
 @@||yandex.net^$cookie
 @@||aliexpress.ru^$cookie
 @@||stacks.vk-portal.net^
-@@||clearurls.xyz
+@@||clearurls.xyz^
 @@||api.catcast.tv^
 @@||vgtrk.cdnvideo.ru^
-@@||icecast.vgtrk.cdnvideo.ru^
 @@||player.smotrim.ru^
 @@||s.youtube.com^ # связан с историей просмотров видео на YouTube.
 @@||time.windows.com^
@@ -2230,6 +2229,10 @@ mi.com#@$#body { overflow: visible !important; }
 @@||anketolog.ru/api/front/v*/gql$xhr,domain=anketolog.ru # 17.03.25: сайт нестабильно отображается при блокировке этого запроса, в белом списке.
 @@||obfusgated.com/*/tools/ad-block-test$domain=obfusgated.com,badfilter # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
 @@||obfusgated.com/_next/static/chunks/$script,domain=obfusgated.com,badfilter # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
+@@||radio_vgtrk.hb.ru-msk.vkcs.cloud^
+@@||vgtrkregion-reg.cdnvideo.ru^
+@@||connectivitycheck.gstatic.com^
+@@||russianpost.ru^
 !
 !
 ! -

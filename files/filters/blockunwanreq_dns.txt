@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.3.7-R
+! Version: 3.3.8-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-22T10:40:30+00:00
+! TimeUpdated: 2025-03-24T09:15:30+00:00
 ! Expires: 72 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 22.03.2025 10:40 UTC
+! Last Modified: 24.03.2025 09:15 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -535,7 +535,6 @@
 ||adz.wattpad.com^$important
 ! ||ad.api.kaffnet.com^$dnsrewrite=REFUSED,important (soon..)
 ||batmobil.net^$dnsrewrite=NXDOMAIN,important
-! ||61.145.124.238^$network,important (soon..)
 ||eqmob.com^$important
 ! ||duapps.com^$dnsrewrite=NXDOMAIN,important
 ! ||smaato.*^$dnsrewrite=NXDOMAIN,important (soon..)
@@ -646,6 +645,7 @@
 ||adtech.yahooinc.com^
 ||d2wy8f7a9ursnm.cloudfront.net^
 ||ymatuhin.ru^
+||autocomplete.diginetica.net^
 !
 !
 !
@@ -776,24 +776,26 @@
 @@||captcha-api.yandex.ru^
 @@||googlevideo.com^
 @@||pay.yandex.ru^
-@@||uglyemail.com
-@@||trackers.uglymail.com^
+@@||uglyemail.com^
 @@||hcaptcha.com^
 @@||msftconnecttest.com^
 @@||*-*.*.global.*.sharepoint.com^
 @@||group-ib.com^
-@@||smartcaptcha.yandexcloud.net
+@@||smartcaptcha.yandexcloud.net^
 @@||support.avito.ru
 @@||stats.1clickvpn.com^
 @@||stacks.vk-portal.net^
-@@||clearurls.xyz
+@@||clearurls.xyz^
 @@||api.catcast.tv^
 @@||vgtrk.cdnvideo.ru^
-@@||icecast.vgtrk.cdnvideo.ru^
 @@||player.smotrim.ru^
 @@||s.youtube.com^
 @@||time.windows.com^
 @@||email-link.adtidy.org^
+@@||radio_vgtrk.hb.ru-msk.vkcs.cloud^
+@@||vgtrkregion-reg.cdnvideo.ru^
+@@||connectivitycheck.gstatic.com^
+@@||russianpost.ru^
 !
 ! ===
 !
