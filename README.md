@@ -8,7 +8,7 @@ Filters:
 
 Updated 24.03.2025
 - BUC: 24.03
-- BUC DNS: 22.03
+- BUC DNS: 24.03
 
 Started 22.09.2024
 
