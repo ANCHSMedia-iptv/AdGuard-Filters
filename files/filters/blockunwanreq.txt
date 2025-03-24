@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.4.2-R
-! TimeUpdated: 2025-03-22T10:40:30+00:00
+! Version: 3.4.3-R
+! TimeUpdated: 2025-03-24T05:45:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -971,8 +971,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 /__qrator/validate$xhr,important
 ||ad-source.pro^$important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$xhr,app=mobi.mpk.vestifm|mobi.mpk.radiorus # загрузка промоблоков в приложениях Вести ФМ и Радио России.
-! ://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore # soon...
-! /^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore # soon...
+! ://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # soon...
+! /^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # soon...
 ! ://yastatic.net^$app=com.radioapp.mayakradio # soon...
 ! /^5\.255\.255\.77/^$app=ru.pyaterochka.app.browser # soon...
 ||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm # подгрузка рекламы
@@ -2228,6 +2228,8 @@ mi.com#@$#body { overflow: visible !important; }
 @@||time.windows.com^
 @@||email-link.adtidy.org^
 @@||anketolog.ru/api/front/v*/gql$xhr,domain=anketolog.ru # 17.03.25: сайт нестабильно отображается при блокировке этого запроса, в белом списке.
+@@||obfusgated.com/*/tools/ad-block-test$domain=obfusgated.com,badfilter # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
+@@||obfusgated.com/_next/static/chunks/$script,domain=obfusgated.com,badfilter # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
 !
 !
 ! -
