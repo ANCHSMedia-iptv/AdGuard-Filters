@@ -1910,10 +1910,10 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||*-oscore.opera-api*.com^$important
 ! ws-oscore.opera-api*.com^$websocket,important
 ||oscore.opera-api*.com^important
-||pns-sdk.opera-api*.com^$removeparam,important
-||ofa-*-sub.osp.opera.software^$removeparam,important
-||mcp.opera-api*.com^$removeparam,important
-||mykonf.com^$important,important
+||pns-sdk.opera-api*.com^$important
+||ofa-*-sub.osp.opera.software^$important
+||mcp.opera-api*.com^$important
+||mykonf.com^$important
 ! ofa-b-sub.osp.opera.software^$removeparam,important
 ||xml.opera.com^$important
 ||thumbnails*opera.com^$important
