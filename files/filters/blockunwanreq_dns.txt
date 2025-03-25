@@ -792,7 +792,6 @@
 @@||s.youtube.com^
 @@||time.windows.com^
 @@||email-link.adtidy.org^
-@@||radio_vgtrk.hb.ru-msk.vkcs.cloud^
 @@||vgtrkregion-reg.cdnvideo.ru^
 @@||connectivitycheck.gstatic.com^
 @@||russianpost.ru^
