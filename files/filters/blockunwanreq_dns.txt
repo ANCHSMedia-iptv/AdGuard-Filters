@@ -796,6 +796,7 @@
 @@||vgtrkregion-reg.cdnvideo.ru^
 @@||connectivitycheck.gstatic.com^
 @@||russianpost.ru^
+@@||icecast-vgtrk.cdnvideo.ru^
 !
 ! ===
 !
