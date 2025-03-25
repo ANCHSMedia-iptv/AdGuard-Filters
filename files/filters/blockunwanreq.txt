@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 3.4.4-R
-! TimeUpdated: 2025-03-24T09:42:30+00:00
+! TimeUpdated: 2025-03-25T07:42:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -970,7 +970,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 /__qrator/qauth.js$script,important
 /__qrator/validate$xhr,important
 ||ad-source.pro^$important
-||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$xhr,app=mobi.mpk.vestifm|mobi.mpk.radiorus # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
+||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$xhr,app=mobi.mpk.vestifm|mobi.mpk.radiorus,important # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
 ! ://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # soon...
 ! /^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # soon...
 ! ://yastatic.net^$app=com.radioapp.mayakradio # soon...
