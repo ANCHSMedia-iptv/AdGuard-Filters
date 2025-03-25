@@ -970,7 +970,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 /__qrator/qauth.js$script,important
 /__qrator/validate$xhr,important
 ||ad-source.pro^$important
-||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$xhr,app=mobi.mpk.vestifm|mobi.mpk.radiorus,important # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
+||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json$xhr,app=mobi.mpk.vestifm|mobi.mpk.radiorus,important  # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
 ! ://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # soon...
 ! /^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # soon...
 ! ://yastatic.net^$app=com.radioapp.mayakradio # soon...
@@ -2227,8 +2227,8 @@ mi.com#@$#body { overflow: visible !important; }
 @@||time.windows.com^
 @@||email-link.adtidy.org^
 @@||anketolog.ru/api/front/v*/gql$xhr,domain=anketolog.ru # 17.03.25: сайт нестабильно отображается при блокировке этого запроса, в белом списке.
-@@||obfusgated.com/*/tools/ad-block-test$domain=obfusgated.com,badfilter # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
-@@||obfusgated.com/_next/static/chunks/$script,domain=obfusgated.com,badfilter # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
+@@||obfusgated.com/*/tools/ad-block-test$domain=obfusgated.com # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
+@@||obfusgated.com/_next/static/chunks/$script,domain=obfusgated.com # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
 @@||vgtrkregion-reg.cdnvideo.ru^
 @@||connectivitycheck.gstatic.com^
 @@||russianpost.ru^
