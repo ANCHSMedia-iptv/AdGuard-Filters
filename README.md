@@ -6,9 +6,9 @@ Filters:
 - Removing unwanted parameters [Support temporarily stopped];
 - Block unwanted connections (Default + DNS + Experimental) [Supported].
 
-Updated 24.03.2025
-- BUC: 24.03
-- BUC DNS: 24.03
+Updated 27.03.2025
+- BUC: 27.03
+- BUC DNS: 27.03
 
 Started 22.09.2024
 
