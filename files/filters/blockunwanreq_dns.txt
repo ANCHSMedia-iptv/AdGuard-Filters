@@ -2,7 +2,7 @@
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Version: 3.3.8-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-25T08:3е:30+00:00
+! TimeUpdated: 2025-03-27T09:47:30+00:00
 ! Expires: 72 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 24.03.2025 09:15 UTC
+! Last Modified: 27.03.2025 09:47 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -486,7 +486,7 @@
 ||tracker-api.my.com^$important
 ||pushmarketing.sberbank-tele.com^
 ||cust-service.com^$dnsrewrite=REFUSED,important
-||msg-global.m.taobao.com^
+||msg-global.m.taobao.com^$important
 ||mopub.com^$important
 ||adkmob.com^$important
 ||appodeal.com^$important
@@ -558,7 +558,7 @@
 ||adad.ir^$dnsrewrite=REFUSED,important
 ||dgad.ir^$dnsrewrite=REFUSED,important
 ||cs*.trafmag.com^$dnsrewrite=NXDOMAIN,important
-||rarenol.biz$dnsrewrite=NXDOMAIN,important
+||rarenol.biz^$dnsrewrite=NXDOMAIN,important
 ||kudato.link^$dnsrewrite=NXDOMAIN,important
 ||hgads.com^
 ||imgg.marketgid.com^
@@ -646,6 +646,7 @@
 ||d2wy8f7a9ursnm.cloudfront.net^
 ||ymatuhin.ru^
 ||autocomplete.diginetica.net^
+||data-events.cdn.viber.com^$important
 !
 !
 !
