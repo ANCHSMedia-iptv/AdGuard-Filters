@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.4.4-R
-! TimeUpdated: 2025-03-27T09:47:30+00:00
+! Version: 3.4.5-R
+! TimeUpdated: 2025-03-29T09:08:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -19,6 +19,7 @@
 ! Подойдёт для мобильных устройств и компьютеров.
 ! Suitable for mobile devices and computers.
 ! Некоторые домены для блокировки взяты из других источников.
+! Много чего собрано из моих «наблюдений» и добавлений.
 !
 !
 !
@@ -92,8 +93,8 @@
 ||metrics.viqeo.tv^$important
 ||adtech.com^$important
 ||statad.ru^$important
-||mixpanel.com^$important
-||mixpanel.*.com^$important
+||mixpanel*.com^$important
+!
 ||btloader.com^$important
 ||digitalcaramel.com^$important
 ||ads*.twitter.com^$important
@@ -127,7 +128,7 @@
 ||singular.net^$important
 ||alb.reddit.com^$important
 ||rudderstack.com^$important
-! hh.ru/api/fl/logs/^$other,important,domain=hh.ru (новое правило, строка 588)
+! hh.ru/api/fl/logs/^$other,important,domain=hh.ru (новое правило, строка 589)
 ||cedexis.com^$important
 /generate_204$domain=~youtube.com|~googlevideo.com|api.browser.yandex.*
 ||adlook.me^$important
@@ -163,7 +164,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||otlp-http-production.shopifysvc.com/v*/metrics$xhr,important
 ! *web-pixel-shopify-*-pixel*^$domain=ddlbots.com,important
 *web-pixel-shopify-*-pixel*$important
-! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.*.js^$script,important (новое правило, строка 137 и 138)
+! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.*.js^$script,important (новое правило, строка 138 и 139)
 /wp-content/plugins/*/assets/js/tracks.js$script,important
 /ad.js^$script,important
 /empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru
@@ -173,7 +174,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||adhigh.net^$important
 ||rutarget.ru^$important
 ||api.mindbox.ru^$important
-! */api/fl/id*^$xhr,important (новое правило, строка 588)
+! */api/fl/id*^$xhr,important (новое правило, строка 589)
 ||s.rbk.ru/*rbcnews_static/rbcnews-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru,important
 ||trafffgen.rambler.ru^$important
 ||gotovim-doma.ru/img/*/*.gif^$image,domain=gotovim-doma.ru,important
@@ -183,7 +184,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||stat*.russianfood.com/tapi^$domain=russianfood.com,important
 ||russianfood.com/images/blg.png^$image,domain=russianfood.com,important
 ||rbc.ru/v*/geoinfo/by-ip/$xhr,domain=rbc.ru
-! ext.clickstream.sberbank.ru/metrics/$xhr,important (новое правило, строка 769)
+! ext.clickstream.sberbank.ru/metrics/$xhr,important (новое правило, строка 771)
 ||servicepipe.ru/static/*.js^$script,domain=~onlinetrade.ru
 ||player.twitch.tv/js/embed/v*.js^$script,domain=~twitch.tv,important
 ||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com,important
@@ -191,7 +192,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||alicdn.com/AWSC/et/*/et_f.js^$script,important
 ||cpa.hh.ru^
 ! *.103.*/css/cookiesNotification*.css^$css,important,domain=mag.103.* (новое правило, строка 417)
-! *.103.*/js/cookiesNotificationBy.js^$script,important,domain=mag.103.* (новое правило, строка 137 и 138)
+! *.103.*/js/cookiesNotificationBy.js^$script,important,domain=mag.103.* (новое правило, строка 138 и 139)
 ||d31j93rd8oukbv.cloudfront.net^$important
 ||d1tru86qrby720.cloudfront.net^$important
 ||*site-chat.me/support/support.int.js*^$script,important
@@ -264,7 +265,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||nets-api.gpmdata.ru/api/v*/counters/counter/$xhr,important
 ||trex-receiver.gpmdata.ru/net/*/*/events^$xhr,important
 ||static.tnt-online.ru/getintent_pixel.js^$script,domain=tnt-online.ru,important
-! static.tnt-online.ru/accept_cookie.js^$script,domain=tnt-online.ru,important (новое правило, строка 137 и 138)
+! static.tnt-online.ru/accept_cookie.js^$script,domain=tnt-online.ru,important (новое правило, строка 138 и 139)
 ||tnt-online.ru/images/*/icons/sprite.svg$image,domain=tnt-online.ru,important
 ||rutube.ru/static/img/png/adsdkbanner.png^$xhr,important
 /pixel.*^$image,xhr,script,important,domain=~statad.ru
@@ -275,8 +276,8 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! addtoany.com^
 ||gazprom-neft.*/*.gif^$image,domain=gazprom-neft.ru|gazprom-neft.com,important
 ||zoon.ru/images/border.gif^$image,domain=zoon.ru
-! (новое правило, строка 137 и 138)
-! (новое правило, строка 137 и 138)
+! (новое правило, строка 138 и 139)
+! (новое правило, строка 138 и 139)
 ||userapi.com/js/api/openapi.js$script,domain=~vk.com,important
 ||analytics.vsem-edu-oblako.ru*/track^$xhr,important
 ||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,important
@@ -904,7 +905,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||hgads.com^
 ||imgg.marketgid.com^
 ||hgad.silvercdn.com^$important
-||adnxs.com^
+||adnxs.com^$important
 ||ads.2xpub.com^
 ||hits.netgeography.net^$important
 ||ad45.com^
@@ -967,8 +968,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||fda.middle-api.magnit.ru^
 ||kaspersky-labs.com^$app=com.icemobile.lenta.prod # фиг пойми, для чего приложению подключаться к домену Касперского, в том числе и сайту..
 ||sentry.tibibox.com^$app=com.dubox.drive,important
-/__qrator/qauth.js$script,important
-/__qrator/validate$xhr,important
+qrator/qauth.js$script,important
+qrator/validate$xhr,important
 ||ad-source.pro^$important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
 ! ://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # soon...
@@ -994,6 +995,10 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||autocomplete.diginetica.net^
 ||data-events.cdn.viber.com^$important
 ||www.googleapis.com^$app=com.viber.voip
+||1.0.0.2/cdn-cgi/trace
+||ads*viber.com^$important
+||15.235.163.96/api/v*/get-ad-ids$app=com.nebulatech.voocvpnpro
+||*-metrica.cabconnect.org^$important
 !
 !
 !
@@ -1071,7 +1076,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 !
 ||megamarket.ru/api/*/v*/analyticsDataService/$xhr,domain=megamarket.ru,important
 ! megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr,domain=megamarket.ru,important
-! megamarket.ru/api/fl/idw-smm^$xhr (новое правило, строка 588)
+! megamarket.ru/api/fl/idw-smm^$xhr (новое правило, строка 589)
 ||api.megamarket.tech/api/colibri/events/$xhr,domain=megamarket.ru,important
 ||megamarket.ru/api/*/v*/promoContentService/$xhr,domain=megamarket.ru,important
 ||api.megamarket.tech/api/events/config$xhr,domain=megamarket.ru,important
@@ -1711,6 +1716,8 @@ remontka.pro##div.uk-container.uk-container-center.rem-container:nth-child(4) > 
 ##div[id="stickad_ya"]
 remontka.pro##aside[class^="rem-rightbar"]
 securelist.ru##div[class^="o-col-4@sm u-hidden u-block@sm"]
+habr.com##div[class^="disable-adblock-placeholder]
+!
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
 tbank.ru,tinkoff.ru,t-j.ru#%#//scriptlet('remove-cookie', '/dsp_click_id|pageLanding|mediaInfo/')
@@ -1770,6 +1777,7 @@ thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'dmp_geo', 'null')
 thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'longVisits', '$remove$')
 thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'watchedVideoArticles', 'null')
 thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/', '$remove$')
+! soon..
 !
 ! -
 !
@@ -1837,6 +1845,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ! self.pipe.aria.microsoft.com^
 ||pipe.aria.microsoft.com^$important
 ||events.data.microsoft.com^$important
+||events.data.msn.com^
 !
 ! = For Windows =
 ! = Для Виндовс =
@@ -2015,7 +2024,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||yastatic.net/s*/*/white-desktop/browser-light/browser-light.browser.analytics.*.js$script
 ||yastatic.net/s*/*/white-desktop/browser-light/browser-light.browser.baseError.*.js$script
 ||avatars.mds.yandex.net/get-marketcms/$image
-||avatars.mds.yandex.net/get-direct/$image,xhr
+||avatars.mds.yandex.net/get-direct/$image,xhr,important
 ||certificate.mobile.yandex.net/api/v*/$important
 ||startup.mob.*.yandex.net^$important
 ||taxi-promotions.s*.yandex.net^
@@ -2168,7 +2177,7 @@ yandex.ru##div[class^="VanillaReact AliceFabContainer"]
 @@||tc.mobile.yandex.net^
 @@||*assets.2gis.*/react.*ad.js^$script,domain=2gis.*
 @@||i*.wp.com/living.ai/wp-content/uploads/2024/08/2024082902-scaled.jpg$image,domain=living.ai
-@@||irecommend.ru/injector/botbot.js^$script,domain=irecommend.ru
+@@||irecommend.ru/injector/botbot.js^$script,domain=irecommend.ru # антибот скрипт
 @@||api.smotrim.ru/api/v*/geo^$xhr
 @@||player.smotrim.ru/js/vendor.js$script
 @@||player.smotrim.ru/js/manifest.js$script
@@ -2178,12 +2187,12 @@ yandex.ru##div[class^="VanillaReact AliceFabContainer"]
 @@||digiseller.market^
 @@||iptvx.one^
 @@||captcha-api.yandex.ru^
-@@||esa-res.online.sberbank.ru/ESA/bizone/*/antifraud.min.js^$script,domain=online.sberbank.ru
+@@||esa-res.online.sberbank.ru/ESA/bizone/*/antifraud*.js^$script,domain=online.sberbank.ru
 @@||cdnweb.sberbank.ru/*/*.*^$image,xhr,domain=online.sberbank.ru
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/unallowedbrowsers.js^$script,domain=online.sberbank.ru
-@@||esa-res.online.sberbank.ru/ESA/sbol/r-*/bowser.*.js^$script,domain=online.sberbank.ru
+@@||esa-res.online.sberbank.ru/ESA/sbol/r-*/bowser*.js^$script,domain=online.sberbank.ru
 @@||pl-res.online.sberbank.ru/lib.analytics/*/index.js^$script,domain=online.sberbank.ru
-! @@||pikabu.ru/.well-known/ddos-guard/$script,domain=pikabu.ru (новое правило, строка 1928)
+! pikabu.ru/.well-known/ddos-guard/$script,domain=pikabu.ru (новое правило, строка 1928)
 @@||google.com/js/bg/*.js^$xhr,script
 @@||google.com/recaptcha/
 @@||googlevideo.com^
@@ -2197,18 +2206,18 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||iphones.ru/wp-content/themes/simpla2/images/sprites/ir-a18a0.png^$xhr,domain=iphones.ru
 @@||a.apkpure.net/captcha
 @@||accounts.google.com/*/cspreport$xhr,other
-@@||msftconnecttest.com^
+@@||msftconnecttest.com^ # проверка соединения с интернетом на Виндовс (домен Майкрософт).
 @@||pay.yandex.ru^
 @@/.well-known/ddos-guard/$xhr,script,websocket
 @@||galamart.ru^$ghide
-! @@||widgets.mango-office.ru/widgets/mango.js^$script,domain=galamart.ru
+! widgets.mango-office.ru/widgets/mango.js^$script,domain=galamart.ru
 @@||ozon.ru^$ghide
 @@||onlinetrade.ru^$ghide
 @@||onlinetrade.ru/xpvnsulc/sp_rotated_captcha/
 ! @@||onlinetrade.ru^
 @@||s09.stc.yc.kpcdn.net/share/i/beige/325472601571f31e1bf00674c368d335.gif^$domain=kp.ru
 @@||group-ib.com^
-@@||smartcaptcha.yandexcloud.net/captcha.js
+! @@||smartcaptcha.yandexcloud.net/captcha.js
 @@||smartcaptcha.yandexcloud.net^
 @@||mega.nz^$ghide
 @@||hd.kinopoisk.ru^$important,document
@@ -2216,7 +2225,7 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/*Sticky*Adv*.*^$script,css,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 @@||support.avito.ru^
 mi.com#@$#body { overflow: visible !important; }
-@@||stats.1clickvpn.com^
+@@||stats.1clickvpn.com^ # отвечает за основной функционал расширения (1clickvpn) (не реклама).
 @@||github.com^$cookie
 @@||yandex.net^$cookie
 @@||aliexpress.ru^$cookie
@@ -2226,13 +2235,13 @@ mi.com#@$#body { overflow: visible !important; }
 @@||vgtrk.cdnvideo.ru^
 @@||player.smotrim.ru^
 @@||s.youtube.com^ # связан с историей просмотров видео на YouTube.
-@@||time.windows.com^
+@@||time.windows.com^ # синхронизация времени в Виндовс (также используется некоторыми мобильными приложениями).
 @@||email-link.adtidy.org^
 @@||anketolog.ru/api/front/v*/gql$xhr,domain=anketolog.ru # 17.03.25: сайт нестабильно отображается при блокировке этого запроса, в белом списке.
 @@||obfusgated.com/*/tools/ad-block-test$domain=obfusgated.com # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
 @@||obfusgated.com/_next/static/chunks/$script,domain=obfusgated.com # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
 @@||vgtrkregion-reg.cdnvideo.ru^
-@@||connectivitycheck.gstatic.com^
+@@||connectivitycheck.gstatic.com^ # проверка соединения с интернетом (домен Гугла).
 @@||russianpost.ru^
 @@||icecast-vgtrk.cdnvideo.ru^
 vestifm.online$@$link[rel="manifest"]
@@ -2278,6 +2287,41 @@ vestifm.online$@$link[rel="manifest"]
 !
 !
 !
+! = Блокировка рекламы в мессенджере Viber (Mobile&PC) =
+! Список от ув. Solo_mag (4pda) [https://4pda.to/forum/index.php?showtopic=714685&view=findpost&p=135816888]
+! P.s. некоторые домены уже известны мне.
+! 28.03.25: Добавлен.
+!
+!
+! ||primis.tech^$important #third-party,app=
+! ||www.primis.tech^$important #third-party,app=
+||feed.avplayer.com^$important #third-party,app=
+||locp-*.viber.com^$important
+! ||primis-amp.tech^$important #third-party,app=
+||appnexusgslb.net^$important
+||player.avplayer.com^$important #third-party,app=
+||primis*.openx.net^$important #third-party,app=
+||rmp.rakuten.com^$important
+||stats.viber.com^$important
+||s.pc.qq.com^$important
+||guanjia.qq.com^$important
+||syzs.qq.com^$important
+||tracking.viber.com^$important
+||viberee.olasent.top^$important
+||www.viberee.olasent.top^$important
+!
+!
+!
+!
+!
+!
+! ====
+!
+!
+!
+!
+!
+!
 !
 ! ---
 !
@@ -2309,902 +2353,6 @@ vestifm.online$@$link[rel="manifest"]
 ||clicks.af-pb06e2.com^
 !
 !
-! Фишинг и мошенничество с спам рассылок с адреса @afrounitedsalon .de (с 22.11.24 по 30.11.24 был «жертвой» такого массового спама)..
-||s*.*.*.mydomain.zone^
-||afrounitedsalon.de^
-!
-!
-! Фишинг и мошенничество с спам рассылок (типа Столото) (с начала 2024 по 2.01.25 стал «жертвой» такого массового спама)..
-||fgnrthgre.buzz^
-!
-!
-! Адреса с спам-писем с содержанием 18+ (с 14.11.24 по 2.05.25 стал «жертвой» такого массового спама)..
-! Разблокировка допустима ТОЛЬКО для отписки с рассылки! (если вообще сработает..)
-! Набралось писем со спамом 1000+ - разбирать их нет смысла, поменял почту и аккаунт. (2.01.2025)
-!
-||arumism.com^
-||furixor.com^
-||vatomno.com^
-||kwageon.com^
-||aartaid.com^
-||adjurve.com^
-||barabalo.com^
-! fuckbookflirt.com^
-||peachdates.com^
-||spmailtechno.com^
-||mrflirty.com^
-! localswebflirt.com^
-||wildblossoms.top^
-||lunarlifepromo.com^
-||moontrekadventures.com^
-||todayfundate.com^
-||summitquestadventure.com^
-||clifftops.top^
-||meetmarvel.com^
-||lovetimenow.com^
-||horizonpulserise.com^
-||*flirt*.com^
-||webbursthub.com^
-||stellartrippromo.com^
-||lunarhypeads.com^
-||moonlurepromo.com^
-||cherrychitchat.com^
-||jonoicu.com^
-||abderim.space^
-||adsoccl.com^
-||husperm.space^
-||udotype.com^
-||scosio.click^
-!
-||purechats.com^
-||prettywomenco.com^
-! ---
-||trodsimni.ru^
-||gichenisatcilaw.ru^
-||bersvirla.ru^
-||lacsaimo.ru^
-||garisgoculutan.ru^
-||hoolassnire.ru^
-||profellleadvesthof.ru^
-||granlarmdant.ru^
-||exnanung.ru^
-||saapremevpel.ru^
-||lecparkterccypartni.ru^
-||locachi.ru^
-||longgrunwirspe.ru^
-||etdemothee.ru^
-||jarecom.ru^
-||cfqndvmyttega.ru^
-||itabpresunlan.ru^
-||inamalclonsuppscutev.ru^
-||cennarasetitabwai.ru^
-||chickflexisidultavi.ru^
-||aspesceremobird.ru^
-||milmeke.ru^
-||scherbinsogingnehal.ru^
-||crusricbeispormenasi.ru^
-||pacalageab.ru^
-||zowymoro.ru^
-||ewadma.ru^
-||jnmdveawb.ru^
-||dayhorgehard.ru^
-||joiconfcordumbfilica.ru^
-||ficbsincxyhasilapho.ru^
-!
-||mencontstarrott.ru^
-||dreadperspecma.ru^
-||indeathquireamosto.ru^
-||guarwamocellitorcry.ru^
-||thommaterhietrovpugg.ru^
-!
-! - Contains virus + phishing
-||datehiker.com^
-! -
-!
-||exatstoug.ru^
-||cudddenane.ru^
-||chamradesemb.ru^
-||peuhomacilassde.ru^
-||adtiasoge.ru^
-||ditonoraberel.ru^
-||igdowheker.ru^
-||roriwildra.ru^
-||longgrunwirspe.ru^
-||balltraninssilbutmete.ru^
-||flumeepmenwei.ru^
-||sonimaconredica.ru^
-||garsubstruceathatbacon.ru^
-||blacesren.ru^
-||thralresliocheating.ru^
-||tteladheadmivimafo.ru^
-||muemopurandlottibi.ru^
-||contibedntaper.ru^
-||loimesgetemas.ru^
-||geshilehusesint.ru^
-||membbimacbibilfens.ru^
-||nysbullveerphycyn.ru^
-||headdnaldraserextydi.ru^
-||tepertiburdiwho.ru^
-||encotsamuf.ru^
-||giesuelea.ru^
-||gladitolposesorguang.ru^
-||stanfecpairril.ru^
-||softvarlandcasis.ru^
-||thralresliocheating.ru^
-||zozlil.com^
-||yzchavoulunsoft.ru^
-||blinisla.ru^
-||quiresvi.ru^
-||tacklemo.ru^
-||tyouterfansrenle.ru^
-||hopcourone.ru^
-||estoduccaiheart.ru^
-||liobroththesnoewebpasac.ru^
-||pummesamin.ru^
-||devasinesepalb.ru^
-||spurdovebacknonecwa.ru^
-||cycmekillcomvila.ru^
-||liawoumelaher.ru^
-||hargstagidasunin.ru^
-||percobethems.ru^
-||lelangbackban.ru^
-||lingderglarytpost.ru^
-||sveralsoforti.ru^
-||adexposvaramsmedee.ru^
-||cournacheck.ru^
-||newohed.ru^
-||newsversdistedeter.ru^
-||difkingta.ru^
-||labfilyds.ru^
-||famssterdufdeduheadsso.ru^
-||wacroli.ru^
-!
-||uphunreca.ru^
-||repguiri.ru^
-||stemolcipdede.ru^
-||chamradesemb.ru^
-||abniphinib.ru^
-||chabtempsingrigtine.ru^
-||preemnanoduc.ru^
-||siterfmalica.ru^
-||chetinharddispdrivatev.ru^
-||pesapa.ru^
-||gilrachildwilltemptrapov.ru^
-||profellleadvesthof.ru^
-||prillam.com^
-||guenihendcheckthesronet.ru^
-||quiprotanorepjhon.ru^
-||avgethatothecomp.ru^
-||storviapatel.ru^
-||hohurve.ru^
-||smalsuppnessipere.ru^
-||gladitolposesorguang.ru^
-||losdietindebujici.ru^
-||sovolbersvewell.ru^
-||pejoport.ru^
-||nysbullveerphycyn.ru^
-||elemowar.ru^
-||barctrupkikamurent.ru^
-||tincdeedbiotwor.ru^
-||anecsalobo.ru^
-||lockrentsynpanato.ru^
-||zuchriribesurf.ru^
-||yzchavoulunsoft.ru^
-||castpanphuhafir.ru^
-||nvovboubemisaverho.ru^
-||aurflzstvigdt.ru^
-||povnilimemogurta.ru^
-||esfreehilbee.ru^
-||restrarresctringen.ru^
-||tenpimaca.ru^
-||fihonbisota.ru^
-||miokendgomesign.ru^
-||boozfanucigi.ru^
-||neydorebtotags.ru^
-||critrouglynd.ru^
-||fihonbisota.ru^
-||kingkafib.ru^
-||liecredvast.ru^
-||scutvesvietext.ru^
-||matchire.ru^
-||spirguahelzlochemomor.ru^
-||torscropen.ru^
-||togbadoorko.ru^
-||hocomsodorjocongui.ru^
-||wallsopon.ru^
-||prodperreresta.ru^
-||wirsgoogsa.ru^
-||urdeepwordslipapmontaxb.ru^
-||dayprovrepsobibdia.ru^
-||atuninetvisaguzz.ru^
-||torscropen.ru^
-||cournacheck.ru^
-||headdnaldraserextydi.ru^
-||seacorhayverrads.ru^
-||unevdon.ru^
-||halfpreslynchdarktonli.ru^
-||pigmalis.ru^
-||outarci.ru^
-||hopcourone.ru^
-||nysbullveerphycyn.ru^
-||olcupismi.ru^
-||sonbuspgabb.ru^
-||techarddipitab.ru^
-||mittdendnivirotu.ru^
-||seisicar.ru^
-||nicknajingbourf.ru^
-||raustarin.ru^
-||suamk.com^
-||farscapaxilagaban.ru^
-||thouculpgas.ru^
-||pejoport.ru^
-||chloroutinophbromme.ru^
-||ritabtebackrofor.ru^
-||waystalar.ru^
-||ampaystup.ru^
-||beytangwobelotimil.ru^
-||lesbihochconf.ru^
-||firpepor.ru^
-||cepgirdfotagdianadu.ru^
-||taslipetducalca.ru^
-||speechfeiconromyb.ru^
-||ciaspeedbelidespoto.ru^
-||keilintiebeca.ru^
-||perhupedincari.ru^
-||biwardcums.ru^
-||neckcesaltzah.ru^
-||glidriderhambpec.ru^
-||menhoconsfolgperswhirfi.ru^
-||getisnugobbtripmossmis.ru^
-||gayrarese.ru^
-||gendayfreakdodgdigmant.ru^
-||suppworkscolacpasa.ru^
-||pliclopjoizagarsoy.ru^
-||distperglosihan.ru^
-||obbxanreismariz.ru^
-||apindotmisearwa.ru^
-||recmortdellaybonon.ru^
-||confeacatehyhea.ru^
-||boeblusisunderthau.ru^
-||dibomuk.ru^
-||osgisriburtaigo.ru^
-||leovumeddbotpa.ru^
-||edrefehamantui.ru^
-||bonfasedvernnounjudgfreed.ru^
-||bestgimmipetcagogod.ru^
-||dracterlyst.ru^
-||teotucontdramcomsuppsis.ru^
-||vcalerdiepros.ru^
-||nilouvirneuro.ru^
-||ticodee.ru^
-||enkeberchealth.ru^
-||extedmatchra.ru^
-||hardfidddomsync.ru^
-||speedapscher.ru^
-||lebestde.ru^
-||lackchurchnounphylipon.ru^
-||oututipmabileb.ru^
-||tiabermi.ru^
-||carammarenunde.ru^
-||gehdikarremona.ru^
-||surpodescfasraradloy.ru^
-||subsmopentesa.ru^
-||telemcida.ru^
-||tranlesnecknesrenoun.ru^
-||natebgetitualesqi.ru^
-||longsaxtatonpaycanra.ru^
-||schematallipotkeybit.ru^
-||toaselfhugitoverde.ru^
-||ballrohotdeealern.ru^
-||rutyrur.ru^
-||breakquigoladignahrre.ru^
-||spirguahelzlochemomor.ru^
-||dasirabo.ru^
-||gobbxanreismariz.ru^
-||ziplozi.ru^
-||bounkorasegdobafir.ru^
-||boatrepargsys.ru^
-||meyretitiliwestrakamerk.ru^
-||edanmoutbiopia.ru^
-||presapcon.ru^
-||uwcalfyostenourtituthade.ru^
-||myohydgasymdistthera.ru^
-||gambdaresdo.ru^
-||cheerwaquarmeraperma.ru^
-||cesslanapho.ru^
-||ziofiltcothanviwitergee.ru^
-||lingpapsedeste.ru^
-||rachigtekin.ru^
-||ifanulitopgeper.ru^
-||prembattpylzeberbirthri.ru^
-||gulsbafanec.ru^
-||riatabcilinhelepji.ru^
-||swerucanmameli.ru^
-||ylofcoun.ru^
-||creatbabsonorrcestlim.ru^
-||teasrarekon.ru^
-||gopercekecagard.ru^
-||lighwohnnus.ru^
-||kontmindceelotamolasib.ru^
-||wantcarcalepofitsde.ru^
-||ettylzakhbuftafat.ru^
-||proxophalivem.ru^
-||techjarec.ru^
-||heagtodilasi.ru^
-||pindepidilafasro.ru^
-||ilinterfifodiscrads.ru^
-||poibeha.ru^
-||fectsonvingdyspwellsantwil.ru^
-||kemipurrarohiltting.ru^
-||reverkonfcaf.ru^
-||middgnutphisticolarfirsplac.ru^
-||viaditabneu.ru^
-||zithedesilkhenversco.ru^
-||climbire.ru^
-||ritiguze.ru^
-||seoritiburtima.ru^
-||opylciwoodforth.ru^
-||worthtesteracongwerthill.ru^
-||gadeverphepark.ru^
-||terpmilagar.ru^
-||inadescuspali.ru^
-||maipassdreamterlessnund.ru^
-||ringnivivitticast.ru^
-||debtloburchooroten.ru^
-||hodewinreisufyrevast.ru^
-||wallsticesproctioulauty.ru^
-||mwinabplicinouthizgram.ru^
-||quipacaransiozy.ru^
-||daynisi.ru^
-||galyrup.ru^
-||qoirecocusunrinira.ru^
-||subsuisympcirlnambre.ru^
-||trinpatwhistglobicinman.ru^
-||mingmendemitines.ru^
-||alzulmilongslopesonimse.ru^
-||rougbeycons.ru^
-||beityageatiturk.ru^
-||tirajgolfrentsidustsi.ru^
-||chalsusophofapodyscentpen.ru^
-||waminjuncprodic.ru^
-||otichimsitermarp.ru^
-||consnulabobsipop.ru^
-||soinoidiowritak.ru^
-||fratleiwebcver.ru^
-||dollmeligenitroacrat.ru^
-||soytitibrefilyhurcori.ru^
-||rumbpasub.ru^
-||keyracecan.ru^
-||koglighwolfarb.ru^
-||mentiotina.ru^
-||qucilorisenrai.ru^
-||moavercaletztiwir.ru^
-||vaworlacyssubskente.ru>^
-||countwathosubpazukafourti.ru^
-||dimquidenanro.ru^
-||evwortaloo.ru^
-||wnydvkrhiq.ru^
-||jampwritpho.ru^
-||statamach.ru^
-||piwoolweabur.ru^
-||latilafib.ru^
-||backthernsicklogan.ru^
-||postcoolhand.ru^
-||ofniarenasanreisar.ru^
-||guiklasnura.ru^
-||gobbxanreismariz.ru^
-||dogentlanma.ru^
-||gersconmiterij.ru^
-||pilballref.ru^
-||kjomj.ru^
-||vildayphentsa.ru^
-||sinboda.ru^
-||promaber.ru^
-||ritiguze.ru^
-||vbvqwrj.ru^
-||emkjysvush.ru^
-||faifranverpaiplet.ru^
-||ilomtaraposc.ru^
-||backbatennwhittcica.ru^
-||wordrasamcomplove.ru^
-||punccalgestrinasacon.ru^
-||ivkbmxlh.ru^
-||almamsawalgglosarap.ru^
-||unpabvaperhelpnavicare.ru^
-||goldsteelinear.ru^
-||northnalogtio.ru^
-||kerpbirthnoncomarri.ru^
-||pharrunsfa.ru^
-||precamthasciserbemen.ru^
-||ygwzzxpucae.ru^
-||lumuscter.ru^
-||erpocagastfelere.ru^
-||nqcvfw.ru^
-||harzato.ru^
-||porrolupoharpacor.ru^
-||postsunsteacamrelad.ru^
-||chrisbadilyppgens.ru^
-||xbzxh.ru^
-||anothiraticune.ru^
-||adbloktivifast.ru^
-||bnvcnm.ru^
-||velbogyschechar.ru^
-||tempsacaterfa.ru^
-||akcogzqozocv.ru^
-||prechfootppapasugina.ru^
-||amadmanringveglo.ru^
-||besttingpres.ru^
-||chautranisunubedpes.ru^
-||tiolarwinksandskinalpran.ru^
-||adizelevatres.ru^
-||lzuaiiuljkf.ru^
-||learnramsgavis.ru^
-||nivinsorjustmitta.ru^
-||downtocalvansvadile.ru^
-||goskulisu.ru^
-||plumodinafderleadowngime.ru^
-||spoksingmispnel.ru^
-||kaisusvtter.ru^
-||diokirslordglenmedentha.ru^
-||cairisinendconferea.ru^
-||hqqfnsgsn.ru^
-||dinehartsund.ru^
-||psychadden.ru^
-||creedhedifmicic.ru^
-||lantichir.ru^
-||resmepost.ru^
-||corhealthmajump.ru^
-||nalterslotipgaiders.ru^
-||subnewsmalttowocon.ru^
-||utacqsip.ru^
-||ritabtebackrofor.ru^
-||weisalerectle.ru^
-||temhotolto.ru^
-||jlbqk.ru^
-||resnagestdeskminsfamesgingcryp.ru^
-||odviomanotesttrodpors.ru^
-||virrdalcilecaldutili.ru^
-||lydoni.ru^
-||unazba.ru^
-||sosunthepalafunkcrun.ru^
-||bracustrogogbal.ru^
-||acalacasleg.ru^
-||ceigarpe.ru^
-||lieworlporpahercpatti.ru^
-||ebrule.ru^
-||schadeawusarro.ru^
-||erenmansa.ru^
-||neailynchtran.ru^
-||flakininosrimidbald.ru^
-||wirkroomworthlismedis.ru^
-||neygeililigacaplu.ru^
-||drunwoodssingpertponihap.ru^
-||apkachewipo.ru^
-||camirestreba.ru^
-||asellydest.ru^
-||nihydtaocasi.ru^
-||lantrerenlimenhutan.ru^
-||amunguefe.ru^
-||thaibuttre.ru^
-||sunochmacu.ru^
-||precamthasciserbemen.ru^
-||lrfbsndhgqrz.ru^
-||pasnacegilesla.ru^
-||tanage.ru^
-||chatxtonights.com^
-||snapbertca.ru^
-||tioforhi.ru^
-||feaegddh.ru^
-||conlabika.ru^
-||ekjqh.ru^
-||ualsatpesi.ru^
-||blocodbreachinin.ru^
-||jubjgj.ru^
-||arfussurpbaga.ru^
-||tripcomrevecykilli.ru^
-||macuvertattbulami.ru^
-||sxrxjvpnol.ru^
-||bioresrobibovelsaa.ru^
-||seytatufib.ru^
-||atnoarazy.ru^
-||hitchgoldfolkpidyparlabe.ru^
-||perchitisekidite.ru^
-||necsoher.ru^
-||enwronemarinprof.ru^
-||lunqosuzsgx.ru^
-||neugodepilswebs.ru^
-||magdunnlisfanutlynn.ru^
-||wmxqcvone.ru^
-||cbkgd.ru^
-||eastigweaberchothou.ru^
-||cociporque.ru^
-||hlzizngjnpkqt.ru^
-||kapesol.ru^
-||malneramma.ru^
-||hcrpldwqys.ru^
-||reimalrabinenri.ru^
-||boggrimencedeckrepisve.ru^
-||rburathnocesre.ru^
-||eascamlotoomoti.ru^
-||nguritceredetmeo.ru^
-||ruethoughmaleterneu.ru^
-||carnewpgawethecom.ru^
-||diepredeninra.ru^
-||buhyifvprrq.ru^
-||progubinroa.ru^
-||alhtqubknsce.ru^
-||shaafzrfd.ru^
-||transubcatherssemb.ru^
-||dwelabma.ru^
-||erreirachicesciatleb.ru>^
-||chlagmiccuman.ru^
-||fivdims.ru^
-||sleavamhogypbimulnuall.ru^
-||kersxykerdujehoha.ru^
-||glesunhouter.ru^
-||sculunpalitoless.ru^
-||readivipocompcor.ru^
-||racecaquat.ru^
-||nyaprogserrelosback.ru^
-||sandbursovatoncutth.ru^
-||drivmaropikamva.ru^
-||rarevamur.ru^
-||rochanglegagcongwerkcaciti.ru^
-||pregbucktensosiberse.ru^
-||xsudesipgb.ru^
-||liebahquirescollcabe.ru^
-||notagut.ru^
-||bqvsdhl.ru^
-||proturbowwheelcpho.ru^
-||ezjxmbbmrdjn.ru^
-||flyzberje.ru^
-||alflasramentmis.ru^
-||sinsconputo.ru^
-||sumpcalciabraglunriffte.ru^
-||cilfundninophipergambsir.ru^
-||andilawarhykifi.ru^
-||reogerpowarc.ru^
-||complanostkerivdiecal.ru^
-||raicharlbical.ru^
-||rvorwwagk.ru^
-||beverfigopelinnau.ru^
-||jeoklasafpayter.ru^
-||egceceroxaho.ru^
-||snowerarmlerodin.ru^
-||tinriospormevitang.ru^
-||tiotipufncalhwagi.ru^
-||tribinerannirestwhel.ru^
-||mduhi.ru^
-||cadocane.ru^
-||extedmatchra.ru^
-||bdmilhlemwasm.ru^
-||inicalne.ru^
-||oezwhuq.ru^
-||raiprommezcsefenanachant.ru^
-||provonovikin.ru^
-||tobayduu.ru^
-||diatuwalmo.ru^
-||panstabar.ru^
-||vanirilibet.ru^
-||bausticthiforsynch.ru^
-||mondcebegoodceisearchmertua.ru^
-||adtanic.ru^
-||waulenbauta.ru^
-||hididerguzzboots.ru^
-||rzrza.ru^
-||rehodthacostsua.ru^
-||utdecunelchungnetsiper.ru^
-||eremedpofergiri.ru^
-||ebdiheartproptex.ru^
-||scurpaymyhandpukeelryaprin.ru^
-||repicmi.ru^
-||taradili.ru^
-||ivprosnaktauthirlle.ru^
-||pragamoltelpecon.ru^
-||newslongractnar.ru^
-||erconcomsrelomagpidd.ru^
-||delogenwea.ru^
-||trosadourbapo.ru^
-||necheadebpemoushumb.ru^
-||ruckpuprewipe.ru^
-||sunenacdenogocent.ru^
-||guisysnetf.ru^
-||dresloasimonrocall.ru^
-||haypeldest.ru^
-||lesssarfayperto.ru^
-||ltesinpasole.ru^
-||bloomecurhodornigeartisi.ru^
-||hgotbtt.ru^
-||tayprobporrotamafat.ru^
-||stilnewsa.ru^
-||blpbf.ru^
-||procormalala.ru^
-||worlplanatimlaphomar.ru^
-||siorieskiloporpolandpletin.ru^
-||sesusereacam.ru^
-||gopxle.ru^
-||ercilmomatpofama.ru^
-||edimquidenanro.ru^
-||ozsetmayclinitintade.ru^
-||uniztechdia.ru^
-||sungkesttiticountragite.ru^
-||nerscutsapp.ru^
-||perffolocrasearketkkeng.ru^
-||vacguirabackmandoli.ru^
-||teydemertotadea.ru^
-||comppentamonidelo.ru^
-||contpolesshaflo.ru^
-||camenmirosub.ru^
-||nauniewalreivahalme.ru^
-||chesnorsde.ru^
-||wimdototabrepuawhi.ru^
-||creepasstocperscons.ru^
-||isulristingsubshard.ru^
-||sancharmburg.ru^
-||puncdustgusra.ru^
-||tranmismiesantli.ru^
-||draksanetsehelprape.ru^
-||esanunemto.ru^
-||obakulenasbo.ru^
-||kdbffcdpxc.ru^
-||derdusamortchildfapalo.ru^
-||afinwarcacur.ru^
-||cemathalisrewabmiwor.ru^
-||lieblogacamdotitipinde.ru^
-||sterthiogroovendebbio.ru^
-||prolconhaugedeaso.ru^
-||lanslinkco.ru^
-||dialicagipawste.ru^
-||tergsublelocountdexrijc.ru^
-||seicehuarawafwi.ru^
-||feemulandownbibcent.ru^
-||dtoctipemerdiscxa.ru^
-||venchestpaba.ru^
-||starpormixicesta.ru^
-||leticte.ru^
-||prewididsleevusuntam.ru^
-||inulecdisliabiavi.ru^
-||mapositralo.ru^
-||weideriddtyststubox.ru^
-||anrinxosamsmo.ru^
-||arweilogsurp.ru^
-||noifancie.ru^
-||datoranenifoot.ru^
-||tetifulgiostud.ru^
-||leowebstegealipor.ru^
-||liseesihilu.ru^
-||omurfreedcallribogammist.ru^
-||hurtgoken.ru^
-||bionilere.ru^
-||porrayhonaherdyorea.ru^
-||beudolsaremorttisen.ru^
-||tiogratga.ru^
-||krstnqm.ru^
-||premtangachansicontschelasvic.ru^
-||hocniheart.ru^
-||breafrikoboh.ru^
-||harvateveahyla.ru^
-||diconeappfinbapanva.ru^
-||ciagorifadetursu.ru^
-||omanrilmetztewers.ru^
-||comlisttem.ru^
-||justreelituscau.ru^
-||emagymagbrahistai.ru^
-||goonadisprinfperspopwhoa.ru^
-||piolpurdoub.ru^
-||inashisteneck.ru^
-||niaprinocjasvanisthe.ru^
-||hzsasc.ru^
-||breafrikoboh.ru^
-||poragesho.ru^
-||wavawil.ru^
-||qixknvce.ru^
-||contaboscastfosquicy.ru^
-||viegrunerhalsoping.ru^
-||subscachondlufulhame.ru^
-||icinturriagraspol.ru^
-||rehowfeze.ru^
-||terasatenjunk.ru^
-||lidodinontiwhe.ru^
-||inexithexar.ru^
-||epimalti.ru^
-||thrownocheckceaxisyscu.ru^
-||reitremar.ru^
-||zmozdbgcqfmvx.ru^
-||irtamra.ru^
-||cannichanriemenga.ru^
-||trekabranorthgranlaptio.ru^
-||moldpledelapazoxut.ru^
-||apombras.ru^
-||vymrlmstpvb.ru^
-||acacvedist.ru^
-||probneumosake.ru^
-||withcompcu.ru^
-||bluferliuvere.ru^
-||nieflatmendgotvpodidpha.ru^
-||linticalkai.ru^
-||tiotabko.ru^
-! I got 1000+ spam emails - there's no point in sorting them, I changed my email and account. (2.01.2025)
-!
-! --
-||mlnsprofiles.cc^
-! - Phishing
-||dateflng.com^
-||loosechicksgh7e.com^
-||lonalamimerk.biz^
-||joysmarranebenspicon.biz^
-!
-! - Contains virus + phishing
-||beamingdate.net^
-!
-||xerualsrak.biz^
-||highheelsjenna.xyz^
-||123myoffer.club^
-! --
-!
-||jenkinj.*^
-! jenkinj.cfd^
-||eodkiewicz.*^
-! eodkiewicz.cfd^
-||rb.gy^
-||steeber.*^
-! steeber.cfd^
-! tillaan.cyou^
-||tillaan.*^
-! tillaan.cfd^
-||wingand.*^
-! wingand.cfd^
-||schpppe.*^
-! schpppe.sbs^
-||langwortr.top^
-||barrowr.*^
-! barrowr.sbs^
-||predovio.*^
-! predovio.sbs^
-||schimcel.*^
-! schimcel.cfd^
-||paaocha.*^
-||steeber.cfd^
-||barrowr.*^
-! barrowr.sbs^
-||cndricka.rest^
-||ononner.top^
-||aaocha.cfd^
-! -
-||schulist.click^
-||dolyst.click^
-||blefin.click^
-||huttat.click^
-||tesclo.click^
-||izathi.click^
-||cukoneu.click^
-||dookins.click^
-||cumilp.click^
-||sotivet.click^
-||senara.click^
-||quenta.click^
-||rustro.click^
-||oocons.click^
-||fasiand.click^
-||menduce.click^
-||nistyp.click^
-||exorpol.click^
-||unject.click^
-||ablebr.click^
-||ossica.click^
-||aluant.click^
-||hazocy.click^
-||oofultr.click^
-||jumenul.click^
-||helastc.click^
-||netoodi.click^
-||unistel.click^
-||menduce.click^
-!
-! --
-||*-sg.callback.cloudses.com/campaigns
-||*-sg.callback.cloudses.com/api/webhook?
-||wewlep.com^
-||escplad.com^
-||greatdeposit.com^
-||lawkj.com^
-||100percentopenrate-int.com^
-||pantydownbet.com^
-||rodartorial.com^
-||alamojapan.com^
-||zenerl.com^
-||slysif.com^
-||guellit.com^
-||bevolis.com^
-||quickcupidweb.com^
-||coincast.org^
-! -
-||aartaid.com^
-||utocoman.com^
-||nudosma.xyz^
-||tofersp.space^
-||podaxt.com^
-||edgecooker.com^
-||*journeys.com^
-||enchantedmysticpaths.com^
-! blissfulechojourneys.com^
-||serendipityrealmtrails.com^
-||mojecti.com^
-||byyy.org^
-||hzzz.org^
-||arumism.com^
-||phtfula.space^
-||husphewo.com^
-||funomin.com^
-||turixia.com^
-||ickcrai.com^
-||spodate.space^
-||onticei.xyz^
-||tipture.space^
-||hookupmadeeasy.com^
-||connecthookup.com/campaigns
-||urgative.com^
-! fastmailerwizz.com^
-||microtone.org^
-||orangeinnjoy.com^
-||visitrunner.com^
-||arviona.com^
-||fantasy-night.com^
-||pomimet.com^
-||itiseasy.org^
-||lemonads.org^
-||jyyy.org^
-||yzzz.org^
-||kkky.org^
-||sideview.org^
-||craigwubben.com^
-||sicsfandom.com^
-||updateflew.com^
-||uthehouse.com^
-||shokherstore.com^
-||endlety.com^
-||wilnt.com^
-||dlscdn.com^
-||app.cloakerly.com/link.php
-||trafficbiz.site^
-||go-fr-dt.com^
-||sheneedstoblow.com^
-||awesomesiteever.site^
-||rawepcoffers.site^
-||clicktracking.site^
-||trdt.online^
-||trckopti.com^
-||wilnt.com^
-||cleartonixx.com^
-||cheetahkash.com^
-||secret4youdreams.com^
-!
-||helendtkevink4704.xyz^
-||velvethorizon.xyz^
-||sunnyglimmer.xyz^
-||gracefulglimpses.xyz^
-||serenestories2.xyz^
-||*diaries.xyz^
-||gracefulwhispers.xyz^
-||rosepetaldreams.xyz^
-||gracefulglimpses.xyz^
-||mysteriousglances.xyz^
-||intimateworld.xyz^
-||ameliasjourney.xyz^
-||blissfulechoes.xyz^
-||ameliasjourney.xyz^
-||ladylikewisdom.xyz^
-||tendertouches.xyz^
-||eleganceexpressed.xyz^
-||spicymoments.xyz^
-||moonlightmusings.xyz^
-||nightandpassion.xyz^
-||AnnaPrivateGallery.xyz^
-! -
-||xattract.com^
-||xn3j2k.com^
-! --
-!
 !
 !
 ! ---
@@ -3220,17 +2368,20 @@ vestifm.online$@$link[rel="manifest"]
 !
 !
 ! dzen.ru,auto.ru,avito.ru,baby.ru,businessman.ru,dni.ru,e1.ru,echo.msk.ru,fb.ru,forexpf.ru,gismeteo.by,gismeteo.kz,gismeteo.md,gismeteo.ru,gorodrabot.ru,infoniac.ru,it-tehnik.ru,kakprosto.ru,kinopoisk.ru,liveinternet.ru,mathb-ege.sdamgia.ru,mk.ru,nkj.ru,ohotniki.ru,oko-planet.su,otzovik.com,razlozhi.ru,sdamgia.ru,syl.ru,vz.ru#%#//scriptlet('remove-cookie', '/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/')
-! ^$cookie= ^$cookie=/|/ $cookie= $important ,important domain= app=
+! ^$cookie= ^$cookie=/|/ $cookie= $important ,important domain= app= $ / |
 ! #%#//scriptlet('remove-cookie', '/||||/')
 ! #%#//scriptlet('set-local-storage-item', '', '')
 ! #%#//scriptlet('set-session-storage-item', '', '')
 ! #%#//scriptlet('set-cookie', '', '', 'none')
+! #%#//scriptlet('prevent-element-src-loading', 'script', '')
 !
 !
 !
 ! Соцсети Facebook и Instagram заблокированы и запрещены на территории РФ, владеющая ими компания Meta признана экстремисткой и деятельность в РФ запрещена.
-! Соцсеть X (бывший Twitter) заблокирован на территории РФ.
+! Соцсеть X (бывший Twitter) заблокирована на территории РФ.
 ! Social networks Facebook and Instagram are blocked and banned in the Russian Federation, the company that owns them, Meta, is recognized as extremist and its activities in the Russian Federation are prohibited.
 ! Social network X (formerly Twitter) is blocked in the Russian Federation.
+! Мессенджер Viber заблокирован 13.12.24 на территории РФ из-за нарушения законодательства.
+! Viber messenger was blocked on 13.12.24 in the territory of the Russian Federation due to violations of the law.
 !
 !
