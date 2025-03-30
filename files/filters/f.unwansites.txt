@@ -1,9 +1,8 @@
-!
 ! Title: F unwanted sites (F.U.S)
-! Version: 1.R_End
 ! Description: Список небезопасных сайтов, которые являются ловушкой для тех, кто кликнет по ссылкам в спам письме в электронной почте. Действителен на обычном и на DNS уровнях.
-! Перемещён с основного фильтра BUC (Block Unwanted Connections) [Обычный + DNS].
+! Version: 1.R_End
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
+! Перемещён с основного фильтра BUC (Block Unwanted Connections) [Обычный + DNS].
 ! Создан 29.03.2025.
 !
 ! Некоторые домены будут перенесены в основной фильтр, т.к. являются рекламными и будет проанализированы.
@@ -35,7 +34,6 @@
 ||barabalo.com^
 ||peachdates.com^
 ||spmailtechno.com^
-||mrflirty.com^
 ||wildblossoms.top^
 ||lunarlifepromo.com^
 ||moontrekadventures.com^
@@ -909,5 +907,6 @@
 !
 !
 ! Фильтр не будет обновляться после публикации в репозитории (29.03.25).
+!
 !
 !
