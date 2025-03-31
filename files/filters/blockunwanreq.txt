@@ -998,7 +998,11 @@ qrator/validate$xhr,important
 ||pixelswhirl.com^$important
 ||ads*viber.com^$important
 ||15.235.163.96/api/v*/get-ad-ids$app=com.nebulatech.voocvpnpro
+||15.235.163.96/api/v*/get-ad-ids$app=com.nebulatech.voocvpn
 ||*-metrica.cabconnect.org^$important
+||fandom.com/silver-surfer.html^$domain=fandom.com
+||js.zi-scripts.com/zi-tag.js^$script,important
+||js.zi-scripts.com/unified/v*/master/logError$xhr,important
 !
 !
 !
@@ -2245,6 +2249,7 @@ mi.com#@$#body { overflow: visible !important; }
 @@||russianpost.ru^
 @@||icecast-vgtrk.cdnvideo.ru^
 vestifm.online$@$link[rel="manifest"]
+@@||appsalesgo*.appspot.com^$app=net.tsapps.appsales # рабочий домен приложения AppSales.
 !
 !
 ! -
