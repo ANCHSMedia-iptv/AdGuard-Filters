@@ -5,8 +5,12 @@
 ! Перемещён с основного фильтра BUC (Block Unwanted Connections) [Обычный + DNS].
 ! Создан 29.03.2025.
 !
-! Некоторые домены будут перенесены в основной фильтр, т.к. являются рекламными и будет проанализированы.
-! Какие-то - будет удалены, т.к. «безобидные».
+! Title: F unwanted sites (F.U.S)
+! Description: Список небезопасных сайтов, которые являются ловушкой для тех, кто кликнет по ссылкам в спам письме в электронной почте. Действителен на обычном и на DNS уровнях.
+! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
+! Last Modified: 29.03.2025 12:30 UTC
+!
+!
 ! Я удивлён, что большинство доменов находятся в домене .ru (домен России).. 
 !
 !
@@ -595,7 +599,7 @@
 ||utdecunelchungnetsiper.ru^
 ||eremedpofergiri.ru^
 ||ebdiheartproptex.ru^
-||scurpaymyhandpukeelryaprin.ru^
+||scurpaymyhandpukeelryaprin.ru^
 ||repicmi.ru^
 ||taradili.ru^
 ||ivprosnaktauthirlle.ru^
@@ -705,7 +709,7 @@
 ||rehowfeze.ru^
 ||terasatenjunk.ru^
 ||lidodinontiwhe.ru^
-||inexithexar.ru^
+||inexithexar.ru^
 ||epimalti.ru^
 ||thrownocheckceaxisyscu.ru^
 ||reitremar.ru^
@@ -802,13 +806,10 @@
 ||scosio.click^
 !
 ! --
-||*-sg.callback.cloudses.com/campaigns
-||*-sg.callback.cloudses.com/api/webhook?
 ||wewlep.com^
 ||escplad.com^
 ||greatdeposit.com^
 ||lawkj.com^
-||100percentopenrate-int.com^
 ||pantydownbet.com^
 ||rodartorial.com^
 ||alamojapan.com^
@@ -816,7 +817,6 @@
 ||slysif.com^
 ||guellit.com^
 ||bevolis.com^
-||quickcupidweb.com^
 ||coincast.org^
 ! -
 ||aartaid.com^
@@ -841,10 +841,7 @@
 ||spodate.space^
 ||onticei.xyz^
 ||tipture.space^
-||hookupmadeeasy.com^
-||connecthookup.com/campaigns
 ||urgative.com^
-! fastmailerwizz.com^
 ||microtone.org^
 ||orangeinnjoy.com^
 ||visitrunner.com^
@@ -865,7 +862,6 @@
 ||endlety.com^
 ||wilnt.com^
 ||dlscdn.com^
-||app.cloakerly.com/link.php
 ||trafficbiz.site^
 ||go-fr-dt.com^
 ||sheneedstoblow.com^
