@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.4.5-R
-! TimeUpdated: 2025-03-29T09:08:00+00:00
+! Version: 3.4.6-R
+! TimeUpdated: 2025-03-31T06:17:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -775,7 +775,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||disqus.com/count.js$script,xhr,important
 ||disqus.com/count-data.js$script,xhr,important
 ||ads.pro-market.net^$important
-||cloudflare.com/cdn-cgi/trace$important
+!
 ||tele-satinfo.ru/img/1.gif^$image,domain=tele-satinfo.ru
 ||api.vigo.one/uxzoom/*/notify$xhr
 ||cableman.ru/ad/content/render$important,domain=cableman.ru
@@ -995,7 +995,7 @@ qrator/validate$xhr,important
 ||autocomplete.diginetica.net^
 ||data-events.cdn.viber.com^$important
 ||www.googleapis.com^$app=com.viber.voip
-||1.0.0.2/cdn-cgi/trace
+||pixelswhirl.com^$important
 ||ads*viber.com^$important
 ||15.235.163.96/api/v*/get-ad-ids$app=com.nebulatech.voocvpnpro
 ||*-metrica.cabconnect.org^$important
