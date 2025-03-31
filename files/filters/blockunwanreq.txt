@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.4.7-R
-! TimeUpdated: 2025-03-31T09:06:00+00:00
+! Version: 3.4.8-R
+! TimeUpdated: 2025-03-31T11:06:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1004,6 +1004,8 @@ qrator/validate$xhr,important
 ||js.zi-scripts.com/unified/v*/master/logError$xhr,important
 ||appcenter.ms^$app=ru.mes.dnevnik.fgis|ru.pyaterochka.app.browser|ru.desport.android|bz.zaa.mibudsm8
 ||zephyrsgroves.com^
+||xn--80aafadvc9bifbaeqg0p.xn--p1ai/img/icons/sferum.svg^$image,domain=xn--80aafadvc9bifbaeqg0p.xn--p1ai
+||welcome.adguard.*/-/event/^$xhr,domain=welcome.adguard.*
 !
 !
 !
@@ -1721,7 +1723,9 @@ remontka.pro##div.uk-container.uk-container-center.rem-container:nth-child(4) > 
 ##div[id="stickad_ya"]
 remontka.pro##aside[class^="rem-rightbar"]
 securelist.ru##div[class^="o-col-4@sm u-hidden u-block@sm"]
-habr.com##div[class^="disable-adblock-placeholder]
+habr.com##.disable-adblock-placeholder
+xn--80aafadvc9bifbaeqg0p.xn--p1ai##a[href^="://sferum.ru/]
+xn--80aafadvc9bifbaeqg0p.xn--p1ai##a.floating-sferum-main:nth-child(4)
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -1782,6 +1786,7 @@ thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'dmp_geo', 'null')
 thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'longVisits', '$remove$')
 thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'watchedVideoArticles', 'null')
 thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/', '$remove$')
+! habr.com#%#//scriptlet('set-?-storage-item', '__pwacompat_manifest', 'emptyObj')
 ! soon..
 !
 ! -
@@ -2252,6 +2257,7 @@ mi.com#@$#body { overflow: visible !important; }
 @@||icecast-vgtrk.cdnvideo.ru^
 vestifm.online$@$link[rel="manifest"]
 @@||appsalesgo*.appspot.com^$app=net.tsapps.appsales # рабочий домен приложения AppSales.
+@@||cdn.adguard.*/website/adguard.com/products/screenshots/*/ad_blocking.svg$domain=welcome.adguard.* # 31.03.25: не загружается картинка из-за фильтра xinggsf, в белом списке.
 !
 !
 ! -
