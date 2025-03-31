@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.4.6-R
-! TimeUpdated: 2025-03-31T06:17:00+00:00
+! Version: 3.4.7-R
+! TimeUpdated: 2025-03-31T09:06:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -191,7 +191,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||cdn.gamestatic.net/files/pictures/promo_banner_*.png^$image,domain=rbkgames.com,important
 ||alicdn.com/AWSC/et/*/et_f.js^$script,important
 ||cpa.hh.ru^
-! *.103.*/css/cookiesNotification*.css^$css,important,domain=mag.103.* (новое правило, строка 417)
+! *.103.*/css/cookiesNotification*.css^$css,important,domain=mag.103.* (новое правило, строка 418)
 ! *.103.*/js/cookiesNotificationBy.js^$script,important,domain=mag.103.* (новое правило, строка 138 и 139)
 ||d31j93rd8oukbv.cloudfront.net^$important
 ||d1tru86qrby720.cloudfront.net^$important
@@ -281,9 +281,9 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||userapi.com/js/api/openapi.js$script,domain=~vk.com,important
 ||analytics.vsem-edu-oblako.ru*/track^$xhr,important
 ||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,important
-|! sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com (новое правило, строка 284)
+|! sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com (новое правило, строка 285)
 ||sa.hoodmaps.com^$important,domain=hoodmaps.com
-! citilink.ru/graphql/^$xhr,domain=citilink.ru (новое правило, строка 381)
+! citilink.ru/graphql/^$xhr,domain=citilink.ru (новое правило, строка 382)
 ||fga.citilink.ru/collect^$xhr,domain=citilink.ru,important
 ||dns-shop.ru/banner/get-header-banner/^$xhr,domain=dns-shop.ru
 ||alfastrah.ru/js/detectPrivateMode.*.js^$script,domain=alfastrah.ru,important
@@ -313,10 +313,10 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||targetads.io^$important
 ||dostavista.ru/backend/$xhr,domain=dostavista.ru,important
 ||dostavista.ru/write-analytics^$xhr,domain=dostavista.ru,important
-! dostavista.ru/backend/browser-error-log^$xhr,domain=dostavista.ru (новое правило, строка 313)
+! dostavista.ru/backend/browser-error-log^$xhr,domain=dostavista.ru (новое правило, строка 314)
 ||express.dhl.ru/local/templates/dhl/components/bitrix/menu/*menu/images/left_menu_bg.gif^$xhr,domain=express.dhl.ru
 ||flocktory.com^$important
-! websbol.clickstream.sberbank.ru/metrics/sbol^$xhr,domain=sberbank.ru (новое правило, строка 770)
+! websbol.clickstream.sberbank.ru/metrics/sbol^$xhr,domain=sberbank.ru (новое правило, строка 771)
 /bitrix/js/yandex.metrika/script.js$script,important
 ||iguides.ru/local/components/iguides/notifications.subscribe/manifest.json^$other,domain=iguides.ru,important
 ! cs*.pikabu.ru/apps/ub/*/*/sprite.svg^$xhr,domain=pikabu.ru (18.01.25: ломает сайт)
@@ -346,7 +346,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||assets-cdn.mvideo.ru/*/sprites/sprite.css.svg^$image,domain=mvideo.ru
 ||mvideo.ru/bff/recommendations/$xhr,domain=mvideo.ru
 ||mvideo.ru/bff/settings/promo-blocks$xhr,domain=mvideo.ru
-! holodilnik.ru/ajax/getRecommendsMB.php*^$xhr,domain=holodilnik.ru (новое правило, строка 357)
+! holodilnik.ru/ajax/getRecommendsMB.php*^$xhr,domain=holodilnik.ru (новое правило, строка 358)
 /mindbox*.js^$script,important
 ||holodilnik.ru/js/credit*.js$script,domain=holodilnik.ru
 ||dashboard.fstrk.io/widget*/*.js^$script
@@ -393,7 +393,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||newprospect.ru/assets/filesmanager/upload/iblock/*/*.gif^$image,domain=newprospect.ru
 ||newprospect.ru/assets/templates/default/img/*.gif^$image,domain=newprospect.ru
 ||lmcdn.ru/static/permanent/libs/ad-blocker.js^$script,domain=lamoda.ru,important
-! *.lmcdn.ru/static/*/assets/*cookie*.css^$css,domain=lamoda.ru (новое правило, строка 417)
+! *.lmcdn.ru/static/*/assets/*cookie*.css^$css,domain=lamoda.ru (новое правило, строка 418)
 ||hdeapi.lamoda.ru/js/modules/chat_widget/hde.js^$script,domain=lamoda.ru
 ||sravni.ru/v*/advertising/banners/$xhr,domain=sravni.ru,important
 ! ||graphql.kazanexpress.ru^ (новое правило, строка 381)
@@ -622,7 +622,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||sfr7ag.ru^
 ||samokat.ru/weborama.html^$domain=samokat.ru,important
 ||api-web.samokat.ru/showcase/recommendations/whatToTryProducts$xhr,domain=samokat.ru
-! /_vercel/speed-insights/script.js^$script,important (новое правило, строка 501)
+! /_vercel/speed-insights/script.js^$script,important (новое правило, строка 502)
 ||zen.yandex.ru/widget-loader^$script,domain=3dnews.ru,important
 ||kupigolos.ru/img/info/710%D1%85294.webp^$image,domain=kupigolos.ru
 ||kupigolos.ru/img/info/180x1270.webp^$image,domain=kupigolos.ru
@@ -639,7 +639,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||savefrom.net/img/favicons/thumb/*.png^$xhr,domain=savefrom.net
 ||savefrom.net/img/ummy_icon_*.png^$image,domain=savefrom.net
 ||savefrom.net/build/js/chunk~rsya*-main-js.js$script,domain=savefrom.net,important
-! ||savefrom.net/build/js/chunk~rsyaRuBanners-js-main-js.js$script,domain=savefrom.net (новое правило, строка 640)
+! ||savefrom.net/build/js/chunk~rsyaRuBanners-js-main-js.js$script,domain=savefrom.net (новое правило, строка 641)
 ||savefrom.net/msec^$xhr,domain=savefrom.net,important
 /build/2f216d687fe39ac06f55.png^$image,domain=9xbuddy.com|offmp3.net
 ||kanobu.ru/api/v*/ainfo/toplink-and-informer^$xhr,domain=kanobu.ru,important
@@ -654,7 +654,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||esports.ru/wp-content/uploads/2024/05/pari-logo-backing.svg^$image,domain=esports.ru
 ||esports.ru/wp-content/uploads/2024/12/freebet_*.gif^$image,domain=esports.ru
 ||esports.ru/wp-content/uploads/2025/01/414x60.gif^$image,domain=esports.ru
-! matomo-el5.x5.ru^$important (новое правило, строка 686)
+! matomo-el5.x5.ru^$important (новое правило, строка 688)
 ||frontlogger.dodois.io^$important
 $cookie=adtech_uid
 $cookie=top100_id
@@ -668,7 +668,7 @@ $cookie=coockoos
 $cookie=my
 $cookie=/__ddg*_/
 ||sibdroid.ru/upload/is/settings/c52/k8m6dcpmm5aqnx6nu8hn2t16va4e404l/TG%20desktop%20(2).png^$image,domain=sibdroid.ru
-! /wp-admin/admin-ajax.php?*views*$xhr (новое правило, строка 784)
+! /wp-admin/admin-ajax.php?*views*$xhr (новое правило, строка 785)
 ||api.zadarma.com/calltracker$xhr,important
 ||effect.habr.com^$important
 ||habr.com/kek/v*/articles/*/pageview$xhr,domain=habr.com
@@ -972,11 +972,11 @@ qrator/qauth.js$script,important
 qrator/validate$xhr,important
 ||ad-source.pro^$important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
-! ://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # soon...
-! /^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # soon...
+://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv
+||/^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv
 ! ://yastatic.net^$app=com.radioapp.mayakradio # soon...
-! /^5\.255\.255\.77/^$app=ru.pyaterochka.app.browser # soon...
-||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm # подгрузка рекламы
+/^5\.255\.255\.77/^$app=ru.pyaterochka.app.browser
+||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm # подгрузка рекламы в приложение Relax FM.
 ||s3.amazonaws.com^$app=com.viber.voip
 ||bing.com^$app=com.viber.voip
 ||youtube.com^$app=www.metro.com
@@ -997,12 +997,13 @@ qrator/validate$xhr,important
 ||www.googleapis.com^$app=com.viber.voip
 ||pixelswhirl.com^$important
 ||ads*viber.com^$important
-||15.235.163.96/api/v*/get-ad-ids$app=com.nebulatech.voocvpnpro
-||15.235.163.96/api/v*/get-ad-ids$app=com.nebulatech.voocvpn
+/api/v*/get-ad-ids$app=com.nebulatech.voocvpnpro|com.voocvpn.moonvpnpro # подгрузка рекламных ID (судя по запросу) в приложениях VPN Secure (Vooc VPN), и VPN Pro от одного разработчика. (не реклама)
 ||*-metrica.cabconnect.org^$important
 ||fandom.com/silver-surfer.html^$domain=fandom.com
 ||js.zi-scripts.com/zi-tag.js^$script,important
 ||js.zi-scripts.com/unified/v*/master/logError$xhr,important
+||appcenter.ms^$app=ru.mes.dnevnik.fgis|ru.pyaterochka.app.browser|ru.desport.android|bz.zaa.mibudsm8
+||zephyrsgroves.com^
 !
 !
 !
@@ -1910,8 +1911,10 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ! == Браузерные запросы ==
 ! == Browser requests ==
 !
-||settings.kiwibrowser.com/search/getrecommendedsearch^$important,app=com.kiwibrowser.browser # рекомендованные запросы в браузере Kiwi
-||gstatic.com/chrome/ntp/suggested_sites_DEFAULT_5.json^$important # рекомендованные сайты от гугла
+||settings.kiwibrowser.com/search/getrecommendedsearch^$important,app=com.kiwibrowser.browser
+! Рекомендованные запросы в браузере Kiwi
+||gstatic.com/chrome/ntp/suggested_sites_*.json^$important
+! Рекомендованные сайты от Гугла
 !
 ||news.google.com^$important # гугл новости (нафиг нужен?)
 ||enjoyxstudy.com^$important # фиг пойми что за домен..
@@ -2221,7 +2224,6 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 ! @@||onlinetrade.ru^
 @@||s09.stc.yc.kpcdn.net/share/i/beige/325472601571f31e1bf00674c368d335.gif^$domain=kp.ru
 @@||group-ib.com^
-! @@||smartcaptcha.yandexcloud.net/captcha.js
 @@||smartcaptcha.yandexcloud.net^
 @@||mega.nz^$ghide
 @@||hd.kinopoisk.ru^$important,document
