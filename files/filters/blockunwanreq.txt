@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.4.8-R
-! TimeUpdated: 2025-03-31T11:06:00+00:00
+! Version: 3.4.9-R
+! TimeUpdated: 2025-04-02T10:40:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -356,7 +356,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||idealturnik.ru/ordercall-config/^$xhr,domain=idealturnik.ru,important
 ||andata.ru^$third-party
 /ajax/getRecom*.php$xhr,important
-||my.pochtabank.ru/sdk/v*/pos-credit.js^$script
+||my.pochtabank.ru/sdk/v*/pos-credit.js^$script,third-party
 ||dadata.ru^$third-party
 ||bestway-russia.ru/catalog/view/javascript/mtkv.js^$script,domain=bestway-russia.ru
 ||bestway-russia.ru/catalog/view/javascript/tag.js^$script,important,domain=bestway-russia.ru
@@ -430,7 +430,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||api.modrinth.com/analytics/$xhr,domain=modrinth.com,important
 ||img.ru-minecraft.ru/logokl2.png^$image,domain=ru-minecraft.ru
 /wp-content/plugins/thirstyaffiliates-pro/js/app/tap-gct.js$script
-/js/share*.js^$script,domain=~teraboxcdn.com|~terabox.com|~terabox*,important
+/js/share*.js^$script,domain=~teraboxcdn.com|~terabox.com|~terabox.*,important
 ||cubixworld.net/api/freepromo^$xhr,domain=cubixworld.net
 ||cubixworld.net/scripts/ga.js^$script,domain=cubixworld.net,important
 ||vk.com/widget_comments.php$important,xhr,domain=~vk.com
@@ -489,9 +489,9 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /block-vk.webp^$image
 ||minecraftrating.ru/widgets_api/monitoring/monitoring.html^$domain=minecraftrating.ru
 ||cdn.jsdelivr.net/npm/cookify*/src/index.js^$script,important
-||cdn.axeum.ru/assets/*/js/advertising.*.js^$script,domain=axeum.ru,important
-||cdn.axeum.ru/assets/*/js/yandex.*.js^$script,domain=axeum.ru,important
-||cdn.axeum.ru/assets/*/plugins/mc_yandex_ru_metrika_tag.*.js^$script,domain=axeum.ru,important
+||cdn.axeum.ru/assets/*/js/advertising*.js^$script,domain=axeum.ru,important
+||cdn.axeum.ru/assets/*/js/yandex*.js^$script,domain=axeum.ru,important
+||cdn.axeum.ru/assets/*/plugins/mc_yandex_ru_metrika_tag*.js^$script,domain=axeum.ru,important
 ||linkunshorten.com/js/11.js^$script,domain=linkunshorten.com
 ||linkunshorten.com/js/559.js^$script,domain=linkunshorten.com
 ||linkunshorten.com/img/promo/*.png^$image,domain=linkunshorten.com
@@ -998,6 +998,7 @@ qrator/validate$xhr,important
 ||pixelswhirl.com^$important
 ||ads*viber.com^$important
 /api/v*/get-ad-ids$app=com.nebulatech.voocvpnpro|com.voocvpn.moonvpnpro # подгрузка рекламных ID (судя по запросу) в приложениях VPN Secure (Vooc VPN), и VPN Pro от одного разработчика. (не реклама)
+||ads.taxiaid.org^$important
 ||*-metrica.cabconnect.org^$important
 ||fandom.com/silver-surfer.html^$domain=fandom.com
 ||js.zi-scripts.com/zi-tag.js^$script,important
@@ -1006,6 +1007,12 @@ qrator/validate$xhr,important
 ||zephyrsgroves.com^
 ||xn--80aafadvc9bifbaeqg0p.xn--p1ai/img/icons/sferum.svg^$image,domain=xn--80aafadvc9bifbaeqg0p.xn--p1ai
 ||welcome.adguard.*/-/event/^$xhr,domain=welcome.adguard.*
+||fandom.com/*/api.php?action=query*&apprefix=Custom-Discord-&*uselang=content$xhr,domain=fandom.com
+||fandom.com/*/load.php?*&modules=u%3Adev%3AMediaWiki%3ADiscord.css$script,domain=fandom.com
+||images.wikia.com/clock-work-planet/images/*/Discord_old_logo.svg^$image,domain=fandom.com
+! $removeparam=u:dev:MediaWiki:BalancedDiscord.css,domain=fandom.com (soon..)
+||api.corr.life/public/regions/lookup^$xhr,domain=life.ru
+||cdn.axeum.ru/assets/*/js/client_call_phone*.js^$script,domain=axeum.ru
 !
 !
 !
@@ -1165,7 +1172,7 @@ qrator/validate$xhr,important
 ||*basket*.wbbasket.ru/vol*/site/t/*/cookies.*.json^$xhr,domain=wildberries.ru,important
 ||a.wb.ru^$important
 ||wbx-logs.wildberries.ru^$important
-||sentry.wb.ru^$important
+||*sentry.wb.ru^$important
 !
 !
 !
@@ -1724,8 +1731,10 @@ remontka.pro##div.uk-container.uk-container-center.rem-container:nth-child(4) > 
 remontka.pro##aside[class^="rem-rightbar"]
 securelist.ru##div[class^="o-col-4@sm u-hidden u-block@sm"]
 habr.com##.disable-adblock-placeholder
-xn--80aafadvc9bifbaeqg0p.xn--p1ai##a[href^="://sferum.ru/]
+xn--80aafadvc9bifbaeqg0p.xn--p1ai##a[href^="://sferum.ru/"]
 xn--80aafadvc9bifbaeqg0p.xn--p1ai##a.floating-sferum-main:nth-child(4)
+! 2.04.25: Взято отсюда [https://github.com/AdguardTeam/AdguardFilters/issues/202005#issuecomment-2768820548]
+bing.com##.mmaAdCard
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2089,7 +2098,7 @@ yandex.ru##div[class^="VanillaReact AliceFabContainer"]
 ||googletagmanager.com^$important
 ||googleadservices.com^$important
 ||google-analytics.com^$important
-||*ds.metric.gstatic.com^$important
+||*ds.metric.gstatic.com^$important # для чего он разблокирован в одном из основных фильтров?
 ||analytics.google.com^$important
 ||doubleclick.net^$important
 ||googlesyndication.com^$important
@@ -2381,13 +2390,13 @@ vestifm.online$@$link[rel="manifest"]
 !
 !
 ! dzen.ru,auto.ru,avito.ru,baby.ru,businessman.ru,dni.ru,e1.ru,echo.msk.ru,fb.ru,forexpf.ru,gismeteo.by,gismeteo.kz,gismeteo.md,gismeteo.ru,gorodrabot.ru,infoniac.ru,it-tehnik.ru,kakprosto.ru,kinopoisk.ru,liveinternet.ru,mathb-ege.sdamgia.ru,mk.ru,nkj.ru,ohotniki.ru,oko-planet.su,otzovik.com,razlozhi.ru,sdamgia.ru,syl.ru,vz.ru#%#//scriptlet('remove-cookie', '/blcrm|bltsr|zmFQeXtI|JPIqApiY|computer/')
-! ^$cookie= ^$cookie=/|/ $cookie= $important ,important domain= app= $ / |
+! ^$cookie= ^$cookie=/|/ $cookie= $important ,important domain= app= $ / | $stealth nowebrtc removeparam
 ! #%#//scriptlet('remove-cookie', '/||||/')
 ! #%#//scriptlet('set-local-storage-item', '', '')
 ! #%#//scriptlet('set-session-storage-item', '', '')
 ! #%#//scriptlet('set-cookie', '', '', 'none')
 ! #%#//scriptlet('prevent-element-src-loading', 'script', '')
-!
+! #%#//scriptlet('abort-on-property-read', "adBlockDetected")
 !
 !
 ! Соцсети Facebook и Instagram заблокированы и запрещены на территории РФ, владеющая ими компания Meta признана экстремисткой и деятельность в РФ запрещена.

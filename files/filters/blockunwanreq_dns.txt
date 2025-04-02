@@ -2,7 +2,7 @@
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Version: 3.4.2-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-03-31T11:06:00+00:00
+! TimeUpdated: 2025-04-02T10:40:00+00:00
 ! Expires: 72 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 31.03.2025 06:17 UTC
+! Last Modified: 02.04.2025 10:40 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -228,7 +228,7 @@
 ||syndication.twitter.com^$dnsrewrite=REFUSED
 ||rexpush.pro^$dnsrewrite=REFUSED,important
 ||peiynu.com^$dnsrewrite=REFUSED,important
-||appspot.com^$important
+||appspot.com^
 ||yabro.ru^$important
 ||flowerpla.com^$dnsrewrite=REFUSED,important
 ||amocrm.ru^$dnsrewrite=REFUSED,important
@@ -293,7 +293,7 @@
 ||rcmjs.rambler.ru^$important
 ||trafffgen.rambler.ru^$important
 ||ddmanager.ru^$important
-||*.weborama.*^$important
+||*weborama*^$important
 ||d31j93rd8oukbv.cloudfront.net^$dnsrewrite=NXDOMAIN,important
 ||mod.calltouch.ru^$important
 ||tracking.diginetica.net^$important
@@ -623,7 +623,7 @@
 ||sentry-tech.cdek.ru^$important
 ||online-metrix.net^$important
 ||s3.eu-central-1.amazonaws.com^$important
-||sentry.wb.ru^$important
+||*sentry.wb.ru^$important
 ||collector-prod.perek.epoch8.ru^$important
 ||fda.middle-api.magnit.ru^
 ||fp.kaspersky-labs.com^
