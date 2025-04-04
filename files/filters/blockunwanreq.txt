@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.4.9-R
-! TimeUpdated: 2025-04-02T10:40:00+00:00
+! Version: 3.5.0-R
+! TimeUpdated: 2025-04-03T11:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -73,7 +73,7 @@
 ||syndication.twitter.com^
 ||rexpush.pro^$important
 ||peiynu.com^$important
-||appspot.com^$important
+||appspot.com^$important,domain=~appsalesgo2.appspot.com # разблокирован рабочий домен приложения AppSales. (не реклама).
 ||yabro.ru^$important
 ||flowerpla.com^$important
 ||amocrm.ru^$important
@@ -130,7 +130,7 @@
 ||rudderstack.com^$important
 ! hh.ru/api/fl/logs/^$other,important,domain=hh.ru (новое правило, строка 589)
 ||cedexis.com^$important
-/generate_204$domain=~youtube.com|~googlevideo.com|api.browser.yandex.*
+/generate_204$domain=~youtube.com|~googlevideo.com|~api.browser.yandex.*
 ||adlook.me^$important
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru,important
@@ -241,7 +241,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||cdn-st*.rtr-vesti.ru/mh_files/*/imho.js^$script,domain=vesti.ru,important
 ||vesti.ru/i/bg.png$image,domain=vesti.ru,important
 ||api-voyage.jetcrm.ru/public/form/subscribe-form.js^$script
-||life.ru/_next/static/chunks/2793.3fd7e7f2a78da9d92688.js^$script,domain=life.ru,important
+||life.ru/_next/static/chunks/2793.3fd7e7f2a78da9d92688.js^$script,domain=life.ru,important # 3.04.25: скрипта наверное нет уже.
 /p.*^$image,xhr,important
 ||static.1tv.ru/player/config/banner.gif$image,domain=1tv.ru,important
 ||api.1tv.ru/v*/promo_places/alert_for_player^$xhr,domain=1tv.ru,important
@@ -500,7 +500,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||minecraftheat.ru/uploads/bimages/*/*.*^$image,domain=minecraftheat.ru
 ||xgm.guru/resource/view^$xhr,domain=xgm.guru
 /_vercel/*/script.js^$script,important
-||event.playground.ru*/.well-known/mercure?$xhr,domain=playground.ru,important
+||event.playground.ru*/.well-known/mercure$xhr,domain=playground.ru,important
 ||alfabank.by/api/cookies/getCookieByLocalstorage.php^$xhr,domain=alfabank.by,important
 ! matomo.alfabank.by^$domain=alfabank.by (новое правило, строка 686)
 ||st.babysfera.ru/*/static/assets/Components/*/Shared/ShareButton/ShareButton.js^$script,domain=baby.ru
@@ -555,7 +555,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||uptodown.com/img/vpn-mockup.webp^$image,domain=uptodown.com,important
 ||uptodown.com/img/svgs/icon-vpn-secondary.svg^$image,domain=uptodown.com,important
 ||pdalife.to/updateView/^$xhr,domain=pdalife.to
-||a.*pure.*/analytics*.js^$script,domain=apkpure.net|apkpure.com,important
+||a.*pure.*/analytics*.js^$script,domain=apkpure.*,important # apkpure.net|apkpure.com
 ||r.cdnpure.com^$important
 ||mynickname.com/img/icon-nft.png^$xhr,domain=mynickname.com
 ||playground.ru/img/ui/steam-pay-*.png^$xhr,domain=playground.ru,important
@@ -787,7 +787,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||files.vm.ru/pdf/2025.02/original/thumb_1280_67c0a45f82682c09ce62d1a1.jpg^$image,xhr,domain=vm.ru
 ||stats.wp.com^
 ||sp72ru.ru/wp-content/uploads/2022/08/alhakk.jpg^$image,domain=sp72ru.ru
-! ://connect.ok.ru^
+!
 ||cdn.consentmanager.net/delivery/autoblocking/*.js$script,xhr,important
 ||easeus.com/default/js/ad_download.js^$script,domain=easeus.com|easeus.*.com,important
 ||mail.easeus.com/common-api/share/count^$xhr,domain=easeus.com|easeus.*.com
@@ -805,7 +805,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||unagi*.amazon.com^$important
 ||cdn-advert.smi2.net^$important
 ||mradx.net^$important
-||pixelwhirl.com^$important
+||pixel*whirl.com^$important
 ||staticcdn.duckduckgo.com^$important
 ||abtest.alibaba.com^$important
 ||howlapm.com^$important
@@ -884,7 +884,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||college.72to.ru/*.gif^$image,domain=college.72to.ru
 ||cdn.cookielaw.org^
 ||*.rt.avito.ru^
-||coop-land.ru/templates/CoopLand2016/js/adriver.*.js^$script,domain=coop-land.ru,important
+||coop-land.ru/templates/CoopLand2016/js/adriver*.js^$script,domain=coop-land.ru,important
 ! /adriver$script,xhr
 ! ||*adc3-launch*^$important (soon..)
 ||applvn.com^$important
@@ -994,8 +994,7 @@ qrator/validate$xhr,important
 ||d2wy8f7a9ursnm.cloudfront.net^
 ||autocomplete.diginetica.net^
 ||data-events.cdn.viber.com^$important
-||www.googleapis.com^$app=com.viber.voip
-||pixelswhirl.com^$important
+||www.googleapis.com^$app=com.viber.voifgispixelswhirl.com^$important
 ||ads*viber.com^$important
 /api/v*/get-ad-ids$app=com.nebulatech.voocvpnpro|com.voocvpn.moonvpnpro # подгрузка рекламных ID (судя по запросу) в приложениях VPN Secure (Vooc VPN), и VPN Pro от одного разработчика. (не реклама)
 ||ads.taxiaid.org^$important
@@ -1006,13 +1005,14 @@ qrator/validate$xhr,important
 ||appcenter.ms^$app=ru.mes.dnevnik.fgis|ru.pyaterochka.app.browser|ru.desport.android|bz.zaa.mibudsm8
 ||zephyrsgroves.com^
 ||xn--80aafadvc9bifbaeqg0p.xn--p1ai/img/icons/sferum.svg^$image,domain=xn--80aafadvc9bifbaeqg0p.xn--p1ai
-||welcome.adguard.*/-/event/^$xhr,domain=welcome.adguard.*
+||welcome.adguard.*/-/event/^$xhr,domain=welcome.adguard.*,important
 ||fandom.com/*/api.php?action=query*&apprefix=Custom-Discord-&*uselang=content$xhr,domain=fandom.com
 ||fandom.com/*/load.php?*&modules=u%3Adev%3AMediaWiki%3ADiscord.css$script,domain=fandom.com
 ||images.wikia.com/clock-work-planet/images/*/Discord_old_logo.svg^$image,domain=fandom.com
 ! $removeparam=u:dev:MediaWiki:BalancedDiscord.css,domain=fandom.com (soon..)
 ||api.corr.life/public/regions/lookup^$xhr,domain=life.ru
 ||cdn.axeum.ru/assets/*/js/client_call_phone*.js^$script,domain=axeum.ru
+||client-api.remote-config.rustore.ru^
 !
 !
 !
@@ -1727,7 +1727,7 @@ easeus.com,easeus.*.com##div[class^="button_box_20201208"]
 remontka.pro##a[href*="://t.me/remontka_pro"]
 ##link[href*="//feeds.feedburner.com/"]
 remontka.pro##div.uk-container.uk-container-center.rem-container:nth-child(4) > div.tm-middle.uk-grid:first-child > div.tm-main.uk-width-medium-1-1 > div.rem-main > main.tm-content:last-child > article.uk-article.rem-singlearticle:first-child > aside:last-child > div:nth-child(3) > a.uk-button.rem-leftbutton
-##div[id="stickad_ya"]
+##div[id*="stickad_ya"]
 remontka.pro##aside[class^="rem-rightbar"]
 securelist.ru##div[class^="o-col-4@sm u-hidden u-block@sm"]
 habr.com##.disable-adblock-placeholder
@@ -1735,6 +1735,9 @@ xn--80aafadvc9bifbaeqg0p.xn--p1ai##a[href^="://sferum.ru/"]
 xn--80aafadvc9bifbaeqg0p.xn--p1ai##a.floating-sferum-main:nth-child(4)
 ! 2.04.25: Взято отсюда [https://github.com/AdguardTeam/AdguardFilters/issues/202005#issuecomment-2768820548]
 bing.com##.mmaAdCard
+college.72to.ru##.notification-container
+myschool.72to.ru##._1B2MfLvr8qLC_uGVNGm4BU
+myschool.72to.ru##div._2kJk8hnpgbINo9OFR6xjGn:nth-child(6) > div.rgHK0-dZwcYE2yf0fcu2q._3m84YHTrytRI_qsNi9i4nU
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -1829,7 +1832,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||disk.akamaized.net^$app=com.dubox.drive
 ||*gamerplay*.space^
 !
-! content-autofill.googleapis.com^$app=com.dubox.drive
+!
 !
 !
 ||stun.services.mozilla.com^
@@ -2057,11 +2060,12 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||yastatic.net/share*/$script,xhr,important
 ||abt.*.yandex.net^$important
 ||trends.yandex.net^
-||yastatic.net/s*/home-static/feeds/*/market/*/market-feed.*$script,css,domain=ya.ru
+||yastatic.net/s*/home-static/feeds/*market*/market-feed.*$script,css,domain=ya.ru
 ||ya.ru/portal/proxy?blocks=Market_cart$xhr,script,domain=ya.ru
 ||ya.ru/portal/feed?feed_geo=*&id=market&page=1&session-unique-id=*&geo=*&platform=*&shown=market$xhr,domain=ya.ru
 ||dr.yandex.net/*nel$other,xhr
 ||advertising.yandex.ru^
+$document,removeparam=from,domain=yandex.*|ya.ru
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -2077,8 +2081,8 @@ market.yandex.ru##div[class^="HBydy cia-vs cia-cs"]
 market.yandex.ru##div[id^="/content/header/headerPromo"]
 market.yandex.ru##div[data-apiary-widget-name="@monetize/IncutConstructor/MadvBasicCarouselPlain"]
 market.yandex.ru##div[class^="_1u4JH cia-vs"]
-ya.ru##div[class^="VanillaReact AliceFabContainer"]
-yandex.ru##div[class^="VanillaReact AliceFabContainer"]
+! ya.ru##div[class^="VanillaReact AliceFabContainer"] # нихрена не помогает избавиться от Алисы
+! yandex.ru##div[class^="VanillaReact AliceFabContainer"] # нихрена не помогает избавиться от Алисы
 !
 !
 ! =
@@ -2265,7 +2269,6 @@ mi.com#@$#body { overflow: visible !important; }
 @@||russianpost.ru^
 @@||icecast-vgtrk.cdnvideo.ru^
 vestifm.online$@$link[rel="manifest"]
-@@||appsalesgo*.appspot.com^$app=net.tsapps.appsales # рабочий домен приложения AppSales.
 @@||cdn.adguard.*/website/adguard.com/products/screenshots/*/ad_blocking.svg$domain=welcome.adguard.* # 31.03.25: не загружается картинка из-за фильтра xinggsf, в белом списке.
 !
 !
