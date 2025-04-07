@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.5.0-R
-! TimeUpdated: 2025-04-03T11:00:00+00:00
+! Version: 3.5.1-R
+! TimeUpdated: 2025-04-07T10:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -39,7 +39,7 @@
 ||gravatar.com^$important
 ||amplreq.com^$important
 ||amplitude.com^$important
-! *bugsnag.com^$important
+!
 ||*bugsnag*^$important
 ||vk-analytics.ru^$important
 ||*instabug*^$important
@@ -49,11 +49,11 @@
 ||smi2.ru^$third-party,domain=~smi2.ru,important
 ||24smi.net^$important,third-party
 ||umeng.com^$important
-||api.bing.com^$third-party,important,domain=~bing.com
+||api.bing.com^$third-party,domain=~bing.com,important
 ||cellrebel.com^$important
 ||onesignal.com^$important
 ||cdn.viglink.com^$important
-||connect.facebook.net^$important,domain=~facebook.com
+||connect.facebook.net^$important,domain=~facebook.com|~facebook.net|~fb.com
 ||connect.ok.ru^$important,domain=~ok.ru
 ||inappstory.ru^$important
 ||inappstory.com^$important
@@ -236,7 +236,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||s*.stc.yc.kpcdn.net/s*/*/adaptive/img/banner.gif$xhr,important
 ! *sendsay.ru^$important
 ||lentainform.com^$important
-/1x1.*^$image,xhr,important,domain=~autocounter.lentainform.com|~lentainform.com
+/1x1.*^$image,xhr,important,domain=~autocounter.lentainform.com|~lentainform.com|~bosch-home.ru|~bsh-group.ru|~comfy.ua|~oplmanager.com|~patagonia.com|~pgatour.com|~sport-express.ru|~zobiki.ru|~idaprikol.ru|~thg.ru # 6.04.25: большинство доменов взято из фильтра RU AdList: Counters.
 ||smotrim.ru/js/media-scope.js^$script,important
 ||cdn-st*.rtr-vesti.ru/mh_files/*/imho.js^$script,domain=vesti.ru,important
 ||vesti.ru/i/bg.png$image,domain=vesti.ru,important
@@ -663,7 +663,7 @@ $cookie=PHPSESSID
 $cookie=KIykI
 $cookie=L
 $cookie=bltsr
-$cookie=bh
+$cookie=bh,domain=~api.browser.yandex.*
 $cookie=coockoos
 $cookie=my
 $cookie=/__ddg*_/
@@ -805,7 +805,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||unagi*.amazon.com^$important
 ||cdn-advert.smi2.net^$important
 ||mradx.net^$important
-||pixel*whirl.com^$important
+||pixe*whirl.com^$important
 ||staticcdn.duckduckgo.com^$important
 ||abtest.alibaba.com^$important
 ||howlapm.com^$important
@@ -973,7 +973,7 @@ qrator/validate$xhr,important
 ||ad-source.pro^$important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
 ://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv
-||/^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv
+/^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv
 ! ://yastatic.net^$app=com.radioapp.mayakradio # soon...
 /^5\.255\.255\.77/^$app=ru.pyaterochka.app.browser
 ||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm # подгрузка рекламы в приложение Relax FM.
@@ -994,7 +994,7 @@ qrator/validate$xhr,important
 ||d2wy8f7a9ursnm.cloudfront.net^
 ||autocomplete.diginetica.net^
 ||data-events.cdn.viber.com^$important
-||www.googleapis.com^$app=com.viber.voifgispixelswhirl.com^$important
+||www.googleapis.com^$app=com.viber.voip
 ||ads*viber.com^$important
 /api/v*/get-ad-ids$app=com.nebulatech.voocvpnpro|com.voocvpn.moonvpnpro # подгрузка рекламных ID (судя по запросу) в приложениях VPN Secure (Vooc VPN), и VPN Pro от одного разработчика. (не реклама)
 ||ads.taxiaid.org^$important
@@ -1013,6 +1013,14 @@ qrator/validate$xhr,important
 ||api.corr.life/public/regions/lookup^$xhr,domain=life.ru
 ||cdn.axeum.ru/assets/*/js/client_call_phone*.js^$script,domain=axeum.ru
 ||client-api.remote-config.rustore.ru^
+||admax.se^$important
+||lyngsat.com/images/pixel_brun.gif^$image,domain=lyngsat.com
+||lyngsat.com/as10/intelsat_managedmedia_2503.gif^$image,domain=lyngsat.com # реклама
+||lyngsat.com/as10/ses_1801.jpg^$image,domain=lyngsat.com # реклама
+||lyngsat.com/as10/greatway_desktop_2.jpg^$image,domain=lyngsat.com # реклама
+! api-hprof.odkl.ru^ (soon..)
+||cloudflare.com/cgi-cdn/trace$third-party,domain=~cloudflare.com|~1.1.1.1|~gidonline.io
+||1.1.1.1/cgi-cdn/trace$third-party,domain=~cloudflare.com|~1.1.1.1|~gidonline.io
 !
 !
 !
@@ -1735,6 +1743,7 @@ xn--80aafadvc9bifbaeqg0p.xn--p1ai##a[href^="://sferum.ru/"]
 xn--80aafadvc9bifbaeqg0p.xn--p1ai##a.floating-sferum-main:nth-child(4)
 ! 2.04.25: Взято отсюда [https://github.com/AdguardTeam/AdguardFilters/issues/202005#issuecomment-2768820548]
 bing.com##.mmaAdCard
+!
 college.72to.ru##.notification-container
 myschool.72to.ru##._1B2MfLvr8qLC_uGVNGm4BU
 myschool.72to.ru##div._2kJk8hnpgbINo9OFR6xjGn:nth-child(6) > div.rgHK0-dZwcYE2yf0fcu2q._3m84YHTrytRI_qsNi9i4nU
@@ -2098,8 +2107,8 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 !
 ||www.googleadservices.com^$important
 ||www.google-analytics.com^$important
-||www.googletagmanager.com^$important
-||googletagmanager.com^$important
+||www.googletagmanager.com^$important,domain=~inforesist.org|~starblast.io|~timepad.ru|~zakon.kz
+||googletagmanager.com^$important,domain=~inforesist.org|~starblast.io|~timepad.ru|~zakon.kz
 ||googleadservices.com^$important
 ||google-analytics.com^$important
 ||*ds.metric.gstatic.com^$important # для чего он разблокирован в одном из основных фильтров?
@@ -2217,7 +2226,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/unallowedbrowsers.js^$script,domain=online.sberbank.ru
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/bowser*.js^$script,domain=online.sberbank.ru
 @@||pl-res.online.sberbank.ru/lib.analytics/*/index.js^$script,domain=online.sberbank.ru
-! pikabu.ru/.well-known/ddos-guard/$script,domain=pikabu.ru (новое правило, строка 1928)
+! pikabu.ru/.well-known/ddos-guard/$script,domain=pikabu.ru (новое правило, строка 2245)
 @@||google.com/js/bg/*.js^$xhr,script
 @@||google.com/recaptcha/
 @@||googlevideo.com^
@@ -2229,7 +2238,7 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||cdn*.vedomosti.ru/*/assets/Banner-*.*^$script,css,domain=vedomosti.ru
 @@||hcaptcha.com^
 @@||iphones.ru/wp-content/themes/simpla2/images/sprites/ir-a18a0.png^$xhr,domain=iphones.ru
-@@||a.apkpure.net/captcha
+@@||a.apkpure.*/captcha
 @@||accounts.google.com/*/cspreport$xhr,other
 @@||msftconnecttest.com^ # проверка соединения с интернетом на Виндовс (домен Майкрософт).
 @@||pay.yandex.ru^
@@ -2270,6 +2279,7 @@ mi.com#@$#body { overflow: visible !important; }
 @@||icecast-vgtrk.cdnvideo.ru^
 vestifm.online$@$link[rel="manifest"]
 @@||cdn.adguard.*/website/adguard.com/products/screenshots/*/ad_blocking.svg$domain=welcome.adguard.* # 31.03.25: не загружается картинка из-за фильтра xinggsf, в белом списке.
+@@|||sb.ltn.fi^
 !
 !
 ! -

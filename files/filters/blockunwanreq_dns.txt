@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.4.2-R
+! Version: 3.4.3-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-04-02T10:40:00+00:00
+! TimeUpdated: 2025-04-07T10:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 02.04.2025 10:40 UTC
+! Last Modified: 07.04.2025 10:00 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -201,7 +201,6 @@
 ||gravatar.com^
 ||amplreq.com^$important
 ||amplitude.com^$important
-! *bugsnag.com^$important
 ||*bugsnag*^$important
 ||vk-analytics.ru^$important
 ||*instabug*^$important
@@ -212,7 +211,6 @@
 ||smi2.ru^$important
 ||24smi.net^$important
 ||umeng.com^$important
-! api.bing.com^$domain=~bing.com
 ||cellrebel.com^$important
 ||onesignal.com^$important
 ||cdn.viglink.com^
@@ -294,7 +292,7 @@
 ||trafffgen.rambler.ru^$important
 ||ddmanager.ru^$important
 ||*weborama*^$important
-||d31j93rd8oukbv.cloudfront.net^$dnsrewrite=NXDOMAIN,important
+||d31j93rd8oukbv.cloudfront.net^$dnsrewrite=0.0.0.0,important
 ||mod.calltouch.ru^$important
 ||tracking.diginetica.net^$important
 ||quantserve.com^
@@ -472,8 +470,7 @@
 ||unagi*.amazon.com^$important
 ||cdn-advert.smi2.net^$important
 ||mradx.net^$important
-||pixelwhirl.com^$important
-||pixelswhirl.com^$important
+||pixe*whirl.com^$important
 ||staticcdn.duckduckgo.com^$important
 ||minotar.net^$dnsrewrite=NXDOMAIN,important
 ||abtest.alibaba.com^$important
@@ -486,21 +483,21 @@
 ||ads.rustore.ru^$important
 ||tracker-api.my.com^$important
 ||pushmarketing.sberbank-tele.com^
-||cust-service.com^$dnsrewrite=REFUSED,important
+||cust-service.com^$dnsrewrite=0.0.0.0,important
 ||msg-global.m.taobao.com^$important
 ||mopub.com^$important
 ||adkmob.com^$important
 ||appodeal.com^$important
 ||pubnative.net^$important
 ||dwxjayoxbnyrr.cloudfront.net^$important
-||applifier.com^$dnsrewrite=REFUSED,important
-||live.chartboost.com^$dnsrewrite=REFUSED,important
+||applifier.com^$dnsrewrite=NXDOMAIN,important
+||live.chartboost.com^$dnsrewrite=0.0.0.0,important
 ||my.com^$important
 ||inmobicdn.net^$dnsrewrite=REFUSED,important
 ||analytics.localytics.com^$important
 ||taboola*fastly.net^
 ||idm.iot.mi.com^
-||flurry.com^$dnsrewrite=REFUSED,important
+||flurry.com^$dnsrewrite=0.0.0.0,important
 ||api.sms.*.miui.com^$important
 ||alt-ad.mail.ru^$important
 ||connect.mail.ru^$important
@@ -523,7 +520,7 @@
 ||nexage.com^$dnsrewrite=NXDOMAIN,important
 ||mobfox.com^$dnsrewrite=NXDOMAIN,important
 ||wapstart.ru^$dnsrewrite=REFUSED,important
-||millennialmedia.com^$dnsrewrite=REFUSED,important
+||millennialmedia.com^$dnsrewrite=0.0.0.0,important
 ||appsdt.com^$dnsrewrite=NXDOMAIN,important
 ||admost.com^$important
 ||appnext.com^$dnsrewrite=REFUSED,important
@@ -531,8 +528,8 @@
 ! ||*mobile-static.adsafeprotected*^$important (soon..)
 ||adcolony.com^$important
 ! ||appnext.hs^$dnsrewrite=NXDOMAIN,important (soon..)
-||supersonicads.com^$dnsrewrite=REFUSED,important
-||startappservice.com^$dnsrewrite=REFUSED,important
+||supersonicads.com^$dnsrewrite=0.0.0.0,important
+||startappservice.com^$dnsrewrite=NXDOMAIN,important
 ||adz.wattpad.com^$important
 ! ||ad.api.kaffnet.com^$dnsrewrite=REFUSED,important (soon..)
 ||batmobil.net^$dnsrewrite=NXDOMAIN,important
@@ -556,8 +553,8 @@
 ||provision.app.devapps.ru^$important
 ||graphql*^$important
 !
-||adad.ir^$dnsrewrite=REFUSED,important
-||dgad.ir^$dnsrewrite=REFUSED,important
+||adad.ir^$dnsrewrite=0.0.0.0,important
+||dgad.ir^$dnsrewrite=0.0.0.0,important
 ||cs*.trafmag.com^$dnsrewrite=NXDOMAIN,important
 ||rarenol.biz^$dnsrewrite=NXDOMAIN,important
 ||kudato.link^$dnsrewrite=NXDOMAIN,important
@@ -566,13 +563,13 @@
 ||hgad.silvercdn.com^
 ||adnxs.com^
 ||ads.2xpub.com^
-||hits.netgeography.net^$dnsrewrite=REFUSED,important
+||hits.netgeography.net^$dnsrewrite=0.0.0.0,important
 ||ad45.com^
 ||adserver.gruprc.ro^
 ||51yes.com^$dnsrewrite=NXDOMAIN,important
 ||intellitxt.com^$important
-||internet-inspection.com^$dnsrewrite=REFUSED,important
-||ads.pacific.net.sg^$dnsrewrite=REFUSED,important
+||internet-inspection.com^$dnsrewrite=0.0.0.0,important
+||ads.pacific.net.sg^$dnsrewrite=0.0.0.0,important
 ||ww150.smartadserver.com^$dnsrewrite=NXDOMAIN,important
 ||smartadserver.com^$dnsrewrite=NXDOMAIN,important
 ——
@@ -592,21 +589,21 @@
 ||ybcrwm.com^
 ||tsyndicate.com^
 ||gothailand.xyz^$dnsrewrite=NXDOMAIN,important
-||exosrv.com^$important,dnsrewrite=REFUSED
+||exosrv.com^$important,dnsrewrite=0.0.0.0
 ||qywfe.com^
 !
-||exoclick.com^$important,dnsrewrite=REFUSED
-||metricwpsh.com^$important,dnsrewrite=REFUSED
-||nereserv.com^$important,dnsrewrite=REFUSED
-||zog.link^$important,dnsrewrite=REFUSED
-||pix-cdn.org*^$important,dnsrewrite=REFUSED
-||magsrv.com^$important,dnsrewrite=REFUSED
-||m3pd.com^$important,dnsrewrite=REFUSED
-||multstorage.com^$important,dnsrewrite=REFUSED
-||polotrex.com^$important,dnsrewrite=REFUSED
-||olopruy.com^$important,dnsrewrite=REFUSED
-||yomeno.xyz^$important,dnsrewrite=REFUSED
-||vstserv.com^$important,dnsrewrite=REFUSED
+||exoclick.com^$important,dnsrewrite=0.0.0.0
+||metricwpsh.com^$important,dnsrewrite=0.0.0.0
+||nereserv.com^$important,dnsrewrite=0.0.0.0
+||zog.link^$important,dnsrewrite=0.0.0.0
+||pix-cdn.org*^$important,dnsrewrite=0.0.0.0
+||magsrv.com^$important,dnsrewrite=0.0.0.0
+||m3pd.com^$important,dnsrewrite=0.0.0.0
+||multstorage.com^$important,dnsrewrite=0.0.0.0
+||polotrex.com^$important,dnsrewrite=0.0.0.0
+||olopruy.com^$important,dnsrewrite=0.0.0.0
+||yomeno.xyz^$important,dnsrewrite=0.0.0.0
+||vstserv.com^$important,dnsrewrite=0.0.0.0
 !
 ||sentry.ozon.ru^$important
 ||browser.sentry-cdn.com^$important
@@ -651,6 +648,9 @@
 ||ads.taxiaid.org^$important
 ||*-metrica.cabconnect.org^$important
 ||zephyrsgroves.com^$important
+||admax.se^$important
+||tags.svoboda.org^
+||tags.currenttime.tv^
 !
 !
 !
@@ -721,23 +721,23 @@
 !
 !
 !
-||adserv.ai^$dnsrewrite=REFUSED,important
-||tapulsads.ru^$dnsrewrite=REFUSED,important
-||gonet-ads.com^$dnsrewrite=REFUSED,important
-||telecid.ru^$dnsrewrite=REFUSED
+||adserv.ai^$important
+||tapulsads.ru^$important
+||gonet-ads.com^$dnsrewrite=0.0.0.0,important
+||telecid.ru^$dnsrewrite=0.0.0.0
 ||www.tttturbonet.com^
 ||*pavo*^$important
 ||fancybox.in^
-||adlooxtracking.ru^$dnsrewrite=REFUSED,important
-||rixengine.com^$dnsrewrite=REFUSED
-||weborama-tech.ru^$dnsrewrite=REFUSED,important
+||adlooxtracking.ru^$important
+||rixengine.com^$dnsrewrite=0.0.0.0
+||weborama-tech.ru^$important
 ||trk.mail.ru^$important
-||svr-algorix.com^$dnsrewrite=REFUSED
+||svr-algorix.com^$dnsrewrite=0.0.0.0
 ||kayzen.io^$dnsrewrite=REFUSED
 ||disk.akamaized.net^$app=com.dubox.drive
 ! disk.akamaized.net^
-||adinfinitum.in^$dnsrewrite=REFUSED,important
-||*gamerplay*.space^$dnsrewrite=REFUSED
+||adinfinitum.in^$dnsrewrite=0.0.0.0,important
+||*gamerplay*.space^$dnsrewrite=0.0.0.0
 !
 !
 !
@@ -771,22 +771,22 @@
 ! -- == Browser requests ==
 !
 ||news.google.com^$dnsrewrite=REFUSED
-||enjoyxstudy.com^$dnsrewrite=REFUSED
+||enjoyxstudy.com^$dnsrewrite=0.0.0.0
 !
 !
 ! -- =Opera=
 !
-||feednews.com^$dnsrewrite=REFUSED
-||oleads.com^$dnsrewrite=REFUSED,important
-||sitesuggestion.opera-api*.com^$dnsrewrite=REFUSED,important
+||feednews.com^$dnsrewrite=0.0.0.0
+||oleads.com^$dnsrewrite=0.0.0.0,important
+||sitesuggestion.opera-api*.com^$dnsrewrite=0.0.0.0,important
 ||oscore.operacdn.com^$important
 ! ws-oscore.opera-api*.com^$important
 ||*-oscore.opera-api*.com^$important
 ||oscore.opera-api*.com^$important
-||pns-sdk.opera-api*.com^$dnsrewrite=REFUSED,important
-||ofa-*-sub.osp.opera.software^$dnsrewrite=REFUSED,important
-||mcp.opera-api*.com^$dnsrewrite=REFUSED,important
-||mykonf.com^$dnsrewrite=REFUSED,important
+||pns-sdk.opera-api*.com^$dnsrewrite=0.0.0.0,important
+||ofa-*-sub.osp.opera.software^$dnsrewrite=0.0.0.0,important
+||mcp.opera-api*.com^$dnsrewrite=0.0.0.0,important
+||mykonf.com^$dnsrewrite=0.0.0.0,important
 ! ofa-b-sub.osp.opera.software^
 ||xml.opera.com^$important
 ||thumbnails*opera.com^$important
@@ -838,6 +838,7 @@
 @@||russianpost.ru^
 @@||icecast-vgtrk.cdnvideo.ru^
 @@||appsalesgo*.appspot.com^
+@@|||sb.ltn.fi^
 !
 ! ===
 !
