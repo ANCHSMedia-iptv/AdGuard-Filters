@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.5.1-R
-! TimeUpdated: 2025-04-07T10:00:00+00:00
+! Version: 3.5.2-R
+! TimeUpdated: 2025-04-08T09:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -18,7 +18,7 @@
 !
 ! Подойдёт для мобильных устройств и компьютеров.
 ! Suitable for mobile devices and computers.
-! Некоторые домены для блокировки взяты из других источников.
+! Некоторые домены и правила для блокировки взяты из других источников.
 ! Много чего собрано из моих «наблюдений» и добавлений.
 !
 !
@@ -185,7 +185,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||russianfood.com/images/blg.png^$image,domain=russianfood.com,important
 ||rbc.ru/v*/geoinfo/by-ip/$xhr,domain=rbc.ru
 ! ext.clickstream.sberbank.ru/metrics/$xhr,important (новое правило, строка 771)
-||servicepipe.ru/static/*.js^$script,domain=~onlinetrade.ru
+||servicepipe.ru/static/*.js^$script,domain=~onlinetrade.ru|~limehd.tv
 ||player.twitch.tv/js/embed/v*.js^$script,domain=~twitch.tv,important
 ||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com,important
 ||cdn.gamestatic.net/files/pictures/promo_banner_*.png^$image,domain=rbkgames.com,important
@@ -236,7 +236,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||s*.stc.yc.kpcdn.net/s*/*/adaptive/img/banner.gif$xhr,important
 ! *sendsay.ru^$important
 ||lentainform.com^$important
-/1x1.*^$image,xhr,important,domain=~autocounter.lentainform.com|~lentainform.com|~bosch-home.ru|~bsh-group.ru|~comfy.ua|~oplmanager.com|~patagonia.com|~pgatour.com|~sport-express.ru|~zobiki.ru|~idaprikol.ru|~thg.ru # 6.04.25: большинство доменов взято из фильтра RU AdList: Counters.
+/1x1.*^$image,xhr,important,domain=~autocounter.lentainform.com|~lentainform.com|~bosch-home.ru|~bsh-group.ru|~comfy.ua|~oplmanager.com|~patagonia.com|~pgatour.com|~sport-express.ru|~zobiki.ru|~idaprikol.ru|~thg.ru # 6.04.25: большинство правил взято из фильтра RU AdList: Counters.
 ||smotrim.ru/js/media-scope.js^$script,important
 ||cdn-st*.rtr-vesti.ru/mh_files/*/imho.js^$script,domain=vesti.ru,important
 ||vesti.ru/i/bg.png$image,domain=vesti.ru,important
@@ -663,7 +663,7 @@ $cookie=PHPSESSID
 $cookie=KIykI
 $cookie=L
 $cookie=bltsr
-$cookie=bh,domain=~api.browser.yandex.*
+$cookie=bh,domain=~api.browser.yandex.ru
 $cookie=coockoos
 $cookie=my
 $cookie=/__ddg*_/
@@ -1011,7 +1011,7 @@ qrator/validate$xhr,important
 ||images.wikia.com/clock-work-planet/images/*/Discord_old_logo.svg^$image,domain=fandom.com
 ! $removeparam=u:dev:MediaWiki:BalancedDiscord.css,domain=fandom.com (soon..)
 ||api.corr.life/public/regions/lookup^$xhr,domain=life.ru
-||cdn.axeum.ru/assets/*/js/client_call_phone*.js^$script,domain=axeum.ru
+||cdn.axeum.ru/assets/*/js/client_call_phone*.js^$script,domain=axeum.ru # виджет звонка
 ||client-api.remote-config.rustore.ru^
 ||admax.se^$important
 ||lyngsat.com/images/pixel_brun.gif^$image,domain=lyngsat.com
@@ -1019,8 +1019,15 @@ qrator/validate$xhr,important
 ||lyngsat.com/as10/ses_1801.jpg^$image,domain=lyngsat.com # реклама
 ||lyngsat.com/as10/greatway_desktop_2.jpg^$image,domain=lyngsat.com # реклама
 ! api-hprof.odkl.ru^ (soon..)
-||cloudflare.com/cgi-cdn/trace$third-party,domain=~cloudflare.com|~1.1.1.1|~gidonline.io
-||1.1.1.1/cgi-cdn/trace$third-party,domain=~cloudflare.com|~1.1.1.1|~gidonline.io
+||cloudflare.com/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~gidonline.io
+||1.1.1.1/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~gidonline.io
+||ovego.tv/stat/$image,domain=ovego.tv,important
+||services.fandom.com/icbm/api/location^$xhr,domain=fandom.com
+||limehd.tv/api/v*/ads-banners^$xhr,domain=limehd.tv.important # получение рекламных баннеров
+||limehd.tv/api/v*/event^$xhr,domain=limehd.tv.important # аналитика
+||limehd.tv/ads/*$image,domain=limehd.tv,important # рекламные изображения
+||limehd.tv/api/v*/get-ads$xhr,domain=limehd.tv,important # получение рекламы
+||vitv.telecomid.ru/socio-demographics$xhr,important
 !
 !
 !
@@ -2075,6 +2082,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||dr.yandex.net/*nel$other,xhr
 ||advertising.yandex.ru^
 $document,removeparam=from,domain=yandex.*|ya.ru
+||yastatic.net/es5-shims/*/es5-shims.*.js$script,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.ua
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -2198,6 +2206,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||applog.uc.cn^$important
 ||audid-api.taobao.com^$important
 ||log*.byteoversea.com^$important
+||s1search.co^$important
 !
 ! --
 !
@@ -2280,6 +2289,8 @@ mi.com#@$#body { overflow: visible !important; }
 vestifm.online$@$link[rel="manifest"]
 @@||cdn.adguard.*/website/adguard.com/products/screenshots/*/ad_blocking.svg$domain=welcome.adguard.* # 31.03.25: не загружается картинка из-за фильтра xinggsf, в белом списке.
 @@|||sb.ltn.fi^
+@@||limehd.tv/images/banners-demo.png^$image,domain=limehd.tv # 8.04.25: блокируется из-за фильтра xinggsf, в белом списке.
+@@||blocklists.operacdn.com^ # получение «чёрных списков» рекламы и трекеров браузеров Opera.
 !
 !
 ! -
