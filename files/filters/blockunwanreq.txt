@@ -1031,6 +1031,7 @@ qrator/validate$xhr,important
 ||mosspf.net^$important
 ||businessork.ru^$important
 ||foisonad.com^$important
+||sofire.terabox.com^$important
 !
 !
 !
@@ -2172,7 +2173,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||umengcloud.com^$important
 ||bdstatic.com^$important
 ||gvt2.com^$important
-! tracker-api.my.com^$important
+!
 ||ad.intl.xiaomi.com^$important
 ||ms.vk.com^$important
 ||aemetrics.aliexpress.ru^$important
@@ -2213,6 +2214,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||liftoff.io^$important
 ||rtblab.net^$important
 ||liftoff-creatives.io^$important
+||sofire.bdstatic.com^$important
 !
 ! --
 !
@@ -2296,7 +2298,7 @@ vestifm.online$@$link[rel="manifest"]
 @@||cdn.adguard.*/website/adguard.com/products/screenshots/*/ad_blocking.svg$domain=welcome.adguard.* # 31.03.25: не загружается картинка из-за фильтра xinggsf, в белом списке.
 @@|||sb.ltn.fi^
 @@||limehd.tv/images/banners-demo.png^$image,domain=limehd.tv # 8.04.25: блокируется из-за фильтра xinggsf, в белом списке.
-@@||blocklists.operacdn.com^ # получение «чёрных списков» рекламы и трекеров браузеров Opera.
+@@||blocklists.operacdn.com^ # получение «чёрных списков» рекламы и трекеров для браузеров Opera.
 !
 !
 ! -
