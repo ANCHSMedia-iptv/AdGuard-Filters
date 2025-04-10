@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.5.2-R
-! TimeUpdated: 2025-04-08T09:00:00+00:00
+! Version: 3.5.3-R
+! TimeUpdated: 2025-04-10T10:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1022,12 +1022,15 @@ qrator/validate$xhr,important
 ||cloudflare.com/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~gidonline.io
 ||1.1.1.1/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~gidonline.io
 ||ovego.tv/stat/$image,domain=ovego.tv,important
-||services.fandom.com/icbm/api/location^$xhr,domain=fandom.com
+||services.fandom.com/*/api/location^$xhr,domain=fandom.com
 ||limehd.tv/api/v*/ads-banners^$xhr,domain=limehd.tv.important # получение рекламных баннеров
 ||limehd.tv/api/v*/event^$xhr,domain=limehd.tv.important # аналитика
 ||limehd.tv/ads/*$image,domain=limehd.tv,important # рекламные изображения
 ||limehd.tv/api/v*/get-ads$xhr,domain=limehd.tv,important # получение рекламы
-||vitv.telecomid.ru/socio-demographics$xhr,important
+||vitv.telecomid.ru/socio-demographics$xhr,important # аналитика
+||mosspf.net^$important
+||businessork.ru^$important
+||foisonad.com^$important
 !
 !
 !
@@ -2207,6 +2210,9 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||audid-api.taobao.com^$important
 ||log*.byteoversea.com^$important
 ||s1search.co^$important
+||liftoff.io^$important
+||rtblab.net^$important
+||liftoff-creatives.io^$important
 !
 ! --
 !
