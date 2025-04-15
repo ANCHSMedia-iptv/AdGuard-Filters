@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.5.5-R
-! TimeUpdated: 2025-04-13T14:00:00+00:00
+! Version: 3.5.7-R
+! TimeUpdated: 2025-04-15T14:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1057,6 +1057,7 @@ qrator/validate$xhr,important
 ||a64x.com^$important
 ||gfxdn.pics^$important
 ||scuba.com^$app=com.ebay.mobile
+||log-sg.capcutapi.com^$important
 !
 !
 !
@@ -1784,6 +1785,8 @@ bing.com##.mmaAdCard
 college.72to.ru##.notification-container
 myschool.72to.ru##._1B2MfLvr8qLC_uGVNGm4BU
 myschool.72to.ru##div._2kJk8hnpgbINo9OFR6xjGn:nth-child(6) > div.rgHK0-dZwcYE2yf0fcu2q._3m84YHTrytRI_qsNi9i4nU
+! персонаж.рф: остаток от блокировки соцвиджетов.
+xn--80aje0aeeii.xn--p1ai###mystickyelements-social-whatsapp > span.mystickyelements-social-icon.social-whatsapp.social-custom:first-child
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2250,6 +2253,8 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||i.isnssdk.com^$important
 ||mon.isnssdk.com^$important
 ||mssdk*.byteoversea.com^$important
+||mon*-*.tiktokv.com^$important
+||a.appbaqend.com^
 !
 ! --
 !
@@ -2321,7 +2326,7 @@ mi.com#@$#body { overflow: visible !important; }
 @@||player.smotrim.ru^
 @@||s.youtube.com^ # связан с историей просмотров видео на YouTube.
 @@||time.windows.com^ # синхронизация времени в Виндовс (также используется некоторыми мобильными приложениями).
-@@||email-link.adtidy.org^
+@@||email-link.adtidy.org^$important
 @@||anketolog.ru/api/front/v*/gql$xhr,domain=anketolog.ru # 17.03.25: сайт нестабильно отображается при блокировке этого запроса, в белом списке.
 @@||obfusgated.com/*/tools/ad-block-test$domain=obfusgated.com # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
 @@||obfusgated.com/_next/static/chunks/$script,domain=obfusgated.com # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
@@ -2339,6 +2344,8 @@ vestifm.online$@$link[rel="manifest"]
 @@||sbstats.uk^
 @@||cdn.adguard.*/content/kb/ad_blocker/general/1_exact_address.svg^$image,domain=adguard.info|adguard.com|adguard.app # 10.04.25: блокировалось из-за фильтра xinggsf, в белом списке.
 @@||cdn.adguard.*/content/kb/ad_blocker/general$domain=adguard.info|adguard.com|adguard.app # 10.04.25: блокировалось из-за фильтра xinggsf, в белом списке.
+@@||mirconnect.ru^ # платёжный домен ПС Мир.
+@@||cid.yandex.net^ # домен АОН Яндекса.
 !
 !
 ! -

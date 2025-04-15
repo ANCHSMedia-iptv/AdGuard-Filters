@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.4.6-R
+! Version: 3.4.8-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-04-13T14:00:00+00:00
+! TimeUpdated: 2025-04-15T14:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 12.04.2025 14:00 UTC
+! Last Modified: 15.04.2025 14:00 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -663,7 +663,7 @@
 ||gtm-server.healthline.com^
 ||adspsp.com^$important
 ||doubleverify.com^
-! adobedtm.com
+! adobedtm.com^
 ||cdn-fc.com^$important,dnsrewrite=0.0.0.0
 ||camconnections.live^$important,dnsrewrite=0.0.0.0
 ||flepquix.com^$important,dnsrewrite=0.0.0.0
@@ -682,6 +682,8 @@
 ||bookmsg.com^$important,dnsrewrite=0.0.0.0
 ||a64x.com^$important,dnsrewrite=0.0.0.0
 ||gfxdn.pics^$important,dnsrewrite=0.0.0.0
+||mp3lar.net^
+||log-sg.capcutapi.com^$important
 !
 !
 !
@@ -869,11 +871,13 @@
 @@||russianpost.ru^
 @@||icecast-vgtrk.cdnvideo.ru^
 @@||appsalesgo*.appspot.com^
-@@|||sb.ltn.fi^
+@@||sb.ltn.fi^
 @@||blocklists.operacdn.com^
 @@||time.tbank.ru^
 @@||time.tinkoff.ru^
 @@||sbstats.uk^
+@@||mirconnect.ru^
+@@||cid.yandex.net^
 !
 ! ===
 !
@@ -930,5 +934,6 @@
 ! Social network X (formerly Twitter) is blocked in the Russian Federation.
 ! Мессенджер Viber заблокирован 13.12.24 на территории РФ из-за нарушения законодательства.
 ! Viber messenger was blocked on 13.12.24 in the territory of the Russian Federation due to violations of the law.
+! Current Time («Настоящее время») и Svoboda («РС/РСЕ», «RL/RFE») признаны СМИ-иноагентами в РФ. Svoboda («РС/РСЕ», «RL/RFE») - деятельность на территории РФ признана нежелательной.
 !
 !
