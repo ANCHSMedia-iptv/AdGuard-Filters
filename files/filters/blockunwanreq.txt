@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.5.7-R
-! TimeUpdated: 2025-04-15T14:00:00+00:00
+! Version: 3.5.8-R
+! TimeUpdated: 2025-04-16T12:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -73,7 +73,7 @@
 ||syndication.twitter.com^
 ||rexpush.pro^$important
 ||peiynu.com^$important
-||appspot.com^$important,domain=~appsalesgo2.appspot.com # разблокирован рабочий домен приложения AppSales. (не реклама).
+||appspot.com^$domain=~appsalesgo2.appspot.com # разблокирован рабочий домен приложения AppSales. (не реклама).
 ||yabro.ru^$important
 ||flowerpla.com^$important
 ||amocrm.ru^$important
@@ -782,7 +782,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||cableman.ru/themes/custom/initlab_cab/images/click-icon.png^$image,domain=cableman.ru
 ||cableman.ru/themes/custom/initlab_cab/images/k-icon.png^$image,domain=cableman.ru
 ||wifika.ru/wp-content/plugins/*/pro/images/blank.gif^$image,domain=wifika.ru,important
-/admin-ajax.php$xhr
+/admin-ajax.php$xhr,domain=~1giper.ru
 ||userway.org^$third-party
 ||files.vm.ru/pdf/2025.02/original/thumb_1280_67c0a45f82682c09ce62d1a1.jpg^$image,xhr,domain=vm.ru
 ||stats.wp.com^
@@ -972,7 +972,7 @@ qrator/qauth.js$script,important
 qrator/validate$xhr,important
 ||ad-source.pro^$important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
-://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # аналитика и реклама.
+://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # аналитика и реклама.
 /^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # тоже самое, реклама/аналитика.
 ! ://yastatic.net^$app=com.radioapp.mayakradio # soon...
 /^5\.255\.255\.77/^$app=ru.pyaterochka.app.browser
@@ -1001,7 +1001,7 @@ qrator/validate$xhr,important
 ||*-metrica.cabconnect.org^$important
 ||fandom.com/silver-surfer.html^$domain=fandom.com
 ||js.zi-scripts.com/zi-tag.js^$script,important
-||js.zi-scripts.com/unified/v*/master/logError$xhr,important
+||js.zi-scripts.com/unified/v*/master/$xhr,important
 ||appcenter.ms^$app=ru.mes.dnevnik.fgis|ru.pyaterochka.app.browser|ru.desport.android|bz.zaa.mibudsm8
 ||zephyrsgroves.com^
 ||xn--80aafadvc9bifbaeqg0p.xn--p1ai/img/icons/sferum.svg^$image,domain=xn--80aafadvc9bifbaeqg0p.xn--p1ai
@@ -1027,7 +1027,7 @@ qrator/validate$xhr,important
 ||limehd.tv/api/v*/event^$xhr,domain=limehd.tv.important # аналитика
 ||limehd.tv/ads/*$image,domain=limehd.tv,important # рекламные изображения
 ||limehd.tv/api/v*/get-ads$xhr,domain=limehd.tv,important # получение рекламы
-||vitv.telecomid.ru/socio-demographics$xhr,important # аналитика
+||vitv.telecomid.ru^$important # аналитика
 ||mosspf.net^$important
 ||businessork.ru^$important
 ||foisonad.com^$important
@@ -1056,8 +1056,12 @@ qrator/validate$xhr,important
 ||bookmsg.com^$important
 ||a64x.com^$important
 ||gfxdn.pics^$important
-||scuba.com^$app=com.ebay.mobile
 ||log-sg.capcutapi.com^$important
+||mobile-static.mindbox.ru^$important
+||stat.teleport.media^$important
+||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod # 16.04.25: возможно, аналитика Mail.
+||ortomir24.ru/rest/pull.config.get.json$xhr,domain=ortomir24.ru
+||sp-man.ru/bitrix/templates/eshop_bootstrap_green/assets/img/halva-btn.png^$image,domain=sp-man.ru
 !
 !
 !
@@ -1231,7 +1235,7 @@ qrator/validate$xhr,important
 !
 ! - Global version (Глобальная версия). -
 ||*basket*.wbbasket.ru/vol*/data/promo-panel-data-*.json^$script,xhr,domain=global.wildberries.ru
-! wbx-logs.wildberries.ru/api/v*/log^$xhr,domain=global.wildberries.ru
+!
 ||static-basket-*.wbbasket.ru/vol*/wbx-static/prod/assets/images/qr-code/qr-code.png^$image,domain=global.wildberries.ru
 ! -
 !
@@ -1786,7 +1790,9 @@ college.72to.ru##.notification-container
 myschool.72to.ru##._1B2MfLvr8qLC_uGVNGm4BU
 myschool.72to.ru##div._2kJk8hnpgbINo9OFR6xjGn:nth-child(6) > div.rgHK0-dZwcYE2yf0fcu2q._3m84YHTrytRI_qsNi9i4nU
 ! персонаж.рф: остаток от блокировки соцвиджетов.
-xn--80aje0aeeii.xn--p1ai###mystickyelements-social-whatsapp > span.mystickyelements-social-icon.social-whatsapp.social-custom:first-child
+xn--80aje0aeeii.xn--p1ai###mystickyelements-social-whatsapp > span.mystickyelements-social-icon.social-whatsapp.social-custom:first child
+trives-shop.ru##div.dyn_mp_jqm_frame.jqmWindow.popup.jqm-init.TEXT.BOTTOM_CENTER.maxwidth-theme-popup.scrollblock.show:nth-child(20) > div.form.marketing-popup.popup-text-info.\.default:nth-child(8)
+sp-man.ru###bx_117848907_1344422 > div.detail-item:last-child > div.buy-container:last-child > div.product-item-detail-pay-block:nth-child(2) > a.catalog-installment.mb-3:nth-child(7) > img
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -1847,7 +1853,7 @@ thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'dmp_geo', 'null')
 thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'longVisits', '$remove$')
 thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'watchedVideoArticles', 'null')
 thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/', '$remove$')
-! habr.com#%#//scriptlet('set-?-storage-item', '__pwacompat_manifest', 'emptyObj')
+! habr.com#%#//scriptlet('set-?-storage-item', '__pwacompat_manifest', 'emptyObj') (soon..)
 ! soon..
 !
 ! -
@@ -2112,10 +2118,11 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||yastatic.net/s*/home-static/feeds/*market*/market-feed.*$script,css,domain=ya.ru
 ||ya.ru/portal/proxy?blocks=Market_cart$xhr,script,domain=ya.ru
 ||ya.ru/portal/feed?feed_geo=*&id=market&page=1&session-unique-id=*&geo=*&platform=*&shown=market$xhr,domain=ya.ru
-||dr.yandex.net/*nel$other,xhr
+||dr*.yandex.net/*nel$other,xhr
 ||advertising.yandex.ru^
 $document,removeparam=from,domain=yandex.*|ya.ru
 ||yastatic.net/es5-shims/*/es5-shims.*.js$script,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
+! ||yastatic.net/s*/web4static/*/static/App-FootScript_advRsya*.js (soon..)
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -2254,7 +2261,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||mon.isnssdk.com^$important
 ||mssdk*.byteoversea.com^$important
 ||mon*-*.tiktokv.com^$important
-||a.appbaqend.com^
+||a.appbaqend.com^$important
 !
 ! --
 !
@@ -2335,7 +2342,7 @@ mi.com#@$#body { overflow: visible !important; }
 @@||russianpost.ru^
 @@||icecast-vgtrk.cdnvideo.ru^
 vestifm.online$@$link[rel="manifest"]
-@@||cdn.adguard.*/website/adguard.com/products/screenshots/*/ad_blocking.svg$domain=welcome.adguard.com|welcome.adguard.info|welcome.adguard.app # 31.03.25: не загружается картинка из-за фильтра xinggsf, в белом списке.
+@@||cdn.adguard.*/website/adguard.*/products/screenshots/*/ad_blocking.svg$domain=welcome.adguard.com|welcome.adguard.info|welcome.adguard.app # 31.03.25: не загружается картинка из-за фильтра xinggsf, в белом списке.
 @@|||sb.ltn.fi^
 @@||limehd.tv/images/banners-demo.png^$image,domain=limehd.tv # 8.04.25: блокируется из-за фильтра xinggsf, в белом списке.
 @@||blocklists.operacdn.com^ # получение «чёрных списков» рекламы и трекеров для браузеров Opera.
@@ -2344,14 +2351,25 @@ vestifm.online$@$link[rel="manifest"]
 @@||sbstats.uk^
 @@||cdn.adguard.*/content/kb/ad_blocker/general/1_exact_address.svg^$image,domain=adguard.info|adguard.com|adguard.app # 10.04.25: блокировалось из-за фильтра xinggsf, в белом списке.
 @@||cdn.adguard.*/content/kb/ad_blocker/general$domain=adguard.info|adguard.com|adguard.app # 10.04.25: блокировалось из-за фильтра xinggsf, в белом списке.
-@@||mirconnect.ru^ # платёжный домен ПС Мир.
-@@||cid.yandex.net^ # домен АОН Яндекса.
+@@||mirconnect.ru^
+@@||cid.yandex.net^
+@@||uni.rest^
+@@||scuba.com^$app=com.ebay.mobile
+@@||iptv.rt.ru^
+@@||restream-media.net^
+@@||*zabava-htlive.cdn.ngenix.net^
+@@||drm*.nowdrm.co^
+@@||api.deliverymobile.ru^
+@@||selstorage.ru^$app=com.riselogic.dm.lightcheck
+@@||vkusnoitochka.ru^
+@@||orderapp.burgerkingrus.ru^
+@@||fanboy.co.nz^
 !
 !
 ! -
 ! Ломается сайт DeepL при применении правил блокировки к скриптам tracking-*.js, late-cookieBannerLax.*.js и стилю late-cookieBannerLax.*.css, которые приведены ниже и разрешены.
 ! The site DeepL crashes when applying blocking rules to the tracking-*.js, late-cookieBannerLax.*.js and late-cookieBannerLax.*.css scripts, which are listed below and allowed.
-@@||static.deepl.com/gatsby/tracking-*.js^$domain=deepl.com
+@@||static.deepl.com/gatsby/tracking-*.js^$script,domain=deepl.com
 @@||static.deepl.com/gatsby/*cookieBanner*.*^$script,css,domain=deepl.com
 ! -
 !
@@ -2475,7 +2493,7 @@ vestifm.online$@$link[rel="manifest"]
 ! #%#//scriptlet('set-session-storage-item', '', '')
 ! #%#//scriptlet('set-cookie', '', '', 'none')
 ! #%#//scriptlet('prevent-element-src-loading', 'script', '')
-! #%#//scriptlet('abort-on-property-read', "adBlockDetected")
+! #%#//scriptlet('abort-on-property-read', '7adBlockDetected')
 !
 !
 ! Соцсети Facebook и Instagram заблокированы и запрещены на территории РФ, владеющая ими компания Meta признана экстремисткой и деятельность в РФ запрещена.
