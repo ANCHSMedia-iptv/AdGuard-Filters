@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.5.8-R
-! TimeUpdated: 2025-04-16T12:00:00+00:00
+! Version: 3.5.9-R
+! TimeUpdated: 2025-04-19T11:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -73,7 +73,7 @@
 ||syndication.twitter.com^
 ||rexpush.pro^$important
 ||peiynu.com^$important
-||appspot.com^$domain=~appsalesgo2.appspot.com # разблокирован рабочий домен приложения AppSales. (не реклама).
+||appspot.com^$domain=~appsalesgo2.appspot.com,app=~net.tsapps.appsales # разблокирован рабочий домен приложения AppSales. (не реклама).
 ||yabro.ru^$important
 ||flowerpla.com^$important
 ||amocrm.ru^$important
@@ -663,7 +663,7 @@ $cookie=PHPSESSID
 $cookie=KIykI
 $cookie=L
 $cookie=bltsr
-$cookie=bh,domain=~api.browser.yandex.ru
+$cookie=bh,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by,|~yandex.kz|~ya.ru|~yandex.com
 $cookie=coockoos
 $cookie=my
 $cookie=/__ddg*_/
@@ -711,7 +711,7 @@ $cookie=/dsp_click_id|mediaInfo|pageLanding/,domain=tbank.ru|tinkoff.ru|t-j.ru,i
 ||static.1tv.ru^$cookie=cookieMatchedWithYandex
 ||1tv.ru/js/libs/browserUpdater.js^$script,domain=1tv.ru
 ||smotrim.ru^$cookie=/yandexuid|yashr/
-||shopogolic.net^$cookie=dashly_device_guid
+$cookie=dashly_device_guide,domain=shopogolic.net|shopogolic.club
 ||irecommend.ru^$cookie=/statsactivity|statstimer/
 ||otzovik.com^$cookie=/cgreg|refreg|ROBINBOBIN/
 ||knife.media/analytics/shares/$xhr,domain=knife.media,important
@@ -762,7 +762,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||gulsbafanec.ru^$important
 ||consficam.ru^$important
 ||satkurier.pl/banery/750x100_2019_AntenaNEO.gif^$domain=satkurier.pl
-! *.ru/api/v*/fingerprint^$xhr,important,domain=probolezny.ru|prodoctorov.ru (новое правило, строка 893)
+! *.ru/api/v*/fingerprint^$xhr,important,domain=probolezny.ru|prodoctorov.ru (новое правило, строка 894)
 ||probolezny.ru/static/*/favicons/probolezny/apple_touch_icon/favicon_*.png$domain=probolezny.ru
 ||d1n8hflz8lhynp.cloudfront.net^$important
 ||apptornado.com^$important
@@ -889,7 +889,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ! ||*adc3-launch*^$important (soon..)
 ||applvn.com^$important
 ||freeman42.ru^
-! wsd-fingerprint.kontur.ru/api/v*/fingerprint^$xhr,domain=kontur.ru (новое правило, строка 893)
+! wsd-fingerprint.kontur.ru/api/v*/fingerprint^$xhr,domain=kontur.ru (новое правило, строка 894)
 ||tp.kontur.ru/support/support_center.js^$script,domain=kontur.ru
 /api/v*/fingerprint$xhr,important
 ||time.is/js/7/jquary.ad.js$script,domain=time.is
@@ -996,7 +996,7 @@ qrator/validate$xhr,important
 ||data-events.cdn.viber.com^$important
 ||www.googleapis.com^$app=com.viber.voip
 ||ads*viber.com^$important
-/api/v*/get-ad-ids$app=com.nebulatech.voocvpnpro|com.voocvpn.moonvpnpro # подгрузка рекламных ID (судя по запросу) в приложениях VPN Secure (Vooc VPN), и VPN Pro от одного разработчика. (не реклама)
+*/api/v*/get-ad-ids$document,app=com.nebulatech.voocvpnpro|com.voocvpn.moonvpnpro # подгрузка рекламных ID (судя по запросу) в приложениях VPN Secure (Vooc VPN), и VPN Pro от одного разработчика. (не реклама)
 ||ads.taxiaid.org^$important
 ||*-metrica.cabconnect.org^$important
 ||fandom.com/silver-surfer.html^$domain=fandom.com
@@ -1042,7 +1042,7 @@ qrator/validate$xhr,important
 ||camconnections.live^$important
 ||flepquix.com^$important
 ||camspacelive.com^$important
-||xhamsterlive.com^$important
+||xhamsterlive.com^$third-party,important
 ||60ah.com^$important
 ||doppiocdn.com^$important
 ||vsmvideo.com^$important
@@ -1050,7 +1050,7 @@ qrator/validate$xhr,important
 ||tubecup.org^$important
 ||reebr.com^$important
 ||ahcdn.com^$important
-||montlusa.top$important
+||montlusa.top^$important
 ||medfoodsafety.com^$important
 ||iloptrex.top^$important
 ||bookmsg.com^$important
@@ -1062,6 +1062,11 @@ qrator/validate$xhr,important
 ||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod # 16.04.25: возможно, аналитика Mail.
 ||ortomir24.ru/rest/pull.config.get.json$xhr,domain=ortomir24.ru
 ||sp-man.ru/bitrix/templates/eshop_bootstrap_green/assets/img/halva-btn.png^$image,domain=sp-man.ru
+||vk.com^$domain=shopogolic.net|shopogolic.club
+||js-collector.icewood.net^$important
+/iwaf/fingerprint$xhr,important
+/waf.js$script,important
+||adspector.io^$important
 !
 !
 !
@@ -1809,7 +1814,7 @@ rutube.ru#%#//scriptlet('set-local-storage-item', 'def_banner_open', '')
 rutube.ru#%#//scriptlet('set-local-storage-item', 'fingerprintId', 'null')
 rutube.ru#%#//scriptlet('set-local-storage-item', 'muted', '1')
 1tv.ru,static.1tv.ru#%#//scriptlet('set-local-storage-item', 'eump_ab_data', 'emptyObj')
-shopogolic.net#%#//scriptlet('set-local-storage-item', 'dashly_last_activity', 'emptyObj')
+shopogolic.net,shopogolic.club#%#//scriptlet('set-local-storage-item', 'dashly_last_activity', 'emptyObj')
 irecommend.ru#%#//scriptlet('set-local-storage-item', '/fullTeasersTracker_*/', 'emptyObj')
 playground.ru#%#//scriptlet('set-session-storage-item', 'sessionIdAudio', 'null')
 playground.ru#%#//scriptlet('set-local-storage-item', 'activeSessionId', 'null')
@@ -2100,8 +2105,8 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||yabs.yandex.*/resource/spacer.gif$important
 ||market.yandex.*/ping
 ||yastatic.net/s*/*/export-static/admon/
-||yastatic.net/s*/*/white-desktop/browser-light/browser-light.browser.analytics.*.js$script
-||yastatic.net/s*/*/white-desktop/browser-light/browser-light.browser.baseError.*.js$script
+||yastatic.net/s*/*/white-desktop/browser-light/browser-light.browser.analytics*.js$script
+||yastatic.net/s*/*/white-desktop/browser-light/browser-light.browser.baseError*.js$script
 ||avatars.mds.yandex.net/get-marketcms/$image
 ||avatars.mds.yandex.net/get-direct/$image,xhr,important
 ||certificate.mobile.yandex.net/api/v*/$important
@@ -2123,6 +2128,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 $document,removeparam=from,domain=yandex.*|ya.ru
 ||yastatic.net/es5-shims/*/es5-shims.*.js$script,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
 ! ||yastatic.net/s*/web4static/*/static/App-FootScript_advRsya*.js (soon..)
+||yastatic.net/s*/web4static/*/static/media/noize-transparent*.gif^$image
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
