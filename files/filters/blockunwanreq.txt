@@ -975,7 +975,7 @@ qrator/validate$xhr,important
 ://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # аналитика и реклама.
 /^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # тоже самое, реклама/аналитика.
 ! ://yastatic.net^$app=com.radioapp.mayakradio # soon...
-/^5\.255\.255\.77/^$app=ru.pyaterochka.app.browser
+/^5\.255\.255\.77/^$network,app=ru.pyaterochka.app.browser # тоже самое, реклама/аналитика.
 ||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm # подгрузка рекламы в приложение Relax FM.
 ||s3.amazonaws.com^$app=com.viber.voip
 ||bing.com^$app=com.viber.voip
@@ -2476,6 +2476,7 @@ vestifm.online$@$link[rel="manifest"]
 ||87h6.cfd^
 ||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^
 ||clicks.af-pb06e2.com^
+||eff.org^
 !
 !
 !
