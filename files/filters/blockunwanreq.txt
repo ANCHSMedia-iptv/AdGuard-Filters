@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.5.9-R
-! TimeUpdated: 2025-04-19T11:00:00+00:00
+! Version: 3.6.0-R
+! TimeUpdated: 2025-04-20T11:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -73,7 +73,7 @@
 ||syndication.twitter.com^
 ||rexpush.pro^$important
 ||peiynu.com^$important
-||appspot.com^$domain=~appsalesgo2.appspot.com,app=~net.tsapps.appsales # разблокирован рабочий домен приложения AppSales. (не реклама).
+||appspot.com^$domain=~appsalesgo2.appspot.com,app=~net.tsapps.appsales # разблокирован рабочий домен приложения AppSales (не реклама) [нихрена подобного, нужно всё равно вырубать Adguard перед заходом в приложение..].
 ||yabro.ru^$important
 ||flowerpla.com^$important
 ||amocrm.ru^$important
@@ -83,7 +83,7 @@
 ||*analytics.tele2.ru^$important
 ! analytics.tele2.ru^$important
 ||bcebos.com^$important
-||*adjust*^$important
+||*adjust*^$important # вся аналитика заблокирована зато)
 ||rutrk.org^$important
 ||stat-analytics.mediavitrina.ru^$important
 ||pglstatp.com^$important
@@ -853,7 +853,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||sentry.x5.ru^$important
 ||tabun.info^ # домен госрекламы на госсайтах, сайтах учреждений в России.
 ||in.appcenter.ms/logs^$important
-||ads.vk.com^$important
+||ads.vk.com^$important,domain=~ads.vk.ru
 ||events.maps.vk.com^$important
 ||madnet.ru^$important
 ||mydas.mobi^$important
@@ -974,7 +974,7 @@ qrator/validate$xhr,important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
 ://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # аналитика и реклама.
 /^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # тоже самое, реклама/аналитика.
-! ://yastatic.net^$app=com.radioapp.mayakradio # soon...
+://yastatic.net^$app=com.radioapp.mayakradio|com.avito.android
 /^5\.255\.255\.77/^$network,app=ru.pyaterochka.app.browser # тоже самое, реклама/аналитика.
 ||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm # подгрузка рекламы в приложение Relax FM.
 ||s3.amazonaws.com^$app=com.viber.voip
@@ -994,7 +994,7 @@ qrator/validate$xhr,important
 ||d2wy8f7a9ursnm.cloudfront.net^
 ||autocomplete.diginetica.net^
 ||data-events.cdn.viber.com^$important
-||www.googleapis.com^$app=com.viber.voip
+||www.googleapis.com^$app=com.viber.voip # не поломается создание/восстановлений резервных копий в/из Google Диск?.. не думаю!
 ||ads*viber.com^$important
 */api/v*/get-ad-ids$document,app=com.nebulatech.voocvpnpro|com.voocvpn.moonvpnpro # подгрузка рекламных ID (судя по запросу) в приложениях VPN Secure (Vooc VPN), и VPN Pro от одного разработчика. (не реклама)
 ||ads.taxiaid.org^$important
@@ -1062,11 +1062,45 @@ qrator/validate$xhr,important
 ||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod # 16.04.25: возможно, аналитика Mail.
 ||ortomir24.ru/rest/pull.config.get.json$xhr,domain=ortomir24.ru
 ||sp-man.ru/bitrix/templates/eshop_bootstrap_green/assets/img/halva-btn.png^$image,domain=sp-man.ru
-||vk.com^$domain=shopogolic.net|shopogolic.club
+||vk.com^$domain=shopogolic.net|shopogolic.club # аналитика ВК
 ||js-collector.icewood.net^$important
 /iwaf/fingerprint$xhr,important
 /waf.js$script,important
 ||adspector.io^$important
+! 19.04.25: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/203491]
+||discord.com/api/v*/experiments?
+!
+! 19.04.25: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/203378]
+||facebook.com/ajax/qm/
+||instagram.com/ajax/qm/
+!
+||favicon.yandex.net^$app=com.avito.android
+||avatars.mds.yandex.net^$app=com.avito.android
+||twinrdengine.com^$important
+||adthg.com^$important
+||etahub.com^$important
+||trafficjunky.net^$important
+||imdn.pics^$important
+||txxx.com^$important
+||hotfree123.com^$important
+||kumcams.com^$important
+||cabnnr.com^$important
+||afcdn.net^$important
+||rtbadserv.com$important
+||hostave3.net^$important
+||adbestnet.com^$important
+||onclck*.com^$important
+||onclmng.com^$important
+||faphouse.com/*?$third-party,important
+||glukropi.com^$important
+||rtmark.net^$important
+||js.stripe.com^
+||stripe.network^
+||yess-online.com^$important
+||bisniskini.biz.id^$important
+||kittygruff.com^$important
+||mp3lar.net^$important
+!
 !
 !
 !
@@ -2370,6 +2404,7 @@ vestifm.online$@$link[rel="manifest"]
 @@||vkusnoitochka.ru^
 @@||orderapp.burgerkingrus.ru^
 @@||fanboy.co.nz^
+@@||geo.kaspersky.com^$app=com.kaspersky.who_calls
 !
 !
 ! -

@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.5.0-R
+! Version: 3.5.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-04-19T11:00:00+00:00
+! TimeUpdated: 2025-04-20T11:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 19.04.2025 11:00 UTC
+! Last Modified: 20.04.2025 11:00 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -682,11 +682,34 @@
 ||bookmsg.com^$important,dnsrewrite=0.0.0.0
 ||a64x.com^$important,dnsrewrite=0.0.0.0
 ||gfxdn.pics^$important,dnsrewrite=0.0.0.0
-||mp3lar.net^
+||mp3lar.net^$important,dnsrewrite=0.0.0.0
 ||log-sg.capcutapi.com^$important
 ||mobile-static.mindbox.ru^$important
 ||vitv.telecomid.ru^$important
 ||js-collector.icewood.net^$important
+||twinrdengine.com^$important,dnsrewrite=0.0.0.0
+||adthg.com^$important,dnsrewrite=0.0.0.0
+||etahub.com^$important,dnsrewrite=0.0.0.0
+||trafficjunky.net^$important,dnsrewrite=0.0.0.0
+||imdn.pics^$important,dnsrewrite=0.0.0.0
+||txxx.com^$important,dnsrewrite=0.0.0.0
+||hotfree123.com^$important,dnsrewrite=0.0.0.0
+||kumcams.com^$important,dnsrewrite=0.0.0.0
+||cabnnr.com^$important,dnsrewrite=0.0.0.0
+||afcdn.net^$important,dnsrewrite=0.0.0.0
+||rtbadserv.com$important,dnsrewrite=0.0.0.0
+||hostave3.net^$important,dnsrewrite=0.0.0.0
+||adbestnet.com^$important,dnsrewrite=0.0.0.0
+||onclck*.com^$important,dnsrewrite=0.0.0.0
+||onclmng.com^$important,dnsrewrite=0.0.0.0
+||glukropi.com^$important,dnsrewrite=0.0.0.0
+||rtmark.net^$important,dnsrewrite=0.0.0.0
+||js.stripe.com^
+||stripe.network^
+||yess-online.com^$important,dnsrewrite=0.0.0.0
+||bisniskini.biz.id^$important,dnsrewrite=0.0.0.0
+||kittygruff.com^$important,dnsrewrite=0.0.0.0
+||adspector.io^$important,dnsrewrite=0.0.0.0
 !
 !
 !
@@ -889,6 +912,7 @@
 @@||api.deliverymobile.ru^
 @@||vkusnoitochka.ru^
 @@||orderapp.burgerkingrus.ru^
+@@||ksn-crypto-whocalls-geo.kaspersky-labs.com^
 !
 ! ===
 !
