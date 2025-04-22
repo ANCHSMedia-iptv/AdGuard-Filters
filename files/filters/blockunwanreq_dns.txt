@@ -697,7 +697,7 @@
 ||kumcams.com^$important,dnsrewrite=0.0.0.0
 ||cabnnr.com^$important,dnsrewrite=0.0.0.0
 ||afcdn.net^$important,dnsrewrite=0.0.0.0
-||rtbadserv.com$important,dnsrewrite=0.0.0.0
+||rtbadserv.com^$important,dnsrewrite=0.0.0.0
 ||hostave3.net^$important,dnsrewrite=0.0.0.0
 ||adbestnet.com^$important,dnsrewrite=0.0.0.0
 ||onclck*.com^$important,dnsrewrite=0.0.0.0

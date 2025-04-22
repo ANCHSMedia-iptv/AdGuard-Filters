@@ -1086,7 +1086,7 @@ qrator/validate$xhr,important
 ||kumcams.com^$important
 ||cabnnr.com^$important
 ||afcdn.net^$important
-||rtbadserv.com$important
+||rtbadserv.com^$important
 ||hostave3.net^$important
 ||adbestnet.com^$important
 ||onclck*.com^$important
@@ -2314,6 +2314,8 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||mon*-*.tiktokv.com^$important
 ||a.appbaqend.com^$important
 ||richlifeads.ru^$important
+||mintegral.net^$important
+||nr.bidderstack.com^$important
 !
 ! --
 !
