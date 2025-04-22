@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.6.0-R
-! TimeUpdated: 2025-04-20T11:00:00+00:00
+! Version: 3.6.1-R
+! TimeUpdated: 2025-04-21T13:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -555,7 +555,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||uptodown.com/img/vpn-mockup.webp^$image,domain=uptodown.com,important
 ||uptodown.com/img/svgs/icon-vpn-secondary.svg^$image,domain=uptodown.com,important
 ||pdalife.to/updateView/^$xhr,domain=pdalife.to
-||a.*pure.*/analytics*.js^$script,domain=apkpure.*,important # apkpure.net|apkpure.com
+||a.*.*/analytics*.js^$script,domain=apkpure.net|apkpure.com,important
 ||r.cdnpure.com^$important
 ||mynickname.com/img/icon-nft.png^$xhr,domain=mynickname.com
 ||playground.ru/img/ui/steam-pay-*.png^$xhr,domain=playground.ru,important
@@ -972,8 +972,8 @@ qrator/qauth.js$script,important
 qrator/validate$xhr,important
 ||ad-source.pro^$important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
-://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # аналитика и реклама.
-/^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # тоже самое, реклама/аналитика.
+://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.infolink.limeiptv # аналитика и реклама.
+/^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.infolink.limeiptv # тоже самое, реклама/аналитика.
 ://yastatic.net^$app=com.radioapp.mayakradio|com.avito.android
 /^5\.255\.255\.77/^$network,app=ru.pyaterochka.app.browser # тоже самое, реклама/аналитика.
 ||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm # подгрузка рекламы в приложение Relax FM.
@@ -1034,9 +1034,9 @@ qrator/validate$xhr,important
 ||sofire.terabox.com^$important
 ||medi.ru/imagen/ord_adv.gif^$image,domain=medi.ru
 ||mnaspm.com^$important
-||gtm-server.healthline.com^
+||gtm-server.healthline.com^$important
 ||adspsp.com^$important
-||doubleverify.com^
+||doubleverify.com^$important
 ! adobedtm.com
 ||cdn-fc.com^$important
 ||camconnections.live^$important
@@ -1068,7 +1068,7 @@ qrator/validate$xhr,important
 /waf.js$script,important
 ||adspector.io^$important
 ! 19.04.25: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/203491]
-||discord.com/api/v*/experiments?
+||discord.com/api/v*/experiments?$domain=discord.com
 !
 ! 19.04.25: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/203378]
 ||facebook.com/ajax/qm/
@@ -1081,7 +1081,7 @@ qrator/validate$xhr,important
 ||etahub.com^$important
 ||trafficjunky.net^$important
 ||imdn.pics^$important
-||txxx.com^$important
+||txxx.com^$third-party,important
 ||hotfree123.com^$important
 ||kumcams.com^$important
 ||cabnnr.com^$important
@@ -1100,6 +1100,17 @@ qrator/validate$xhr,important
 ||bisniskini.biz.id^$important
 ||kittygruff.com^$important
 ||mp3lar.net^$important
+!
+! 21.04.25: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/203538]
+||uber.com/v*/_events$domain=uber.com
+||uber.com/go/_events$domain=uber.com
+!
+||report.cdnpure.com^$important
+/api/v*/download-report^$xhr,domain=apkpure.net|apkpure.com
+||a.*.*/report/group_user$xhr,domain=apkpure.net|apkpure.com
+||getads.ru^$important
+||d26xw8rp6mlgfg.cloudfront.net^
+!
 !
 !
 !
@@ -2302,6 +2313,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||mssdk*.byteoversea.com^$important
 ||mon*-*.tiktokv.com^$important
 ||a.appbaqend.com^$important
+||richlifeads.ru^$important
 !
 ! --
 !
@@ -2375,14 +2387,14 @@ mi.com#@$#body { overflow: visible !important; }
 @@||time.windows.com^ # синхронизация времени в Виндовс (также используется некоторыми мобильными приложениями).
 @@||email-link.adtidy.org^$important
 @@||anketolog.ru/api/front/v*/gql$xhr,domain=anketolog.ru # 17.03.25: сайт нестабильно отображается при блокировке этого запроса, в белом списке.
-@@||obfusgated.com/*/tools/ad-block-test$domain=obfusgated.com # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
-@@||obfusgated.com/_next/static/chunks/$script,domain=obfusgated.com # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
+@@||obfusgated.com/*/tools/ad-block-test^$document,domain=obfusgated.com # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
+@@||obfusgated.com/_next/static/chunks/app/*/ad-block-test/*.js^$script,domain=obfusgated.com # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
 @@||vgtrkregion-reg.cdnvideo.ru^
 @@||connectivitycheck.gstatic.com^ # проверка соединения с интернетом (домен Гугла).
 @@||russianpost.ru^
 @@||icecast-vgtrk.cdnvideo.ru^
 vestifm.online$@$link[rel="manifest"]
-@@||cdn.adguard.*/website/adguard.*/products/screenshots/*/ad_blocking.svg$domain=welcome.adguard.com|welcome.adguard.info|welcome.adguard.app # 31.03.25: не загружается картинка из-за фильтра xinggsf, в белом списке.
+@@||cdn.adguard.*/website/adguard.*/products/screenshots/*/ad_blocking.svg^$image,domain=welcome.adguard.com|welcome.adguard.info|welcome.adguard.app # 31.03.25: не загружается картинка из-за фильтра xinggsf, в белом списке.
 @@|||sb.ltn.fi^
 @@||limehd.tv/images/banners-demo.png^$image,domain=limehd.tv # 8.04.25: блокируется из-за фильтра xinggsf, в белом списке.
 @@||blocklists.operacdn.com^ # получение «чёрных списков» рекламы и трекеров для браузеров Opera.
@@ -2405,6 +2417,7 @@ vestifm.online$@$link[rel="manifest"]
 @@||orderapp.burgerkingrus.ru^
 @@||fanboy.co.nz^
 @@||geo.kaspersky.com^$app=com.kaspersky.who_calls
+@@||*-rt-*.cdn.ngenix.net^
 !
 !
 ! -

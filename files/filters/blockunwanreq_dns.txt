@@ -2,7 +2,7 @@
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Version: 3.5.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-04-20T11:00:00+00:00
+! TimeUpdated: 2025-04-21T13:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 !
 !
@@ -10,7 +10,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 20.04.2025 11:00 UTC
+! Last Modified: 21.04.2025 13:00 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -660,9 +660,9 @@
 ! static.line-scdn.net^
 ||siteintercept.qualtrics.com^$important
 ||mnaspm.com^$important,dnsrewrite=0.0.0.0
-||gtm-server.healthline.com^
+||gtm-server.healthline.com^$important
 ||adspsp.com^$important
-||doubleverify.com^
+||doubleverify.com^$important
 ! adobedtm.com^
 ||cdn-fc.com^$important,dnsrewrite=0.0.0.0
 ||camconnections.live^$important,dnsrewrite=0.0.0.0
@@ -710,6 +710,9 @@
 ||bisniskini.biz.id^$important,dnsrewrite=0.0.0.0
 ||kittygruff.com^$important,dnsrewrite=0.0.0.0
 ||adspector.io^$important,dnsrewrite=0.0.0.0
+||report.cdnpure.com^$important
+||getads.ru^$important
+||d26xw8rp6mlgfg.cloudfront.net^
 !
 !
 !
@@ -913,6 +916,9 @@
 @@||vkusnoitochka.ru^
 @@||orderapp.burgerkingrus.ru^
 @@||ksn-crypto-whocalls-geo.kaspersky-labs.com^
+@@||github.com^
+@@||githubusercontent.com^$important
+@@||*-rt-*.cdn.ngenix.net^
 !
 ! ===
 !
