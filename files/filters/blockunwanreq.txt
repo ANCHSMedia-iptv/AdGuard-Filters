@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.6.1-R
-! TimeUpdated: 2025-04-22T11:00:00+00:00
+! Version: 3.6.2-R
+! TimeUpdated: 2025-04-24T17:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -119,10 +119,10 @@
 ||api.x.com/*/jot/error_log.json^$xhr,important
 ||api.x.com/*/jot/ces/p2^$xhr,important
 ||api.x.com/*/jot/client_event.json^$xhr,important
-||tns-counter.ru^$important
+||tns-counter.ru^$important,domain~tns-counter.ru
 .ru/geo-context^$other,xhr,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||geo.geosurf.io^$important
-||platform.twitter.com/widgets.js^$script,important,domain=~x.com|~twitter.com
+/widgets.js^$script,important,domain=~x.com|~twitter.com,third-party
 ||instagram.com/embed.js^$script,important,domain=~instagram.com
 ||tiktok.com/embed.js^$script,important,domain=~tiktok.com
 ||singular.net^$important
@@ -137,8 +137,8 @@
 ||vk.com/js/api/openapi.js^$script,domain=~vk.com,important
 ||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com
 ||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com
-/itunes_referals.js^$script
-||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script
+/itunes_referals.js^$script,third-party
+||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script,third-party
 ||improving.duckduckgo.com^$important
 ||*hicloud*^$important # Huawei
 ||gstatic.com/cv/js/sender/v*/cast_sender.js^$script
@@ -221,7 +221,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /adv.gif^$image,important
 ! */adv.*^$image,important
 ||ura.news/widgets/banner_loader/loader.php$xhr,domain=ura.news,important
-||telegram.org/js/*widget*.js$script,domain=~telegram.org|~t.me
+||telegram.org/js/*widget*.js$script,domain=~telegram.org|~t.me,third-party
 ||vk.com/al_video.php$xhr,domain=~vk.com
 ||vk.com/dist/web/ads_light.*.js^$script,important
 ||s.ura.news/js/dist/ccc.bundle.js$script,domain=ura.news,important
@@ -433,10 +433,10 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /js/share*.js^$script,domain=~teraboxcdn.com|~terabox.com|~terabox.*,important
 ||cubixworld.net/api/freepromo^$xhr,domain=cubixworld.net
 ||cubixworld.net/scripts/ga.js^$script,domain=cubixworld.net,important
-||vk.com/widget_comments.php$important,xhr,domain=~vk.com
+||vk.com/widget_comments.php$important,xhr,domain=~vk.com,third-party
 /js/mrl-web-api.js^$script,domain=minecraftrating.ru|misterlauncher.org
 ||tmonitoring.com/uploads/banners/*/*.*^$image,domain=tmonitoring.com
-||api.vk.com/method/widgets.getComments$script,xhr,important,domain=~vk.com
+||api.vk.com/method/widgets.getComments$script,xhr,important,domain=~vk.com,third-party
 /download_klauncher*.png^$image
 ||modsmc.ru/_nuxt/2415b65.js^$script,domain=modsmc.ru,important
 ||modsmc.ru/assets/icons/cookies.png^$image,domain=modsmc.ru
@@ -694,7 +694,7 @@ $cookie=/__ddg*_/
 ||t.rbc.ru/track/*/*/$xhr,domain=rbc.ru,important
 !
 ||t.rbc.ru/rbcmetr/stat/regional/$xhr,domain=rbc.ru,important
-||telegram.org/css/*widget*.css$css,domain=~telegram.org|~t.me
+||telegram.org/css/*widget*.css$css,domain=~telegram.org|~t.me,third-party
 ||iguides.ru/bitrix/templates/iguides-2015/js/tg-widget.js$xhr,domain=iguides.ru
 ||tourister.ru^$cookie=dis_is_retina
 ||tochka.com^$cookie=tochka_analytics_client_uid
@@ -1020,8 +1020,8 @@ qrator/validate$xhr,important
 ||lyngsat.com/as10/ses_1801.jpg^$image,domain=lyngsat.com # реклама
 ||lyngsat.com/as10/greatway_desktop_2.jpg^$image,domain=lyngsat.com # реклама
 ! api-hprof.odkl.ru^ (soon..)
-||cloudflare.com/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1
-||1.1.1.1/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1
+||cloudflare.com/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
+||1.1.1.1/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
 ||ovego.tv/stat/$image,domain=ovego.tv,important
 ||services.fandom.com/*/api/location^$xhr,domain=fandom.com
 ||limehd.tv/api/v*/ads-banners^$xhr,domain=limehd.tv.important # получение рекламных баннеров
@@ -1108,10 +1108,11 @@ qrator/validate$xhr,important
 !
 ||report.cdnpure.com^$important
 /api/v*/download-report^$xhr,domain=apkpure.net|apkpure.com
-||a.*.*/report/group_user$xhr,domain=apkpure.net|apkpure.com
+/report/group_user$xhr,domain=apkpure.net|apkpure.com
 ||getads.ru^$important
 ||d26xw8rp6mlgfg.cloudfront.net^
-||strm.yandex.net^$app=com.infolink.limeiptv # загрузка рекламы.
+||strm.yandex.net^$app=com.infolink.limeiptv # загрузка Яндекс рекламы.
+||yandex.ru^$app=com.infolink.limeiptv # реклама и аналитика.
 !
 !
 !
@@ -1147,23 +1148,23 @@ qrator/validate$xhr,important
 ! Blocking hidden images in one pixel (1 x 1).
 ! Блокировка скрытых изображений в один пиксель (1 x 1).
 ! *4pda.to/s/*.gif*^$image,xhr,domain=4pda.to  (03.12.24: не грузятся иконки, скрытые изображения в один пиксель будут блокироваться отдельно)
-||*4pda.to/s/j7790osz2tCgk6fYcxz2yqeM8NXMm.png^$image,domain=4pda.to
-||*4pda.to/s/vIBCbXoJxOYy9Rr4CXbD5HkEyfQ.png^$image,domain=4pda.to
-||4pda.to/static/module/lytebox/images/blank.gif^$image,domain=4pda.to
+! ||*4pda.to/s/j7790osz2tCgk6fYcxz2yqeM8NXMm.png^$image,domain=4pda.to
+! ||*4pda.to/s/vIBCbXoJxOYy9Rr4CXbD5HkEyfQ.png^$image,domain=4pda.to
+! ||4pda.to/static/module/lytebox/images/blank.gif^$image,domain=4pda.to
 !
-||4pda.to/s/PXtibvsZpqz1qMv8AkyZ98Z6tlz0MY.gif$xhr,domain=4pda.to
-||4pda.to/s/PXtiiz1GkAPpOUkidN41gPh2j5DY.gif^$image,domain=4pda.to
-||4pda.to/s/PXtiiY82DndJFGb7J9ANRDD5Iuz2b.gif^$image,domain=4pda.to
-||4pda.to/s/PXtiZvWEw1FkD22i4gAOaEx2DPW.gif^$image,domain=4pda.to
-||4pda.to/s/PXtinySjOwLgFhshrMlZ4p.gif^$xhr,domain=4pda.to
-||4pda.to/s/PXtiiwuw1F4bOKlMuBlkKrXB9YcQ.gif^$image,domain=4pda.to
-||4pda.to/s/PXtiW6Ce19RSz1dL8mp2z0z0z0Hz2iP.gif^$image,domain=4pda.to
-||4pda.to/s/PXtibDEdQoXSNCp0Vtf1S1pc4z2JB.gif^$image,domain=4pda.to
-||4pda.to/s/PXticA2vfCIPytLVlJjwMm8CbCj8.gif^$image,domain=4pda.to
-||4pda.to/s/PXtibDEdQoXSNCp0Vtf1S1pc4z2JB.gif^$image,domain=4pda.to
-||4pda.to/s/PXtiWz1iIBvpnQHc1SHsnajTDcAYG.gif^$image,domain=4pda.to
+! 4pda.to/s/PXtibvsZpqz1qMv8AkyZ98Z6tlz0MY.gif$xhr,domain=4pda.to
+! ||4pda.to/s/PXtiiz1GkAPpOUkidN41gPh2j5DY.gif^$image,!domain=4pda.to
+! ||4pda.to/s/PXtiiY82DndJFGb7J9ANRDD5Iuz2b.gif^$image,domain=4pda.to
+! ||4pda.to/s/PXtiZvWEw1FkD22i4gAOaEx2DPW.gif^$image,domain=4pda.to
+! ||4pda.to/s/PXtinySjOwLgFhshrMlZ4p.gif^$xhr,domain=4pda.to
+! ||4pda.to/s/PXtiiwuw1F4bOKlMuBlkKrXB9YcQ.gif^$image,domain=4pda.to
+! ||4pda.to/s/PXtiW6Ce19RSz1dL8mp2z0z0z0Hz2iP.gif^$image,domain=4pda.to
+! ||4pda.to/s/PXtibDEdQoXSNCp0Vtf1S1pc4z2JB.gif^$image,domain=4pda.to
+! ||4pda.to/s/PXticA2vfCIPytLVlJjwMm8CbCj8.gif^$image,domain=4pda.to
+! ||4pda.to/s/PXtibDEdQoXSNCp0Vtf1S1pc4z2JB.gif^$image,domain=4pda.to
+! ||4pda.to/s/PXtiWz1iIBvpnQHc1SHsnajTDcAYG.gif^$image,domain=4pda.to
 ! (22.01.25: скрытые изображения исходят через image запрос, важные через xhr - эксперименты)
-||4pda.to/s/*.gif^$image,xhr,domain=4pda.to
+! ||4pda.to/s/*.gif^$image,xhr,domain=4pda.to
 !
 !
 ! Рекл. изображения
@@ -1174,6 +1175,12 @@ qrator/validate$xhr,important
 ||i.4pda.ws/s/PXtisFfrIDpNV9cZ6scLvJjg6WQKt3KdRX3oENlcMlICSMfivqMCAxsz0.jpg^$image,domain=4pda.to
 ||i.4pda.ws/s/PXtijnxtIQgcuz21iiBSz1EuGfAMSY0z23e3XedINq2yc2JD4gAc4EGyiId.jpg^$image,domain=4pda.to
 !
+!
+! 22.04.25: Из фильтра EasyPrivacy.
+||4pda.to/stat/
+!
+! 23.04.25: Из фильтра RU AdList: Counters
+! ||4pda.to/s/*:|$xmlhttprequest
 !
 !
 @@||i.4pda.ws/s/*.jpg?v=*^$domain=4pda.to
@@ -1845,6 +1852,7 @@ myschool.72to.ru##div._2kJk8hnpgbINo9OFR6xjGn:nth-child(6) > div.rgHK0-dZwcYE2yf
 xn--80aje0aeeii.xn--p1ai###mystickyelements-social-whatsapp > span.mystickyelements-social-icon.social-whatsapp.social-custom:first child
 trives-shop.ru##div.dyn_mp_jqm_frame.jqmWindow.popup.jqm-init.TEXT.BOTTOM_CENTER.maxwidth-theme-popup.scrollblock.show:nth-child(20) > div.form.marketing-popup.popup-text-info.\.default:nth-child(8)
 sp-man.ru###bx_117848907_1344422 > div.detail-item:last-child > div.buy-container:last-child > div.product-item-detail-pay-block:nth-child(2) > a.catalog-installment.mb-3:nth-child(7) > img
+kommersant.ru##div.layout.js-lenta-article:nth-child(17) > div.main.grid > div.grid-col.grid-col-s3:first-child > div.lenta_top_doc > article.doc.js-article.js-canonical.js-canonical-current > footer.doc_footer:nth-child(4)
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2168,8 +2176,8 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||abt.*.yandex.net^$important
 ||trends.yandex.net^
 ||yastatic.net/s*/home-static/feeds/*market*/market-feed.*$script,css,domain=ya.ru
-||ya.ru/portal/proxy?blocks=Market_cart$xhr,script,domain=ya.ru
-||ya.ru/portal/feed?feed_geo=*&id=market&page=1&session-unique-id=*&geo=*&platform=*&shown=market$xhr,domain=ya.ru
+||ya.ru/portal/proxy?blocks=Market_cart$xhr,script,domain=ya.ru,important
+||ya.ru/portal/feed?feed_geo=*&id=market&page=1&session-unique-id=*&geo=*&platform=*&shown=market$xhr,domain=ya.ru,important
 ||dr*.yandex.net/*nel$other,xhr
 ||advertising.yandex.ru^
 $document,removeparam=from,domain=yandex.*|ya.ru
@@ -2216,7 +2224,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||analytics.google.com^$important
 ||doubleclick.net^$important
 ||googlesyndication.com^$important
-||adservice.google.com^$important
+||adservice.google.*^$important
 !
 ||appsgrowthpromo*.clients*.google.com^$important # рекламный домен
 ||jnn-pa.googleapis.com/*/Create^$xhr,other
