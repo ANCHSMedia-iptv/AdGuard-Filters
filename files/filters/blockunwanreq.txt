@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.6.2-R
-! TimeUpdated: 2025-04-24T17:00:00+00:00
+! Version: 3.6.3-R
+! TimeUpdated: 2025-05-02T13:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1113,6 +1113,9 @@ qrator/validate$xhr,important
 ||d26xw8rp6mlgfg.cloudfront.net^
 ||strm.yandex.net^$app=com.infolink.limeiptv # загрузка Яндекс рекламы.
 ||yandex.ru^$app=com.infolink.limeiptv # реклама и аналитика.
+||rumor.press^$third-party,important
+||otcnet.ru/wp-content/plugins/wp-yandex-metrika/$script,xhr,domain=otcnet.ru
+/ads/styles/all/theme/phpbbads.css$css,domain=pikniktv.info
 !
 !
 !
@@ -2177,7 +2180,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||trends.yandex.net^
 ||yastatic.net/s*/home-static/feeds/*market*/market-feed.*$script,css,domain=ya.ru
 ||ya.ru/portal/proxy?blocks=Market_cart$xhr,script,domain=ya.ru,important
-||ya.ru/portal/feed?feed_geo=*&id=market&page=1&session-unique-id=*&geo=*&platform=*&shown=market$xhr,domain=ya.ru,important
+||ya.ru/portal/feed?*market*$xhr,domain=ya.ru,important
 ||dr*.yandex.net/*nel$other,xhr
 ||advertising.yandex.ru^
 $document,removeparam=from,domain=yandex.*|ya.ru
@@ -2231,7 +2234,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||ssl.gstatic.com/*/blank_1x.png^$image
 ! accounts.google.com/_/IdpIFrameHttp/cspreport$xhr,other (06.12.24: не работает правило, 07.12.24: для безопасности разблокирован (включён))
 ||accounts.youtube.com/RotateCookies^$xhr,important
-||gvt1.com^
+! ||gvt1.com^
 ||mail-ads.google.com^$important # реклама в почте Gmail
 ||imasdk.googleapis.com^$important
 ||ogads*.googleapis.com^$important
@@ -2431,6 +2434,11 @@ vestifm.online$@$link[rel="manifest"]
 @@||fanboy.co.nz^
 @@||geo.kaspersky.com^$app=com.kaspersky.who_calls
 @@||*-rt-*.cdn.ngenix.net^
+ya.ru$@$link[rel="manifest"]
+@@||config.theexplorers.com^
+@@||theexplorersmediastorage.blob.core.windows.net^
+@@||api.theexplorers.com^
+@@||r*---*-*.gvt1.com^
 !
 !
 ! -
@@ -2537,7 +2545,6 @@ vestifm.online$@$link[rel="manifest"]
 ||87h6.cfd^
 ||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^
 ||clicks.af-pb06e2.com^
-||eff.org^
 !
 !
 !
