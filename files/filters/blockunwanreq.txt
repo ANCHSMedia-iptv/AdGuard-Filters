@@ -1183,7 +1183,7 @@ qrator/validate$xhr,important
 ||4pda.to/stat/
 !
 ! 23.04.25: Из фильтра RU AdList: Counters
-! ||4pda.to/s/*:|$xmlhttprequest
+||4pda.to/s/*:|$xmlhttprequest,important
 !
 !
 @@||i.4pda.ws/s/*.jpg?v=*^$domain=4pda.to
