@@ -713,6 +713,9 @@
 ||report.cdnpure.com^$important
 ||getads.ru^$important
 ||d26xw8rp6mlgfg.cloudfront.net^
+||teads.tv^$important
+||mediasystems.am^$important
+||bid^
 !
 !
 !
@@ -923,6 +926,7 @@
 @@||theexplorersmediastorage.blob.core.windows.net^
 @@||api.theexplorers.com^
 @@||r*---*-*.gvt1.com^
+@@||theexplorersmedia.streaming.mediaservices.windows.net^
 !
 ! ===
 !

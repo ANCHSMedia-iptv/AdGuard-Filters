@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.6.3-R
-! TimeUpdated: 2025-05-02T13:00:00+00:00
+! Version: 3.6.4-R
+! TimeUpdated: 2025-05-13T13:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -972,10 +972,10 @@ qrator/qauth.js$script,important
 qrator/validate$xhr,important
 ||ad-source.pro^$important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
-://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # аналитика и реклама.
-://yandex.ru^$app=com.infolink.limeiptv # аналитика и реклама.
+||yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # аналитика и реклама.
+!
 /^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # тоже самое, реклама/аналитика.
-://yastatic.net^$app=com.radioapp.mayakradio|com.avito.android
+||yastatic.net^$app=com.radioapp.mayakradio|com.avito.android
 /^5\.255\.255\.77/^$network,app=ru.pyaterochka.app.browser # тоже самое, реклама/аналитика.
 ||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm # подгрузка рекламы в приложение Relax FM.
 ||s3.amazonaws.com^$app=com.viber.voip
@@ -1060,13 +1060,13 @@ qrator/validate$xhr,important
 ||log-sg.capcutapi.com^$important
 ||mobile-static.mindbox.ru^$important
 ||stat.teleport.media^$important
-||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod # 16.04.25: возможно, аналитика Mail.
+||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile # 16.04.25: возможно, аналитика Mail.
 ||ortomir24.ru/rest/pull.config.get.json$xhr,domain=ortomir24.ru
 ||sp-man.ru/bitrix/templates/eshop_bootstrap_green/assets/img/halva-btn.png^$image,domain=sp-man.ru
 ||vk.com^$domain=shopogolic.net|shopogolic.club # аналитика ВК
 ||js-collector.icewood.net^$important
-/iwaf/fingerprint$xhr,important
-/waf.js$script,important
+waf/fingerprint$xhr,important
+*waf*.js$script,important
 ||adspector.io^$important
 ! 19.04.25: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/203491]
 ||discord.com/api/v*/experiments?$domain=discord.com
@@ -1116,6 +1116,8 @@ qrator/validate$xhr,important
 ||rumor.press^$third-party,important
 ||otcnet.ru/wp-content/plugins/wp-yandex-metrika/$script,xhr,domain=otcnet.ru
 /ads/styles/all/theme/phpbbads.css$css,domain=pikniktv.info
+||smotret.tv/js/ads-2025.js^$script,domain=smotret.tv
+||smotret.tv/js/lozad*.js^$script,domain=smotret.tv
 !
 !
 !
@@ -1183,7 +1185,7 @@ qrator/validate$xhr,important
 ||4pda.to/stat/
 !
 ! 23.04.25: Из фильтра RU AdList: Counters
-||4pda.to/s/*:|$xmlhttprequest,important
+||4pda.to/s/*:|$xhr,important
 !
 !
 @@||i.4pda.ws/s/*.jpg?v=*^$domain=4pda.to
@@ -1856,6 +1858,7 @@ xn--80aje0aeeii.xn--p1ai###mystickyelements-social-whatsapp > span.mystickyeleme
 trives-shop.ru##div.dyn_mp_jqm_frame.jqmWindow.popup.jqm-init.TEXT.BOTTOM_CENTER.maxwidth-theme-popup.scrollblock.show:nth-child(20) > div.form.marketing-popup.popup-text-info.\.default:nth-child(8)
 sp-man.ru###bx_117848907_1344422 > div.detail-item:last-child > div.buy-container:last-child > div.product-item-detail-pay-block:nth-child(2) > a.catalog-installment.mb-3:nth-child(7) > img
 kommersant.ru##div.layout.js-lenta-article:nth-child(17) > div.main.grid > div.grid-col.grid-col-s3:first-child > div.lenta_top_doc > article.doc.js-article.js-canonical.js-canonical-current > footer.doc_footer:nth-child(4)
+peers.tv###prompt-form-container-phone
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2330,6 +2333,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||mintegral.net^$important
 ||nr.bidderstack.com^$important
 ||adsmetadata.mobileadexchange.net^$important
+||mediameter.by^$important
 !
 ! --
 !
@@ -2439,6 +2443,7 @@ ya.ru$@$link[rel="manifest"]
 @@||theexplorersmediastorage.blob.core.windows.net^
 @@||api.theexplorers.com^
 @@||r*---*-*.gvt1.com^
+@@||theexplorersmedia.streaming.mediaservices.windows.net^
 !
 !
 ! -
