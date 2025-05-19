@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.6.4-R
-! TimeUpdated: 2025-05-13T13:00:00+00:00
+! Version: 3.6.6-R
+! TimeUpdated: 2025-05-19T17:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1118,6 +1118,13 @@ waf/fingerprint$xhr,important
 /ads/styles/all/theme/phpbbads.css$css,domain=pikniktv.info
 ||smotret.tv/js/ads-2025.js^$script,domain=smotret.tv
 ||smotret.tv/js/lozad*.js^$script,domain=smotret.tv
+||tv2free.ru/core/modules/statistics/statistics.php^$xhr,subdocument,domain=tv2free.ru
+/pwa-sw.js$script
+||1tv.ru/push_service_worker.js^$script,domain=1tv.ru
+/no-js.*$subdocument,script
+||tvapp.fun/assets/js/player/counter.js^$script,domain=tvapp.fun
+||tvapp.fun/assets/js/player/disable.js^$script,domain=tvapp.fun
+||tva.org.ua/wp-content/uploads/2023/10/izobrazhenie_2023-10-10_143432490-250x159.png^$image,domain=tva.org.ua
 !
 !
 !
@@ -1860,6 +1867,11 @@ sp-man.ru###bx_117848907_1344422 > div.detail-item:last-child > div.buy-containe
 kommersant.ru##div.layout.js-lenta-article:nth-child(17) > div.main.grid > div.grid-col.grid-col-s3:first-child > div.lenta_top_doc > article.doc.js-article.js-canonical.js-canonical-current > footer.doc_footer:nth-child(4)
 peers.tv###prompt-form-container-phone
 !
+wireshark.org##astro-island:nth-child(3) > div._headerContainer_1wd0p_9:first-child > div._topBannerWrapper_1wd0p_149:first-child
+wireshark.org##div.banner-wrapper:last-child
+tva.org.ua###media_image-4
+tva.org.ua###media_image-2
+!
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
 tbank.ru,tinkoff.ru,t-j.ru#%#//scriptlet('remove-cookie', '/dsp_click_id|pageLanding|mediaInfo/')
@@ -2334,6 +2346,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||nr.bidderstack.com^$important
 ||adsmetadata.mobileadexchange.net^$important
 ||mediameter.by^$important
+||stat*.1internet.tv^$important
 !
 ! --
 !
@@ -2444,6 +2457,7 @@ ya.ru$@$link[rel="manifest"]
 @@||api.theexplorers.com^
 @@||r*---*-*.gvt1.com^
 @@||theexplorersmedia.streaming.mediaservices.windows.net^
+@@/wp-content/plugins/all-in-one-wp-security-and-firewall/js/wp-security-front-script.js$script
 !
 !
 ! -
