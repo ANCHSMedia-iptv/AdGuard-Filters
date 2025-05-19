@@ -1125,6 +1125,9 @@ waf/fingerprint$xhr,important
 ||tvapp.fun/assets/js/player/counter.js^$script,domain=tvapp.fun
 ||tvapp.fun/assets/js/player/disable.js^$script,domain=tvapp.fun
 ||tva.org.ua/wp-content/uploads/2023/10/izobrazhenie_2023-10-10_143432490-250x159.png^$image,domain=tva.org.ua
+||dam.mediacorp.sg/image/upload/*/mediacorp/cna/image/2025/03/25/telegram_*_0.png^$image,domain=channelnewsasia.com
+||boost-recommend.mediacorp.sg^
+||ritsatv.ru/files/protect/browser.js^$script,domain=ritsatv.ru
 !
 !
 !
@@ -1871,6 +1874,11 @@ wireshark.org##astro-island:nth-child(3) > div._headerContainer_1wd0p_9:first-ch
 wireshark.org##div.banner-wrapper:last-child
 tva.org.ua###media_image-4
 tva.org.ua###media_image-2
+channelnewsasia.com###\32 65f2f3e-8335-4bb6-9790-1c8afcfc7602
+rknweb.ru##main:nth-child(2) > article > div.container.single-page:first-child > div.detail-domains.wite-box:nth-child(3) > div.right-box:last-child > div.telegram-box:last-child
+vkvideo.ru###content > div.VideoLayout > div.VideoLayout__aside:first-child > div.VideoLayout__asideContent > div.VideoLayout__asideContentScroll.ui_scroll_container.ui_scroll_default_theme.ui_scroll_hidden > div.ui_scroll_overflow:first-child > div.ui_scroll_blocker:first-child > div.ui_scroll_outer > div.ui_scroll_inner.tt_noappend > div.ui_scroll_content.clear_fix:first-child > div.VideoQuickLogin:last-child
+! Partner sites in footer
+globalfreetv.com##footer.bg-gray-800.text-white.py-8:nth-child(5) > div.container.mx-auto.px-4 > div.grid.grid-cols-1.md\:grid-cols-5.gap-8:first-child > div:last-child
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
