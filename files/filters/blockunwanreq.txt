@@ -1122,8 +1122,8 @@ waf/fingerprint$xhr,important
 /pwa-sw.js$script
 ||1tv.ru/push_service_worker.js^$script,domain=1tv.ru
 /no-js.*$subdocument,script
-||tvapp.fun/assets/js/player/counter.js^$script,domain=tvapp.fun
-||tvapp.fun/assets/js/player/disable.js^$script,domain=tvapp.fun
+||tvapp.*/assets/js/player/counter.js^$script,domain=tvapp.*
+||tvapp.*/assets/js/player/disable.js^$script,domain=tvapp.*
 ||tva.org.ua/wp-content/uploads/2023/10/izobrazhenie_2023-10-10_143432490-250x159.png^$image,domain=tva.org.ua
 ||dam.mediacorp.sg/image/upload/*/mediacorp/cna/image/2025/03/25/telegram_*_0.png^$image,domain=channelnewsasia.com
 ||boost-recommend.mediacorp.sg^
