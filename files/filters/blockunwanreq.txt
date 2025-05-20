@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 3.6.6-R
-! TimeUpdated: 2025-05-19T17:00:00+00:00
+! TimeUpdated: 2025-05-20T17:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1115,7 +1115,7 @@ waf/fingerprint$xhr,important
 ||yandex.ru^$app=com.infolink.limeiptv # реклама и аналитика.
 ||rumor.press^$third-party,important
 ||otcnet.ru/wp-content/plugins/wp-yandex-metrika/$script,xhr,domain=otcnet.ru
-/ads/styles/all/theme/phpbbads.css$css,domain=pikniktv.info
+/ads/styles/all/theme/phpbbads.css$css
 ||smotret.tv/js/ads-2025.js^$script,domain=smotret.tv
 ||smotret.tv/js/lozad*.js^$script,domain=smotret.tv
 ||tv2free.ru/core/modules/statistics/statistics.php^$xhr,subdocument,domain=tv2free.ru
@@ -1145,11 +1145,11 @@ waf/fingerprint$xhr,important
 ! Блокировка рекламных изображений (несмотря на блокировку блоков с рекламой другими фильтрами).
 !
 ! i.4pda.ws/s/*.jpg^$image,domain=4pda.to
-||*4pda.to/s/*.jpg?_=*^$image,domain=4pda.to
-||i.4pda.ws/s/vIBCYgN5BkfUH7sJNrH2qkTXfJvy59kvOFuWhz1LmU5QlRkxToMQigxly.jpg^$image,domain=4pda.to
-||i.4pda.ws/s/ZFjpvgdZQa3YXN2Kz0XLce5z0FmAiEXvAPN2YC2qk8IOH7XE23z1bANz2Nll.jpg^$image,domain=4pda.to
-||i.4pda.ws/s/PXtiaseG1B8bL2Pz1SnXNmRdVz0IUK3z1JhhsshLpkz25hz1s3TKBbYHW4Wi4.jpg^$image,domain=4pda.to
-
+! *4pda.to/s/*.jpg?_=*^$image,domain=4pda.to
+! i.4pda.ws/s/vIBCYgN5BkfUH7sJNrH2qkTXfJvy59kvOFuWhz1LmU5QlRkxToMQigxly.jpg^$image,domain=4pda.to
+! i.4pda.ws/s/ZFjpvgdZQa3YXN2Kz0XLce5z0FmAiEXvAPN2YC2qk8IOH7XE23z1bANz2Nll.jpg^$image,domain=4pda.to
+! i.4pda.ws/s/PXtiaseG1B8bL2Pz1SnXNmRdVz0IUK3z1JhhsshLpkz25hz1s3TKBbYHW4Wi4.jpg^$image,domain=4pda.to
+!
 !
 ! Blocking hidden html component of Yandex analytics.
 ! Блокировка скрытого html компонента аналитики Яндекса.
@@ -1869,7 +1869,7 @@ trives-shop.ru##div.dyn_mp_jqm_frame.jqmWindow.popup.jqm-init.TEXT.BOTTOM_CENTER
 sp-man.ru###bx_117848907_1344422 > div.detail-item:last-child > div.buy-container:last-child > div.product-item-detail-pay-block:nth-child(2) > a.catalog-installment.mb-3:nth-child(7) > img
 kommersant.ru##div.layout.js-lenta-article:nth-child(17) > div.main.grid > div.grid-col.grid-col-s3:first-child > div.lenta_top_doc > article.doc.js-article.js-canonical.js-canonical-current > footer.doc_footer:nth-child(4)
 peers.tv###prompt-form-container-phone
-!
+fandom.com##div[class^="sitenotice-wrapper"]
 wireshark.org##astro-island:nth-child(3) > div._headerContainer_1wd0p_9:first-child > div._topBannerWrapper_1wd0p_149:first-child
 wireshark.org##div.banner-wrapper:last-child
 tva.org.ua###media_image-4
@@ -1991,9 +1991,9 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||router.silotis.us^
 ||=^
 ||initplayback^
-||iptv.local^
-||ip-api.com^
-||ifconfig.co^
+! ||iptv.local^
+! ||ip-api.com^
+! ||ifconfig.co^
 ||odc.null^
 !
 !
