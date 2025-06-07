@@ -2,15 +2,15 @@
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Version: 3.5.4-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! TimeUpdated: 2025-05-20T17:00:00+00:00
-! Expires: 72 hours (updated almost every day)
+! TimeUpdated: 2025-06-06T10:00:00+00:00
+! 
 !
 !
 !
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 20.05.2025 17:00 UTC
+! Last Modified: 03.06.2025 17:00 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -175,6 +175,7 @@
 ||doubleclick.net^$important
 ||googlesyndication.com^$important
 ||adservice.google.com^$important
+||googleanalytics.com^$important
 !
 ||appsgrowthpromo*.clients*.google.com^$important
 ||mail-ads.google.com^$important
@@ -459,7 +460,6 @@
 ||clickstream.sberbank.ru^$important
 ||ct.pinterest.com^$important
 ||check.unity.*^$important
-||appbrain.com^
 ||ads.pro-market.net^$important
 ||lenta.sparrow.ru^$important
 ||stats.wp.com^$important
@@ -716,6 +716,9 @@
 ||teads.tv^$important
 ||mediasystems.am^$important
 ||bid^
+||mobile-data.onetrust.io^$important
+||ads.tiktok.com^$important
+||partnerads.ysm.yahoo.com^$important
 !
 !
 !
@@ -823,9 +826,9 @@
 ||router.silotis.us^
 ||=^
 ||initplayback^
-! ||iptv.local^
-! ||ip-api.com^
-! ||ifconfig.co^
+||iptv.local^
+||ip-api.com^
+||ifconfig.co^
 ||odc.null^
 !
 !
@@ -927,6 +930,9 @@
 @@||api.theexplorers.com^
 @@||r*---*-*.gvt1.com^
 @@||theexplorersmedia.streaming.mediaservices.windows.net^
+@@||dnl-*.geo.kaspersky.com^
+@@||i.ytimg.com^
+@@||i*.ytimg.com^
 !
 ! ===
 !

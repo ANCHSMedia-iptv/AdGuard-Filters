@@ -1,8 +1,8 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.6.6-R
-! TimeUpdated: 2025-05-20T17:00:00+00:00
-! Expires: 72 hours (updated almost every day)
+! Version: 3.6.8-R
+! TimeUpdated: 2025-06-06T10:00:00+00:00
+!
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
 !
@@ -770,7 +770,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ! ||graphql.kinopoisk.ru^$important (новое правило, строка 381)
 ||clickstream.sberbank.ru^$important
 ||check.unity.*^$important
-||appbrain.com^
+||appbrain.com^$third-party
 ||js.memberful.com/embed.js^$script,important
 ||disqus.com/count.js$script,xhr,important
 ||disqus.com/count-data.js$script,xhr,important
@@ -1128,6 +1128,19 @@ waf/fingerprint$xhr,important
 ||dam.mediacorp.sg/image/upload/*/mediacorp/cna/image/2025/03/25/telegram_*_0.png^$image,domain=channelnewsasia.com
 ||boost-recommend.mediacorp.sg^
 ||ritsatv.ru/files/protect/browser.js^$script,domain=ritsatv.ru
+||philka.ru/forum/public/style_extra/sharelinks/*.png^$image,domain=philka.ru
+||philka.ru/forum/public/js/ips.sharelinks.js^$script,domain=philka.ru
+||seohamer.ru/banner/gif/banner*.gif^$image,third-party
+||s.contemio.ru$third-party
+ads.js$script
+||ads.tiktok.com^$important
+||partnerads.ysm.yahoo.com^$important
+! Блокировка адреса, который открывается после обновления браузера Опера (Opera).
+||opera.com/*/ofa/upgraded
+!
+||static*.go3.tv/file/go3/resources/scripts/tv3play/onetrust/*/onetrust.html^$xhr,domain=play.tv3.*
+||play.tv3.*/static/images/fake-android-webview-poster.gif^$image,domain=play.tv3.*
+||kino.tricolor.ru/dist/img/app_btn-icon.svg^$image,domain=kino.tricolor.ru
 !
 !
 !
@@ -1865,6 +1878,7 @@ myschool.72to.ru##._1B2MfLvr8qLC_uGVNGm4BU
 myschool.72to.ru##div._2kJk8hnpgbINo9OFR6xjGn:nth-child(6) > div.rgHK0-dZwcYE2yf0fcu2q._3m84YHTrytRI_qsNi9i4nU
 ! персонаж.рф: остаток от блокировки соцвиджетов.
 xn--80aje0aeeii.xn--p1ai###mystickyelements-social-whatsapp > span.mystickyelements-social-icon.social-whatsapp.social-custom:first child
+!
 trives-shop.ru##div.dyn_mp_jqm_frame.jqmWindow.popup.jqm-init.TEXT.BOTTOM_CENTER.maxwidth-theme-popup.scrollblock.show:nth-child(20) > div.form.marketing-popup.popup-text-info.\.default:nth-child(8)
 sp-man.ru###bx_117848907_1344422 > div.detail-item:last-child > div.buy-container:last-child > div.product-item-detail-pay-block:nth-child(2) > a.catalog-installment.mb-3:nth-child(7) > img
 kommersant.ru##div.layout.js-lenta-article:nth-child(17) > div.main.grid > div.grid-col.grid-col-s3:first-child > div.lenta_top_doc > article.doc.js-article.js-canonical.js-canonical-current > footer.doc_footer:nth-child(4)
@@ -1878,7 +1892,19 @@ channelnewsasia.com###\32 65f2f3e-8335-4bb6-9790-1c8afcfc7602
 rknweb.ru##main:nth-child(2) > article > div.container.single-page:first-child > div.detail-domains.wite-box:nth-child(3) > div.right-box:last-child > div.telegram-box:last-child
 vkvideo.ru###content > div.VideoLayout > div.VideoLayout__aside:first-child > div.VideoLayout__asideContent > div.VideoLayout__asideContentScroll.ui_scroll_container.ui_scroll_default_theme.ui_scroll_hidden > div.ui_scroll_overflow:first-child > div.ui_scroll_blocker:first-child > div.ui_scroll_outer > div.ui_scroll_inner.tt_noappend > div.ui_scroll_content.clear_fix:first-child > div.VideoQuickLogin:last-child
 ! Partner sites in footer
-globalfreetv.com##footer.bg-gray-800.text-white.py-8:nth-child(5) > div.container.mx-auto.px-4 > div.grid.grid-cols-1.md\:grid-cols-5.gap-8:first-child > div:last-child
+globalfreetv.com##footer.bg-gray-800.text-white.py-8:nth-child(5) > div.container.mx-auto.px-4 > div.grid.grid-cols-1.md\:grid-cols-5.gap-8:first-child > div:last child
+!
+a7-agent.ru##main:nth-child(2) > div.overlay:nth-child(7)
+! Открыть в приложении
+kino.tricolor.ru##section.main:nth-child(5) > div.app_button:first-child
+!
+! Установить на ПК
+limehd.tv###__nuxt > div.w-full.min-h-screen > div.flex.flex-col.min-h-screen.fullscreen\:overflow-hidden.fullscreen\:h-screen:first-child > header.sticky.translate-x-0.z-50.top-0.px-4.xl\:px-8.h-16.text-white.bg-neutral-900.flex.justify-between.items-center.w-screen:first-child > div.flex.items-center.gap-x-4.xl\:gap-x-8:first-child > ul.flex.items-center.gap-x-2.font-medium.hidden.md\:flex:last-child > li.hover\:text-neutral-200.text-neutral-400.last\:text-purple-light.last\:hidden.last\:xl\:block:last-child
+!
+! Реклама в Peers TV
+peers.tv##div.header-wrap.clearfix:nth-child(4) > header.row > nav.col-md-16 > ul.list-inline.main-menu:nth-child(2) > li.b2b-link:last-child
+!
+!
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2268,6 +2294,8 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||googleapis.com/auth/games$important
 ||google.com/dfp$important
 ||1e100.net^
+||play.google.com/store/apps/collection/promotion_30$xhr,other
+||googleanalytics.com^$important
 !
 ! ===
 !
@@ -2466,6 +2494,9 @@ ya.ru$@$link[rel="manifest"]
 @@||r*---*-*.gvt1.com^
 @@||theexplorersmedia.streaming.mediaservices.windows.net^
 @@/wp-content/plugins/all-in-one-wp-security-and-firewall/js/wp-security-front-script.js$script
+@@||s3.amazonaws.com^$app=app.subscab.android
+@@||i.ytimg.com^
+@@||i*.ytimg.com^
 !
 !
 ! -
