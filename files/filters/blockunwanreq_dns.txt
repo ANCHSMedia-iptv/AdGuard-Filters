@@ -573,7 +573,7 @@
 ||ads.pacific.net.sg^$dnsrewrite=0.0.0.0,important
 ||ww150.smartadserver.com^$dnsrewrite=NXDOMAIN,important
 ||smartadserver.com^$dnsrewrite=NXDOMAIN,important
-——
+! ——
 ||lkqd.net^
 ||lnkxfer8.com^
 ||looktest.win^$dnsrewrite=NXDOMAIN,important

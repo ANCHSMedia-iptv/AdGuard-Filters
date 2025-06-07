@@ -916,7 +916,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||ads.pacific.net.sg^$important
 ||ww150.smartadserver.com^$important
 ||smartadserver.com^$important
-——
+! ——
 ||lkqd.net^
 ||lnkxfer8.com^
 ||looktest.win^$important
