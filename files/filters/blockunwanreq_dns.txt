@@ -826,9 +826,9 @@
 ||router.silotis.us^
 ||=^
 ||initplayback^
-||iptv.local^
-||ip-api.com^
-||ifconfig.co^
+! ||iptv.local^
+! ||ip-api.com^
+! ||ifconfig.co^
 ||odc.null^
 !
 !
