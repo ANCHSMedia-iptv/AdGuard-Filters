@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 3.6.8-R
-! TimeUpdated: 2025-06-06T10:00:00+00:00
+! TimeUpdated: 2025-06-07T16:00:00+00:00
 !
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1141,6 +1141,15 @@ ads.js$script
 ||static*.go3.tv/file/go3/resources/scripts/tv3play/onetrust/*/onetrust.html^$xhr,domain=play.tv3.*
 ||play.tv3.*/static/images/fake-android-webview-poster.gif^$image,domain=play.tv3.*
 ||kino.tricolor.ru/dist/img/app_btn-icon.svg^$image,domain=kino.tricolor.ru
+||peers.tv/js/verify_controller/verify_age_controller.js^$script,domain=peers.tv
+||peers.tv/js/ptv/parental_control_controller.js^$script,domain=peers.tv
+||peers.tv/cnplayer/imasdk/ads.*.js$script,domain=peers.tv
+||peers.tv/cnplayer/imasdk/ads.css$css,xhr,domain=peers.tv
+||api.peers.tv/money_miner/*/places.json$xhr,domain=peers.tv
+||peers.tv/js/lib/mediascope.js$script,domain=peers.tv
+||peers.tv/cnplayer/cnp.mob.js$script,domain=peers.tv
+||peers.tv/ajax/getpushnotification/$xhr,domain=peers.tv
+||analytics.peers.tv^$important
 !
 !
 !
@@ -2497,6 +2506,7 @@ ya.ru$@$link[rel="manifest"]
 @@||s3.amazonaws.com^$app=app.subscab.android
 @@||i.ytimg.com^
 @@||i*.ytimg.com^
+@@||peers.tv/cnplayer/cnp/cnp.adbutton.j$script,domain=peers.tv
 !
 !
 ! -
