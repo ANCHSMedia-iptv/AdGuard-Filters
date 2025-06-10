@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.6.8-R
-! TimeUpdated: 2025-06-07T16:00:00+00:00
+! Version: 3.6.9-R
+! TimeUpdated: 2025-06-09T16:00:00+00:00
 !
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1140,6 +1140,7 @@ ads.js$script
 !
 ||static*.go3.tv/file/go3/resources/scripts/tv3play/onetrust/*/onetrust.html^$xhr,domain=play.tv3.*
 ||play.tv3.*/static/images/fake-android-webview-poster.gif^$image,domain=play.tv3.*
+||static3.go3.tv/file/go3/resources/scripts/tv3play/ipresso/*/ipressoScript.js$domain=play.tv3.*
 ||kino.tricolor.ru/dist/img/app_btn-icon.svg^$image,domain=kino.tricolor.ru
 ||peers.tv/js/verify_controller/verify_age_controller.js^$script,domain=peers.tv
 ||peers.tv/js/ptv/parental_control_controller.js^$script,domain=peers.tv
@@ -1150,6 +1151,19 @@ ads.js$script
 ||peers.tv/cnplayer/cnp.mob.js$script,domain=peers.tv
 ||peers.tv/ajax/getpushnotification/$xhr,domain=peers.tv
 ||analytics.peers.tv^$important
+||app.torbobit.net/js/analytics/$script,domain=torbobit.net
+||torbobit.net/fd1/img/download/payments/card_hover.png^$image,domain=torbobit.net
+||torbobit.net/files/news/image/offer%20240.png^image,domain=torbobit.net
+||torbobit.net/files/news/image/offer%20299.png$image,domain=torbobit.net
+||i.gyazo.com/*$image,third-party,domain=~gyazo.com
+calltouch.js$script,xhr
+||planetcalc.*/service/comments/$xhr,domain=planetcalc.*
+||planetcalc.*/service/sofiabyartefact/^$xhr,domain=planetcalc.*
+||planetcalc.*/users/*/avatar/*.png^$image,domain=planetcalc.*
+||on-tv.ru/images/youtube_on-tv_banner.png^$image,domain=on-tv.ru
+||aeb-blog.ru/wp-content/themes/aeb-blog/images/1-2.gif^$image,domain=aeb-blog.ru
+||ntvplus.ru/files/image/94/77/77/-vjm.jpg^$image,domain=ntvplus.ru
+||ntvplus.ru/files/image/10/03/192/-i24.jpg^$image,domain=ntvplus.ru
 !
 !
 !
@@ -1530,14 +1544,17 @@ detmir.ru##div[data-testid="advContainer"]
 !
 ! == Сайт провайдера Дом.ру (dom .ru) ==
 !
-||dom.ru/static/js/calltouch.js^$script,domain=dom.ru,important
-||dom.ru/static/js/googleTagManager.js^$script,domain=dom.ru,important
-||dom.ru/static/js/mailRuCounter.js^$script,domain=dom.ru,important
-||api-content.web-api.dom.ru/v*/promo-line^$xhr,domain=dom.ru
+.ru/static/js/calltouch.js^$script,domain=dom.ru|*.dom.ru,important
+.ru/static/js/googleTagManager.js^$script,domain=dom.ru|*.dom.ru,important
+.ru/static/js/mailRuCounter.js^$script,domain=dom.ru|*.dom.ru,important
+||api-content.web-api.dom.ru/v*/promo-line^$xhr,domain=dom.ru|*.dom.ru
+||cdn-b2c.dom.ru/chat-frame/stable/chat-frame.*.js^$script,domain=dom.ru|*.dom.ru
 !
 ! - Косметические правила -
 ! Рекламный блок на главной странице сайта
-dom.ru##div[class^="sc-6e31cbc2-0 kKbgFL"]
+dom.ru,*.dom.ru##div[class^="sc-6e31cbc2-0 kKbgFL"]
+!
+!
 ! -
 !
 ! ===
@@ -1879,12 +1896,15 @@ securelist.ru##div[class^="o-col-4@sm u-hidden u-block@sm"]
 habr.com##.disable-adblock-placeholder
 xn--80aafadvc9bifbaeqg0p.xn--p1ai##a[href^="://sferum.ru/"]
 xn--80aafadvc9bifbaeqg0p.xn--p1ai##a.floating-sferum-main:nth-child(4)
+!
 ! 2.04.25: Взято отсюда [https://github.com/AdguardTeam/AdguardFilters/issues/202005#issuecomment-2768820548]
 bing.com##.mmaAdCard
+!
 !
 college.72to.ru##.notification-container
 myschool.72to.ru##._1B2MfLvr8qLC_uGVNGm4BU
 myschool.72to.ru##div._2kJk8hnpgbINo9OFR6xjGn:nth-child(6) > div.rgHK0-dZwcYE2yf0fcu2q._3m84YHTrytRI_qsNi9i4nU
+!
 ! персонаж.рф: остаток от блокировки соцвиджетов.
 xn--80aje0aeeii.xn--p1ai###mystickyelements-social-whatsapp > span.mystickyelements-social-icon.social-whatsapp.social-custom:first child
 !
@@ -1892,18 +1912,20 @@ trives-shop.ru##div.dyn_mp_jqm_frame.jqmWindow.popup.jqm-init.TEXT.BOTTOM_CENTER
 sp-man.ru###bx_117848907_1344422 > div.detail-item:last-child > div.buy-container:last-child > div.product-item-detail-pay-block:nth-child(2) > a.catalog-installment.mb-3:nth-child(7) > img
 kommersant.ru##div.layout.js-lenta-article:nth-child(17) > div.main.grid > div.grid-col.grid-col-s3:first-child > div.lenta_top_doc > article.doc.js-article.js-canonical.js-canonical-current > footer.doc_footer:nth-child(4)
 peers.tv###prompt-form-container-phone
-fandom.com##div[class^="sitenotice-wrapper"]
-wireshark.org##astro-island:nth-child(3) > div._headerContainer_1wd0p_9:first-child > div._topBannerWrapper_1wd0p_149:first-child
+fandom.com##div.notifications-placeholder:nth-child(2)
+wireshark.org##div[class^="topBannerWrapper_1wd0p_149"]
 wireshark.org##div.banner-wrapper:last-child
 tva.org.ua###media_image-4
 tva.org.ua###media_image-2
 channelnewsasia.com###\32 65f2f3e-8335-4bb6-9790-1c8afcfc7602
 rknweb.ru##main:nth-child(2) > article > div.container.single-page:first-child > div.detail-domains.wite-box:nth-child(3) > div.right-box:last-child > div.telegram-box:last-child
 vkvideo.ru###content > div.VideoLayout > div.VideoLayout__aside:first-child > div.VideoLayout__asideContent > div.VideoLayout__asideContentScroll.ui_scroll_container.ui_scroll_default_theme.ui_scroll_hidden > div.ui_scroll_overflow:first-child > div.ui_scroll_blocker:first-child > div.ui_scroll_outer > div.ui_scroll_inner.tt_noappend > div.ui_scroll_content.clear_fix:first-child > div.VideoQuickLogin:last-child
+!
 ! Partner sites in footer
 globalfreetv.com##footer.bg-gray-800.text-white.py-8:nth-child(5) > div.container.mx-auto.px-4 > div.grid.grid-cols-1.md\:grid-cols-5.gap-8:first-child > div:last child
 !
 a7-agent.ru##main:nth-child(2) > div.overlay:nth-child(7)
+!
 ! Открыть в приложении
 kino.tricolor.ru##section.main:nth-child(5) > div.app_button:first-child
 !
@@ -1913,7 +1935,16 @@ limehd.tv###__nuxt > div.w-full.min-h-screen > div.flex.flex-col.min-h-screen.fu
 ! Реклама в Peers TV
 peers.tv##div.header-wrap.clearfix:nth-child(4) > header.row > nav.col-md-16 > ul.list-inline.main-menu:nth-child(2) > li.b2b-link:last-child
 !
-!
+fandom.com,*.fandom.com##div.notifications-placeholder:nth-child(2) > div.marketing-notifications:first-child > div.marketing-notification__container.GxLxDKkiUGCcwujVwPVA
+torbobit.net###timeoutBox > div.payment-block:first-child
+torbobit.net###download-premium-btn
+torbobit.net##div.main-menu:nth-child(3) > div.main-menu-links > a:nth-child(2)
+torbobit.net###register-offer-form
+dailyuploads.net##footer:nth-child(4) > div.footer-holder > div.footer:first-child > a:nth-child(4)
+pikabu.ru##div.app:nth-child(3) > div.app__inner:nth-child(3) > div.sidebar.sidebar_right:first-child > aside.sidebar__inner > div.sidebar-block.sidebar-block_border.sidebar-block_mail.email-block:nth-child(7)
+on-tv.ru###header_end2
+aeb-blog.ru###fix-wid
+ntvplus.ru##div.aside-layout.container.mb166:nth-child(16) > div.row.sticky-parent > aside.aside.float--left.col-xs-12.col-md-4:first-child > div.aside--inner.sm-reverse.lg-pr > a.aside--banner.visible-lg:last-child
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
