@@ -2,7 +2,7 @@
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 3.7.0-R
 ! TimeUpdated: 2025-06-10T14:00:00+00:00
-!
+! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
 !
@@ -1126,7 +1126,7 @@ waf/fingerprint$xhr,important
 ||tvapp.*/assets/js/player/disable.js^$script,domain=tvapp.*
 ||tva.org.ua/wp-content/uploads/2023/10/izobrazhenie_2023-10-10_143432490-250x159.png^$image,domain=tva.org.ua
 ||dam.mediacorp.sg/image/upload/*/mediacorp/cna/image/2025/03/25/telegram_*_0.png^$image,domain=channelnewsasia.com
-||boost-recommend.mediacorp.sg^
+||boost-recommend.mediacorp.sg^$important
 ||ritsatv.ru/files/protect/browser.js^$script,domain=ritsatv.ru
 ||philka.ru/forum/public/style_extra/sharelinks/*.png^$image,domain=philka.ru
 ||philka.ru/forum/public/js/ips.sharelinks.js^$script,domain=philka.ru
@@ -1173,6 +1173,7 @@ calltouch.js$script,xhr
 ||ozobang.com^$important
 ||hue2b.com^$important
 /backend_loader.php?$image,xhr
+||cdn.unshorten.net/assets/js/cookie.js^$script,domain=unshorten.net
 !
 !
 !

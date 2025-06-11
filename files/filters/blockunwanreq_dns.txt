@@ -2,6 +2,7 @@
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Version: 3.5.5-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
+! Expires: 72 hours (updated almost every day)
 ! TimeUpdated: 2025-06-10T14:00:00+00:00
 ! 
 !
