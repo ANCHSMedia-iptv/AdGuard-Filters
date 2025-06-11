@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.6.9-R
-! TimeUpdated: 2025-06-09T16:00:00+00:00
+! Version: 3.7.0-R
+! TimeUpdated: 2025-06-10T14:00:00+00:00
 !
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -199,7 +199,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! gemotest.ru/local/templates/main/img/chat.svg^$image,domain=gemotest.ru
 !
 ||invitro.ru/edna/assets/multibutton.js*^$script,domain=invitro.ru
-||invitro.ru/local/templates/invitro_main/webrtc/*/*.js^$script,domain=invitro.ru
+||invitro.ru/local/templates/invitro_main/webrtc/*/*.*^$script,css,domain=invitro.ru
 ||invitro.ru/*.gif^$image,domain=invitro.ru,important
 ||burp^$important
 ||zap^$important
@@ -1164,6 +1164,15 @@ calltouch.js$script,xhr
 ||aeb-blog.ru/wp-content/themes/aeb-blog/images/1-2.gif^$image,domain=aeb-blog.ru
 ||ntvplus.ru/files/image/94/77/77/-vjm.jpg^$image,domain=ntvplus.ru
 ||ntvplus.ru/files/image/10/03/192/-i24.jpg^$image,domain=ntvplus.ru
+||reporting.synapsetv.ccom/assets/channelbox$app=com.synapsetv.channelbox
+||invitro.ru/web-nofification-sw.js^$script,domain=invitro.ru
+||invitro.ru/local/templates/invitro_main/metrika.*.js$script,domain=invitro.ru
+||invitro.ru/edna/assets/multibutton.css$css,domain=invitro.ru
+||aucdn.net^$important
+||endowmentoverhangutmost.com^$important
+||ozobang.com^$important
+||hue2b.com^$important
+/backend_loader.php?$image,xhr
 !
 !
 !
