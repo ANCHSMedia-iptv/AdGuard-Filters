@@ -112,7 +112,7 @@
 !
 ! GitHub Analytics
 ||api.github.com/_private/browser/$xhr,important
-||collector.github.com/github/collect^$xhr,important
+! collector.github.com/github/collect^$xhr,important
 !
 !
 ||unpkg.com/pwacompat^$script,xhr
@@ -2601,6 +2601,7 @@ ya.ru$@$link[rel="manifest"]
 @@||peers.tv/cnplayer/cnp/cnp.adbutton.j$script,domain=peers.tv
 @@||restream-media.net/api/v*/user/drm_settings^$xhr
 @@||cdn.ngenix.net/*/js/test-*.js^$script,xhr
+@@||collector.github.com/github/collect$important
 !
 !
 ! -
