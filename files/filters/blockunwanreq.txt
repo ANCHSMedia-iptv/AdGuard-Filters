@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 3.7.1-R
-! TimeUpdated: 2025-06-12T14:00:00+00:00
+! TimeUpdated: 2025-06-12T18:10:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2008,6 +2008,7 @@ ntvplus.ru##div.aside-layout.container.mb166:nth-child(16) > div.row.sticky-pare
 ip.osnova.news##a[href^="/p/vpn_review/"]
 ip.osnova.news###info > div.card-body.pb-2:last-child > div.card-text.mt-4.mb-4.pt-1:nth-child(11)
 ip.osnova.news###info > div.card-body.pb-2:last-child > p.mt-4.card-text.h6:nth-child(9)
+browserleaks.com##h3[id="comments"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
