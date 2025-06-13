@@ -110,8 +110,8 @@
 ||stats.habr.com^$important
 ||clck.dzen.ru^$important
 !
-! GitHub Analytics
-||api.github.com/_private/browser/$xhr,important
+! GitHub Analytics (блокировка мешает нормальной работаспособности сайта, разблокированы)
+! api.github.com/_private/browser/$xhr,important
 ! collector.github.com/github/collect^$xhr,important
 !
 !
@@ -2387,7 +2387,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||accounts.youtube.com/RotateCookies^$xhr,important
 ! ||gvt1.com^
 ||mail-ads.google.com^$important # реклама в почте Gmail
-||imasdk.googleapis.com^$important
+||imasdk.googleapis.com^
 ||ogads*.googleapis.com^$important
 ||androidtvgtvmfe*.googleapis.com^
 ||playmoviesdfe*.googleapis.com^
@@ -2556,7 +2556,7 @@ mi.com#@$#body { overflow: visible !important; }
 @@||email-link.adtidy.org^$important
 @@||anketolog.ru/api/front/v*/gql$xhr,domain=anketolog.ru # 17.03.25: сайт нестабильно отображается при блокировке этого запроса, в белом списке.
 @@||obfusgated.com/*/tools/ad-block-test^$document,domain=obfusgated.com # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
-@@||obfusgated.com/_next/static/chunks/app/*/ad-block-test/*.js^$script,domain=obfusgated.com # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
+@@||obfusgated.com/_next/static/chunks/app/*/ad-block-test/*.js^$script,domain=obfusgated.com # 22.03.25: блокировалcя из-за фильтра xinggsf, в белом списке.
 @@||vgtrkregion-reg.cdnvideo.ru^
 @@||connectivitycheck.gstatic.com^ # проверка соединения с интернетом (домен Гугла).
 @@||russianpost.ru^
@@ -2600,6 +2600,7 @@ ya.ru$@$link[rel="manifest"]
 @@||restream-media.net/api/v*/user/drm_settings^$xhr
 @@||cdn.ngenix.net/*/js/test-*.js^$script,xhr
 @@||collector.github.com^$important
+@@||api.github.com/_private/browser/$important
 !
 !
 ! -

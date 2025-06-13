@@ -177,7 +177,7 @@
 !
 ||appsgrowthpromo*.clients*.google.com^$important
 ||mail-ads.google.com^$important
-||imasdk.googleapis.com^$important
+! ||imasdk.googleapis.com^
 ||gvt1.com^
 ||ogads*.googleapis.com^$important
 ||androidtvgtvmfe*.googleapis.com^
