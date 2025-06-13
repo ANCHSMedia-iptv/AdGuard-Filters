@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.7.2-R
-! TimeUpdated: 2025-06-12T18:10:00+00:00
+! Version: 3.7.3-R
+! TimeUpdated: 2025-06-13T16:10:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -972,11 +972,13 @@ qrator/qauth.js$script,important
 qrator/validate$xhr,important
 ||ad-source.pro^$important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
+://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # аналитика и реклама.
 ||yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # аналитика и реклама.
-!
-/^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv # тоже самое, реклама/аналитика.
+/^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android # тоже самое, реклама/аналитика.
+/^77\.88\./^$network,app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android # тоже самое, реклама/аналитика.
 ||yastatic.net^$app=com.radioapp.mayakradio|com.avito.android
-/^5\.255\.255\.77/^$network,app=ru.pyaterochka.app.browser # тоже самое, реклама/аналитика.
+/^5\.255\.255\.77/^$network,app=ru.pyaterochka.app.browser|com.avito.android # тоже самое, реклама/аналитика.
+/^5\.255\.255\.77/^$app=ru.pyaterochka.app.browser|com.avito.android # тоже самое, реклама/аналитика.
 ||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm # подгрузка рекламы в приложение Relax FM.
 ||s3.amazonaws.com^$app=com.viber.voip
 ||bing.com^$app=com.viber.voip
@@ -1135,9 +1137,6 @@ waf/fingerprint$xhr,important
 ads.js$script
 ||ads.tiktok.com^$important
 ||partnerads.ysm.yahoo.com^$important
-! Блокировка адреса, который открывается после обновления браузера Опера (Opera).
-||opera.com/*/ofa/upgraded
-!
 ||static*.go3.tv/file/go3/resources/scripts/tv3play/onetrust/*/onetrust.html^$xhr,domain=play.tv3.*
 ||play.tv3.*/static/images/fake-android-webview-poster.gif^$image,domain=play.tv3.*
 ||static*.go3.tv/file/go3/resources/scripts/tv3play/ipresso/*/ipressoScript.js$domain=play.tv3.*
@@ -2130,15 +2129,10 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 !
 ! == Microsoft Analytics ==
 ! == Аналитика Microsoft (Майкрософт) ==
-! mobile.events.data.microsoft.com^$important
-! self.events.data.microsoft.com^$important
-! mobile.pipe.aria.microsoft.com^$important
-! mobile.events.data.microsoft.com^$important
-! eu-mobile.events.data.microsoft.com^
-! self.pipe.aria.microsoft.com^
+!
 ||pipe.aria.microsoft.com^$important
 ||events.data.microsoft.com^$important
-||events.data.msn.com^
+||events.data.msn.com^$important
 !
 ! = For Windows =
 ! = Для Виндовс =
@@ -2180,8 +2174,8 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||us.mineplex.com^
 ||play.vexalmc.co^
 ||play.pioneersurvival.net^
-||_minecraft._tcp.play.pioneersurvival.net^
-||_minecraft._tcp.us.mineplex.com^
+! _minecraft._tcp.play.pioneersurvival.net^
+! _minecraft._tcp.us.mineplex.com^
 ||play.pixelparadise.gg^
 ||mco.mineplex.com^
 !
@@ -2206,6 +2200,10 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 !
 ||news.google.com^$important # гугл новости (нафиг нужен?)
 ||enjoyxstudy.com^$important # фиг пойми что за домен..
+!
+! Блокировка адреса, который открывается после обновления браузера Опера (Opera).
+||opera.com/*/ofa/upgraded
+!
 !
 ! =Opera=
 ! =Опера=
@@ -2515,7 +2513,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ! pikabu.ru/.well-known/ddos-guard/$script,domain=pikabu.ru (новое правило, строка 2245)
 @@||google.com/js/bg/*.js^$xhr,script
 @@||google.com/recaptcha/
-@@||googlevideo.com^
+@@||*googlevideo.com^
 aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||csp.yandex.net/csp
 @@||pay.yandex.ru/sdk/v*/pay.js^$script,xhr

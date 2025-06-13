@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.5.7-R
+! Version: 3.5.8-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-06-12T18:10:00+00:00
+! TimeUpdated: 2025-06-13T16:10:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 12.06.2025 18:10 UTC
+! Last Modified: 13.06.2025 16:10 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -108,8 +108,8 @@
 ||us.mineplex.com^$dnsrewrite=NXDOMAIN
 ||play.vexalmc.co^
 ||play.pioneersurvival.net^
-||_minecraft._tcp.play.pioneersurvival.net^
-||_minecraft._tcp.us.mineplex.com^$dnsrewrite=NXDOMAIN
+! _minecraft._tcp.play.pioneersurvival.net^
+! _minecraft._tcp.us.mineplex.com^$dnsrewrite=NXDOMAIN
 ||play.pixelparadise.gg^
 ||mco.mineplex.com^$dnsrewrite=NXDOMAIN
 !
@@ -128,11 +128,8 @@
 ! -- == Аналитика Microsoft (Майкрософт) ==
 !
 ||events.data.microsoft.com^$important
-! self.events.data.microsoft.com^
 ||pipe.aria.microsoft.com^$important
-! mobile.events.data.microsoft.com^
-! self.pipe.aria.microsoft.com^
-||events.data.msn.com^
+||events.data.msn.com^$important
 !
 ! -- = For Windows =
 ! -- = Для Виндовс =
@@ -722,12 +719,13 @@
 ||partnerads.ysm.yahoo.com^$important
 ||analytics.peers.tv^$important
 ||highrevenuenetwork.com^$important
-||aucdn.net^$important
-||endowmentoverhangutmost.com^$important
-||hue2b.com^$important
-||bngtrak.com^$important
-||pemsrv.com^$important
-||bs.serving-sys.ru^$importantz
+||aucdn.net^$important,dnsrewrite=0.0.0.0
+||endowmentoverhangutmost.com^$important,dnsrewrite=0.0.0.0
+||hue2b.com^$important,dnsrewrite=0.0.0.0
+||bngtrak.com^$important,dnsrewrite=0.0.0.0
+||pemsrv.com^$important,dnsrewrite=0.0.0.0
+||bs.serving-sys.ru^$important
+||yandex.com^$app=jp.ne.ibis.ibispaintxapp
 !
 !
 !
@@ -893,7 +891,7 @@
 @@||digiseller.market^
 @@||iptvx.one^
 @@||captcha-api.yandex.ru^
-@@||googlevideo.com^
+@@||*.googlevideo.com^
 @@||pay.yandex.ru^
 @@||uglyemail.com^
 @@||hcaptcha.com^
