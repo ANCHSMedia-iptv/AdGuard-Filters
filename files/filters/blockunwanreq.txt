@@ -1113,13 +1113,13 @@ waf/fingerprint$xhr,important
 /report/group_user$xhr,domain=apkpure.net|apkpure.com # аналитика.
 ||getads.ru^$important
 ||d26xw8rp6mlgfg.cloudfront.net^
-||strm.yandex.net^$app=com.infolink.limeiptv # загрузка Яндекс рекламы.
+||strm.yandex.net^$app=com.infolink.limeiptv # загрузка рекламы Яндекс Директ.
 ||yandex.ru^$app=com.infolink.limeiptv # реклама и аналитика.
 ||rumor.press^$third-party,important
-||otcnet.ru/wp-content/plugins/wp-yandex-metrika/$script,xhr,domain=otcnet.ru
+||otcnet.ru/wp-content/plugins/wp-yandex-metrika/$script,xhr,domain=otcnet.ru # реклама.
 /ads/styles/all/theme/phpbbads.css$css
-||smotret.tv/js/ads-2025.js^$script,domain=smotret.tv
-||smotret.tv/js/lozad*.js^$script,domain=smotret.tv
+||smotret.tv/js/ads-2025.js^$script,domain=smotret.tv # реклама.
+||smotret.tv/js/lozad*.js^$script,domain=smotret.tv # реклама.
 ||tv2free.ru/core/modules/statistics/statistics.php^$xhr,subdocument,domain=tv2free.ru
 /pwa-sw.js$script
 ||1tv.ru/push_service_worker.js^$script,domain=1tv.ru
@@ -1143,29 +1143,29 @@ ads.js$script
 ||kino.tricolor.ru/dist/img/app_btn-icon.svg^$image,domain=kino.tricolor.ru
 ||peers.tv/js/verify_controller/verify_age_controller.js^$script,domain=peers.tv
 ||peers.tv/js/ptv/parental_control_controller.js^$script,domain=peers.tv
-||peers.tv/cnplayer/imasdk/ads.*.js$script,domain=peers.tv
-||peers.tv/cnplayer/imasdk/ads.css$css,xhr,domain=peers.tv
-||api.peers.tv/money_miner/*/places.json$xhr,domain=peers.tv
-||peers.tv/js/lib/mediascope.js$script,domain=peers.tv
+||peers.tv/cnplayer/imasdk/ads.*.js$script,domain=peers.tv # реклама.
+||peers.tv/cnplayer/imasdk/ads.css$css,xhr,domain=peers.tv # реклама.
+||api.peers.tv/money_miner/*/places.json$xhr,domain=peers.tv # что это? майнер? 0_0
+||peers.tv/js/lib/mediascope.js$script,domain=peers.tv # аналитика.
 ||peers.tv/cnplayer/cnp.mob.js$script,domain=peers.tv
 ||peers.tv/ajax/getpushnotification/$xhr,domain=peers.tv
 ||analytics.peers.tv^$important
 ||app.torbobit.net/js/analytics/$script,domain=torbobit.net
 ||torbobit.net/fd1/img/download/payments/card_hover.png^$image,domain=torbobit.net
-||torbobit.net/files/news/image/offer%20240.png^image,domain=torbobit.net
-||torbobit.net/files/news/image/offer%20299.png$image,domain=torbobit.net
-||i.gyazo.com/*$image,third-party,domain=~gyazo.com
+||torbobit.net/files/news/image/offer%20240.png^image,domain=torbobit.net # реклама.
+||torbobit.net/files/news/image/offer%20299.png$image,domain=torbobit.net # реклама.
+||i.gyazo.com/*$image,third-party,domain=~gyazo.com # реклама.
 calltouch.js$script,xhr
 ||planetcalc.*/service/comments/$xhr,domain=planetcalc.*
 ||planetcalc.*/service/sofiabyartefact/^$xhr,domain=planetcalc.*
 ||planetcalc.*/users/*/avatar/*.png^$image,domain=planetcalc.*
-||on-tv.ru/images/youtube_on-tv_banner.png^$image,domain=on-tv.ru
-||aeb-blog.ru/wp-content/themes/aeb-blog/images/1-2.gif^$image,domain=aeb-blog.ru
+||on-tv.ru/images/youtube_on-tv_banner.png^$image,domain=on-tv.ru # реклама.
+||aeb-blog.ru/wp-content/themes/aeb-blog/images/1-2.gif^$image,domain=aeb-blog.ru # реклама.
 ||ntvplus.ru/files/image/94/77/77/-vjm.jpg^$image,domain=ntvplus.ru
 ||ntvplus.ru/files/image/10/03/192/-i24.jpg^$image,domain=ntvplus.ru
 ||reporting.synapsetv.ccom/assets/channelbox$app=com.synapsetv.channelbox
 ||invitro.ru/web-nofification-sw.js^$script,domain=invitro.ru
-||invitro.ru/local/templates/invitro_main/metrika.*.js$script,domain=invitro.ru
+||invitro.ru/local/templates/invitro_main/metrika.*.js$script,domain=invitro.ru # аналитика.
 ||invitro.ru/edna/assets/multibutton.css$css,domain=invitro.ru
 ||aucdn.net^$important
 ||endowmentoverhangutmost.com^$important
@@ -1179,9 +1179,9 @@ calltouch.js$script,xhr
 ||svc.iptv.rt.ru/event_collector$ping
 ||restream-media.net/event_collector$ping
 ||al-adtech.com^
-||player.smotrim.ru/js/piwik.js$script
-||player.smotrim.ru/js/advsdk.js$script
-||player.smotrim.ru/js/ad-plugin-html5-*.js$script
+||player.smotrim.ru/js/piwik.js$script # аналитика
+||player.smotrim.ru/js/advsdk.js$script # реклама.
+||player.smotrim.ru/js/ad-plugin-html5-*.js$script # реклама.
 !
 !
 !
