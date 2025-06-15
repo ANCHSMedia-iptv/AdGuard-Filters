@@ -2605,7 +2605,8 @@ ya.ru$@$link[rel="manifest"]
 @@||restream-media.net/api/v*/user/drm_settings^$xhr
 @@||cdn.ngenix.net/*/js/test-*.js^$script,xhr
 @@||collector.github.com^$important
-@@||api.github.com/_private/browser/$important
+@@||collector.github.com/github/collect^$important
+@@||api.github.com/_private/browser/^$important
 @@.m3u8^$stealth=referrer
 @@.ts^$stealth=ref
 @@.m3u8^$stealth=ref
