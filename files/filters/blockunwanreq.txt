@@ -135,8 +135,8 @@
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru,important
 ||vk.com/js/api/openapi.js^$script,domain=~vk.com,important
-||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~github.com
-||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~github.com
+||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~github.com|~githubassets.com
+||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~github.com|~githubassets.com
 /itunes_referals.js^$script,third-party
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script,third-party
 ||improving.duckduckgo.com^$important
@@ -415,7 +415,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||medportal.ru/cookie_notice^$xhr,domain=medportal.ru,important
 ||fedpress.ru/themes/fp/js/share.js^$script,domain=fedpress.ru,important
 ||static.mel.fm/graph.js$script,domain=mel.fm,important
-||*cookie*.css^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~github.com
+||*cookie*.css^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~github.com|~githubassets.com
 ||b17.ru/img/0.gif^$image,domain=b17.ru,important
 ||ufamama.ru/UserStatistics/$xhr,important,domain=ufamama.ru
 ||ufamama.ru/services/BlogAdvisor/$xhr,important,domain=ufamama.ru
