@@ -2615,6 +2615,7 @@ ya.ru$@$link[rel="manifest"]
 @@||limehd.tv/api/v*/ads$xhr,domain=limehd.tv
 @@||ext-cloudcdn-*-*.cdn.yandex.net
 @@/cdn-cgi/challenge-platform/$xhr,script
+@@||github.githubassets.com^
 !
 !
 ! -
