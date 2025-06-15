@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.5.8-R
+! Version: 3.5.9-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-06-13T16:10:00+00:00
+! TimeUpdated: 2025-06-15T16:30:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 13.06.2025 16:10 UTC
+! Last Modified: 15.06.2025 16:30 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -83,7 +83,7 @@
 ||click.sender.yandex.ru^
 ||mc.webvisor.org^$important
 ||yandetruckingservices.com^
-||yandexmetri*.com^
+||yandexmetri*.com^$important
 ||trends.yandex.net^
 ||click.sender.yandex.ru^
 ||advertising.yandex.ru^
@@ -666,7 +666,6 @@
 ||camconnections.live^$important,dnsrewrite=0.0.0.0
 ||flepquix.com^$important,dnsrewrite=0.0.0.0
 ||camspacelive.com^$important,dnsrewrite=0.0.0.0
-||xhamsterlive.com^$important,dnsrewrite=0.0.0.0
 ||60ah.com^$important,dnsrewrite=0.0.0.0
 ||doppiocdn.com^$important,dnsrewrite=0.0.0.0
 ||vsmvideo.com^$important,dnsrewrite=0.0.0.0
@@ -690,7 +689,6 @@
 ||etahub.com^$important,dnsrewrite=0.0.0.0
 ||trafficjunky.net^$important,dnsrewrite=0.0.0.0
 ||imdn.pics^$important,dnsrewrite=0.0.0.0
-||txxx.com^$important,dnsrewrite=0.0.0.0
 ||hotfree123.com^$important,dnsrewrite=0.0.0.0
 ||kumcams.com^$important,dnsrewrite=0.0.0.0
 ||cabnnr.com^$important,dnsrewrite=0.0.0.0
@@ -725,7 +723,7 @@
 ||bngtrak.com^$important,dnsrewrite=0.0.0.0
 ||pemsrv.com^$important,dnsrewrite=0.0.0.0
 ||bs.serving-sys.ru^$important
-||yandex.com^$app=jp.ne.ibis.ibispaintxapp
+||adm.dimonvideo.ru^
 !
 !
 !
@@ -941,6 +939,8 @@
 @@||dnl-*.geo.kaspersky.com^
 @@||i.ytimg.com^
 @@||i*.ytimg.com^
+@@||ext-cloudcdn-*-*.cdn.yandex.net^
+@@||collector.github.com^
 !
 ! ===
 !
