@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.7.4-R
-! TimeUpdated: 2025-06-15T17:30:00+00:00
+! Version: 3.7.6-R
+! TimeUpdated: 2025-06-16T17:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -379,7 +379,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^$important
-/graphql*$xhr,other,important
+/graphql*$xhr,other,important,domain=~kinopoisk.ru,app=~ru.kinopoisk
 ||getrcmx.com^$important
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.*.js^$script,domain=xcom-shop.ru,important
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -565,7 +565,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||siteapi.vtb.ru/api/geoip/ip-data^$xhr,domain=vtb.ru
 ||alfabank.servicecdn.ru/assr/AnalyticsEventSender*.js^$script,domain=alfabank.ru,important
 ||alfabank.ru/conductor/metrics^$xhr,domain=alfabank.ru,important
-||browser.sentry-cdn.com/*/bundle.tracing.*.js^$script,important
+||browser.sentry-cdn.com^$important
 ||akbars.ru/api/browser-log^$xhr,domain=akbars.ru,important
 ||gazprombank.ru/upload/mtm/main/matomo*.js^$script,domain=gazprombank.ru,important
 ||gazprombank.ru/upload/mtm/tag.js$script,domain=gazprombank.ru,important
@@ -744,7 +744,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||banki.ru^$cookie=/banki_prev_page|BANKI_RU_USER_IDENTITY_UID|_flpt_main_page_personalization_absegment/
 ||i.hizliresim.com/fxiyl01.png^$image,domain=flysat.com
 ||cbctv.az^$cookie=/_yasc|i|bltsr|bh|laravel_session|yandexuid|yashr|yp|ys|yuidss/
-||telegram.org/js/telegram-web-app.js^$script,domain=~telegram.org|~t.me
+||telegram.org/js/telegram-web-app.js^$script,domain=~telegram.org|~t.me,third-party
 /chtm/s/metric/*.gif$image,important
 ||feeds.tildacdn.com/api/setpostviewed/$xhr
 /chtm/s/metric/clarity.js^$script,important
@@ -767,7 +767,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||d1n8hflz8lhynp.cloudfront.net^$important
 ||apptornado.com^$important
 ||bugly.qq.com^$important
-! ||graphql.kinopoisk.ru^$important (новое правило, строка 381)
+!
 ||clickstream.sberbank.ru^$important
 ||check.unity.*^$important
 ||appbrain.com^$third-party
@@ -836,7 +836,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||analytics.localytics.com^$important
 ||taboola*fastly.net^
 ||idm.iot.mi.com^
-||flurry.com^$iimportant
+||flurry.com^$important
 ||api.sms.*.miui.com^
 ||top-fwz1.mail.ru^$important
 ||alt-ad.mail.ru^$important
@@ -949,8 +949,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||yomeno.xyz^$important
 ||vstserv.com^$important
 !
+||www.clickroot.club^$important
 ||sentry.ozon.ru^$important
-||browser.sentry-cdn.com^
 ||xn--b1ajefikec6a.online/wp-content/uploads/2025/03/pari_freebet.png^$image,domain=xn--b1ajefikec6a.online # рекламный баннер
 ||xn--b1ajefikec6a.online/wp-content/uploads/2025/03/bannerparo.jpg^$image,domain=xn--b1ajefikec6a.online # рекламный баннер
 ||event-stream-api.magnit.ru^$important
@@ -1056,7 +1056,7 @@ images/*/Discord*logo.*$image,domain=fandom.com
 ||bookmsg.com^$important
 ||a64x.com^$important
 ||gfxdn.pics^$important
-||log-sg.capcutapi.com^$important
+||log*.capcutapi.com^$important
 ||mobile-static.mindbox.ru^$important
 ||stat.teleport.media^$important
 ||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile # 16.04.25: возможно, аналитика Mail.
@@ -1160,7 +1160,7 @@ calltouch.js$script,xhr
 ||aeb-blog.ru/wp-content/themes/aeb-blog/images/1-2.gif^$image,domain=aeb-blog.ru # реклама.
 ||ntvplus.ru/files/image/94/77/77/-vjm.jpg^$image,domain=ntvplus.ru
 ||ntvplus.ru/files/image/10/03/192/-i24.jpg^$image,domain=ntvplus.ru
-||reporting.synapsetv.ccom/assets/channelbox$app=com.synapsetv.channelbox
+||reporting.synapsetv.com/assets/channelbox$app=com.synapsetv.channelbox
 ||invitro.ru/web-nofification-sw.js^$script,domain=invitro.ru
 ||invitro.ru/local/templates/invitro_main/metrika.*.js$script,domain=invitro.ru # аналитика.
 ||invitro.ru/edna/assets/multibutton.css$css,domain=invitro.ru
@@ -1173,19 +1173,23 @@ calltouch.js$script,xhr
 ||oazgvj.com^$third-party
 ||bngtrak.com^$important
 ||pemsrv.com^$important
-||svc.iptv.rt.ru/event_collector$ping
-||restream-media.net/event_collector$ping
+||svc.iptv.rt.ru/event_collector$ping # аналитика.
+||restream-media.net/event_collector$ping # аналитика.
 ||al-adtech.com^
-||player.smotrim.ru/js/piwik.js$script # аналитика
+||player.smotrim.ru/js/piwik.js$script # аналитика.
 ||player.smotrim.ru/js/advsdk.js$script # реклама.
 ||player.smotrim.ru/js/ad-plugin-html5-*.js$script # реклама.
 ||senoval.cdn.sports.ru/cross-recommender/recommender.*.js^$script,domain=cyber.sports.ru
 ||yandex.com^$app=jp.ne.ibis.ibispaintxapp
-||127.0.0.1:30102/p?t=
 ||limehd.tv/script/liveinternet.js^$script,important,domain=limehd.tv
 ||static-iptv2021.cdnvideo.ru/*-static/lime-events-config.json^$xhr,domain=limehd.tv
 ||limehd.tv/script/exp-metrika.js^$script,important,domain=limehd.tv
 ||adm.dimonvideo.ru^
+||millennialmedia.com.*^$important
+||ok.ru/gwtlog$ping,domain=ok.ru
+||dzen.ru/partner/$xhr
+||2gis.*/public/promo/*.png^$image,domain=2gis.*
+||ams*-cdn.2gis.*/raws/*.svg^$image,domain=2gis.*
 !
 !
 !
@@ -1313,17 +1317,18 @@ calltouch.js$script,xhr
 ! Blocking ads, analytics and other “garbage”.
 ! Блокировка рекламы, аналитики и прочего «мусора».
 !
-||*pinterest.com/_/_/trace/trace/^$xhr,important
-||*pinterest.com/_/_/storage_report/^$xhr,important
-||*pinterest.com/_/_/logClientError/^$xhr,important
-! *pinterest.com/_/graphql/^$xhr,important (новое правило, строка 381)
-||*pinterest.com/_/_/csp_report/^$xhr,important
+||pinterest.com/*/trace/trace/$important
+||pinterest.com/*/storage_report/$important
+||pinterest.com/*/logClientError/$important
+! pinterest.com/_/graphql/^$xhr,important (новое правило, строка 381)
+||pinterest.com/*/csp_report/$important
 ||trk.pinterest.com^$important
 ||ads.pinterest.com^$important
 ||log.pinterest.com^$important
 ||analytics.pinterest.com^$important
 ||ct.pinterest.com^$important
-||widgets.pinterest.com^
+||widgets.pinterest.com^$important
+||pinterest.com/*/storage_report/$important
 !
 ! ===
 !
@@ -1459,6 +1464,7 @@ ozon.ru###layoutPage > div.b6:first-child > div.d0m_9 > div > div.container.c:nt
 ! But from blocking some scripts broke the site basement (footer) on the main page XD (for example, in the Shopping Cart section the site basement works).
 ! -
 ! ** - 08.12.24: Пришлось отключить т.к. глючит сайт.
+!
 !
 ! Плашка в разделе «Чаты» про сертификаты (Российская версия).
 ozon.ru##div[class^="om_21_a om_21_a0"]
@@ -1623,6 +1629,20 @@ dom.ru,*.dom.ru##div[class^="sc-6e31cbc2-0 kKbgFL"]
 ! ===
 !
 !
+!
+!
+!
+! = OK .ru =
+!
+||st-ok.cdn-vk.ru/res/assets/LogClicks-*js^$script,domain=ok.ru
+||st-ok.cdn-vk.ru/res/assets/MediascopeTracker-*.js^$script,domain=ok.ru
+||st-ok.cdn-vk.ru/res/assets/TimespentTracker-*.js^$script,domain=ok.ru
+||st-ok.cdn-vk.ru/res/assets/YandexMetricService-*.js^$script,domain=ok.ru
+||st-ok.cdn-vk.ru/res/assets/MetricsAnonymUserBehaviourImitation-*.js^$script,domain=ok.ru
+||st-ok.cdn-vk.ru/res/assets/FingerprintJS-*.js^$script,domain=ok.ru
+||st-ok.cdn-vk.ru/res/assets/DzBlockDetect-*.js^$script,domain=ok.ru
+!
+! ==
 !
 !
 !
@@ -2014,6 +2034,8 @@ ip.osnova.news###info > div.card-body.pb-2:last-child > p.mt-4.card-text.h6:nth-
 browserleaks.com##h3[id="comments"]
 cyber.sports.ru###news-renderer-mount-point > div.layout.page-layout > div.layout__content-wrapper:nth-child(11) > div.layout__content.content--wide:first-child > div.news-layout:nth-child(3) > div.columns:nth-child(2) > div.columns__main-column:first-child > div.news-layout__content:nth-child(2) > div.news-content:first-child > div.structured-body-wrapper.news-content__structured-body-wrapper:first-child > p.sb-paragraph.sb-paragraph--regular:nth-child(4)
 fandom.com,*.fandom.com###mw-content-text > div.mw-content-ltr.mw-parser-output:last-child > div.main-page-tag-rcs:nth-child(2) > div.rcs-container:last-child > div.mp_block:first-child
+ok.ru###hook_Block_AuthLoginAutoOpen > auth-login-banner.h-mod.auth-login_auth-login-banner:last-child > section.auth-login-banner__e19f0
+2gis.ru##div[class^="_1kvpakx"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2338,12 +2360,16 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||yastatic.net/s*/home-static/feeds/*market*/market-feed.*$script,css,domain=ya.ru
 ||ya.ru/portal/proxy?blocks=Market_cart$xhr,script,domain=ya.ru,important
 ||ya.ru/portal/feed?*market*$xhr,domain=ya.ru,important
-||dr*.yandex.net/*nel$other,xhr
+! ||dr*.yandex.net/*nel$other,xhr
 ||advertising.yandex.ru^
 $document,removeparam=from,domain=yandex.*|ya.ru
 ||yastatic.net/es5-shims/*/es5-shims.*.js$script,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
 ! ||yastatic.net/s*/web4static/*/static/App-FootScript_advRsya*.js (soon..)
 ||yastatic.net/s*/web4static/*/static/media/noize-transparent*.gif^$image
+||127.0.0.1:30102/p?t=
+||127.0.0.1:29009/p?t=
+||127.0.0.1:29010/p?t=
+||127.0.0.1:30103/p?t=
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -2376,8 +2402,8 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 !
 ||www.googleadservices.com^$important
 ||www.google-analytics.com^$important
-||www.googletagmanager.com^$important,domain=~inforesist.org|~starblast.io|~timepad.ru|~zakon.kz
-||googletagmanager.com^$important,domain=~inforesist.org|~starblast.io|~timepad.ru|~zakon.kz
+||www.googletagmanager.com^$important,domain=~inforesist.org|~starblast.io|~timepad.ru|~zakon.kz|corsair.com|~olx.*|~simon.com|~bethesda.net|~paddle.com
+||googletagmanager.com^$important,domain=~inforesist.org|~starblast.io|~timepad.ru|~zakon.kz|corsair.com|~olx.*|~simon.com|~bethesda.net|~paddle.com
 ||googleadservices.com^$important
 ||google-analytics.com^$important
 ||*ds.metric.gstatic.com^$important # для чего он разблокирован в одном из основных фильтров?
@@ -2391,7 +2417,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||ssl.gstatic.com/*/blank_1x.png^$image
 ! accounts.google.com/_/IdpIFrameHttp/cspreport$xhr,other (06.12.24: не работает правило, 07.12.24: для безопасности разблокирован (включён))
 ||accounts.youtube.com/RotateCookies^$xhr,important
-! ||gvt1.com^
+! gvt1.com^
 ||mail-ads.google.com^$important # реклама в почте Gmail
 ||imasdk.googleapis.com^
 ||ogads*.googleapis.com^$important
@@ -2404,6 +2430,10 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||1e100.net^
 ||play.google.com/store/apps/collection/promotion_30$xhr,other
 ||googleanalytics.com^$important
+||doubleclick.nes^$important
+||googlesyndication.col^$important
+||play.google.com/d$important
+||google.com/dfo$important
 !
 ! ===
 !
@@ -2447,7 +2477,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||accscdn.m.taobao.com^$important
 ||*ads.unity3d.com^$important
 ||*mediation.unity3d.com^$important
-||mc.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~ya.ru
+||mc.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~ya.ru|~aiondb.ru
 ||an.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~ya.ru # |~e.mail.ru
 ||analytics.mobile.yandex.net^$important
 ||*footprintdns.com^$important
@@ -2581,7 +2611,7 @@ vestifm.online$@$link[rel="manifest"]
 @@||cid.yandex.net^
 @@||uni.rest^
 @@||scuba.com^$app=com.ebay.mobile
-@@||restream-media.net^
+@@||scuba.com^$domain=ebay.com
 @@||*zabava-htlive.cdn.ngenix.net^
 @@||drm*.nowdrm.co^
 @@||api.deliverymobile.ru^
@@ -2610,12 +2640,25 @@ ya.ru$@$link[rel="manifest"]
 @@.m3u8^$stealth=referrer
 @@.ts^$stealth=ref
 @@.m3u8^$stealth=ref
+@@.mpd^$stealth=referrer
+@@.mpd^$stealth=ref
 @@||limehd.tv/api/v*/ads-banners$xhr,domain=limehd.tv
 @@||limehd.tv/api/v*/get-ads$xhr,domain=limehd.tv
 @@||limehd.tv/api/v*/ads$xhr,domain=limehd.tv
 @@||ext-cloudcdn-*-*.cdn.yandex.net
 @@/cdn-cgi/challenge-platform/$xhr,script
 @@||github.githubassets.com^
+@@||woobl.ru/op/*/*.m3u8
+@@||woobl.ru/op/*/w.m3u8
+@@||woobl.ru^
+@@||graphql.kinopoisk.ru^
+@@||challenges.cloudflare.com^
+@@||ok.ru/dk?cmd=videoStatNew
+@@||recaptcha.net^
+@@/channel/*/index.m3u8?q=
+@@||*-assets.2gis.*/gdprCookieBanner.*.js^$script,domain=2gis.*,important
+@@/play/id*/*.m3u8?q=
+@@/ts/*/*.ts?q=
 !
 !
 ! -
@@ -2735,6 +2778,7 @@ ya.ru$@$link[rel="manifest"]
 !
 @@||local.adguard.org^
 @@||injections.adguard.org^$important
+@@||api.adguard.org^
 !
 !
 !
