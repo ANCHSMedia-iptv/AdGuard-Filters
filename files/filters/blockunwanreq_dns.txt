@@ -3,7 +3,7 @@
 ! Version: 3.6.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-06-17T14:30:00+00:00
+! TimeUpdated: 2025-06-18T14:30:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 17.06.2025 14:30 UTC
+! Last Modified: 18.06.2025 14:30 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -88,6 +88,7 @@
 ||click.sender.yandex.ru^
 ||advertising.yandex.ru^
 ||clck.yandex.ru^
+||startup.mobile.yandex.nes^
 !
 !
 ! ===
@@ -948,6 +949,7 @@
 @@||woobl.ru^
 @@||challenges.cloudflare.com^
 @@||*sentry.gitlab.net^
+@@||iosvpn.top^
 !
 ! ===
 !
