@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.7.7-R
-! TimeUpdated: 2025-06-18T14:30:00+00:00
+! Version: 3.7.8-R
+! TimeUpdated: 2025-06-18T17:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -632,14 +632,14 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||infird.com/cdn/$script,xhr
 ||savefrom.net/img/ext-advice/ext-advice__icon-yabro.png^$xhr,domain=savefrom.net,important
 ||savefrom.net/assets/experiment/partnersBlock/img/*.png^$image,domain=savefrom.net,important
-||savefrom.net/build/js/chunk~partnersBlock-js-main-js.js$script,domain=savefrom.net,important
+||savefrom.net/build/js/chunk*partnersBlock-js-main-js.js$script,domain=savefrom.net,important
 ||savefrom.net/img/televzr/*.*^$xhr,domain=savefrom.net
-||savefrom.net/build/js/chunk~pBlock-js-main-js.js$script,domain=savefrom.net,important
-||savefrom.net/build/js/chunk~propellerPush-js-main-js.js$script,domain=savefrom.net,important
+||savefrom.net/build/js/chunk*pBlock-js-main-js.js$script,domain=savefrom.net,important
+||savefrom.net/build/js/chunk*propellerPush-js-main-js.js$script,domain=savefrom.net,important
 ||savefrom.net/img/favicons/thumb/*.png^$xhr,domain=savefrom.net
 ||savefrom.net/img/ummy_icon_*.png^$image,domain=savefrom.net
-||savefrom.net/build/js/chunk~rsya*-main-js.js$script,domain=savefrom.net,important
-! ||savefrom.net/build/js/chunk~rsyaRuBanners-js-main-js.js$script,domain=savefrom.net (новое правило, строка 641)
+||savefrom.net/build/js/chunk*rsya*-main-js.js$script,domain=savefrom.net,important
+! savefrom.net/build/js/chunk~rsyaRuBanners-js-main-js.js$script,domain=savefrom.net (новое правило, строка 641)
 ||savefrom.net/msec^$xhr,domain=savefrom.net,important
 /build/2f216d687fe39ac06f55.png^$image,domain=9xbuddy.com|offmp3.net
 ||kanobu.ru/api/v*/ainfo/toplink-and-informer^$xhr,domain=kanobu.ru,important
@@ -1106,8 +1106,8 @@ waf/fingerprint$xhr,important
 ||uber.com/go/_events$domain=uber.com
 !
 ||report.cdnpure.com^$important
-/api/v*/download-report^$xhr,domain=apkpure.net|apkpure.com # аналитика.
-/report/group_user$xhr,domain=apkpure.net|apkpure.com # аналитика.
+/api/v*/download-report^$xhr,domain=apkpure.net|apkpure.com,important # аналитика.
+/report/group_user$xhr,domain=apkpure.net|apkpure.com,important # аналитика.
 ||getads.ru^$important
 ||d26xw8rp6mlgfg.cloudfront.net^
 ||strm.yandex.net^$app=com.infolink.limeiptv # загрузка рекламы Яндекс Директ.
@@ -1202,6 +1202,15 @@ calltouch.js$script,xhr
 ||apistats.rg.ru^
 ||static.wikia.nocookie.net/silversurfer/prod/latest/marketingNotificationsUnit*.js^$script,domain=fandom.com,important
 ||serverblight.com/audio/gamestartup_halloween.mp3^$media,domain=serverblight.com # кому надо, можете разблокировать. (If you need it, you can unblock it.)
+||a.apkpure.*/dt_*_*.js$script,domain=apkpure.*
+||apkcombo.com/1.gif^$image,domain=apkcombo.com
+||tvrus.eu/wp-content/themes/pennews/images/telegram_trim.png$image,domain=tvrus.eu
+||tvrus.eu/wp-content/themes/pennews/js/custom-scripts.js^$script,domain=tvrus.eu
+||tvrus.eu/wp-content/uploads/2020/08/lawyer_help_*.jpg^$image,domain=tvrus.eu
+||tvrus.eu/wp-content/uploads/2021/06/jatut_*.jpg^$image,domain=tvrus.eu
+||tvrus.eu/wp-content/uploads/2021/12/telegram_05_*.jpg^$image,domain=tvrus.eu
+||tvrus.eu/wp-content/uploads/2020/08/filtry.gif^$image,domain=tvrus.eu
+||ruspresse.de/rhted_show.php$domain=tvrus.eu
 !
 !
 !
@@ -2000,18 +2009,20 @@ college.72to.ru##.notification-container
 myschool.72to.ru##._1B2MfLvr8qLC_uGVNGm4BU
 myschool.72to.ru##div._2kJk8hnpgbINo9OFR6xjGn:nth-child(6) > div.rgHK0-dZwcYE2yf0fcu2q._3m84YHTrytRI_qsNi9i4nU
 !
-! персонаж.рф: остаток от блокировки соцвиджетов.
+! персонаж.рф: остатки от блокировки соцвиджетов.
 xn--80aje0aeeii.xn--p1ai###mystickyelements-social-whatsapp > span.mystickyelements-social-icon.social-whatsapp.social-custom:first child
 !
 trives-shop.ru##div.dyn_mp_jqm_frame.jqmWindow.popup.jqm-init.TEXT.BOTTOM_CENTER.maxwidth-theme-popup.scrollblock.show:nth-child(20) > div.form.marketing-popup.popup-text-info.\.default:nth-child(8)
 sp-man.ru###bx_117848907_1344422 > div.detail-item:last-child > div.buy-container:last-child > div.product-item-detail-pay-block:nth-child(2) > a.catalog-installment.mb-3:nth-child(7) > img
 kommersant.ru##div.layout.js-lenta-article:nth-child(17) > div.main.grid > div.grid-col.grid-col-s3:first-child > div.lenta_top_doc > article.doc.js-article.js-canonical.js-canonical-current > footer.doc_footer:nth-child(4)
 peers.tv###prompt-form-container-phone
-fandom.com##div.notifications-placeholder:nth-child(2)
+telepedia.fandom.com##div.notifications-placeholder:first-child > div.sitenotice-wrapper.sitenotice-wrapper--visible:first-child
 wireshark.org##div[class^="topBannerWrapper_1wd0p_149"]
 wireshark.org##div.banner-wrapper:last-child
 tva.org.ua###media_image-4
 tva.org.ua###media_image-2
+iptv-work.at.ua###content > div:nth-child(2) > a:nth-child(2) > img
+iptv-work.at.ua###content > table.eBlock:last-child > tbody > tr > td.eText > div.js-teasers-wrapper:nth-child(2) > div.QReHgK322613
 channelnewsasia.com###\32 65f2f3e-8335-4bb6-9790-1c8afcfc7602
 rknweb.ru##main:nth-child(2) > article > div.container.single-page:first-child > div.detail-domains.wite-box:nth-child(3) > div.right-box:last-child > div.telegram-box:last-child
 vkvideo.ru###content > div.VideoLayout > div.VideoLayout__aside:first-child > div.VideoLayout__asideContent > div.VideoLayout__asideContentScroll.ui_scroll_container.ui_scroll_default_theme.ui_scroll_hidden > div.ui_scroll_overflow:first-child > div.ui_scroll_blocker:first-child > div.ui_scroll_outer > div.ui_scroll_inner.tt_noappend > div.ui_scroll_content.clear_fix:first-child > div.VideoQuickLogin:last-child
@@ -2054,6 +2065,17 @@ prmira.ru###matter-0 > div.relative.desktop-cols-3:nth-child(3) > div:nth-child(
 just-tv.lt##div[class^="cky-consent-container cky-banner-bottom"]
 comss.ru###main > div.container-fluid:last-child
 voka.tv###app > div.theme-provider__Container-sc-kno0h7-0.kJcMUk > div.pagecontainer__PageContainer-sc-1svonxi-0.bMEltR:first-child > div.cookie-alertcomponent__BlurContainer-sc-b564p5-0.gKKXUo:nth-child(5)
+apkpure.*###nav_download_management
+apkpure.*##a[href^="/editor-choice"]
+apkpure.*##a[href^="/game-24h"]
+apkpure.*##a[href^="/app-24h"]
+apkpure.com##div.main-body:nth-child(7) > main:first-child > div.head-text-info:first-child > h2.desc:nth-child(2)
+apkcombo.com###main > div.container:first-child > div.columns:first-child > div.column.is-main:first-child > div.widget.trending-widget:last-child
+apkcombo.com###main > div.container:first-child > div.columns:first-child > div.column.is-nav.is-narrow:last-child > div.widget.seo-widget:nth-child(8)
+tvrus.eu###main > div.vc_row.wpb_row.vc_row_9587710.vc_row-fluid.penci-pb-row:first-child > div.wpb_column.vc_column_container.vc_col-sm-12.penci-col-12 > div.vc_column-inner.wpb_column.vc_column_container.vc_col-sm-12.penci-col-12 > div.wpb_wrapper > div.penci-container-vc.penci-container-fluid.penci-container-width-1400.penci_vc_sticky_sidebar.penci-vc_sidebar-right.vc_custom_1682411761478:last-child > div.penci-container__content.penci-con_sb2_sb1 > div.widget-area.widget-area-1:last-child > div.theiaStickySidebar > div.wpb_single_image.wpb_content_element.vc_align_center:nth-child(11)
+tvrus.eu###main > div.vc_row.wpb_row.vc_row_9587710.vc_row-fluid.penci-pb-row:first-child > div.wpb_column.vc_column_container.vc_col-sm-12.penci-col-12 > div.vc_column-inner.wpb_column.vc_column_container.vc_col-sm-12.penci-col-12 > div.wpb_wrapper > div.penci-container-vc.penci-container-fluid.penci-container-width-1400.penci_vc_sticky_sidebar.penci-vc_sidebar-right.vc_custom_1682411761478:last-child > div.penci-container__content.penci-con_sb2_sb1 > div.penci-content-main.penci-container.penci-sidebar-right:first-child > div.theiaStickySidebar > div.penci_vc_sticky_sidebar.penci-con_innner.penci-con_innner-sidebar-left:last-child > div.penci-container__content > div.penci-con_innner-item.penci-content-main.penci_column_inner-main:first-child > div.theiaStickySidebar > div.wpb_single_image.wpb_content_element.vc_align_left:nth-child(19)
+tvrus.eu###main > div.vc_row.wpb_row.vc_row_9587710.vc_row-fluid.penci-pb-row:first-child > div.wpb_column.vc_column_container.vc_col-sm-12.penci-col-12 > div.vc_column-inner.wpb_column.vc_column_container.vc_col-sm-12.penci-col-12 > div.wpb_wrapper > div.penci-container-vc.penci-container-fluid.penci-container-width-1400.penci_vc_sticky_sidebar.penci-vc_sidebar-right.vc_custom_1682411761478:last-child > div.penci-container__content.penci-con_sb2_sb1 > div.penci-content-main.penci-container.penci-sidebar-right:first-child > div.theiaStickySidebar > div.penci_vc_sticky_sidebar.penci-con_innner.penci-con_innner-sidebar-left:last-child > div.penci-container__content > div.penci-con_innner-item.penci-content-main.penci_column_inner-main:first-child > div.theiaStickySidebar > div.wpb_single_image.wpb_content_element.vc_align_left:nth-child(21)
+tvrus.eu###penci_advanced_carousel__50316993 > div.penci-advanced_carousel-inner.penci-owl-carousel-slider.penci-owl-featured-area.owl-loaded.owl-drag
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2681,7 +2703,11 @@ ya.ru$@$link[rel="manifest"]
 @@||*sentry.gitlab.net/api/*/envelope/$xhr,domain=gitlab.com
 @@.m3u^$stealth=ref
 @@.m3u^$stealth=referrer
-@@||iosvpn.top^$important,app=vpn.russia_tap2free
+@@||foodnetwork.com^$cookie=__ds_loc_country
+@@||foodnetwork.com^$cookie=layout
+@@||iosvpn.top^$important
+@@||hls.tvrus.t62a.com/*/*/bemtv/stream*/stream0.m3u8
+@@||hls.tvrus.t62a.com^
 !
 !
 ! -
