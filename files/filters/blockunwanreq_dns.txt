@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.5.9-R
+! Version: 3.6.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-06-15T17:30:00+00:00
+! TimeUpdated: 2025-06-17T14:30:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 15.06.2025 17:30 UTC
+! Last Modified: 17.06.2025 14:30 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -178,7 +178,7 @@
 ||appsgrowthpromo*.clients*.google.com^$important
 ||mail-ads.google.com^$important
 ! ||imasdk.googleapis.com^
-||gvt1.com^
+! ||gvt1.com^
 ||ogads*.googleapis.com^$important
 ||androidtvgtvmfe*.googleapis.com^
 ||playmoviesdfe*.googleapis.com^
@@ -538,7 +538,7 @@
 ||tapas.net^$dnsrewrite=NXDOMAIN,important
 ||tapjoyads.com^$dnsrewrite=NXDOMAIN,important
 ||tapjoy.com^$dnsrewrite=NXDOMAIN,important
-||cdn.cookielaw.org^
+! cdn.cookielaw.org^
 ||zap^$dnsrewrite=NXDOMAIN,important
 ||burp^$dnsrewrite=NXDOMAIN,important
 ||*.rt.avito.ru^
@@ -550,7 +550,7 @@
 ||confiant-integrations.global.ssl.fastly.net^
 ||wsd-fingerprint.kontur.ru^$important
 ||provision.app.devapps.ru^$important
-||graphql*^$important
+||graphql*^
 !
 ||adad.ir^$dnsrewrite=0.0.0.0,important
 ||dgad.ir^$dnsrewrite=0.0.0.0,important
@@ -724,6 +724,8 @@
 ||pemsrv.com^$important,dnsrewrite=0.0.0.0
 ||bs.serving-sys.ru^$important
 ||adm.dimonvideo.ru^
+||stat2.okko.tv^$important
+||apistats.rg.ru^
 !
 !
 !
@@ -934,13 +936,18 @@
 @@||config.theexplorers.com^
 @@||theexplorersmediastorage.blob.core.windows.net^
 @@||api.theexplorers.com^
-@@||r*---*-*.gvt1.com^
+@@||*---*-*-*.gvt1.com^
 @@||theexplorersmedia.streaming.mediaservices.windows.net^
 @@||dnl-*.geo.kaspersky.com^
 @@||i.ytimg.com^
 @@||i*.ytimg.com^
 @@||ext-cloudcdn-*-*.cdn.yandex.net^
 @@||collector.github.com^
+@@||github.githubassets.com^
+@@||graphql.kinopoisk.ru^
+@@||woobl.ru^
+@@||challenges.cloudflare.com^
+@@||*sentry.gitlab.net^
 !
 ! ===
 !
@@ -987,6 +994,7 @@
 !
 @@||local.adguard.org^
 @@||injections.adguard.org^
+@@||api.adguard.org^
 !
 !
 !

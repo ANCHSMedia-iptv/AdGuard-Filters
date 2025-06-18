@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.7.6-R
-! TimeUpdated: 2025-06-16T17:30:00+00:00
+! Version: 3.7.7-R
+! TimeUpdated: 2025-06-17T17:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -134,7 +134,7 @@
 ||adlook.me^$important
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru,important
-||vk.com/js/api/openapi.js^$script,domain=~vk.com,important
+||vk.com/js/api/openapi.js^$script,domain=~vk.com,third-party,important
 ||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~github.com|~githubassets.com
 ||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~github.com|~githubassets.com
 /itunes_referals.js^$script,third-party
@@ -206,7 +206,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me,important
+*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~gitlab.com,important
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com,important
@@ -278,7 +278,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||zoon.ru/images/border.gif^$image,domain=zoon.ru
 ! (новое правило, строка 138 и 139)
 ! (новое правило, строка 138 и 139)
-||userapi.com/js/api/openapi.js$script,domain=~vk.com,important
+||userapi.com/js/api/openapi.js$script,domain=~vk.com,third-party,important
 ||analytics.vsem-edu-oblako.ru*/track^$xhr,important
 ||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,important
 |! sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com (новое правило, строка 285)
@@ -379,7 +379,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^$important
-/graphql*$xhr,other,important,domain=~kinopoisk.ru,app=~ru.kinopoisk
+/graphql*$xhr,other,important,domain=~kinopoisk.ru|~gitlab.com,app=~ru.kinopoisk
 ||getrcmx.com^$important
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.*.js^$script,domain=xcom-shop.ru,important
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -408,8 +408,8 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||forbes.*/api/*/special-adblock^$xhr,domain=forbes.*,important
 ||pravo.rg.ru/api/pravo-promo/^$xhr,domain=rg.ru
 ||cdnfiles.rg.ru/_next/static/chunks/23844.e580c58d2fd6dcc4.js^$script,domain=rg.ru,important
-||cdnfiles.rg.ru/_next/static/chunks/60844.d7dbf4a358e29d67.js^$script,domain=rg.ru,important
-||cdnfiles.rg.ru/_next/static/chunks/1252-dd167f96c5822f19.js^$script,domain=rg.ru,important
+||cdnfiles.rg.ru/_next/static/chunks/61162.a1c80b2ba3db454a.js^$script,domain=rg.ru,important
+! cdnfiles.rg.ru/_next/static/chunks/ .js^$script,domain=rg.ru,important
 ||s91588.cdn.ngenix.net/branding/*/temp/*.jpg^$image,domain=sravni.ru
 ||cdn.jsdelivr.net/jquery.suggestions/*/js/jquery.suggestions*.js^$script
 ||medportal.ru/cookie_notice^$xhr,domain=medportal.ru,important
@@ -882,7 +882,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||tapjoyads.com^$important
 ||tapjoy.com^$important
 ||college.72to.ru/*.gif^$image,domain=college.72to.ru # «отслеживающие» картинки на 1x1 пиксель.
-||cdn.cookielaw.org^
+||cookielaw.org^$third-party
 ||*.rt.avito.ru^
 ||coop-land.ru/templates/CoopLand2016/js/adriver*.js^$script,domain=coop-land.ru,important # рекламный скрипт
 ! /adriver$script,xhr
@@ -1002,7 +1002,7 @@ qrator/validate$xhr,important
 */api/v*/get-ad-ids$document,app=com.nebulatech.voocvpnpro|com.voocvpn.moonvpnpro # подгрузка рекламных ID (судя по запросу) в приложениях VPN Secure (Vooc VPN), и VPN Pro от одного разработчика. (не реклама)
 ||ads.taxiaid.org^$important
 ||*-metrica.cabconnect.org^$important
-||fandom.com/silver-surfer.html^$domain=fandom.com
+||fandom.com/silver-surfer.html^$domain=fandom.com,important
 ||js.zi-scripts.com/zi-tag.js^$script,important
 ||js.zi-scripts.com/unified/v*/master/$xhr,important
 ||appcenter.ms^$app=ru.mes.dnevnik.fgis|ru.pyaterochka.app.browser|ru.desport.android|bz.zaa.mibudsm8
@@ -1190,6 +1190,18 @@ calltouch.js$script,xhr
 ||dzen.ru/partner/$xhr
 ||2gis.*/public/promo/*.png^$image,domain=2gis.*
 ||ams*-cdn.2gis.*/raws/*.svg^$image,domain=2gis.*
+||stat.playfamily.ru/kollector/v*/external$xhr
+||stat2.okko.tv^$important
+||app-time.ru/ajaxpost/nextpost$xhr,domain=app-time.ru
+||novostiitkanala.ru/ad/banners-itcn/*.php$domain=novostiitkanala.ru
+||files.1mi.media/_next/static/media/zen.*.svg^$image,domain=prmira.ru
+||files.1mi.media/_next/static/media/vk.*.svg^$image,domain=prmira.ru
+||files.1mi.media/_next/static/media/tg.*.svg^$image,domain=prmira.ru
+||api.beetv.kz/v*/epg/program_events/*/ads$xhr,domain=beetv.kz,important
+||lyngsat.com/as10/intelsat_webinar.gif^$image,domain=lyngsat.com # реклама.
+||apistats.rg.ru^
+||static.wikia.nocookie.net/silversurfer/prod/latest/marketingNotificationsUnit*.js^$script,domain=fandom.com,important
+||serverblight.com/audio/gamestartup_halloween.mp3^$media,domain=serverblight.com # кому надо, можете разблокировать. (If you need it, you can unblock it.)
 !
 !
 !
@@ -2018,7 +2030,7 @@ limehd.tv###__nuxt > div.w-full.min-h-screen > div.flex.flex-col.min-h-screen.fu
 ! Реклама в Peers TV
 peers.tv##div.header-wrap.clearfix:nth-child(4) > header.row > nav.col-md-16 > ul.list-inline.main-menu:nth-child(2) > li.b2b-link:last-child
 !
-fandom.com,*.fandom.com##div.notifications-placeholder:nth-child(2) > div.marketing-notifications:first-child > div.marketing-notification__container.GxLxDKkiUGCcwujVwPVA
+fandom.com##div.notifications-placeholder:nth-child(2) > div.marketing-notifications:first-child > div.marketing-notification__container.GxLxDKkiUGCcwujVwPVA
 torbobit.net###timeoutBox > div.payment-block:first-child
 torbobit.net###download-premium-btn
 torbobit.net##div.main-menu:nth-child(3) > div.main-menu-links > a:nth-child(2)
@@ -2033,9 +2045,15 @@ ip.osnova.news###info > div.card-body.pb-2:last-child > div.card-text.mt-4.mb-4.
 ip.osnova.news###info > div.card-body.pb-2:last-child > p.mt-4.card-text.h6:nth-child(9)
 browserleaks.com##h3[id="comments"]
 cyber.sports.ru###news-renderer-mount-point > div.layout.page-layout > div.layout__content-wrapper:nth-child(11) > div.layout__content.content--wide:first-child > div.news-layout:nth-child(3) > div.columns:nth-child(2) > div.columns__main-column:first-child > div.news-layout__content:nth-child(2) > div.news-content:first-child > div.structured-body-wrapper.news-content__structured-body-wrapper:first-child > p.sb-paragraph.sb-paragraph--regular:nth-child(4)
-fandom.com,*.fandom.com###mw-content-text > div.mw-content-ltr.mw-parser-output:last-child > div.main-page-tag-rcs:nth-child(2) > div.rcs-container:last-child > div.mp_block:first-child
+fandom.com###mw-content-text > div.mw-content-ltr.mw-parser-output:last-child > div.main-page-tag-rcs:nth-child(2) > div.rcs-container:last-child > div.mp_block:first-child
 ok.ru###hook_Block_AuthLoginAutoOpen > auth-login-banner.h-mod.auth-login_auth-login-banner:last-child > section.auth-login-banner__e19f0
 2gis.ru##div[class^="_1kvpakx"]
+app-time.ru##div.at-wrap:first-child > div.native-notification.md-block:nth-child(3) > a
+prmira.ru###__next > div.styles_container__uVZ0U:nth-child(2)
+prmira.ru###matter-0 > div.relative.desktop-cols-3:nth-child(3) > div:nth-child(2) > div > div.matter-after:last-child > div:nth-child(2)
+just-tv.lt##div[class^="cky-consent-container cky-banner-bottom"]
+comss.ru###main > div.container-fluid:last-child
+voka.tv###app > div.theme-provider__Container-sc-kno0h7-0.kJcMUk > div.pagecontainer__PageContainer-sc-1svonxi-0.bMEltR:first-child > div.cookie-alertcomponent__BlurContainer-sc-b564p5-0.gKKXUo:nth-child(5)
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2599,7 +2617,7 @@ mi.com#@$#body { overflow: visible !important; }
 @@||icecast-vgtrk.cdnvideo.ru^
 vestifm.online$@$link[rel="manifest"]
 @@||cdn.adguard.*/website/adguard.*/products/screenshots/*/ad_blocking.svg^$image,domain=welcome.adguard.com|welcome.adguard.info|welcome.adguard.app # 31.03.25: не загружается картинка из-за фильтра xinggsf, в белом списке.
-@@|||sb.ltn.fi^
+@@||sb.ltn.fi^
 @@||limehd.tv/images/banners-demo.png^$image,domain=limehd.tv # 8.04.25: блокируется из-за фильтра xinggsf, в белом списке.
 @@||blocklists.operacdn.com^ # получение «чёрных списков» рекламы и трекеров для браузеров Opera.
 @@||time.tbank.ru^
@@ -2625,7 +2643,7 @@ ya.ru$@$link[rel="manifest"]
 @@||config.theexplorers.com^
 @@||theexplorersmediastorage.blob.core.windows.net^
 @@||api.theexplorers.com^
-@@||r*---*-*.gvt1.com^
+@@||*---*-*-*.gvt1.com^
 @@||theexplorersmedia.streaming.mediaservices.windows.net^
 @@/wp-content/plugins/all-in-one-wp-security-and-firewall/js/wp-security-front-script.js$script
 @@||s3.amazonaws.com^$app=app.subscab.android
@@ -2649,7 +2667,6 @@ ya.ru$@$link[rel="manifest"]
 @@/cdn-cgi/challenge-platform/$xhr,script
 @@||github.githubassets.com^
 @@||woobl.ru/op/*/*.m3u8
-@@||woobl.ru/op/*/w.m3u8
 @@||woobl.ru^
 @@||graphql.kinopoisk.ru^
 @@||challenges.cloudflare.com^
@@ -2659,6 +2676,10 @@ ya.ru$@$link[rel="manifest"]
 @@||*-assets.2gis.*/gdprCookieBanner.*.js^$script,domain=2gis.*,important
 @@/play/id*/*.m3u8?q=
 @@/ts/*/*.ts?q=
+@@||gitlab.com/api/graphql^$xhr,domain=gitlab.com
+@@||*sentry.gitlab.net/api/*/envelope/$xhr,domain=gitlab.com
+@@.m3u^$stealth=ref
+@@.m3u^$stealth=referrer
 !
 !
 ! -
