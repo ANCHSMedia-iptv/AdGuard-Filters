@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.7.8-R
-! TimeUpdated: 2025-06-19T10:30:00+00:00
+! Version: 3.7.9-R
+! TimeUpdated: 2025-06-19T14:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -36,7 +36,7 @@
 ||bronze.systems^$important
 ||graph.facebook.com^$important
 ||optifyr.com^$important
-||gravatar.com^$important
+||gravatar.com^$domain=~gitlab.com,important
 ||amplreq.com^$important
 ||amplitude.com^$important
 !
@@ -415,7 +415,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||medportal.ru/cookie_notice^$xhr,domain=medportal.ru,important
 ||fedpress.ru/themes/fp/js/share.js^$script,domain=fedpress.ru,important
 ||static.mel.fm/graph.js$script,domain=mel.fm,important
-||*cookie*.css^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com~githubassets.com
+||*cookie*.css^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~githubassets.com
 ||b17.ru/img/0.gif^$image,domain=b17.ru,important
 ||ufamama.ru/UserStatistics/$xhr,important,domain=ufamama.ru
 ||ufamama.ru/services/BlogAdvisor/$xhr,important,domain=ufamama.ru
@@ -782,7 +782,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||cableman.ru/themes/custom/initlab_cab/images/click-icon.png^$image,domain=cableman.ru
 ||cableman.ru/themes/custom/initlab_cab/images/k-icon.png^$image,domain=cableman.ru
 ||wifika.ru/wp-content/plugins/*/pro/images/blank.gif^$image,domain=wifika.ru,important
-/admin-ajax.php$xhr,domain=~1giper.ru
+/admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai # может поломать сайты.
 ||userway.org^$third-party
 ||files.vm.ru/pdf/2025.02/original/thumb_1280_67c0a45f82682c09ce62d1a1.jpg^$image,xhr,domain=vm.ru
 ||stats.wp.com^
@@ -914,7 +914,6 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||intellitxt.com^$important
 ||internet-inspection.com^$important
 ||ads.pacific.net.sg^$important
-||ww150.smartadserver.com^$important
 ||smartadserver.com^$important
 ! ——
 ||lkqd.net^
@@ -1202,7 +1201,7 @@ calltouch.js$script,xhr
 ||apistats.rg.ru^
 ||static.wikia.nocookie.net/silversurfer/prod/latest/marketingNotificationsUnit*.js^$script,domain=fandom.com,important
 ||serverblight.com/audio/gamestartup_halloween.mp3^$media,domain=serverblight.com # кому надо, можете разблокировать. (If you need it, you can unblock it.)
-||a.apkpure.*/dt_*_*.js$script,domain=apkpure.*
+||a.apkpure.*/dt_*_*.js$script,domain=apkpure.* # аналитика.
 ||apkcombo.com/1.gif^$image,domain=apkcombo.com
 ||tvrus.eu/wp-content/themes/pennews/images/telegram_trim.png$image,domain=tvrus.eu
 ||tvrus.eu/wp-content/themes/pennews/js/custom-scripts.js^$script,domain=tvrus.eu
@@ -1211,6 +1210,12 @@ calltouch.js$script,xhr
 ||tvrus.eu/wp-content/uploads/2021/12/telegram_05_*.jpg^$image,domain=tvrus.eu
 ||tvrus.eu/wp-content/uploads/2020/08/filtry.gif^$image,domain=tvrus.eu
 ||ruspresse.de/rhted_show.php$domain=tvrus.eu
+/cdn-cgi/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
+||amplitude-experiments.*.*^ # аналитика.
+||gitlab.com/*/track_namespace_visits$xhr,domain=gitlab.com
+||mtm.iptvx.one^$domain=iptvx.one|epg.iptvx.one,important # аналитика.
+||iptvx.one/js/cust.js$script,domain=iptvx.one|epg.iptvx.one,important # скрипт загрузки рекламы.
+||static.wikia.nocookie.net/silversurfer/prod/latest/sdk.js^$script,domain=fandom.com,important
 !
 !
 !
@@ -2076,6 +2081,7 @@ tvrus.eu###main > div.vc_row.wpb_row.vc_row_9587710.vc_row-fluid.penci-pb-row:fi
 tvrus.eu###main > div.vc_row.wpb_row.vc_row_9587710.vc_row-fluid.penci-pb-row:first-child > div.wpb_column.vc_column_container.vc_col-sm-12.penci-col-12 > div.vc_column-inner.wpb_column.vc_column_container.vc_col-sm-12.penci-col-12 > div.wpb_wrapper > div.penci-container-vc.penci-container-fluid.penci-container-width-1400.penci_vc_sticky_sidebar.penci-vc_sidebar-right.vc_custom_1682411761478:last-child > div.penci-container__content.penci-con_sb2_sb1 > div.penci-content-main.penci-container.penci-sidebar-right:first-child > div.theiaStickySidebar > div.penci_vc_sticky_sidebar.penci-con_innner.penci-con_innner-sidebar-left:last-child > div.penci-container__content > div.penci-con_innner-item.penci-content-main.penci_column_inner-main:first-child > div.theiaStickySidebar > div.wpb_single_image.wpb_content_element.vc_align_left:nth-child(19)
 tvrus.eu###main > div.vc_row.wpb_row.vc_row_9587710.vc_row-fluid.penci-pb-row:first-child > div.wpb_column.vc_column_container.vc_col-sm-12.penci-col-12 > div.vc_column-inner.wpb_column.vc_column_container.vc_col-sm-12.penci-col-12 > div.wpb_wrapper > div.penci-container-vc.penci-container-fluid.penci-container-width-1400.penci_vc_sticky_sidebar.penci-vc_sidebar-right.vc_custom_1682411761478:last-child > div.penci-container__content.penci-con_sb2_sb1 > div.penci-content-main.penci-container.penci-sidebar-right:first-child > div.theiaStickySidebar > div.penci_vc_sticky_sidebar.penci-con_innner.penci-con_innner-sidebar-left:last-child > div.penci-container__content > div.penci-con_innner-item.penci-content-main.penci_column_inner-main:first-child > div.theiaStickySidebar > div.wpb_single_image.wpb_content_element.vc_align_left:nth-child(21)
 tvrus.eu###penci_advanced_carousel__50316993 > div.penci-advanced_carousel-inner.penci-owl-carousel-slider.penci-owl-featured-area.owl-loaded.owl-drag
+acetone.ai###q-notify > div.q-notifications > div.q-notifications__list.q-notifications__list--bottom.fixed.column.no-wrap.items-center:nth-child(6) > div.q-notification.row.items-stretch.q-notification--standard.bg-red-4.text-black
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2678,11 +2684,11 @@ ya.ru$@$link[rel="manifest"]
 @@||collector.github.com^$important
 @@||collector.github.com/github/collect^$xhr,domain=github.com,important
 @@||api.github.com/_private/browser/$xhr,domain=github.com,important
-@@.m3u8^$stealth=referrer
-@@.ts^$stealth=ref
-@@.m3u8^$stealth=ref
-@@.mpd^$stealth=referrer
-@@.mpd^$stealth=ref
+@@.m3u8^$stealth=referrer|token
+@@.ts^$stealth=ref|token
+@@.m3u8^$stealth=ref|token
+@@.mpd^$stealth=referrer|token
+@@.mpd^$stealth=ref|token
 @@||limehd.tv/api/v*/ads-banners$xhr,domain=limehd.tv
 @@||limehd.tv/api/v*/get-ads$xhr,domain=limehd.tv
 @@||limehd.tv/api/v*/ads$xhr,domain=limehd.tv
@@ -2708,6 +2714,15 @@ ya.ru$@$link[rel="manifest"]
 @@||iosvpn.top^$important
 @@||hls.tvrus.t62a.com/*/*/bemtv/stream*/stream0.m3u8
 @@||hls.tvrus.t62a.com^
+@@||about.gitlab.com/_nuxt-new/default.*.js^$script,domain=gitlab.com
+@@||gitlab.com^$cookie
+@@/channel/*/index.m3u8$stealth=q
+@@/play/id*/*.m3u8$stealth=q
+@@/ts/*/*.ts$stealth=q
+@@||redirector.gvt1.com^
+@@||removal.ai/wp-admin/admin-ajax.php$domain=removal.ai
+@@||pkvc-hls.cdnvideo.ru^$stealth=referrer
+@@||woobl.ru^$cookie=PHPSESSID
 !
 !
 ! -
