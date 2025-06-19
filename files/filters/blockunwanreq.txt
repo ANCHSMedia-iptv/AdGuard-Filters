@@ -1217,6 +1217,7 @@ calltouch.js$script,xhr
 ||iptvx.one/js/cust.js$script,domain=iptvx.one|epg.iptvx.one,important # скрипт загрузки рекламы.
 ||static.wikia.nocookie.net/silversurfer/prod/latest/sdk.js^$script,domain=fandom.com,important
 ||theajack.github.io/disable-devtool/
+||cdn.promeai.pro/cutout-web/v2.6.10/img/prome_27.c2d5cac.png^$image,domain=cutout.pro
 !
 !
 !
@@ -2083,6 +2084,7 @@ tvrus.eu###main > div.vc_row.wpb_row.vc_row_9587710.vc_row-fluid.penci-pb-row:fi
 tvrus.eu###main > div.vc_row.wpb_row.vc_row_9587710.vc_row-fluid.penci-pb-row:first-child > div.wpb_column.vc_column_container.vc_col-sm-12.penci-col-12 > div.vc_column-inner.wpb_column.vc_column_container.vc_col-sm-12.penci-col-12 > div.wpb_wrapper > div.penci-container-vc.penci-container-fluid.penci-container-width-1400.penci_vc_sticky_sidebar.penci-vc_sidebar-right.vc_custom_1682411761478:last-child > div.penci-container__content.penci-con_sb2_sb1 > div.penci-content-main.penci-container.penci-sidebar-right:first-child > div.theiaStickySidebar > div.penci_vc_sticky_sidebar.penci-con_innner.penci-con_innner-sidebar-left:last-child > div.penci-container__content > div.penci-con_innner-item.penci-content-main.penci_column_inner-main:first-child > div.theiaStickySidebar > div.wpb_single_image.wpb_content_element.vc_align_left:nth-child(21)
 tvrus.eu###penci_advanced_carousel__50316993 > div.penci-advanced_carousel-inner.penci-owl-carousel-slider.penci-owl-featured-area.owl-loaded.owl-drag
 acetone.ai###q-notify > div.q-notifications > div.q-notifications__list.q-notifications__list--bottom.fixed.column.no-wrap.items-center:nth-child(6) > div.q-notification.row.items-stretch.q-notification--standard.bg-red-4.text-black
+cutout.pro###app > div.v-application--wrap > div:first-child > div > div.fixed-header:first-child > div.promeRec.interiorDesign:first-child
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
