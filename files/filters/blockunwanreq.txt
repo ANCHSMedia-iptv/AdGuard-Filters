@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.7.9-R
-! TimeUpdated: 2025-06-19T14:30:00+00:00
+! Version: 3.8.0-R
+! TimeUpdated: 2025-06-19T16:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1125,7 +1125,7 @@ waf/fingerprint$xhr,important
 ||tva.org.ua/wp-content/uploads/2023/10/izobrazhenie_2023-10-10_143432490-250x159.png^$image,domain=tva.org.ua
 ||dam.mediacorp.sg/image/upload/*/mediacorp/cna/image/2025/03/25/telegram_*_0.png^$image,domain=channelnewsasia.com
 ||boost-recommend.mediacorp.sg^$important
-||ritsatv.ru/files/protect/browser.js^$script,domain=ritsatv.ru # скрипт отключения консоли по F12 (Devtools).
+||ritsatv.ru/files/protect/*.js^$domain=ritsatv.ru # скрипт отключения консоли по F12 (Devtools).
 ||philka.ru/forum/public/style_extra/sharelinks/*.png^$image,domain=philka.ru
 ||philka.ru/forum/public/js/ips.sharelinks.js^$script,domain=philka.ru
 ||seohamer.ru/banner/gif/banner*.gif^$image,third-party # реклама.
@@ -1216,6 +1216,7 @@ calltouch.js$script,xhr
 ||mtm.iptvx.one^$domain=iptvx.one|epg.iptvx.one,important # аналитика.
 ||iptvx.one/js/cust.js$script,domain=iptvx.one|epg.iptvx.one,important # скрипт загрузки рекламы.
 ||static.wikia.nocookie.net/silversurfer/prod/latest/sdk.js^$script,domain=fandom.com,important
+||theajack.github.io/disable-devtool/
 !
 !
 !
@@ -2695,7 +2696,7 @@ ya.ru$@$link[rel="manifest"]
 @@||ext-cloudcdn-*-*.cdn.yandex.net
 @@/cdn-cgi/challenge-platform/$xhr,script
 @@||github.githubassets.com^
-@@||woobl.ru/op/*/*.m3u8
+@@||woobl.ru/*/*/*.m3u8
 @@||woobl.ru^
 @@||graphql.kinopoisk.ru^
 @@||challenges.cloudflare.com^
@@ -2714,7 +2715,7 @@ ya.ru$@$link[rel="manifest"]
 @@||iosvpn.top^$important
 @@||hls.tvrus.t62a.com/*/*/bemtv/stream*/stream0.m3u8
 @@||hls.tvrus.t62a.com^
-@@||about.gitlab.com/_nuxt-new/default.*.js^$script,domain=gitlab.com
+@@||about.gitlab.com/_nuxt*/default.*.js^$script,domain=gitlab.com
 @@||gitlab.com^$cookie
 @@/channel/*/index.m3u8$stealth=q
 @@/play/id*/*.m3u8$stealth=q
@@ -2723,6 +2724,8 @@ ya.ru$@$link[rel="manifest"]
 @@||removal.ai/wp-admin/admin-ajax.php$domain=removal.ai
 @@||pkvc-hls.cdnvideo.ru^$stealth=referrer
 @@||woobl.ru^$cookie=PHPSESSID
+@@||woobl.ru/login$domain=woobl.ru
+@@||woobl.ru/reg$domain=woobl.ru
 !
 !
 ! -
