@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 3.7.8-R
-! TimeUpdated: 2025-06-18T17:30:00+00:00
+! TimeUpdated: 2025-06-19T10:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -135,8 +135,8 @@
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru,important
 ||vk.com/js/api/openapi.js^$script,domain=~vk.com,third-party,important
-||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~github.com|~githubassets.com
-||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~github.com|~githubassets.com
+||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~githubassets.com|~gitlab.com
+||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~githubassets.com|~gitlab.com
 /itunes_referals.js^$script,third-party
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script,third-party
 ||improving.duckduckgo.com^$important
@@ -415,7 +415,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||medportal.ru/cookie_notice^$xhr,domain=medportal.ru,important
 ||fedpress.ru/themes/fp/js/share.js^$script,domain=fedpress.ru,important
 ||static.mel.fm/graph.js$script,domain=mel.fm,important
-||*cookie*.css^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~github.com|~githubassets.com
+||*cookie*.css^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com~githubassets.com
 ||b17.ru/img/0.gif^$image,domain=b17.ru,important
 ||ufamama.ru/UserStatistics/$xhr,important,domain=ufamama.ru
 ||ufamama.ru/services/BlogAdvisor/$xhr,important,domain=ufamama.ru
@@ -2676,8 +2676,8 @@ ya.ru$@$link[rel="manifest"]
 @@||restream-media.net/api/v*/user/drm_settings^$xhr
 @@||cdn.ngenix.net/*/js/test-*.js^$script,xhr
 @@||collector.github.com^$important
-@@||collector.github.com/github/collect^$important
-@@||api.github.com/_private/browser/^$important
+@@||collector.github.com/github/collect^$xhr,domain=github.com,important
+@@||api.github.com/_private/browser/$xhr,domain=github.com,important
 @@.m3u8^$stealth=referrer
 @@.ts^$stealth=ref
 @@.m3u8^$stealth=ref
