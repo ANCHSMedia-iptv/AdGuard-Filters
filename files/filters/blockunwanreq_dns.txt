@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.6.4-R
+! Version: 3.6.5-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-06-19T17:30:00+00:00
+! TimeUpdated: 2025-06-21T14:30:00+00:00
 ! 
 !
 !
@@ -956,6 +956,12 @@
 @@||hls.tvrus.t62a.com^
 @@||redirector.gvt1.com^
 @@||pkvc-hls.cdnvideo.ru^
+@@||alpaca.t62a.com^
+@@||meteum.ai^
+@@||androidvpn.top^
+@@||getdatafrom.top^
+@@||tkserv.click^
+@@||tap2free.net^
 !
 ! ===
 !
