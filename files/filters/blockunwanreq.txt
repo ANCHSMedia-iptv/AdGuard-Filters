@@ -1,4 +1,4 @@
-! Title: Block unwanted connections
+0! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 3.8.1-R
 ! TimeUpdated: 2025-06-21T14:30:00+00:00
@@ -2465,7 +2465,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||*ds.metric.gstatic.com^$important # для чего он разблокирован в одном из основных фильтров?
 ||analytics.google.com^$important
 ||doubleclick.net^$important
-||googlesyndication.com^$important
+||googlesyndication.*^$important
 ||adservice.google.*^$important
 !
 ||appsgrowthpromo*.clients*.google.com^$important # рекламный домен
@@ -2487,7 +2487,6 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||play.google.com/store/apps/collection/promotion_30$xhr,other
 ||googleanalytics.com^$important
 ||doubleclick.nes^$important
-||googlesyndication.col^$important
 ||play.google.com/d$important
 ||google.com/dfo$important
 !
@@ -2720,7 +2719,7 @@ ya.ru$@$link[rel="manifest"]
 @@.m3u^$stealth=referrer
 @@||foodnetwork.com^$cookie=__ds_loc_country
 @@||foodnetwork.com^$cookie=layout
-@@||*.top^$important,app=vpn.russia_tap2free # | vpn.*_tap2free
+@@||*.top^$important,app=vpn.russia_tap2free
 @@||hls.tvrus.t62a.com/*/*/bemtv/stream*/stream0.m3u8
 @@||tvrus.t62a.com^
 @@||alpaca.t62a.com^
@@ -2736,6 +2735,7 @@ ya.ru$@$link[rel="manifest"]
 @@||woobl.ru/login$domain=woobl.ru
 @@||woobl.ru/reg$domain=woobl.ru
 @@||api.alpaca.t62a.com/hls/*/stream0.m3u8
+@@||meteum.ai^
 !
 !
 ! -
