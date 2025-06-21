@@ -379,7 +379,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^$important
-/graphql*$xhr,other,important,domain=~kinopoisk.ru|~gitlab.com,app=~ru.kinopoisk
+/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com,app=~ru.kinopoisk
 ||getrcmx.com^$important
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.*.js^$script,domain=xcom-shop.ru,important
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -1217,7 +1217,7 @@ calltouch.js$script,xhr
 ||iptvx.one/js/cust.js$script,domain=iptvx.one|epg.iptvx.one,important # скрипт загрузки рекламы.
 ||static.wikia.nocookie.net/silversurfer/prod/latest/sdk.js^$script,domain=fandom.com,important
 ||theajack.github.io/disable-devtool/
-||cdn.promeai.pro/cutout-web/v2.6.10/img/prome_27.c2d5cac.png^$image,domain=cutout.pro
+||cdn.promeai.pro/cutout-web/v*/img/prome_27.c2d5cac.png^$image,domain=cutout.pro
 !
 !
 !
