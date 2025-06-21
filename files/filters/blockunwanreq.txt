@@ -2692,11 +2692,9 @@ ya.ru$@$link[rel="manifest"]
 @@||collector.github.com^$important
 @@||collector.github.com/github/collect^$xhr,domain=github.com,important
 @@||api.github.com/_private/browser/$xhr,domain=github.com,important
-@@.m3u8^$stealth=referrer|token
-@@.ts^$stealth=ref|token
-@@.m3u8^$stealth=ref|token
-@@.mpd^$stealth=referrer|token
-@@.mpd^$stealth=ref|token
+@@.m3u8^$stealth=referrer|token|q|ref
+@@.ts^$stealth=ref|token|referrer|q
+@@.mpd^$stealth=referrer|token|ref
 @@||limehd.tv/api/v*/ads-banners$xhr,domain=limehd.tv
 @@||limehd.tv/api/v*/get-ads$xhr,domain=limehd.tv
 @@||limehd.tv/api/v*/ads$xhr,domain=limehd.tv
@@ -2725,9 +2723,9 @@ ya.ru$@$link[rel="manifest"]
 @@||alpaca.t62a.com^
 @@||about.gitlab.com/_nuxt*/default.*.js^$script,domain=gitlab.com
 @@||gitlab.com^$cookie
-@@/channel/*/index.m3u8$stealth=q
-@@/play/id*/*.m3u8$stealth=q
-@@/ts/*/*.ts$stealth=q
+@@/channel/*/index.m3u8
+@@/play/id*/*.m3u8
+@@/ts/*/*.ts
 @@||redirector.gvt1.com^
 @@||removal.ai/wp-admin/admin-ajax.php$domain=removal.ai
 @@||pkvc-hls.cdnvideo.ru^$stealth=referrer
