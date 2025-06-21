@@ -2739,6 +2739,8 @@ ya.ru$@$link[rel="manifest"]
 @@||tap2free.net^
 @@||tkserv.click^$app=vpn.russia_tap2free
 @@||fornormalget.click^
+@@||parom.tv^
+@@||bemtv.t62a.com^
 !
 !
 ! -
