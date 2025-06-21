@@ -2720,9 +2720,10 @@ ya.ru$@$link[rel="manifest"]
 @@.m3u^$stealth=referrer
 @@||foodnetwork.com^$cookie=__ds_loc_country
 @@||foodnetwork.com^$cookie=layout
-@@||iosvpn.top^$important
+@@||*.top^$important,app=vpn.russia_tap2free
 @@||hls.tvrus.t62a.com/*/*/bemtv/stream*/stream0.m3u8
-@@||hls.tvrus.t62a.com^
+@@||tvrus.t62a.com^
+@@||alpaca.t62a.com^
 @@||about.gitlab.com/_nuxt*/default.*.js^$script,domain=gitlab.com
 @@||gitlab.com^$cookie
 @@/channel/*/index.m3u8$stealth=q
@@ -2734,6 +2735,7 @@ ya.ru$@$link[rel="manifest"]
 @@||woobl.ru^$cookie=PHPSESSID
 @@||woobl.ru/login$domain=woobl.ru
 @@||woobl.ru/reg$domain=woobl.ru
+@@||api.alpaca.t62a.com/hls/*/stream0.m3u8
 !
 !
 ! -
