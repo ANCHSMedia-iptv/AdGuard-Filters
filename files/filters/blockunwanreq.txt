@@ -2738,6 +2738,7 @@ ya.ru$@$link[rel="manifest"]
 @@||meteum.ai^
 @@||tap2free.net^
 @@||tkserv.click^$app=vpn.russia_tap2free
+@@||fornormalget.click^
 !
 !
 ! -
