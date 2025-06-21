@@ -2605,7 +2605,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ! pikabu.ru/.well-known/ddos-guard/$script,domain=pikabu.ru (новое правило, строка 2245)
 @@||google.com/js/bg/*.js^$xhr,script
 @@||google.com/recaptcha/
-@@||*googlevideo.com^
+@@||googlevideo.com^$important
 aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||csp.yandex.net/csp
 @@||pay.yandex.ru/sdk/v*/pay.js^$script,xhr
@@ -2656,7 +2656,7 @@ mi.com#@$#body { overflow: visible !important; }
 vestifm.online$@$link[rel="manifest"]
 @@||cdn.adguard.*/website/adguard.*/products/screenshots/*/ad_blocking.svg^$image,domain=welcome.adguard.com|welcome.adguard.info|welcome.adguard.app # 31.03.25: не загружается картинка из-за фильтра xinggsf, в белом списке.
 @@||sb.ltn.fi^
-@@||limehd.tv/images/banners-demo.png^$image,domain=limehd.tv # 8.04.25: блокируется из-за фильтра xinggsf, в белом списке.
+@@||limehd.tv/images/banners-demo.png^$image,,domain=limehd.tv # 8.04.25: блокируется из-за фильтра xinggsf, в белом списке.
 @@||blocklists.operacdn.com^ # получение «чёрных списков» рекламы и трекеров для браузеров Opera.
 @@||time.tbank.ru^
 @@||time.tinkoff.ru^
@@ -2720,7 +2720,7 @@ ya.ru$@$link[rel="manifest"]
 @@.m3u^$stealth=referrer
 @@||foodnetwork.com^$cookie=__ds_loc_country
 @@||foodnetwork.com^$cookie=layout
-@@||*.top^$important,app=vpn.russia_tap2free
+@@||*.top^$important,app=vpn.russia_tap2free # | vpn.*_tap2free
 @@||hls.tvrus.t62a.com/*/*/bemtv/stream*/stream0.m3u8
 @@||tvrus.t62a.com^
 @@||alpaca.t62a.com^
