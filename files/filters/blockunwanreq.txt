@@ -2741,6 +2741,7 @@ ya.ru$@$link[rel="manifest"]
 @@||fornormalget.click^
 @@||parom.tv^
 @@||bemtv.t62a.com^
+@@/46.4.80.140:$app=tv.bemtv
 !
 !
 ! -
