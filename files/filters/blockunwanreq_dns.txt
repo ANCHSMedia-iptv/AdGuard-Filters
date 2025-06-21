@@ -962,6 +962,7 @@
 @@||getdatafrom.top^
 @@||tkserv.click^
 @@||tap2free.net^
+@@||fornormalget.click^
 !
 ! ===
 !
