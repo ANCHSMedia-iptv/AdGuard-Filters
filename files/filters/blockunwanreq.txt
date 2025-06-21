@@ -1180,7 +1180,7 @@ calltouch.js$script,xhr
 ||player.smotrim.ru/js/ad-plugin-html5-*.js$script # реклама.
 ||senoval.cdn.sports.ru/cross-recommender/recommender.*.js^$script,domain=cyber.sports.ru
 ||yandex.com^$app=jp.ne.ibis.ibispaintxapp
-||limehd.tv/script/liveinternet.js^$script,important,domain=limehd.tv
+||limehd.tv/script/liveinternet.js^$script,important,domain=limehd.t
 ||static-iptv2021.cdnvideo.ru/*-static/lime-events-config.json^$xhr,domain=limehd.tv
 ||limehd.tv/script/exp-metrika.js^$script,important,domain=limehd.tv
 ||adm.dimonvideo.ru^
@@ -2421,6 +2421,11 @@ $document,removeparam=from,domain=yandex.*|ya.ru
 ||127.0.0.1:29010/p?t=
 ||127.0.0.1:30103/p?t=
 ||startup.mobile.yandex.nes^
+||localhost:30102/p?t=
+||localhost:29009/p?t=
+||localhost:29010/p?t=
+||localhost:30103/p?t=
+
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
