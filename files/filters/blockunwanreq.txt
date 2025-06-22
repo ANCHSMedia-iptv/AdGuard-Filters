@@ -775,7 +775,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||disqus.com/count.js$script,xhr,important
 ||disqus.com/count-data.js$script,xhr,important
 ||ads.pro-market.net^$important
-!
+||xn--r1a.website^
 ||tele-satinfo.ru/img/1.gif^$image,domain=tele-satinfo.ru
 ||api.vigo.one/uxzoom/*/notify$xhr
 ||cableman.ru/ad/content/render$important,domain=cableman.ru
