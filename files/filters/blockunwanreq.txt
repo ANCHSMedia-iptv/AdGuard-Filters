@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 3.8.1-R
-! TimeUpdated: 2025-06-21T14:30:00+00:00
+! TimeUpdated: 2025-06-22T16:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2086,6 +2086,7 @@ tvrus.eu###penci_advanced_carousel__50316993 > div.penci-advanced_carousel-inner
 acetone.ai###q-notify > div.q-notifications > div.q-notifications__list.q-notifications__list--bottom.fixed.column.no-wrap.items-center:nth-child(6) > div.q-notification.row.items-stretch.q-notification--standard.bg-red-4.text-black
 cutout.pro###app > div.v-application--wrap > div:first-child > div > div.fixed-header:first-child > div.promeRec.interiorDesign:first-child
 sputniknews.ru,*.sputniknews.ru##a[href*="t.me/sputniknews"]
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru###app > div:first-child > div.layout-notifications:last-child > div.wrapper_bAXuV > div.content_bAXuV
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
