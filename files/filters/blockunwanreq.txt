@@ -2203,6 +2203,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ! ||ip-api.com^
 ! ||ifconfig.co^
 ||odc.null^
+||@CawcaFr^
 ||unknown.host^
 !
 !
