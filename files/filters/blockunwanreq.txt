@@ -972,9 +972,8 @@ qrator/validate$xhr,important
 ||ad-source.pro^$important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
 ://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.free.tiptop.vpn.proxy # аналитика и реклама.
-||yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.free.tiptop.vpn.proxy # аналитика и реклама.
 /^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android # тоже самое, реклама/аналитика.
-/^77\.88\./^$network,app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android # тоже самое, реклама/аналитика.
+! /^77\.88\./^$network,app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android # тоже самое, реклама/аналитика.
 ||yastatic.net^$app=com.radioapp.mayakradio|com.avito.android
 /^5\.255\.255\.77/^$network,app=ru.pyaterochka.app.browser|com.avito.android # тоже самое, реклама/аналитика.
 /^5\.255\.255\.77/^$app=ru.pyaterochka.app.browser|com.avito.android # тоже самое, реклама/аналитика.
@@ -1073,6 +1072,7 @@ waf/fingerprint$xhr,important
 ||facebook.com/ajax/qm/
 ||instagram.com/ajax/qm/
 !
+!
 ||favicon.yandex.net^$app=com.avito.android
 ||avatars.mds.yandex.net^$app=com.avito.android
 ||twinrdengine.com^$important
@@ -1103,6 +1103,7 @@ waf/fingerprint$xhr,important
 ! 21.04.25: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/203538]
 ||uber.com/v*/_events$domain=uber.com
 ||uber.com/go/_events$domain=uber.com
+!
 !
 ||report.cdnpure.com^$important
 /api/v*/download-report^$xhr,domain=apkpure.net|apkpure.com,important # аналитика.
@@ -1218,6 +1219,7 @@ calltouch.js$script,xhr
 ||static.wikia.nocookie.net/silversurfer/prod/latest/sdk.js^$script,domain=fandom.com,important
 ||theajack.github.io/disable-devtool/
 ||cdn.promeai.pro/cutout-web/v*/img/prome_27.c2d5cac.png^$image,domain=cutout.pro
+||sentry.infra.myapelsin.ru^$important
 !
 !
 !
