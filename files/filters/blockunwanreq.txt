@@ -1200,6 +1200,7 @@ calltouch.js$script,xhr
 ||api.beetv.kz/v*/epg/program_events/*/ads$xhr,domain=beetv.kz,important
 ||lyngsat.com/as10/intelsat_webinar.gif^$image,domain=lyngsat.com # реклама.
 ||apistats.rg.ru^
+||svibeacon.onezapp.com^
 ||static.wikia.nocookie.net/silversurfer/prod/latest/marketingNotificationsUnit*.js^$script,domain=fandom.com,important
 ||serverblight.com/audio/gamestartup_halloween.mp3^$media,domain=serverblight.com # кому надо, можете разблокировать. (If you need it, you can unblock it.)
 ||a.apkpure.*/dt_*_*.js$script,domain=apkpure.* # аналитика.
