@@ -730,6 +730,7 @@
 ||svibeacon.onezapp.com^
 ||amplitude-experiments.*.*^$important
 ||mtm.iptvx.one^$important
+||sentry.infra.myapelsin.ru^$important
 !
 !
 !
