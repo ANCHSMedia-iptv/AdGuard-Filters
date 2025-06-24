@@ -2579,6 +2579,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||adsmetadata.mobileadexchange.net^$important
 ||mediameter.by^$important
 ||stat*.1internet.tv^$important
+||analytics.cn.ru^
 !
 ! --
 !
