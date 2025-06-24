@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.8.1-R
-! TimeUpdated: 2025-06-23T17:30:00+00:00
+! Version: 3.8.2-R
+! TimeUpdated: 2025-06-24T14:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -831,7 +831,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||applifier.com^$important
 ||live.chartboost.com^$important
 ||my.com^$important
-||s3.amazonaws.com/appodeal-externallibs/$important # подгрузка рекламных библиотек от Appodeal в приложения.
+||s3.amazonaws.com/appodeal$important # подгрузка всякой фигни от Appodeal в приложения.
 ||inmobicdn.net^$important
 ||analytics.localytics.com^$important
 ||taboola*fastly.net^
@@ -971,12 +971,10 @@ qrator/qauth.js$script,important
 qrator/validate$xhr,important
 ||ad-source.pro^$important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
-://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.free.tiptop.vpn.proxy # аналитика и реклама.
-/^77\.88\./^$app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android # тоже самое, реклама/аналитика.
-! /^77\.88\./^$network,app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android # тоже самое, реклама/аналитика.
+://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.free.tiptop.vpn.proxy|com.infolink.limeiptv|limehd.ru.ctv
+/^77\.88\./$network,app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.yandex.mail|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv
 ||yastatic.net^$app=com.radioapp.mayakradio|com.avito.android
-/^5\.255\.255\.77/^$network,app=ru.pyaterochka.app.browser|com.avito.android # тоже самое, реклама/аналитика.
-/^5\.255\.255\.77/^$app=ru.pyaterochka.app.browser|com.avito.android # тоже самое, реклама/аналитика.
+/^5\.255\.255\.77/$network,app=ru.pyaterochka.app.browser|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv
 ||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm # подгрузка рекламы в приложение Relax FM.
 ||s3.amazonaws.com^$app=com.viber.voip
 ||bing.com^$app=com.viber.voip
@@ -1111,7 +1109,6 @@ waf/fingerprint$xhr,important
 ||getads.ru^$important
 ||d26xw8rp6mlgfg.cloudfront.net^
 ||strm.yandex.net^$app=com.infolink.limeiptv # загрузка рекламы Яндекс Директ.
-||yandex.ru^$app=com.infolink.limeiptv # реклама и аналитика.
 ||rumor.press^$third-party,important
 ||otcnet.ru/wp-content/plugins/wp-yandex-metrika/$script,xhr,domain=otcnet.ru # реклама.
 /ads/styles/all/theme/phpbbads.css$css
@@ -1142,7 +1139,7 @@ ads.js$script
 ||peers.tv/js/ptv/parental_control_controller.js^$script,domain=peers.tv
 ||peers.tv/cnplayer/imasdk/ads.*.js$script,domain=peers.tv # реклама.
 ||peers.tv/cnplayer/imasdk/ads.css$css,xhr,domain=peers.tv # реклама.
-||api.peers.tv/money_miner/*/places.json$xhr,domain=peers.tv # что это? майнер? 0_0
+||api.peers.tv/money_miner/*/places.json$xhr,domain=peers.tv # реклама.
 ||peers.tv/js/lib/mediascope.js$script,domain=peers.tv # аналитика.
 ||peers.tv/cnplayer/cnp.mob.js$script,domain=peers.tv
 ||peers.tv/ajax/getpushnotification/$xhr,domain=peers.tv
@@ -2171,7 +2168,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||tapulsads.ru^$important
 ||gonet-ads.com^$important
 ||telecid.ru^
-||www.tttturbonet.com^$app=com.dubox.drive
+||tttturbonet.com^$app=com.dubox.drive
 ||*pavo*^$important
 ||fancybox.in^
 ||adlooxtracking.ru^$important
@@ -2182,7 +2179,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||kayzen.io^
 ||adinfinitum.in^$important
 ||disk.akamaized.net^$app=com.dubox.drive
-||*gamerplay*.space^
+||gamerplay*.space^
 !
 !
 !
@@ -2698,9 +2695,9 @@ ya.ru$@$link[rel="manifest"]
 @@||collector.github.com^$important
 @@||collector.github.com/github/collect^$xhr,domain=github.com,important
 @@||api.github.com/_private/browser/$xhr,domain=github.com,important
-@@.m3u8^$stealth=referrer|token|q|ref
+@@.m3u8^$stealth=referrer|token|q|ref|offset|client|utcstart|utc|lutc|timeshift|timenow
 @@.ts^$stealth=ref|token|referrer|q
-@@.mpd^$stealth=referrer|token|ref
+@@.mpd^$stealth=referrer|token|ref|offset|utcstart|utc|lutc|timeshift|timenow
 @@||limehd.tv/api/v*/ads-banners$xhr,domain=limehd.tv
 @@||limehd.tv/api/v*/get-ads$xhr,domain=limehd.tv
 @@||limehd.tv/api/v*/ads$xhr,domain=limehd.tv
@@ -2719,8 +2716,7 @@ ya.ru$@$link[rel="manifest"]
 @@/ts/*/*.ts?q=
 @@||gitlab.com/api/graphql^$xhr,domain=gitlab.com
 @@||*sentry.gitlab.net/api/*/envelope/$xhr,domain=gitlab.com
-@@.m3u^$stealth=ref
-@@.m3u^$stealth=referrer
+@@.m3u^$stealth=ref|token|referrer|access_token
 @@||foodnetwork.com^$cookie=__ds_loc_country
 @@||foodnetwork.com^$cookie=layout
 @@.top^$app=vpn.russia_tap2free,important
@@ -2746,6 +2742,10 @@ ya.ru$@$link[rel="manifest"]
 @@||parom.tv^
 @@||bemtv.t62a.com^
 @@/46.4.80.140:$app=tv.bemtv
+@@||api.peers.tv/iptv/*/playlist.m3u
+@@||peers.tv/streaming/*/*/playlist.m3u8
+@@||mhd*.iptv2022.com^
+@@||mhd.iptv2022.com^
 !
 !
 ! -

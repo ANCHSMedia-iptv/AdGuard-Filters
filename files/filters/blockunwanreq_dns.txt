@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.6.5-R
+! Version: 3.6.6-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-06-23T17:20:00+00:00
+! TimeUpdated: 2025-06-24T14:20:00+00:00
 ! 
 !
 !
@@ -805,7 +805,7 @@
 ||tapulsads.ru^$important
 ||gonet-ads.com^$dnsrewrite=0.0.0.0,important
 ||telecid.ru^$dnsrewrite=0.0.0.0
-||www.tttturbonet.com^
+||tttturbonet.com^
 ||*pavo*^$important
 ||fancybox.in^
 ||adlooxtracking.ru^$important
@@ -817,7 +817,7 @@
 ||disk.akamaized.net^$app=com.dubox.drive
 ! disk.akamaized.net^
 ||adinfinitum.in^$dnsrewrite=0.0.0.0,important
-||*gamerplay*.space^$dnsrewrite=0.0.0.0
+||gamerplay*.space^$dnsrewrite=0.0.0.0
 !
 !
 !
@@ -842,7 +842,7 @@
 ! ||ip-api.com^
 ! ||ifconfig.co^
 ||odc.null^
-||@CawcaFr^
+||*CawcaFr^
 ||unknown.host^
 !
 !
@@ -955,7 +955,7 @@
 @@||challenges.cloudflare.com^
 @@||*sentry.gitlab.net^
 @@||iosvpn.top^
-@@||hls.tvrus.t62a.com^
+@@||tvrus.t62a.com^
 @@||redirector.gvt1.com^
 @@||pkvc-hls.cdnvideo.ru^
 @@||alpaca.t62a.com^
@@ -967,6 +967,10 @@
 @@||fornormalget.click^
 @@||parom.tv^
 @@||bemtv.t62a.com^
+@@||recaptcha.net^
+@@||mhd*.iptv2022.com^
+@@||mhd.iptv2022.com^
+@@||hls.peers.tv^
 !
 ! ===
 !
