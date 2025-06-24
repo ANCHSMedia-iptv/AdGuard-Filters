@@ -2746,6 +2746,7 @@ ya.ru$@$link[rel="manifest"]
 @@||peers.tv/streaming/*/*/playlist.m3u8
 @@||mhd*.iptv2022.com^
 @@||mhd.iptv2022.com^
+@@||api.peers.tv/auth/*/token
 !
 !
 ! -
