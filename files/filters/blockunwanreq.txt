@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.8.3-R
-! TimeUpdated: 2025-06-29T09:30:00+00:00
+! Version: 3.8.4-R
+! TimeUpdated: 2025-07-01T09:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -135,8 +135,8 @@
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru,important
 ||vk.com/js/api/openapi.js^$script,domain=~vk.com,third-party,important
-||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~githubassets.com|~gitlab.com
-||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~githubassets.com|~gitlab.com
+||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~github.githubassets.com|~gitlab.com|~24h.tv
+||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~github.githubassets.com|~gitlab.com|~24h.tv
 /itunes_referals.js^$script,third-party
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script,third-party
 ||improving.duckduckgo.com^$important
@@ -1055,7 +1055,7 @@ images/*/Discord*logo.*$image,domain=fandom.com
 ||log*.capcutapi.com^$important
 ||mobile-static.mindbox.ru^$important
 ||stat.teleport.media^$important
-||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile # 16.04.25: возможно, аналитика Mail.
+||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile|com.idamob.tinkoff.android # 16.04.25: возможно, аналитика Mail.
 ||ortomir24.ru/rest/pull.config.get.json$xhr,domain=ortomir24.ru
 ||sp-man.ru/bitrix/templates/eshop_bootstrap_green/assets/img/halva-btn.png^$image,domain=sp-man.ru
 ||vk.com^$domain=shopogolic.net|shopogolic.club # аналитика ВК.
@@ -1357,6 +1357,8 @@ calltouch.js$script,xhr
 ||ct.pinterest.com^$important
 ||widgets.pinterest.com^$important
 ||pinterest.com/*/storage_report/$important
+||*-net.pinterest.com^
+||*-net.pinimg.com^
 !
 ! ===
 !
@@ -2749,6 +2751,9 @@ ya.ru$@$link[rel="manifest"]
 @@||mhd.iptv2022.com^
 @@||api.peers.tv/auth/*/token
 @@/^77\.88\./$network,app=ru.yandex.mail
+@@||peers.tv^$cookie=PHPSESSID
+@@||24h.tv/assets/cookie-*.js$domain=24h.tv
+@@||github.githubassets.com/assets/*cookie*.js$domain=github.com
 !
 !
 ! -
