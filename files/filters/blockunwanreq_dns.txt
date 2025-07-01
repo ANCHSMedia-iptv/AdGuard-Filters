@@ -971,6 +971,7 @@
 @@||mhd*.iptv2022.com^
 @@||mhd.iptv2022.com^
 @@||hls.peers.tv^
+@@||3gppnetwork.org^
 !
 ! ===
 !
