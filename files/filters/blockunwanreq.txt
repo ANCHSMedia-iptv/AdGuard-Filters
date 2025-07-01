@@ -1055,7 +1055,7 @@ images/*/Discord*logo.*$image,domain=fandom.com
 ||log*.capcutapi.com^$important
 ||mobile-static.mindbox.ru^$important
 ||stat.teleport.media^$important
-||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile|com.idamob.tinkoff.android # 16.04.25: возможно, аналитика Mail.
+||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile|com.idamob.tinkoff.android
 ||ortomir24.ru/rest/pull.config.get.json$xhr,domain=ortomir24.ru
 ||sp-man.ru/bitrix/templates/eshop_bootstrap_green/assets/img/halva-btn.png^$image,domain=sp-man.ru
 ||vk.com^$domain=shopogolic.net|shopogolic.club # аналитика ВК.
