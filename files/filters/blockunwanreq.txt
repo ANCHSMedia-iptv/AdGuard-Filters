@@ -2752,8 +2752,8 @@ ya.ru$@$link[rel="manifest"]
 @@||api.peers.tv/auth/*/token
 @@/^77\.88\./$network,app=ru.yandex.mail
 @@||peers.tv^$cookie=PHPSESSID
-@@||24h.tv/assets/cookie-*.js$domain=24h.tv
-@@||github.githubassets.com/assets/*cookie*.js$domain=github.com
+@@||24h.tv/assets/cookie-*.js$script,domain=24h.tv
+@@||github.githubassets.com/assets/*cookie*.js$script,domain=github.com,important
 !
 !
 ! -
