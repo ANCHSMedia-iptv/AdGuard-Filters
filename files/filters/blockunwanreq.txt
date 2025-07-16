@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.8.4-R
-! TimeUpdated: 2025-07-01T012:10:00+00:00
+! Version: 3.8.7-R
+! TimeUpdated: 2025-07-16T11:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -19,7 +19,7 @@
 ! Подойдёт для мобильных устройств и компьютеров.
 ! Suitable for mobile devices and computers.
 ! Некоторые домены и правила для блокировки взяты из других источников.
-! Много чего собрано из моих «наблюдений» и добавлений.
+! Много чего собрано из моих «наблюдений» и добавлений. Все комментарии к правилам находятся в самом конце файла.
 !
 !
 !
@@ -73,7 +73,7 @@
 ||syndication.twitter.com^
 ||rexpush.pro^$important
 ||peiynu.com^$important
-||appspot.com^$domain=~appsalesgo2.appspot.com,app=~net.tsapps.appsales # разблокирован рабочий домен приложения AppSales (не реклама) [нихрена подобного, нужно всё равно вырубать Adguard перед заходом в приложение..].
+||appspot.com^$domain=~appsalesgo2.appspot.com,app=~net.tsapps.appsales
 ||yabro.ru^$important
 ||flowerpla.com^$important
 ||amocrm.ru^$important
@@ -83,7 +83,7 @@
 ||*analytics.tele2.ru^$important
 ! analytics.tele2.ru^$important
 ||bcebos.com^$important
-||*adjust*^$important # вся аналитика заблокирована зато)
+||*adjust*^$important
 ||rutrk.org^$important
 ||stat-analytics.mediavitrina.ru^$important
 ||pglstatp.com^$important
@@ -140,7 +140,7 @@
 /itunes_referals.js^$script,third-party
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script,third-party
 ||improving.duckduckgo.com^$important
-||*hicloud*^$important # Huawei
+||*hicloud*^$important
 ||gstatic.com/cv/js/sender/v*/cast_sender.js^$script
 ||gstatic.com/cast/sdk/libs/sender/*/cast_framework.js^$script
 ||virustotal.com/ui/cookie_disclaimer^$xhr,domain=virustotal.com,important
@@ -236,7 +236,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||s*.stc.yc.kpcdn.net/s*/*/adaptive/img/banner.gif$xhr,important
 ! *sendsay.ru^$important
 ||lentainform.com^$important
-/1x1.*^$image,xhr,important,domain=~autocounter.lentainform.com|~lentainform.com|~bosch-home.ru|~bsh-group.ru|~comfy.ua|~oplmanager.com|~patagonia.com|~pgatour.com|~sport-express.ru|~zobiki.ru|~idaprikol.ru|~thg.ru # 6.04.25: большинство правил взято из фильтра RU AdList: Counters.
+/1x1.*^$image,xhr,important,domain=~autocounter.lentainform.com|~lentainform.com|~bosch-home.ru|~bsh-group.ru|~comfy.ua|~oplmanager.com|~patagonia.com|~pgatour.com|~sport-express.ru|~zobiki.ru|~idaprikol.ru|~thg.ru
 ||smotrim.ru/js/media-scope.js^$script,important
 ||cdn-st*.rtr-vesti.ru/mh_files/*/imho.js^$script,domain=vesti.ru,important
 ||vesti.ru/i/bg.png$image,domain=vesti.ru,important
@@ -782,7 +782,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||cableman.ru/themes/custom/initlab_cab/images/click-icon.png^$image,domain=cableman.ru
 ||cableman.ru/themes/custom/initlab_cab/images/k-icon.png^$image,domain=cableman.ru
 ||wifika.ru/wp-content/plugins/*/pro/images/blank.gif^$image,domain=wifika.ru,important
-/admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai # может поломать сайты.
+/admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai
 ||userway.org^$third-party
 ||files.vm.ru/pdf/2025.02/original/thumb_1280_67c0a45f82682c09ce62d1a1.jpg^$image,xhr,domain=vm.ru
 ||stats.wp.com^
@@ -800,8 +800,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 /ezoic/app-ajax$xhr,important
 /wordpress-popular-posts/$xhr,script
 /_jb_static/$script,xhr,important
-||media.kasperskycontenthub.com/wp-content/uploads/sites/58/2023/11/29122455/Telegram-2trojana_banner_*_RU.jpg^$image,domain=securelist.ru # рекламный баннер
-||media.kasperskycontenthub.com/wp-content/uploads/sites/58/2020/12/21144042/purple_shift_banner_*_*.jpg^$image,domain=securelist.ru # рекламный баннер
+||media.kasperskycontenthub.com/wp-content/uploads/sites/58/2023/11/29122455/Telegram-2trojana_banner_*_RU.jpg^$image,domain=securelist.ru
+||media.kasperskycontenthub.com/wp-content/uploads/sites/58/2020/12/21144042/purple_shift_banner_*_*.jpg^$image,domain=securelist.ru
 ||unagi*.amazon.com^$important
 ||cdn-advert.smi2.net^$important
 ||mradx.net^$important
@@ -820,7 +820,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||cdn.privacy.paramount.com^$domain=last.fm
 ||promo-images.prod.ya.magnit.ru^
 ||cdn.dmtgvn.com/wrapper/js/manager.js$script,xhr,domain=infourok.ru
-||pushmarketing.sberbank-tele.com^ # связан с рекламными пуш уведомлениями (возможно) приложения банка Сбер.
+||pushmarketing.sberbank-tele.com^
 ||msg-global.m.taobao.com^$important
 ||rutube.ru/api/v*/video/end-screen/$xhr
 ||mopub.com^$important
@@ -831,7 +831,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||applifier.com^$important
 ||live.chartboost.com^$important
 ||my.com^$important
-||s3.amazonaws.com/appodeal$important # подгрузка всякой фигни от Appodeal в приложения.
+||s3.amazonaws.com/appodeal$important
 ||inmobicdn.net^$important
 ||analytics.localytics.com^$important
 ||taboola*fastly.net^
@@ -851,7 +851,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||ingest*.sentry.io^$important
 ||cdn.aaacdn.net^
 ||sentry.x5.ru^$important
-||tabun.info^ # домен госрекламы на госсайтах, сайтах учреждений в России.
+||tabun.info^
 ||in.appcenter.ms/logs^$important
 ||ads.vk.com^$important,domain=~ads.vk.ru
 ||events.maps.vk.com^$important
@@ -881,10 +881,10 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||tapas.net^$important
 ||tapjoyads.com^$important
 ||tapjoy.com^$important
-||college.72to.ru/*.gif^$image,domain=college.72to.ru # «отслеживающие» картинки на 1x1 пиксель.
+||college.72to.ru/*.gif^$image,domain=college.72to.ru
 ||cookielaw.org^$third-party
 ||*.rt.avito.ru^
-||coop-land.ru/templates/CoopLand2016/js/adriver*.js^$script,domain=coop-land.ru,important # рекламный скрипт
+||coop-land.ru/templates/CoopLand2016/js/adriver*.js^$script,domain=coop-land.ru,important
 ! /adriver$script,xhr
 ! ||*adc3-launch*^$important (soon..)
 ||applvn.com^$important
@@ -950,8 +950,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 !
 ||www.clickroot.club^$important
 ||sentry.ozon.ru^$important
-||xn--b1ajefikec6a.online/wp-content/uploads/2025/03/pari_freebet.png^$image,domain=xn--b1ajefikec6a.online # рекламный баннер
-||xn--b1ajefikec6a.online/wp-content/uploads/2025/03/bannerparo.jpg^$image,domain=xn--b1ajefikec6a.online # рекламный баннер
+||xn--b1ajefikec6a.online/wp-content/uploads/2025/03/pari_freebet.png^$image,domain=xn--b1ajefikec6a.online
+||xn--b1ajefikec6a.online/wp-content/uploads/2025/03/bannerparo.jpg^$image,domain=xn--b1ajefikec6a.online
 ||event-stream-api.magnit.ru^$important
 ||sentry-mobile.prod.ya.magnit.ru^$important
 ||socium.in^$important
@@ -962,20 +962,20 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 .ru/assets/AboutTelegramBot-*.js^$script,domain=vc.ru|dtf.ru
 ||mck72.ru/wp-content/plugins/tp-event/assets/autoload/site/js/events.js^$script,domain=mck72.ru
 ||sentry-tech.cdek.ru^$important
-||s3.eu-central-1.amazonaws.com^$important # отсюда грузятся реклама и аналитика
+||s3.eu-central-1.amazonaws.com^$important
 ||collector-prod.perek.epoch8.ru^$important
 ||fda.middle-api.magnit.ru^
-||kaspersky-labs.com^$app=com.icemobile.lenta.prod # фиг пойми, для чего приложению подключаться к домену Касперского, в том числе и сайту..
+||kaspersky-labs.com^$app=com.icemobile.lenta.prod
 ||s*.teraboxcdn.*/fe-opera-static/node-static-v*/fe-webv*-main/js/ad.*.js^$script,domain=terabox.*,important
 qrator/qauth.js$script,important
 qrator/validate$xhr,important
 ||ad-source.pro^$important
-||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus # загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
+||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus
 ://yandex.ru^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.free.tiptop.vpn.proxy|com.infolink.limeiptv|limehd.ru.ctv
 /^77\.88\./$network,app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv
 ||yastatic.net^$app=com.radioapp.mayakradio|com.avito.android
-/^5\.255\.255\.77/$network,app=ru.pyaterochka.app.browser|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv
-||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm # подгрузка рекламы в приложение Relax FM.
+/^5\.255\.255\.77/$network,app=ru.pyaterochka.app.browser|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|ru.rt.video.app.mobile
+||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm
 ||s3.amazonaws.com^$app=com.viber.voip
 ||bing.com^$app=com.viber.voip
 ||youtube.com^$app=www.metro.com
@@ -993,9 +993,10 @@ qrator/validate$xhr,important
 ||d2wy8f7a9ursnm.cloudfront.net^
 ||autocomplete.diginetica.net^
 ||data-events.cdn.viber.com^$important
-||www.googleapis.com^$app=com.viber.voip # не поломается создание/восстановлений резервных копий в/из Google Диск?.. не думаю!
+||www.googleapis.com^$app=com.viber.voip
 ||ads*viber.com^$important
-*/api/v*/get-ad-ids$document,app=com.nebulatech.voocvpnpro|com.voocvpn.moonvpnpro # подгрузка рекламных ID (судя по запросу) в приложениях VPN Secure (Vooc VPN), и VPN Pro от одного разработчика. (не реклама)
+*/api/v*/get-ad-ids$document,app=com.nebulatech.voocvpnpro|com.voocvpn.moonvpnpro
+! подгрузка рекламных ID (судя по запросу) в приложениях VPN Secure (Vooc VPN), и VPN Pro от одного разработчика. (не реклама)
 ||ads.taxiaid.org^$important
 ||*-metrica.cabconnect.org^$important
 ||fandom.com/silver-surfer.html^$domain=fandom.com,important
@@ -1009,21 +1010,21 @@ qrator/validate$xhr,important
 ||fandom.com/*/load.php?*&modules=u%3Adev%3AMediaWiki%3ADiscord.css$script,domain=fandom.com
 images/*/Discord*logo.*$image,domain=fandom.com
 ||api.corr.life/public/regions/lookup^$xhr,domain=life.ru
-||cdn.axeum.ru/assets/*/js/client_call_phone*.js^$script,domain=axeum.ru # виджет звонка.
+||cdn.axeum.ru/assets/*/js/client_call_phone*.js^$script,domain=axeum.ru
 ||client-api.remote-config.rustore.ru^
 ||admax.se^$important
 ||lyngsat.com/images/pixel_brun.gif^$image,domain=lyngsat.com
-||lyngsat.com/as10/intelsat_managedmedia_2503.gif^$image,domain=lyngsat.com # реклама.
-||lyngsat.com/as10/ses_1801.jpg^$image,domain=lyngsat.com # реклама
-||lyngsat.com/as10/greatway_desktop_2.jpg^$image,domain=lyngsat.com # реклама.
+||lyngsat.com/as10/intelsat_managedmedia_2503.gif^$image,domain=lyngsat.com
+||lyngsat.com/as10/ses_1801.jpg^$image,domain=lyngsat.com
+||lyngsat.com/as10/greatway_desktop_2.jpg^$image,domain=lyngsat.com
 ! api-hprof.odkl.ru^ (soon..)
 ||cloudflare.com/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
 ||1.1.1.1/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
 ||ovego.tv/stat/$image,domain=ovego.tv,important
 ||services.fandom.com/*/api/location^$xhr,domain=fandom.com
-||limehd.tv/api/v*/event^$xhr,domain=limehd.tv,important # аналитика
-||limehd.tv/ads/$image,domain=limehd.tv,important # рекламные изображения
-||vitv.telecomid.ru^$important # аналитика
+||limehd.tv/api/v*/event^$xhr,domain=limehd.tv,important
+||limehd.tv/ads/$image,domain=limehd.tv,important
+||vitv.telecomid.ru^$important
 ||mosspf.net^$important
 ||businessork.ru^$important
 ||foisonad.com^$important
@@ -1058,7 +1059,7 @@ images/*/Discord*logo.*$image,domain=fandom.com
 ||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile|com.idamob.tinkoff.android
 ||ortomir24.ru/rest/pull.config.get.json$xhr,domain=ortomir24.ru
 ||sp-man.ru/bitrix/templates/eshop_bootstrap_green/assets/img/halva-btn.png^$image,domain=sp-man.ru
-||vk.com^$domain=shopogolic.net|shopogolic.club # аналитика ВК.
+||vk.com^$domain=shopogolic.net|shopogolic.club
 ||js-collector.icewood.net^$important
 waf/fingerprint$xhr,important
 *waf*.js$script,important
@@ -1104,29 +1105,29 @@ waf/fingerprint$xhr,important
 !
 !
 ||report.cdnpure.com^$important
-/api/v*/download-report^$xhr,domain=apkpure.net|apkpure.com,important # аналитика.
-/report/group_user$xhr,domain=apkpure.net|apkpure.com,important # аналитика.
+/api/v*/download-report^$xhr,domain=apkpure.net|apkpure.com,important.
+/report/group_user$xhr,domain=apkpure.net|apkpure.com,important
 ||getads.ru^$important
 ||d26xw8rp6mlgfg.cloudfront.net^
-||strm.yandex.net^$app=com.infolink.limeiptv # загрузка рекламы Яндекс Директ.
+||strm.yandex.net^$app=com.infolink.limeiptv
 ||rumor.press^$third-party,important
-||otcnet.ru/wp-content/plugins/wp-yandex-metrika/$script,xhr,domain=otcnet.ru # реклама.
+||otcnet.ru/wp-content/plugins/wp-yandex-metrika/$script,xhr,domain=otcnet.ru
 /ads/styles/all/theme/phpbbads.css$css
-||smotret.tv/js/ads-2025.js^$script,domain=smotret.tv # реклама.
-||smotret.tv/js/lozad*.js^$script,domain=smotret.tv # реклама.
+||smotret.tv/js/ads-2025.js^$script,domain=smotret.tv
+||smotret.tv/js/lozad*.js^$script,domain=smotret.tv
 ||tv2free.ru/core/modules/statistics/statistics.php^$xhr,subdocument,domain=tv2free.ru
 /pwa-sw.js$script
 ||1tv.ru/push_service_worker.js^$script,domain=1tv.ru
 /no-js.*$subdocument,script
-||tvapp.*/assets/js/player/counter.js^$script,domain=tvapp.* # статистика.
-||tvapp.*/assets/js/player/disable.js^$script,domain=tvapp.* # скрипт отключения консоли по F12 (Devtools).
+||tvapp.*/assets/js/player/counter.js^$script,domain=tvapp.*
+||tvapp.*/assets/js/player/disable.js^$script,domain=tvapp.*
 ||tva.org.ua/wp-content/uploads/2023/10/izobrazhenie_2023-10-10_143432490-250x159.png^$image,domain=tva.org.ua
 ||dam.mediacorp.sg/image/upload/*/mediacorp/cna/image/2025/03/25/telegram_*_0.png^$image,domain=channelnewsasia.com
 ||boost-recommend.mediacorp.sg^$important
-||ritsatv.ru/files/protect/*.js^$domain=ritsatv.ru # скрипт отключения консоли по F12 (Devtools).
+||ritsatv.ru/files/protect/*.js^$domain=ritsatv.ru
 ||philka.ru/forum/public/style_extra/sharelinks/*.png^$image,domain=philka.ru
 ||philka.ru/forum/public/js/ips.sharelinks.js^$script,domain=philka.ru
-||seohamer.ru/banner/gif/banner*.gif^$image,third-party # реклама.
+||seohamer.ru/banner/gif/banner*.gif^$image,third-party
 ||s.contemio.ru$third-party
 ads.js$script
 ||ads.tiktok.com^$important
@@ -1137,29 +1138,29 @@ ads.js$script
 ||kino.tricolor.ru/dist/img/app_btn-icon.svg^$image,domain=kino.tricolor.ru
 ||peers.tv/js/verify_controller/verify_age_controller.js^$script,domain=peers.tv
 ||peers.tv/js/ptv/parental_control_controller.js^$script,domain=peers.tv
-||peers.tv/cnplayer/imasdk/ads.*.js$script,domain=peers.tv # реклама.
-||peers.tv/cnplayer/imasdk/ads.css$css,xhr,domain=peers.tv # реклама.
-||api.peers.tv/money_miner/*/places.json$xhr,domain=peers.tv # реклама.
-||peers.tv/js/lib/mediascope.js$script,domain=peers.tv # аналитика.
+||peers.tv/cnplayer/imasdk/ads.*.js$script,domain=peers.tv
+||peers.tv/cnplayer/imasdk/ads.css$css,xhr,domain=peers.tv
+||api.peers.tv/money_miner/*/places.json$xhr,domain=peers.tv
+||peers.tv/js/lib/mediascope.js$script,domain=peers.tv
 ||peers.tv/cnplayer/cnp.mob.js$script,domain=peers.tv
 ||peers.tv/ajax/getpushnotification/$xhr,domain=peers.tv
 ||analytics.peers.tv^$important
 ||app.torbobit.net/js/analytics/$script,domain=torbobit.net
 ||torbobit.net/fd1/img/download/payments/card_hover.png^$image,domain=torbobit.net
-||torbobit.net/files/news/image/offer%20240.png^image,domain=torbobit.net # реклама.
-||torbobit.net/files/news/image/offer%20299.png$image,domain=torbobit.net # реклама.
-||i.gyazo.com/*$image,third-party,domain=~gyazo.com # реклама.
+||torbobit.net/files/news/image/offer%20240.png^image,domain=torbobit.net
+||torbobit.net/files/news/image/offer%20299.png$image,domain=torbobit.net
+||i.gyazo.com/*$image,third-party,domain=~gyazo.com
 calltouch.js$script,xhr
 ||planetcalc.*/service/comments/$xhr,domain=planetcalc.*
 ||planetcalc.*/service/sofiabyartefact/^$xhr,domain=planetcalc.*
 ||planetcalc.*/users/*/avatar/*.png^$image,domain=planetcalc.*
-||on-tv.ru/images/youtube_on-tv_banner.png^$image,domain=on-tv.ru # реклама.
-||aeb-blog.ru/wp-content/themes/aeb-blog/images/1-2.gif^$image,domain=aeb-blog.ru # реклама.
+||on-tv.ru/images/youtube_on-tv_banner.png^$image,domain=on-tv.ru
+||aeb-blog.ru/wp-content/themes/aeb-blog/images/1-2.gif^$image,domain=aeb-blog.ru
 ||ntvplus.ru/files/image/94/77/77/-vjm.jpg^$image,domain=ntvplus.ru
 ||ntvplus.ru/files/image/10/03/192/-i24.jpg^$image,domain=ntvplus.ru
 ||reporting.synapsetv.com/assets/channelbox$app=com.synapsetv.channelbox
 ||invitro.ru/web-nofification-sw.js^$script,domain=invitro.ru
-||invitro.ru/local/templates/invitro_main/metrika.*.js$script,domain=invitro.ru # аналитика.
+||invitro.ru/local/templates/invitro_main/metrika.*.js$script,domain=invitro.ru
 ||invitro.ru/edna/assets/multibutton.css$css,domain=invitro.ru
 ||aucdn.net^$important
 ||endowmentoverhangutmost.com^$important
@@ -1170,12 +1171,12 @@ calltouch.js$script,xhr
 ||oazgvj.com^$third-party
 ||bngtrak.com^$important
 ||pemsrv.com^$important
-||svc.iptv.rt.ru/event_collector$ping # аналитика.
-||restream-media.net/event_collector$ping # аналитика.
+||svc.iptv.rt.ru/event_collector$ping
+||restream-media.net/event_collector$ping
 ||al-adtech.com^
-||player.smotrim.ru/js/piwik.js$script # аналитика.
-||player.smotrim.ru/js/advsdk.js$script # реклама.
-||player.smotrim.ru/js/ad-plugin-html5-*.js$script # реклама.
+||player.smotrim.ru/js/piwik.js$script
+||player.smotrim.ru/js/advsdk.js$script
+||player.smotrim.ru/js/ad-plugin-html5-*.js$script
 ||senoval.cdn.sports.ru/cross-recommender/recommender.*.js^$script,domain=cyber.sports.ru
 ||yandex.com^$app=jp.ne.ibis.ibispaintxapp
 ||limehd.tv/script/liveinternet.js^$script,important,domain=limehd.t
@@ -1195,12 +1196,12 @@ calltouch.js$script,xhr
 ||files.1mi.media/_next/static/media/vk.*.svg^$image,domain=prmira.ru
 ||files.1mi.media/_next/static/media/tg.*.svg^$image,domain=prmira.ru
 ||api.beetv.kz/v*/epg/program_events/*/ads$xhr,domain=beetv.kz,important
-||lyngsat.com/as10/intelsat_webinar.gif^$image,domain=lyngsat.com # реклама.
+||lyngsat.com/as10/intelsat_webinar.gif^$image,domain=lyngsat.com
 ||apistats.rg.ru^
 ||svibeacon.onezapp.com^
 ||static.wikia.nocookie.net/silversurfer/prod/latest/marketingNotificationsUnit*.js^$script,domain=fandom.com,important
 ||serverblight.com/audio/gamestartup_halloween.mp3^$media,domain=serverblight.com # кому надо, можете разблокировать. (If you need it, you can unblock it.)
-||a.apkpure.*/dt_*_*.js$script,domain=apkpure.* # аналитика.
+||a.apkpure.*/dt_*_*.js$script,domain=apkpure.*
 ||apkcombo.com/1.gif^$image,domain=apkcombo.com
 ||tvrus.eu/wp-content/themes/pennews/images/telegram_trim.png$image,domain=tvrus.eu
 ||tvrus.eu/wp-content/themes/pennews/js/custom-scripts.js^$script,domain=tvrus.eu
@@ -1210,15 +1211,15 @@ calltouch.js$script,xhr
 ||tvrus.eu/wp-content/uploads/2020/08/filtry.gif^$image,domain=tvrus.eu
 ||ruspresse.de/rhted_show.php$domain=tvrus.eu
 /cdn-cgi/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
-||amplitude-experiments.*.*^ # аналитика.
+||amplitude-experiments.*.*^
 ||gitlab.com/*/track_namespace_visits$xhr,domain=gitlab.com
-||mtm.iptvx.one^$domain=iptvx.one|epg.iptvx.one,important # аналитика.
-||iptvx.one/js/cust.js$script,domain=iptvx.one|epg.iptvx.one,important # скрипт загрузки рекламы.
+||mtm.iptvx.one^$domain=iptvx.one|epg.iptvx.one,important
+||iptvx.one/js/cust.js$script,domain=iptvx.one|epg.iptvx.one,important
 ||static.wikia.nocookie.net/silversurfer/prod/latest/sdk.js^$script,domain=fandom.com,important
 ||theajack.github.io/disable-devtool/
 ||cdn.promeai.pro/cutout-web/v*/img/prome_27.c2d5cac.png^$image,domain=cutout.pro
 ||sentry.infra.myapelsin.ru^$important
-!
+||heartbeat.beetv.kz/ping$xhr,image,domain=beetv.kz
 !
 !
 !
@@ -2281,8 +2282,10 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||gstatic.com/chrome/ntp/suggested_sites_*.json^$important
 ! Рекомендованные сайты от Гугла
 !
-||news.google.com^$important # гугл новости (нафиг нужен?)
-||enjoyxstudy.com^$important # фиг пойми что за домен..
+||news.google.com^$important
+! гугл новости (нафиг нужен?)
+||enjoyxstudy.com^$important
+! фиг пойми что за домен..
 !
 ! Блокировка адреса, который открывается после обновления браузера Опера (Opera).
 ||opera.com/*/ofa/upgraded
@@ -2291,9 +2294,12 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ! =Opera=
 ! =Опера=
 !
-||feednews.com^$removeparam,important # новости
-||oleads.com^$removeparam,important # реклама
-||sitesuggestion.opera-api*.com^$important # рекомендуемые сайты
+||feednews.com^$removeparam,important
+! новости
+||oleads.com^$removeparam,important
+! реклама
+||sitesuggestion.opera-api*.com^$important
+! рекомендуемые сайты
 ||oscore.operacdn.com^$important
 ||*-oscore.opera-api*.com^$important
 ! ws-oscore.opera-api*.com^$websocket,important
@@ -2313,11 +2319,14 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ! =Other=
 ! =Прочее=
 !
-||sf-helper.com^$important # поддомен, использующий расширением Savefrom, в фоне что то делает - что очень подозрительно.
+||sf-helper.com^$important
+! поддомен, использующий расширением Savefrom, в фоне что то делает - что очень подозрительно.
 ||*analytics-toolbar*^$important
 ||*analytics.faregy.com^$important
-||analytics.1clickvpn.com^ # аналитика расширения 1clickvpn (не реклама).
-||savefrom.net/goodbye.php # блокировка загрузки страницы при удалении расширения Savefrom.
+||analytics.1clickvpn.com^
+! аналитика расширения 1clickvpn (не реклама).
+||savefrom.net/goodbye.php
+! блокировка загрузки страницы при удалении расширения Savefrom.
 ! =
 !
 !
@@ -2467,19 +2476,22 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||googletagmanager.com^$important,domain=~inforesist.org|~starblast.io|~timepad.ru|~zakon.kz|corsair.com|~olx.*|~simon.com|~bethesda.net|~paddle.com
 ||googleadservices.com^$important
 ||google-analytics.com^$important
-||*ds.metric.gstatic.com^$important # для чего он разблокирован в одном из основных фильтров?
+||*ds.metric.gstatic.com^$important
+! для чего он разблокирован в одном из основных фильтров?
 ||analytics.google.com^$important
 ||doubleclick.net^$important
 ||googlesyndication.*^$important
 ||adservice.google.*^$important
 !
-||appsgrowthpromo*.clients*.google.com^$important # рекламный домен
+||appsgrowthpromo*.clients*.google.com^$important
+! рекламный домен
 ||jnn-pa.googleapis.com/*/Create^$xhr,other
 ||ssl.gstatic.com/*/blank_1x.png^$image
 ! accounts.google.com/_/IdpIFrameHttp/cspreport$xhr,other (06.12.24: не работает правило, 07.12.24: для безопасности разблокирован (включён))
 ||accounts.youtube.com/RotateCookies^$xhr,important
 ! gvt1.com^
-||mail-ads.google.com^$important # реклама в почте Gmail
+||mail-ads.google.com^$important
+! реклама в почте Gmail
 ||imasdk.googleapis.com^
 ||ogads*.googleapis.com^$important
 ||androidtvgtvmfe*.googleapis.com^
@@ -2595,7 +2607,8 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 @@||tc.mobile.yandex.net^
 @@||*assets.2gis.*/react.*ad.js^$script,domain=2gis.*
 @@||i*.wp.com/living.ai/wp-content/uploads/2024/08/2024082902-scaled.jpg$image,domain=living.ai
-@@||irecommend.ru/injector/botbot.js^$script,domain=irecommend.ru # антибот скрипт
+@@||irecommend.ru/injector/botbot.js^$script,domain=irecommend.ru
+! антибот скрипт
 @@||api.smotrim.ru/api/v*/geo^$xhr
 @@||returnyoutubedislikeapi.com^
 @@||sponsor.ajay.app^
@@ -2621,7 +2634,8 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||iphones.ru/wp-content/themes/simpla2/images/sprites/ir-a18a0.png^$xhr,domain=iphones.ru
 @@||a.apkpure.*/captcha
 @@||accounts.google.com/*/cspreport$xhr,other
-@@||msftconnecttest.com^ # проверка соединения с интернетом на Виндовс (домен Майкрософт).
+@@||msftconnecttest.com^
+! проверка соединения с интернетом на Виндовс (домен Майкрософт).
 @@||pay.yandex.ru^
 @@/.well-known/ddos-guard/$xhr,script,websocket
 @@||galamart.ru^$ghide
@@ -2639,7 +2653,8 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/*Sticky*Adv*.*^$script,css,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 @@||support.avito.ru^
 mi.com#@$#body { overflow: visible !important; }
-@@||stats.1clickvpn.com^ # отвечает за основной функционал расширения и приложений 1clickvpn (не реклама).
+@@||stats.1clickvpn.com^
+! отвечает за основной функционал расширения и приложений 1clickvpn (не реклама).
 @@||github.com^$cookie
 @@||yandex.net^$cookie
 @@||aliexpress.ru^$cookie
@@ -2648,26 +2663,37 @@ mi.com#@$#body { overflow: visible !important; }
 @@||api.catcast.tv^
 @@||vgtrk.cdnvideo.ru^
 @@||player.smotrim.ru/iframe
-@@||s.youtube.com^ # связан с историей просмотров видео на YouTube.
-@@||time.windows.com^ # синхронизация времени в Виндовс (также используется некоторыми мобильными приложениями).
+@@||s.youtube.com^ 
+! связан с историей просмотров видео на YouTube.
+@@||time.windows.com^ 
+! синхронизация времени в Виндовс (также используется некоторыми мобильными приложениями).
 @@||email-link.adtidy.org^$important
-@@||anketolog.ru/api/front/v*/gql$xhr,domain=anketolog.ru # 17.03.25: сайт нестабильно отображается при блокировке этого запроса, в белом списке.
-@@||obfusgated.com/*/tools/ad-block-test^$document,domain=obfusgated.com # 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
-@@||obfusgated.com/_next/static/chunks/app/*/ad-block-test/*.js^$script,domain=obfusgated.com # 22.03.25: блокировалcя из-за фильтра xinggsf, в белом списке.
+@@||anketolog.ru/api/front/v*/gql$xhr,domain=anketolog.ru 
+! 17.03.25: сайт нестабильно отображается при блокировке этого запроса, в белом списке.
+@@||obfusgated.com/*/tools/ad-block-test^$document,domain=obfusgated.com 
+! 22.03.25: не загружается из-за фильтра xinggsf, в белом списке.
+@@||obfusgated.com/_next/static/chunks/app/*/ad-block-test/*.js^$script,domain=obfusgated.com 
+! 22.03.25: блокировалcя из-за фильтра xinggsf, в белом списке.
 @@||vgtrkregion-reg.cdnvideo.ru^
-@@||connectivitycheck.gstatic.com^ # проверка соединения с интернетом (домен Гугла).
+@@||connectivitycheck.gstatic.com^ 
+! проверка соединения с интернетом (домен Гугла).
 @@||russianpost.ru^
 @@||icecast-vgtrk.cdnvideo.ru^
 vestifm.online$@$link[rel="manifest"]
-@@||cdn.adguard.*/website/adguard.*/products/screenshots/*/ad_blocking.svg^$image,domain=welcome.adguard.com|welcome.adguard.info|welcome.adguard.app # 31.03.25: не загружается картинка из-за фильтра xinggsf, в белом списке.
+@@||cdn.adguard.*/website/adguard.*/products/screenshots/*/ad_blocking.svg^$image,domain=welcome.adguard.com|welcome.adguard.info|welcome.adguard.app 
+! 31.03.25: не загружается картинка из-за фильтра xinggsf, в белом списке.
 @@||sb.ltn.fi^
-@@||limehd.tv/images/banners-demo.png^$image,,domain=limehd.tv # 8.04.25: блокируется из-за фильтра xinggsf, в белом списке.
-@@||blocklists.operacdn.com^ # получение «чёрных списков» рекламы и трекеров для браузеров Opera.
+@@||limehd.tv/images/banners-demo.png^$image,,domain=limehd.tv
+! 8.04.25: блокируется из-за фильтра xinggsf, в белом списке.
+@@||blocklists.operacdn.com^ #
+! получение «чёрных списков» рекламы и трекеров для браузеров Opera.
 @@||time.tbank.ru^
 @@||time.tinkoff.ru^
 @@||sbstats.uk^
-@@||cdn.adguard.*/content/kb/ad_blocker/general/1_exact_address.svg^$image,domain=adguard.info|adguard.com|adguard.app # 10.04.25: блокировалось из-за фильтра xinggsf, в белом списке.
-@@||cdn.adguard.*/content/kb/ad_blocker/general$domain=adguard.info|adguard.com|adguard.app # 10.04.25: блокировалось из-за фильтра xinggsf, в белом списке.
+@@||cdn.adguard.*/content/kb/ad_blocker/general/1_exact_address.svg^$image,domain=adguard.info|adguard.com|adguard.app 
+! 10.04.25: блокировалось из-за фильтра xinggsf, в белом списке.
+@@||cdn.adguard.*/content/kb/ad_blocker/general$domain=adguard.info|adguard.com|adguard.app 
+! 10.04.25: блокировалось из-за фильтра xinggsf, в белом списке.
 @@||mirconnect.ru^
 @@||cid.yandex.net^
 @@||uni.rest^
@@ -2750,10 +2776,20 @@ ya.ru$@$link[rel="manifest"]
 @@||mhd*.iptv2022.com^
 @@||mhd.iptv2022.com^
 @@||api.peers.tv/auth/*/token
-@@/^77\.88\./$network,app=ru.yandex.mail
+@@/^77\.88\./$network,app=ru.yandex.mail 
+! не приходят уведомления, не грузится приложение, в белом списке.
 @@||peers.tv^$cookie=PHPSESSID
 @@||24h.tv/assets/cookie-*.js$script,domain=24h.tv
 @@||github.githubassets.com/assets/*cookie*.js$script,domain=github.com,important
+@@||s*.storage.yandex.net^
+@@||pkvc-hls.cdnvideo.ru^
+@@||edge*-*.beetv.kz^
+@@||fl*.moveonjoy.com^
+@@||ucdn.beetv.kz^
+@@||bkm.beetv.kz^
+@@||edge*-*.beetv.kz/bpk-token/*/bpk-tv/*/tve/*.m3u8
+@@||edge*-*.beetv.kz/bpk-token/*/bpk-tv/*/tve/index.mpd
+@@||edge*-*.beetv.kz^stealth=bpk-quary
 !
 !
 ! -
@@ -2874,6 +2910,23 @@ ya.ru$@$link[rel="manifest"]
 @@||local.adguard.org^
 @@||injections.adguard.org^$important
 @@||api.adguard.org^
+!
+!
+!
+!
+! Примечание к 76 строке (правилу) - разблокирован рабочий домен приложения AppSales (не реклама) [нихрена подобного, нужно всё равно вырубать Adguard перед заходом в приложение..].
+! Примечание к 86 строке (правилу) - вся аналитика заблокирована зато)
+! Примечание к 143 строке (правилу) - Huawei
+! Примечание к 239 строке (правилу) - 6.04.25: большинство правил взято из фильтра RU AdList: Counters.
+! Примечание к 785 строке (правилу) - может поломать сайты.
+! Примечание к 823 строке (правилу) - связан с рекламными пуш уведомлениями (возможно) приложения банка Сбер
+! Примечание к 834 строке (правилу) - подгрузка всякой фигни от Appodeal в приложения
+! Примечание к 854 строке (правилу) - домен госрекламы на госсайтах, сайтах учреждений в России.
+! Примечание к 884 строке (правилу) - «отслеживающие» картинки на 1x1 пиксель.
+! Примечание к 965 строке (правилу) - отсюда грузятся реклама и аналитика
+! Примечание к 968 строке (правилу) - фиг пойми, для чего приложению подключаться к домену Касперского, в том числе и сайту..
+! Примечание к 973 строке (правилу) - загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
+! Примечание к 996 строке (правилу) - не поломается создание/восстановлений резервных копий в/из Google Диск?.. не думаю!
 !
 !
 !

@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.6.6-R
+! Version: 3.6.9-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-06-24T14:20:00+00:00
+! TimeUpdated: 2025-07-16T11:30:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 23.06.2025 17:20 UTC
+! Last Modified: 16.07.2025 11:30 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -282,7 +282,7 @@
 ||betweendigital.com^$important
 ||stracker.rmg.ru^$important
 ||instreamatic.com^
-||cedexis.com^$dnsrewrite=REFUSED,important
+||cedexis.com^$important
 ||improving.duckduckgo.com^$important
 ||*hicloud*^$important
 ||adspire.io^$important
@@ -731,6 +731,7 @@
 ||amplitude-experiments.*.*^$important
 ||mtm.iptvx.one^$important
 ||sentry.infra.myapelsin.ru^$important
+||ads.nsc-lab.io^$important
 !
 !
 !
@@ -972,6 +973,9 @@
 @@||mhd.iptv2022.com^
 @@||hls.peers.tv^
 @@||3gppnetwork.org^
+@@||s*.storage.yandex.net^
+@@||pkvc-hls.cdnvideo.ru^
+@@||dc-edge*-*.beetv.kz^
 !
 ! ===
 !
