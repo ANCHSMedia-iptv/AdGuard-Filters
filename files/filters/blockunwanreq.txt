@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.8.8-R
-! TimeUpdated: 2025-07-24T14:30:00+00:00
+! Version: 3.8.9-R
+! TimeUpdated: 2025-07-26T14:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2780,7 +2780,7 @@ ya.ru$@$link[rel="manifest"]
 @@/^77\.88\./$network,app=ru.yandex.mail 
 ! не приходят уведомления, не грузится приложение, в белом списке.
 @@||peers.tv^$cookie=PHPSESSID
-@@||24h.tv/assets/cookie-*.js$script,domain=24h.tv
+@@||/assets/cookie-*.js$script,domain=24h.tv|clicktv.uz
 @@||github.githubassets.com/assets/*cookie*.js$script,domain=github.com,important
 @@||s*.storage.yandex.net^
 @@||pkvc-hls.cdnvideo.ru^
@@ -2790,7 +2790,46 @@ ya.ru$@$link[rel="manifest"]
 @@||bkm.beetv.kz^
 @@||edge*-*.beetv.kz/bpk-token/*/bpk-tv/*/tve/*.m3u8
 @@||edge*-*.beetv.kz/bpk-token/*/bpk-tv/*/tve/index.mpd
-@@||edge*-*.beetv.kz^stealth=bpk-quary
+@@||edge*-*.beetv.kz^$stealth=bpk-quary
+@@||monoreel.ru^$cookie=PHPSESSID
+@@||s*.merlive.am^
+@@||timeshift.arpinet.am^
+@@||185.57.68.33^
+@@||158.101.222.193:88/georgia_play.php
+! @@||ncdn-*.teamcloud.am^
+@@||178.217.72.66^
+@@||alpha.tv.online.tm^
+@@||vs6.cdn.mrf.tvime.ru^
+@@||95.142.88.250^
+@@||217.11.177.56^
+@@||api.spec.uzd.udevs.io^
+@@||st*.uzdigital.tv^
+@@||mfe*.cliptv.az^
+@@||178.124.183.5^
+@@||178.124.183.5/hls/*/variant.m3u8
+@@||mfe*.svc.ott.zala.by^
+@@||mfe*.svc.ott.zala.by/hls/*/variant.m3u8
+@@||hls*.stb.md^
+@@||streaming-iptv.voka.tv^
+@@||streaming-iptv.voka.tv/*/*/*.mpd
+@@||notts.md^
+@@||stm*.notts.md^
+@@||stm*.notts.md/*/index
+@@||list.onlinetv-sochi.ru:8080/live/view55mod.php
+@@||iptv.itv.uz/hls/live/*/*/index.m3u8
+@@||iptv.itv.uz^
+@@||vod.splay.uz^
+@@||fe.tv.ucom.am^
+@@||rtmp.one.by^
+@@||tv.cdn.xsg.ge^
+@@||live.teleradiocom.tj^
+@@||89.28.25.122^
+@@||live-*.otcnet.ru^
+@@||sc.id-tv.kz^
+@@||4.59.210.197^
+@@||cdn*.skygo.mn^
+@@||65.21.85.175^
+@@||s25617.cdn.ngenix.net/mdrm/*/
 !
 !
 ! -

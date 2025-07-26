@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.7.0-R
+! Version: 3.7.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-07-24T13:30:00+00:00
+! TimeUpdated: 2025-07-26T14:30:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 24.07.2025 13:30 UTC
+! Last Modified: 26.07.2025 14:30 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -733,6 +733,7 @@
 ||mtm.iptvx.one^$important
 ||sentry.infra.myapelsin.ru^$important
 ||ads.nsc-lab.io^$important
+||heartbeat.beetv.kz^
 !
 !
 !
@@ -975,8 +976,42 @@
 @@||hls.peers.tv^
 @@||3gppnetwork.org^
 @@||s*.storage.yandex.net^
-@@||pkvc-hls.cdnvideo.ru^
-@@||dc-edge*-*.beetv.kz^
+@@||fl*.moveonjoy.com^
+@@||ucdn.beetv.kz^
+@@||edge*-*.beetv.kz^
+@@||s*.merlive.am^
+@@||timeshift.arpinet.am^
+@@||185.57.68.33^
+@@||158.101.222.193^
+! @@||ncdn-*.teamcloud.am^
+@@||178.217.72.66^
+@@||alpha.tv.online.tm^
+@@||vs6.cdn.mrf.tvime.ru^
+@@||95.142.88.250^
+@@||217.11.177.56^
+@@||api.spec.uzd.udevs.io^
+@@||st*.uzdigital.tv^
+@@||mfe*.cliptv.az^
+@@||178.124.183.5^
+@@||mfe*.svc.ott.zala.by^
+@@||hls*.stb.md^
+@@||streaming-iptv.voka.tv^
+@@||notts.md^
+@@||stm*.notts.md^
+@@||list.onlinetv-sochi.ru^
+@@||iptv.itv.uz^
+@@||vod.splay.uz^
+@@||fe.tv.ucom.am^
+@@||rtmp.one.by^
+@@||tv.cdn.xsg.ge^
+@@||live.teleradiocom.tj^
+@@||89.28.25.122^
+@@||live-*.otcnet.ru^
+@@||sc.id-tv.kz^
+@@||4.59.210.197^
+@@||cdn*.skygo.mn^
+@@||65.21.85.175^
+!
 !
 ! ===
 !
