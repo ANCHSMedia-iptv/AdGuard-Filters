@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 3.8.9-R
-! TimeUpdated: 2025-07-26T14:30:00+00:00
+! TimeUpdated: 2025-07-26T14:58:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2830,6 +2830,8 @@ ya.ru$@$link[rel="manifest"]
 @@||cdn*.skygo.mn^
 @@||65.21.85.175^
 @@||s25617.cdn.ngenix.net/mdrm/*/
+! Много чё не работало на сайте из-за фильтра xinggsf, в белом списке.
+@@||spectator-api.salomtv.uz/v*/new/banners$xhr,domain=salomtv.uz
 !
 !
 ! -
