@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.8.9-R
-! TimeUpdated: 2025-07-26T14:58:00+00:00
+! Version: 3.9.0-R
+! TimeUpdated: 2025-07-27T15:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2788,15 +2788,15 @@ ya.ru$@$link[rel="manifest"]
 @@||fl*.moveonjoy.com^
 @@||ucdn.beetv.kz^
 @@||bkm.beetv.kz^
-@@||edge*-*.beetv.kz/bpk-token/*/bpk-tv/*/tve/*.m3u8
+@@||edge*-*.beetv.kz/*/tve/index.m3u8
+@@||ucdn.beetv.kz/bpk-tv/*/tve/index.m3u8
 @@||edge*-*.beetv.kz/bpk-token/*/bpk-tv/*/tve/index.mpd
-@@||edge*-*.beetv.kz^$stealth=bpk-quary
 @@||monoreel.ru^$cookie=PHPSESSID
 @@||s*.merlive.am^
 @@||timeshift.arpinet.am^
 @@||185.57.68.33^
 @@||158.101.222.193:88/georgia_play.php
-! @@||ncdn-*.teamcloud.am^
+@@||ncdn-*.teamcloud.am^
 @@||178.217.72.66^
 @@||alpha.tv.online.tm^
 @@||vs6.cdn.mrf.tvime.ru^
@@ -2805,6 +2805,7 @@ ya.ru$@$link[rel="manifest"]
 @@||api.spec.uzd.udevs.io^
 @@||st*.uzdigital.tv^
 @@||mfe*.cliptv.az^
+@@||mfe*.cliptv.az/dash/*.ism/playlist.mpd
 @@||178.124.183.5^
 @@||178.124.183.5/hls/*/variant.m3u8
 @@||mfe*.svc.ott.zala.by^
@@ -2828,10 +2829,30 @@ ya.ru$@$link[rel="manifest"]
 @@||sc.id-tv.kz^
 @@||4.59.210.197^
 @@||cdn*.skygo.mn^
+@@||cdn*.skygo.mn/live/disk1/*/HL*-FTA/*.m3u8
+@@||cdn*.skygo.mn/live/disk1/*/DASH-FTA/*.mpd
 @@||65.21.85.175^
 @@||s25617.cdn.ngenix.net/mdrm/*/
 ! Много чё не работало на сайте из-за фильтра xinggsf, в белом списке.
-@@||spectator-api.salomtv.uz/v*/new/banners$xhr,domain=salomtv.uz
+@@||spectator-api.salomtv.uz/v*/new/banners$xhr,domain=salomtv.us
+!
+@@||dai.google.com/linear/hls/event/*/master.m3u8$important
+@@||dai.google.com/ssai/event/*/master.m3u8$important
+@@||dai.google.com/linear/hls/pa/event/*/*.m3u8$important
+@@||teleport.cc^
+@@||teleport.cc/HLS/*.m3u8
+@@||178.134.1.158^
+@@||178.124.179.122^
+@@||94.43.1.138^
+@@||tbs*-edge*.itdc.ge^
+@@||dvr-player.smotrim.ru^
+@@||cdnlb.tvplayhome.lt^
+@@||cdn*.tvplayhome.lt^
+@@||tv.tuva.ru/*/*.m3u8
+@@||vod.tuva.ru/*/*.m3u8
+@@||otv.wotom.net^
+@@||tvcdn*.esilnet.kz^
+! @@||tvcdn*.?.kz^
 !
 !
 ! -

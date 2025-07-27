@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.7.1-R
+! Version: 3.7.2-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-07-26T14:30:00+00:00
+! TimeUpdated: 2025-07-27T15:30:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 26.07.2025 14:30 UTC
+! Last Modified: 27.07.2025 15:30 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -983,7 +983,7 @@
 @@||timeshift.arpinet.am^
 @@||185.57.68.33^
 @@||158.101.222.193^
-! @@||ncdn-*.teamcloud.am^
+@@||ncdn-*.teamcloud.am^
 @@||178.217.72.66^
 @@||alpha.tv.online.tm^
 @@||vs6.cdn.mrf.tvime.ru^
@@ -1011,6 +1011,18 @@
 @@||4.59.210.197^
 @@||cdn*.skygo.mn^
 @@||65.21.85.175^
+@@||dai.google.com^$important
+@@||teleport.cc^
+@@||178.134.1.158^
+@@||178.124.179.122^
+@@||94.43.1.138^
+@@||tbs*-edge*.itdc.ge^
+@@||dvr-player.smotrim.ru^
+@@||cdnlb.tvplayhome.lt^
+@@||cdn*.tvplayhome.lt^
+@@||otv.wotom.net^
+@@||tvcdn*.esilnet.kz^
+! @@||tvcdn*.?.kz^
 !
 !
 ! ===
