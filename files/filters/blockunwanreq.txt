@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.9.1-R
-! TimeUpdated: 2025-07-28T13:30:00+00:00
+! Version: 3.9.2-R
+! TimeUpdated: 2025-07-29T08:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -891,7 +891,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||freeman42.ru^
 ! wsd-fingerprint.kontur.ru/api/v*/fingerprint^$xhr,domain=kontur.ru (новое правило, строка 894)
 ||tp.kontur.ru/support/support_center.js^$script,domain=kontur.ru
-/api/v*/fingerprint$xhr,important
+/api/v*/fingerprint$xhr,important,domain=~limehd.tv
 ||time.is/js/7/jquary.ad.js$script,domain=time.is
 ||provision.app.devapps.ru^$important
 /files/tgparser/*.html$subdocument,domain=armeniasputnik.am|sputnikankhazia.info|sputnik-abkhazia.ru|sputnik-georgia.com|sputnik-georgia.ru|sputnik-news.ee|sputnik-ossetia.com|sputnik-ossetia.com|sputnik-tj.com|sputnik.az|sputnik.by|sputnik.kg|sputnik.kz|sputnik.md|sputniknews-uz.com|sputniknews.cn|sputniknews.com|sputniknews.gr
@@ -1062,7 +1062,7 @@ images/*/Discord*logo.*$image,domain=fandom.com
 ||vk.com^$domain=shopogolic.net|shopogolic.club
 ||js-collector.icewood.net^$important
 waf/fingerprint$xhr,important
-*waf*.js$script,important
+/waf*.js$script,important,domain=~limehd.tv
 ||adspector.io^$important
 ! 19.04.25: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/203491]
 ||discord.com/api/v*/experiments?$domain=discord.com
@@ -1179,7 +1179,7 @@ calltouch.js$script,xhr
 ||player.smotrim.ru/js/ad-plugin-html5-*.js$script
 ||senoval.cdn.sports.ru/cross-recommender/recommender.*.js^$script,domain=cyber.sports.ru
 ||yandex.com^$app=jp.ne.ibis.ibispaintxapp
-||limehd.tv/script/liveinternet.js^$script,important,domain=limehd.t
+||limehd.tv/script/liveinternet.js^$script,important,domain=limehd.tv
 ||static-iptv2021.cdnvideo.ru/*-static/lime-events-config.json^$xhr,domain=limehd.tv
 ||limehd.tv/script/exp-metrika.js^$script,important,domain=limehd.tv
 ||adm.dimonvideo.ru^
@@ -1221,6 +1221,7 @@ calltouch.js$script,xhr
 ||sentry.infra.myapelsin.ru^$important
 ||heartbeat.beetv.kz/ping$xhr,image,domain=beetv.kz
 ||rum.cdnpure.com^$important
+||static.yoomoney.ru^$domain=limehd.tv
 !
 !
 !
@@ -2739,7 +2740,7 @@ ya.ru$@$link[rel="manifest"]
 @@||woobl.ru^
 @@||graphql.kinopoisk.ru^
 @@||challenges.cloudflare.com^
-@@||ok.ru/dk?cmd=videoStatNew
+@@||ok.ru/dk
 @@||recaptcha.net^
 @@/channel/*/index.m3u8?q=
 @@||*-assets.2gis.*/gdprCookieBanner.*.js^$script,domain=2gis.*,important
@@ -2820,7 +2821,7 @@ ya.ru$@$link[rel="manifest"]
 @@||streaming-iptv.voka.tv/*/*/*.mpd
 @@||notts.md^
 @@||stm*.notts.md^
-@@||stm*.notts.md/*/index
+@@||stm*.notts.md/*/index.
 @@||list.onlinetv-sochi.ru:8080/live/view55mod.php
 @@||iptv.itv.uz/hls/live/*/*/index.m3u8
 @@||iptv.itv.uz^
@@ -2860,6 +2861,9 @@ ya.ru$@$link[rel="manifest"]
 @@||tvcdn*.esilnet.kz^
 ! @@||tvcdn*.?.kz^
 @@||accounts.google.com/gsi/client$domain=splay.uz
+@@||limehd.tv/xpvnsulc/
+@@||limehd.tv/api/v*/fingerprint^$xhr,domain=limehd.tv
+@@||limehd.tv/_nuxt/auth-form.*.js^$script,domain=limehd.tv
 !
 !
 ! -
