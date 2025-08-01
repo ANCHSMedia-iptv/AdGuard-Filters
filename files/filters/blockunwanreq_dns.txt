@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.7.4-R
+! Version: 3.7.4.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-07-31T15:35:00+00:00
+! TimeUpdated: 2025-08-01T15:35:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 31.07.2025 15:35 UTC
+! Last Modified: 01.08.2025 15:35 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -1036,6 +1036,20 @@
 @@||tvcdn*.esilnet.kz^
 ! @@||tvcdn*.?.kz^
 @@||mwlogin.net^
+@@||servicepipe.ru^
+@@||tvrlive.susu.ru^
+@@||85.187.13.40^
+@@||dc.tbnbaltia.eu^
+@@||wz-kt.ktk.kz^
+@@||live-sovsec-ref.cdnvideo.ru^
+@@||31.210.208.171^
+@@||-live*.cgtn.com^
+@@||liveerostv.cdnvideo.ru^
+@@||185.46.48.18^
+@@||qazaqstantv-stream.qazcdn.com^
+@@||video*.in-news.ru^
+@@||132544.edgevideo.ru^ 
+@@||194.158.222.36^
 !
 !
 ! ===

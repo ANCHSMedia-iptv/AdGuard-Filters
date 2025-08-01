@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.9.3-R
-! TimeUpdated: 2025-07-31T15:30:00+00:00
+! Version: 3.9.3.1-R
+! TimeUpdated: 2025-08-01T15:35:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2896,8 +2896,21 @@ ya.ru$@$link[rel="manifest"]
 @@||127.0.0.1:28388/intel/v*/$xhr
 @@||127.0.0.1:28389/intel/v*/$xhr
 @@||127.0.0.1:28390$websocket
-@@||servicepipe.ru^
+@@||servicepipe.ru^$script
 @@||trives-shop.ru^$cookie=PHPSESSID
+@@||tvrlive.susu.ru^
+@@||85.187.13.40^
+@@||dc.tbnbaltia.eu^
+@@||wz-kt.ktk.kz^
+@@||live-sovsec-ref.cdnvideo.ru^
+@@||31.210.208.171^
+@@||*-live*.cgtn.com^
+@@||liveerostv.cdnvideo.ru^
+@@||185.46.48.18^
+@@||qazaqstantv-stream.qazcdn.com^
+@@||video*.in-news.ru^
+@@||132544.edgevideo.ru^ 
+@@||194.158.222.36^
 !
 !
 ! -
@@ -3025,6 +3038,7 @@ ya.ru$@$link[rel="manifest"]
 ||woobl.ru/stream/*.m3u8^
 ||woobl.ru/hls987/*.m3u8^
 ||woobl.ru/hls2/*.m3u8^
+!
 ||moobl.ru/hls/*.m3u8^
 ||moobl.ru/iptv/*.m3u8^
 !
