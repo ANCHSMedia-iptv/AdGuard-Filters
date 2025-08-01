@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.9.2-R
-! TimeUpdated: 2025-07-29T08:30:00+00:00
+! Version: 3.9.3-R
+! TimeUpdated: 2025-07-31T15:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -185,7 +185,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||russianfood.com/images/blg.png^$image,domain=russianfood.com,important
 ||rbc.ru/v*/geoinfo/by-ip/$xhr,domain=rbc.ru
 ! ext.clickstream.sberbank.ru/metrics/$xhr,important (новое правило, строка 771)
-||servicepipe.ru/static/*.js^$script,domain=~onlinetrade.ru|~limehd.tv
+! servicepipe.ru/static/*.js^$script,domain=~onlinetrade.ru|~limehd.tv
 ||player.twitch.tv/js/embed/v*.js^$script,domain=~twitch.tv,important
 ||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com,important
 ||cdn.gamestatic.net/files/pictures/promo_banner_*.png^$image,domain=rbkgames.com,important
@@ -840,7 +840,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||api.sms.*.miui.com^
 ||top-fwz1.mail.ru^$important
 ||alt-ad.mail.ru^$important
-||connect.mail.ru^$important
+||connect.mail.ru^$important,domain=~mail.ru
 ||media-*.mail.ru^$important
 ||rs.mail.ru^$important
 ||push-me.mail.ru^
@@ -852,7 +852,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||cdn.aaacdn.net^
 ||sentry.x5.ru^$important
 ||tabun.info^
-||in.appcenter.ms/logs^$important
+||appcenter.ms/logs^$important
 ||ads.vk.com^$important,domain=~ads.vk.ru
 ||events.maps.vk.com^$important
 ||madnet.ru^$important
@@ -865,19 +865,19 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||appsdt.com^$important
 ||admost.com^$important
 ||appnext.com^$important
-! ||*moatads*^$important (soon..)
-! ||*mobile-static.adsafeprotected*^$important (soon..)
+! ||*moatads*^$important (Waiting for adding..)
+! ||*mobile-static.adsafeprotected*^$important (Waiting for adding..)
 ||adcolony.com^$important
-! ||appnext.hs^$important (soon..)
+! ||appnext.hs^$important (Waiting for adding..)
 ||supersonicads.com^$important
 ||startappservice.com^$important
 ||adz.wattpad.com^$important
-! ||ad.api.kaffnet.com^$important (soon..)
+! ||ad.api.kaffnet.com^$important (Waiting for adding..)
 ||batmobil.net^$important
-! 61.145.124.238$network,important (soon..)
+! 61.145.124.238$network,important (Waiting for adding..)
 ||eqmob.com^$important
-! ||duapps.com^$important (soon..)
-! ||smaato.*^$important (soon..)
+! ||duapps.com^$important
+! ||smaato.*^$important (Waiting for adding..)
 ||tapas.net^$important
 ||tapjoyads.com^$important
 ||tapjoy.com^$important
@@ -886,7 +886,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||*.rt.avito.ru^
 ||coop-land.ru/templates/CoopLand2016/js/adriver*.js^$script,domain=coop-land.ru,important
 ! /adriver$script,xhr
-! ||*adc3-launch*^$important (soon..)
+! ||*adc3-launch*^$important
 ||applvn.com^$important
 ||freeman42.ru^
 ! wsd-fingerprint.kontur.ru/api/v*/fingerprint^$xhr,domain=kontur.ru (новое правило, строка 894)
@@ -1017,7 +1017,7 @@ images/*/Discord*logo.*$image,domain=fandom.com
 ||lyngsat.com/as10/intelsat_managedmedia_2503.gif^$image,domain=lyngsat.com
 ||lyngsat.com/as10/ses_1801.jpg^$image,domain=lyngsat.com
 ||lyngsat.com/as10/greatway_desktop_2.jpg^$image,domain=lyngsat.com
-! api-hprof.odkl.ru^ (soon..)
+! api-hprof.odkl.ru^
 ||cloudflare.com/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
 ||1.1.1.1/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
 ||ovego.tv/stat/$image,domain=ovego.tv,important
@@ -1147,7 +1147,7 @@ ads.js$script
 ||analytics.peers.tv^$important
 ||app.torbobit.net/js/analytics/$script,domain=torbobit.net
 ||torbobit.net/fd1/img/download/payments/card_hover.png^$image,domain=torbobit.net
-||torbobit.net/files/news/image/offer%20240.png^image,domain=torbobit.net
+||torbobit.net/files/news/image/offer%20240.png^$image,domain=torbobit.net
 ||torbobit.net/files/news/image/offer%20299.png$image,domain=torbobit.net
 ||i.gyazo.com/*$image,third-party,domain=~gyazo.com
 calltouch.js$script,xhr
@@ -1160,14 +1160,14 @@ calltouch.js$script,xhr
 ||ntvplus.ru/files/image/10/03/192/-i24.jpg^$image,domain=ntvplus.ru
 ||reporting.synapsetv.com/assets/channelbox$app=com.synapsetv.channelbox
 ||invitro.ru/web-nofification-sw.js^$script,domain=invitro.ru
-||invitro.ru/local/templates/invitro_main/metrika.*.js$script,domain=invitro.ru
+||invitro.ru/local/templates/invitro_main/metrika.*.js$script,domain=invitro.ru,important
 ||invitro.ru/edna/assets/multibutton.css$css,domain=invitro.ru
 ||aucdn.net^$important
 ||endowmentoverhangutmost.com^$important
 ||ozobang.com^$important
 ||hue2b.com^$important
 /backend_loader.php?$image,xhr
-||cdn.unshorten.net/assets/js/cookie.js^$script,domain=unshorten.net
+||cdn.unshorten.net/assets/js/cookie.js^$script,domain=unshorten.net,important
 ||oazgvj.com^$third-party
 ||bngtrak.com^$important
 ||pemsrv.com^$important
@@ -1222,6 +1222,11 @@ calltouch.js$script,xhr
 ||heartbeat.beetv.kz/ping$xhr,image,domain=beetv.kz
 ||rum.cdnpure.com^$important
 ||static.yoomoney.ru^$domain=limehd.tv
+||agj.st^
+||dogo.intel.com^
+||chaseherbalpasty.com^$important
+||moobl.ru/*/c.gif^$image,domain=moobl.ru
+||adlook.tech^$important
 !
 !
 !
@@ -1674,8 +1679,18 @@ dom.ru,*.dom.ru##div[class^="sc-6e31cbc2-0 kKbgFL"]
 ||st-ok.cdn-vk.ru/res/assets/MetricsAnonymUserBehaviourImitation-*.js^$script,domain=ok.ru
 ||st-ok.cdn-vk.ru/res/assets/FingerprintJS-*.js^$script,domain=ok.ru
 ||st-ok.cdn-vk.ru/res/assets/DzBlockDetect-*.js^$script,domain=ok.ru
+! В скриптах полная жесть.. куча метрики и всякого «мусора», причём  зависимые - заблокируешь запрос, сломается сайт.
 !
 ! ==
+!
+!
+!
+!
+!
+!
+!
+!
+!
 !
 !
 !
@@ -2093,6 +2108,7 @@ cutout.pro###app > div.v-application--wrap > div:first-child > div > div.fixed-h
 sputniknews.ru,*.sputniknews.ru##a[href*="t.me/sputniknews"]
 116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru###app > div:first-child > div.layout-notifications:last-child > div.wrapper_bAXuV > div.content_bAXuV
 ip.osnova.news##a[href=^"/hosting.html"]
+outsidethebox.ms##div.site-container:first-child > div.footer-widgets:nth-child(3) > div.wrap > div.footer-widgets-3.widget-area:last-child
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2153,8 +2169,9 @@ thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'dmp_geo', 'null')
 thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'longVisits', '$remove$')
 thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'watchedVideoArticles', 'null')
 thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/', '$remove$')
-! habr.com#%#//scriptlet('set-?-storage-item', '__pwacompat_manifest', 'emptyObj') (soon..)
-! soon..
+! habr.com#%#//scriptlet('set-?-storage-item', '__pwacompat_manifest', 'emptyObj') (Waiting for adding..)
+! (Waiting for adding more scripts..)
+!
 !
 ! -
 !
@@ -2211,6 +2228,9 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||odc.null^
 ||*CawcaFr^
 ||unknown.host^
+!
+!
+!
 !
 !
 !
@@ -2431,13 +2451,13 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||advertising.yandex.ru^
 $document,removeparam=from,domain=yandex.*|ya.ru
 ||yastatic.net/es5-shims/*/es5-shims.*.js$script,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
-! ||yastatic.net/s*/web4static/*/static/App-FootScript_advRsya*.js (soon..)
+! ||yastatic.net/s*/web4static/*/static/App-FootScript_advRsya*.js (Waiting for adding..)
 ||yastatic.net/s*/web4static/*/static/media/noize-transparent*.gif^$image
 ||127.0.0.1:30102/p?t=
 ||127.0.0.1:29009/p?t=
 ||127.0.0.1:29010/p?t=
 ||127.0.0.1:30103/p?t=
-||startup.mobile.yandex.nes^
+||startup.mobile.yandex.nes^$important
 ||localhost:30102/p?t=
 ||localhost:29009/p?t=
 ||localhost:29010/p?t=
@@ -2553,7 +2573,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||*ads.unity3d.com^$important
 ||*mediation.unity3d.com^$important
 ||mc.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~ya.ru|~aiondb.ru
-||an.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~ya.ru # |~e.mail.ru
+||an.yandex.*^$important,domain=~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~ya.ru
 ||analytics.mobile.yandex.net^$important
 ||*footprintdns.com^$important
 ||inmobi.com^$important
@@ -2597,6 +2617,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||mediameter.by^$important
 ||stat*.1internet.tv^$important
 ||analytics.cn.ru^
+||cane.intel.com^
 !
 ! --
 !
@@ -2704,6 +2725,7 @@ vestifm.online$@$link[rel="manifest"]
 @@||scuba.com^$domain=ebay.com
 @@||*zabava-htlive.cdn.ngenix.net^
 @@||drm*.nowdrm.co^
+@@||nowdrm.co^
 @@||api.deliverymobile.ru^
 @@||selstorage.ru^$app=com.riselogic.dm.lightcheck
 @@||vkusnoitochka.ru^
@@ -2837,6 +2859,7 @@ ya.ru$@$link[rel="manifest"]
 @@||cdn*.skygo.mn^
 @@||cdn*.skygo.mn/live/disk1/*/HL*-FTA/*.m3u8
 @@||cdn*.skygo.mn/live/disk1/*/DASH-FTA/*.mpd
+@@||cdn*.skygo.mn/live/disk1/*/*-DASH-FTA/*.mpd
 @@||cdn.skygo.mn^
 @@||65.21.85.175^
 @@||s25617.cdn.ngenix.net/mdrm/*/
@@ -2864,6 +2887,17 @@ ya.ru$@$link[rel="manifest"]
 @@||limehd.tv/xpvnsulc/
 @@||limehd.tv/api/v*/fingerprint^$xhr,domain=limehd.tv
 @@||limehd.tv/_nuxt/auth-form.*.js^$script,domain=limehd.tv
+@@||vcdn.biz/*_megogo/live/*/*/*.m3u8
+@@||vcdn.biz^
+@@||mwlogin.net^
+@@||127.0.0.1:28385/intel/v*/$xhr
+@@||127.0.0.1:28386/intel/v*/$xhr
+@@||127.0.0.1:28387/intel/v*/$xhr
+@@||127.0.0.1:28388/intel/v*/$xhr
+@@||127.0.0.1:28389/intel/v*/$xhr
+@@||127.0.0.1:28390$websocket
+@@||servicepipe.ru^
+@@||trives-shop.ru^$cookie=PHPSESSID
 !
 !
 ! -
@@ -2871,7 +2905,13 @@ ya.ru$@$link[rel="manifest"]
 ! The site DeepL crashes when applying blocking rules to the tracking-*.js, late-cookieBannerLax.*.js and late-cookieBannerLax.*.css scripts, which are listed below and allowed.
 @@||static.deepl.com/gatsby/tracking-*.js^$script,domain=deepl.com
 @@||static.deepl.com/gatsby/*cookieBanner*.*^$script,css,domain=deepl.com
+!
+! Сервис заблокировал доступ пользователям из РФ и Беларуси 18.06.2025.
+! Неизвестно почему, но, возможно, из-за эмарго или же санкций.
+! Забыл добавить ещё тогда..
+!
 ! -
+!
 !
 !
 !
@@ -2980,10 +3020,26 @@ ya.ru$@$link[rel="manifest"]
 !
 !
 !
+! ===
+!
+||woobl.ru/stream/*.m3u8^
+||woobl.ru/hls987/*.m3u8^
+||woobl.ru/hls2/*.m3u8^
+||moobl.ru/hls/*.m3u8^
+||moobl.ru/iptv/*.m3u8^
+!
+!
+! ===
+!
+!
+!
+!
+!
 !
 @@||local.adguard.org^
 @@||injections.adguard.org^$important
 @@||api.adguard.org^
+!
 !
 !
 !
@@ -3001,6 +3057,8 @@ ya.ru$@$link[rel="manifest"]
 ! Примечание к 968 строке (правилу) - фиг пойми, для чего приложению подключаться к домену Касперского, в том числе и сайту..
 ! Примечание к 973 строке (правилу) - загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
 ! Примечание к 996 строке (правилу) - не поломается создание/восстановлений резервных копий в/из Google Диск?.. не думаю!
+!
+!
 !
 !
 !

@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.7.3-R
+! Version: 3.7.4-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-07-28T13:30:00+00:00
+! TimeUpdated: 2025-07-31T15:35:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 28.07.2025 13:30 UTC
+! Last Modified: 31.07.2025 15:35 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -88,7 +88,7 @@
 ||click.sender.yandex.ru^
 ||advertising.yandex.ru^
 ||clck.yandex.ru^
-||startup.mobile.yandex.nes^
+||startup.mobile.yandex.nes^$important
 ||mc.yango.com^$important
 !
 !
@@ -525,18 +525,18 @@
 ||appsdt.com^$dnsrewrite=NXDOMAIN,important
 ||admost.com^$important
 ||appnext.com^$dnsrewrite=REFUSED,important
-! ||*moatads*^$dnsrewrite=MXDOMAIN,important (soon..)
-! ||*mobile-static.adsafeprotected*^$important (soon..)
+! ||*moatads*^$dnsrewrite=MXDOMAIN,important
+! ||*mobile-static.adsafeprotected*^$important
 ||adcolony.com^$important
-! ||appnext.hs^$dnsrewrite=NXDOMAIN,important (soon..)
+! ||appnext.hs^$dnsrewrite=NXDOMAIN,important (Waiting for adding..)
 ||supersonicads.com^$dnsrewrite=0.0.0.0,important
 ||startappservice.com^$dnsrewrite=NXDOMAIN,important
 ||adz.wattpad.com^$important
-! ||ad.api.kaffnet.com^$dnsrewrite=REFUSED,important (soon..)
+! ||ad.api.kaffnet.com^$dnsrewrite=REFUSED,important (Waiting for adding..)
 ||batmobil.net^$dnsrewrite=NXDOMAIN,important
 ||eqmob.com^$important
 ! ||duapps.com^$dnsrewrite=NXDOMAIN,important
-! ||smaato.*^$dnsrewrite=NXDOMAIN,important (soon..)
+! ||smaato.*^$dnsrewrite=NXDOMAIN,important (Waiting for adding..)
 ||tapas.net^$dnsrewrite=NXDOMAIN,important
 ||tapjoyads.com^$dnsrewrite=NXDOMAIN,important
 ||tapjoy.com^$dnsrewrite=NXDOMAIN,important
@@ -545,7 +545,7 @@
 ||burp^$dnsrewrite=NXDOMAIN,important
 ||*.rt.avito.ru^
 ||acs.m.taobao.com^$important
-! ||*adc3-launch*^$important (soon..)
+! ||*adc3-launch*^$important
 ||applvn.com^$important
 ||freeman42.ru^
 ||tealiumiq.com^$important
@@ -733,8 +733,13 @@
 ||mtm.iptvx.one^$important
 ||sentry.infra.myapelsin.ru^$important
 ||ads.nsc-lab.io^$important
+||*-net.pinterest.com^
+||*-net.pinimg.com^
 ||heartbeat.beetv.kz^
 ||rum.cdnpure.com^$important
+||adj.st^
+||dogo.intel.com^
+||chaseherbalpasty.com^$important,dnsrewrite=0.0.0.0
 !
 !
 !
@@ -853,6 +858,7 @@
 !
 !
 !
+!
 ! -- ==Браузерные запросы ==
 ! -- == Browser requests ==
 !
@@ -936,6 +942,7 @@
 @@||restream-media.net^
 @@||*zabava-htlive.cdn.ngenix.net^
 @@||drm*.nowdrm.co^
+@@||nowdrm.co^
 @@||api.deliverymobile.ru^
 @@||vkusnoitochka.ru^
 @@||orderapp.burgerkingrus.ru^
@@ -1028,6 +1035,7 @@
 @@||otv.wotom.net^
 @@||tvcdn*.esilnet.kz^
 ! @@||tvcdn*.?.kz^
+@@||mwlogin.net^
 !
 !
 ! ===
