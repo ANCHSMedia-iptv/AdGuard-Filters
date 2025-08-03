@@ -1333,13 +1333,15 @@ calltouch.js$script,xhr
 ! Blocking ads, analytics and other “garbage”.
 ! Блокировка рекламы, аналитики и прочего «мусора».
 !
-||finance.ozon.ru/api/v*/referralProgram_promoter_getPromoterInfo^$xhr,domain=finance.ozon.ru
-||finance.ozon.ru/api/v*/loyalty_promotions_getConsistentPromotion^$xhr,domain=finance.ozon.ru
-||finance.ozon.ru/api/v*/loyalty_promotions_getBanners^$xhr,domain=finance.ozon.ru
-||finance.ozon.ru/api/v*/loyalty_stars_getPromotionStatus^$xhr,domain=finance.ozon.ru
+! finance.ozon.ru/api/v*/referralProgram_promoter_getPromoterInfo^$xhr,domain=finance.ozon.ru
+||finance.ozon.ru/apps/loyalty/api/loyalty/creditPromotion$xhr,domain=finance.ozon.ru
+! finance.ozon.ru/api/v*/loyalty_promotions_getBanners^$xhr,domain=finance.ozon.ru
+! finance.ozon.ru/api/v*/loyalty_stars_getPromotionStatus^$xhr,domain=finance.ozon.ru
 ||cdn*.ozone.ru/s*/ob-frontend/prod/release/all/static/assets/_app/immutable/assets/new-ozon-app-qr.*.svg^$image,domain=finance.ozon.ru
-||finance.ozon.ru/api/v*/performance^$xhr,ping,domain=finance.ozon.ru,important
-||finance.ozon.ru/api/v*/loyalty_promotions_getCurtain^$xhr,domain=finance.ozon.ru
+! finance.ozon.ru/api/v*/performance^$xhr,ping,domain=finance.ozon.ru,important
+! finance.ozon.ru/api/v*/loyalty_promotions_getCurtain^$xhr,domain=finance.ozon.ru
+||finance.ozon.ru/*/promoter$xhr,domain=finance.ozon.ru
+||
 !
 ! От блокировки картинки с QR кодом для скачивания приложения Ozon Банка, текст справа немного съехал налево 0_0.
 ! From blocking the picture with the QR code for downloading the Ozon Bank app, the text on the right has moved slightly to the left 0_0.
@@ -2228,6 +2230,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ||odc.null^
 ||*CawcaFr^
 ||unknown.host^
+||crl.fk.local^
 !
 !
 !
@@ -2911,6 +2914,7 @@ ya.ru$@$link[rel="manifest"]
 @@||video*.in-news.ru^
 @@||132544.edgevideo.ru^ 
 @@||194.158.222.36^
+@@||ozon.*/search/?from_global=*&text=*$domain=ozon.ru|ozon.by
 !
 !
 ! -
