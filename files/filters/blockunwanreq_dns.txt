@@ -1025,6 +1025,7 @@
 @@||sc.id-tv.kz^
 @@||4.59.210.197^
 @@||cdn*.skygo.mn^
+@@||cdn.skygo.mn^
 @@||65.21.85.175^
 @@||dai.google.com^$important
 @@||teleport.cc^

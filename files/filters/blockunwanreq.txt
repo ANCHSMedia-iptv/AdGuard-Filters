@@ -2869,7 +2869,7 @@ ya.ru$@$link[rel="manifest"]
 @@||notts.md^
 @@||stm*.notts.md^
 @@||stm*.notts.md/*/index.
-@@||list.onlinetv-sochi.ru:8080/live/view55mod.php
+@@||list.onlinetv-sochi.ru/live/view55mod.php
 @@||iptv.itv.uz/hls/live/*/*/index.m3u8
 @@||iptv.itv.uz^
 @@||vod.splay.uz^
@@ -2889,7 +2889,7 @@ ya.ru$@$link[rel="manifest"]
 @@||65.21.85.175^
 @@||s25617.cdn.ngenix.net/mdrm/*/
 ! Много чё не работало на сайте из-за фильтра xinggsf, в белом списке.
-@@||spectator-api.salomtv.uz/v*/new/banners$xhr,domain=salomtv.us
+@@||spectator-api.salomtv.uz/v*/new/banners$xhr,domain=salomtv.uz
 !
 @@||dai.google.com/linear/hls/event/*/master.m3u8$important
 @@||dai.google.com/ssai/event/*/master.m3u8$important
