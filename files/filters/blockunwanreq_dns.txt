@@ -1046,7 +1046,7 @@
 @@||wz-kt.ktk.kz^
 @@||live-sovsec-ref.cdnvideo.ru^
 @@||31.210.208.171^
-@@||-live*.cgtn.com^
+@@||*-live*.cgtn.com^
 @@||liveerostv.cdnvideo.ru^
 @@||185.46.48.18^
 @@||qazaqstantv-stream.qazcdn.com^
