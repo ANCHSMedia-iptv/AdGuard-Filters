@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.9.5-R
-! TimeUpdated: 2025-08-04T10:35:00+00:00
+! Version: 3.9.6-R
+! TimeUpdated: 2025-08-04T15:35:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1233,6 +1233,12 @@ calltouch.js$script,xhr
 ||music-sky.ucoz.ru/php/api/apiMusic/chat.php^$xhr,domain=moobl.ru
 ||adlook.tech^$important
 ||sentry*.xiaomi.net^$important
+||lk.rt.ru/redesign_2020_static/image/header/header-banner-new-large.png^$image,xhr,domain=lk.rt.ru
+||api-hprof.odkl.ru/api/crash/$xhr,domain=mail.ru
+||reklama.mail.ru/*.gif$image
+||dzen.ru/zen-partner/mailru-morda$xhr,domain=mail.ru
+||mail.ru/?news=main$domain=mail.ru
+||mail.ru/undefined$xhr,domain=mail.ru
 !
 !
 !
@@ -2125,6 +2131,7 @@ outsidethebox.ms##div.site-container:first-child > div.footer-widgets:nth-child(
 moobl.ru###people
 ##a[href*="/panel/?a=ustat"]
 moobl.ru###head-left > div.mRub.fa.fa-rub:nth-child(3)
+lk.rt.ru###app-header > a.app-header_banner:first-child
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2976,6 +2983,10 @@ ya.ru$@$link[rel="manifest"]
 @@||radio.tvs.by^
 @@||play*.flynettv.com^
 @@||ott.inmart.tv^
+insearch.site#@$#body { background: #000000 !important; }
+@@||insearch.site^$stealth=referrer
+@@||lk-api.rt.ru/client-api/checkBrowser$domain=lk.rt.ru
+@@||qms.ru/$xhr,websocket,domain=rt.ru
 !
 !
 ! -
