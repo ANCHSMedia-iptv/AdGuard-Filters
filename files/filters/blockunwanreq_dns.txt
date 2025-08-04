@@ -3,7 +3,7 @@
 ! Version: 3.7.5-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-08-04T15:35:00+00:00
+! TimeUpdated: 2025-08-04T18:34:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 04.08.2025 15:35 UTC
+! Last Modified: 04.08.2025 18:34 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -153,7 +153,6 @@
 ||*telemetry.appex.bing.net^
 ||*telemetry.urs.microsoft.com^
 ||vortex*.data.microsoft.com^
-||*telemetry.appex.bing.net^
 ||fp-afd-*-ccp.azureedge.net^
 ! =
 !
@@ -380,7 +379,7 @@
 ||pingdom.net^
 ||rb.infox.sg^
 ||mediametrics.ru^$important
-||ads.pubmatic.com^$important
+||pubmatic.com^$important
 ||rassilkatest.ru^$important
 ||code.rkjs.net^
 ||vercel-insights.com^$important
@@ -496,7 +495,7 @@
 ||my.com^$important
 ||inmobicdn.net^$dnsrewrite=REFUSED,important
 ||analytics.localytics.com^$important
-||taboola*fastly.net^
+||taboola*fastly.net^$important
 ||idm.iot.mi.com^
 ||flurry.com^$dnsrewrite=0.0.0.0,important
 ||api.sms.*.miui.com^$important
@@ -742,6 +741,7 @@
 ||chaseherbalpasty.com^$important,dnsrewrite=0.0.0.0
 ||sentry*.xiaomi.net^$important
 ||stat.radar.imgsmail.ru^
+||fyber.com^
 !
 !
 !
@@ -911,6 +911,7 @@
 @@||iptvx.one^
 @@||captcha-api.yandex.ru^
 @@||*.googlevideo.com^
+@@||redirector.googlevideo.com^
 @@||pay.yandex.ru^
 @@||uglyemail.com^
 @@||hcaptcha.com^
@@ -1087,6 +1088,7 @@
 @@||radio.tvs.by^
 @@||play*.flynettv.com^
 @@||ott.inmart.tv^
+@@||youtubei.googleapis.com^
 !
 !
 ! ===
