@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.9.4-R
-! TimeUpdated: 2025-08-03T15:35:00+00:00
+! Version: 3.9.5-R
+! TimeUpdated: 2025-08-04T10:35:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -26,8 +26,8 @@
 ||analytics.picsart.com^$important
 !
 !
-! Это API запрос сервиса PicsArt на получение вашего местоположения на основе IP адреса и других данных. Возможно, в целях аналитики.
-! This is an API request from the PicsArt service to get your location based on your IP address and other data. Possibly for analytics purposes.
+!
+!
 ||api.picsart.com/location^$xhr,domain=picsart.com
 !
 !
@@ -1226,7 +1226,13 @@ calltouch.js$script,xhr
 ||dogo.intel.com^
 ||chaseherbalpasty.com^$important
 ||moobl.ru/*/c.gif^$image,domain=moobl.ru
+||moobl.ru/itm/mchat.js^$script,domain=moobl.ru
+||moobl.ru/OIIH40GDN/$script,domain=moobl.ru
+||moobl.ru/itm/scorllstati.js^$script,domain=moobl.ru
+/.s/src/adv_scripts/static/$image,domain=moobl.ru
+||music-sky.ucoz.ru/php/api/apiMusic/chat.php^$xhr,domain=moobl.ru
 ||adlook.tech^$important
+||sentry*.xiaomi.net^$important
 !
 !
 !
@@ -1479,6 +1485,7 @@ wildberries.ru##a[href^="/subscription"]
 ||st.ozone.ru/s*/client-metrics/*.js^$script,domain=ozon.ru|ozon.by
 ||ir.ozone.ru/s*/cms/*/ozon_job-*.png^$image,domain=ozon.ru
 ||ir.ozone.ru/s*/cms/*/*_11.11_*.jpg^$image,domain=ozon.ru
+||ir.ozone.ru/s3/cdn-public/ozoncreditcard.svg^$image,domain=ozon.ru
 !
 ! -The rule applies to Ozon and Ozon Bank's website. -
 ! - Правило применимо к сайту Озона и Озон Банка. -
@@ -1526,6 +1533,10 @@ ozon.ru###layoutPage > div.b6:first-child > div.uw_pa1:last-child > div > div.co
 !
 ! Плашка о куки и реком. технологиях (Российская версия).
 ozon.ru##div[class^="r0 r1"]
+!
+! Реклама кредитной Ozon карты на странице оформления заказа (Российская версия). 
+ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a.uw_ap1:nth-child(3) > div.uw_ap1 > div.container.c > div.e1:last-child > div.c8:nth-child(2) > div.e1 > div.d6.c8:first-child > div.xb2_7:first-child > div.bx3_7:last-child > div.b3x_7:last-child
+ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a.uw_ap1:nth-child(3) > div.uw_ap1 > div.container.c > div.e1:last-child > div.c8:nth-child(2) > div.e1 > div.d6.c8:first-child > div.xb2_7:first-child > div.bx0_7:nth-child(2) > div.a35_3_1-a2 > div.a35_3_1-a3:first-child > div.a35_3_1-a4 > div.xb0_7.a35_3_1-a1:nth-child(2)
 !
 !
 !
@@ -2111,6 +2122,9 @@ sputniknews.ru,*.sputniknews.ru##a[href*="t.me/sputniknews"]
 116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru###app > div:first-child > div.layout-notifications:last-child > div.wrapper_bAXuV > div.content_bAXuV
 ip.osnova.news##a[href=^"/hosting.html"]
 outsidethebox.ms##div.site-container:first-child > div.footer-widgets:nth-child(3) > div.wrap > div.footer-widgets-3.widget-area:last-child
+moobl.ru###people
+##a[href*="/panel/?a=ustat"]
+moobl.ru###head-left > div.mRub.fa.fa-rub:nth-child(3)
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2811,6 +2825,7 @@ ya.ru$@$link[rel="manifest"]
 @@||github.githubassets.com/assets/*cookie*.js$script,domain=github.com,important
 @@||s*.storage.yandex.net^
 @@||pkvc-hls.cdnvideo.ru^
+@@||pkvc-hls*.cdnvideo.ru^
 @@||edge*-*.beetv.kz^
 @@||fl*.moveonjoy.com^
 @@||ucdn.beetv.kz^
@@ -2915,6 +2930,52 @@ ya.ru$@$link[rel="manifest"]
 @@||132544.edgevideo.ru^ 
 @@||194.158.222.36^
 @@||ozon.*/search/?from_global=*&text=*$domain=ozon.ru|ozon.by
+@@||moobl.ru/secure/?$image,domain=moobl.ru
+@@||multiscreen.moldtelecom.md/live/eds/*/*/*.*
+@@||pilot.multiscreen.moldtelecom.md/live/eds/*/*/*.*
+@@||multiscreen.moldtelecom.md^
+@@||pilot.multiscreen.moldtelecom.md^
+@@||iptv-hls.idc.md^
+@@||217.19.214.39^
+@@||clients.apsny.camera^
+@@||91.231.219.148^
+@@||sb.err.ee/live/*/*.m3u8
+@@||flu.ttk.mx^
+@@||hls.youtb.workers.dev^
+@@||live*.cgtn.com^
+@@||news.cgtn.com/resource/live/*/*.m3u8
+@@||tv.nknews.org^
+@@||radio-live-mg.rtr-vesti.ru^
+@@||cdnmg.secure.live.rtr-vesti.ru^
+@@||online.video.rbc.ru^
+@@||hls-igi.cdnvideo.ru^
+@@||rt-news.secure.footprint.net^
+@@||persik.by/stream/*/*.m3u8
+@@||foreign-default.persik.by^
+@@||foreign-default.persik.by/live/*/index.m3u8
+@@||foreign-default.persik.by/livehq/*/index.m3u8
+@@||212.98.171.116^
+@@||80.94.225.126^
+@@||flu.vtv.by^
+! @@||*.vtv.by^
+@@||82.209.207.228^
+@@||93.125.125.250^
+@@||stream.backustv.ru^
+@@||v2.catcast.tv/content/*/index.m3u8
+@@||autopilot.catcast.tv/content/*/index.m3u8
+@@||live.prd.dlive.tv^
+@@||hlss.goodgame.ru^
+! @@||
+@@||hls.goodgame.ru^
+! @@||
+@@||cdnhls.goodgame.ru^
+@@||cdn.wasd.tv/live/*/index.m3u8
+@@||video-cdn.goodgame.ru^
+@@||*.catcast.tv/content/*/index.m3u8
+@@||live-hls-tvplusonline.cdnvideo.ru^
+@@||radio.tvs.by^
+@@||play*.flynettv.com^
+@@||ott.inmart.tv^
 !
 !
 ! -
