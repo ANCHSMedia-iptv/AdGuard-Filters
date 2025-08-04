@@ -1054,7 +1054,6 @@
 @@||132544.edgevideo.ru^ 
 @@||194.158.222.36^
 @@||multiscreen.moldtelecom.md^
-@@||pilot.multiscreen.moldtelecom.md^
 @@||iptv-hls.idc.md^
 @@||217.19.214.39^
 @@||clients.apsny.camera^

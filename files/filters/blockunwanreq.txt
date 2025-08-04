@@ -2941,7 +2941,6 @@ ya.ru$@$link[rel="manifest"]
 @@||multiscreen.moldtelecom.md/live/eds/*/*/*.*
 @@||pilot.multiscreen.moldtelecom.md/live/eds/*/*/*.*
 @@||multiscreen.moldtelecom.md^
-@@||pilot.multiscreen.moldtelecom.md^
 @@||iptv-hls.idc.md^
 @@||217.19.214.39^
 @@||clients.apsny.camera^
