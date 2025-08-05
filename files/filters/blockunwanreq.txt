@@ -2745,7 +2745,7 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||msftconnecttest.com^
 ! проверка соединения с интернетом на Виндовс (домен Майкрософт).
 @@||pay.yandex.ru^
-@@/.well-known/ddos-guard/$xhr,script,websocket
+@@/.well-known/ddos-guard/$xhr,script,websocket,css
 @@||galamart.ru^$ghide
 ! widgets.mango-office.ru/widgets/mango.js^$script,domain=galamart.ru
 @@||ozon.ru^$ghide
