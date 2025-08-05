@@ -2999,7 +2999,7 @@ ya.ru$@$link[rel="manifest"]
 @@||ozon.*/search/?from_global=*&text=*$domain=ozon.ru|ozon.by
 @@||moobl.ru/secure/?$image,domain=moobl.ru
 @@||multiscreen.moldtelecom.md/live/eds/*/*/*.*
-@@||pilot.multiscreen.moldtelecom.md/live/eds/*/*/*.*
+@@||pilot.multiscreen.moldtelecom.md^
 @@||multiscreen.moldtelecom.md^
 @@||iptv-hls.idc.md^
 @@||217.19.214.39^
@@ -3018,8 +3018,7 @@ ya.ru$@$link[rel="manifest"]
 @@||rt-news.secure.footprint.net^
 @@||persik.by/stream/*/*.m3u8
 @@||foreign-default.persik.by^
-@@||foreign-default.persik.by/live/*/index.m3u8
-@@||foreign-default.persik.by/livehq/*/index.m3u8
+@@||foreign-default.persik.by/*/*/index.m3u8
 @@||212.98.171.116^
 @@||80.94.225.126^
 @@||flu.vtv.by^
@@ -3031,9 +3030,9 @@ ya.ru$@$link[rel="manifest"]
 @@||autopilot.catcast.tv/content/*/index.m3u8
 @@||live.prd.dlive.tv^
 @@||hlss.goodgame.ru^
-! @@||
+! @@||XXX.XXX.XX.X^
 @@||hls.goodgame.ru^
-! @@||
+! @@||XXX.XXX.XX.X^
 @@||cdnhls.goodgame.ru^
 @@||cdn.wasd.tv/live/*/index.m3u8
 @@||video-cdn.goodgame.ru^
@@ -3044,7 +3043,7 @@ ya.ru$@$link[rel="manifest"]
 @@||ott.inmart.tv^
 insearch.site#@$#body { background: #000000 !important; }
 @@||insearch.site^$stealth=referrer
-@@/client-api/checkBrowser$domain=lk.rt.ru|my.rt.ru
+@@/client-api/checkBrowser$domain=lk.rt.ru|my.rt.ru|rt.ru
 @@||qms.ru/$xhr,websocket,domain=rt.ru
 @@||youtubei.googleapis.com^
 @@||redirector.googlevideo.com^
@@ -3055,8 +3054,9 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||omnichat.rt.ru$domain=lk.rt.ru|my.rt.ru|rt.ru
 @@||epicdrama.eu^$cookie=PHPSESSID
 @@||samsung.com^$cookie
-@@||samsung.com/api/v*/recaptcha/v*/$xhr
+@@||samsung.com/api/v*/recaptcha/v*/
 @@||hitmotop.com^$cookie=vol
+@@||youtube.com/youtubei/v*/updated_metadata
 !
 !
 ! -

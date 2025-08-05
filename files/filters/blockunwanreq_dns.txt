@@ -1058,6 +1058,7 @@
 @@||132544.edgevideo.ru^ 
 @@||194.158.222.36^
 @@||multiscreen.moldtelecom.md^
+@@||pilot.multiscreen.moldtelecom.md^
 @@||iptv-hls.idc.md^
 @@||217.19.214.39^
 @@||clients.apsny.camera^
@@ -1091,6 +1092,11 @@
 @@||play*.flynettv.com^
 @@||ott.inmart.tv^
 @@||youtubei.googleapis.com^
+@@||redirector.googlevideo.com^
+@@||tv-only.top^
+@@||televisor.top^
+@@||magtv.top^
+@@||zannn.top^
 !
 !
 ! ===
