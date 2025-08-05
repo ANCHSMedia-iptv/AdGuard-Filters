@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.9.7-R
-! TimeUpdated: 2025-08-04T18:35:00+00:00
+! Version: 3.9.8-R
+! TimeUpdated: 2025-08-05T14:35:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -967,7 +967,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||fda.middle-api.magnit.ru^
 ||kaspersky-labs.com^$app=com.icemobile.lenta.prod
 ||s*.teraboxcdn.*/fe-opera-static/node-static-v*/fe-webv*-main/js/ad.*.js^$script,domain=terabox.*,important
-qrator/qauth.js$script,important
+qrator/qauth*.js$script,important
 qrator/validate$xhr,important
 ||ad-source.pro^$important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus
@@ -1214,7 +1214,7 @@ calltouch.js$script,xhr
 ||amplitude-experiments.*.*^
 ||gitlab.com/*/track_namespace_visits$xhr,domain=gitlab.com
 ||mtm.iptvx.one^$domain=iptvx.one|epg.iptvx.one,important
-||iptvx.one/js/cust.js$script,domain=iptvx.one|epg.iptvx.one,important
+||iptvx.one/js/cust.js$script,important,domain=iptvx.one|epg.iptvx.one
 ||static.wikia.nocookie.net/silversurfer/prod/latest/sdk.js^$script,domain=fandom.com,important
 ||theajack.github.io/disable-devtool/
 ||cdn.promeai.pro/cutout-web/v*/img/prome_27.c2d5cac.png^$image,domain=cutout.pro
@@ -1233,13 +1233,17 @@ calltouch.js$script,xhr
 ||music-sky.ucoz.ru/php/api/apiMusic/chat.php^$xhr,domain=moobl.ru
 ||adlook.tech^$important
 ||sentry*.xiaomi.net^$important
-||lk.rt.ru/redesign_2020_static/image/header/header-banner-new-large.png^$image,xhr,domain=lk.rt.ru
-||api-hprof.odkl.ru/api/crash/$xhr,domain=mail.ru
+||lk.rt.ru/redesign_2020_static/image/header/header-banner-new-large.png^$image,domain=lk.rt.ru
+||api-hprof.odkl.ru/api/crash/$xhr,domain=mail.ru|ok.ru
 ||reklama.mail.ru/*.gif$image
 ||dzen.ru/zen-partner/mailru-morda$xhr,domain=mail.ru
 ||mail.ru/?news=main$domain=mail.ru
 ||mail.ru/undefined$xhr,domain=mail.ru
 ||gosuslugi.ru/api/opentracing$xhr,domain=gosuslugi.ru
+||pay.google.com/gp/p/js/pay.js$domain=lk.rt.ru|my.rt.ru
+||s24tv.net/v*/tag/$xhr
+$cookie=s24id
+||kidecyg.com^
 !
 !
 !
@@ -1400,22 +1404,25 @@ calltouch.js$script,xhr
 !
 ||points.wb.ru/points-users-api/api/v*/*/promotion/available^$xhr,domain=wildberries.ru
 ||static*.wbbasket.*/vol*/j/performanceAnalytics.*.js^$script,domain=wildberries.ru,important
-||wildberries.ru/webapi/stats/$xhr,domain=wildberries.ru,important
-||wildberries.ru/webapi/logging/$xhr,domain=wildberries.ru,important
+||wildberries.ru/webapi/stats/$xhr,domain=wildberries.ru|global.wildberries.ru,important
+||wildberries.ru/webapi/logging/$xhr,domain=wildberries.ru|global.wildberries.ru,important
 ||*basket*.wbbasket.ru/vol*/crm-bnrs/adsf/*.webp^$image,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/data/promotion-creatives.json.hash^$xhr,domain=wildberries.ru
 ! *basket*.wbbasket.ru/vol*/data/promotion-creatives.json^$script,domain=wildberries.ru
-||static.wbstatic.net/j/performanceAnalytics.*.js^$script,domain=wildberries.ru,important
+||static.wbstatic.net/j/performanceAnalytics.*.js^$script,domain=wildberries.ru|global.wildberries.ru,important
 ||*basket*.wbbasket.ru/vol*/crm-bnrs/bners*/*.webp^$image,domain=wildberries.ru
-||*basket*.wbbasket.ru/vol*/data/banners-main-*-*.json^$script,xhr,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/data/banners-main-*-*.json^$script,xhr,domain=wildberries.ru|global.wildberries.ru
 ||*basket*.wbbasket.ru/vol*/site/*/*/*/*recommendationsList*.js^$script,xhr,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/site/t/*/cookies.*.json^$xhr,domain=wildberries.ru,important
 ||a.wb.ru^$important
 ||wbx-logs.wildberries.ru^$important
 ||*sentry.wb.ru^$important
-||*basket*.wbbasket.ru/vol*/site/t/jst/onlineChatPopup.*.json^$xhr,domain=wildberries.ru
-||*basket*.wbbasket.ru/vol*/site/j/spa/modules/onlineChat/onlineChatPopup.*.js^$script,domain=wildberries.ru
-||*basket*.wbbasket.ru/vol*/site/s/*/style/modules/popups/chatPopup.*.css^$css,domain=wildberries.ru
+||banners-website.wildberries.ru/public/v*/banners*^$xhr,domain=wildberries.ru|global.wildberries.ru
+/i/v*/apps/qr*.svg^$image,domain=wildberries.ru|global.wildberries.ru
+||*basket*.wbbasket.ru/vol*/site/t/jst/onlineChatPopup.*.json^$xhr,domain=wildberries.ru|global.wildberries.ru
+||*basket*.wbbasket.ru/vol*/site/j/spa/modules/onlineChat/onlineChatPopup.*.js^$script,domain=wildberries.ru|global.wildberries.ru
+||*basket*.wbbasket.ru/vol*/site/s/*/style/modules/popups/chatPopup.*.css^$css,domain=wildberries.ru|global.wildberries.ru
+||*basket*.wbbasket.ru/vol*/site/app/sentryInit.*.js^$script,domain=wildberries.ru|global.wildberries.ru
 !
 !
 !
@@ -1432,11 +1439,6 @@ calltouch.js$script,xhr
 ||static-basket-*.wbbasket.ru/vol*/wbx-static/prod/assets/images/qr-code/qr-code.png^$image,domain=global.wildberries.ru
 ! -
 !
-! - Вперемешку с Глобальной и Российской версией (Interspersed with the Global and Russian versions). -
-||banners-website.wildberries.ru/public/v*/banners*^$xhr,domain=wildberries.ru|global.wildberries.ru
-! a.wb.ru/e/*^$ping,domain=wildberries.ru|global.wildberries.ru
-/i/v*/apps/qr*.svg^$image,domain=wildberries.ru|global.wildberries.ru
-! -
 !
 @@||*basket*.wbbasket.ru/vol*/site/j/spa/customTags/banners.*.js^$domain=wildberries.ru
 @@||static.wbstatic.net/data/banners-main-*-*.json^$domain=wildberries.ru
@@ -1496,7 +1498,7 @@ wildberries.ru##li[data-menu-id="1237"]
 ! *ozon.*/api/entrypoint-api.bx/page/json/v*^$xhr,domain=ozon.ru|ozon.by **
 ||st.ozone.ru/assets/*/detached/*/marketing-desktop-adv-banner-v*.js^$script,domain=ozon.ru|ozon.by
 ||st.ozone.ru/assets/*/common_molecules_adv-info_index_vue.*^$css,script,domain=ozon.ru
-! xapi.ozon.*/api/logs-gateway/*^$xhr,domain=ozon.ru|ozon.by **
+||xapi.ozon.*/api/logs-gateway/$domain=ozon.ru|ozon.by
 ! st.ozone.ru/assets/*/detached/*/autosplit-teams_*_components*_adv-*.js^$script,domain=ozon.ru|ozon.by **
 ||cdn1.ozonusercontent.com/s3/sellerassets/*/*.jpeg^$image,domain=ozon.ru|ozon.by
 ! st.ozone.ru/assets/*/detached/*/*-desktop-banner-carousel.js^$script,domain=ozon.ru **
@@ -1534,12 +1536,13 @@ ozon.ru###layoutPage > div.b6:first-child > div.d0m_9 > div > div.container.c:nt
 ! =
 ! Зато от блокировки некоторых скриптов сломался подвал сайта (footer) на главной странице XD (к примеру, в разделе Корзина подвал сайта работает).
 ! But from blocking some scripts broke the site basement (footer) on the main page XD (for example, in the Shopping Cart section the site basement works).
+! 
 ! -
 ! ** - 08.12.24: Пришлось отключить т.к. глючит сайт.
 !
 !
-! Плашка в разделе «Чаты» про сертификаты (Российская версия).
-ozon.ru##div[class^="om_21_a om_21_a0"]
+! Плашка в разделе «Чаты» про сертификаты и не только (Российская версия).
+ozon.ru##div[class^="om_21_a om_21_b0"]
 !
 ! Раздел «Ozon Travel» в ЛК в «Заказы» сверху (Российская версия). (кому это надо?)
 ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:last-child > div > div.container.c:first-child > div.e1 > div.c8:last-child > div.jd9_11 > div > div.h9f_15:nth-child(2) > div.fi_15:last-child
@@ -1576,9 +1579,13 @@ ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:last-child > div > div.co
 !
 ! Виджет в подвале сайта (Российская версия).
 ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:last-child > div > div.container.c > div:last-child > div > footer.uw_a1g:last-child > div.uw_g1a > div.uw_ga3:last-child > div.uw_ag5:first-child
+ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a.uw_ap1:last-child > div.uw_ap1 > footer.uw_a1g:last-child > div.uw_g1a > div.uw_ga3:last-child > div.uw_ag5:first-child
 !
 ! Раздел «Кредитная карта» в всплювающем меню профиля (Российская версия).
 ozon.ru##div.d45_3_2-a1.d45_3_2-b2.d45_3_2-a9.d45_3_2-b0.d45_3_2-a2 > div.d45_3_2-a4:first-child > div > div:first-child > div.vh7_23:last-child > div:nth-child(5) > a.q4b1_3_0-a
+!
+! Раздел «Подобрали для вас» в Сообщениях в чате «Заказы» (Российская версия).
+ozon.ru##div[class^="om_1_e8"]
 !
 !
 !
@@ -2169,6 +2176,8 @@ moobl.ru###people
 ##a[href*="/panel/?a=ustat"]
 moobl.ru###head-left > div.mRub.fa.fa-rub:nth-child(3)
 lk.rt.ru###app-header > a.app-header_banner:first-child
+sputnik24.tv##div[class^="cookie-warning_warningWrap__uX5bj"]
+shazam.com##div:nth-child(2) > div:first-child > div.Navigation_shzTransparentHeader__aDK0i:first-child > div.Navigation_headerBody__GSgjj.Navigation_atTop__jU9nA.isTransparent > div.Navigation_contentWrapper__tXnYC:first-child > div:first-child
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2230,6 +2239,7 @@ thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'longVisits', '$remove$')
 thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'watchedVideoArticles', 'null')
 thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/', '$remove$')
 ! habr.com#%#//scriptlet('set-?-storage-item', '__pwacompat_manifest', 'emptyObj') (Waiting for adding..)
+sputnik24.tv#%#//scriptlet('set-cookie', 'isShowCookieWarning', 'false', 'none')
 ! (Waiting for adding more scripts..)
 !
 !
@@ -2699,7 +2709,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 @@||returnyoutubedislikeapi.com^
 @@||sponsor.ajay.app^
 @@||digiseller.market^
-@@||iptvx.one^
+! @@||iptvx.one^
 @@||captcha-api.yandex.ru^
 @@||esa-res.online.sberbank.ru/ESA/bizone/*/antifraud*.js^$script,domain=online.sberbank.ru
 @@||cdnweb.sberbank.ru/*/*.*^$image,xhr,domain=online.sberbank.ru
@@ -3022,7 +3032,7 @@ ya.ru$@$link[rel="manifest"]
 @@||ott.inmart.tv^
 insearch.site#@$#body { background: #000000 !important; }
 @@||insearch.site^$stealth=referrer
-@@||lk-api.rt.ru/client-api/checkBrowser$domain=lk.rt.ru
+@@/client-api/checkBrowser$domain=lk.rt.ru|my.rt.ru
 @@||qms.ru/$xhr,websocket,domain=rt.ru
 @@||youtubei.googleapis.com^
 @@||redirector.googlevideo.com^
@@ -3030,6 +3040,11 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||televisor.top^
 @@||magtv.top^
 @@||zannn.top^
+@@||omnichat.rt.ru$domain=lk.rt.ru|my.rt.ru|rt.ru
+@@||epicdrama.eu^$cookie=PHPSESSID
+@@||samsung.com^$cookie
+@@||samsung.com/api/v*/recaptcha/v*/$xhr
+@@||hitmotop.com^$cookie=vol
 !
 !
 ! -
