@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.9.8-R
-! TimeUpdated: 2025-08-05T14:35:00+00:00
+! Version: 3.9.9-R
+! TimeUpdated: 2025-08-05T16:50:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -663,7 +663,7 @@ $cookie=PHPSESSID
 $cookie=KIykI
 $cookie=L
 $cookie=bltsr
-$cookie=bh,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by,|~yandex.kz|~ya.ru|~yandex.com
+$cookie=bh,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by|~yandex.kz|~ya.ru|~yandex.com
 $cookie=coockoos
 $cookie=my
 $cookie=/__ddg*_/
@@ -1244,6 +1244,7 @@ calltouch.js$script,xhr
 ||s24tv.net/v*/tag/$xhr
 $cookie=s24id
 ||kidecyg.com^
+||mail.ru/api/v*/utils/xray/batch?p=$important
 !
 !
 !
@@ -2178,6 +2179,15 @@ moobl.ru###head-left > div.mRub.fa.fa-rub:nth-child(3)
 lk.rt.ru###app-header > a.app-header_banner:first-child
 sputnik24.tv##div[class^="cookie-warning_warningWrap__uX5bj"]
 shazam.com##div:nth-child(2) > div:first-child > div.Navigation_shzTransparentHeader__aDK0i:first-child > div.Navigation_headerBody__GSgjj.Navigation_atTop__jU9nA.isTransparent > div.Navigation_contentWrapper__tXnYC:first-child > div:first-child
+! Раздел Мой мир на главном сайте Mail. 
+mail.ru###ph-whiteline > div.ph-container.svelte-1pihfi3 > nav.ph-projects.svelte-1mn2ade:nth-child(2) > ul.ph-projects__list.svelte-1mn2ade:first-child > li.ph-project.svelte-1y06vv:nth-child(7)
+!
+! Раздел Знакомства на главном сайте Mail.
+mail.ru###ph-whiteline > div.ph-container.svelte-1pihfi3 > nav.ph-projects.svelte-1mn2ade:nth-child(2) > ul.ph-projects__list.svelte-1mn2ade:first-child > li.ph-project.svelte-1y06vv:nth-child(6)
+!
+! Раздел Игры на главном сайте Mail.
+mail.ru###ph-whiteline > div.ph-container.svelte-1pihfi3 > nav.ph-projects.svelte-1mn2ade:nth-child(2) > ul.ph-projects__list.svelte-1mn2ade:first-child > li.ph-project.svelte-1y06vv:nth-child(8)
+!
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2487,14 +2497,14 @@ sputnik24.tv#%#//scriptlet('set-cookie', 'isShowCookieWarning', 'false', 'none')
 ||mail.yandex.ru/web-api/journal/v*^$ping,domain=mail.yandex.ru
 ||media-adv.market.yandex.ru^$important
 ! @@||yandex.ru/clck/click^$domain=mail.yandex.ru
-||yastatic.net/partner-code-bundles/$script,important,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
+||yastatic.net/partner-code-bundles/$script,important,third=party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
 ||yastatic.net/nearest.js^$script
-||browser.pay.yandex.*/api/v*/split-status$important
-||paybro-static.s*.yandex.net/paybro/v*/widget-*.*^$script,css
-||paybro-static.s*.yandex.net/paybro/v*/8a4cff28d9bf287197a4.png^$image
-||yastatic.net/safeframe-bundles/*/host.js^$script,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~captcha-api.yandex.ru
+! browser.pay.yandex.*/api/v*/split-status$important
+! paybro-static.s*.yandex.net/paybro/v*/widget-*.*^$script,css
+! paybro-static.s*.yandex.net/paybro/v*/8a4cff28d9bf287197a4.png^$image
+||yastatic.net/safeframe-bundles/$script,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~captcha-api.yandex.ru
 ||pay.yandex.ru/web/cl/click$important
-||site.yandex.net/*/js/suggest.js^$third-party
+||site.yandex.net/*/js/suggest.js^$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
 ||avatars.mds.yandex.net/get-market-adv/$important
 ||yabs.yandex.*/resource/spacer.gif$important
 ||market.yandex.*/ping
@@ -2533,6 +2543,8 @@ $document,removeparam=from,domain=yandex.*|ya.ru
 ||localhost:29010/p?t=
 ||localhost:30103/p?t=
 ||mc.yango.com^$important
+||yandex.ru/suggest/suggest-ya.cgi$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
+||yandex.ru/portal/searchframe/$third-party,important,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -2754,7 +2766,7 @@ mi.com#@$#body { overflow: visible !important; }
 @@||github.com^$cookie
 @@||yandex.net^$cookie
 @@||aliexpress.ru^$cookie
-@@||stacks.vk-portal.net^
+@@||stacks.vk-portal.net^$domain=vk.com
 @@||clearurls.xyz^
 @@||api.catcast.tv^
 @@||vgtrk.cdnvideo.ru^
