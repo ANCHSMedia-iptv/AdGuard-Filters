@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.7.6-R
+! Version: 3.7.7-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-08-05T16:50:00+00:00
+! TimeUpdated: 2025-08-06T16:50:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 05.08.2025 16:50 UTC
+! Last Modified: 06.08.2025 16:50 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -535,7 +535,7 @@
 ||batmobil.net^$dnsrewrite=NXDOMAIN,important
 ||eqmob.com^$important
 ! ||duapps.com^$dnsrewrite=NXDOMAIN,important
-! ||smaato.*^$dnsrewrite=NXDOMAIN,important (Waiting for adding..)
+!
 ||tapas.net^$dnsrewrite=NXDOMAIN,important
 ||tapjoyads.com^$dnsrewrite=NXDOMAIN,important
 ||tapjoy.com^$dnsrewrite=NXDOMAIN,important
@@ -849,7 +849,7 @@
 ||n3k1t4_1996^
 ||v1^
 ||router.silotis.us^
-||=^
+||=^$important
 ||initplayback^
 ||iptv.local^
 ! ||ip-api.com^
@@ -1097,6 +1097,8 @@
 @@||televisor.top^
 @@||magtv.top^
 @@||zannn.top^
+@@||omnichat.rt.ru^
+@@||update.ayugram.one^
 !
 !
 ! ===

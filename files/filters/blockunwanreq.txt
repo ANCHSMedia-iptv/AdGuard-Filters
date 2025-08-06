@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 3.9.9-R
-! TimeUpdated: 2025-08-05T16:50:00+00:00
+! Version: 4.0.0-R
+! TimeUpdated: 2025-08-06T16:50:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -123,8 +123,8 @@
 .ru/geo-context^$other,xhr,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||geo.geosurf.io^$important
 /widgets.js^$script,important,domain=~x.com|~twitter.com,third-party
-||instagram.com/embed.js^$script,important,domain=~instagram.com
-||tiktok.com/embed.js^$script,important,domain=~tiktok.com
+||instagram.com/embed.js^$script,third-party,important,domain=~instagram.com
+||tiktok.com/embed.js^$script,third-party,important,domain=~tiktok.com
 ||singular.net^$important
 ||alb.reddit.com^$important
 ||rudderstack.com^$important
@@ -877,7 +877,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ! 61.145.124.238$network,important (Waiting for adding..)
 ||eqmob.com^$important
 ! ||duapps.com^$important
-! ||smaato.*^$important (Waiting for adding..)
+||smaato.*^$important
 ||tapas.net^$important
 ||tapjoyads.com^$important
 ||tapjoy.com^$important
@@ -1245,6 +1245,7 @@ calltouch.js$script,xhr
 $cookie=s24id
 ||kidecyg.com^
 ||mail.ru/api/v*/utils/xray/batch?p=$important
+||yamobi.ru/m-widget/_mw*$css,script,domain=yamobi.ru
 !
 !
 !
@@ -2181,13 +2182,12 @@ sputnik24.tv##div[class^="cookie-warning_warningWrap__uX5bj"]
 shazam.com##div:nth-child(2) > div:first-child > div.Navigation_shzTransparentHeader__aDK0i:first-child > div.Navigation_headerBody__GSgjj.Navigation_atTop__jU9nA.isTransparent > div.Navigation_contentWrapper__tXnYC:first-child > div:first-child
 ! Раздел Мой мир на главном сайте Mail. 
 mail.ru###ph-whiteline > div.ph-container.svelte-1pihfi3 > nav.ph-projects.svelte-1mn2ade:nth-child(2) > ul.ph-projects__list.svelte-1mn2ade:first-child > li.ph-project.svelte-1y06vv:nth-child(7)
-!
 ! Раздел Знакомства на главном сайте Mail.
 mail.ru###ph-whiteline > div.ph-container.svelte-1pihfi3 > nav.ph-projects.svelte-1mn2ade:nth-child(2) > ul.ph-projects__list.svelte-1mn2ade:first-child > li.ph-project.svelte-1y06vv:nth-child(6)
-!
 ! Раздел Игры на главном сайте Mail.
 mail.ru###ph-whiteline > div.ph-container.svelte-1pihfi3 > nav.ph-projects.svelte-1mn2ade:nth-child(2) > ul.ph-projects__list.svelte-1mn2ade:first-child > li.ph-project.svelte-1y06vv:nth-child(8)
 !
+yamobi.ru###mw_widget_content
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2300,7 +2300,7 @@ sputnik24.tv#%#//scriptlet('set-cookie', 'isShowCookieWarning', 'false', 'none')
 ||uisp.lan^
 ||v1^
 ||router.silotis.us^
-||=^
+||=^$important
 ||initplayback^
 ||iptv.local^
 ! ||ip-api.com^
@@ -2691,7 +2691,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||mon.isnssdk.com^$important
 ||mssdk*.byteoversea.com^$important
 ||mon*-*.tiktokv.com^$important
-||a.appbaqend.com^$important
+||appbaqend.com^$important
 ||richlifeads.ru^$important
 ||mintegral.net^$important
 ||nr.bidderstack.com^$important
@@ -3057,6 +3057,9 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||samsung.com/api/v*/recaptcha/v*/
 @@||hitmotop.com^$cookie=vol
 @@||youtube.com/youtubei/v*/updated_metadata
+@@||update.ayugram.one^
+@@||pikabu.ru^$cookie=is_scrollmode
+@@||pikabu.ru^$cookie=PHPSESSID
 !
 !
 ! -
