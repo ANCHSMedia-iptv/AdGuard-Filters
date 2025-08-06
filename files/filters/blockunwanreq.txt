@@ -1360,7 +1360,7 @@ $cookie=s24id
 ! finance.ozon.ru/api/v*/performance^$xhr,ping,domain=finance.ozon.ru,important
 ! finance.ozon.ru/api/v*/loyalty_promotions_getCurtain^$xhr,domain=finance.ozon.ru
 ||finance.ozon.ru/*/promoter$xhr,domain=finance.ozon.ru
-||
+! ||
 !
 ! От блокировки картинки с QR кодом для скачивания приложения Ozon Банка, текст справа немного съехал налево 0_0.
 ! From blocking the picture with the QR code for downloading the Ozon Bank app, the text on the right has moved slightly to the left 0_0.
