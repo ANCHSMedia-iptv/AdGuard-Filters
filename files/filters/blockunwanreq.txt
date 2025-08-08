@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.0.0-R
-! TimeUpdated: 2025-08-06T16:50:00+00:00
+! Version: 4.0.1-R
+! TimeUpdated: 2025-08-10T09:50:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1246,6 +1246,10 @@ $cookie=s24id
 ||kidecyg.com^
 ||mail.ru/api/v*/utils/xray/batch?p=$important
 ||yamobi.ru/m-widget/_mw*$css,script,domain=yamobi.ru
+||engine.ap.bittorrent.com^$app=uTorrent.exe
+||video.rainberrytv.com^$third-party,app=uTorrent.exe
+||staging.rainberrytv.com^$third-party,app=uTorrent.exe
+||test.rainberrytv.com^$third-party,app=uTorrent.exe
 !
 !
 !
@@ -1309,7 +1313,7 @@ $cookie=s24id
 !
 !
 ! 22.04.25: Из фильтра EasyPrivacy.
-||4pda.to/stat/
+! ||4pda.to/stat/
 !
 ! 23.04.25: Из фильтра RU AdList: Counters
 ||4pda.to/s/*:|$xhr,important
@@ -1318,6 +1322,7 @@ $cookie=s24id
 @@||i.4pda.ws/s/*.jpg?v=*^$domain=4pda.to
 @@||*4pda.to/s/*.js?_=*^$domain=4pda.to
 @@||*4pda.to/s/*/*/menu_item.gif^$domain=4pda.to
+@@||4pda.to/stat/go?u=$domain=4pda.to
 !
 !
 ! ===
@@ -1496,11 +1501,11 @@ wildberries.ru##li[data-menu-id="1237"]
 !
 ||ir.ozone.ru/s3/cms/*/qr-code_*.png^$image,domain=ozon.ru|ozon.by
 ||st.ozone.ru/assets/*/detached/marketing*/entry.*.js^$script,domain=ozon.ru|ozon.by
-! st.ozone.ru/s3/ozon-tag-manager/*/sdk.js^$script,domain=ozon.ru|ozon.by **
+||st.ozone.ru/s3/ozon-tag-manager/*/sdk.js^$script,important,domain=ozon.ru|ozon.by
 ! *ozon.*/api/entrypoint-api.bx/page/json/v*^$xhr,domain=ozon.ru|ozon.by **
-||st.ozone.ru/assets/*/detached/*/marketing-desktop-adv-banner-v*.js^$script,domain=ozon.ru|ozon.by
+||st.ozone.ru/assets/*/marketing-desktop-adv-banner-v*.js^$script,domain=ozon.ru|ozon.by
 ||st.ozone.ru/assets/*/common_molecules_adv-info_index_vue.*^$css,script,domain=ozon.ru
-||xapi.ozon.*/api/logs-gateway/$domain=ozon.ru|ozon.by
+||xapi.ozon.*/api/logs-gateway/$domain=ozon.ru|ozon.by,important
 ! st.ozone.ru/assets/*/detached/*/autosplit-teams_*_components*_adv-*.js^$script,domain=ozon.ru|ozon.by **
 ||cdn1.ozonusercontent.com/s3/sellerassets/*/*.jpeg^$image,domain=ozon.ru|ozon.by
 ! st.ozone.ru/assets/*/detached/*/*-desktop-banner-carousel.js^$script,domain=ozon.ru **
@@ -1518,7 +1523,7 @@ wildberries.ru##li[data-menu-id="1237"]
 !
 ! -The rule applies to Ozon and Ozon Bank's website. -
 ! - Правило применимо к сайту Озона и Озон Банка. -
-! xapi.ozon.*/dlte/multi^$ping,domain=ozon.ru|finance.ozon.ru|ozon.by **
+||xapi.ozon.*^$ping,important,domain=ozon.ru|finance.ozon.ru|ozon.by
 ! -
 !
 ! Белорусская версия (ozon .by)
@@ -1544,22 +1549,22 @@ ozon.ru###layoutPage > div.b6:first-child > div.d0m_9 > div > div.container.c:nt
 !
 !
 ! Плашка в разделе «Чаты» про сертификаты и не только (Российская версия).
-ozon.ru##div[class^="om_21_a om_21_b0"]
+ozon.ru##div[class^="om_21_a om_21_a0"][style^="background-color: var(--bgSecondary);"]
 !
 ! Раздел «Ozon Travel» в ЛК в «Заказы» сверху (Российская версия). (кому это надо?)
-ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:last-child > div > div.container.c:first-child > div.e1 > div.c8:last-child > div.jd9_11 > div > div.h9f_15:nth-child(2) > div.fi_15:last-child
+ozon.ru##a[href*="/my/travel/orderlist"][class^="if_15"]
 !
 ! Раздел «Ozon Travel» в ЛК левом меню (Российская версия). (кому это надо?)
-ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:last-child > div > div.container.c:first-child > div.e1 > div.c8:first-child > div.jd9_11 > div > div.h3v_23:last-child > div.vh1_23:nth-child(2) > div:last-child > a.q4b1_3_0-a.tsBody400Small.hv2_23.v1h_23:nth-child(5)
+ozon.ru##a[href*="/my/travel/orderlist"][class^="q4b1_3_0-a tsBody400Small h0u_23 hu0_23"]
 !
 ! Раздел «Ozon Рассрочка» в ЛК левом меню (Российская версия). (кому это надо?)
-ozon.ru###layoutPage > div.b6:first-child > div.uw_pa1:last-child > div > div.container.c:first-child > div.e1 > div.c8:first-child > div.eh_11 > div > div.iw0_23:last-child > div.v8i_23:first-child > div:last-child > a.q4b11-a.tsBody400Small.i9v_23.iv9_23:nth-child(3)
+! [не актуально]
 !
 ! Раздел «Мои компании» в ЛК левом меню (Российская версия). (обычным покупателям это не надо)
-ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:last-child > div > div.container.c:first-child > div.e1 > div.c8:first-child > div.jd9_11 > div > div.h3v_23:last-child > div.vh1_23:first-child > div:last-child > a.q4b1_3_0-a.tsBody400Small.hv2_23.v1h_23:nth-child(4)
+ozon.ru##a[href^="/my/legaldetails"][class^="q4b1_3_0-a uw_ag7"]
 !
 ! Раздел «Мой гараж» в ЛК левом меню (Российская версия). (кому это надо?)
-ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:last-child > div > div.container.c:first-child > div.e1 > div.c8:first-child > div.jd9_11 > div > div.h3v_23:last-child > div.vh1_23:first-child > div:last-child > a.q4b1_3_0-a.tsBody400Small.hv2_23.v1h_23:last-child
+ozon.ru##a[href^="/my/garage"][class^="q4b1_3_0-a tsBody400Small h0u_23 hu0_23"]
 !
 ! Плашка о куки и реком. технологиях (Российская версия).
 ozon.ru##div[class^="r0 r1"]
@@ -1567,12 +1572,13 @@ ozon.ru##div[class^="r0 r1"]
 ! Реклама кредитной Ozon карты на странице оформления заказа (Российская версия). 
 ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a.uw_ap1:nth-child(3) > div.uw_ap1 > div.container.c > div.e1:last-child > div.c8:nth-child(2) > div.e1 > div.d6.c8:first-child > div.xb2_7:first-child > div.bx3_7:last-child > div.b3x_7:last-child
 ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a.uw_ap1:nth-child(3) > div.uw_ap1 > div.container.c > div.e1:last-child > div.c8:nth-child(2) > div.e1 > div.d6.c8:first-child > div.xb2_7:first-child > div.bx0_7:nth-child(2) > div.a35_3_1-a2 > div.a35_3_1-a3:first-child > div.a35_3_1-a4 > div.xb0_7.a35_3_1-a1:nth-child(2)
+ozon.ru##div[style^="padding:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;background-color:rgba(255, 255, 255, 1);border-radius:16px;"]
 !
 ! Раздел «Кредитная карта» в ЛК левом меню (Российская версия).
-ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:last-child > div > div.container.c:first-child > div.e1 > div.c8:first-child > div.jd9_11 > div > div.h3v_23:last-child > div.vh1_23:first-child > div:last-child > a.q4b1_3_0-a.tsBody400Small.hv2_23.v1h_23:nth-child(3)
+ozon.ru##a[href*="/credit_card/"][class^="q4b1_3_0-a tsBody400Small h0u_23 hu0_23"]
 !
 ! Раздел «Билеты, отели» сверху у поиска (Российская версия).
-ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:first-child > div > header.uw_ha4.uw_a5h.uw_ah8 > div.uw_h7a.uw_h4a:nth-child(2) > div:first-child > div.uw_h9a > ul.uw_i0a.uw_ai0 > li.uw_ai.uw_ai0:nth-child(2)
+ozon.ru##a[href*="https://www.ozon.ru/travel/?"][class^="q4b1_3_0-a uw_a1i"]
 !
 ! Рекламные блоки (Российская версия).
 ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:last-child > div > div.container.c > div:last-child > div > div.jd9_11:nth-child(3)
@@ -1580,14 +1586,15 @@ ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:last-child > div > div.co
 ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:last-child > div > div.container.c > div:last-child > div > div.jd9_11:nth-child(11)
 !
 ! Виджет в подвале сайта (Российская версия).
-ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:last-child > div > div.container.c > div:last-child > div > footer.uw_a1g:last-child > div.uw_g1a > div.uw_ga3:last-child > div.uw_ag5:first-child
-ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a.uw_ap1:last-child > div.uw_ap1 > footer.uw_a1g:last-child > div.uw_g1a > div.uw_ga3:last-child > div.uw_ag5:first-child
+! Придётся придумывать что то другое..
 !
-! Раздел «Кредитная карта» в всплювающем меню профиля (Российская версия).
-ozon.ru##div.d45_3_2-a1.d45_3_2-b2.d45_3_2-a9.d45_3_2-b0.d45_3_2-a2 > div.d45_3_2-a4:first-child > div > div:first-child > div.vh7_23:last-child > div:nth-child(5) > a.q4b1_3_0-a
+! Раздел «Кредитная карта» в всплывающем меню профиля (Российская версия).
+ozon.ru##a[href*="/credit_card/"][class^="q4b1_3_0-a"]
 !
 ! Раздел «Подобрали для вас» в Сообщениях в чате «Заказы» (Российская версия).
-ozon.ru##div[class^="om_1_e8"]
+! Придётся придумывать что то другое..
+!
+!
 !
 !
 !
@@ -2188,6 +2195,7 @@ mail.ru###ph-whiteline > div.ph-container.svelte-1pihfi3 > nav.ph-projects.svelt
 mail.ru###ph-whiteline > div.ph-container.svelte-1pihfi3 > nav.ph-projects.svelte-1mn2ade:nth-child(2) > ul.ph-projects__list.svelte-1mn2ade:first-child > li.ph-project.svelte-1y06vv:nth-child(8)
 !
 yamobi.ru###mw_widget_content
+remontka.pro##div[style^="width:200px;margin:auto;margin-bottom: 20px; margin-top:20px"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3060,6 +3068,8 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||update.ayugram.one^
 @@||pikabu.ru^$cookie=is_scrollmode
 @@||pikabu.ru^$cookie=PHPSESSID
+@@||api.browser.yandex.*/generate_204
+@@||win7games.com/download/
 !
 !
 ! -
