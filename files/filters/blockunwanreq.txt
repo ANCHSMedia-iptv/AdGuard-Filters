@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 4.0.1-R
-! TimeUpdated: 2025-08-10T09:50:00+00:00
+! TimeUpdated: 2025-08-08T17:50:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -130,7 +130,7 @@
 ||rudderstack.com^$important
 ! hh.ru/api/fl/logs/^$other,important,domain=hh.ru (новое правило, строка 589)
 ||cedexis.com^$important
-/generate_204$domain=~youtube.com|~googlevideo.com|~api.browser.yandex.*
+/generate_204$domain=~youtube.com|~youtube-nocookie.com|~googlevideo.com|~api.browser.yandex.*|~api.browser.yandex.ru
 ||adlook.me^$important
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru,important
@@ -659,7 +659,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 $cookie=adtech_uid
 $cookie=top100_id
 $cookie=dco.id
-$cookie=PHPSESSID
+$cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicdrama.eu|~pikabu.ru|~taptv.ru
 $cookie=KIykI
 $cookie=L
 $cookie=bltsr
@@ -1213,8 +1213,8 @@ calltouch.js$script,xhr
 /cdn-cgi/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
 ||amplitude-experiments.*.*^
 ||gitlab.com/*/track_namespace_visits$xhr,domain=gitlab.com
-||mtm.iptvx.one^$domain=iptvx.one|epg.iptvx.one,important
-||iptvx.one/js/cust.js$script,important,domain=iptvx.one|epg.iptvx.one
+||mtm.iptvx.one^$important,domain=iptvx.one|epg.iptvx.one
+||iptvx.one/*/cust.js$script,important,domain=iptvx.one|epg.iptvx.one
 ||static.wikia.nocookie.net/silversurfer/prod/latest/sdk.js^$script,domain=fandom.com,important
 ||theajack.github.io/disable-devtool/
 ||cdn.promeai.pro/cutout-web/v*/img/prome_27.c2d5cac.png^$image,domain=cutout.pro
@@ -1240,16 +1240,22 @@ calltouch.js$script,xhr
 ||mail.ru/?news=main$domain=mail.ru
 ||mail.ru/undefined$xhr,domain=mail.ru
 ||gosuslugi.ru/api/opentracing$xhr,domain=gosuslugi.ru
-||pay.google.com/gp/p/js/pay.js$domain=lk.rt.ru|my.rt.ru
+||pay.google.com/gp/p/js/pay.js$domain=lk.rt.ru|my.rt.ru|rt.ru
 ||s24tv.net/v*/tag/$xhr
 $cookie=s24id
 ||kidecyg.com^
 ||mail.ru/api/v*/utils/xray/batch?p=$important
-||yamobi.ru/m-widget/_mw*$css,script,domain=yamobi.ru
+||yamobi.ru/m-widget/_mw$css,script,domain=yamobi.ru
 ||engine.ap.bittorrent.com^$app=uTorrent.exe
 ||video.rainberrytv.com^$third-party,app=uTorrent.exe
 ||staging.rainberrytv.com^$third-party,app=uTorrent.exe
 ||test.rainberrytv.com^$third-party,app=uTorrent.exe
+||api.dashly.app/*/*self_user/$ping,xhr
+||allplay.uz/images/gift_voucher.png^$image,domain=allplay.uz
+||api.allplay.uz/api/v*/event^$xhr,domain=allplay.uz
+||downdetector.brandanalytics.ru/downdetector/img/close-informer.svg^$image,domain=downdetector.brandanalytics.ru
+||downdetector.brandanalytics.ru/downdetector/img/sn-*.webp^$image,domain=downdetector.brandanalytics.ru
+||video.sports.ru/site/graphql^$xhr,domain=video.sports.ru
 !
 !
 !
@@ -2182,8 +2188,8 @@ sputniknews.ru,*.sputniknews.ru##a[href*="t.me/sputniknews"]
 ip.osnova.news##a[href=^"/hosting.html"]
 outsidethebox.ms##div.site-container:first-child > div.footer-widgets:nth-child(3) > div.wrap > div.footer-widgets-3.widget-area:last-child
 moobl.ru###people
-##a[href*="/panel/?a=ustat"]
 moobl.ru###head-left > div.mRub.fa.fa-rub:nth-child(3)
+##a[href*="/panel/?a=ustat"]
 lk.rt.ru###app-header > a.app-header_banner:first-child
 sputnik24.tv##div[class^="cookie-warning_warningWrap__uX5bj"]
 shazam.com##div:nth-child(2) > div:first-child > div.Navigation_shzTransparentHeader__aDK0i:first-child > div.Navigation_headerBody__GSgjj.Navigation_atTop__jU9nA.isTransparent > div.Navigation_contentWrapper__tXnYC:first-child > div:first-child
@@ -2193,9 +2199,17 @@ mail.ru###ph-whiteline > div.ph-container.svelte-1pihfi3 > nav.ph-projects.svelt
 mail.ru###ph-whiteline > div.ph-container.svelte-1pihfi3 > nav.ph-projects.svelte-1mn2ade:nth-child(2) > ul.ph-projects__list.svelte-1mn2ade:first-child > li.ph-project.svelte-1y06vv:nth-child(6)
 ! Раздел Игры на главном сайте Mail.
 mail.ru###ph-whiteline > div.ph-container.svelte-1pihfi3 > nav.ph-projects.svelte-1mn2ade:nth-child(2) > ul.ph-projects__list.svelte-1mn2ade:first-child > li.ph-project.svelte-1y06vv:nth-child(8)
-!
 yamobi.ru###mw_widget_content
 remontka.pro##div[style^="width:200px;margin:auto;margin-bottom: 20px; margin-top:20px"]
+tvrus.eu###main > div.penci-container > div.penci-container__content.penci-con_sb2_sb1 > aside.widget-area.widget-area-1.penci-sticky-sidebar.penci-sidebar-widgets:last-child > div.theiaStickySidebar
+vitrina.tv##section[id^="accept-agreements-container"]
+allplay.uz##div[href^="/voucher/buy"][class^="verb d-none d-md-inline-block"]
+allplay.uz###app > nav.Navbar:nth-child(3) > div.Navbar__left:first-child > a.verb.d-none.d-md-inline-block:last-child
+downdetector.brandanalytics.ru##div.informer
+downdetector.brandanalytics.ru##main.main.overflow-hidden:nth-child(3) > section.section_body:last-child > div.section_body-content.section_body-short_desc:last-child > div.corporate-detector:last-child
+downdetector.brandanalytics.ru##div[class^="crash_channel"]
+360.ru##div._12mv6bx1._12mv6bx0._12mv6bx8
+video.sports.ru###root > div.MuiCollapse-root.MuiCollapse-vertical.MuiCollapse-entered.css-c4sutr:last-child > div.MuiCollapse-wrapper.MuiCollapse-vertical.css-hboir5 > div.MuiCollapse-wrapperInner.MuiCollapse-vertical.css-8atqhb > header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4.MuiAppBar-root.MuiAppBar-colorDefault.MuiAppBar-positionAbsolute.css-k2ljhg
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2258,6 +2272,7 @@ thevoicemag.ru#%#//scriptlet('set-local-storage-item', 'watchedVideoArticles', '
 thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/', '$remove$')
 ! habr.com#%#//scriptlet('set-?-storage-item', '__pwacompat_manifest', 'emptyObj') (Waiting for adding..)
 sputnik24.tv#%#//scriptlet('set-cookie', 'isShowCookieWarning', 'false', 'none')
+! sports.ru#%#//scriptlet('set-local-storage-item', 'loglevel', '$remove$')
 ! (Waiting for adding more scripts..)
 !
 !
@@ -2505,7 +2520,7 @@ sputnik24.tv#%#//scriptlet('set-cookie', 'isShowCookieWarning', 'false', 'none')
 ||mail.yandex.ru/web-api/journal/v*^$ping,domain=mail.yandex.ru
 ||media-adv.market.yandex.ru^$important
 ! @@||yandex.ru/clck/click^$domain=mail.yandex.ru
-||yastatic.net/partner-code-bundles/$script,important,third=party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
+||yastatic.net/partner-code-bundles/$script,important,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
 ||yastatic.net/nearest.js^$script
 ! browser.pay.yandex.*/api/v*/split-status$important
 ! paybro-static.s*.yandex.net/paybro/v*/widget-*.*^$script,css
@@ -3069,7 +3084,17 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||pikabu.ru^$cookie=is_scrollmode
 @@||pikabu.ru^$cookie=PHPSESSID
 @@||api.browser.yandex.*/generate_204
+@@||api.browser.yandex.ru/generate_204
 @@||win7games.com/download/
+@@||shopogolic.net^$cookie=PHPSESSID
+@@||taptv.ru^$cookie=PHPSESSID
+@@||media.mediavitrina.ru/balancer/v*/*/*/streams.json$xhr
+@@||mediavitrina.ru/dist/eump-core/v*/eump.*.js^$script
+@@||-live-vitrina.cdn.gblnet.ru/*/*/*.*
+@@||gateway.teleport.media/v*/?ver=*&key=*&stream=*&url=*&uid=*$xhr
+@@||signal-luke.teleport.media^
+@@||static-api.mediavitrina.ru/v*/forced_capping/*/config.json$xhr
+@@||time.is/t*/?$xhr,domain=time.is
 !
 !
 ! -
