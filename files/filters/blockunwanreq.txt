@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.0.1-R
-! TimeUpdated: 2025-08-08T17:50:00+00:00
+! Version: 4.0.2-R
+! TimeUpdated: 2025-08-09T17:50:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -134,7 +134,7 @@
 ||adlook.me^$important
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru,important
-||vk.com/js/api/openapi.js^$script,domain=~vk.com,third-party,important
+||vk.com/js/api/openapi.js$script,third-party,domain=~vk.com,important
 ||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~github.githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz
 ||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~github.githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz
 /itunes_referals.js^$script,third-party
@@ -238,8 +238,8 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||lentainform.com^$important
 /1x1.*^$image,xhr,important,domain=~autocounter.lentainform.com|~lentainform.com|~bosch-home.ru|~bsh-group.ru|~comfy.ua|~oplmanager.com|~patagonia.com|~pgatour.com|~sport-express.ru|~zobiki.ru|~idaprikol.ru|~thg.ru
 ||smotrim.ru/js/media-scope.js^$script,important
-||cdn-st*.rtr-vesti.ru/mh_files/*/imho.js^$script,domain=vesti.ru,important
-||vesti.ru/i/bg.png$image,domain=vesti.ru,important
+/mh_files/*/imho.js^$script,domain=vesti.ru,important
+||vesti.ru/i/bg.png$image,xhr,domain=vesti.ru,important
 ||api-voyage.jetcrm.ru/public/form/subscribe-form.js^$script
 ||life.ru/_next/static/chunks/2793.3fd7e7f2a78da9d92688.js^$script,domain=life.ru,important # 3.04.25: скрипта наверное нет уже.
 /p.*^$image,xhr,important
@@ -278,7 +278,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||zoon.ru/images/border.gif^$image,domain=zoon.ru
 ! (новое правило, строка 138 и 139)
 ! (новое правило, строка 138 и 139)
-||userapi.com/js/api/openapi.js$script,domain=~vk.com,third-party,important
+||userapi.com/js/api/openapi.js$script,third-party,domain=~vk.com,important
 ||analytics.vsem-edu-oblako.ru*/track^$xhr,important
 ||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,important
 |! sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com (новое правило, строка 285)
@@ -782,7 +782,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||cableman.ru/themes/custom/initlab_cab/images/click-icon.png^$image,domain=cableman.ru
 ||cableman.ru/themes/custom/initlab_cab/images/k-icon.png^$image,domain=cableman.ru
 ||wifika.ru/wp-content/plugins/*/pro/images/blank.gif^$image,domain=wifika.ru,important
-/admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai
+/admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai|~tyuiu.ru
 ||userway.org^$third-party
 ||files.vm.ru/pdf/2025.02/original/thumb_1280_67c0a45f82682c09ce62d1a1.jpg^$image,xhr,domain=vm.ru
 ||stats.wp.com^
@@ -817,7 +817,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||vmnews.ru/ajax/?action=news_vcount$xhr,domain=vmnews.ru,important
 ||acjs.aliyun.com/error$image,domain=cainiao.ru,important
 ||at.cbsi.com/lib/api/client-info$xhr,domain=last.fm
-||cdn.privacy.paramount.com^$domain=last.fm
+||cdn.privacy.paramount.com^$scriot,third-party
 ||promo-images.prod.ya.magnit.ru^
 ||cdn.dmtgvn.com/wrapper/js/manager.js$script,xhr,domain=infourok.ru
 ||pushmarketing.sberbank-tele.com^
@@ -1239,7 +1239,7 @@ calltouch.js$script,xhr
 ||dzen.ru/zen-partner/mailru-morda$xhr,domain=mail.ru
 ||mail.ru/?news=main$domain=mail.ru
 ||mail.ru/undefined$xhr,domain=mail.ru
-||gosuslugi.ru/api/opentracing$xhr,domain=gosuslugi.ru
+||gosuslugi.ru/api/opentracing^$xhr,domain=gosuslugi.ru
 ||pay.google.com/gp/p/js/pay.js$domain=lk.rt.ru|my.rt.ru|rt.ru
 ||s24tv.net/v*/tag/$xhr
 $cookie=s24id
@@ -1256,6 +1256,7 @@ $cookie=s24id
 ||downdetector.brandanalytics.ru/downdetector/img/close-informer.svg^$image,domain=downdetector.brandanalytics.ru
 ||downdetector.brandanalytics.ru/downdetector/img/sn-*.webp^$image,domain=downdetector.brandanalytics.ru
 ||video.sports.ru/site/graphql^$xhr,domain=video.sports.ru
+||production-cmp.isgprivacy.cbsi.com/cps/shamanNotifier.js^$script
 !
 !
 !
@@ -2210,6 +2211,9 @@ downdetector.brandanalytics.ru##main.main.overflow-hidden:nth-child(3) > section
 downdetector.brandanalytics.ru##div[class^="crash_channel"]
 360.ru##div._12mv6bx1._12mv6bx0._12mv6bx8
 video.sports.ru###root > div.MuiCollapse-root.MuiCollapse-vertical.MuiCollapse-entered.css-c4sutr:last-child > div.MuiCollapse-wrapper.MuiCollapse-vertical.css-hboir5 > div.MuiCollapse-wrapperInner.MuiCollapse-vertical.css-8atqhb > header.MuiPaper-root.MuiPaper-elevation.MuiPaper-elevation4.MuiAppBar-root.MuiAppBar-colorDefault.MuiAppBar-positionAbsolute.css-k2ljhg
+1tv.ru##div[class^="eump-flexmenu-select-option eump-adblock-textblock eump-options-quality-select-item"]
+1tv.ru##div[class^="eump-ab-options-ctrl-sticker"]
+vesti.ru##.footer__counters
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3090,11 +3094,14 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||taptv.ru^$cookie=PHPSESSID
 @@||media.mediavitrina.ru/balancer/v*/*/*/streams.json$xhr
 @@||mediavitrina.ru/dist/eump-core/v*/eump.*.js^$script
-@@||-live-vitrina.cdn.gblnet.ru/*/*/*.*
+@@-live-vitrina.cdn.gblnet.ru/*/*/*.*
 @@||gateway.teleport.media/v*/?ver=*&key=*&stream=*&url=*&uid=*$xhr
 @@||signal-luke.teleport.media^
 @@||static-api.mediavitrina.ru/v*/forced_capping/*/config.json$xhr
 @@||time.is/t*/?$xhr,domain=time.is
+@@||gosuslugi.ru/auth-provider/check-session^$xhr,domain=gosuslugi.ru
+@@||mnokol.tyuiu.ru^
+@@||tyuiu.ru/wp-admin/admin-ajax.php^$domain=tyuiu.ru
 !
 !
 ! -
