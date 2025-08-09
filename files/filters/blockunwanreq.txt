@@ -385,7 +385,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
 ||flamp.ru/static/lib/apitracker.js^$script,domain=flamp.ru,important
 ||vsluh.ru/upload/iblock/*.gif^$image,domain=vsluh.ru
-||script.wikia.nocookie.net/fandom-ae-assets/tracking-opt*/*/tracking-opt-*.js^$script,domain=fandom.com
+||script.wikia.nocookie.net/fandom-ae-assets/tracking-opt*/*/tracking-opt-*.js^$script,domain=fandom.com|*.fandom.com
 ||playercdn.cdnvideo.ru/aloha/clappr/clappr-stats*.js^$script,important
 ||feeds.kommersant.ru/komcounter/readcounter$image,domain=kommersant.ru,important
 /dot.*^$image,xhr,script,important
@@ -999,16 +999,16 @@ qrator/validate$xhr,important
 ! подгрузка рекламных ID (судя по запросу) в приложениях VPN Secure (Vooc VPN), и VPN Pro от одного разработчика. (не реклама)
 ||ads.taxiaid.org^$important
 ||*-metrica.cabconnect.org^$important
-||fandom.com/silver-surfer.html^$domain=fandom.com,important
+||fandom.com/silver-surfer.html^$domain=fandom.com|*.fandom.com,important
 ||js.zi-scripts.com/zi-tag.js^$script,important
 ||js.zi-scripts.com/unified/v*/master/$xhr,important
 ||appcenter.ms^$app=ru.mes.dnevnik.fgis|ru.pyaterochka.app.browser|ru.desport.android|bz.zaa.mibudsm8
 ||zephyrsgroves.com^
 ||xn--80aafadvc9bifbaeqg0p.xn--p1ai/img/icons/sferum.svg^$image,domain=xn--80aafadvc9bifbaeqg0p.xn--p1ai
 ||welcome.adguard.*/*/event/^$xhr,domain=welcome.adguard.com|welcome.adguard.info|welcome.adguard.app,important
-||fandom.com/*/api.php?action=query*&apprefix=Custom-Discord-&*uselang=content$xhr,domain=fandom.com
-||fandom.com/*/load.php?*&modules=u%3Adev%3AMediaWiki%3ADiscord.css$script,domain=fandom.com
-images/*/Discord*logo.*$image,domain=fandom.com
+||fandom.com/*/api.php?action=query*&apprefix=Custom-Discord-&*uselang=content$xhr,domain=fandom.com|telepedia.fandom.com|*.fandom.com
+||fandom.com/*/load.php?*&modules=u%3Adev%3AMediaWiki%3ADiscord.css$script,domain=fandom.com|telepedia.fandom.com|*.fandom.com
+images/*/Discord*logo.*$image,domain=fandom.com|telepedia.fandom.com|*.fandom.com
 ||api.corr.life/public/regions/lookup^$xhr,domain=life.ru
 ||cdn.axeum.ru/assets/*/js/client_call_phone*.js^$script,domain=axeum.ru
 ||client-api.remote-config.rustore.ru^
@@ -1021,7 +1021,7 @@ images/*/Discord*logo.*$image,domain=fandom.com
 ||cloudflare.com/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
 ||1.1.1.1/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
 ||ovego.tv/stat/$image,domain=ovego.tv,important
-||services.fandom.com/*/api/location^$xhr,domain=fandom.com
+||services.fandom.com/*/api/location^$xhr,domain=fandom.com|*.fandom.com
 ||limehd.tv/api/v*/event^$xhr,domain=limehd.tv,important
 ||limehd.tv/ads/$image,domain=limehd.tv,important
 ||vitv.telecomid.ru^$important
@@ -1199,7 +1199,7 @@ calltouch.js$script,xhr
 ||lyngsat.com/as10/intelsat_webinar.gif^$image,domain=lyngsat.com
 ||apistats.rg.ru^
 ||svibeacon.onezapp.com^
-||static.wikia.nocookie.net/silversurfer/prod/latest/marketingNotificationsUnit*.js^$script,domain=fandom.com,important
+||static.wikia.nocookie.net/silversurfer/prod/latest/marketingNotificationsUnit*.js^$script,domain=fandom.com|*.fandom.com,important
 ||serverblight.com/audio/gamestartup_halloween.mp3^$media,domain=serverblight.com # кому надо, можете разблокировать. (If you need it, you can unblock it.)
 ||a.apkpure.*/dt_*_*.js$script,domain=apkpure.*
 ||apkcombo.com/1.gif^$image,domain=apkcombo.com
@@ -1215,7 +1215,7 @@ calltouch.js$script,xhr
 ||gitlab.com/*/track_namespace_visits$xhr,domain=gitlab.com
 ||mtm.iptvx.one^$important,domain=iptvx.one|epg.iptvx.one
 ||iptvx.one/*/cust.js$script,important,domain=iptvx.one|epg.iptvx.one
-||static.wikia.nocookie.net/silversurfer/prod/latest/sdk.js^$script,domain=fandom.com,important
+||static.wikia.nocookie.net/silversurfer/prod/latest/sdk.js^$script,domain=fandom.com|*.fandom.com,important
 ||theajack.github.io/disable-devtool/
 ||cdn.promeai.pro/cutout-web/v*/img/prome_27.c2d5cac.png^$image,domain=cutout.pro
 ||sentry.infra.myapelsin.ru^$important
@@ -2147,7 +2147,7 @@ limehd.tv###__nuxt > div.w-full.min-h-screen > div.flex.flex-col.min-h-screen.fu
 ! Реклама в Peers TV
 peers.tv##div.header-wrap.clearfix:nth-child(4) > header.row > nav.col-md-16 > ul.list-inline.main-menu:nth-child(2) > li.b2b-link:last-child
 !
-fandom.com##div.notifications-placeholder:nth-child(2) > div.marketing-notifications:first-child > div.marketing-notification__container.GxLxDKkiUGCcwujVwPVA
+fandom.com,telepedia.fandom.com##div.notifications-placeholder:nth-child(2) > div.marketing-notifications:first-child > div.marketing-notification__container.GxLxDKkiUGCcwujVwPVA
 torbobit.net###timeoutBox > div.payment-block:first-child
 torbobit.net###download-premium-btn
 torbobit.net##div.main-menu:nth-child(3) > div.main-menu-links > a:nth-child(2)
@@ -2162,7 +2162,7 @@ ip.osnova.news###info > div.card-body.pb-2:last-child > div.card-text.mt-4.mb-4.
 ip.osnova.news###info > div.card-body.pb-2:last-child > p.mt-4.card-text.h6:nth-child(9)
 browserleaks.com##h3[id="comments"]
 cyber.sports.ru###news-renderer-mount-point > div.layout.page-layout > div.layout__content-wrapper:nth-child(11) > div.layout__content.content--wide:first-child > div.news-layout:nth-child(3) > div.columns:nth-child(2) > div.columns__main-column:first-child > div.news-layout__content:nth-child(2) > div.news-content:first-child > div.structured-body-wrapper.news-content__structured-body-wrapper:first-child > p.sb-paragraph.sb-paragraph--regular:nth-child(4)
-fandom.com###mw-content-text > div.mw-content-ltr.mw-parser-output:last-child > div.main-page-tag-rcs:nth-child(2) > div.rcs-container:last-child > div.mp_block:first-child
+fandom.com,telepedia.fandom.com###mw-content-text > div.mw-content-ltr.mw-parser-output:last-child > div.main-page-tag-rcs:nth-child(2) > div.rcs-container:last-child > div.mp_block:first-child
 ok.ru###hook_Block_AuthLoginAutoOpen > auth-login-banner.h-mod.auth-login_auth-login-banner:last-child > section.auth-login-banner__e19f0
 2gis.ru##div[class^="_1kvpakx"]
 app-time.ru##div.at-wrap:first-child > div.native-notification.md-block:nth-child(3) > a
