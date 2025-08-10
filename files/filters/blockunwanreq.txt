@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.0.3-R
-! TimeUpdated: 2025-08-10T06:20:00+00:00
+! Version: 4.0.4-R
+! TimeUpdated: 2025-08-10T07:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1262,6 +1262,12 @@ $cookie=s24id
 ||esa-res.online.sberbank.ru/ESA/bizone/*/bfd.js$script,domain=online.sberbank.ru
 ||bfds.sberbank.ru/api/v*/ws$websocket,domain=online.sberbank.ru
 ||bfds.sberbank.ru/api/v*/send$xhr,domain=online.sberbank.ru
+||enigmasoftware.com/tools/ip2country/get.php^$xhr,domain=enigmasoftware.com
+||enigmasoftware.com/wp-content/plugins/exit-popup/js/*/exit-popup.js.php$script,domain=enigmasoftware.com
+||enigmasoftware.com/wp-content/plugins/rotatead/enigma--*/script.js.php$script,domain=enigmasoftware.com
+||enigmasoftware.com/wp-content/themes/enigma/js/bundle.js$script,domain=enigmasoftware.com
+||cdn.amcharts.com/lib/*/*.js^$script,domain=netify.ai
+$cookie=qrator_jsr
 !
 !
 !
@@ -2222,6 +2228,10 @@ video.sports.ru###root > div.MuiCollapse-root.MuiCollapse-vertical.MuiCollapse-e
 1tv.ru##div[class^="eump-ab-options-ctrl-sticker"]
 vesti.ru##.footer__counters
 online.sberbank.ru##div.cveDRKTNkPZZbnljhSQj
+enigmasoftware.com##div.dynamic-container.no-print.active
+enigmasoftware.com###disclaimer
+enigmasoftware.com##header.header:nth-child(2) > div.container > div.header-items.has-menu:first-child > div.item.licenses:nth-child(3)
+enigmasoftware.com###banner-sws-sticky
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2580,6 +2590,7 @@ $document,removeparam=from,domain=yandex.*|ya.ru
 ||mc.yango.com^$important
 ||yandex.ru/suggest/suggest-ya.cgi$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
 ||yandex.ru/portal/searchframe/$third-party,important,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
+||static-mon.yandex.net/advert
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -3078,7 +3089,7 @@ ya.ru$@$link[rel="manifest"]
 @@||ott.inmart.tv^
 insearch.site#@$#body { background: #000000 !important; }
 @@||insearch.site^$stealth=referrer
-@@/client-api/checkBrowser$domain=lk.rt.ru|my.rt.ru|rt.ru
+@@client-api/checkBrowser$xhr,domain=lk.rt.ru|my.rt.ru|rt.ru
 @@||qms.ru/$xhr,websocket,domain=rt.ru
 @@||youtubei.googleapis.com^
 @@||redirector.googlevideo.com^
@@ -3112,6 +3123,11 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||tyuiu.ru/wp-admin/admin-ajax.php^$domain=tyuiu.ru
 @@||*.id.facct.ru/id.html
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/deprecatingbrowsers.json$xhr,domain=online.sberbank.ru
+@@||c.pki.goog^
+@@||x*.c.lencr.org^
+@@||crl.verisign.com^
+@@||ocsp.globalsign.com^
+@@||ocsp.pki.goog^
 !
 !
 ! -
