@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 4.0.3-R
-! TimeUpdated: 2025-08-10T05:50:00+00:00
+! TimeUpdated: 2025-08-10T06:20:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1257,7 +1257,11 @@ $cookie=s24id
 ||downdetector.brandanalytics.ru/downdetector/img/sn-*.webp^$image,domain=downdetector.brandanalytics.ru
 ||video.sports.ru/site/graphql^$xhr,domain=video.sports.ru
 ||production-cmp.isgprivacy.cbsi.com/cps/shamanNotifier.js^$script
-||rt.ru/rb$domain=lk.rt.ru|my.rt.ru|rt.ru
+||rt.ru/rb$xhr,domain=lk.rt.ru|my.rt.ru|rt.ru
+||visor.sberbank.ru^$important
+||esa-res.online.sberbank.ru/ESA/bizone/*/bfd.js$script,domain=online.sberbank.ru
+||bfds.sberbank.ru/api/v*/ws$websocket,domain=online.sberbank.ru
+||bfds.sberbank.ru/api/v*/send$xhr,domain=online.sberbank.ru
 !
 !
 !
@@ -1297,7 +1301,7 @@ $cookie=s24id
 ! ||4pda.to/static/module/lytebox/images/blank.gif^$image,domain=4pda.to
 !
 ! 4pda.to/s/PXtibvsZpqz1qMv8AkyZ98Z6tlz0MY.gif$xhr,domain=4pda.to
-! ||4pda.to/s/PXtiiz1GkAPpOUkidN41gPh2j5DY.gif^$image,!domain=4pda.to
+! ||4pda.to/s/PXtiiz1GkAPpOUkidN41gPh2j5DY.gif^$image,domain=4pda.to
 ! ||4pda.to/s/PXtiiY82DndJFGb7J9ANRDD5Iuz2b.gif^$image,domain=4pda.to
 ! ||4pda.to/s/PXtiZvWEw1FkD22i4gAOaEx2DPW.gif^$image,domain=4pda.to
 ! ||4pda.to/s/PXtinySjOwLgFhshrMlZ4p.gif^$xhr,domain=4pda.to
@@ -2217,6 +2221,7 @@ video.sports.ru###root > div.MuiCollapse-root.MuiCollapse-vertical.MuiCollapse-e
 1tv.ru##div[class^="eump-flexmenu-select-option eump-adblock-textblock eump-options-quality-select-item"]
 1tv.ru##div[class^="eump-ab-options-ctrl-sticker"]
 vesti.ru##.footer__counters
+online.sberbank.ru##div.cveDRKTNkPZZbnljhSQj
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2755,7 +2760,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 @@||captcha-api.yandex.ru^
 @@||esa-res.online.sberbank.ru/ESA/bizone/*/antifraud*.js^$script,domain=online.sberbank.ru
 @@||cdnweb.sberbank.ru/*/*.*^$image,xhr,domain=online.sberbank.ru
-@@||esa-res.online.sberbank.ru/ESA/sbol/r-*/unallowedbrowsers.js^$script,domain=online.sberbank.ru
+@@||esa-res.online.sberbank.ru/ESA/sbol/r-*/unallowedbrowsers.*^$script,xhr,domain=online.sberbank.ru
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/bowser*.js^$script,domain=online.sberbank.ru
 @@||pl-res.online.sberbank.ru/lib.analytics/*/index.js^$script,domain=online.sberbank.ru
 ! pikabu.ru/.well-known/ddos-guard/$script,domain=pikabu.ru (новое правило, строка 2245)
@@ -3105,6 +3110,8 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||gosuslugi.ru/auth-provider/check-session^$xhr,domain=gosuslugi.ru
 @@||mnokol.tyuiu.ru^
 @@||tyuiu.ru/wp-admin/admin-ajax.php^$domain=tyuiu.ru
+@@||*.id.facct.ru/id.html
+@@||esa-res.online.sberbank.ru/ESA/sbol/r-*/deprecatingbrowsers.json$xhr,domain=online.sberbank.ru
 !
 !
 ! -
