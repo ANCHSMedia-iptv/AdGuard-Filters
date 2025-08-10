@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.0.2-R
-! TimeUpdated: 2025-08-09T17:50:00+00:00
+! Version: 4.0.3-R
+! TimeUpdated: 2025-08-10T05:50:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1257,6 +1257,7 @@ $cookie=s24id
 ||downdetector.brandanalytics.ru/downdetector/img/sn-*.webp^$image,domain=downdetector.brandanalytics.ru
 ||video.sports.ru/site/graphql^$xhr,domain=video.sports.ru
 ||production-cmp.isgprivacy.cbsi.com/cps/shamanNotifier.js^$script
+||rt.ru/rb$domain=lk.rt.ru|my.rt.ru|rt.ru
 !
 !
 !
@@ -1692,20 +1693,22 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 .ru/resources?name=analytics_config$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 /tracking/mappings/test/active-mapping.json^$script,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 .ru/api/cfg/web-gateway/getResponse^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
-||cfg.*.ru/api-gateway/v*/getToggles^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/api-gateway/v*/getToggles^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 .ru/twa/hosted-libs/top-mail/v*/code.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 .ru/twa/hosted-libs/target-ads/v*/targetads-sdk-*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 .ru/twa/ad-hoc/pixel-iframe/index.html^$domain=tbank.ru|tinkoff.ru|t-j.ru,important
 .ru/twa/hosted-libs/vk/v*/openapi.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
-||cdn.*.ru/eventea/v*/eventea.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/eventea/v*/eventea.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 /hedge/v*/yandex-metrika*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
-||cdn.*.ru/eventea/v*/pwa.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
-||cdn.*.ru/eventea/v*/tj.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/eventea/v*/pwa.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/eventea/v*/tj.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 /hedge/v*/vk-counter*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 /hedge/v*/mercury-tracking-event.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
-||cdn.*.ru/twa/ttm/tinkoff-pwa/*/*/index.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
-||acdn.*.ru/eventea/*/eventea*.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
-||cdn.*.ru/eventea/v*/tjournal.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/twa/*/tinkoff-pwa/*/*/index.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/eventea/*/eventea*.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/eventea/v*/tjournal.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/api/common/v*/ping$xhr,domain=tbank.ru|tinkoff.ru,important
+.ru/api/common/v*/session_status$xhr,domain=tbank.ru|tinkoff.ru,important
 !
 ! ===
 !
