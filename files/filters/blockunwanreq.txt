@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 4.0.4-R
-! TimeUpdated: 2025-08-10T07:00:00+00:00
+! TimeUpdated: 2025-08-10T15:00:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1268,6 +1268,7 @@ $cookie=s24id
 ||enigmasoftware.com/wp-content/themes/enigma/js/bundle.js$script,domain=enigmasoftware.com
 ||cdn.amcharts.com/lib/*/*.js^$script,domain=netify.ai
 $cookie=qrator_jsr
+/trk^$xhr,domain=wondershare.com.ru|wondershare.com|wondershare.com.*
 !
 !
 !
@@ -3128,6 +3129,7 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||crl.verisign.com^
 @@||ocsp.globalsign.com^
 @@||ocsp.pki.goog^
+@@||images.wondershare.com/*/*/*/*adjust*.*^$domain=wondershare.com.ru|wondershare.com,important
 !
 !
 ! -
