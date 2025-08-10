@@ -1257,7 +1257,7 @@ $cookie=s24id
 ||downdetector.brandanalytics.ru/downdetector/img/sn-*.webp^$image,domain=downdetector.brandanalytics.ru
 ||video.sports.ru/site/graphql^$xhr,domain=video.sports.ru
 ||production-cmp.isgprivacy.cbsi.com/cps/shamanNotifier.js^$script
-||rt.ru/rb$xhr,domain=lk.rt.ru|my.rt.ru|rt.ru
+||rt.ru/rb$xhr,ping,domain=lk.rt.ru|my.rt.ru|rt.ru
 ||visor.sberbank.ru^$important
 ||esa-res.online.sberbank.ru/ESA/bizone/*/bfd.js$script,domain=online.sberbank.ru
 ||bfds.sberbank.ru/api/v*/ws$websocket,domain=online.sberbank.ru
