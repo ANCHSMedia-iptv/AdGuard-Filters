@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.0.4-R
-! TimeUpdated: 2025-08-10T15:00:00+00:00
+! Version: 4.0.5-R
+! TimeUpdated: 2025-08-11T17:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1188,7 +1188,7 @@ calltouch.js$script,xhr
 ||dzen.ru/partner/$xhr
 ||2gis.*/public/promo/*.png^$image,domain=2gis.*
 ||ams*-cdn.2gis.*/raws/*.svg^$image,domain=2gis.*
-||stat.playfamily.ru/kollector/v*/external$xhr
+||stat.playfamily.ru/kollector/v*/$xhr,ping
 ||stat2.okko.tv^$important
 ||app-time.ru/ajaxpost/nextpost$xhr,domain=app-time.ru
 ||novostiitkanala.ru/ad/banners-itcn/*.php$domain=novostiitkanala.ru
@@ -1269,6 +1269,9 @@ $cookie=s24id
 ||cdn.amcharts.com/lib/*/*.js^$script,domain=netify.ai
 $cookie=qrator_jsr
 /trk^$xhr,domain=wondershare.com.ru|wondershare.com|wondershare.com.*
+||id.sber.ru/api/ab^$xhr,domain=id.sber.ru
+||okko.tv^$cookie=odid
+||okko.tv^$cookie=SherlockChatInfo
 !
 !
 !
@@ -2296,6 +2299,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 ! habr.com#%#//scriptlet('set-?-storage-item', '__pwacompat_manifest', 'emptyObj') (Waiting for adding..)
 sputnik24.tv#%#//scriptlet('set-cookie', 'isShowCookieWarning', 'false', 'none')
 ! sports.ru#%#//scriptlet('set-local-storage-item', 'loglevel', '$remove$')
+okko.tv,okko.sport#%#//scriptlet('set-cookie', 'cookie-confirm', '1')
 ! (Waiting for adding more scripts..)
 !
 !
@@ -2770,7 +2774,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 @@||digiseller.market^
 ! @@||iptvx.one^
 @@||captcha-api.yandex.ru^
-@@||esa-res.online.sberbank.ru/ESA/bizone/*/antifraud*.js^$script,domain=online.sberbank.ru
+@@/antifraud*.js^$script,domain=online.sberbank.ru|sberbank.ru|id.sber.ru
 @@||cdnweb.sberbank.ru/*/*.*^$image,xhr,domain=online.sberbank.ru
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/unallowedbrowsers.*^$script,xhr,domain=online.sberbank.ru
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/bowser*.js^$script,domain=online.sberbank.ru
@@ -3113,7 +3117,7 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||shopogolic.net^$cookie=PHPSESSID
 @@||taptv.ru^$cookie=PHPSESSID
 @@||media.mediavitrina.ru/balancer/v*/*/*/streams.json$xhr
-@@||mediavitrina.ru/dist/eump-core/v*/eump.*.js^$script
+@@||mediavitrina.ru/dist/eump-core/v*/eump.*.*^$script,css
 @@-live-vitrina.cdn.gblnet.ru/*/*/*.*
 @@||gateway.teleport.media/v*/?ver=*&key=*&stream=*&url=*&uid=*$xhr
 @@||signal-luke.teleport.media^
@@ -3129,7 +3133,26 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||crl.verisign.com^
 @@||ocsp.globalsign.com^
 @@||ocsp.pki.goog^
-@@||images.wondershare.com/*/*/*/*adjust*.*^$domain=wondershare.com.ru|wondershare.com,important
+@@||images.wondershare.com/*/*/*/*adjust*.*^$domain=wondershare.com.ru|wondershare.com|wondershare.com.*,important
+@@||auth.okko.sport/v*/sso?redirectUri=
+@@||auth.okko.tv/v*/sso?redirectUri=
+@@||okko.tv^$cookie
+@@||okko.sport^$cookie
+@@||node-*.nodr.app/?id=*&ty=*$xhr
+@@||node-*.nodr.app/?id=*$xhr
+@@||node-*.nodr.app/?id=*&stream=*&s=*&url=*&ty=*$xhr
+@@||swarm-luke.teleport.media/v*/nodr/
+@@||mediavitrina.ru/dist/eump-core/v*/teleport.*.js$script
+@@||mediavitrina.ru/dist/eump-core/v*/shaka-player.*.js$script
+@@||clients-cdnnow.ru/*/*/*.*
+@@||stat.okko.tv/kollector/v*/player$domain=okko.tv
+@@||playfamily.ru/live/*/*/*.isml/output.mpd
+@@||playfamily.ru/live/*/*/*.isml/*.dash
+@@||cdn.teleport.media/*/teleport.shaka.*.js?*&platform=*$script
+@@||player-static.okko.tv/*/core/esm/*.js$script,domain=okko.tv
+@@||drm.playfamily.ru^
+@@||gateway.teleport.media/v*/opts$xhr
+@@||ctx.playfamily.ru/screenapi/v*/prepareplayback/*/$xhr
 !
 !
 ! -
