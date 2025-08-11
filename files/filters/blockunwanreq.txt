@@ -2577,24 +2577,24 @@ okko.tv,okko.sport#%#//scriptlet('set-cookie', 'cookie-confirm', '1')
 ||yastatic.net/s*/home-static/feeds/*market*/market-feed.*$script,css,domain=ya.ru
 ||ya.ru/portal/proxy?blocks=Market_cart$xhr,script,domain=ya.ru,important
 ||ya.ru/portal/feed?*market*$xhr,domain=ya.ru,important
-! ||dr*.yandex.net/*nel$other,xhr
+! dr*.yandex.net/*nel$other,xhr
 ||advertising.yandex.ru^
-$document,removeparam=from,domain=yandex.*|ya.ru
+$removeparam=from,domain=yandex.*|ya.ru
 ||yastatic.net/es5-shims/*/es5-shims.*.js$script,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
 ! ||yastatic.net/s*/web4static/*/static/App-FootScript_advRsya*.js (Waiting for adding..)
 ||yastatic.net/s*/web4static/*/static/media/noize-transparent*.gif^$image
-||127.0.0.1:30102/p?t=
-||127.0.0.1:29009/p?t=
-||127.0.0.1:29010/p?t=
-||127.0.0.1:30103/p?t=
+! 127.0.0.1:30102/p?t=
+! 127.0.0.1:29009/p?t=
+! 127.0.0.1:29010/p?t=
+! 127.0.0.1:30103/p?t=
 ||startup.mobile.yandex.nes^$important
-||localhost:30102/p?t=
-||localhost:29009/p?t=
-||localhost:29010/p?t=
-||localhost:30103/p?t=
+! localhost:30102/p?t=
+! localhost:29009/p?t=
+! localhost:29010/p?t=
+! localhost:30103/p?t=
 ||mc.yango.com^$important
 ||yandex.ru/suggest/suggest-ya.cgi$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
-||yandex.ru/portal/searchframe/$third-party,important,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
+||yandex.ru/portal/searchframe/$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz,important
 ||static-mon.yandex.net/advert
 !
 ! = Cosmetic rules =
