@@ -3153,6 +3153,7 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||drm.playfamily.ru^
 @@||gateway.teleport.media/v*/opts$xhr
 @@||ctx.playfamily.ru/screenapi/v*/prepareplayback/*/$xhr
+@@||appspot.com^$app=net.tsapps.appsales,important
 !
 !
 ! -

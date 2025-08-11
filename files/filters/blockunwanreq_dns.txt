@@ -1123,6 +1123,7 @@
 ! @@||
 @@||drm.playfamily.ru^
 @@||ctx.playfamily.ru^
+@@||appsalesgo2.appspot.com^$important
 !
 !
 ! ===
