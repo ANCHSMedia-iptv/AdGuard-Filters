@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.0.5-R
-! TimeUpdated: 2025-08-11T17:30:00+00:00
+! Version: 4.0.6-R
+! TimeUpdated: 2025-08-16T16:30:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -36,7 +36,7 @@
 ||bronze.systems^$important
 ||graph.facebook.com^$important
 ||optifyr.com^$important
-||gravatar.com^$domain=~gitlab.com,important
+||gravatar.com^$domain=~gitlab.com|~9to5google.com|~9to5mac.com|~9to5toys.com|~dronedj.com|~electrek.co,important
 ||amplreq.com^$important
 ||amplitude.com^$important
 !
@@ -1272,6 +1272,12 @@ $cookie=qrator_jsr
 ||id.sber.ru/api/ab^$xhr,domain=id.sber.ru
 ||okko.tv^$cookie=odid
 ||okko.tv^$cookie=SherlockChatInfo
+/wp-content/themes/*/adsbygoogle.js$script
+/wp-content/themes/*/js/googlecmp*/wp-includes/*/hooks.*.js$script,domain=9to5google.com|9to5mac.com|9to5toys.com|dronedj.com|electrek.co
+||smartpress.by/local/templates/sp/js/slam.analytics.js^$script,domain=smartpress.by
+||smartpress.by/bitrix/*/sp/page_*/page*.js$script,domain=smartpress.by
+||smartpress.by/local/templates/sp/components/bitrix/news.detail/.default/include_component.php?AjaxNext=$xhr,domain=smartpress.by
+||360.ru/cookie/$xhr,domain=360.ru
 !
 !
 !
@@ -2236,6 +2242,9 @@ enigmasoftware.com##div.dynamic-container.no-print.active
 enigmasoftware.com###disclaimer
 enigmasoftware.com##header.header:nth-child(2) > div.container > div.header-items.has-menu:first-child > div.item.licenses:nth-child(3)
 enigmasoftware.com###banner-sws-sticky
+tiviapplive.com##div.dialog-widget-content.dialog-lightbox-widget-content.animated
+9to5mac.com###nav-menu-item-489081
+advanced-television.com###elementor-popup-modal-160050
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2753,6 +2762,7 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ||cane.intel.com^
 ||advice-ads.s3.amazonaws.com^
 ||analytics.adobe.io^
+||p.typekit.net^
 !
 ! --
 !
