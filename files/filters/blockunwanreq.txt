@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.0.7-R
-! TimeUpdated: 2025-08-17T09:20:00+00:00
+! Version: 4.0.8-R
+! TimeUpdated: 2025-08-17T12:20:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -167,7 +167,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.*.js^$script,important (новое правило, строка 138 и 139)
 /wp-content/plugins/*/assets/js/tracks.js$script,important
 /ad.js^$script,important
-/empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru
+/empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru|~lenta.com
 */adv/*$image,xhr,script,domain=~pinterest.com|~aliexpress.ru|~aliexpress.com,important
 ! *empty*.*^$image,important
 ||store.bankiros.ru/js/metrics/*.js^$script,domain=bankiros.ru,important
@@ -663,7 +663,7 @@ $cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicd
 $cookie=KIykI
 $cookie=L
 $cookie=bltsr
-$cookie=bh,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by|~yandex.kz|~ya.ru|~yandex.com
+$cookie=bh,third-party,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by|~yandex.kz|~ya.ru|~yandex.com
 $cookie=coockoos
 $cookie=my
 $cookie=/__ddg*_/
@@ -1279,6 +1279,8 @@ $cookie=qrator_jsr
 ||smartpress.by/local/templates/sp/components/bitrix/news.detail/.default/include_component.php?AjaxNext=$xhr,domain=smartpress.by
 ||360.ru/cookie/$xhr,domain=360.ru
 ||virustotal.com/ui/collect^$xhr,domain=virustotal.com,important
+||sitecdn.api.lenta.com/assets-ng/scripts/kaspersky/*.js^$script,domain=lenta.com
+||online-partners.lenta.com/api/tracker/$script,ping,domain=lenta.com,important
 !
 !
 !
@@ -2246,6 +2248,7 @@ enigmasoftware.com###banner-sws-sticky
 tiviapplive.com##div.dialog-widget-content.dialog-lightbox-widget-content.animated
 9to5mac.com###nav-menu-item-489081
 advanced-television.com###elementor-popup-modal-160050
+lenta.com##lnt-root:nth-child(3) > div.app-content:first-child > lu-layout.ng-star-inserted:last-child > lu-novice-offer-widget.ng-star-inserted:last-child
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2452,6 +2455,7 @@ okko.tv,okko.sport#%#//scriptlet('set-cookie', 'cookie-confirm', '1')
 !
 ! Блокировка адреса, который открывается после обновления браузера Опера (Opera).
 ||opera.com/*/ofa/upgraded
+||opera.com/client/upgraded
 !
 !
 ! =Opera=
@@ -2471,11 +2475,15 @@ okko.tv,okko.sport#%#//scriptlet('set-cookie', 'cookie-confirm', '1')
 ||ofa-*-sub.osp.opera.software^$important
 ||mcp.opera-api*.com^$important
 ||mykonf.com^$important
-! ofa-b-sub.osp.opera.software^$removeparam,important
+!
 ||xml.opera.com^$important
 ||thumbnails*opera.com^$important
 ||af.opera.com^$important
 ||sitecheck.opera.com^$important
+||weather.opera-api*.com^
+merchandise.opera-api*.com^
+||speeddials.opera.com/api/v*/partner-content$important
+||speeddials.opera.com/api/v*/external-suggestions-config
 ! =
 !
 !
@@ -2638,8 +2646,8 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 !
 ||www.googleadservices.com^$important
 ||www.google-analytics.com^$important
-||www.googletagmanager.com^$important,domain=~inforesist.org|~starblast.io|~timepad.ru|~zakon.kz|corsair.com|~olx.*|~simon.com|~bethesda.net|~paddle.com
-||googletagmanager.com^$important,domain=~inforesist.org|~starblast.io|~timepad.ru|~zakon.kz|corsair.com|~olx.*|~simon.com|~bethesda.net|~paddle.com
+||www.googletagmanager.com^$domain=~inforesist.org|~starblast.io|~timepad.ru|~zakon.kz|corsair.com|~olx.*|~simon.com|~bethesda.net|~paddle.com,important
+||googletagmanager.com^$domain=~inforesist.org|~starblast.io|~timepad.ru|~zakon.kz|corsair.com|~olx.*|~simon.com|~bethesda.net|~paddle.com,important
 ||googleadservices.com^$important
 ||google-analytics.com^$important
 ||*ds.metric.gstatic.com^$important
@@ -2855,8 +2863,13 @@ vestifm.online$@$link[rel="manifest"]
 @@||sb.ltn.fi^
 @@||limehd.tv/images/banners-demo.png^$image,,domain=limehd.tv
 ! 8.04.25: блокируется из-за фильтра xinggsf, в белом списке.
-@@||blocklists.operacdn.com^ #
+!
+@@||blocklists.operacdn.com^
+@@||download*.operacdn.com/res/servicefiles/disconnect_list/disconnect_list-*-*.json
+@@||download5.operacdn.com/res/servicefiles/adblocker/adlist/lists-*-*.txt
+@@||dl.opera.com/download/get/?adblocker=adlist
 ! получение «чёрных списков» рекламы и трекеров для браузеров Opera.
+!
 @@||time.tbank.ru^
 @@||time.tinkoff.ru^
 @@||sbstats.uk^
@@ -3193,6 +3206,9 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||peers.tv/timeshift/*/*/*.m3u8
 @@||95.181.17.*/*/*/*/*.m3u8
 @@||arbiter.bolshoe.tv/*/*/*/*/*.m3u8
+@@||statusd.digitalcertvalidation.com^
+@@||safebrowsing.googleapis.com/v*/threatListUpdates*fetch?
+@@||speeddials.opera.com/api/v*/thumbnails$image
 !
 !
 ! -
