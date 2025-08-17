@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.0.8-R
-! TimeUpdated: 2025-08-17T12:20:00+00:00
+! Version: 4.0.9-R
+! TimeUpdated: 2025-08-17T13:40:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -130,7 +130,7 @@
 ||rudderstack.com^$important
 ! hh.ru/api/fl/logs/^$other,important,domain=hh.ru (новое правило, строка 589)
 ||cedexis.com^$important
-/generate_204$domain=~youtube.com|~youtube-nocookie.com|~googlevideo.com|~api.browser.yandex.*|~api.browser.yandex.ru
+/generate_204$xhr,domain=~youtube.com|~youtube-nocookie.com|~googlevideo.com|~api.browser.yandex.*|~api.browser.yandex.ru|~i.ytimg.com
 ||adlook.me^$important
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru,important
@@ -214,7 +214,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||publicapi.dodois.io/ru/api/v*/financialmetrics^$xhr,domain=dodopizza.ru,important
 ||papajohns.ru/assets/empty.*.jpg^$image,domain=papajohns.ru,important
 ||supportai.yandex/widget/v*/bundle.js^$script,important
-||id.rambler.ru/rambler-id-helper/auth_events.js^$script,important
+||id.rambler.ru/rambler-id-helper/auth_events.js^$script,third-party,important
 ||cdnn*.img.ria.ru/min/js/analytics/ab_title_scroll_event.js$script,domain=ria.ru,important
 ||cdnn*.img.ria.ru/min/js/libs/ria.get.banners.js$script,domain=ria.ru,important
 ||cdnn*.img.ria.ru/min/js/libs/notifications.js$script,domain=ria.ru
@@ -1281,6 +1281,12 @@ $cookie=qrator_jsr
 ||virustotal.com/ui/collect^$xhr,domain=virustotal.com,important
 ||sitecdn.api.lenta.com/assets-ng/scripts/kaspersky/*.js^$script,domain=lenta.com
 ||online-partners.lenta.com/api/tracker/$script,ping,domain=lenta.com,important
+||youtube.com/ad_companion$important
+||youtube.com/s/search/audio/*.mp3^$media,domain=youtube.com
+||orbit-promo.ru/res/video/popup*.mp4^$media,domain=orbit-promo.ru
+/assets/PopupLayout-*.js^$script,domain=snickers.ru|twix.ru
+/assets/popup-*.js^$script,domain=snickers.ru|twix.ru
+||dsp-rambler.ru^$third-party
 !
 !
 !
@@ -2249,6 +2255,7 @@ tiviapplive.com##div.dialog-widget-content.dialog-lightbox-widget-content.animat
 9to5mac.com###nav-menu-item-489081
 advanced-television.com###elementor-popup-modal-160050
 lenta.com##lnt-root:nth-child(3) > div.app-content:first-child > lu-layout.ng-star-inserted:last-child > lu-novice-offer-widget.ng-star-inserted:last-child
+orbit-promo.ru##div.modal.modal-video-banner:last-child
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3209,6 +3216,10 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||statusd.digitalcertvalidation.com^
 @@||safebrowsing.googleapis.com/v*/threatListUpdates*fetch?
 @@||speeddials.opera.com/api/v*/thumbnails$image
+@@||analytics.iapure.com/rest/v*/analytics/$domain=pphgdbgldlmicfdkhondlafkiomnelnk
+@@||youtube.com/generate_204$xhr
+@@||yt3.ggpht.com^
+@@||yt4.ggpht.com^
 !
 !
 ! -
