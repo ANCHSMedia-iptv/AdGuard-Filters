@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.8.0-R
+! Version: 3.8.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-08-16T16:40:00+00:00
+! TimeUpdated: 2025-08-17T09:20:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 16.08.2025 16:40 UTC
+! Last Modified: 17.08.2025 09:20 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -1054,7 +1054,7 @@
 @@||cdn*.tvplayhome.lt^
 @@||otv.wotom.net^
 @@||tvcdn*.esilnet.kz^
-! @@||tvcdn*.?.kz^
+@@||tvcdn*.oktv.kz^
 @@||mwlogin.net^
 @@||servicepipe.ru^
 @@||tvrlive.susu.ru^
@@ -1127,6 +1127,19 @@
 @@||drm.playfamily.ru^
 @@||ctx.playfamily.ru^
 @@||appsalesgo2.appspot.com^$important
+@@||streamer*.connectto.com^
+@@||ott.tricolor.tv^
+@@||tvip.btk.teleos.ru^
+@@||31.148.48.15^
+@@||streaming.tv-teleport.ru^
+@@||tele2*.cdnvideo.ru^
+@@||streams*.sofast.tv^
+@@||catchup.videoline.ru^
+@@||live-vgtrksmotrim.cdnvideo.ru^
+@@||31.133.36.244^
+@@||178.219.160.169^
+@@||194.143.148.28^
+@@||arbiter.bolshoe.tv^
 !
 !
 ! ===
