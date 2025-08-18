@@ -2489,7 +2489,7 @@ okko.tv,okko.sport#%#//scriptlet('set-cookie', 'cookie-confirm', '1')
 ||af.opera.com^$important
 ||sitecheck.opera.com^$important
 ||weather.opera-api*.com^
-merchandise.opera-api*.com^
+||*merchandise.opera-api*.com^
 ||speeddials.opera.com/api/v*/partner-content$important
 ||speeddials.opera.com/api/v*/external-suggestions-config
 ! =
