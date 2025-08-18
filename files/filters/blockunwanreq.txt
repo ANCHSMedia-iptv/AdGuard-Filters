@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.0.9-R
-! TimeUpdated: 2025-08-17T13:40:00+00:00
+! Version: 4.1.0-R
+! TimeUpdated: 2025-08-18T14:40:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -241,7 +241,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /mh_files/*/imho.js^$script,domain=vesti.ru,important
 ||vesti.ru/i/bg.png$image,xhr,domain=vesti.ru,important
 ||api-voyage.jetcrm.ru/public/form/subscribe-form.js^$script
-||life.ru/_next/static/chunks/2793.3fd7e7f2a78da9d92688.js^$script,domain=life.ru,important # 3.04.25: скрипта наверное нет уже.
+! life.ru/_next/static/chunks/2793.3fd7e7f2a78da9d92688.js^$script,domain=life.ru,important # 3.04.25: скрипта наверное нет уже.
 /p.*^$image,xhr,important
 ||static.1tv.ru/player/config/banner.gif$image,domain=1tv.ru,important
 ||api.1tv.ru/v*/promo_places/alert_for_player^$xhr,domain=1tv.ru,important
@@ -1287,6 +1287,7 @@ $cookie=qrator_jsr
 /assets/PopupLayout-*.js^$script,domain=snickers.ru|twix.ru
 /assets/popup-*.js^$script,domain=snickers.ru|twix.ru
 ||dsp-rambler.ru^$third-party
+||api.corr.life/public/metrics/pageview/site$xhr,domain=life.ru
 !
 !
 !
@@ -2564,28 +2565,28 @@ merchandise.opera-api*.com^
 ||metrika.yandex.*^$important
 ||offerwall.yandex.net^$important
 ! push.yandex.ru^$important
-||yastatic.net/s*/liza/_/promo-*.css^$css,domain=mail.yandex.ru
-||yastatic.net/s*/liza/_/*ad-message.ogg^$media,domain=mail.yandex.ru
-||yastatic.net/s*/distribution/yanalytics/$important
+||yastatic.net/s3/liza/_/promo-*.css^$css,domain=mail.yandex.ru
+||yastatic.net/s3/liza/_/*ad-message.ogg^$media,domain=mail.yandex.ru
+||yastatic.net/s3/distribution/yanalytics/$important
 ! yastatic.net/s*/market-static/export-static/admon/frame.html^$document,domain=market.yandex.ru
-||yastatic.net/s*/psf/mail-liza-react-client/*.mail-liza.react-promo.*.js^$script,domain=mail.yandex.ru
+||yastatic.net/s3/psf/mail-liza-react-client/*.mail-liza.react-promo.*.js^$script,domain=mail.yandex.ru
 ||mail.yandex.ru/web-api/journal/v*^$ping,domain=mail.yandex.ru
 ||media-adv.market.yandex.ru^$important
 ! @@||yandex.ru/clck/click^$domain=mail.yandex.ru
-||yastatic.net/partner-code-bundles/$script,important,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
+||yastatic.net/partner-code-bundles/*.js^$script,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz,important
 ||yastatic.net/nearest.js^$script
 ! browser.pay.yandex.*/api/v*/split-status$important
 ! paybro-static.s*.yandex.net/paybro/v*/widget-*.*^$script,css
 ! paybro-static.s*.yandex.net/paybro/v*/8a4cff28d9bf287197a4.png^$image
-||yastatic.net/safeframe-bundles/$script,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~captcha-api.yandex.ru
+||yastatic.net/safeframe-bundles/*.js^$script,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~captcha-api.yandex.ru
 ||pay.yandex.ru/web/cl/click$important
 ||site.yandex.net/*/js/suggest.js^$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
 ||avatars.mds.yandex.net/get-market-adv/$important
 ||yabs.yandex.*/resource/spacer.gif$important
 ||market.yandex.*/ping
-||yastatic.net/s*/*/export-static/admon/
-||yastatic.net/s*/*/white-desktop/browser-light/browser-light.browser.analytics*.js$script
-||yastatic.net/s*/*/white-desktop/browser-light/browser-light.browser.baseError*.js$script
+||yastatic.net/s3/*/export-static/admon/
+||yastatic.net/s3/*/white-desktop/browser-light/browser-light.browser.analytics*.js$script
+||yastatic.net/s3/*/white-desktop/browser-light/browser-light.browser.baseError*.js$script
 ||avatars.mds.yandex.net/get-marketcms/$image
 ||avatars.mds.yandex.net/get-direct/$image,xhr,important
 ||certificate.mobile.yandex.net/api/v*/$important
@@ -2599,15 +2600,16 @@ merchandise.opera-api*.com^
 ||yastatic.net/share*/$script,xhr,important
 ||abt.*.yandex.net^$important
 ||trends.yandex.net^
-||yastatic.net/s*/home-static/feeds/*market*/market-feed.*$script,css,domain=ya.ru
+||yastatic.net/s3/home-static/feeds/*market*/market-feed.*$script,css,domain=ya.ru
+||yastatic.net/s3/home-static/feeds/*/rythm/desktop/rythm-feed.js^$script,domain=ya.ru
 ||ya.ru/portal/proxy?blocks=Market_cart$xhr,script,domain=ya.ru,important
-||ya.ru/portal/feed?*market*$xhr,domain=ya.ru,important
+||ya.ru/portal/feed?*market*$xhr,domain=ya.ru
 ! dr*.yandex.net/*nel$other,xhr
 ||advertising.yandex.ru^
 $removeparam=from,domain=yandex.*|ya.ru
 ||yastatic.net/es5-shims/*/es5-shims.*.js$script,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
-! ||yastatic.net/s*/web4static/*/static/App-FootScript_advRsya*.js (Waiting for adding..)
-||yastatic.net/s*/web4static/*/static/media/noize-transparent*.gif^$image
+! ||yastatic.net/s3/web4static/*/static/App-FootScript_advRsya*.js (Waiting for adding..)
+||yastatic.net/s3/web4static/*/static/media/noize-transparent*.gif^$image
 ! 127.0.0.1:30102/p?t=
 ! 127.0.0.1:29009/p?t=
 ! 127.0.0.1:29010/p?t=
@@ -2618,8 +2620,8 @@ $removeparam=from,domain=yandex.*|ya.ru
 ! localhost:29010/p?t=
 ! localhost:30103/p?t=
 ||mc.yango.com^$important
-||yandex.ru/suggest/suggest-ya.cgi$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
-||yandex.ru/portal/searchframe/$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz,important
+||*.ru/suggest/suggest-ya.cgi$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
+||yandex.ru/portal/searchframe/*.js^$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz,important
 ||static-mon.yandex.net/advert
 !
 ! = Cosmetic rules =
@@ -2638,6 +2640,8 @@ market.yandex.ru##div[data-apiary-widget-name="@monetize/IncutConstructor/MadvBa
 market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ! ya.ru##div[class^="VanillaReact AliceFabContainer"] # нихрена не помогает избавиться от Алисы
 ! yandex.ru##div[class^="VanillaReact AliceFabContainer"] # нихрена не помогает избавиться от Алисы
+!
+ya.ru##div[class^="rythm-feed"]
 !
 !
 ! =
@@ -3220,6 +3224,9 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||youtube.com/generate_204$xhr
 @@||yt3.ggpht.com^
 @@||yt4.ggpht.com^
+@@||iptvx.one/assets/avatars/*.gif^$image,domain=iptvx.one
+@@||api.browser.yandex.net/configs/ad_hide$xhr,other
+@@||api.browser.yandex.net/configs/ad_blocker$xhr,other
 !
 !
 ! -
@@ -3380,6 +3387,7 @@ insearch.site#@$#body { background: #000000 !important; }
 ! Примечание к 968 строке (правилу) - фиг пойми, для чего приложению подключаться к домену Касперского, в том числе и сайту..
 ! Примечание к 973 строке (правилу) - загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
 ! Примечание к 996 строке (правилу) - не поломается создание/восстановлений резервных копий в/из Google Диск?.. не думаю!
+! Примечание к 244 строке (правилу)  - бесполезно, названия скриптов рандомные и меняются.
 !
 !
 !
