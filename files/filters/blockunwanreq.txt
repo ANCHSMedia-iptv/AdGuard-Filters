@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.1.1-R
-! TimeUpdated: 2025-08-19T10:40:00+00:00
+! Version: 4.1.2-R
+! TimeUpdated: 2025-08-19T18:40:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -135,8 +135,8 @@
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru,important
 ||vk.com/js/api/openapi.js$script,third-party,domain=~vk.com,important
-||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~github.githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz
-||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~github.githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz
+||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~github.githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz
+||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~github.githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz
 /itunes_referals.js^$script,third-party
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script,third-party
 ||improving.duckduckgo.com^$important
@@ -659,7 +659,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 $cookie=adtech_uid
 $cookie=top100_id
 $cookie=dco.id
-$cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicdrama.eu|~pikabu.ru|~taptv.ru|~yes-ru.co.il|~yes.co.il|~nedohackers.site
+$cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicdrama.eu|~pikabu.ru|~taptv.ru|~yes-ru.co.il|~yes.co.il|~nedohackers.site|~gotovim-doma.ru
 $cookie=KIykI
 $cookie=L
 $cookie=bltsr
@@ -1290,6 +1290,7 @@ $cookie=qrator_jsr
 ||api.corr.life/public/metrics/pageview/site$xhr,domain=life.ru
 ||cf.dxmcdn.com/dta/9wb.js^$script,domain=9tv.co.il
 ||nedohackers.site/api/user$xhr,domain=nedohackers.site
+||advisor.api.2gis.*/api/*/advise/gta$xhr
 !
 !
 !
@@ -2675,7 +2676,7 @@ ya.ru##div[class^="rythm-feed"]
 ||jnn-pa.googleapis.com/*/Create^$xhr,other
 ||ssl.gstatic.com/*/blank_1x.png^$image
 ! accounts.google.com/_/IdpIFrameHttp/cspreport$xhr,other (06.12.24: не работает правило, 07.12.24: для безопасности разблокирован (включён))
-||accounts.youtube.com/RotateCookies^$xhr,important
+||accounts.*.com/RotateCookies^$xhr,document,subdocument,important
 ! gvt1.com^
 ||mail-ads.google.com^$important
 ! реклама в почте Gmail
@@ -2693,6 +2694,7 @@ ya.ru##div[class^="rythm-feed"]
 ||doubleclick.nes^$important
 ||play.google.com/d$important
 ||google.com/dfo$important
+/*/GenerateIT^$xhr,other
 !
 ! ===
 !
@@ -2880,7 +2882,7 @@ vestifm.online$@$link[rel="manifest"]
 !
 @@||blocklists.operacdn.com^
 @@||download*.operacdn.com/res/servicefiles/disconnect_list/disconnect_list-*-*.json
-@@||download5.operacdn.com/res/servicefiles/adblocker/adlist/lists-*-*.txt
+@@||download*.operacdn.com/res/servicefiles/adblocker/adlist/lists-*-*.txt
 @@||dl.opera.com/download/get/?adblocker=adlist
 ! получение «чёрных списков» рекламы и трекеров для браузеров Opera.
 !
@@ -3234,6 +3236,8 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||yes-ru.co.il^$cookie=PHPSESSID
 @@||yes.co.il^$cookie=PHPSESSID
 @@||nedohackers.site^$cookie=PHPSESSID
+@@||google.com/js/th/*.js^$script,domain=youtube.com|youtube-nocookie.com|youtu.be
+@@||gotovim-doma.ru^$cookie=PHPSESSID
 !
 !
 ! -
