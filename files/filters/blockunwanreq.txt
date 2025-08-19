@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.1.0-R
-! TimeUpdated: 2025-08-18T14:40:00+00:00
+! Version: 4.1.1-R
+! TimeUpdated: 2025-08-19T10:40:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -659,7 +659,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 $cookie=adtech_uid
 $cookie=top100_id
 $cookie=dco.id
-$cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicdrama.eu|~pikabu.ru|~taptv.ru
+$cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicdrama.eu|~pikabu.ru|~taptv.ru|~yes-ru.co.il|~yes.co.il|~nedohackers.site
 $cookie=KIykI
 $cookie=L
 $cookie=bltsr
@@ -782,7 +782,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||cableman.ru/themes/custom/initlab_cab/images/click-icon.png^$image,domain=cableman.ru
 ||cableman.ru/themes/custom/initlab_cab/images/k-icon.png^$image,domain=cableman.ru
 ||wifika.ru/wp-content/plugins/*/pro/images/blank.gif^$image,domain=wifika.ru,important
-/admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai|~tyuiu.ru
+/admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai|~tyuiu.ru|~me.jimjam.tv|~jimjam.tv
 ||userway.org^$third-party
 ||files.vm.ru/pdf/2025.02/original/thumb_1280_67c0a45f82682c09ce62d1a1.jpg^$image,xhr,domain=vm.ru
 ||stats.wp.com^
@@ -1288,6 +1288,8 @@ $cookie=qrator_jsr
 /assets/popup-*.js^$script,domain=snickers.ru|twix.ru
 ||dsp-rambler.ru^$third-party
 ||api.corr.life/public/metrics/pageview/site$xhr,domain=life.ru
+||cf.dxmcdn.com/dta/9wb.js^$script,domain=9tv.co.il
+||nedohackers.site/api/user$xhr,domain=nedohackers.site
 !
 !
 !
@@ -2783,6 +2785,7 @@ ya.ru##div[class^="rythm-feed"]
 ||advice-ads.s3.amazonaws.com^
 ||analytics.adobe.io^
 ||p.typekit.net^
+||adncdn.net^
 !
 ! --
 !
@@ -3061,12 +3064,12 @@ ya.ru$@$link[rel="manifest"]
 @@||vcdn.biz/*_megogo/live/*/*/*.m3u8
 @@||vcdn.biz^
 @@||mwlogin.net^
-@@||127.0.0.1:28385/intel/v*/$xhr
-@@||127.0.0.1:28386/intel/v*/$xhr
-@@||127.0.0.1:28387/intel/v*/$xhr
-@@||127.0.0.1:28388/intel/v*/$xhr
-@@||127.0.0.1:28389/intel/v*/$xhr
-@@||127.0.0.1:28390$websocket
+@@||127.0.0.1:28385/intel/v*/$xhr,domain=intel.cn|intel.co.id|intel.co.jp|intel.co.kr|intel.com|intel.com.br|intel.com.tw|intel.de|intel.fr|intel.la|intel.vn
+@@||127.0.0.1:28386/intel/v*/$xhr,domain=intel.cn|intel.co.id|intel.co.jp|intel.co.kr|intel.com|intel.com.br|intel.com.tw|intel.de|intel.fr|intel.la|intel.vn
+@@||127.0.0.1:28387/intel/v*/$xhr,domain=intel.cn|intel.co.id|intel.co.jp|intel.co.kr|intel.com|intel.com.br|intel.com.tw|intel.de|intel.fr|intel.la|intel.vn
+@@||127.0.0.1:28388/intel/v*/$xhr,domain=intel.cn|intel.co.id|intel.co.jp|intel.co.kr|intel.com|intel.com.br|intel.com.tw|intel.de|intel.fr|intel.la|intel.vn
+@@||127.0.0.1:28389/intel/v*/$xhr,domain=intel.cn|intel.co.id|intel.co.jp|intel.co.kr|intel.com|intel.com.br|intel.com.tw|intel.de|intel.fr|intel.la|intel.vn
+@@||127.0.0.1:28390$websocket,domain=intel.cn|intel.co.id|intel.co.jp|intel.co.kr|intel.com|intel.com.br|intel.com.tw|intel.de|intel.fr|intel.la|intel.vn
 @@||servicepipe.ru^$script
 @@||trives-shop.ru^$cookie=PHPSESSID
 @@||tvrlive.susu.ru^
@@ -3227,6 +3230,10 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||iptvx.one/assets/avatars/*.gif^$image,domain=iptvx.one
 @@||api.browser.yandex.net/configs/ad_hide$xhr,other
 @@||api.browser.yandex.net/configs/ad_blocker$xhr,other
+@@||dx8679cyczv2z.cloudfront.net/wp-admin/admin-ajax.php$xhr,domain=me.jimjam.tv|jimjam.tv|*.jimjam.tv,important
+@@||yes-ru.co.il^$cookie=PHPSESSID
+@@||yes.co.il^$cookie=PHPSESSID
+@@||nedohackers.site^$cookie=PHPSESSID
 !
 !
 ! -
