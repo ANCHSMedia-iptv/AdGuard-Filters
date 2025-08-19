@@ -1289,7 +1289,6 @@ $cookie=qrator_jsr
 ||dsp-rambler.ru^$third-party
 ||api.corr.life/public/metrics/pageview/site$xhr,domain=life.ru
 ||cf.dxmcdn.com/dta/9wb.js^$script,domain=9tv.co.il
-||nedohackers.site/api/user$xhr,domain=nedohackers.site
 ||advisor.api.2gis.*/api/*/advise/gta$xhr
 !
 !
@@ -3236,6 +3235,7 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||yes-ru.co.il^$cookie=PHPSESSID
 @@||yes.co.il^$cookie=PHPSESSID
 @@||nedohackers.site^$cookie=PHPSESSID
+@@||nedohackers.site/api/user$xhr,domain=nedohackers.site
 @@||google.com/js/th/*.js^$script,domain=youtube.com|youtube-nocookie.com|youtu.be
 @@||gotovim-doma.ru^$cookie=PHPSESSID
 !
