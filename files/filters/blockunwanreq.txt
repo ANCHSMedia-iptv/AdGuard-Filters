@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.1.2-R
-! TimeUpdated: 2025-08-19T18:40:00+00:00
+! Version: 4.1.3-R
+! TimeUpdated: 2025-08-20T11:10:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -782,7 +782,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||cableman.ru/themes/custom/initlab_cab/images/click-icon.png^$image,domain=cableman.ru
 ||cableman.ru/themes/custom/initlab_cab/images/k-icon.png^$image,domain=cableman.ru
 ||wifika.ru/wp-content/plugins/*/pro/images/blank.gif^$image,domain=wifika.ru,important
-/admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai|~tyuiu.ru|~me.jimjam.tv|~jimjam.tv
+/admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai|~tyuiu.ru|~me.jimjam.tv|~jimjam.tv|~*.jimjam.tv
 ||userway.org^$third-party
 ||files.vm.ru/pdf/2025.02/original/thumb_1280_67c0a45f82682c09ce62d1a1.jpg^$image,xhr,domain=vm.ru
 ||stats.wp.com^
@@ -792,7 +792,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||easeus.com/default/js/ad_download.js^$script,domain=easeus.com|easeus.*.com,important
 ||mail.easeus.com/common-api/share/count^$xhr,domain=easeus.com|easeus.*.com
 ||easeus.com/default/js/sensorsdata/abtest.min.js^$script,domain=easeus.com|easeus.*.com
-||easeus.*.com/sa$ping,domain=easeus.com|easeus.*.com
+/sa$ping,domain=easeus.com|easeus.*.com
 ||easeus.com/default/js/globle.js^$script,domain=easeus.com|easeus.*.com,important
 ||easeus.com/default/js/other.js^$script,domain=easeus.com|easeus.*.com,important
 /ezais/analytics$xhr,important
@@ -1056,7 +1056,7 @@ images/*/Discord*logo.*$image,domain=fandom.com|telepedia.fandom.com|*.fandom.co
 ||log*.capcutapi.com^$important
 ||mobile-static.mindbox.ru^$important
 ||stat.teleport.media^$important
-||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile|com.idamob.tinkoff.android
+||e.mail.ru^$third-party,app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile|com.idamob.tinkoff.android
 ||ortomir24.ru/rest/pull.config.get.json$xhr,domain=ortomir24.ru
 ||sp-man.ru/bitrix/templates/eshop_bootstrap_green/assets/img/halva-btn.png^$image,domain=sp-man.ru
 ||vk.com^$domain=shopogolic.net|shopogolic.club
@@ -1290,6 +1290,8 @@ $cookie=qrator_jsr
 ||api.corr.life/public/metrics/pageview/site$xhr,domain=life.ru
 ||cf.dxmcdn.com/dta/9wb.js^$script,domain=9tv.co.il
 ||advisor.api.2gis.*/api/*/advise/gta$xhr
+||stmtag.ru^$important
+/clickstream.js$important,domain=~stmtag.ru
 !
 !
 !
@@ -1397,15 +1399,22 @@ $cookie=qrator_jsr
 ! Blocking ads, analytics and other “garbage”.
 ! Блокировка рекламы, аналитики и прочего «мусора».
 !
-! finance.ozon.ru/api/v*/referralProgram_promoter_getPromoterInfo^$xhr,domain=finance.ozon.ru
-||finance.ozon.ru/apps/loyalty/api/loyalty/creditPromotion$xhr,domain=finance.ozon.ru
-! finance.ozon.ru/api/v*/loyalty_promotions_getBanners^$xhr,domain=finance.ozon.ru
-! finance.ozon.ru/api/v*/loyalty_stars_getPromotionStatus^$xhr,domain=finance.ozon.ru
-||cdn*.ozone.ru/s*/ob-frontend/prod/release/all/static/assets/_app/immutable/assets/new-ozon-app-qr.*.svg^$image,domain=finance.ozon.ru
-! finance.ozon.ru/api/v*/performance^$xhr,ping,domain=finance.ozon.ru,important
-! finance.ozon.ru/api/v*/loyalty_promotions_getCurtain^$xhr,domain=finance.ozon.ru
+! 
+||finance.ozon.ru/api/v*/creditProducts$xhr,domain=finance.ozon.ru
+||finance.ozon.ru/apps/promo/$xhr,domain=finance.ozon.ru
+||finance.ozon.ru/api/v*/premiumPartners/$xhr,domain=finance.ozon.ru
+||cdn*.ozone.ru/s3/*/release/*/_app/immutable/assets/new-ozon-app-qr.*.svg^$image,domain=finance.ozon.ru
+||finance.ozon.ru/api/v*/performance^$xhr,ping,domain=finance.ozon.ru
 ||finance.ozon.ru/*/promoter$xhr,domain=finance.ozon.ru
-! ||
+||st.ozone.ru/s3/*/performance-meter/*/index.*.js^$script,domain=finance.ozon.ru
+||st.ozone.ru/s3/*/error-meter/*/index.*.js^$script,domain=finance.ozon.ru
+||io-bank.ozone.ru/metrixa/$xhr,domain=finance.ozon.ru
+||finance.ozon.ru/e^$ping,xhr,domain=finance.ozon.ru
+||cdn*.ozone.ru/s3/*/release/*/_app/immutable/assets/kionAccent.*.webp^$image,domain=finance.ozon.ru
+||cdn*.ozone.ru/s3/*/release/apps/mgm/_app/immutable/chunks/sendTrackingEvent.*.js^$script,domain=finance.ozon.ru
+||io-bank.ozone.ru/logs-gateway/$xhr,domain=finance.ozon.ru
+||finance.ozon.ru/apps/mgm/api/banners/getBanners^$xhr,domain=finance.ozon.ru
+||cdn*.ozone.ru/s3/*/release/*/_app/immutable/assets/Crown.*.webp^$image,domain=finance.ozon.ru
 !
 ! От блокировки картинки с QR кодом для скачивания приложения Ozon Банка, текст справа немного съехал налево 0_0.
 ! From blocking the picture with the QR code for downloading the Ozon Bank app, the text on the right has moved slightly to the left 0_0.
@@ -1430,9 +1439,8 @@ $cookie=qrator_jsr
 ||analytics.pinterest.com^$important
 ||ct.pinterest.com^$important
 ||widgets.pinterest.com^$important
-||pinterest.com/*/storage_report/$important
-||*-net.pinterest.com^
-||*-net.pinimg.com^
+||*-net.pinterest.com^$important
+||*-net.pinimg.com^$important
 !
 ! ===
 !
@@ -1740,7 +1748,12 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 .ru/eventea/*/eventea*.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 .ru/eventea/v*/tjournal.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 .ru/api/common/v*/ping$xhr,domain=tbank.ru|tinkoff.ru,important
-.ru/api/common/v*/session_status$xhr,domain=tbank.ru|tinkoff.ru,important
+.ru/api/common/v*/session_status?appName=$xhr,domain=tbank.ru|tinkoff.ru,important
+.ru/api/common/v*/session?appName=$xhr,domain=tbank.ru|tinkoff.ru,important
+.ru/frontend-libraries/*/sentry/*/*.js^$script,domain=tbank.ru|tinkoff.ru,important
+.ru/*/*-web-performance-*.js^$script,xhr,domain=tbank.ru|tinkoff.ru,important
+||error-hub.tinkoff.ru^$important
+.ru/ws/monitoring/log$image,domain=tbank.ru|tinkoff.ru,important
 !
 ! ===
 !
@@ -2259,6 +2272,7 @@ tiviapplive.com##div.dialog-widget-content.dialog-lightbox-widget-content.animat
 advanced-television.com###elementor-popup-modal-160050
 lenta.com##lnt-root:nth-child(3) > div.app-content:first-child > lu-layout.ng-star-inserted:last-child > lu-novice-offer-widget.ng-star-inserted:last-child
 orbit-promo.ru##div.modal.modal-video-banner:last-child
+finance.ozon.ru##div[class^="banner svelte-sb94re"][data-testid="premium-settings-banner"][role="button"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3238,6 +3252,12 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||nedohackers.site/api/user$xhr,domain=nedohackers.site
 @@||google.com/js/th/*.js^$script,domain=youtube.com|youtube-nocookie.com|youtu.be
 @@||gotovim-doma.ru^$cookie=PHPSESSID
+@@||cdn*.ozone.ru/s3/*/release/*/_app/immutable/chunks/vendors/graphql-tag.*.js^$script,domain=finance.ozon.ru
+@@||cdn*.ozone.ru/s3/*/_app/immutable/chunks/vendors/qrcode.*.js^$script,domain=finance.ozon.ru
+@@||finance.ozon.ru/api/v*/auth_check^$xhr,domain=finance.ozon.ru
+@@||cdn*.ozone.ru/s3/*/release/*/_app/immutable/chunks/vendors/*/antifraud.*.js^$script,domain=finance.ozon.ru
+@@||cdn*.ozone.ru/s3/*/release/*/assets/_app/immutable/chunks/vendors/*/performance-meter.*.js^$script,domain=finance.ozon.ru
+@@||cdn*.ozone.ru/s3/*/release/apps/mgm/_app/immutable/chunks/parseApiErrors.*.js^$script,domain=finance.ozon.ru
 !
 !
 ! -
