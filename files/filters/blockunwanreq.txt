@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 4.1.4-R
-! TimeUpdated: 2025-08-20T15:57:00+00:00
+! TimeUpdated: 2025-08-20T18:57:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1237,7 +1237,7 @@ calltouch.js$script,xhr
 ||api-hprof.odkl.ru/api/crash/$xhr,domain=mail.ru|ok.ru
 ||reklama.mail.ru/*.gif$image
 ||dzen.ru/zen-partner/mailru-morda$xhr,domain=mail.ru
-||mail.ru/?news=main$domain=mail.ru
+||mail.ru/?news=main$xhr,domain=mail.ru
 ||mail.ru/undefined$xhr,domain=mail.ru
 ||gosuslugi.ru/api/opentracing^$xhr,domain=gosuslugi.ru
 ||pay.google.com/gp/p/js/pay.js$domain=lk.rt.ru|my.rt.ru|rt.ru
@@ -1295,7 +1295,7 @@ $cookie=qrator_jsr
 ||vk.com/share.php$third-party,domain=~vk.com,important
 ||go3.*/api/*/sections/recommendations?$xhr,domain=go3.lt|go3.lv|go3.tv
 ||redcdn.pl/file/*/web/tdbc/*/index.html$subdocument,third-party
-||silknet.com/api/view/pixelEvents^$xhr,domain=silknet.com
+||silknet.com/api/view/pixelEvents^$xhr,domain=silknet.com,important
 ||beeline.kz/binaries/content/assets/chat-bot/*.*$script,css,image,media,domain=beeline.kz
 ||sync.kazdsp.com^
 !
@@ -2282,6 +2282,7 @@ finance.ozon.ru##div[class^="banner svelte-sb94re"][data-testid="premium-setting
 9to5google.com###nav-menu-item-295584
 silknet.com##div[class^="tr-popup"]
 beeline.kz##div[class^="chatbot-widget"]
+smotrim.ru###reloadable > header.header.has-ticker:nth-child(3) > div.header__wrapper > div.header__wrapper--inner:nth-child(2) > div.header__ticker:last-child > ul.slider__list
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
