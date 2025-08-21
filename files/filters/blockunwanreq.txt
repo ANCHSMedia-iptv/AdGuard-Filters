@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.1.5-R
-! TimeUpdated: 2025-08-21T09:31:00+00:00
+! Version: 4.1.6-R
+! TimeUpdated: 2025-08-21T18:40:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -181,7 +181,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||img*.russianfood.com/images/common/main_menu_bg1.gif^$image,domain=russianfood.com
 ||img*.russianfood.com/images/common/center_bg.gif^$image,domain=russianfood.com
 ||img*.russianfood.com/images/common/bottom_line_bg.gif^$image,domain=russianfood.com
-||stat*.russianfood.com/tapi^$domain=russianfood.com,important
+||stat*.russianfood.com/tapi^$xhr,domain=russianfood.com,important
 ||russianfood.com/images/blg.png^$image,domain=russianfood.com,important
 ||rbc.ru/v*/geoinfo/by-ip/$xhr,domain=rbc.ru
 ! ext.clickstream.sberbank.ru/metrics/$xhr,important (новое правило, строка 771)
@@ -659,7 +659,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 $cookie=adtech_uid
 $cookie=top100_id
 $cookie=dco.id
-$cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicdrama.eu|~pikabu.ru|~taptv.ru|~yes-ru.co.il|~yes.co.il|~nedohackers.site|~gotovim-doma.ru|~2ip.ru|~2ip.io
+$cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicdrama.eu|~pikabu.ru|~taptv.ru|~yes-ru.co.il|~yes.co.il|~nedohackers.site|~gotovim-doma.ru|~2ip.ru|~2ip.io|~1000.menu
 $cookie=KIykI
 $cookie=L
 $cookie=bltsr
@@ -1221,7 +1221,7 @@ calltouch.js$script,xhr
 ||sentry.infra.myapelsin.ru^$important
 ||heartbeat.beetv.kz/ping$xhr,image,domain=beetv.kz
 ||rum.cdnpure.com^$important
-||static.yoomoney.ru^$domain=limehd.tv
+||yoomoney.ru^$domain=limehd.tv
 ||agj.st^
 ||dogo.intel.com^
 ||chaseherbalpasty.com^$important
@@ -1304,6 +1304,12 @@ $cookie=qrator_jsr
 ||datacentermap.com/api/pageview/^$xhr,domain=datacentermap.com,important
 ||umami.datacentermedia.com^
 ! ||api.picsart.com/*/subscription/promo/special-offer$xhr,domain=picsart.com (Waiting for adding..)
+||sentry.iptv2022.com^$important
+||limehd.tv/_nuxt/sentry.client.config-*.js^$script,domain=limehd.tv
+||api.okcdn.ru/fb.do
+||russianfood.com/images/lb/best_yt_bg__*.png^$image,domain=russianfood.com
+||russianfood.com/images/lb/best_fb_bg__*.png^$image,domain=russianfood.com
+||eda.ru/api/v*/graphql^$xhr,domain=eda.ru
 !
 !
 !
@@ -1851,6 +1857,7 @@ rbkgames.com###global-wrapper > div.main-content:nth-child(7) > div.centered.cen
 rbkgames.com##.quick-bar
 mag.103.by##.cookiesNotificationBy
 gemotest.ru##div.content-inner:nth-child(6) > main.content-section.content-wrapper_info-article:nth-child(5) > div.container__flex:first-child > aside.sidebar.mobile--hidden:last-child > div.sidebar-inner.sticky--widget:last-child > a.sidebar__widget.telegram-widget:first-child
+russianfood.com###layout > div.layout > div.wrapper > noindex:last-child > div.ab_detect:nth-child(2)
 ##a[href*="//www.1c-bitrix.ru/composite/"]
 !
 ! Баннер насчёт cookie файлов (сайт ресторанов Rostic's (ex. KFC))
@@ -2202,7 +2209,7 @@ a7-agent.ru##main:nth-child(2) > div.overlay:nth-child(7)
 kino.tricolor.ru##section.main:nth-child(5) > div.app_button:first-child
 !
 ! Установить на ПК
-limehd.tv###__nuxt > div.w-full.min-h-screen > div.flex.flex-col.min-h-screen.fullscreen\:overflow-hidden.fullscreen\:h-screen:first-child > header.sticky.translate-x-0.z-50.top-0.px-4.xl\:px-8.h-16.text-white.bg-neutral-900.flex.justify-between.items-center.w-screen:first-child > div.flex.items-center.gap-x-4.xl\:gap-x-8:first-child > ul.flex.items-center.gap-x-2.font-medium.hidden.md\:flex:last-child > li.hover\:text-neutral-200.text-neutral-400.last\:text-purple-light.last\:hidden.last\:xl\:block:last-child
+limehd.tv##li[aria-label="Установить на ПК"]
 !
 ! Реклама в Peers TV
 peers.tv##div.header-wrap.clearfix:nth-child(4) > header.row > nav.col-md-16 > ul.list-inline.main-menu:nth-child(2) > li.b2b-link:last-child
@@ -2290,6 +2297,9 @@ silknet.com##div[class^="tr-popup"]
 beeline.kz##div[class^="chatbot-widget"]
 smotrim.ru###reloadable > header.header.has-ticker:nth-child(3) > div.header__wrapper > div.header__wrapper--inner:nth-child(2) > div.header__ticker:last-child > ul.slider__list
 delfi.lt###__layout > div.nuxt-wrapper.theme-m360 > header.header-primary.display-print-none:first-child > div.header > nav.header-menu.header-menu--primary:nth-child(2) > div.header-menu__container.container-xl.h-100 > div.row.no-gutters.h-100.header-menu__row > div.col-12 > div.row.no-gutters.header-menu__row > div.header-menu__horizontal.header-menu__horizontal--right:last-child > div.row.no-gutters.header-menu__horizontal__row > div.col-auto.position-static > div > ul.header-actions.align-items-center.list > li.header-actions__item:nth-child(3)
+russianfood.com###layout > div.layout > div.wrapper > table:nth-child(4) > tbody > tr:first-child > td.sub_right:last-child > div.sub_block:nth-child(7)
+russianfood.com###layout > div.layout > div.wrapper > table:nth-child(4) > tbody > tr:first-child > td.sub_left:first-child > div.sub_block:nth-child(4)
+russianfood.com###d_an_l_1 > div.localb:first-child
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3103,6 +3113,7 @@ ya.ru$@$link[rel="manifest"]
 @@||127.0.0.1:28389/intel/v*/$xhr,domain=intel.cn|intel.co.id|intel.co.jp|intel.co.kr|intel.com|intel.com.br|intel.com.tw|intel.de|intel.fr|intel.la|intel.vn
 @@||127.0.0.1:28390$websocket,domain=intel.cn|intel.co.id|intel.co.jp|intel.co.kr|intel.com|intel.com.br|intel.com.tw|intel.de|intel.fr|intel.la|intel.vn
 @@||servicepipe.ru^$script
+@@||servicepipe.ru/*/default.gif^$image
 @@||trives-shop.ru^$cookie=PHPSESSID
 @@||tvrlive.susu.ru^
 @@||85.187.13.40^
@@ -3294,6 +3305,14 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||mediasat.info^$cookie=wp-wpml_current_language
 @@||2ip.ru^$cookie=PHPSESSID
 @@||2ip.io^$cookie=PHPSESSID
+@@||limehd.tv/api/v*/playlist$xhr,domain=limehd.tv
+@@||limehd.tv/api/v*/epg$xhr,domain=limehd.tv
+@@||limehd.tv/api/v*/banners^$xhr,domain=limehd.tv
+@@||vod.stb.tvime.ru^
+@@||apk-downloaders.com/search/tsc.php$domain=apk-downloaders.com,important
+@@||1000.menu^$cookie=PHPSESSID
+@@||food.ru^$cookie=/TS01/
+@@||food.ru^$cookie=foodrusid
 !
 !
 ! -
@@ -3454,7 +3473,7 @@ insearch.site#@$#body { background: #000000 !important; }
 ! Примечание к 968 строке (правилу) - фиг пойми, для чего приложению подключаться к домену Касперского, в том числе и сайту..
 ! Примечание к 973 строке (правилу) - загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
 ! Примечание к 996 строке (правилу) - не поломается создание/восстановлений резервных копий в/из Google Диск?.. не думаю!
-! Примечание к 244 строке (правилу)  - бесполезно, названия скриптов рандомные и меняются.
+! Примечание к 244 строке (правилу) - бесполезно, названия скриптов рандомные и меняются.
 !
 !
 !
