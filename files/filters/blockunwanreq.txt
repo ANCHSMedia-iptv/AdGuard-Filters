@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.1.4-R
-! TimeUpdated: 2025-08-20T19:31:00+00:00
+! Version: 4.1.5-R
+! TimeUpdated: 2025-08-21T09:31:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -121,7 +121,7 @@
 ||api.x.com/*/jot/client_event.json^$xhr,important
 ||tns-counter.ru^$important,domain~tns-counter.ru
 .ru/geo-context^$other,xhr,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
-||geo.geosurf.io^$important
+||geo.geosurf.io^
 /widgets.js^$script,important,domain=~x.com|~twitter.com,third-party
 ||instagram.com/embed.js^$script,third-party,important,domain=~instagram.com
 ||tiktok.com/embed.js^$script,third-party,important,domain=~tiktok.com
@@ -135,8 +135,8 @@
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru,important
 ||vk.com/js/api/openapi.js$script,third-party,domain=~vk.com,important
-||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~github.githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz
-||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~github.githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz
+||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz
+||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz
 /itunes_referals.js^$script,third-party
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script,third-party
 ||improving.duckduckgo.com^$important
@@ -415,7 +415,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||medportal.ru/cookie_notice^$xhr,domain=medportal.ru,important
 ||fedpress.ru/themes/fp/js/share.js^$script,domain=fedpress.ru,important
 ||static.mel.fm/graph.js$script,domain=mel.fm,important
-||*cookie*.css^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~githubassets.com
+||*cookie*.*^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~githubassets.com
 ||b17.ru/img/0.gif^$image,domain=b17.ru,important
 ||ufamama.ru/UserStatistics/$xhr,important,domain=ufamama.ru
 ||ufamama.ru/services/BlogAdvisor/$xhr,important,domain=ufamama.ru
@@ -659,7 +659,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 $cookie=adtech_uid
 $cookie=top100_id
 $cookie=dco.id
-$cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicdrama.eu|~pikabu.ru|~taptv.ru|~yes-ru.co.il|~yes.co.il|~nedohackers.site|~gotovim-doma.ru
+$cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicdrama.eu|~pikabu.ru|~taptv.ru|~yes-ru.co.il|~yes.co.il|~nedohackers.site|~gotovim-doma.ru|~2ip.ru|~2ip.io
 $cookie=KIykI
 $cookie=L
 $cookie=bltsr
@@ -1257,7 +1257,7 @@ $cookie=s24id
 ||downdetector.brandanalytics.ru/downdetector/img/sn-*.webp^$image,domain=downdetector.brandanalytics.ru
 ||video.sports.ru/site/graphql^$xhr,domain=video.sports.ru
 ||production-cmp.isgprivacy.cbsi.com/cps/shamanNotifier.js^$script
-||rt.ru/rb$xhr,ping,domain=lk.rt.ru|my.rt.ru|rt.ru
+||rt.ru/rb$xhr,ping,domain=lk.rt.ru|my.rt.ru|rt.ru,important
 ||visor.sberbank.ru^$important
 ||esa-res.online.sberbank.ru/ESA/bizone/*/bfd.js$script,domain=online.sberbank.ru
 ||bfds.sberbank.ru/api/v*/ws$websocket,domain=online.sberbank.ru
@@ -1268,16 +1268,16 @@ $cookie=s24id
 ||enigmasoftware.com/wp-content/themes/enigma/js/bundle.js$script,domain=enigmasoftware.com
 ||cdn.amcharts.com/lib/*/*.js^$script,domain=netify.ai
 $cookie=qrator_jsr
-/trk^$xhr,domain=wondershare.com.ru|wondershare.com|wondershare.com.*
-||id.sber.ru/api/ab^$xhr,domain=id.sber.ru
+/trk^$xhr,domain=wondershare.com.ru|wondershare.com|wondershare.com.*,important
+||id.sber.ru/api/ab^$xhr,domain=id.sber.ru,important
 ||okko.tv^$cookie=odid
 ||okko.tv^$cookie=SherlockChatInfo
-/wp-content/themes/*/adsbygoogle.js$script
+/wp-content/themes/*/adsbygoogle.js$script,important
 /wp-content/themes/*/js/googlecmp*/wp-includes/*/hooks.*.js$script,domain=9to5google.com|9to5mac.com|9to5toys.com|dronedj.com|electrek.co
-||smartpress.by/local/templates/sp/js/slam.analytics.js^$script,domain=smartpress.by
+||smartpress.by/local/templates/sp/js/slam.analytics.js^$script,domain=smartpress.by,important
 ||smartpress.by/bitrix/*/sp/page_*/page*.js$script,domain=smartpress.by
 ||smartpress.by/local/templates/sp/components/bitrix/news.detail/.default/include_component.php?AjaxNext=$xhr,domain=smartpress.by
-||360.ru/cookie/$xhr,domain=360.ru
+||360.ru/cookie/$xhr,domain=360.ru,important
 ||virustotal.com/ui/collect^$xhr,domain=virustotal.com,important
 ||sitecdn.api.lenta.com/assets-ng/scripts/kaspersky/*.js^$script,domain=lenta.com
 ||online-partners.lenta.com/api/tracker/$script,ping,domain=lenta.com,important
@@ -1298,6 +1298,12 @@ $cookie=qrator_jsr
 ||silknet.com/api/view/pixelEvents^$xhr,domain=silknet.com,important
 ||beeline.kz/binaries/content/assets/chat-bot/*.*$script,css,image,media,domain=beeline.kz
 ||sync.kazdsp.com^
+||lyngsat.com/as10/intelsat_galaxy19.gif^$image,domain=lyngsat.com,important
+||geojs.delfi.lt/g.js^$script,domain=delfi.lt
+||myloc.de/tag/container_*.js^$script,domain=myloc.de,important
+||datacentermap.com/api/pageview/^$xhr,domain=datacentermap.com,important
+||umami.datacentermedia.com^
+! ||api.picsart.com/*/subscription/promo/special-offer$xhr,domain=picsart.com (Waiting for adding..)
 !
 !
 !
@@ -2283,6 +2289,7 @@ finance.ozon.ru##div[class^="banner svelte-sb94re"][data-testid="premium-setting
 silknet.com##div[class^="tr-popup"]
 beeline.kz##div[class^="chatbot-widget"]
 smotrim.ru###reloadable > header.header.has-ticker:nth-child(3) > div.header__wrapper > div.header__wrapper--inner:nth-child(2) > div.header__ticker:last-child > ul.slider__list
+delfi.lt###__layout > div.nuxt-wrapper.theme-m360 > header.header-primary.display-print-none:first-child > div.header > nav.header-menu.header-menu--primary:nth-child(2) > div.header-menu__container.container-xl.h-100 > div.row.no-gutters.h-100.header-menu__row > div.col-12 > div.row.no-gutters.header-menu__row > div.header-menu__horizontal.header-menu__horizontal--right:last-child > div.row.no-gutters.header-menu__horizontal__row > div.col-auto.position-static > div > ul.header-actions.align-items-center.list > li.header-actions__item:nth-child(3)
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2810,7 +2817,6 @@ ya.ru##div[class^="rythm-feed"]
 ||cane.intel.com^
 ||advice-ads.s3.amazonaws.com^
 ||analytics.adobe.io^
-||p.typekit.net^
 ||adncdn.net^
 !
 ! --
@@ -2871,7 +2877,7 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/*Sticky*Adv*.*^$script,css,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 @@||support.avito.ru^
 mi.com#@$#body { overflow: visible !important; }
-@@||stats.1clickvpn.com^
+@@||stats.1clickvpn.com^$domain=pphgdbgldlmicfdkhondlafkiomnelnk
 ! отвечает за основной функционал расширения и приложений 1clickvpn (не реклама).
 @@||github.com^$cookie
 @@||yandex.net^$cookie,~third-party
@@ -3279,6 +3285,15 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||2ip.ru/?area=ajax$xhr,domain=2ip.ru
 @@||beeline.kz^$cookie=language
 @@||beeline.kz^$cookie=zone
+@@||id.iapure.com/api/identity/cookie$domain=pphgdbgldlmicfdkhondlafkiomnelnk,cookie
+@@||geosurf.io^$domain=pphgdbgldlmicfdkhondlafkiomnelnk
+@@||config-toolbar.1clickvpn.com^$domain=pphgdbgldlmicfdkhondlafkiomnelnk
+@@||cloudflare.com^$domain=pphgdbgldlmicfdkhondlafkiomnelnk
+@@/favicon*.ico|
+@@||delfi.lt/api/get-live-streams^$xhr,domain=delfi.lt
+@@||mediasat.info^$cookie=wp-wpml_current_language
+@@||2ip.ru^$cookie=PHPSESSID
+@@||2ip.io^$cookie=PHPSESSID
 !
 !
 ! -

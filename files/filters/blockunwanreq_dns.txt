@@ -3,7 +3,7 @@
 ! Version: 3.8.6-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-08-20T14:16:00+00:00
+! TimeUpdated: 2025-08-21T09:31:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 20.08.2025 14:16 UTC
+! Last Modified: 21.08.2025 09:31 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -270,7 +270,7 @@
 ||*ads.unity3d.com^$important
 ||beacon.shazam.com^$important
 ! tns-counter.ru^$important
-||geo.geosurf.io^$important
+! geo.geosurf.io^$important
 ||relap.io^$important
 ||singular.net^$important
 ||*mediation.unity3d.com^$important
@@ -745,7 +745,7 @@
 ||dls-account.di.atlas.samsung.com^
 ||kidecyg.com^
 ||monitor.azure.com^
-||d.impactradius-event.com^
+||impactradius-event.com^
 ||fpt.microsoft.com^
 ||lptag.liveperson.net^
 ||ads.linkedin.com^
@@ -762,6 +762,9 @@
 ||adservings.ru^
 ||stmtag.ru^
 ||lma.npaw.com^
+||ts.delfi.lt^
+||core.dimatter.ai^
+||browser-intake-datadoghq.com^
 !
 !
 !
