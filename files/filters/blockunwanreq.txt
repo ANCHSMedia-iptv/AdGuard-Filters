@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.1.6-R
-! TimeUpdated: 2025-08-21T18:40:00+00:00
+! Version: 4.1.7-R
+! TimeUpdated: 2025-08-22T18:40:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -659,7 +659,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 $cookie=adtech_uid
 $cookie=top100_id
 $cookie=dco.id
-$cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicdrama.eu|~pikabu.ru|~taptv.ru|~yes-ru.co.il|~yes.co.il|~nedohackers.site|~gotovim-doma.ru|~2ip.ru|~2ip.io|~1000.menu
+$cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicdrama.eu|~pikabu.ru|~taptv.ru|~yes-ru.co.il|~yes.co.il|~nedohackers.site|~gotovim-doma.ru|~2ip.ru|~2ip.io|~1000.menu|~progdvb.com|~panasonic.com|~*.panasonic.com
 $cookie=KIykI
 $cookie=L
 $cookie=bltsr
@@ -1018,8 +1018,8 @@ images/*/Discord*logo.*$image,domain=fandom.com|telepedia.fandom.com|*.fandom.co
 ||lyngsat.com/as10/ses_1801.jpg^$image,domain=lyngsat.com
 ||lyngsat.com/as10/greatway_desktop_2.jpg^$image,domain=lyngsat.com
 ! api-hprof.odkl.ru^
-||cloudflare.com/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
-||1.1.1.1/cgi-cdn/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
+||cloudflare.com/cgi-cdn/trace$xhr,other,third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
+||1.1.1.1/cgi-cdn/trace$xhr,other,third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
 ||ovego.tv/stat/$image,domain=ovego.tv,important
 ||services.fandom.com/*/api/location^$xhr,domain=fandom.com|*.fandom.com
 ||limehd.tv/api/v*/event^$xhr,domain=limehd.tv,important
@@ -1210,7 +1210,7 @@ calltouch.js$script,xhr
 ||tvrus.eu/wp-content/uploads/2021/12/telegram_05_*.jpg^$image,domain=tvrus.eu
 ||tvrus.eu/wp-content/uploads/2020/08/filtry.gif^$image,domain=tvrus.eu
 ||ruspresse.de/rhted_show.php$domain=tvrus.eu
-/cdn-cgi/trace$third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
+/cdn-cgi/trace$xhr,other,third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
 ||amplitude-experiments.*.*^
 ||gitlab.com/*/track_namespace_visits$xhr,domain=gitlab.com
 ||mtm.iptvx.one^$important,domain=iptvx.one|epg.iptvx.one
@@ -2300,6 +2300,8 @@ delfi.lt###__layout > div.nuxt-wrapper.theme-m360 > header.header-primary.displa
 russianfood.com###layout > div.layout > div.wrapper > table:nth-child(4) > tbody > tr:first-child > td.sub_right:last-child > div.sub_block:nth-child(7)
 russianfood.com###layout > div.layout > div.wrapper > table:nth-child(4) > tbody > tr:first-child > td.sub_left:first-child > div.sub_block:nth-child(4)
 russianfood.com###d_an_l_1 > div.localb:first-child
+journal.citilink.ru###__next > div.css-149j17h.e8t5anw0 > footer.css-0.eqego10:last-child > div.css-1pvxy3j.e15lv3k50:first-child > div.css-ad1pua.e2pkej30 > footer.css-zigog8.e1eetkbq0 > section.css-tceq0n.efcoksc0:first-child
+mvideo.ru###ajax-banner > section.timer-creative > div.container
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3313,6 +3315,9 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||1000.menu^$cookie=PHPSESSID
 @@||food.ru^$cookie=/TS01/
 @@||food.ru^$cookie=foodrusid
+@@||progdvb.com^$cookie=PHPSESSID
+@@||panasonic.com^$cookie=PHPSESSID
+@@||*.panasonic.com^$cookie=PHPSESSID
 !
 !
 ! -
