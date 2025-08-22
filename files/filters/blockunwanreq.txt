@@ -1310,6 +1310,7 @@ $cookie=qrator_jsr
 ||russianfood.com/images/lb/best_yt_bg__*.png^$image,domain=russianfood.com
 ||russianfood.com/images/lb/best_fb_bg__*.png^$image,domain=russianfood.com
 ||eda.ru/api/v*/graphql^$xhr,domain=eda.ru
+||mvideo.ru/blog/wp-content/uploads/*/wide-*-*.png^$image,domain=mvideo.ru
 !
 !
 !
