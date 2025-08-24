@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.1.8-R
-! TimeUpdated: 2025-08-24T16:18:00+00:00
+! Version: 4.1.9-R
+! TimeUpdated: 2025-08-24T18:40:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -159,7 +159,7 @@
 /blank.*$image,xhr,important
 /analytics.js$script,domain=~analytics.google.com|~www.google-analytics.com
 ! */analytics.*^$script,important
-! ddlbots.com/cdn/shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,domain=ddlbots.com,important
+! anki.bots/cdn/shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,domain=anki.bots,important
 shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||otlp-http-production.shopifysvc.com/v*/metrics$xhr,important
 ! *web-pixel-shopify-*-pixel*^$domain=ddlbots.com,important
@@ -430,7 +430,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||api.modrinth.com/analytics/$xhr,domain=modrinth.com,important
 ||img.ru-minecraft.ru/logokl2.png^$image,domain=ru-minecraft.ru
 /wp-content/plugins/thirstyaffiliates-pro/js/app/tap-gct.js$script
-/js/share*.js^$script,domain=~teraboxcdn.com|~terabox.com|~terabox.*,important
+/js/share*.js^$script,domain=~teraboxcdn.com|~terabox.com|~terabox.*|~living.ai,important
 ||cubixworld.net/api/freepromo^$xhr,domain=cubixworld.net
 ||cubixworld.net/scripts/ga.js^$script,domain=cubixworld.net,important
 ||vk.com/widget_comments.php$important,xhr,domain=~vk.com,third-party
@@ -1312,8 +1312,8 @@ $cookie=qrator_jsr
 ||eda.ru/api/v*/graphql^$xhr,domain=eda.ru
 ||mvideo.ru/blog/wp-content/uploads/*/wide-*-*.png^$image,domain=mvideo.ru
 ||d-assets.2gis.*/gtaAds.*.js^$script,domain=2gis.ru|2gis.*
-||ams2-cdn.2gis.com/previews/1099498697869230083/c26d4cb0-d993-428c-bb4e-9722e22c780b/1/image_32x32.png$image,domain=2gis.ru
-||ams2-cdn.2gis.com/previews/1210192388937482240/370df819-0c4e-4a63-8c24-6e11809e1ffe/1/ru/image_32x32.png$image,domain=2gis.ru
+||ams2-cdn.2gis.com/previews/1099498697869230083/c26d4cb0-d993-428c-bb4e-9722e22c780b/1/image_32x32.png^$image,domain=2gis.ru
+||ams2-cdn.2gis.com/previews/1210192388937482240/370df819-0c4e-4a63-8c24-6e11809e1ffe/1/ru/image_32x32.png^$image,domain=2gis.ru
 ||d-assets.2gis.*/clickstream/*.js^$script,domain=2gis.ru|2gis.*
 ||d-assets.2gis.*/afScript/script.js^$script,domain=2gis.ru|2gis.*
 ||p.imgur.com^
@@ -1327,6 +1327,7 @@ $cookie=qrator_jsr
 ||freesoft.ru/images/opera_logo.svg^$image,domain=freesoft.ru
 ||stc.utdstc.com/img/svgs/icon-24-turbo*.svg^$image,domain=uptodown.com
 ||stc.utdstc.com/img/svgs/icon-12-hotlink.svg^$image,domain=uptodown.com
+/cdn/shopifycloud/storefront/assets/shop_events_listener-*.js^$script,important
 !
 !
 !
@@ -3347,6 +3348,7 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||panasonic.com^$cookie=PHPSESSID
 @@||*.panasonic.com^$cookie=PHPSESSID
 @@||aptoide.com/static/imgs/app-view/empty-*.svg^$image,domain=aptoide.com,important
+@@||living.ai/wp-content/plugins/elementor/assets/js/shared-frontend-handlers.*.js^$script,domain=living.ai,important
 !
 !
 ! -
