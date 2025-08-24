@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.1.7-R
-! TimeUpdated: 2025-08-22T18:40:00+00:00
+! Version: 4.1.8-R
+! TimeUpdated: 2025-08-24T16:18:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -167,7 +167,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.*.js^$script,important (новое правило, строка 138 и 139)
 /wp-content/plugins/*/assets/js/tracks.js$script,important
 /ad.js^$script,important
-/empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru|~lenta.com
+/empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru|~lenta.com|~aptoide.com
 */adv/*$image,xhr,script,domain=~pinterest.com|~aliexpress.ru|~aliexpress.com,important
 ! *empty*.*^$image,important
 ||store.bankiros.ru/js/metrics/*.js^$script,domain=bankiros.ru,important
@@ -1289,7 +1289,7 @@ $cookie=qrator_jsr
 ||dsp-rambler.ru^$third-party
 ||api.corr.life/public/metrics/pageview/site$xhr,domain=life.ru
 ||cf.dxmcdn.com/dta/9wb.js^$script,domain=9tv.co.il
-||advisor.api.2gis.*/api/*/advise/gta$xhr
+||advisor.api.2gis.*/api/*/advise/gta$xhr,domain=2gis.ru|2gis.*
 ||stmtag.ru^$important
 /clickstream.js$important,domain=~stmtag.ru
 ||vk.com/share.php$third-party,domain=~vk.com,important
@@ -1311,6 +1311,22 @@ $cookie=qrator_jsr
 ||russianfood.com/images/lb/best_fb_bg__*.png^$image,domain=russianfood.com
 ||eda.ru/api/v*/graphql^$xhr,domain=eda.ru
 ||mvideo.ru/blog/wp-content/uploads/*/wide-*-*.png^$image,domain=mvideo.ru
+||d-assets.2gis.*/gtaAds.*.js^$script,domain=2gis.ru|2gis.*
+||ams2-cdn.2gis.com/previews/1099498697869230083/c26d4cb0-d993-428c-bb4e-9722e22c780b/1/image_32x32.png$image,domain=2gis.ru
+||ams2-cdn.2gis.com/previews/1210192388937482240/370df819-0c4e-4a63-8c24-6e11809e1ffe/1/ru/image_32x32.png$image,domain=2gis.ru
+||d-assets.2gis.*/clickstream/*.js^$script,domain=2gis.ru|2gis.*
+||d-assets.2gis.*/afScript/script.js^$script,domain=2gis.ru|2gis.*
+||p.imgur.com^
+||s.imgur.com/*/icon-open-arcade.*.svg^$image,domain=imgur.com
+/web-stats^$xhr,domain=softonic.ru|*.softonic.ru|softonic.jp|softonic.jp|*.softonic.jp|softonic.kr|*.softonic.kr|softonic.nl|*.softonic.nl|softonic.pl|*.softonic.pl|softonic.com.br|*.softonic.com.br|softonic.se|*.softonic.se|softonic.com.tr|*.softonic.com.br|softonic.cn|*.softonic.cn
+/smart-recommended-apps$xhr,domain=softonic.ru|*.softonic.ru|softonic.jp|*.softonic.jp|softonic.kr|*.softonic.kr|softonic.nl|*.softonic.nl|softonic.pl|*.softonic.pl|softonic.com.br|*.softonic.com.br|softonic.se|*.softonic.se|softonic.com.tr|*.softonic.com.br|softonic.cn|*.softonic.cn
+||di-images.sftcdn.net/*/download_intent/softonic/*.*^$image,domain=softonic.ru|*.softonic.ru|softonic.jp|*.softonic.jp|softonic.kr|*.softonic.kr|softonic.nl|*.softonic.nl|softonic.pl|*.softonic.pl|softonic.com.br|*.softonic.com.br|softonic.se|*.softonic.se|softonic.com.tr|*.softonic.com.br|softonic.cn|*.softonic.cn
+/cpi-track-event^$xhr,domain=softonic.ru|*.softonic.ru|softonic.jp|*.softonic.jp|softonic.kr|*.softonic.kr|softonic.nl|*.softonic.nl|softonic.pl|*.softonic.pl|softonic.com.br|*.softonic.com.br|softonic.se|*.softonic.se|softonic.com.tr|*.softonic.com.br|softonic.cn|*.softonic.cn
+/plausible/api/event^$xhr,domain=softonic.ru|*.softonic.ru|softonic.jp|*.softonic.jp|softonic.kr|*.softonic.kr|softonic.nl|*.softonic.nl|softonic.pl|*.softonic.pl|softonic.com.br|*.softonic.com.br|softonic.se|*.softonic.se|softonic.com.tr|*.softonic.com.br|softonic.cn|*.softonic.cn
+||freesoft.ru/sponsored/$subdocument,domain=freesoft.ru
+||freesoft.ru/images/opera_logo.svg^$image,domain=freesoft.ru
+||stc.utdstc.com/img/svgs/icon-24-turbo*.svg^$image,domain=uptodown.com
+||stc.utdstc.com/img/svgs/icon-12-hotlink.svg^$image,domain=uptodown.com
 !
 !
 !
@@ -2303,6 +2319,16 @@ russianfood.com###layout > div.layout > div.wrapper > table:nth-child(4) > tbody
 russianfood.com###d_an_l_1 > div.localb:first-child
 journal.citilink.ru###__next > div.css-149j17h.e8t5anw0 > footer.css-0.eqego10:last-child > div.css-1pvxy3j.e15lv3k50:first-child > div.css-ad1pua.e2pkej30 > footer.css-zigog8.e1eetkbq0 > section.css-tceq0n.efcoksc0:first-child
 mvideo.ru###ajax-banner > section.timer-creative > div.container
+! 2gis.*##._uplvmw
+! 2gis.*##._172gbf8
+garant-tv.com##div.warning.warning--active:nth-child(2)
+imgur.com##a.NavbarArcadeButton.Button.arcade
+imgur.com###root > div > div.desktop-app.App:first-child > div.GalleryPage.Cover.GalleryCover > div.Footer-wrapper:nth-child(7) > div.Footer:first-child > div.Footer-app:last-child
+lk.rt.ru###root > div.application-footer:nth-child(8) > div.application-footer-container > div.application-footer_wrapper.application-footer_wrapper-2:nth-child(3) > div.application-footer_superfooter.null > div.application-footer_superfooter_cookies:nth-child(2)
+tp-link.ru##div.subscribe_button
+softonic.jp,*.softonic.jp,softonic.kr,*.softonic.kr,softonic.nl,*.softonic.nl,softonic.pl,*.softonic.pl,softonic.com.br,*.softonic.com.br,softonic.se,*.softonic.se,softonic.com.tr,*.softonic.com.br,softonic.cn,*.softonic.cn,*.softonic.ru,softonic.ru##div[data-meta="placeholder-slot"]
+uptodown.com##div.content:first-child > header:nth-child(2) > div.turbo-link:nth-child(3)
+uptodown.com###horizontal-link-list
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2667,7 +2693,7 @@ okko.tv,okko.sport#%#//scriptlet('set-cookie', 'cookie-confirm', '1')
 ! localhost:29010/p?t=
 ! localhost:30103/p?t=
 ||mc.yango.com^$important
-||*.ru/suggest/suggest-ya.cgi$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
+.ru/suggest/suggest-ya.cgi$third-party,xhr,other,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
 ||yandex.ru/portal/searchframe/*.js^$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz,important
 ||static-mon.yandex.net/advert
 !
@@ -2842,7 +2868,7 @@ ya.ru##div[class^="rythm-feed"]
 ! === Whitelist ===
 !
 @@||tc.mobile.yandex.net^
-@@||*assets.2gis.*/react.*ad.js^$script,domain=2gis.*
+! @@||d-assets.2gis.*/react.*ad.js^$script,domain=2gis.*
 @@||i*.wp.com/living.ai/wp-content/uploads/2024/08/2024082902-scaled.jpg$image,domain=living.ai
 @@||irecommend.ru/injector/botbot.js^$script,domain=irecommend.ru
 ! антибот скрипт
@@ -2983,7 +3009,7 @@ ya.ru$@$link[rel="manifest"]
 @@||ok.ru/dk
 @@||recaptcha.net^
 @@/channel/*/index.m3u8?q=
-@@||*-assets.2gis.*/gdprCookieBanner.*.js^$script,domain=2gis.*,important
+@@||d-assets.2gis.*/gdprCookieBanner.*.js^$script,domain=2gis.*,important
 @@/play/id*/*.m3u8?q=
 @@/ts/*/*.ts?q=
 @@||gitlab.com/api/graphql^$xhr,domain=gitlab.com
@@ -3304,6 +3330,7 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||config-toolbar.1clickvpn.com^$domain=pphgdbgldlmicfdkhondlafkiomnelnk
 @@||cloudflare.com^$domain=pphgdbgldlmicfdkhondlafkiomnelnk
 @@/favicon*.ico|
+@@/favicon*.png|
 @@||delfi.lt/api/get-live-streams^$xhr,domain=delfi.lt
 @@||mediasat.info^$cookie=wp-wpml_current_language
 @@||2ip.ru^$cookie=PHPSESSID
@@ -3319,6 +3346,7 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||progdvb.com^$cookie=PHPSESSID
 @@||panasonic.com^$cookie=PHPSESSID
 @@||*.panasonic.com^$cookie=PHPSESSID
+@@||aptoide.com/static/imgs/app-view/empty-*.svg^$image,domain=aptoide.com,important
 !
 !
 ! -
@@ -3431,6 +3459,7 @@ insearch.site#@$#body { background: #000000 !important; }
 ||87h6.cfd^
 ||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^
 ||clicks.af-pb06e2.com^
+||adalh-zcq.com^
 !
 !
 !
