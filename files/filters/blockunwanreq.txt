@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.1.9-R
-! TimeUpdated: 2025-08-24T18:40:00+00:00
+! Version: 4.2.0-R
+! TimeUpdated: 2025-08-26T13:52:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -341,7 +341,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /GoogleAnalytics/content/scripts/tracking.js$script,important
 ||cdn.antisov.ru/advisor.js^$script,important
 ||goodmod.ru/scripts/*/api.js^$script,important
-/conversion/ajax_counter.php^$xhr
+/conversion/ajax_counter.php^$xhr,domain=~kino.tricolor.ru|~tricolor.ru
 ||ekip-sport.ru/assets/template/js/cooki.js^$script,domain=ekip-sport.ru,important
 ||assets-cdn.mvideo.ru/*/sprites/sprite.css.svg^$image,domain=mvideo.ru
 ||mvideo.ru/bff/recommendations/$xhr,domain=mvideo.ru
@@ -778,9 +778,9 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||xn--r1a.website^
 ||tele-satinfo.ru/img/1.gif^$image,domain=tele-satinfo.ru
 ||api.vigo.one/uxzoom/*/notify$xhr
-||cableman.ru/ad/content/render$important,domain=cableman.ru
-||cableman.ru/themes/custom/initlab_cab/images/click-icon.png^$image,domain=cableman.ru
-||cableman.ru/themes/custom/initlab_cab/images/k-icon.png^$image,domain=cableman.ru
+/ad/content/render$important,domain=cableman.ru|cableman.pro
+/themes/custom/initlab_cab/images/click-icon.png^$image,domain=cableman.ru|cableman.pro
+/themes/custom/initlab_cab/images/k-icon.png^$image,domain=cableman.ru|cableman.pro
 ||wifika.ru/wp-content/plugins/*/pro/images/blank.gif^$image,domain=wifika.ru,important
 /admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai|~tyuiu.ru|~me.jimjam.tv|~jimjam.tv|~*.jimjam.tv
 ||userway.org^$third-party
@@ -1136,14 +1136,18 @@ ads.js$script
 ||play.tv3.lt/static/images/fake-android-webview-poster.gif^$image,domain=play.tv3.lt
 ! static*.go3.tv/file/go3/resources/scripts/tv3play/ipresso/*/ipressoScript.js^$script,domain=play.tv3.lt|play.tv3.lv|go3.lv|go3.lt|go3.tv
 ||kino.tricolor.ru/dist/img/app_btn-icon.svg^$image,domain=kino.tricolor.ru
-||peers.tv/js/verify_controller/verify_age_controller.js^$script,domain=peers.tv
-||peers.tv/js/ptv/parental_control_controller.js^$script,domain=peers.tv
+!||peers.tv/js/verify_controller/verify_age_controller.js^$script,domain=peers.tv
+!||peers.tv/js/ptv/parental_control_controller.js^$script,domain=peers.tv
 ||peers.tv/cnplayer/imasdk/ads.*.js$script,domain=peers.tv
 ||peers.tv/cnplayer/imasdk/ads.css$css,xhr,domain=peers.tv
-||api.peers.tv/money_miner/*/places.json$xhr,domain=peers.tv
-||peers.tv/js/lib/mediascope.js$script,domain=peers.tv
+!
+||peers.tv/js/ptv/api/money_miner.js^$script,domain=peers.tv
+!||peers.tv/js/lib/mediascope.js$script,domain=peers.tv
 ||peers.tv/cnplayer/cnp.mob.js$script,domain=peers.tv
-||peers.tv/ajax/getpushnotification/$xhr,domain=peers.tv
+||peers.tv/js/lib/vk.js^$script,domain=peers.tv
+||peers.tv/js/lib/yandex.js^$script,domain=peers.tv
+||peers.tv/js/ptv/*/*tracking.js$script,domain=peers.tv
+! ||peers.tv/ajax/getpushnotification/$xhr,domain=peers.tv
 ||analytics.peers.tv^$important
 ||app.torbobit.net/js/analytics/$script,domain=torbobit.net
 ||torbobit.net/fd1/img/download/payments/card_hover.png^$image,domain=torbobit.net
@@ -1200,7 +1204,7 @@ calltouch.js$script,xhr
 ||apistats.rg.ru^
 ||svibeacon.onezapp.com^
 ||static.wikia.nocookie.net/silversurfer/prod/latest/marketingNotificationsUnit*.js^$script,domain=fandom.com|*.fandom.com,important
-||serverblight.com/audio/gamestartup_halloween.mp3^$media,domain=serverblight.com # кому надо, можете разблокировать. (If you need it, you can unblock it.)
+||serverblight.com/audio/gamestartup*.mp3^$media,domain=serverblight.com
 ||a.apkpure.*/dt_*_*.js$script,domain=apkpure.*
 ||apkcombo.com/1.gif^$image,domain=apkcombo.com
 ||tvrus.eu/wp-content/themes/pennews/images/telegram_trim.png$image,domain=tvrus.eu
@@ -1328,6 +1332,13 @@ $cookie=qrator_jsr
 ||stc.utdstc.com/img/svgs/icon-24-turbo*.svg^$image,domain=uptodown.com
 ||stc.utdstc.com/img/svgs/icon-12-hotlink.svg^$image,domain=uptodown.com
 /cdn/shopifycloud/storefront/assets/shop_events_listener-*.js^$script,important
+/images/cookie.png^$image,domain=prosto.tv|prosto.net
+||kino.tricolor.ru/api/debug.php^$xhr,domain=kino.tricolor.ru
+||metrics.tricolor.ru/v*/event^$xhr,domain=kino.tricolor.ru
+||cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js
+||mcustore.ru/img/media/logo_tg.gif^$image,domain=mcustore.ru
+||energizelab.com/upfile/image/20250805/1754405696_905178.jpg^$image,domain=energizelab.com
+||energizelab.com/upfile/image/20250805/1754405704_461206.jpg^$image,domain=energizelab.com
 !
 !
 !
@@ -2165,8 +2176,8 @@ tele-satinfo.ru##div:last-child > table:nth-child(4) > tbody > tr > td:first-chi
 tele-satinfo.ru##div:last-child > table:nth-child(6) > tbody > tr > td:first-child
 tele-satinfo.ru##div:last-child > table:nth-child(6) > tbody > tr > td:nth-child(2)
 tele-satinfo.ru##div:last-child > table:nth-child(6) > tbody > tr > td:nth-child(3)
-cableman.ru##div[class^="footer-metrics"]
-cableman.ru##div[class^="col-lg-4"]
+cableman.ru,cableman.pro##div[class^="footer-metrics"]
+cableman.ru,cableman.pro##div[class^="col-lg-4"]
 wifika.ru###text-35
 dnsleaktest.com##div.container_12:nth-child(2) > p:last-child
 ##a[href*="://www.ivpn.net/"]
@@ -2330,6 +2341,10 @@ tp-link.ru##div.subscribe_button
 softonic.jp,*.softonic.jp,softonic.kr,*.softonic.kr,softonic.nl,*.softonic.nl,softonic.pl,*.softonic.pl,softonic.com.br,*.softonic.com.br,softonic.se,*.softonic.se,softonic.com.tr,*.softonic.com.br,softonic.cn,*.softonic.cn,*.softonic.ru,softonic.ru##div[data-meta="placeholder-slot"]
 uptodown.com##div.content:first-child > header:nth-child(2) > div.turbo-link:nth-child(3)
 uptodown.com###horizontal-link-list
+prosto.tv,prosto.net##div.cookies
+prosto.tv,prosto.net###app > div:nth-child(2)
+agronet.com.ru##div[id="cookiesAgree"]
+energizelab.com##div.mybar.re.isimg
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2751,7 +2766,7 @@ ya.ru##div[class^="rythm-feed"]
 ! gvt1.com^
 ||mail-ads.google.com^$important
 ! реклама в почте Gmail
-||imasdk.googleapis.com^
+||imasdk.googleapis.com^$domain=~peers.tv
 ||ogads*.googleapis.com^$important
 ||androidtvgtvmfe*.googleapis.com^
 ||playmoviesdfe*.googleapis.com^
@@ -3349,6 +3364,10 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||*.panasonic.com^$cookie=PHPSESSID
 @@||aptoide.com/static/imgs/app-view/empty-*.svg^$image,domain=aptoide.com,important
 @@||living.ai/wp-content/plugins/elementor/assets/js/shared-frontend-handlers.*.js^$script,domain=living.ai,important
+kino.tricolor.ru#@#div#loading
+kino.tricolor.ru#@#div[id^="loading"]
+@@/bitrix/tools/conversion/ajax_counter.php$xhr,domain=kino.tricolor.ru|tricolor.ru,important
+serverblight.com#@##cursor
 !
 !
 ! -
@@ -3511,6 +3530,7 @@ insearch.site#@$#body { background: #000000 !important; }
 ! Примечание к 973 строке (правилу) - загрузка промоблоков в приложениях Вести ФМ и Радио России на главном экране.
 ! Примечание к 996 строке (правилу) - не поломается создание/восстановлений резервных копий в/из Google Диск?.. не думаю!
 ! Примечание к 244 строке (правилу) - бесполезно, названия скриптов рандомные и меняются.
+! Примечание к 1207 строке (правилу) - кому надо, можете разблокировать. (If you need it, you can unblock it.)
 !
 !
 !
