@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.2.0-R
-! TimeUpdated: 2025-08-26T13:52:00+00:00
+! Version: 4.2.1-R
+! TimeUpdated: 2025-08-27T11:14:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -379,7 +379,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^$important
-/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com,app=~ru.kinopoisk
+/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com
 ||getrcmx.com^$important
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.*.js^$script,domain=xcom-shop.ru,important
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -1339,7 +1339,11 @@ $cookie=qrator_jsr
 ||mcustore.ru/img/media/logo_tg.gif^$image,domain=mcustore.ru
 ||energizelab.com/upfile/image/20250805/1754405696_905178.jpg^$image,domain=energizelab.com
 ||energizelab.com/upfile/image/20250805/1754405704_461206.jpg^$image,domain=energizelab.com
-!
+||teletype.in/static/SharePopup.*.js^$script,domain=teletype.in
+||teletype.in/static/AD.*.*^$script,css,domain=teletype.in
+||gambit-parent.dfs.ivi.ru/dist/*/*/Sentry.*.js^$script,domain=ivi.ru
+||udc.yahoo.com^
+||mercusys.com/res/diff/*/getresponse.js$xhr,domain=mercusys.com
 !
 !
 !
@@ -3368,6 +3372,10 @@ kino.tricolor.ru#@#div#loading
 kino.tricolor.ru#@#div[id^="loading"]
 @@/bitrix/tools/conversion/ajax_counter.php$xhr,domain=kino.tricolor.ru|tricolor.ru,important
 serverblight.com#@##cursor
+@@/graphql/$xhr,domain=x.com,important
+@@/graphql$app=ru.kinopoisk
+@@||ott.tricolor.tv/dtv/*/*.ts?drmreq=
+@@||ott.tricolor.tv/vod/*/*.ts
 !
 !
 ! -
