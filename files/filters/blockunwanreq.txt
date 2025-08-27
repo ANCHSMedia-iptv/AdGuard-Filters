@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 4.2.1-R
-! TimeUpdated: 2025-08-27T11:14:00+00:00
+! TimeUpdated: 2025-08-27T13:45:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -3080,6 +3080,7 @@ ya.ru$@$link[rel="manifest"]
 @@||edge*-*.beetv.kz/*/tve/index.m3u8
 @@||ucdn.beetv.kz/bpk-tv/*/tve/index.m3u8
 @@||edge*-*.beetv.kz/bpk-token/*/bpk-tv/*/tve/index.mpd
+@@||ucdn.beetv.kz/bpk-tv/*/tve/index.mpd
 @@||monoreel.ru^$cookie=PHPSESSID
 @@||s*.merlive.am^
 @@||timeshift.arpinet.am^
@@ -3090,6 +3091,13 @@ ya.ru$@$link[rel="manifest"]
 @@||178.217.72.66^
 @@||alpha.tv.online.tm^
 @@||vs6.cdn.mrf.tvime.ru^
+@@||vs6.cdn.mrf.tvime.ru/*/*.m3u8
+@@||vs6.cdn.mrf.tvime.ru/*/*.ts
+@@||vs*.cdn.mrf.tvime.ru^
+@@||vs*.cdn.mrf.tvime.ru/*/*.m3u8
+@@||vs*.cdn.mrf.tvime.ru/*/*.ts
+@@||vs*.cdn.mrf.tvime.ru/*/*.m3u8?token=
+@@||vs*.cdn.mrf.tvime.ru/*/*.ts?token=
 @@||95.142.88.250^
 @@||217.11.177.56^
 @@||api.spec.uzd.udevs.io^
@@ -3288,7 +3296,8 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||streamer*.connectto.com/*/*.m3u8
 @@||ott.tricolor.tv/streamingGateway/GetLivePlayList?source=*.m3u8&serviceArea=*&drmreq=
 @@||stream-*-*.ott.tricolor.tv/dtv/id*_*--*/*/plst.m3u8?drmreq=
-@@||stream-*-*.ott.tricolor.tv/vod/*_HD_sub_bscdn/*.m3u8
+@@||ott.tricolor.tv/live/live/*/hls_enc/*.m3u8?drmreq=
+@@||stream-*-*.ott.tricolor.tv/vod/*_*_sub_bscdn/*.m3u8
 @@||tvip.btk.teleos.ru/chid*/*.m3u8
 @@||cdn-*.bonus-tv.ru/*/*.m3u8
 @@||31.148.48.15^
@@ -3359,6 +3368,19 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||limehd.tv/api/v*/epg$xhr,domain=limehd.tv
 @@||limehd.tv/api/v*/banners^$xhr,domain=limehd.tv
 @@||vod.stb.tvime.ru^
+@@||vod.stb.tvime.ru/*/*.m3u8
+@@||vod.stb.tvime.ru/*/*.ts
+@@||vod.stb.tvime.ru/*/*.m3u8?token=
+@@||vod.stb.tvime.ru/*/*.ts?token=
+@@||vod*.stb.tvime.ru^
+@@||vod*.stb.tvime.ru/*/*.m3u8
+@@||vod*.stb.tvime.ru/*/*.ts
+@@||vod*.stb.tvime.ru/*/*.m3u8?token=
+@@||vod*.stb.tvime.ru/*/*.ts?token=
+@@||vs*.cdn.tvime.ru/*/*.m3u8
+@@||vs*.cdn.tvime.ru/*/*.ts
+@@||vs*.cdn.tvime.ru/*/*.m3u8?token=
+@@||vs*.cdn.tvime.ru/*/*.ts?token=
 @@||apk-downloaders.com/search/tsc.php$domain=apk-downloaders.com,important
 @@||1000.menu^$cookie=PHPSESSID
 @@||food.ru^$cookie=/TS01/
@@ -3376,6 +3398,7 @@ serverblight.com#@##cursor
 @@/graphql$app=ru.kinopoisk
 @@||ott.tricolor.tv/dtv/*/*.ts?drmreq=
 @@||ott.tricolor.tv/vod/*/*.ts
+@@||ott.tricolor.tv/*/hls_enc/*.ts?drmreq=
 !
 !
 ! -
