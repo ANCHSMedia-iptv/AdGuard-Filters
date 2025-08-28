@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.2.1-R
-! TimeUpdated: 2025-08-28T13:45:25+00:00
+! Version: 4.2.2-R
+! TimeUpdated: 2025-08-28T16:45:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1348,6 +1348,8 @@ $cookie=qrator_jsr
 ||old.tyuiu.ru/wp-content/themes/tsogu/images/*/social/*.png^$image,domain=old.tyuiu.ru
 ||old.tyuiu.ru/wp-content/plugins/wp-social-likes/*/social-likes*.*^$script,css,domain=old.tyuiu.ru
 ||old.tyuiu.ru/wp-content/themes/tsogu/images/social/*.png^$image,domain=old.tyuiu.ru
+||stat.sputnik.ru^$important
+||convertio.co/process/hit_logger^$xhr,domain=convertio.co
 !
 !
 !
@@ -3406,7 +3408,12 @@ serverblight.com#@##cursor
 @@||ott.tricolor.tv/vod/*/*.ts
 @@||ott.tricolor.tv/*/hls_enc/*.ts?drmreq=
 @@||api.beetv.kz/v*/networks$xhr,domain=beetv.kz
-@@||dc-edge*-*.beetv.kz/datacache/img/*_*.jpg^$image,domain=beetv.kz
+@@/datacache/img/*_*.jpg^$image,domain=beetv.kz
+@@||api.beetv.kz/v*/epg/program_events/*.json$xhr,domain=beetv.kz
+@@||beetv.kz/css/rosing-html5-shaka-player-*.css^$css,domain=beetv.kz
+@@||api.beetv.kz/v*/channels/*/stream.json$xhr,domain=beetv.kz
+@@||beetv.kz/*/__is-bot^$xhr,domain=beetv.kz
+@@||s*.convertio.me/uploader.php?$xhr,domain=convertio.me
 !
 !
 ! -
