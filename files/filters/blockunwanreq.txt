@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
 ! Version: 4.2.1-R
-! TimeUpdated: 2025-08-27T13:45:25+00:00
+! TimeUpdated: 2025-08-28T13:45:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1344,6 +1344,10 @@ $cookie=qrator_jsr
 ||gambit-parent.dfs.ivi.ru/dist/*/*/Sentry.*.js^$script,domain=ivi.ru
 ||udc.yahoo.com^
 ||mercusys.com/res/diff/*/getresponse.js$xhr,domain=mercusys.com
+||tyuiu.ru/media/images/webp/a2a79090-b353-4cac-b4a7-9d2838b0e648.webp^$image,domain=tyuiu.ru
+||old.tyuiu.ru/wp-content/themes/tsogu/images/*/social/*.png^$image,domain=old.tyuiu.ru
+||old.tyuiu.ru/wp-content/plugins/wp-social-likes/*/social-likes*.*^$script,css,domain=old.tyuiu.ru
+||old.tyuiu.ru/wp-content/themes/tsogu/images/social/*.png^$image,domain=old.tyuiu.ru
 !
 !
 !
@@ -2349,6 +2353,8 @@ prosto.tv,prosto.net##div.cookies
 prosto.tv,prosto.net###app > div:nth-child(2)
 agronet.com.ru##div[id="cookiesAgree"]
 energizelab.com##div.mybar.re.isimg
+beetv.kz###app > div.DJ5Ix.S1rbs > div.Ln9g4:nth-child(2)
+tyuiu.ru##a.telegram-float
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3399,6 +3405,8 @@ serverblight.com#@##cursor
 @@||ott.tricolor.tv/dtv/*/*.ts?drmreq=
 @@||ott.tricolor.tv/vod/*/*.ts
 @@||ott.tricolor.tv/*/hls_enc/*.ts?drmreq=
+@@||api.beetv.kz/v*/networks$xhr,domain=beetv.kz
+@@||dc-edge*-*.beetv.kz/datacache/img/*_*.jpg^$image,domain=beetv.kz
 !
 !
 ! -
