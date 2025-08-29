@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.2.2-R
-! TimeUpdated: 2025-08-28T16:45:25+00:00
+! Version: 4.2.3-R
+! TimeUpdated: 2025-08-29T16:50:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -134,7 +134,7 @@
 ||adlook.me^$important
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru,important
-||vk.com/js/api/openapi.js$script,third-party,domain=~vk.com,important
+||vk.com/js/api/openapi.js$script,third-party,domain=~vk.com|~vk.ru,important
 ||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz
 ||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz
 /itunes_referals.js^$script,third-party
@@ -206,7 +206,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~gitlab.com,important
+*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~ingest*.sentry.io|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*sentry.wb.ru|~sentry-dsn-customers.megamarket.tech|~vk.ru,important
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com,important
@@ -222,7 +222,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! */adv.*^$image,important
 ||ura.news/widgets/banner_loader/loader.php$xhr,domain=ura.news,important
 ||telegram.org/js/*widget*.js$script,domain=~telegram.org|~t.me,third-party
-||vk.com/al_video.php$xhr,domain=~vk.com
+||vk.com/al_video.php$xhr,domain=~vk.com|~vk.ru
 ||vk.com/dist/web/ads_light.*.js^$script,important
 ||s.ura.news/js/dist/ccc.bundle.js$script,domain=ura.news,important
 ||s.ura.news/js/dist/aaa.bundle.js$script,domain=ura.news,important
@@ -278,7 +278,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||zoon.ru/images/border.gif^$image,domain=zoon.ru
 ! (новое правило, строка 138 и 139)
 ! (новое правило, строка 138 и 139)
-||userapi.com/js/api/openapi.js$script,third-party,domain=~vk.com,important
+||userapi.com/js/api/openapi.js$script,third-party,domain=~vk.com|~vk.ru,important
 ||analytics.vsem-edu-oblako.ru*/track^$xhr,important
 ||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,important
 |! sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com (новое правило, строка 285)
@@ -379,7 +379,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^$important
-/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com
+/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com
 ||getrcmx.com^$important
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.*.js^$script,domain=xcom-shop.ru,important
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -433,10 +433,10 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /js/share*.js^$script,domain=~teraboxcdn.com|~terabox.com|~terabox.*|~living.ai,important
 ||cubixworld.net/api/freepromo^$xhr,domain=cubixworld.net
 ||cubixworld.net/scripts/ga.js^$script,domain=cubixworld.net,important
-||vk.com/widget_comments.php$important,xhr,domain=~vk.com,third-party
+||vk.com/widget_comments.php$important,xhr,domain=~vk.com|~vk.ru,third-party
 /js/mrl-web-api.js^$script,domain=minecraftrating.ru|misterlauncher.org
 ||tmonitoring.com/uploads/banners/*/*.*^$image,domain=tmonitoring.com
-||api.vk.com/method/widgets.getComments$script,xhr,important,domain=~vk.com,third-party
+||api.vk.com/method/widgets.getComments$script,xhr,third-party,important,domain=~vk.com|~vk.ru
 /download_klauncher*.png^$image
 ||modsmc.ru/_nuxt/2415b65.js^$script,domain=modsmc.ru,important
 ||modsmc.ru/assets/icons/cookies.png^$image,domain=modsmc.ru
@@ -1296,7 +1296,7 @@ $cookie=qrator_jsr
 ||advisor.api.2gis.*/api/*/advise/gta$xhr,domain=2gis.ru|2gis.*
 ||stmtag.ru^$important
 /clickstream.js$important,domain=~stmtag.ru
-||vk.com/share.php$third-party,domain=~vk.com,important
+||vk.com/share.php$third-party,domain=~vk.com|~vk.ru,important
 ||go3.*/api/*/sections/recommendations?$xhr,domain=go3.lt|go3.lv|go3.tv
 ||redcdn.pl/file/*/web/tdbc/*/index.html$subdocument,third-party
 ||silknet.com/api/view/pixelEvents^$xhr,domain=silknet.com,important
@@ -1350,6 +1350,11 @@ $cookie=qrator_jsr
 ||old.tyuiu.ru/wp-content/themes/tsogu/images/social/*.png^$image,domain=old.tyuiu.ru
 ||stat.sputnik.ru^$important
 ||convertio.co/process/hit_logger^$xhr,domain=convertio.co
+||3dnews.ru/track
+||mnokol.tyuiu.ru/site/plugins/content/*/transparent.gif^$image,domain=mnokol.tyuiu.ru,important
+||api.vk.*/method/settingsGeneral.getCookiesPolicyVisible$xhr,domain=vk.com|vk.ru
+||st*-*.vk.com/dist/web/error_monitoring.*.js^$script,,domain=vk.com|vk.ru
+||st*-*.vk.com/dist/web/jobs_devtools_notification.*.js^$script,domain=vk.com|vk.ru
 !
 !
 !
@@ -2357,6 +2362,7 @@ agronet.com.ru##div[id="cookiesAgree"]
 energizelab.com##div.mybar.re.isimg
 beetv.kz###app > div.DJ5Ix.S1rbs > div.Ln9g4:nth-child(2)
 tyuiu.ru##a.telegram-float
+vk.com###side_bar_inner > div.LeftMenuAppPromo:last-child
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2949,7 +2955,7 @@ mi.com#@$#body { overflow: visible !important; }
 @@||github.com^$cookie
 @@||yandex.net^$cookie,~third-party
 @@||aliexpress.ru^$cookie
-@@||stacks.vk-portal.net^$domain=vk.com
+!
 @@||clearurls.xyz^
 @@||api.catcast.tv^
 @@||vgtrk.cdnvideo.ru^
@@ -3270,7 +3276,6 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||static-api.mediavitrina.ru/v*/forced_capping/*/config.json$xhr
 @@||time.is/t*/?$xhr,domain=time.is
 @@||gosuslugi.ru/auth-provider/check-session^$xhr,domain=gosuslugi.ru
-@@||mnokol.tyuiu.ru^
 @@||tyuiu.ru/wp-admin/admin-ajax.php^$xhr,domain=tyuiu.ru
 @@||*.id.facct.ru/id.html
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/deprecatingbrowsers.json$xhr,domain=online.sberbank.ru
@@ -3391,7 +3396,6 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||vs*.cdn.tvime.ru/*/*.ts?token=
 @@||apk-downloaders.com/search/tsc.php$domain=apk-downloaders.com,important
 @@||1000.menu^$cookie=PHPSESSID
-@@||food.ru^$cookie=/TS01/
 @@||food.ru^$cookie=foodrusid
 @@||progdvb.com^$cookie=PHPSESSID
 @@||panasonic.com^$cookie=PHPSESSID
@@ -3402,7 +3406,7 @@ kino.tricolor.ru#@#div#loading
 kino.tricolor.ru#@#div[id^="loading"]
 @@/bitrix/tools/conversion/ajax_counter.php$xhr,domain=kino.tricolor.ru|tricolor.ru,important
 serverblight.com#@##cursor
-@@/graphql/$xhr,domain=x.com,important
+@@/graphql/$xhr,domain=x.com|twitter.com,important
 @@/graphql$app=ru.kinopoisk
 @@||ott.tricolor.tv/dtv/*/*.ts?drmreq=
 @@||ott.tricolor.tv/vod/*/*.ts
@@ -3412,8 +3416,9 @@ serverblight.com#@##cursor
 @@||api.beetv.kz/v*/epg/program_events/*.json$xhr,domain=beetv.kz
 @@||beetv.kz/css/rosing-html5-shaka-player-*.css^$css,domain=beetv.kz
 @@||api.beetv.kz/v*/channels/*/stream.json$xhr,domain=beetv.kz
-@@||beetv.kz/*/__is-bot^$xhr,domain=beetv.kz
+@@||beetv.kz/*-*/__is-bot^$xhr,domain=beetv.kz
 @@||s*.convertio.me/uploader.php?$xhr,domain=convertio.me
+@@||tp-link.ru^$cookie=prefers-color-scheme
 !
 !
 ! -
