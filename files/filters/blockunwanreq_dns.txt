@@ -1,17 +1,17 @@
 ! Title: Block unwanted connections (DNS)
-! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
-! Version: 3.9.0-R
+! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
+! Version: 3.9.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-08-29T16:45:00+00:00
+! TimeUpdated: 2025-08-31T13:53:48+00:00
 ! 
 !
 !
 !
 ! Title: Block unwanted connections (DNS)
-! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. на уровне DNS.
+! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 29.08.2025 16:45 UTC
+! Last Modified: 31.08.2025 13:53 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -405,7 +405,7 @@
 ||push-sdk.com^$important
 ||report.apkpure.net^$important
 ||t3.cdnpure.com^$important
-||r.apkpure.*^$important
+||r.apkpure.net^$important
 ||geo.cookie-script.com^
 ||1dmp.io^
 ||kameleoon.eu^
@@ -1164,6 +1164,7 @@
 @@||vod.stb.tvime.ru^
 @@||vod*.stb.tvime.ru^
 @@||vs*.cdn.tvime.ru^
+@@||clck.ru^
 !
 !
 ! ===

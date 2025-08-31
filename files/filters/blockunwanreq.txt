@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
-! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д..
-! Version: 4.2.3-R
-! TimeUpdated: 2025-08-29T16:50:00+00:00
+! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
+! Version: 4.2.4-R
+! TimeUpdated: 2025-08-31T13:50:46+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1353,8 +1353,22 @@ $cookie=qrator_jsr
 ||3dnews.ru/track
 ||mnokol.tyuiu.ru/site/plugins/content/*/transparent.gif^$image,domain=mnokol.tyuiu.ru,important
 ||api.vk.*/method/settingsGeneral.getCookiesPolicyVisible$xhr,domain=vk.com|vk.ru
-||st*-*.vk.com/dist/web/error_monitoring.*.js^$script,,domain=vk.com|vk.ru
+||st*-*.vk.com/dist/web/error_monitoring.*.js^$script,domain=vk.com|vk.ru
 ||st*-*.vk.com/dist/web/jobs_devtools_notification.*.js^$script,domain=vk.com|vk.ru
+||apkpure.*/static/assets/*/analytics*.js^$script,domain=apkpure.net|apkpure.com,important
+||lizardsystems.com/action/?action=uninstall
+||softportal.com/js/adsense_advert*.js^$script,domain=softportal.com
+||softportal.com/img/_n.gif^$image,domain=softportal.com
+||softportal.com/ajax.php?dj=0&jquery=1&module=adblock_statistics$xhr,domain=softportal.com
+||softportal.com/*_desc.html^$domain=softportal.com
+||convertio.co/js/track^$xhr,domain=convertio.co
+||suenco.ru/local/templates/suenco/assets/images/icon-*.svg^$image,domain=suenco.ru
+/bitrix/js/*/metrika/dist/metrika*.js$script
+||my-software.ru/sites/default/files/styles/recommend/public/field/image/recommend/*.png$image,domain=my-software.ru
+||my-software.ru/sites/all/themes/mytheme/images/bg_recommend.png^$image,xhr,domain=my-software.ru
+||my-software.ru/sites/default/files/styles/large/public/images/*.png$image,domain=my-software.ru
+||my-software.ru/images/linuxstudio.png^$image,domain=my-software.ru
+||dmosk.ru/jas/*.js^$script,domain=dmosk.ru
 !
 !
 !
@@ -2089,8 +2103,8 @@ mtsbank.ru##div[class^="sc-42b79eba-0 bmZTQS"]
 sovcombank.ru##div[class^="fixed bottom-0 left-0 right-0 z-20 w-full border-none bg-white shadow-cookie"]
 unistream.ru##div[class^="cc-window cc-banner cc-type-info cc-theme-classic cc-bottom cc-color-override-1028359685"]
 kp.ru##div[class^="sc-11vvdi3-20 cIvLXI"]
-ip.osnova.news##a[href^="/vpn/ip.html"]
-ip.osnova.news##a[href^="/vpn/hosting.html"]
+ip.osnova.news##a[href*="/vpn/ip.html"]
+! ip.osnova.news##a[href*="/vpn/hosting.html"]
 ##a[href*="//ping-admin.ru"]
 mikhail-yudin.ru##footer.footer:nth-child(6) > div.footer__line:nth-child(2)
 easylauncher.org##div[class="widget"]
@@ -2268,7 +2282,7 @@ pikabu.ru##div.app:nth-child(3) > div.app__inner:nth-child(3) > div.sidebar.side
 on-tv.ru###header_end2
 aeb-blog.ru###fix-wid
 ntvplus.ru##div.aside-layout.container.mb166:nth-child(16) > div.row.sticky-parent > aside.aside.float--left.col-xs-12.col-md-4:first-child > div.aside--inner.sm-reverse.lg-pr > a.aside--banner.visible-lg:last-child
-ip.osnova.news##a[href^="/p/vpn_review/"]
+ip.osnova.news##a[href*="/p/vpn_review/"]
 ip.osnova.news###info > div.card-body.pb-2:last-child > div.card-text.mt-4.mb-4.pt-1:nth-child(11)
 ip.osnova.news###info > div.card-body.pb-2:last-child > p.mt-4.card-text.h6:nth-child(9)
 browserleaks.com##h3[id="comments"]
@@ -2297,7 +2311,7 @@ acetone.ai###q-notify > div.q-notifications > div.q-notifications__list.q-notifi
 cutout.pro###app > div.v-application--wrap > div:first-child > div > div.fixed-header:first-child > div.promeRec.interiorDesign:first-child
 sputniknews.ru,*.sputniknews.ru##a[href*="t.me/sputniknews"]
 116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru###app > div:first-child > div.layout-notifications:last-child > div.wrapper_bAXuV > div.content_bAXuV
-ip.osnova.news##a[href=^"/hosting.html"]
+ip.osnova.news,ips.osnova.news##a[href*="hosting.html"]
 outsidethebox.ms##div.site-container:first-child > div.footer-widgets:nth-child(3) > div.wrap > div.footer-widgets-3.widget-area:last-child
 moobl.ru###people
 moobl.ru###head-left > div.mRub.fa.fa-rub:nth-child(3)
@@ -2363,6 +2377,12 @@ energizelab.com##div.mybar.re.isimg
 beetv.kz###app > div.DJ5Ix.S1rbs > div.Ln9g4:nth-child(2)
 tyuiu.ru##a.telegram-float
 vk.com###side_bar_inner > div.LeftMenuAppPromo:last-child
+my-software.ru###block-views-recommend-links-block
+my-software.ru###block-block-6
+my-software.ru###block-block-7
+my-software.ru###block-block-4
+dmosk.ru##div[class^="article-post-chat"]
+rsload.net##div.wrap:first-child > header.header:first-child > div.header-in.center > ul.header-menu.icon-l.clearfix:nth-child(2) > li:nth-child(8) > a
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3419,6 +3439,9 @@ serverblight.com#@##cursor
 @@||beetv.kz/*-*/__is-bot^$xhr,domain=beetv.kz
 @@||s*.convertio.me/uploader.php?$xhr,domain=convertio.me
 @@||tp-link.ru^$cookie=prefers-color-scheme
+@@||clck.ru^
+@@/bitrix/tools/captcha.php$image,xhr
+@@||sputnik.systems^$cookie=USER_LANG
 !
 !
 ! -
