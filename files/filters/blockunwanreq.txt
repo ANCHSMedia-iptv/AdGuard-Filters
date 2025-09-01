@@ -3499,13 +3499,18 @@ serverblight.com#@##cursor
 !
 !
 ! ||primis.tech^$important #third-party,app=
-! ||www.primis.tech^$important #third-party,app=
-||feed.avplayer.com^$important #third-party,app=
+! ||www.primis.tech^$important
+!#third-party,app=
+||feed.avplayer.com^$important 
+!#third-party,app=
 ||locp-*.viber.com^$important
-! ||primis-amp.tech^$important #third-party,app=
+! ||primis-amp.tech^$important
+!#third-party,app=
 ||appnexusgslb.net^$important
-||player.avplayer.com^$important #third-party,app=
-||primis*.openx.net^$important #third-party,app=
+||player.avplayer.com^$important
+!#third-party,app=
+||primis*.openx.net^$important
+!#third-party,app=
 ||rmp.rakuten.com^$important
 ||stats.viber.com^$important
 ||s.pc.qq.com^$important
