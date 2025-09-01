@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.2.4-R
-! TimeUpdated: 2025-08-31T13:50:46+00:00
+! Version: 4.2.5-R
+! TimeUpdated: 2025-09-01T18:33:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -135,8 +135,8 @@
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru,important
 ||vk.com/js/api/openapi.js$script,third-party,domain=~vk.com|~vk.ru,important
-||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz
-||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz
+||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru
+||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru
 /itunes_referals.js^$script,third-party
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script,third-party
 ||improving.duckduckgo.com^$important
@@ -2361,7 +2361,7 @@ russianfood.com###d_an_l_1 > div.localb:first-child
 journal.citilink.ru###__next > div.css-149j17h.e8t5anw0 > footer.css-0.eqego10:last-child > div.css-1pvxy3j.e15lv3k50:first-child > div.css-ad1pua.e2pkej30 > footer.css-zigog8.e1eetkbq0 > section.css-tceq0n.efcoksc0:first-child
 mvideo.ru###ajax-banner > section.timer-creative > div.container
 ! 2gis.*##._uplvmw
-! 2gis.*##._172gbf8
+2gis.*##._172gbf8
 garant-tv.com##div.warning.warning--active:nth-child(2)
 imgur.com##a.NavbarArcadeButton.Button.arcade
 imgur.com###root > div > div.desktop-app.App:first-child > div.GalleryPage.Cover.GalleryCover > div.Footer-wrapper:nth-child(7) > div.Footer:first-child > div.Footer-app:last-child
@@ -3442,6 +3442,8 @@ serverblight.com#@##cursor
 @@||clck.ru^
 @@/bitrix/tools/captcha.php$image,xhr
 @@||sputnik.systems^$cookie=USER_LANG
+@@||mnokol.tyuiu.ru/site/templates/*/js/cookie*.js$script,domain=mnokol.tyuiu.ru,important
+@@||coworking.tyuiu.ru^
 !
 !
 ! -
