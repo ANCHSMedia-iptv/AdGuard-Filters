@@ -3414,6 +3414,7 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||vs*.cdn.tvime.ru/*/*.ts
 @@||vs*.cdn.tvime.ru/*/*.m3u8?token=
 @@||vs*.cdn.tvime.ru/*/*.ts?token=
+@@||vs*.cdn.tvime.ru^
 @@||apk-downloaders.com/search/tsc.php$domain=apk-downloaders.com,important
 @@||1000.menu^$cookie=PHPSESSID
 @@||food.ru^$cookie=foodrusid
