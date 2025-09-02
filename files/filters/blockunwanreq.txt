@@ -1331,7 +1331,7 @@ $cookie=qrator_jsr
 ||freesoft.ru/images/opera_logo.svg^$image,domain=freesoft.ru
 ||stc.utdstc.com/img/svgs/icon-24-turbo*.svg^$image,domain=uptodown.com
 ||stc.utdstc.com/img/svgs/icon-12-hotlink.svg^$image,domain=uptodown.com
-/cdn/shopifycloud/storefront/assets/shop_events_listener-*.js^$script,important
+/cdn/shopifycloud/storefront/assets/shop_events_listener-*.js^$script,important
 /images/cookie.png^$image,domain=prosto.tv|prosto.net
 ||kino.tricolor.ru/api/debug.php^$xhr,domain=kino.tricolor.ru
 ||metrics.tricolor.ru/v*/event^$xhr,domain=kino.tricolor.ru
