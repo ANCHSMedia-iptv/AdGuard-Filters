@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.2.5-R
-! TimeUpdated: 2025-09-02T13:42:55+00:00
+! Version: 4.2.6-R
+! TimeUpdated: 2025-09-02T17:39:10+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -36,7 +36,7 @@
 ||bronze.systems^$important
 ||graph.facebook.com^$important
 ||optifyr.com^$important
-||gravatar.com^$domain=~gitlab.com|~9to5google.com|~9to5mac.com|~9to5toys.com|~dronedj.com|~electrek.co,important
+! ||gravatar.com^$domain=~gitlab.com|~9to5google.com|~9to5mac.com|~9to5toys.com|~dronedj.com|~electrek.co,important
 ||amplreq.com^$important
 ||amplitude.com^$important
 !
@@ -1371,6 +1371,11 @@ $cookie=qrator_jsr
 ||dmosk.ru/jas/*.js^$script,domain=dmosk.ru
 ||sberbank.com/proxy/services/sberlogger/$xhr,domain=sberbank.ru|sberbank.com
 ||2gis.ru/_/log
+||tile*.maps.2gis.com/v*/ald?*ts=buyhere$xhr,domain=2gis.ru|2gis.*
+||wink.ru/omnichat/*/trailer$domain=lk.rt.ru,important
+||privacy-cs.mail.ru^$third-party
+||help-wifi.ru/wp-admin/admin-ajax.php?id=*&action=wpshop_views_counter$xhr,domain=help-wifi.ru
+||help-wifi.com/wp-content/themes/wifi/images/soc_fb.png^$image,domain=help-wifi.com
 !
 !
 !
@@ -2385,6 +2390,10 @@ my-software.ru###block-block-7
 my-software.ru###block-block-4
 dmosk.ru##div[class^="article-post-chat"]
 rsload.net##div.wrap:first-child > header.header:first-child > div.header-in.center > ul.header-menu.icon-l.clearfix:nth-child(2) > li:nth-child(8) > a
+admin-router.ru##.footer-counters
+lk.rt.ru##div[class^="omch-wink-player-container"]
+##div[class*="ads_r_blok"]
+help-wifi.com##div.soc
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3447,6 +3456,8 @@ serverblight.com#@##cursor
 @@||sputnik.systems^$cookie=USER_LANG
 @@||mnokol.tyuiu.ru/site/templates/*/js/cookie*.js$script,domain=mnokol.tyuiu.ru,important
 @@||coworking.tyuiu.ru^
+@@/wp-content/plugins/google-captcha/
+@@||secure.gravatar.com^$image
 !
 !
 ! -
