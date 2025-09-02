@@ -2962,7 +2962,7 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||iphones.ru/wp-content/themes/simpla2/images/sprites/ir-a18a0.png^$xhr,domain=iphones.ru
 @@||a.apkpure.*/captcha
 @@||accounts.google.com/*/cspreport$xhr,other
-@@||msftconnecttest.com^
+! @@||msftconnecttest.com^
 ! проверка соединения с интернетом на Виндовс (домен Майкрософт).
 @@||pay.yandex.ru^
 @@/.well-known/ddos-guard/$xhr,script,websocket,css
