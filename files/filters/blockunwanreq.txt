@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 4.2.5-R
-! TimeUpdated: 2025-09-01T18:33:30+00:00
+! TimeUpdated: 2025-09-02T13:42:55+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1369,6 +1369,8 @@ $cookie=qrator_jsr
 ||my-software.ru/sites/default/files/styles/large/public/images/*.png$image,domain=my-software.ru
 ||my-software.ru/images/linuxstudio.png^$image,domain=my-software.ru
 ||dmosk.ru/jas/*.js^$script,domain=dmosk.ru
+||sberbank.com/proxy/services/sberlogger/$xhr,domain=sberbank.ru|sberbank.com
+||2gis.ru/_/log
 !
 !
 !
@@ -2361,7 +2363,7 @@ russianfood.com###d_an_l_1 > div.localb:first-child
 journal.citilink.ru###__next > div.css-149j17h.e8t5anw0 > footer.css-0.eqego10:last-child > div.css-1pvxy3j.e15lv3k50:first-child > div.css-ad1pua.e2pkej30 > footer.css-zigog8.e1eetkbq0 > section.css-tceq0n.efcoksc0:first-child
 mvideo.ru###ajax-banner > section.timer-creative > div.container
 ! 2gis.*##._uplvmw
-2gis.*##._172gbf8
+! 2gis.*##._172gbf8
 garant-tv.com##div.warning.warning--active:nth-child(2)
 imgur.com##a.NavbarArcadeButton.Button.arcade
 imgur.com###root > div > div.desktop-app.App:first-child > div.GalleryPage.Cover.GalleryCover > div.Footer-wrapper:nth-child(7) > div.Footer:first-child > div.Footer-app:last-child
