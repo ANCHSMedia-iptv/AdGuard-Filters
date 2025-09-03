@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 4.2.6-R
-! TimeUpdated: 2025-09-02T17:39:10+00:00
+! TimeUpdated: 2025-09-03T06:36:27+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1056,7 +1056,7 @@ images/*/Discord*logo.*$image,domain=fandom.com|telepedia.fandom.com|*.fandom.co
 ||log*.capcutapi.com^$important
 ||mobile-static.mindbox.ru^$important
 ||stat.teleport.media^$important
-||e.mail.ru^$third-party,app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile|com.idamob.tinkoff.android
+://e.mail.ru^$third-party,app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile|com.idamob.tinkoff.android|ru.dublgis.dgismobile
 ||ortomir24.ru/rest/pull.config.get.json$xhr,domain=ortomir24.ru
 ||sp-man.ru/bitrix/templates/eshop_bootstrap_green/assets/img/halva-btn.png^$image,domain=sp-man.ru
 ||vk.com^$domain=shopogolic.net|shopogolic.club
@@ -2761,6 +2761,7 @@ okko.tv,okko.sport#%#//scriptlet('set-cookie', 'cookie-confirm', '1')
 .ru/suggest/suggest-ya.cgi$third-party,xhr,other,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
 ||yandex.ru/portal/searchframe/*.js^$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz,important
 ||static-mon.yandex.net/advert
+||yandex.ru/znatoki/web-api/log
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -3648,4 +3649,5 @@ serverblight.com#@##cursor
 ! Мессенджер Viber заблокирован 13.12.24 на территории РФ из-за нарушения законодательства.
 ! Viber messenger was blocked on 13.12.24 in the territory of the Russian Federation due to violations of the law.
 !
+
 !
