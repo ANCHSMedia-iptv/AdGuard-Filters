@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.2.6-R
-! TimeUpdated: 2025-09-03T06:36:27+00:00
+! Version: 4.2.7-R
+! TimeUpdated: 2025-09-03T15:47:17+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -341,7 +341,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /GoogleAnalytics/content/scripts/tracking.js$script,important
 ||cdn.antisov.ru/advisor.js^$script,important
 ||goodmod.ru/scripts/*/api.js^$script,important
-/conversion/ajax_counter.php^$xhr,domain=~kino.tricolor.ru|~tricolor.ru
+/conversion/ajax_counter.php^$xhr,domain=~kino.tricolor.ru|~tricolor.ru|~arsplus.ru
 ||ekip-sport.ru/assets/template/js/cooki.js^$script,domain=ekip-sport.ru,important
 ||assets-cdn.mvideo.ru/*/sprites/sprite.css.svg^$image,domain=mvideo.ru
 ||mvideo.ru/bff/recommendations/$xhr,domain=mvideo.ru
@@ -1056,7 +1056,7 @@ images/*/Discord*logo.*$image,domain=fandom.com|telepedia.fandom.com|*.fandom.co
 ||log*.capcutapi.com^$important
 ||mobile-static.mindbox.ru^$important
 ||stat.teleport.media^$important
-://e.mail.ru^$third-party,app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile|com.idamob.tinkoff.android|ru.dublgis.dgismobile
+||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile|com.idamob.tinkoff.android|ru.dublgis.dgismobile
 ||ortomir24.ru/rest/pull.config.get.json$xhr,domain=ortomir24.ru
 ||sp-man.ru/bitrix/templates/eshop_bootstrap_green/assets/img/halva-btn.png^$image,domain=sp-man.ru
 ||vk.com^$domain=shopogolic.net|shopogolic.club
@@ -1376,6 +1376,11 @@ $cookie=qrator_jsr
 ||privacy-cs.mail.ru^$third-party
 ||help-wifi.ru/wp-admin/admin-ajax.php?id=*&action=wpshop_views_counter$xhr,domain=help-wifi.ru
 ||help-wifi.com/wp-content/themes/wifi/images/soc_fb.png^$image,domain=help-wifi.com
+||oao-tts.ru/bitrix/templates/tts/images/vk.png^$image,domain=oao-tts.ru
+||oao-tts.ru/bitrix/templates/tts/images/fb.png^$image,domain=oao-tts.ru
+||oao-tts.ru/bitrix/templates/tts/images/mailru.png^$image,domain=oao-tts.ru
+||oao-tts.ru/bitrix/templates/tts/images/ok.png^$image,domain=oao-tts.ru
+||alicdn.com/g/AWSC/et/*/et_f.js^$script,important
 !
 !
 !
@@ -1837,6 +1842,11 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 .ru/*/*-web-performance-*.js^$script,xhr,domain=tbank.ru|tinkoff.ru,important
 ||error-hub.tinkoff.ru^$important
 .ru/ws/monitoring/log$image,domain=tbank.ru|tinkoff.ru,important
+!
+! Чат поддержки в ЛК на сайте сломался в результате блокировки множества адресов (запросов).
+! Хитро хитро сделано.. привязанность аналитики к чате поддержки..
+! Тут только делать пробы так называемые, чтобы понять, что мешает загрузиться окну чата поддержки..
+!
 !
 ! ===
 !
@@ -2394,6 +2404,8 @@ admin-router.ru##.footer-counters
 lk.rt.ru##div[class^="omch-wink-player-container"]
 ##div[class*="ads_r_blok"]
 help-wifi.com##div.soc
+##.b-footer__socials
+tbank.ru##div[class="ads ad adsbox ad-placement carbon-ads"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3459,6 +3471,7 @@ serverblight.com#@##cursor
 @@||coworking.tyuiu.ru^
 @@/wp-content/plugins/google-captcha/
 @@||secure.gravatar.com^$image
+@@||arsplus.ru/bitrix/tools/conversion/ajax_counter.php^$xhr,domain=arsplus.ru
 !
 !
 ! -
@@ -3649,5 +3662,4 @@ serverblight.com#@##cursor
 ! Мессенджер Viber заблокирован 13.12.24 на территории РФ из-за нарушения законодательства.
 ! Viber messenger was blocked on 13.12.24 in the territory of the Russian Federation due to violations of the law.
 !
-
 !
