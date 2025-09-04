@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.2.7-R
-! TimeUpdated: 2025-09-03T15:47:17+00:00
+! Version: 4.2.8-R
+! TimeUpdated: 2025-09-04T18:23:17+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -522,7 +522,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 .ru/wp-content/themes/*/img/tg*.jpg^$image,domain=androidinsider.ru|appleinsider.ru
 .ru/wp-content/themes/*/img/telegram*.svg^$image,domain=androidinsider.ru|appleinsider.ru
 ||vp.rambler.ru/player/sdk.js^$script,important
-||developers.rambler.ru/likes/v*/widget.js^$script,important
+||developers.rambler.ru/likes/v*/widget.js^$script,third-party,important
 ||rambler.ru/location/$xhr
 ||banki.ru/service/layout-header/geo/^$xhr,domain=banki.ru
 ||cdn.banki.ru/static/common-static/common-scripts/build/base.*.js^$script,domain=banki.ru,important
@@ -1381,6 +1381,23 @@ $cookie=qrator_jsr
 ||oao-tts.ru/bitrix/templates/tts/images/mailru.png^$image,domain=oao-tts.ru
 ||oao-tts.ru/bitrix/templates/tts/images/ok.png^$image,domain=oao-tts.ru
 ||alicdn.com/g/AWSC/et/*/et_f.js^$script,important
+||edu.com/privacy_policy$xhr,domain=edu.com,important
+||edu.com/_next/static/chunks/app/privacy_policy/$script,domain=edu.com,important
+||college.72to.ru/1$xhr,domain=college.72to.ru
+/yandexMetrikaCounter.js$script,important
+/commonYaMetrika.js$script,important
+/loginYaMetrika.js$script,important
+/loginEsiaMetrika.js$script,important
+||netscout.com/themes/custom/netscout/js/dest/google-analytics/$script,domain=netscout.com,important
+||get.netscout.com/pd.js^$script,domain=netscout.com
+||mb9pzp.ru^
+||containers.ad-cdek.ru^$important
+||ssp.ad-cdek.ru^$important
+||web-metrics.cdek.ru^$important
+||pochta.ru/assets/ya*_*.png^$image,domain=pochta.ru
+||pochta.ru/assets/POSTRUO_*.png^$image,domain=pochta.ru
+||sntrm.tass.ru^
+||officelife.media/local/templates/html*js/vendor/share*.js$xhr,domain=officelife.media
 !
 !
 !
@@ -1791,6 +1808,7 @@ otzovik.com##div[class^="produkt"][class$="sortable"]
 ||st.aestatic.net/mixer/widgets/bx/RecommendationFeedOrderSimilarWrapper/*/system/RecommendationFeedOrderSimilarWrapper.js^$script,domain=aliexpress.ru
 ||aliexpress.ru/aer-jsonapi/bx/web/recommend/just-for-you-new-ru-sell^$xhr,domain=aliexpress.ru
 ||aliexpress.ru^$cookie=_yasc
+! ||aliexpress.ru/aer-api/v*/bx/account/v*/web/geo/set-auto-geo-cookie$domain=aliexpress.ru
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -2405,7 +2423,20 @@ lk.rt.ru##div[class^="omch-wink-player-container"]
 ##div[class*="ads_r_blok"]
 help-wifi.com##div.soc
 ##.b-footer__socials
-tbank.ru##div[class="ads ad adsbox ad-placement carbon-ads"]
+tbank.ru##div[class*="ads ad adsbox ad-placement carbon-ads"]
+##div[class*="ad-placement carbon-ads"]
+edu.com##div.fixed.inset-0.bg-\[\#4e5863\]\/60.z-\[9998\].transition-opacity.duration-300:nth-child(6)
+edu.com##div.fixed.bottom-0.left-0.w-full.bg-white.shadow-lg.z-\[9999\].p-4.dk\:px-60.dk\:pt-10.box-border.animate-slide-up.dk\:h-51.flex.flex-col:nth-child(7)
+! edu.com##div[aria-describedby="cookie-notice-desc"][role="dialog"][aria-labelledby="cookie-notice-title"]
+college.72to.ru###ext-gen15
+college.72to.ru###ext-comp-1006
+college.72to.ru###ext-gen38
+##iframe[class*="ad-placement carbon-ads"]
+myschool.72to.ru##iframe[class^="adsbox ads ad adsbox doubleclick ad-placement carbon-ads"]
+horizon.netscout.com##div[class^="map-adam-ui--app-adam--share"]
+pochta.ru###main-content > div.Box-sc-7ax6ia-0.eztcbC > div.PageContainer-sc-1d3tiqt-0.gALiKB.account-layout-page-container > div.GridBox-sc-a3sce5-0.iNIYYf > main.GridBox-sc-a3sce5-0.hCIhsF:last-child > div.Box-sc-7ax6ia-0.dvTpFT:last-child > div.Box-sc-7ax6ia-0.Accountstyled__ContainerWrapper-sc-1cypuul-8.dvTpFT.ckdxZO:first-child > div.Box-sc-7ax6ia-0.dvTpFT:last-child > div:nth-child(7)
+pochta.ru###main-content > div.Box-sc-7ax6ia-0.eztcbC > div.PageContainer-sc-1d3tiqt-0.gALiKB.account-layout-page-container > div.GridBox-sc-a3sce5-0.iNIYYf > main.GridBox-sc-a3sce5-0.hCIhsF:last-child > div.Box-sc-7ax6ia-0.dvTpFT:last-child > div.Box-sc-7ax6ia-0.Accountstyled__ContainerWrapper-sc-1cypuul-8.dvTpFT.ckdxZO:first-child > div.Box-sc-7ax6ia-0.dvTpFT:last-child > div:last-child
+ping-admin.com###result_links > div.uk-grid-small.uk-margin-large-bottom.uk-grid.uk-grid-stack:nth-child(3) > div.uk-width-1-1.uk-width-expand\@l.uk-grid-margin.uk-first-column:last-child > div:last-child
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3472,6 +3503,9 @@ serverblight.com#@##cursor
 @@/wp-content/plugins/google-captcha/
 @@||secure.gravatar.com^$image
 @@||arsplus.ru/bitrix/tools/conversion/ajax_counter.php^$xhr,domain=arsplus.ru
+@@||college.72to.ru/static/facebox/*.gif^$image,domain=college.72to.ru
+@@||college.72to.ru/static/vendor/extjs/resources/images/gray/*.gif$image,domain=college.72to.ru
+@@||*/api/*/envelope/$ping,xhr,domain=pochta.ru
 !
 !
 ! -
