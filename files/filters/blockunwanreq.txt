@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.2.8-R
-! TimeUpdated: 2025-09-04T18:23:17+00:00
+! Version: 4.2.9-R
+! TimeUpdated: 2025-09-07T15:13:24+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -379,7 +379,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^$important
-/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com
+/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com
 ||getrcmx.com^$important
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.*.js^$script,domain=xcom-shop.ru,important
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -582,8 +582,8 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||ecdn.sovcombank.ru/js/em.js^$script,domain=sovcombank.ru,important
 ||api-app.sovcombank.ru/em^$xhr,domain=sovcombank.ru,important
 ||helpdesk.unistream.ru/js/modules/chat_widget/media/exquisite.*.ogg^$media,domain=unistream.ru
-||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/share.js^$script,domain=kp.ru,important
-||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/zen-subscribe.js^$script,domain=kp.ru,important
+||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/share.js^$script,domain=kp.ru|kp.*|md.kp.media,important
+||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/zen-subscribe.js^$script,domain=kp.ru|kp.*,important
 ||assets.habr.com/habr-web/img/*.webp^$image,domain=habr.com
 ! habr.com/kek/v*/reactions/counters$xhr,domain=habr.com (01.25: ломает счётчики на сайте)
 */api/fl$xhr,other,important
@@ -690,10 +690,10 @@ $cookie=/__ddg*_/
 ! ||api.vigo.one/uxzoom/*/notify$xhr (779)
 ||tolstoycomments.com^$domain=2x2tv.ru
 ||s.rbk.ru/*rbcnews_static/rbcnews-*/scripts/build/_metrika-config.js^$script,domain=rbc.ru,important
-||t.rbc.ru/info-service/api/v*/ev/$xhr,ping,domain=rbc.ru,important
-||t.rbc.ru/track/*/*/$xhr,domain=rbc.ru,important
+||rbc.ru/info-service/api/v*/ev/$xhr,ping,domain=rbc.ru,important
+||rbc.ru/track/*/*/$xhr,domain=rbc.ru,important
 !
-||t.rbc.ru/rbcmetr/stat/regional/$xhr,domain=rbc.ru,important
+||rbc.ru/rbcmetr/stat/regional/$xhr,domain=rbc.ru,important
 ||telegram.org/css/*widget*.css$css,domain=~telegram.org|~t.me,third-party
 ||iguides.ru/bitrix/templates/iguides-2015/js/tg-widget.js$xhr,domain=iguides.ru
 ||tourister.ru^$cookie=dis_is_retina
@@ -738,7 +738,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||dropbox.com^$cookie=/dbx_js_analytics_id|t/
 ||dropbox.com/*/pap_event_logging$ping,xhr,domain=dropbox.com,important
 ||static.richfamily.ru/media/home/23/*.webm^$media,domain=richfamily.ru
-||kp.ru/boom/api/*/metrics/adaptive/$image,domain=kp.ru,important
+/boom/api/*/metrics/adaptive/$image,domain=kp.ru|kp.*|md.kp.media,important
 ||static*.banki.ru/upload/ads/*.png^$image,domain=banki.ru,important
 ||banki.ru/mybanki/api/*/send-event^$xhr,domain=banki.ru,important
 ||banki.ru^$cookie=/banki_prev_page|BANKI_RU_USER_IDENTITY_UID|_flpt_main_page_personalization_absegment/
@@ -1309,70 +1309,72 @@ $cookie=qrator_jsr
 ||umami.datacentermedia.com^
 ! ||api.picsart.com/*/subscription/promo/special-offer$xhr,domain=picsart.com (Waiting for adding..)
 ||sentry.iptv2022.com^$important
-||limehd.tv/_nuxt/sentry.client.config-*.js^$script,domain=limehd.tv
+||limehd.tv/_nuxt/sentry.client.config-*.js^$script,domain=limehd.tv,important
 ||api.okcdn.ru/fb.do
 ||russianfood.com/images/lb/best_yt_bg__*.png^$image,domain=russianfood.com
 ||russianfood.com/images/lb/best_fb_bg__*.png^$image,domain=russianfood.com
 ||eda.ru/api/v*/graphql^$xhr,domain=eda.ru
 ||mvideo.ru/blog/wp-content/uploads/*/wide-*-*.png^$image,domain=mvideo.ru
-||d-assets.2gis.*/gtaAds.*.js^$script,domain=2gis.ru|2gis.*
+||d-assets.2gis.*/gtaAds.*.js^$script,domain=2gis.ru|2gis.*,important
 ||ams2-cdn.2gis.com/previews/1099498697869230083/c26d4cb0-d993-428c-bb4e-9722e22c780b/1/image_32x32.png^$image,domain=2gis.ru
 ||ams2-cdn.2gis.com/previews/1210192388937482240/370df819-0c4e-4a63-8c24-6e11809e1ffe/1/ru/image_32x32.png^$image,domain=2gis.ru
-||d-assets.2gis.*/clickstream/*.js^$script,domain=2gis.ru|2gis.*
-||d-assets.2gis.*/afScript/script.js^$script,domain=2gis.ru|2gis.*
+||d-assets.2gis.*/clickstream/*.js^$script,domain=2gis.ru|2gis.*,important
+||d-assets.2gis.*/afScript/script.js^$script,domain=2gis.ru|2gis.*,important
 ||p.imgur.com^
 ||s.imgur.com/*/icon-open-arcade.*.svg^$image,domain=imgur.com
-/web-stats^$xhr,domain=softonic.ru|*.softonic.ru|softonic.jp|softonic.jp|*.softonic.jp|softonic.kr|*.softonic.kr|softonic.nl|*.softonic.nl|softonic.pl|*.softonic.pl|softonic.com.br|*.softonic.com.br|softonic.se|*.softonic.se|softonic.com.tr|*.softonic.com.br|softonic.cn|*.softonic.cn
-/smart-recommended-apps$xhr,domain=softonic.ru|*.softonic.ru|softonic.jp|*.softonic.jp|softonic.kr|*.softonic.kr|softonic.nl|*.softonic.nl|softonic.pl|*.softonic.pl|softonic.com.br|*.softonic.com.br|softonic.se|*.softonic.se|softonic.com.tr|*.softonic.com.br|softonic.cn|*.softonic.cn
+/web-stats^$xhr,important,domain=softonic.ru|*.softonic.ru|softonic.jp|softonic.jp|*.softonic.jp|softonic.kr|*.softonic.kr|softonic.nl|*.softonic.nl|softonic.pl|*.softonic.pl|softonic.com.br|*.softonic.com.br|softonic.se|*.softonic.se|softonic.com.tr|*.softonic.com.br|softonic.cn|*.softonic.cn
+/smart-recommended-apps$xhr,important,domain=softonic.ru|*.softonic.ru|softonic.jp|*.softonic.jp|softonic.kr|*.softonic.kr|softonic.nl|*.softonic.nl|softonic.pl|*.softonic.pl|softonic.com.br|*.softonic.com.br|softonic.se|*.softonic.se|softonic.com.tr|*.softonic.com.br|softonic.cn|*.softonic.cn
 ||di-images.sftcdn.net/*/download_intent/softonic/*.*^$image,domain=softonic.ru|*.softonic.ru|softonic.jp|*.softonic.jp|softonic.kr|*.softonic.kr|softonic.nl|*.softonic.nl|softonic.pl|*.softonic.pl|softonic.com.br|*.softonic.com.br|softonic.se|*.softonic.se|softonic.com.tr|*.softonic.com.br|softonic.cn|*.softonic.cn
-/cpi-track-event^$xhr,domain=softonic.ru|*.softonic.ru|softonic.jp|*.softonic.jp|softonic.kr|*.softonic.kr|softonic.nl|*.softonic.nl|softonic.pl|*.softonic.pl|softonic.com.br|*.softonic.com.br|softonic.se|*.softonic.se|softonic.com.tr|*.softonic.com.br|softonic.cn|*.softonic.cn
-/plausible/api/event^$xhr,domain=softonic.ru|*.softonic.ru|softonic.jp|*.softonic.jp|softonic.kr|*.softonic.kr|softonic.nl|*.softonic.nl|softonic.pl|*.softonic.pl|softonic.com.br|*.softonic.com.br|softonic.se|*.softonic.se|softonic.com.tr|*.softonic.com.br|softonic.cn|*.softonic.cn
-||freesoft.ru/sponsored/$subdocument,domain=freesoft.ru
+/cpi-track-event^$xhr,important,domain=softonic.ru|*.softonic.ru|softonic.jp|*.softonic.jp|softonic.kr|*.softonic.kr|softonic.nl|*.softonic.nl|softonic.pl|*.softonic.pl|softonic.com.br|*.softonic.com.br|softonic.se|*.softonic.se|softonic.com.tr|*.softonic.com.br|softonic.cn|*.softonic.cn
+/plausible/api/event^$xhr,important,domain=softonic.ru|*.softonic.ru|softonic.jp|*.softonic.jp|softonic.kr|*.softonic.kr|softonic.nl|*.softonic.nl|softonic.pl|*.softonic.pl|softonic.com.br|*.softonic.com.br|softonic.se|*.softonic.se|softonic.com.tr|*.softonic.com.br|softonic.cn|*.softonic.cn
+||freesoft.ru/sponsored/$subdocument,domain=freesoft.ru,important
 ||freesoft.ru/images/opera_logo.svg^$image,domain=freesoft.ru
 ||stc.utdstc.com/img/svgs/icon-24-turbo*.svg^$image,domain=uptodown.com
 ||stc.utdstc.com/img/svgs/icon-12-hotlink.svg^$image,domain=uptodown.com
 /cdn/shopifycloud/storefront/assets/shop_events_listener-*.js^$script,important
 /images/cookie.png^$image,domain=prosto.tv|prosto.net
 ||kino.tricolor.ru/api/debug.php^$xhr,domain=kino.tricolor.ru
-||metrics.tricolor.ru/v*/event^$xhr,domain=kino.tricolor.ru
+||metrics.tricolor.ru/v*/event^$xhr,domain=kino.tricolor.ru,important
 ||cdn.jsdelivr.net/npm/yandex-metrica-watch/tag.js
 ||mcustore.ru/img/media/logo_tg.gif^$image,domain=mcustore.ru
 ||energizelab.com/upfile/image/20250805/1754405696_905178.jpg^$image,domain=energizelab.com
 ||energizelab.com/upfile/image/20250805/1754405704_461206.jpg^$image,domain=energizelab.com
-||teletype.in/static/SharePopup.*.js^$script,domain=teletype.in
-||teletype.in/static/AD.*.*^$script,css,domain=teletype.in
-||gambit-parent.dfs.ivi.ru/dist/*/*/Sentry.*.js^$script,domain=ivi.ru
+||teletype.in/static/SharePopup.*.js^$script,domain=teletype.in,important
+||teletype.in/static/AD.*.*^$script,css,domain=teletype.in,important
+||gambit-parent.dfs.ivi.ru/dist/*/*/Sentry.*.js^$script,domain=ivi.ru,important
 ||udc.yahoo.com^
-||mercusys.com/res/diff/*/getresponse.js$xhr,domain=mercusys.com
+||mercusys.com/res/diff/*/getresponse.js$xhr,domain=mercusys.com,important
 ||tyuiu.ru/media/images/webp/a2a79090-b353-4cac-b4a7-9d2838b0e648.webp^$image,domain=tyuiu.ru
 ||old.tyuiu.ru/wp-content/themes/tsogu/images/*/social/*.png^$image,domain=old.tyuiu.ru
 ||old.tyuiu.ru/wp-content/plugins/wp-social-likes/*/social-likes*.*^$script,css,domain=old.tyuiu.ru
 ||old.tyuiu.ru/wp-content/themes/tsogu/images/social/*.png^$image,domain=old.tyuiu.ru
 ||stat.sputnik.ru^$important
-||convertio.co/process/hit_logger^$xhr,domain=convertio.co
-||3dnews.ru/track
+||convertio.co/process/hit_logger^$xhr,domain=convertio.co,important
+||3dnews.ru/track$important
 ||mnokol.tyuiu.ru/site/plugins/content/*/transparent.gif^$image,domain=mnokol.tyuiu.ru,important
 ||api.vk.*/method/settingsGeneral.getCookiesPolicyVisible$xhr,domain=vk.com|vk.ru
 ||st*-*.vk.com/dist/web/error_monitoring.*.js^$script,domain=vk.com|vk.ru
 ||st*-*.vk.com/dist/web/jobs_devtools_notification.*.js^$script,domain=vk.com|vk.ru
 ||apkpure.*/static/assets/*/analytics*.js^$script,domain=apkpure.net|apkpure.com,important
 ||lizardsystems.com/action/?action=uninstall
-||softportal.com/js/adsense_advert*.js^$script,domain=softportal.com
-||softportal.com/img/_n.gif^$image,domain=softportal.com
-||softportal.com/ajax.php?dj=0&jquery=1&module=adblock_statistics$xhr,domain=softportal.com
+||softportal.com/js/adsense_advert*.js^$script,domain=softportal.com,important
+||softportal.com/img/_n.gif^$image,domain=softportal.com,important
+||softportal.com/ajax.php?dj=0&jquery=1&module=adblock_statistics$xhr,domain=softportal.com,important
 ||softportal.com/*_desc.html^$domain=softportal.com
 ||convertio.co/js/track^$xhr,domain=convertio.co
 ||suenco.ru/local/templates/suenco/assets/images/icon-*.svg^$image,domain=suenco.ru
-/bitrix/js/*/metrika/dist/metrika*.js$script
+/bitrix/js/*/metrika/dist/metrika*.js$script,important
 ||my-software.ru/sites/default/files/styles/recommend/public/field/image/recommend/*.png$image,domain=my-software.ru
 ||my-software.ru/sites/all/themes/mytheme/images/bg_recommend.png^$image,xhr,domain=my-software.ru
 ||my-software.ru/sites/default/files/styles/large/public/images/*.png$image,domain=my-software.ru
 ||my-software.ru/images/linuxstudio.png^$image,domain=my-software.ru
-||dmosk.ru/jas/*.js^$script,domain=dmosk.ru
-||sberbank.com/proxy/services/sberlogger/$xhr,domain=sberbank.ru|sberbank.com
+||dmosk.ru/jas/*.js^$script,domain=dmosk.ru,important
+||sberbank.com/proxy/services/sberlogger/$xhr,domain=sberbank.ru|sberbank.com,important
 ||2gis.ru/_/log
-||tile*.maps.2gis.com/v*/ald?*ts=buyhere$xhr,domain=2gis.ru|2gis.*
-||wink.ru/omnichat/*/trailer$domain=lk.rt.ru,important
+||2gis.ru/_/metrics
+||tile*.maps.2gis.com/v*/ald??x=*&y=*&z=*&ts=buyhere^$xhr,important,domain=2gis.ru|2gis.*
+||tile*.maps.2gis.com/v*/ald?ts=*&x=*&y=*&z=*&lang=*^$xhr,domain=2gis.ru
+||wink.ru/omnichat/*/trailer$domain=lk.rt.ru|my.rt.ru,important
 ||privacy-cs.mail.ru^$third-party
 ||help-wifi.ru/wp-admin/admin-ajax.php?id=*&action=wpshop_views_counter$xhr,domain=help-wifi.ru
 ||help-wifi.com/wp-content/themes/wifi/images/soc_fb.png^$image,domain=help-wifi.com
@@ -1389,7 +1391,7 @@ $cookie=qrator_jsr
 /loginYaMetrika.js$script,important
 /loginEsiaMetrika.js$script,important
 ||netscout.com/themes/custom/netscout/js/dest/google-analytics/$script,domain=netscout.com,important
-||get.netscout.com/pd.js^$script,domain=netscout.com
+||get.netscout.com/pd.js^$script,domain=netscout.com,important
 ||mb9pzp.ru^
 ||containers.ad-cdek.ru^$important
 ||ssp.ad-cdek.ru^$important
@@ -1398,6 +1400,35 @@ $cookie=qrator_jsr
 ||pochta.ru/assets/POSTRUO_*.png^$image,domain=pochta.ru
 ||sntrm.tass.ru^
 ||officelife.media/local/templates/html*js/vendor/share*.js$xhr,domain=officelife.media
+||nexusmods.com/api/scripts/adjoin.js^$script,domain=nexusmods.com,important
+! ||ad-wa.anydesk.com^
+||ad-wa.anydesk.com/js/container_*.js^$script,domain=anydesk.com,important
+||liveinternet.ru/stat/*/index.html$important
+||s.rbk.ru/v*_rbcnews_static/*/scripts/build/fn/_foxDetector.js^$script,domain=rbc.ru
+||s.rbk.ru/v*_rbcnews_static/rbcnews-*/scripts/build/fn/_devEvent.js^$script,domain=rbc.ru
+||rbc.ru/v*/ajax/get-news-feed/project/$xhr,domain=rbc.ru
+||rbc.ru/v*/ajax/news/slide/$xhr,domain=rbc.ru
+||s.rbk.ru/v*_rbcbanners_static/rbcbanners-*/fox/build/app.js^$script,domain=rbc.ru
+||rbc.ru/v*/ajax/oprosso-after-article^$xhr,domain=rbc.ru
+! ||s0.rbk.ru/v6_top_pics/media/img/*/*.gif^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/media/img/5/64/347271065287645.svg^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/9/24/347569713224249.webp^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/media/img/1/42/756805400031421.svg^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/media/img/9/21/756805400064219.svg^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/9/01/347569712924019.webp^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/4/50/347551601101504.webp^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/media/img/2/67/347569715167672.jpeg^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/6/59/347551600344596.webp^$image,domain=rbc.ru
+/tilda-events-*.*.js^$script,important
+||media-engine.x10.name/usage-statistics/$xhr
+||cdn0.avtoradio.ru/design/include/stream-counts.js$script,domain=avtoradio.ru
+||avtoradio.ru/api/outreach/stat/*/spacer.png^$image,domain=avtoradio.ru
+||tms.dmp.wi-fi.ru^$third-party,important
+||radiorecord.ru/vksdk.js^$script,domain=radiorecord.ru
+/instreamatic.*.*$script,css
+||analytics.tiktok.com^$important
+||radiodacha.ru/backend/api/v*/geo/ip/view^$xhr,domain=radiodacha.ru
+||radiozvezda.ru/analytics$xhr,domain=radiozvezda.ru
 !
 !
 !
@@ -1637,6 +1668,28 @@ wildberries.ru##li[data-menu-id="1236"]
 ! Раздел «Wibes» в меню каталога (Российская версия).
 wildberries.ru##li[data-menu-id="1237"]
 !
+! Раздел «Лотерийные билеты» в ЛК (Российская версия).
+wildberries.ru###body-layout > div.lk-menu:first-child > div.lk-menu__container.j-lk-menu-top > div.lk-menu-sub:nth-child(3) > div.lk-menu-sub__wrapper > ul.lk-menu-sub__list.lk-menu-sub__list--reports.active:nth-child(2) > li:last-child
+!
+! Реклама туров сверху поиска (Российская версия).
+wildberries.ru###travelSwitcher
+!
+! Раздел «Лотерея» в меню каталога (Российская версия).
+wildberries.ru##li[data-menu-id="1238"]
+!
+! Раздел «Новостройки» в меню каталога (Российская версия).
+wildberries.ru##li[data-menu-id="16108"]
+!
+! Раздел «RWB Участие» в меню каталога (Российская версия).
+wildberries.ru##li[data-menu-id="1240"]
+!
+! Раздел «Сертификаты Wildberries» в меню каталога (Российская версия).
+wildberries.ru##li[data-menu-id="1234"]
+!
+! Раздел «Транспортные средства» в меню каталога (Российская версия).
+wildberries.ru##li[data-menu-id="130624"]
+!
+!
 !
 !
 !
@@ -1861,8 +1914,8 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 ||error-hub.tinkoff.ru^$important
 .ru/ws/monitoring/log$image,domain=tbank.ru|tinkoff.ru,important
 !
-! Чат поддержки в ЛК на сайте сломался в результате блокировки множества адресов (запросов).
-! Хитро хитро сделано.. привязанность аналитики к чате поддержки..
+! Чат поддержки, разные элементы, разделы и прочее в ЛК на сайте сломались в результате блокировки множества адресов (запросов).
+! Хитро, хитро сделано.. привязанность аналитики и прочему «мусору» к чате поддержки и не только..
 ! Тут только делать пробы так называемые, чтобы понять, что мешает загрузиться окну чата поддержки..
 !
 !
@@ -2437,6 +2490,19 @@ horizon.netscout.com##div[class^="map-adam-ui--app-adam--share"]
 pochta.ru###main-content > div.Box-sc-7ax6ia-0.eztcbC > div.PageContainer-sc-1d3tiqt-0.gALiKB.account-layout-page-container > div.GridBox-sc-a3sce5-0.iNIYYf > main.GridBox-sc-a3sce5-0.hCIhsF:last-child > div.Box-sc-7ax6ia-0.dvTpFT:last-child > div.Box-sc-7ax6ia-0.Accountstyled__ContainerWrapper-sc-1cypuul-8.dvTpFT.ckdxZO:first-child > div.Box-sc-7ax6ia-0.dvTpFT:last-child > div:nth-child(7)
 pochta.ru###main-content > div.Box-sc-7ax6ia-0.eztcbC > div.PageContainer-sc-1d3tiqt-0.gALiKB.account-layout-page-container > div.GridBox-sc-a3sce5-0.iNIYYf > main.GridBox-sc-a3sce5-0.hCIhsF:last-child > div.Box-sc-7ax6ia-0.dvTpFT:last-child > div.Box-sc-7ax6ia-0.Accountstyled__ContainerWrapper-sc-1cypuul-8.dvTpFT.ckdxZO:first-child > div.Box-sc-7ax6ia-0.dvTpFT:last-child > div:last-child
 ping-admin.com###result_links > div.uk-grid-small.uk-margin-large-bottom.uk-grid.uk-grid-stack:nth-child(3) > div.uk-width-1-1.uk-width-expand\@l.uk-grid-margin.uk-first-column:last-child > div:last-child
+##span[id*="openstat"]
+rbc.ru##div[class^="js-mts-floor-aida-place"]
+rbc.ru##div[class^="g-zeropixel"]
+rbc.ru##ul[class^="footer__counter"]
+dipol.fm###cookies
+###cookies
+avtoradio.ru##div[id^="sitestat"]
+avtoradio.ru##div[class^="clear h40"]
+avtoradio.ru##div[class^="h20"]
+avtoradio.ru##div[class^="wide info-block  "]
+radiorecord.ru###root > div.imG8gmddwW4HScCxpN4m7g\=\=.XsqlvMP7wjGrUZ7EMVjNTA\=\=:first-child > div:last-child > div.xOLoLm09Pwv2jvYf\+ZN4vA\=\=:first-child > div._68CtlB-D1\+wc8jAFf5c6RA\=\= > div._3XiQIlo-dQLu8xo2cOSfQg\=\= > div.K8GNpf4mVYP\+EfQNJMCLIw\=\=:last-child > button.\+oOJTBiQCa87v72fyosiPA\=\=.\+4KkPGhgMav2CPXDEp-39g\=\=:first-child
+pi.fm##div.footer:nth-child(4) > div.info-btn.to-hide.show:nth-child(3)
+kp.ru##div[clas^s="sc-11vvdi3-20 hkAgeX"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3505,7 +3571,9 @@ serverblight.com#@##cursor
 @@||arsplus.ru/bitrix/tools/conversion/ajax_counter.php^$xhr,domain=arsplus.ru
 @@||college.72to.ru/static/facebox/*.gif^$image,domain=college.72to.ru
 @@||college.72to.ru/static/vendor/extjs/resources/images/gray/*.gif$image,domain=college.72to.ru
-@@||*/api/*/envelope/$ping,xhr,domain=pochta.ru
+@@/api/*/envelope/$ping,xhr,domain=pochta.ru
+@@||api-router.nexusmods.com/graphql^$xhr,domain=nexusmods.com,important
+@@||100i6fm.ru/cur_playing.txt$xhr,domain=100i6fm.ru
 !
 !
 ! -
@@ -3604,25 +3672,25 @@ serverblight.com#@##cursor
 !
 ||tobipovsem.com^$important
 ||largestloitering.com^
-||f1e4fcff2b.27640ea29d.com^
-||d157c90939.1b384556ae.com^
+||f1e4fcff2b.27640ea29d.com^$all
+||d157c90939.1b384556ae.com^$all
 ||*vesmaveselo*^$third-party
 ||myroledance.com^
 ||*.vaterlines.com^
 ||otnolatrnup.com^$important
-||resp.us^
-||meshuradres.best^
-||bit.ly*vaylakazan^
-||tinyurl.com/vaylakzan^
-||t2m.io/2254777^
-||bonuscudede.com^
-||lavatoryyourself.com^
-||antpeak.com^
-||t2m.io^
-||vaycasino*.com^
-||87h6.cfd^
-||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^
-||clicks.af-pb06e2.com^
+||resp.us^$all
+||meshuradres.best^$all
+||bit.ly*vaylakazan^$all
+||tinyurl.com/vaylakzan^$all
+||t2m.io/2254777^$all
+||bonuscudede.com^$all
+||lavatoryyourself.com^$all
+||antpeak.com^$all
+||t2m.io^$all
+||vaycasino*.com^$all
+||87h6.cfd^$all
+||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^$all
+||clicks.af-pb06e2.com^$all
 ||adalh-zcq.com^
 !
 !
