@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.2.9-R
-! TimeUpdated: 2025-09-07T15:13:24+00:00
+! Version: 4.3.0-R
+! TimeUpdated: 2025-09-08T15:26:24+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -133,7 +133,7 @@
 /generate_204$xhr,domain=~youtube.com|~youtube-nocookie.com|~googlevideo.com|~api.browser.yandex.*|~api.browser.yandex.ru|~i.ytimg.com
 ||adlook.me^$important
 ||betweendigital.com^$important
-*/api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru,important
+*/api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru|rusradio.ru,important
 ||vk.com/js/api/openapi.js$script,third-party,domain=~vk.com|~vk.ru,important
 ||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru
 ||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru
@@ -234,7 +234,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||sync.rambler.ru^$important
 ||s*.stc.yc.kpcdn.net/share/i/beige/*.gif^$image,important
 ||s*.stc.yc.kpcdn.net/s*/*/adaptive/img/banner.gif$xhr,important
-! *sendsay.ru^$important
+! sendsay.ru^$
 ||lentainform.com^$important
 /1x1.*^$image,xhr,important,domain=~autocounter.lentainform.com|~lentainform.com|~bosch-home.ru|~bsh-group.ru|~comfy.ua|~oplmanager.com|~patagonia.com|~pgatour.com|~sport-express.ru|~zobiki.ru|~idaprikol.ru|~thg.ru
 ||smotrim.ru/js/media-scope.js^$script,important
@@ -379,7 +379,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^$important
-/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com
+/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz
 ||getrcmx.com^$important
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.*.js^$script,domain=xcom-shop.ru,important
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -665,7 +665,7 @@ $cookie=L
 $cookie=bltsr
 $cookie=bh,third-party,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by|~yandex.kz|~ya.ru|~yandex.com
 $cookie=coockoos
-$cookie=my
+$cookie=my,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by|~yandex.kz|~ya.ru|~yandex.com
 $cookie=/__ddg*_/
 ||sibdroid.ru/upload/is/settings/c52/k8m6dcpmm5aqnx6nu8hn2t16va4e404l/TG%20desktop%20(2).png^$image,domain=sibdroid.ru
 ! /wp-admin/admin-ajax.php?*views*$xhr (новое правило, строка 785)
@@ -1002,7 +1002,7 @@ qrator/validate$xhr,important
 ||fandom.com/silver-surfer.html^$domain=fandom.com|*.fandom.com,important
 ||js.zi-scripts.com/zi-tag.js^$script,important
 ||js.zi-scripts.com/unified/v*/master/$xhr,important
-||appcenter.ms^$app=ru.mes.dnevnik.fgis|ru.pyaterochka.app.browser|ru.desport.android|bz.zaa.mibudsm8
+||appcenter.ms^$app=ru.mes.dnevnik.fgis|ru.pyaterochka.app.browser|ru.desport.android|bz.zaa.mibudsm8|ru.citilink
 ||zephyrsgroves.com^
 ||xn--80aafadvc9bifbaeqg0p.xn--p1ai/img/icons/sferum.svg^$image,domain=xn--80aafadvc9bifbaeqg0p.xn--p1ai
 ||welcome.adguard.*/*/event/^$xhr,domain=welcome.adguard.com|welcome.adguard.info|welcome.adguard.app,important
@@ -1410,6 +1410,9 @@ $cookie=qrator_jsr
 ||rbc.ru/v*/ajax/news/slide/$xhr,domain=rbc.ru
 ||s.rbk.ru/v*_rbcbanners_static/rbcbanners-*/fox/build/app.js^$script,domain=rbc.ru
 ||rbc.ru/v*/ajax/oprosso-after-article^$xhr,domain=rbc.ru
+!
+! =
+! 08.09.25: Данные правила ниже (рекламные картинки с сайта РБК) могут быть через некоторое время быть устаревшими.
 ! ||s0.rbk.ru/v6_top_pics/media/img/*/*.gif^$image,domain=rbc.ru
 ||s0.rbk.ru/v6_top_pics/media/img/5/64/347271065287645.svg^$image,domain=rbc.ru
 ||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/9/24/347569713224249.webp^$image,domain=rbc.ru
@@ -1419,16 +1422,38 @@ $cookie=qrator_jsr
 ||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/4/50/347551601101504.webp^$image,domain=rbc.ru
 ||s0.rbk.ru/v6_top_pics/media/img/2/67/347569715167672.jpeg^$image,domain=rbc.ru
 ||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/6/59/347551600344596.webp^$image,domain=rbc.ru
+! =
+!
 /tilda-events-*.*.js^$script,important
-||media-engine.x10.name/usage-statistics/$xhr
-||cdn0.avtoradio.ru/design/include/stream-counts.js$script,domain=avtoradio.ru
-||avtoradio.ru/api/outreach/stat/*/spacer.png^$image,domain=avtoradio.ru
-||tms.dmp.wi-fi.ru^$third-party,important
-||radiorecord.ru/vksdk.js^$script,domain=radiorecord.ru
-/instreamatic.*.*$script,css
+||media-engine.x10.name/usage-statistics/$xhr,important
+||cdn*.avtoradio.ru/design/include/stream-counts.js$script,domain=avtoradio.ru,important
+/api/outreach/stat/*/spacer.png^$image,domain=avtoradio.ru|comedy-radio.ru|energyfm.ru|relax-fm.ru,important
+! ||tms.dmp.wi-fi.ru^$third-party,important
+||radiorecord.ru/vksdk.js^$script,domain=radiorecord.ru,important
+/instreamatic*.*$script,important,redirect-rule=noopjs
+/instreamatic*.*$css,important
 ||analytics.tiktok.com^$important
 ||radiodacha.ru/backend/api/v*/geo/ip/view^$xhr,domain=radiodacha.ru
-||radiozvezda.ru/analytics$xhr,domain=radiozvezda.ru
+||radiozvezda.ru/analytics$xhr,domain=radiozvezda.ru,important
+||[2604:a880:800:10::e6:b001]/api/$xhr,domain=browserleaks.com
+||mobi.sendsay.ru^$important
+||dorognoe.ru/_nuxt/AdvertisingBanner.*.css^$css,domain=dorognoe.ru,important
+||dorognoe.ru/_nuxt/CookiePopUp.*.css^$xhr,domain=dorognoe.ru
+||dorognoe.ru/_nuxt/playerAds.*.css^$css,domain=dorognoe.ru
+||dorognoe.ru/js/ads/*.js^$script,domain=dorognoe.ru,important
+/yandex-metrika.js
+||api-geo.apptimizm.pro/api/geo^$xhr
+$cookie=RadioStatistica
+||radiovera.ru/wp-content/themes/radiovera/img/social-*.png^$image,domain=radiovera.ru
+||radiovera.ru/wp-content/themes/radiovera/img/contact-*.png^$image,domain=radiovera.ru
+||radiovera.ru/wp-content/themes/radiovera/img/email-form-icon.svg^$image,domain=radiovera.ru
+||wapi.afisha.ru/widget/methodstatistics
+||europaplus.ru/ya-ads-system-context.js^$script,domain=europaplus.ru,important
+||europaplus.ru/y-metrika.js^$script,domain=europaplus.ru,important
+||europaplus.ru/_nuxt/AsideAdvertisings.*.css^$css,domain=europaplus.ru
+||europaplus.ru/_nuxt/privacy.*.css^$css,domain=europaplus.ru
+||marus.fm/assets/pixel-effect.js^$script,domain=marus.fm,important
+||relax-fm.ru/api/common/clientLog^$xhr,domain=relax-fm.ru,important
 !
 !
 !
@@ -2503,6 +2528,12 @@ avtoradio.ru##div[class^="wide info-block  "]
 radiorecord.ru###root > div.imG8gmddwW4HScCxpN4m7g\=\=.XsqlvMP7wjGrUZ7EMVjNTA\=\=:first-child > div:last-child > div.xOLoLm09Pwv2jvYf\+ZN4vA\=\=:first-child > div._68CtlB-D1\+wc8jAFf5c6RA\=\= > div._3XiQIlo-dQLu8xo2cOSfQg\=\= > div.K8GNpf4mVYP\+EfQNJMCLIw\=\=:last-child > button.\+oOJTBiQCa87v72fyosiPA\=\=.\+4KkPGhgMav2CPXDEp-39g\=\=:first-child
 pi.fm##div.footer:nth-child(4) > div.info-btn.to-hide.show:nth-child(3)
 kp.ru##div[clas^s="sc-11vvdi3-20 hkAgeX"]
+radiovera.ru##div[id^="cookie-modal"]
+radiovera.ru##div[class^="card card-double card-contact"]
+comedy-radio.ru,energyfm.ru,relax-fm.ru##section.cookies__section:last-child
+comedy-radio.ru##div.container:nth-child(2)
+europaplus.ru###app > div.default-layout:last-child > div.cookie-modal:last-child
+europaplus.ru###app > div.default-layout:last-child > div.ticker:nth-child(3)
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2867,8 +2898,8 @@ okko.tv,okko.sport#%#//scriptlet('set-cookie', 'cookie-confirm', '1')
 ! localhost:29010/p?t=
 ! localhost:30103/p?t=
 ||mc.yango.com^$important
-.ru/suggest/suggest-ya.cgi$third-party,xhr,other,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
-||yandex.ru/portal/searchframe/*.js^$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz,important
+/suggest/suggest-ya.cgi$third-party,xhr,other,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz
+||yandex.ru/portal/searchframe/*.js^$third-party,script,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz,important
 ||static-mon.yandex.net/advert
 ||yandex.ru/znatoki/web-api/log
 !
@@ -3574,6 +3605,26 @@ serverblight.com#@##cursor
 @@/api/*/envelope/$ping,xhr,domain=pochta.ru
 @@||api-router.nexusmods.com/graphql^$xhr,domain=nexusmods.com,important
 @@||100i6fm.ru/cur_playing.txt$xhr,domain=100i6fm.ru
+@@||api.browser.yandex.*^$cookie=bh
+@@||api.browser.yandex.ru^$cookie=bh
+@@||yandex.ru^$cookie=bh
+@@||yandex.kz^$cookie=bh
+@@||yandex.by^$cookie=bh
+@@||ya.ru^$cookie=bh
+@@||yandex.com^$cookie=bh
+@@||api.browser.yandex.*^$cookie=my
+@@||api.browser.yandex.ru^$cookie=my
+@@||yandex.ru^$cookie=my
+@@||yandex.kz^$cookie=my
+@@||yandex.by^$cookie=my
+@@||ya.ru^$cookie=my
+@@||yandex.com^$cookie=my
+! @@||yandex.*^$cookie=is_gdpr|is_gdpr_b,important
+@@||api.plus.yandex.ru/graphql$xhr,domain=plus.yandex.ru
+@@.cur|$image,domain=yandex.ru|ya.ru|yastatic.net
+! Не работает плеер на сайтах радиостанций.
+@@||js.hostingradio.ru/melon/melon-player-ad.js^$script
+@@||meta.fmgid.com/get_playing.php$xhr
 !
 !
 ! -
