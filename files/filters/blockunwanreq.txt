@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.3.0-R
-! TimeUpdated: 2025-09-08T16:05:24+00:00
+! Version: 4.3.1-R
+! TimeUpdated: 2025-09-09T16:05:24+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -36,7 +36,7 @@
 ||bronze.systems^$important
 ||graph.facebook.com^$important
 ||optifyr.com^$important
-! ||gravatar.com^$domain=~gitlab.com|~9to5google.com|~9to5mac.com|~9to5toys.com|~dronedj.com|~electrek.co,important
+! gravatar.com^$domain=~gitlab.com|~9to5google.com|~9to5mac.com|~9to5toys.com|~dronedj.com|~electrek.co,important
 ||amplreq.com^$important
 ||amplitude.com^$important
 !
@@ -1315,11 +1315,11 @@ $cookie=qrator_jsr
 ||russianfood.com/images/lb/best_fb_bg__*.png^$image,domain=russianfood.com
 ||eda.ru/api/v*/graphql^$xhr,domain=eda.ru
 ||mvideo.ru/blog/wp-content/uploads/*/wide-*-*.png^$image,domain=mvideo.ru
-||d-assets.2gis.*/gtaAds.*.js^$script,domain=2gis.ru|2gis.*,important
+/gtaAds.*.js^$script,domain=2gis.ru|2gis.*,important
 ||ams2-cdn.2gis.com/previews/1099498697869230083/c26d4cb0-d993-428c-bb4e-9722e22c780b/1/image_32x32.png^$image,domain=2gis.ru
 ||ams2-cdn.2gis.com/previews/1210192388937482240/370df819-0c4e-4a63-8c24-6e11809e1ffe/1/ru/image_32x32.png^$image,domain=2gis.ru
-||d-assets.2gis.*/clickstream/*.js^$script,domain=2gis.ru|2gis.*,important
-||d-assets.2gis.*/afScript/script.js^$script,domain=2gis.ru|2gis.*,important
+/clickstream/*.js^$script,domain=2gis.ru|2gis.*,important
+/afScript/script.js^$script,domain=2gis.ru|2gis.*,important
 ||p.imgur.com^
 ||s.imgur.com/*/icon-open-arcade.*.svg^$image,domain=imgur.com
 /web-stats^$xhr,important,domain=softonic.ru|*.softonic.ru|softonic.jp|softonic.jp|*.softonic.jp|softonic.kr|*.softonic.kr|softonic.nl|*.softonic.nl|softonic.pl|*.softonic.pl|softonic.com.br|*.softonic.com.br|softonic.se|*.softonic.se|softonic.com.tr|*.softonic.com.br|softonic.cn|*.softonic.cn
@@ -1372,8 +1372,8 @@ $cookie=qrator_jsr
 ||sberbank.com/proxy/services/sberlogger/$xhr,domain=sberbank.ru|sberbank.com,important
 ||2gis.ru/_/log
 ||2gis.ru/_/metrics
-||tile*.maps.2gis.com/v*/ald??x=*&y=*&z=*&ts=buyhere^$xhr,important,domain=2gis.ru|2gis.*
-||tile*.maps.2gis.com/v*/ald?ts=*&x=*&y=*&z=*&lang=*^$xhr,domain=2gis.ru
+||maps.2gis.com/v*/ald?*&ts=buyhere^$xhr,domain=2gis.ru|2gis.*,important
+||maps.2gis.com/v*/ald?ts=*&x=*&y=*&z=*&lang=*^$xhr,domain=2gis.ru|2gis.*
 ||wink.ru/omnichat/*/trailer$domain=lk.rt.ru|my.rt.ru,important
 ||privacy-cs.mail.ru^$third-party
 ||help-wifi.ru/wp-admin/admin-ajax.php?id=*&action=wpshop_views_counter$xhr,domain=help-wifi.ru
@@ -1399,7 +1399,7 @@ $cookie=qrator_jsr
 ||pochta.ru/assets/ya*_*.png^$image,domain=pochta.ru
 ||pochta.ru/assets/POSTRUO_*.png^$image,domain=pochta.ru
 ||sntrm.tass.ru^
-||officelife.media/local/templates/html*js/vendor/share*.js$xhr,domain=officelife.media
+||officelife.media/local/templates/*/vendor/share*.js$xhr,domain=officelife.media
 ||nexusmods.com/api/scripts/adjoin.js^$script,domain=nexusmods.com,important
 ! ||ad-wa.anydesk.com^
 ||ad-wa.anydesk.com/js/container_*.js^$script,domain=anydesk.com,important
@@ -1424,6 +1424,7 @@ $cookie=qrator_jsr
 ||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/6/59/347551600344596.webp^$image,domain=rbc.ru
 ! =
 !
+!
 /tilda-events-*.*.js^$script,important
 ||media-engine.x10.name/usage-statistics/$xhr,important
 ||cdn*.avtoradio.ru/design/include/stream-counts.js$script,domain=avtoradio.ru,important
@@ -1447,14 +1448,20 @@ $cookie=RadioStatistica
 ||radiovera.ru/wp-content/themes/radiovera/img/social-*.png^$image,domain=radiovera.ru
 ||radiovera.ru/wp-content/themes/radiovera/img/contact-*.png^$image,domain=radiovera.ru
 ||radiovera.ru/wp-content/themes/radiovera/img/email-form-icon.svg^$image,domain=radiovera.ru
-||wapi.afisha.ru/widget/methodstatistics
+||wapi.afisha.ru/widget/methodstatistics$important
 ||europaplus.ru/ya-ads-system-context.js^$script,domain=europaplus.ru,important
 ||europaplus.ru/y-metrika.js^$script,domain=europaplus.ru,important
 ||europaplus.ru/_nuxt/AsideAdvertisings.*.css^$css,domain=europaplus.ru
 ||europaplus.ru/_nuxt/privacy.*.css^$css,domain=europaplus.ru
 ||marus.fm/assets/pixel-effect.js^$script,domain=marus.fm,important
 ||relax-fm.ru/api/common/clientLog^$xhr,domain=relax-fm.ru,important
-||faro.iportal.ru/collect
+||faro.iportal.ru/collect$important
+||leto-leto.com/files/aquavid^$media,domain=leto-leto.com
+||leto-leto.com/storage/2024/01/09/c9c945116455fb6f257d05447ab10efb5200cb5b.svg^$image,domain=leto-leto.com,important
+||leto-leto.com/storage/2024/01/09/703a1a5899a2f8bb97a4471cd170148abe96d327.svg^$image,domain=leto-leto.com,important
+||geocam.ru/images/pix.gif^$image,domain=geocam.ru
+||interfax.ru/cnt/
+*.*/undefined^$xhr,image,script,other
 !
 !
 !
@@ -1695,7 +1702,7 @@ wildberries.ru##li[data-menu-id="1236"]
 wildberries.ru##li[data-menu-id="1237"]
 !
 ! Раздел «Лотерийные билеты» в ЛК (Российская версия).
-wildberries.ru###body-layout > div.lk-menu:first-child > div.lk-menu__container.j-lk-menu-top > div.lk-menu-sub:nth-child(3) > div.lk-menu-sub__wrapper > ul.lk-menu-sub__list.lk-menu-sub__list--reports.active:nth-child(2) > li:last-child
+wildberries.ru###body-layout > div.lk-menu:first-child > div.lk-menu__container.j-lk-menu-top > div.lk-menu-sub:nth-child(3) > div.lk-menu-sub__wrapper > ul.lk-menu-sub__list.lk-menu-sub__list--reports.active:nth-child(3) > li:last-child
 !
 ! Реклама туров сверху поиска (Российская версия).
 wildberries.ru###travelSwitcher
@@ -2474,7 +2481,7 @@ russianfood.com###layout > div.layout > div.wrapper > table:nth-child(4) > tbody
 russianfood.com###d_an_l_1 > div.localb:first-child
 journal.citilink.ru###__next > div.css-149j17h.e8t5anw0 > footer.css-0.eqego10:last-child > div.css-1pvxy3j.e15lv3k50:first-child > div.css-ad1pua.e2pkej30 > footer.css-zigog8.e1eetkbq0 > section.css-tceq0n.efcoksc0:first-child
 mvideo.ru###ajax-banner > section.timer-creative > div.container
-! 2gis.*##._uplvmw
+2gis.ru###root > div > div._121zpzx > div._1sf34doj:first-child > div._1u4plm2:first-child > div:last-child > div._r47nf > div._guxkefv > div:last-child > div._1xzra4e > div._1yfus1e > div._jcreqo:last-child > div._fjltwx:last-child > div._1vgcy7c > div._3zzdxk:first-child > div._1667t0u > div._1rkbbi0x > div._15gu4wr > div._18lzknl > div._qvsf7z:last-child > div:last-child > div._t0tx82:first-child > div._uplvmw:nth-child(2) > div > div._1y5mz4l
 ! 2gis.*##._172gbf8
 garant-tv.com##div.warning.warning--active:nth-child(2)
 imgur.com##a.NavbarArcadeButton.Button.arcade
@@ -2536,6 +2543,11 @@ comedy-radio.ru##div.container:nth-child(2)
 europaplus.ru###app > div.default-layout:last-child > div.cookie-modal:last-child
 europaplus.ru###app > div.default-layout:last-child > div.ticker:nth-child(3)
 116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru##div[class^="notify-messages-popups"]
+leto-leto.com##div[class^="marcial-main-banner__video-inner"]
+leto-leto.com##div.page-wrapper:nth-child(2) > footer.footer.footer--width-center-wave:last-child > div.content-container.footer__container:last-child > div.footer__top:first-child > div.footer-auth-panel
+leto-leto.com##div[class^="footer__top"]
+leto-leto.com##div.page-wrapper.page-wrapper--overflow:first-child > footer.marcial-footer:last-child > div.marcial-container > div.marcial-footer__auth:first-child
+!
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -2923,6 +2935,9 @@ market.yandex.ru##div[class^="_1u4JH cia-vs"]
 ! yandex.ru##div[class^="VanillaReact AliceFabContainer"] # нихрена не помогает избавиться от Алисы
 !
 ya.ru##div[class^="rythm-feed"]
+! yandex.ru/pogoda##div[class^="AppPromoInner_container__mT1cB"]
+! yandex.ru/pogoda###react-aria-«Rcj9tldbnb» > div.AppSettingsClientModal_content__AFYNq.common_verticalScroll__sFq8B > ul.AppSettingsClientModal_content__list__K_0Ih.AppSettingsClientModal_content__list_rounded__B4H7H:last-child > li.AppSettingsClientModal_content__item__W2NI3:last-child > a
+! yandex.ru/pogoda##div:nth-child(10) > div > div.AppLayoutCommon_overlay__h5IHD > div.AppLayoutTypeMain_contentWrapper__mZQ3q:last-child > aside.AppLayoutTypeMain_left__fUvzq:last-child > div:last-child > div.AppLeftPanelPromos_bottomLinks__WtJmk > a.AppLeftPanelPromos_bottomLinks__item__plzCV:first-child
 !
 !
 ! =
@@ -3076,7 +3091,7 @@ ya.ru##div[class^="rythm-feed"]
 ! === Whitelist ===
 !
 @@||tc.mobile.yandex.net^
-! @@||d-assets.2gis.*/react.*ad.js^$script,domain=2gis.*
+! @@/react.*ad.js^$script,domain=2gis.*|2gis.ru
 @@||i*.wp.com/living.ai/wp-content/uploads/2024/08/2024082902-scaled.jpg$image,domain=living.ai
 @@||irecommend.ru/injector/botbot.js^$script,domain=irecommend.ru
 ! антибот скрипт
@@ -3217,7 +3232,7 @@ ya.ru$@$link[rel="manifest"]
 @@||ok.ru/dk
 @@||recaptcha.net^
 @@/channel/*/index.m3u8?q=
-@@||d-assets.2gis.*/gdprCookieBanner.*.js^$script,domain=2gis.*,important
+@@/gdprCookieBanner.*.js^$script,domain=2gis.*|2gis.ru,important
 @@/play/id*/*.m3u8?q=
 @@/ts/*/*.ts?q=
 @@||gitlab.com/api/graphql^$xhr,domain=gitlab.com
@@ -3626,7 +3641,16 @@ serverblight.com#@##cursor
 @@.cur|$image,domain=yandex.ru|ya.ru|yastatic.net
 ! Не работает плеер на сайтах радиостанций.
 @@||js.hostingradio.ru/melon/melon-player-ad.js^$script
+!
 @@||meta.fmgid.com/get_playing.php$xhr
+@@||leto-leto.com/storage/*.*^$image,domain=leto-leto.com
+@@||open.ivideon.com/embed/v*/?server=*&*&*&lang=*
+@@||openapi-alpha.ivideon.com/cameras/*/live_stream?op=*&access_token=*&*&video_codecs=*&audio_codecs=*&format=*&_=*
+@@||openapi-alpha-*.ivideon.com/cameras/*/live_stream?op=*&access_token=*&q=*&format=*&*&*
+@@||openapi-alpha.ivideon.com/cameras/*/live_preview?op=*&access_token=*&q=*&_=*
+@@||extcam.com/preview/live?server=*&*&access_token=*&q=*&u=*&ts=*&token=*
+@@||extcam.com/*/live?server=*&camera=*&access_token=*&streams=*&*&duration=*&*&d=*.extcam.com&public=*&owner_id=*&u=*&ts=*&token=*
+@@||dodopizza.ru/api/v*/bridge/v*/tracking_b$xhr,domain=dodopizza.ru
 !
 !
 ! -
@@ -3744,7 +3768,7 @@ serverblight.com#@##cursor
 ||87h6.cfd^$all
 ||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^$all
 ||clicks.af-pb06e2.com^$all
-||adalh-zcq.com^
+||adalh-zcq.com^$all
 !
 !
 !
