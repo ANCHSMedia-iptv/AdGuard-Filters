@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.3.1-R
-! TimeUpdated: 2025-09-09T16:05:24+00:00
+! Version: 4.3.2-R
+! TimeUpdated: 2025-09-10T16:41:24+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -341,7 +341,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /GoogleAnalytics/content/scripts/tracking.js$script,important
 ||cdn.antisov.ru/advisor.js^$script,important
 ||goodmod.ru/scripts/*/api.js^$script,important
-/conversion/ajax_counter.php^$xhr,domain=~kino.tricolor.ru|~tricolor.ru|~arsplus.ru
+/conversion/ajax_counter.php^$xhr,domain=~kino.tricolor.ru|~tricolor.ru|~arsplus.ru|~moba.ru
 ||ekip-sport.ru/assets/template/js/cooki.js^$script,domain=ekip-sport.ru,important
 ||assets-cdn.mvideo.ru/*/sprites/sprite.css.svg^$image,domain=mvideo.ru
 ||mvideo.ru/bff/recommendations/$xhr,domain=mvideo.ru
@@ -477,9 +477,9 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||recommend.playground.ru/api/post.recommendations$xhr,domain=playground.ru,important
 ||playground.ru/css/post-recommendations.css^$css,domain=playground.ru,important
 ||playground.ru/build/2.a7d6fd88.js^$script,domain=playground.ru,important
-||playground.ru/build/15.d0f129ad.js^$script,domain=playground.ru,important
-||playground.ru/build/38.88d331f7.js^$script,domain=playground.ru,important
-||playground.ru/build/40.cce4b36e.js^$script,domain=playground.ru,important
+! playground.ru/build/15.d0f129ad.js^$script,domain=playground.ru,important
+! playground.ru/build/38.88d331f7.js^$script,domain=playground.ru,important
+! playground.ru/build/40.cce4b36e.js^$script,domain=playground.ru,important
 ||playground.ru/api/referral.log$image,domain=playground.ru,important
 ||playground.ru/sound/notification.mp3^$media,domain=playground.ru
 ||minecraftpatch.ru/wp-content/themes/minecraftpatch.ru/img/tinkoff.png^$image,domain=minecraftpatch.ru
@@ -719,7 +719,7 @@ $cookie=dashly_device_guide,domain=shopogolic.net|shopogolic.club
 ||playground.ru^$cookie=/yashr|yandexuid|ad_block/
 ||playground.ru/api/error_front.send^$xhr,domain=playground.ru,important
 ||playground.ru/service/callback/google/iframe^$domain=playground.ru,important
-||playground.ru/build/28.5d043caa.js^$script,domain=playground.ru,important
+! playground.ru/build/28.5d043caa.js^$script,domain=playground.ru,important
 ||ichip.ru/img/v_sharing.png^$image,domain=ichip.ru
 ||portal.noc.gov.ru^$cookie=/s3cdn_sess/
 ||vstat.rtr-vesti.ru^$important
@@ -1462,6 +1462,14 @@ $cookie=RadioStatistica
 ||geocam.ru/images/pix.gif^$image,domain=geocam.ru
 ||interfax.ru/cnt/
 *.*/undefined^$xhr,image,script,other
+||playground.ru/build/49.57005fe8.js^$script,domain=playground.ru
+||vimeo.com/wh/log$xhr
+||sentry.odysee.tv^$important
+||backend.reshak.ru/stats-script.js^$script,domain=reshak.ru
+||city-social.ru^$third-party,domain=~city-social.ru
+||s5g.ru^
+||sentry.runit.cc^$important
+||shkole.net/assets/*/audio/*.mp3^$xhr,domain=shkole.net
 !
 !
 !
@@ -2547,6 +2555,14 @@ leto-leto.com##div[class^="marcial-main-banner__video-inner"]
 leto-leto.com##div.page-wrapper:nth-child(2) > footer.footer.footer--width-center-wave:last-child > div.content-container.footer__container:last-child > div.footer__top:first-child > div.footer-auth-panel
 leto-leto.com##div[class^="footer__top"]
 leto-leto.com##div.page-wrapper.page-wrapper--overflow:first-child > footer.marcial-footer:last-child > div.marcial-container > div.marcial-footer__auth:first-child
+vimeo.com###root > div.white.bg-container-background.text-generic-card-content:first-child > div.md\:motion-reduce\:animate-none.md\:animate-slide-in-from-bottom-fast.max-lg\:hidden.sticky.z-10.inset-x-0.bottom-0:last-child
+master-otvet.ru,otvet-master.ru##.noindex:nth-child(5)
+mozgotvet.com##section.w-100:nth-child(3) > header.scrolled.border-bottom > div.header__main > div.header__links:nth-child(3) > a.header__links_button_white:last-child
+mozgotvet.com##div.qa-body:nth-child(6) > div.container > div.row:last-child > div.col-sm-8:first-child > div.mt-5:nth-child(3)
+mozgotvet.com##div.qa-body:nth-child(6) > div.container > div.row:last-child > div.col-sm-8:first-child > a.pulse-button.mt-2:nth-child(5)
+mozgotvet.com##div[style^="position:fixed;left:0;bottom:0;width:100%;display:flex;align-items:center;justify-content:center;height:70px;background:#37C2EE;background:linear-gradient(to top right, #37C2EE 11%, #CF1512 100%);z-index:20;"]
+mozgotvet.com##div.qa-body:nth-child(6) > div.container > div.row:last-child > div.col-sm-4:last-child > div.text-center.overflow-hidden:last-child
+urokam.net##div[class^="ft-counter"]
 !
 !
 ! - Scripts -
@@ -3621,7 +3637,7 @@ serverblight.com#@##cursor
 @@||college.72to.ru/static/vendor/extjs/resources/images/gray/*.gif$image,domain=college.72to.ru
 @@/api/*/envelope/$ping,xhr,domain=pochta.ru
 @@||api-router.nexusmods.com/graphql^$xhr,domain=nexusmods.com,important
-@@||100i6fm.ru/cur_playing.txt$xhr,domain=100i6fm.ru
+@@||100i6fm.ru/cur_playing.txt$xhr,domain=100i6fm.ru|radiocityonline.ru
 @@||api.browser.yandex.*^$cookie=bh
 @@||api.browser.yandex.ru^$cookie=bh
 @@||yandex.ru^$cookie=bh
@@ -3651,6 +3667,9 @@ serverblight.com#@##cursor
 @@||extcam.com/preview/live?server=*&*&access_token=*&q=*&u=*&ts=*&token=*
 @@||extcam.com/*/live?server=*&camera=*&access_token=*&streams=*&*&duration=*&*&d=*.extcam.com&public=*&owner_id=*&u=*&ts=*&token=*
 @@||dodopizza.ru/api/v*/bridge/v*/tracking_b$xhr,domain=dodopizza.ru
+@@||moba.ru/bitrix/tools/conversion/ajax_counter.php^$xhr,domain=moba.ru
+@@||moba.ru/upload/crm/site_button/loader_*.js$script,domain=moba.ru
+dk.ru#@##fb-root:not(body):not(html)
 !
 !
 ! -
