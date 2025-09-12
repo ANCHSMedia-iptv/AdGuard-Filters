@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.3.2-R
-! TimeUpdated: 2025-09-10T16:41:24+00:00
+! Version: 4.3.3-R
+! TimeUpdated: 2025-09-12T16:42:24+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -782,7 +782,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 /themes/custom/initlab_cab/images/click-icon.png^$image,domain=cableman.ru|cableman.pro
 /themes/custom/initlab_cab/images/k-icon.png^$image,domain=cableman.ru|cableman.pro
 ||wifika.ru/wp-content/plugins/*/pro/images/blank.gif^$image,domain=wifika.ru,important
-/admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai|~tyuiu.ru|~me.jimjam.tv|~jimjam.tv|~*.jimjam.tv
+/admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai|~tyuiu.ru|~me.jimjam.tv|~jimjam.tv|~*.jimjam.tv|~republic-tv.ru
 ||userway.org^$third-party
 ||files.vm.ru/pdf/2025.02/original/thumb_1280_67c0a45f82682c09ce62d1a1.jpg^$image,xhr,domain=vm.ru
 ||stats.wp.com^
@@ -1465,11 +1465,27 @@ $cookie=RadioStatistica
 ||playground.ru/build/49.57005fe8.js^$script,domain=playground.ru
 ||vimeo.com/wh/log$xhr
 ||sentry.odysee.tv^$important
-||backend.reshak.ru/stats-script.js^$script,domain=reshak.ru
+||backend.reshak.ru/stats-script.js^$script,domain=reshak.ru,important
 ||city-social.ru^$third-party,domain=~city-social.ru
 ||s5g.ru^
 ||sentry.runit.cc^$important
 ||shkole.net/assets/*/audio/*.mp3^$xhr,domain=shkole.net
+||playercdn.cdnvideo.ru/aloha/clappr/clappr-google-ima-plugin*.js^$script,important
+||playercdn.cdnvideo.ru/aloha/clappr/clappr-events*.js^$script,important
+||playercdn.cdnvideo.ru/aloha/clappr/clappr-error-handler*.js^$script,important
+||tavria.tv/_ipx/q_*_webp/imgs/banners/dzen_300.jpg^$image,domain=tavria.tv
+||tavria.tv/imgs/icons/vk.svg^$image,domain=tavria.tv
+||tavria.tv/imgs/icons/wtsup.svg^$image,domain=tavria.tv
+||tavria.tv/imgs/icons/tg.svg^$image,domain=tavria.tv
+||tavria.tv/imgs/icons/vk.svg^$image,domain=tavria.tv
+||vidiq.com/_next/static/chunks/5473.c4391834e2ac4669.js^$script,domain=vidiq.com,important
+||cfriuxb2f3.execute-api.us-east-1.amazonaws.com^$domain=vidiq.com,important
+||clarity.ms^$important
+||kommersant.ru/news/newsline^$xhr,domain=kommersant.ru
+||kommersant.ru/doc/doclazyload/$xhr,domain=kommersant.ru
+||kommersant.ru/doc/SaveRecomendEvent^$xhr,domain=kommersant.ru,important
+||popularmechanics.com/_assets/fre/scopes/hdm/_next/static/media/tag-manager.script.*.js^$script,domain=popularmechanics.com,important
+||popularmechanics.com/_assets/jam/renderer.js^$script,domain=popularmechanics.com,important
 !
 !
 !
@@ -2035,7 +2051,6 @@ rbc.ru##.footer__counter__image
 webproverka.com##table:first-child > tbody > tr:last-child > td > p > table:last-child > tbody > tr:nth-child(2) > td > table > tbody > tr > td:first-child
 webproverka.com##table:first-child > tbody > tr:last-child > td > p > table:last-child > tbody > tr:nth-child(2) > td > table > tbody > tr > td:last-child
 disk.yandex.ru###app > div.public__root > div.top-banner.top-banner_desktop:nth-child(2) > div.DesktopBanner_DesktopBanner_XjXmr.Theme.Theme_color_ps-dark.Theme_root_ps-dark > div.DesktopBanner_DesktopBanner__Foreground_B9EQN:last-child
-russianfood.com###layout > div.layout > div.wrapper > noindex:last-child > div.ab_detect:nth-child(2)
 myrusakov.ru###right > div.block:nth-child(2)
 myrusakov.ru###left > div.block:nth-child(2)
 myrusakov.ru###right > div.block:first-child
@@ -2556,13 +2571,21 @@ leto-leto.com##div.page-wrapper:nth-child(2) > footer.footer.footer--width-cente
 leto-leto.com##div[class^="footer__top"]
 leto-leto.com##div.page-wrapper.page-wrapper--overflow:first-child > footer.marcial-footer:last-child > div.marcial-container > div.marcial-footer__auth:first-child
 vimeo.com###root > div.white.bg-container-background.text-generic-card-content:first-child > div.md\:motion-reduce\:animate-none.md\:animate-slide-in-from-bottom-fast.max-lg\:hidden.sticky.z-10.inset-x-0.bottom-0:last-child
-master-otvet.ru,otvet-master.ru##.noindex:nth-child(5)
+master-otvet.ru,otvet-master.ru###noindex:nth-child(5)
 mozgotvet.com##section.w-100:nth-child(3) > header.scrolled.border-bottom > div.header__main > div.header__links:nth-child(3) > a.header__links_button_white:last-child
 mozgotvet.com##div.qa-body:nth-child(6) > div.container > div.row:last-child > div.col-sm-8:first-child > div.mt-5:nth-child(3)
 mozgotvet.com##div.qa-body:nth-child(6) > div.container > div.row:last-child > div.col-sm-8:first-child > a.pulse-button.mt-2:nth-child(5)
 mozgotvet.com##div[style^="position:fixed;left:0;bottom:0;width:100%;display:flex;align-items:center;justify-content:center;height:70px;background:#37C2EE;background:linear-gradient(to top right, #37C2EE 11%, #CF1512 100%);z-index:20;"]
 mozgotvet.com##div.qa-body:nth-child(6) > div.container > div.row:last-child > div.col-sm-4:last-child > div.text-center.overflow-hidden:last-child
 urokam.net##div[class^="ft-counter"]
+tavria.tv###__nuxt > div.h-screen > div.grid.grid-rows-desktop-mobile.\31 024\:grid-rows-desktop.min-h-screen.bg-bg.dark\:bg-bg-dark > main:nth-child(4) > div.w-full.\31 280\:w-\[1260px\].\31 366\:w-\[1346px\].\31 440\:w-\[1366px\].\31 536\:w-\[1440px\].mx-auto.pb-20:last-child > div.px-3.pt-5 > div.grid.\31 024\:grid-cols-page-inner-three-columns.gap-3:first-child > div.hidden.\31 024\:block:last-child > div.mt-3:last-child
+tavria.tv###cookies-block
+###cookies-block
+datadump.ru###access > div.social:last-child > a
+datadump.ru###custom_html-2
+kommersant.ru##div.layout.js-lenta-article:nth-child(18) > div.main.grid > div.grid-col.grid-col-s3:first-child > div.lenta_top_doc > article.doc.js-article.js-canonical.js-canonical-current:first-child > div.network_announce_A:nth-child(6)
+! kommersant.ru##div[class^="footer_counter "]
+kommersant.ru##.footer_counter
 !
 !
 ! - Scripts -
@@ -3670,6 +3693,7 @@ serverblight.com#@##cursor
 @@||moba.ru/bitrix/tools/conversion/ajax_counter.php^$xhr,domain=moba.ru
 @@||moba.ru/upload/crm/site_button/loader_*.js$script,domain=moba.ru
 dk.ru#@##fb-root:not(body):not(html)
+kommersant.ru#@#.footer_adv
 !
 !
 ! -
