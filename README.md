@@ -1,6 +1,6 @@
 Repository for my AdGuard filters.
 
-FOR MY USE ONLY!
+
 
 Filters:
 - Removing unwanted parameters [Support temporarily stopped];
