@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.3.4-R
-! TimeUpdated: 2025-09-13T16:28:24+00:00
+! Version: 4.3.5-R
+! TimeUpdated: 2025-09-13T18:33:20+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -190,7 +190,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com,important
 ||cdn.gamestatic.net/files/pictures/promo_banner_*.png^$image,domain=rbkgames.com,important
 ||alicdn.com/AWSC/et/*/et_f.js^$script,important
-||cpa.hh.ru^
+||cpa.hh.ru^$important
 ! *.103.*/css/cookiesNotification*.css^$css,important,domain=mag.103.* (новое правило, строка 418)
 ! *.103.*/js/cookiesNotificationBy.js^$script,important,domain=mag.103.* (новое правило, строка 138 и 139)
 ||d31j93rd8oukbv.cloudfront.net^$important
@@ -1488,7 +1488,7 @@ $cookie=RadioStatistica
 ||kommersant.ru/doc/SaveRecomendEvent^$xhr,domain=kommersant.ru,important
 ||popularmechanics.com/_assets/fre/scopes/hdm/_next/static/media/tag-manager.script.*.js^$script,domain=popularmechanics.com,important
 ||popularmechanics.com/_assets/jam/renderer.js^$script,domain=popularmechanics.com,important
-||gosuslugi.ru/node-api/components-metrics^$xhr,domain=gosuslugi.ru
+||gosuslugi.ru/node-api/components-metrics^$xhr,domain=gosuslugi.ru,important
 ||cdn1.flamp.ru/7d84f64d2ed3afb391a99f8c6511f446_600_600.jpg^$image,domain=flamp.ru
 ||rbc.ru/rbcmetr/stat/$xhr,domain=rbc.ru,important
 ||cdn.jsdelivr.net/npm/twitter-widgets*/
@@ -1501,6 +1501,30 @@ $cookie=RadioStatistica
 ||mail.ru/apic/$xhr
 ||stat.radar.imgsmail.ru^$important
 ||multimedia.pulse.mail.ru/api/v*/reco/build?stream_id=lenta_main_mail$xhr,domain=mail.ru
+||i.hh.ru/js/External/TargetAds_WebSDK.js^$script,domain=hh.ru,important
+||i.hh.ru/js/External/smart-script.js^$script,domain=hh.ru,important
+||sentry.hh.ru^$important
+||i.hh.ru/build/9280.93a4c0099a4d4a95.js^$script,domain=hh.ru
+||i.hh.ru/build/6039.2b4e9d1e39f1ffac.js^$script,domain=hh.ru
+||i.hh.ru/build/4075.0c1cfbf2a6f1b290.js^$script,domain=hh.ru
+||i.hh.ru/build/603.0f6a3b5e34883b89.js^$script,domain=hh.ru
+||i.hh.ru/build/701.a60244a53a9961c0.js^$script,domain=hh.ru
+||i.hh.ru/build/3780.615cf0548f55b937.js^$script,domain=hh.ru
+||i.hh.ru/build/5189.ff8027798d56bb3d.js^$script,domain=hh.ru
+||i.hh.ru/build/192.c654583e1ac2bcd7.js^$script,domain=hh.ru
+||i.hh.ru/build/3477.2922f12f2484ade6.js^$script,domain=hh.ru
+||i.hh.ru/build/7216.a8d87f5e36a267e8.js^$script,domain=hh.ru
+||i.hh.ru/build/5234.6b6a8756b3e7d181.js^$script,domain=hh.ru
+||i.hh.ru/build/5288.6bc40e8a2e229206.js^$script,domain=hh.ru
+||i.hh.ru/build/3560.57d4ea02d0285882.js^$script,domain=hh.ru
+||i.hh.ru/build/4823.d33ed759db956755.js^$script,domain=hh.ru
+||i.hh.ru/build/3718.6919e7bc7ac06c8a.js^$script,domain=hh.ru
+||i.hh.ru/build/9216.7631507dbb909b65.js^$script,domain=hh.ru
+||i.hh.ru/build/5834.546ef5d01a865a9e.js^$script,domain=hh.ru
+||i.hh.ru/build/7877.43e50e2926a4d2bb.js^$script,domain=hh.ru
+||i.hh.ru/styles/globals/blocks/supernova/images/big-promo/big-promo-*.jpg^$image,domain=hh.ru
+||i.hh.ru/styles/globals/blocks/supernova/images/big-promo/big-promo-*.svg^$image,domain=hh.ru
+||i.hh.ru/build/bloko.fa86834ba49da945.js^$script,domain=hh.ru
 !
 !
 !
@@ -2613,6 +2637,9 @@ mobapost.ru###app > div.application--wrap:last-child > div.mp-container.white.py
 ##div[class^="bx-composite-banner-wrap"]
 ##div[id^="bx-composite-banner"]
 lavkagsm.ru##div[class^="subscribe_button"]
+hh.ru##div[class^="footer-counters"]
+hh.ru##div[class^="supernova-dashboard-footer supernova-dashboard-footer_with-big-promo"]
+vcfm.ru##div[id^="counter"]
 !
 !
 ! - Scripts -
