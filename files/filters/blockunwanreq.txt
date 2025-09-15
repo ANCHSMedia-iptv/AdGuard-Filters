@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.3.6-R
-! TimeUpdated: 2025-09-14T17:33:20+00:00
+! Version: 4.3.7-R
+! TimeUpdated: 2025-09-15T16:54:50+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -379,7 +379,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^$important
-/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz
+/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz|~certina.com
 ||getrcmx.com^$important
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.*.js^$script,domain=xcom-shop.ru,important
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -1507,31 +1507,13 @@ $cookie=RadioStatistica
 ||i.hh.ru/js/External/TargetAds_*.js^$script,domain=hh.ru,important
 ||i.hh.ru/js/External/smart-script.js^$script,domain=hh.ru,important
 ||sentry.hh.ru^$important
-||i.hh.ru/build/9280.93a4c0099a4d4a95.js^$script,domain=hh.ru,important
-||i.hh.ru/build/6039.2b4e9d1e39f1ffac.js^$script,domain=hh.ru,important
-||i.hh.ru/build/4075.0c1cfbf2a6f1b290.js^$script,domain=hh.ru,important
-||i.hh.ru/build/603.0f6a3b5e34883b89.js^$script,domain=hh.ru,important
-||i.hh.ru/build/701.a60244a53a9961c0.js^$script,domain=hh.ru,important
-||i.hh.ru/build/3780.615cf0548f55b937.js^$script,domain=hh.ru,important
-||i.hh.ru/build/5189.ff8027798d56bb3d.js^$script,domain=hh.ru,important
-||i.hh.ru/build/192.c654583e1ac2bcd7.js^$script,domain=hh.ru,important
-||i.hh.ru/build/3477.2922f12f2484ade6.js^$script,domain=hh.ru,important
-||i.hh.ru/build/7216.a8d87f5e36a267e8.js^$script,domain=hh.ru,important
-||i.hh.ru/build/5234.6b6a8756b3e7d181.js^$script,domain=hh.ru,important
-||i.hh.ru/build/5288.6bc40e8a2e229206.js^$script,domain=hh.ru,important
-||i.hh.ru/build/3560.57d4ea02d0285882.js^$script,domain=hh.ru,important
-||i.hh.ru/build/4823.d33ed759db956755.js^$script,domain=hh.ru,important
-||i.hh.ru/build/3718.6919e7bc7ac06c8a.js^$script,domain=hh.ru,important
-||i.hh.ru/build/9216.7631507dbb909b65.js^$script,domain=hh.ru,important
-||i.hh.ru/build/5834.546ef5d01a865a9e.js^$script,domain=hh.ru,important
-||i.hh.ru/build/7877.43e50e2926a4d2bb.js^$script,domain=hh.ru,important
+! ...
 ||i.hh.ru/styles/globals/blocks/supernova/images/big-promo/big-promo-*.jpg^$image,domain=hh.ru
 ||i.hh.ru/styles/globals/blocks/supernova/images/big-promo/big-promo-*.svg^$image,domain=hh.ru
-||i.hh.ru/build/bloko.fa86834ba49da945.js^$script,important,domain=hh.ru
 ||s.rbk.ru/v*_rbcnews_static/rbcnews-*/scripts/build/fn/_oprosso.*^$script,css,domain=rbc.ru
 ||icdn.lenta.ru/images/2023/05/22/14/20230522144414527/original_24270a2eb5ac6d4a1689e9b6f543feba.png^$image,domain=lenta.ru,important
 ||icdn.lenta.ru/images/2025/09/05/17/20250905172140661/original_170fea8fe0f88619d89628445232366e.png^$image,domain=lenta.ru
-/gm-api/bff/v*/blocks/get-notices$xhr,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+/gm-api/bff/v*/blocks/get-notices$xhr,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru
 ||analytics.iportal.ru^$important
 ||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/ArticlesLeftColumnAdv.vue_vue_type_script_setup_true_lang*.js^$script,important,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/sentry*.js^$script,important,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
@@ -1549,6 +1531,16 @@ $cookie=RadioStatistica
 ||fb-cdn.premier.one/files/premier/admin-api/136d/de33/136dde3339f12ab1a80d5fa877f9cfe8.png^$image,domain=rutube.ru
 ||pic.rutubelist.ru/links/2025-04-09/a4/d0/a4d01f661c2684ca33338d9fd1711207.svg^$image,domain=rutube.ru
 ||rutube.ru/api/abtests/active-tests/$xhr,domain=rutube.ru
+/?bxrand=$xhr
+/.well-known/ddos-guard/id/$third-party,image,important
+||cdn.iz.ru/profiles/portal/themes/purple/js/ads-tools.js$script,domain=iz.ru,important
+||cdn.iz.ru/profiles/portal/themes/purple/js/index/two-col-with-advertise*/two-col-with-advertise*.js$script,domain=iz.ru,important
+||aif.ru/redesign2018/img/sharings/*.svg$image,domain=aif.ru
+||vkvideo.ru/dist/web/ads_light.*.js^$script,important
+||vkvideo.ru/al_video.php?act=track_player_events$xhr,important
+||a.ria.ru^
+||cdnn*.img.ria.ru/min/js/libs/ria.share.js$script,domain=ria.ru
+||cdnn*.img.ria.ru/min/js/libs/ria.share.sliding.js$script,domain=ria.ru
 !
 !
 !
@@ -2673,6 +2665,9 @@ sportrbc.ru,rbc.ru##header.topline__wrapper.js-topline-wrapper.topline__wrapper_
 videobel.by##.cookie-alertcomponent__Holder-sc-b564p5-0.ihfWGK
 rutube.ru##div.portalRoot:last-child > div.wdp-popup-overlay-module__overlay
 rutube.ru###root > div:last-child > div:last-child > div.application-module__container > div:first-child > nav.menu-content-module__wrapper.menu-content-module__menu.menu-content-module__menuWide.menu-content-module__menuOpen:nth-child(3) > span.menu-content-module__innerWrapper > section.menu-section-container-module__wrapper:first-child > ul.menu-links-module__list.navigation_group_main > li:last-child > a.wdp-link-module__link.menu-link-module__item
+aif.ru##div[class^="couter_block"]
+aif.ru##div[class^="count_box_nodisplay"]
+ria.ru##div[class^="ultraright"]
 !
 !
 ! - Scripts -
@@ -3791,10 +3786,12 @@ kommersant.ru#@#.footer_adv
 @@||rbc.ru^$cookie=livetv-state
 @@||sportrbc.ru^$cookie=livetv-autoplay
 @@||sportrbc.ru^$cookie=livetv-state
-@@||hls-01-rbc.hostingradio.ru/rbc
+@@||hls-*-rbc.hostingradio.ru/rbc
 @@||vk*.vkuser.net/?srcIp=*&pr=*&expires=*&srcAg=*&fromCache=*&ch=*&ms=*&type=1&*&urls=
 @@||vk*.vkuser.net/?expires=*&srcIp=*&*&srcAg=*&ms=*&*&sig=*&urls=
 @@||rutube.ru/multipass/api/accounts/captcha/
+@@||ob-tb.ru^
+@@||cdnn*.img.ria.ru/min/js/libs/grecaptcha.js$script,domain=ria.ru
 !
 !
 ! -
