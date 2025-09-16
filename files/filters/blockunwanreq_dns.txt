@@ -3,7 +3,7 @@
 ! Version: 3.9.7-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-09-15T16:55:30+00:00
+! TimeUpdated: 2025-09-16T16:55:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 15.09.2025 16:55 UTC
+! Last Modified: 16.09.2025 16:55 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -237,7 +237,7 @@
 ||tiqcdn.com^$important
 ||*analytics.tele2.ru^$important
 ! analytics.tele2.ru^$important
-||*adjust*^$important
+||*adjust.*^$important
 ||bcebos.com^$important
 ||rutrk.org^$important
 ||pglstatp.com^$dnsrewrite=REFUSED,important
@@ -1236,6 +1236,7 @@
 ||clicks.af-pb06e2.com^
 ||151.243.18.101^
 ||adalh-zcq.com^
+||softversterport.gq^
 !
 !
 !

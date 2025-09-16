@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.3.7-R
-! TimeUpdated: 2025-09-15T16:54:50+00:00
+! Version: 4.3.8-R
+! TimeUpdated: 2025-09-16T16:54:50+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -83,7 +83,7 @@
 ||*analytics.tele2.ru^$important
 ! analytics.tele2.ru^$important
 ||bcebos.com^$important
-||*adjust*^$important
+||*adjust.*^$important,domain=~reddit.com|~reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|~redd.it
 ||rutrk.org^$important
 ||stat-analytics.mediavitrina.ru^$important
 ||pglstatp.com^$important
@@ -666,7 +666,7 @@ $cookie=bltsr
 $cookie=bh,third-party,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by|~yandex.kz|~ya.ru|~yandex.com
 $cookie=coockoos
 $cookie=my,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by|~yandex.kz|~ya.ru|~yandex.com
-$cookie=/__ddg*_/
+$cookie=/^__ddg*_/,important
 ||sibdroid.ru/upload/is/settings/c52/k8m6dcpmm5aqnx6nu8hn2t16va4e404l/TG%20desktop%20(2).png^$image,domain=sibdroid.ru
 ! /wp-admin/admin-ajax.php?*views*$xhr (новое правило, строка 785)
 ||api.zadarma.com/calltracker$xhr,important
@@ -703,9 +703,9 @@ $cookie=/__ddg*_/
 $cookie=/dsp_click_id|mediaInfo|pageLanding/,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 ||static.shopotam.ru/ad_dir/advert.js$script,domain=shopotam.ru,important
 ||shopotam.ru^$cookie=/view_counter|z_ref_url|z_ref_target|z_ref_date|last_date/
-$cookie=qrator_msid2
+$cookie=qrator_msid2,important
 ||mi.com^$cookie=/_ot_last_time|_ot_referrer_path/
-||mi.com^$cookie=/_ot_utm_*/
+||mi.com^$cookie=/^_ot_utm_*/
 ||adv-cdn.tnt-online.ru^
 ||1tv.ru^$cookie=cookieMatchedWithYandex
 ||static.1tv.ru^$cookie=cookieMatchedWithYandex
@@ -1271,7 +1271,7 @@ $cookie=s24id
 ||enigmasoftware.com/wp-content/plugins/rotatead/enigma--*/script.js.php$script,domain=enigmasoftware.com
 ||enigmasoftware.com/wp-content/themes/enigma/js/bundle.js$script,domain=enigmasoftware.com
 ||cdn.amcharts.com/lib/*/*.js^$script,domain=netify.ai
-$cookie=qrator_jsr
+$cookie=qrator_jsr,important
 /trk^$xhr,domain=wondershare.com.ru|wondershare.com|wondershare.com.*,important
 ||id.sber.ru/api/ab^$xhr,domain=id.sber.ru,important
 ||okko.tv^$cookie=odid
@@ -1398,7 +1398,7 @@ $cookie=qrator_jsr
 ||web-metrics.cdek.ru^$important
 ||pochta.ru/assets/ya*_*.png^$image,domain=pochta.ru
 ||pochta.ru/assets/POSTRUO_*.png^$image,domain=pochta.ru
-||sntrm.tass.ru^
+||sntrm.tass.ru^$important
 ||officelife.media/local/templates/*/vendor/share*.js$xhr,domain=officelife.media
 ||nexusmods.com/api/scripts/adjoin.js^$script,domain=nexusmods.com,important
 ! ||ad-wa.anydesk.com^
@@ -1541,6 +1541,25 @@ $cookie=RadioStatistica
 ||a.ria.ru^
 ||cdnn*.img.ria.ru/min/js/libs/ria.share.js$script,domain=ria.ru
 ||cdnn*.img.ria.ru/min/js/libs/ria.share.sliding.js$script,domain=ria.ru
+||invitro.ru/edna/threadswidget-*.js^$script,domain=invitro.ru
+||widget.7medica.ru/version$xhr,important
+||vtb.ru/media-files/vtb.ru/shared/scripts/RTM/calcma.js^$script,domain=vtb.ru
+||vtb.ru/media-files/vtb.ru/shared/scripts/digitaltarget/digitaltarget.js^$script,domain=vtb.ru,important
+$cookie=/utm_*/,important
+||chat3.vtb.ru/widget/*/*.mp3^$media,domain=vtb.ru
+||dropmefiles.com/js/push/push-*.js^$script,domain=dropmefiles.com
+||online.vtb.ru/services/shared/mf/metrics^$xhr,domain=online.vtb.ru
+||d.vtb.ru/api/v*/send$xhr,websocket,domain=online.vtb.ru
+||redditstatic.com/shreddit/*/ad-event-*-*.js^$script,domain=reddit.com
+||redditstatic.com/shreddit/*/v*-events-*.js^$script,domain=reddit.com
+||redditstatic.com/shreddit/*/*-report-from-v*-event-*.js^$script,domain=reddit.com
+||redditstatic.com/shreddit/*/pdp-ad-client-js-*.js^$script,domain=reddit.com
+||redditstatic.com/shreddit/*/shreddit-dynamic-ad-link-*.js^$script,domain=reddit.com
+||redditstatic.com/shreddit/*/shreddit-dynamic-ad-link-*.js^$script,domain=reddit.com
+||redditstatic.com/shreddit/*/category-takeover-ad-client-js-*.js^$script,domain=reddit.com
+||reddit.com/svc/shreddit/events^$xhr,domain=reddit.com
+||reddit.com^$cookie=session_tracker
+||reddit.com^$cookie=subreddit,maxAge=20
 !
 !
 !
@@ -2668,6 +2687,12 @@ rutube.ru###root > div:last-child > div:last-child > div.application-module__con
 aif.ru##div[class^="couter_block"]
 aif.ru##div[class^="count_box_nodisplay"]
 ria.ru##div[class^="ultraright"]
+tassphoto.com##div.cookie-modal
+oilgasforum.ru###__next > footer.footer.js-header-theme-trigger:nth-child(3) > div.footer-inner.wrapper > div.footer-top:first-child > div.footer-top-left:first-child > div.footer-news
+##iframe[src*="//www.acint.net"]
+invitro.ru##.article-inner__container, .analisys-in-article
+invitro.ru##div[class^="c2c-call__container"]
+browserleaks.com##a[id^="vpn"][href^="/vpn"]
 !
 !
 ! - Scripts -
@@ -2733,6 +2758,11 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 sputnik24.tv#%#//scriptlet('set-cookie', 'isShowCookieWarning', 'false', 'none')
 ! sports.ru#%#//scriptlet('set-local-storage-item', 'loglevel', '$remove$')
 okko.tv,okko.sport#%#//scriptlet('set-cookie', 'cookie-confirm', '1')
+#%#//scriptlet('set-session-storage-item', 'bis_data', 'emptyObj')
+reddit.com#%#//scriptlet('set-session-storage-item', 'serverTimestamps', 'emptyObj')
+reddit.com#%#//scriptlet('set-local-storage-item', 'events-buffer-v2', '$remove$')
+reddit.com#%#//scriptlet('set-local-storage-item', 'good-visit-feeds-search', 'emptyObj')
+reddit.com#%#//scriptlet('set-local-storage-item', 'recent-subreddits-store', 'emptyObj')
 ! (Waiting for adding more scripts..)
 !
 !
@@ -3206,6 +3236,7 @@ ya.ru##div[class^="rythm-feed"]
 ||advice-ads.s3.amazonaws.com^
 ||analytics.adobe.io^
 ||adncdn.net^
+||acint.net^
 !
 ! --
 !
@@ -3267,7 +3298,7 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 mi.com#@$#body { overflow: visible !important; }
 @@||stats.1clickvpn.com^$domain=pphgdbgldlmicfdkhondlafkiomnelnk
 ! отвечает за основной функционал расширения и приложений 1clickvpn (не реклама).
-@@||github.com^$cookie
+@@||github.com^$cookie,~third-party
 @@||yandex.net^$cookie,~third-party
 @@||aliexpress.ru^$cookie
 !
@@ -3792,6 +3823,9 @@ kommersant.ru#@#.footer_adv
 @@||rutube.ru/multipass/api/accounts/captcha/
 @@||ob-tb.ru^
 @@||cdnn*.img.ria.ru/min/js/libs/grecaptcha.js$script,domain=ria.ru
+@@||yastatic.net/s3/front-maps-static/maps-front-maps/build/client/map-widget
+@@||dropmefiles.com/*/securimage/show
+@@||redditstatic.com/shreddit/*/adjust-search-query-link-*.js^$script,domain=reddit.com
 !
 !
 ! -
@@ -3913,6 +3947,7 @@ kommersant.ru#@#.footer_adv
 ||clck.ru/3PBAni^$all
 ||151.243.18.101/auto_campaign$all
 ||clck.ru/3P9b4M^$all
+||softversterport.gq^
 !
 !
 !
