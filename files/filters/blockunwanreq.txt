@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.3.8-R
-! TimeUpdated: 2025-09-16T16:54:50+00:00
+! Version: 4.3.9-R
+! TimeUpdated: 2025-09-17T16:54:50+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -83,7 +83,7 @@
 ||*analytics.tele2.ru^$important
 ! analytics.tele2.ru^$important
 ||bcebos.com^$important
-||*adjust.*^$important,domain=~reddit.com|~reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|~redd.it
+!||*adjust.*^$important,domain=~reddit.com|~reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|~redd.it|~wondershare.com.ru|~wondershare.com|~wondershare.com.*
 ||rutrk.org^$important
 ||stat-analytics.mediavitrina.ru^$important
 ||pglstatp.com^$important
@@ -1273,7 +1273,7 @@ $cookie=s24id
 ||cdn.amcharts.com/lib/*/*.js^$script,domain=netify.ai
 $cookie=qrator_jsr,important
 /trk^$xhr,domain=wondershare.com.ru|wondershare.com|wondershare.com.*,important
-||id.sber.ru/api/ab^$xhr,domain=id.sber.ru,important
+||id.sber.ru/api/ab^$xhr,domain=id.sber.ru|sber.ru,important
 ||okko.tv^$cookie=odid
 ||okko.tv^$cookie=SherlockChatInfo
 /wp-content/themes/*/adsbygoogle.js$script,important
@@ -1525,7 +1525,8 @@ $cookie=RadioStatistica
 ||rbc.ru^$cookie=/utmReferrer|xrft|splituid/
 ||sportrbc.ru^$cookie=/__nst|__rmid|__rmsid|splituid/
 ||sentry.interneturok.ru^$important
-||resh.edu.ru/*.gif^$image,domain=resh.edu.ru
+||resh.edu.ru/*.gif^$image,domain=resh.edu.ru,important
+||resh.edu.ru/4$xhr,domain=resh.edu.ru
 ||rutube.ru/api/page_options/check_vpn$xhr,domain=rutube.ru
 ||rutube.ru^$cookie=/canary1|cid|csrfttoken|ea|eg|uuid|session_id/
 ||fb-cdn.premier.one/files/premier/admin-api/136d/de33/136dde3339f12ab1a80d5fa877f9cfe8.png^$image,domain=rutube.ru
@@ -1545,21 +1546,32 @@ $cookie=RadioStatistica
 ||widget.7medica.ru/version$xhr,important
 ||vtb.ru/media-files/vtb.ru/shared/scripts/RTM/calcma.js^$script,domain=vtb.ru
 ||vtb.ru/media-files/vtb.ru/shared/scripts/digitaltarget/digitaltarget.js^$script,domain=vtb.ru,important
-$cookie=/utm_*/,important
+$cookie=/^utm_*/,important
 ||chat3.vtb.ru/widget/*/*.mp3^$media,domain=vtb.ru
 ||dropmefiles.com/js/push/push-*.js^$script,domain=dropmefiles.com
-||online.vtb.ru/services/shared/mf/metrics^$xhr,domain=online.vtb.ru
-||d.vtb.ru/api/v*/send$xhr,websocket,domain=online.vtb.ru
-||redditstatic.com/shreddit/*/ad-event-*-*.js^$script,domain=reddit.com
-||redditstatic.com/shreddit/*/v*-events-*.js^$script,domain=reddit.com
-||redditstatic.com/shreddit/*/*-report-from-v*-event-*.js^$script,domain=reddit.com
-||redditstatic.com/shreddit/*/pdp-ad-client-js-*.js^$script,domain=reddit.com
-||redditstatic.com/shreddit/*/shreddit-dynamic-ad-link-*.js^$script,domain=reddit.com
-||redditstatic.com/shreddit/*/shreddit-dynamic-ad-link-*.js^$script,domain=reddit.com
-||redditstatic.com/shreddit/*/category-takeover-ad-client-js-*.js^$script,domain=reddit.com
-||reddit.com/svc/shreddit/events^$xhr,domain=reddit.com
+||online.vtb.ru/services/shared/mf/metrics^$xhr,domain=online.vtb.ru,important
+||d.vtb.ru/api/v*/send$xhr,websocket,domain=online.vtb.ru,important
+||redditstatic.com/shreddit/*/ad-event-*-*.js^$script,domain=reddit.com,important
+||redditstatic.com/shreddit/*/v*-events-*.js^$script,domain=reddit.com,important
+||redditstatic.com/shreddit/*/*-report-from-v*-event-*.js^$script,domain=reddit.com,important
+||redditstatic.com/shreddit/*/pdp-ad-client-js-*.js^$script,domain=reddit.com,important
+||redditstatic.com/shreddit/*/shreddit-dynamic-ad-link-*.js^$script,domain=reddit.com,important
+||redditstatic.com/shreddit/*/shreddit-dynamic-ad-link-*.js^$script,domain=reddit.com,important
+||redditstatic.com/shreddit/*/category-takeover-ad-client-js-*.js^$script,domain=reddit.com,important
+||reddit.com/svc/shreddit/events^$xhr,domain=reddit.com,important
 ||reddit.com^$cookie=session_tracker
 ||reddit.com^$cookie=subreddit,maxAge=20
+||adjust.com^$important
+||adjust.world^$important
+||adjust.io^$important
+||adjust.*.in^$important
+||cdni.comss.net/logo/Telegram.png^$image,domain=comss.ru
+||cdn2-static.ntv.ru/img/sberlogo_new.svg^$image,domain=ntv.ru
+||ren.tv/images/subscribe/*.svg^$xhr,domain=ren.tv
+||finance.wildberries.ru/chunks/sentry-*.js^$script,domain=finance.wildberries.ru,important
+/*/ruxitagent_*.js^$script,domain=sberbank.ru|sberbank.com|sber.ru,important
+||node*.vito.sber.ru/bf/$xhr,domain=sberbank.ru
+||resh.edu.ru/uploads/cinema-online.jpg^$image,domain=resh.edu.ru
 !
 !
 !
@@ -2693,6 +2705,10 @@ oilgasforum.ru###__next > footer.footer.js-header-theme-trigger:nth-child(3) > d
 invitro.ru##.article-inner__container, .analisys-in-article
 invitro.ru##div[class^="c2c-call__container"]
 browserleaks.com##a[id^="vpn"][href^="/vpn"]
+portaldatv.com.br###elementor-popup-modal-19815
+comss.ru##div[class^="container"][style="padding:15px;"]
+ntv.ru###app > div.main-page > div.footer-async:nth-child(5) > footer.footer > div.container-ui > a.footer__sberrr:last-child
+resh.edu.ru##div.outer-sf:nth-child(2) > div.wrapper-sf:first-child > main.main:last-child > div.wrapper-content.blocks-container.block-shadow.clearfix:nth-child(2) > div.blocks-outer-grid > div.blocks-outer-grid__left:first-child > a.m-block.m-block-small.fl-l:first-child
 !
 !
 ! - Scripts -
@@ -3236,7 +3252,6 @@ ya.ru##div[class^="rythm-feed"]
 ||advice-ads.s3.amazonaws.com^
 ||analytics.adobe.io^
 ||adncdn.net^
-||acint.net^
 !
 ! --
 !
@@ -3258,7 +3273,7 @@ ya.ru##div[class^="rythm-feed"]
 @@||digiseller.market^
 ! @@||iptvx.one^
 @@||captcha-api.yandex.ru^
-@@/antifraud*.js^$script,domain=online.sberbank.ru|sberbank.ru|id.sber.ru
+@@/antifraud*.js^$script,domain=online.sberbank.ru|sberbank.ru|id.sber.ru|sber.ru
 @@||cdnweb.sberbank.ru/*/*.*^$image,xhr,domain=online.sberbank.ru
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/unallowedbrowsers.*^$script,xhr,domain=online.sberbank.ru
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/bowser*.js^$script,domain=online.sberbank.ru
@@ -3826,6 +3841,8 @@ kommersant.ru#@#.footer_adv
 @@||yastatic.net/s3/front-maps-static/maps-front-maps/build/client/map-widget
 @@||dropmefiles.com/*/securimage/show
 @@||redditstatic.com/shreddit/*/adjust-search-query-link-*.js^$script,domain=reddit.com
+@@||static*.ntv.ru/assets/js/capcha-*.js
+@@||vtrans.s3-private.mds.yandex.net^
 !
 !
 ! -
