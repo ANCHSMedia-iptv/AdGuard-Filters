@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.4.0-R
-! TimeUpdated: 2025-09-18T16:54:50+00:00
+! Version: 4.4.1-R
+! TimeUpdated: 2025-09-19T17:54:50+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -430,7 +430,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||api.modrinth.com/analytics/$xhr,domain=modrinth.com,important
 ||img.ru-minecraft.ru/logokl2.png^$image,domain=ru-minecraft.ru
 /wp-content/plugins/thirstyaffiliates-pro/js/app/tap-gct.js$script
-/js/share*.js^$script,domain=~teraboxcdn.com|~terabox.com|~terabox.*|~living.ai,important
+! /js/share*.js^$script,domain=~teraboxcdn.com|~terabox.com|~terabox.*|~living.ai,important (19.08.25: спорное правило)
 ||cubixworld.net/api/freepromo^$xhr,domain=cubixworld.net
 ||cubixworld.net/scripts/ga.js^$script,domain=cubixworld.net,important
 ||vk.com/widget_comments.php$important,xhr,domain=~vk.com|~vk.ru,third-party
@@ -666,7 +666,7 @@ $cookie=bltsr
 $cookie=bh,third-party,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by|~yandex.kz|~ya.ru|~yandex.com
 $cookie=coockoos
 $cookie=my,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by|~yandex.kz|~ya.ru|~yandex.com
-$cookie=/^__ddg*_/,important
+$cookie=/__ddg*_/,important
 ||sibdroid.ru/upload/is/settings/c52/k8m6dcpmm5aqnx6nu8hn2t16va4e404l/TG%20desktop%20(2).png^$image,domain=sibdroid.ru
 ! /wp-admin/admin-ajax.php?*views*$xhr (новое правило, строка 785)
 ||api.zadarma.com/calltracker$xhr,important
@@ -705,7 +705,7 @@ $cookie=/dsp_click_id|mediaInfo|pageLanding/,domain=tbank.ru|tinkoff.ru|t-j.ru,i
 ||shopotam.ru^$cookie=/view_counter|z_ref_url|z_ref_target|z_ref_date|last_date/
 $cookie=qrator_msid2,important
 ||mi.com^$cookie=/_ot_last_time|_ot_referrer_path/
-||mi.com^$cookie=/^_ot_utm_*/
+||mi.com^$cookie=/_ot_utm_*/
 ||adv-cdn.tnt-online.ru^
 ||1tv.ru^$cookie=cookieMatchedWithYandex
 ||static.1tv.ru^$cookie=cookieMatchedWithYandex
@@ -1558,11 +1558,11 @@ $cookie=RadioStatistica
 ||widget.7medica.ru/version$xhr,important
 ||vtb.ru/media-files/vtb.ru/shared/scripts/RTM/calcma.js^$script,domain=vtb.ru
 ||vtb.ru/media-files/vtb.ru/shared/scripts/digitaltarget/digitaltarget.js^$script,domain=vtb.ru,important
-$cookie=/^utm_*/,important
+$cookie=/utm_*/,important
 ||chat3.vtb.ru/widget/*/*.mp3^$media,domain=vtb.ru
 ||dropmefiles.com/js/push/push-*.js^$script,domain=dropmefiles.com
 ||online.vtb.ru/services/shared/mf/metrics^$xhr,domain=online.vtb.ru,important
-||d.vtb.ru/api/v*/send$xhr,websocket,domain=online.vtb.ru,important
+||d.vtb.ru/api/v*/$xhr,websocket,domain=online.vtb.ru,important
 ||redditstatic.com/shreddit/*/ad-event-*-*.js^$script,domain=reddit.com,important
 ||redditstatic.com/shreddit/*/v*-events-*.js^$script,domain=reddit.com,important
 ||redditstatic.com/shreddit/*/*-report-from-v*-event-*.js^$script,domain=reddit.com,important
@@ -1581,7 +1581,7 @@ $cookie=/^utm_*/,important
 ||cdn2-static.ntv.ru/img/sberlogo_new.svg^$image,domain=ntv.ru
 ||ren.tv/images/subscribe/*.svg^$xhr,domain=ren.tv
 ||finance.wildberries.ru/chunks/sentry-*.js^$script,domain=finance.wildberries.ru,important
-/*/ruxitagent_*.js^$script,domain=sberbank.ru|sberbank.com|sber.ru,important
+/ruxitagent_$script,domain=sberbank.ru|sberbank.com|sber.ru,important
 ||node*.vito.sber.ru/bf/$xhr,domain=sberbank.ru
 ||resh.edu.ru/uploads/cinema-online.jpg^$image,domain=resh.edu.ru
 ||s.rbk.ru/v*_tv_static/common/common-*/scripts/build/fn/_ipMonitoring.js^$script,domain=tv.rbc.ru
@@ -1596,11 +1596,27 @@ $removeparam=yaCounter,doc,script,xhr
 ||mos.ru/shared/counters/spatz.js^$script,domain=mos.ru
 ||stats.mos.ru^$important
 ||lizaalert.org/wp-content/uploads/2018/10/blackpixel.jpg^$image,domain=lizaalert.org
-||5ka-cdn.x5static.net/_next/static/watch.*.js^$script,domain=5ka.ru
+||5ka-cdn.x5static.net/_next/static/watch.*.js^$script,domain=5ka.ru,important
 ||pixel.id.x5.ru^$important
 ||sync.otm-r.ru^$third-party,domain=~otm-r.ru,important
-||perekrestok.ru/assets/watch.js^$script,domain=perekrestok.ru
-!
+||perekrestok.ru/assets/watch.js^$script,domain=perekrestok.ru,important
+||sostav.ru/css/front/components/tgzen/styles.css$css,domain=sostav.ru
+! ||rutube.ru/api/v*/activity/$xhr
+||rutube.ru/api/premier/app/v*/onboardings/config/rutube$xhr
+||cp.unisender.com/.p/$image,important
+||anti-malware.ru/files/adm/Selectel-logo_*.png^$image,domain=anti-malware.ru
+||anti-malware.ru/files/adm/160%D1%85160SECURITM-sep.png^$image,domain=anti-malware.ru
+||anti-malware.ru/files/adm/300%D1%85300_2_1.png^$image,domain=anti-malware.ru
+||anti-malware.ru/files/adm/mdr_icon_white_130x30px-1.svg^$image,domain=anti-malware.ru
+||anti-malware.ru/files/adm/375x350_AntiMalware-min%20%281%29%20%281%29.jpg^$image,domain=anti-malware.ru
+||anti-malware.ru/sites/all/themes/anti/images/fb-close.png^$image,domain=anti-malware.ru
+||vgtimes.ru^$cookie=/ad_s_id_header|*_header/
+||analytics.vgtimes.ru^$important
+||smart-lab.ru/cgi-bin/scn.fcgi$image,domain=smart-lab.ru
+! ||s.vtb.ru/mf/mf_1488_aside/0.0.5/static/media/robot.cfd430f8.png^$image,domain=online.vtb.ru
+! ||s.vtb.ru/mf/mf_1488_aside/0.0.5/static/media/bubble2.94e9f00c.png^$image,domain=online.vtb.ru
+! ||s.vtb.ru/mf/mf_1488_aside/0.0.5/static/media/bubble3.32996891.png^$image,domain=online.vtb.ru
+! ||h.vtb.ru/projects/vtbfl/files/animatedHeader/mass.svg^$image,domain=online.vtb.ru
 !
 !
 !
@@ -2741,6 +2757,17 @@ vprok.ru##div[class^="UiModalContent_root__ZK8DC UiModalContent_open__twBBW"][st
 vprok.ru###div.MobileAppAlert_wrapper__jkRg0:nth-child
 vprok.ru###div.MobileAppAlert_overlay__iErvE:nth-child
 vprok.ru###div.MobileAppBanner_banner__qB9BS:last-child
+1yar.tv##.wrapper
+sostav.ru##p[class^="li-logo"]
+sostav.ru##div[id^="rek_blocker"]
+##div[id*="adriver"]
+cnews.ru###mob_slide > section.section_topnews:first-child > div.container.d-flex:last-child > div.d-flex.flex-row.flex-wrap.article-wrap:first-child > article.news_container:nth-child(2) > noindex:nth-child(37)
+anti-malware.ru###block-block-107
+anti-malware.ru##div[id^="unisender-subscribe-form"]
+vgtimes.ru###div.promo
+smart-labs.ru##div[class^="footer-mob__counter"]
+online.vtb.ru###right-aside
+online.vtb.ru##div[class^="v1-c-dSSINo"]
 !
 !
 ! - Scripts -
