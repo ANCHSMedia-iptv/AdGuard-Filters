@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.4.1-R
-! TimeUpdated: 2025-09-19T17:54:50+00:00
+! Version: 4.4.2-R
+! TimeUpdated: 2025-09-20T17:54:50+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -167,7 +167,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.*.js^$script,important (новое правило, строка 138 и 139)
 /wp-content/plugins/*/assets/js/tracks.js$script,important
 /ad.js^$script,important
-/empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru|~lenta.com|~aptoide.com
+/empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru|~lenta.com|~aptoide.com|~magnit.ru
 */adv/*$image,xhr,script,domain=~pinterest.com|~aliexpress.ru|~aliexpress.com,important
 ! *empty*.*^$image,important
 ||store.bankiros.ru/js/metrics/*.js^$script,domain=bankiros.ru,important
@@ -304,7 +304,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||static.beeline.ru/upload/images/*QR*.png^$image,domain=beeline.ru
 ||beeline.gestalt.email^$domain=beeline.ru,important
 ||lenta.com/api-gateway/v*/banners/adhweb^$xhr,domain=lenta.com,important
-||kaspersky-labs.com^$domain=lenta.com
+||kaspersky-labs.com^$domain=lenta.com|magnit.tu
 ||otel-collector.lenta.tech^$domain=lenta.com,important
 ||cdn*.helpdeskeddy.com//js/modules/chat_widget/hde.js^$script
 ||sitecdn.api.lenta.com/assets-ng/footer/lenta-app-qr.svg^$image,domain=lenta.com
@@ -563,7 +563,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||cdn.iz.ru/profiles/portal/modules/fix/template/js/yandex_zen.js^$script,domain=iz.ru,important
 ||cdn.iz.ru/profiles/portal/themes/purple/js/partners-block.js^$script,domain=iz.ru,important
 ||siteapi.vtb.ru/api/geoip/ip-data^$xhr,domain=vtb.ru
-||alfabank.servicecdn.ru/assr/AnalyticsEventSender*.js^$script,domain=alfabank.ru,important
+||alfabank.servicecdn.ru/assr/AnalyticsEventSender$script,domain=alfabank.ru,important
 ||alfabank.ru/conductor/metrics^$xhr,domain=alfabank.ru,important
 ||browser.sentry-cdn.com^$important
 ||akbars.ru/api/browser-log^$xhr,domain=akbars.ru,important
@@ -1409,7 +1409,6 @@ $cookie=qrator_jsr,important
 ||s.rbk.ru/v*_rbcbanners_static/rbcbanners-*/fox/build/app.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru
 ||rbc.ru/v*/ajax/oprosso-$xhr,domain=rbc.ru
 !
-!
 ! =
 ! 08.09.25: Данные правила ниже (рекламные картинки с сайта РБК) могут быть через некоторое время быть устаревшими.
 ! Заблокированы рекламные картинки (сторонние и собственные от РБК), а также рекламные логотипы.
@@ -1501,7 +1500,6 @@ $cookie=RadioStatistica
 ||vidiq.com/_next/static/chunks/5473.c4391834e2ac4669.js^$script,domain=vidiq.com,important
 ||cfriuxb2f3.execute-api.us-east-1.amazonaws.com^$domain=vidiq.com,important
 ||clarity.ms^$important
-||kommersant.ru/news/newsline^$xhr,domain=kommersant.ru
 ||kommersant.ru/doc/doclazyload/$xhr,domain=kommersant.ru
 ||kommersant.ru/doc/SaveRecomendEvent^$xhr,domain=kommersant.ru,important
 ||popularmechanics.com/_assets/fre/scopes/hdm/_next/static/media/tag-manager.script.*.js^$script,domain=popularmechanics.com,important
@@ -1564,13 +1562,13 @@ $cookie=/utm_*/,important
 ||dropmefiles.com/js/push/push-*.js^$script,domain=dropmefiles.com
 ||online.vtb.ru/services/shared/mf/metrics^$xhr,domain=online.vtb.ru,important
 ||d.vtb.ru/api/v*/$xhr,websocket,domain=online.vtb.ru,important
-||redditstatic.com/shreddit/*/ad-event-*-*.js^$script,domain=reddit.com,important
-||redditstatic.com/shreddit/*/v*-events-*.js^$script,domain=reddit.com,important
-||redditstatic.com/shreddit/*/*-report-from-v*-event-*.js^$script,domain=reddit.com,important
-||redditstatic.com/shreddit/*/pdp-ad-client-js-*.js^$script,domain=reddit.com,important
-||redditstatic.com/shreddit/*/shreddit-dynamic-ad-link-*.js^$script,domain=reddit.com,important
-||redditstatic.com/shreddit/*/shreddit-dynamic-ad-link-*.js^$script,domain=reddit.com,important
-||redditstatic.com/shreddit/*/category-takeover-ad-client-js-*.js^$script,domain=reddit.com,important
+! ||redditstatic.com/shreddit/*/ad-event-*-*.js^$script,domain=reddit.com
+! ||redditstatic.com/shreddit/*/v*-events-*.js^$script,domain=reddit.com
+! ||redditstatic.com/shreddit/*/*-report-from-v*-event-*.js^$script,domain=reddit.com
+! ||redditstatic.com/shreddit/*/pdp-ad-client-js-*.js^$script,domain=reddit.com
+! ||redditstatic.com/shreddit/*/shreddit-dynamic-ad-link-*.js^$script,domain=reddit.com
+! ||redditstatic.com/shreddit/*/shreddit-dynamic-ad-link-*.js^$script,domain=reddit.com
+! ||redditstatic.com/shreddit/*/category-takeover-ad-client-js-*.js^$script,domain=reddit.com
 ||reddit.com/svc/shreddit/events^$xhr,domain=reddit.com,important
 ||reddit.com^$cookie=session_tracker
 ||reddit.com^$cookie=subreddit,maxAge=20
@@ -1618,7 +1616,21 @@ $removeparam=yaCounter,doc,script,xhr
 ! ||s.vtb.ru/mf/mf_1488_aside/0.0.5/static/media/bubble2.94e9f00c.png^$image,domain=online.vtb.ru
 ! ||s.vtb.ru/mf/mf_1488_aside/0.0.5/static/media/bubble3.32996891.png^$image,domain=online.vtb.ru
 ! ||h.vtb.ru/projects/vtbfl/files/animatedHeader/mass.svg^$image,domain=online.vtb.ru
-!
+||vtb.am/*.gif^$image,domain=vtb.am
+||vtb.am/40$xhr,domain=vtb.am
+! /script.js?_=••1•••••9•••0 |/?_=••7••••4••••2 | .png?_=8•••5•••••7•• | .html?_=5•••6••••8•••
+!$removeparam=/^_=/[0-9],doc,script,xhr,image,other
+||chizhik.club/pic/telegram-icon.png^$image,domain=chizhik.club
+||chizhik.club/pic/vk-icon.svg^$image,domain=chizhik.club
+||chizhik-web.x5static.net/docs/_next/static/media/chizhikMovie$media,domain=chizhik.club
+! magnit.ru/webgate/v*/suggestions/popular$xhr,domain=magnit.ru
+||lenta.ru/fenwick^$xhr,domain=lenta.ru
+||cdn*.vedomosti.ru/*/assets/sentry-*.js^$script,domain=vedomosti.ru
+||cdn*.vedomosti.ru/*/assets/*Share*.*^$scipt,css,domain=vedomosti.ru
+||ko.ru/img/zen-new-logo-ru.png^$image,domain=ko.ru
+||jay.vedomosti.ru/next_url^$xhr,domain=vedomosti.ru
+||sentry.vedomosti.ru^$important
+||kommersant.ru^$cookie=from
 !
 !
 !
@@ -2713,7 +2725,6 @@ tavria.tv###cookies-block
 datadump.ru###access > div.social:last-child > a
 datadump.ru###custom_html-2
 kommersant.ru##div.layout.js-lenta-article:nth-child(18) > div.main.grid > div.grid-col.grid-col-s3:first-child > div.lenta_top_doc > article.doc.js-article.js-canonical.js-canonical-current:first-child > div.network_announce_A:nth-child(6)
-! kommersant.ru##div[class^="footer_counter "]
 kommersant.ru##.footer_counter
 limpopo-park.ru##div.page-wrapper:nth-child(4) > footer.footer:last-child > div.container > div.footer__inner > div.footer__top:first-child
 flamp.ru##div[cat-store^="ads/byFilial/List"]
@@ -2770,6 +2781,14 @@ vgtimes.ru###div.promo
 smart-labs.ru##div[class^="footer-mob__counter"]
 online.vtb.ru###right-aside
 online.vtb.ru##div[class^="v1-c-dSSINo"]
+chizhik.club###__next > div.sc-tagGq.bdiWwR:last-child > div.sc-hmdomO.dKOIzx:first-child > div.sc-dLMFU.bnjmiN:nth-child(3)
+vedomosti.ru###app > div.layout > div.layout__wrapper.full-width:last-child > div.layout__container--transformed.layout__container:last-child > div.layout__page:last-child > div:first-child > div.page.page-article > div:first-child > div.page-article__article:first-child > div.article.article--with-border > div.article__container:nth-child(2) > div.article__content:first-child > div.article__main:first-child > div.article__body:first-child > div:nth-child(2) > div.article-boxes-list.article__boxes > div.article-boxes-list__item:last-child
+vedomosti.ru##.box-inset-link, .box-inset-link--card, .box-inset-link--link
+kommersant.ru##div[class^="footer_section footer_section--brands"]
+kommersant.ru##div[class^="footer_brand_logo"]
+kommersant.ru##div[class^="section_header section_header--link_to_all section_header--right_now"]
+kommersant.ru##div[class^="lenta_partner lenta_smi2"]
+kommersant.ru#?#div[class^="lazyload"]:has(> div:contains(/adv_/))
 !
 !
 ! - Scripts -
@@ -3905,6 +3924,10 @@ kommersant.ru#@#.footer_adv
 @@||redditstatic.com/shreddit/*/adjust-search-query-link-*.js^$script,domain=reddit.com
 @@||static*.ntv.ru/assets/js/capcha-*.js
 @@||vtrans.s3-private.mds.yandex.net^
+@@||google.com^$cookie
+@@||vtb.by/image_captcha$image,domain=vtb.by
+@@||vtb.by/sites/all/modules/captcha/captcha.js$script,domain=vtb.by
+@@||youtube.com/youtubei/v*/like/like
 !
 !
 ! -
@@ -4099,5 +4122,4 @@ kommersant.ru#@#.footer_adv
 ! Мессенджер Viber заблокирован 13.12.24 на территории РФ из-за нарушения законодательства.
 ! Viber messenger was blocked on 13.12.24 in the territory of the Russian Federation due to violations of the law.
 !
-
 !
