@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.4.2-R
-! TimeUpdated: 2025-09-21T09:15:50+00:00
+! Version: 4.4.3-R
+! TimeUpdated: 2025-09-21T18:15:50+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -83,7 +83,7 @@
 ||*analytics.tele2.ru^$important
 ! analytics.tele2.ru^$important
 ||bcebos.com^$important
-!||*adjust.*^$important,domain=~reddit.com|~reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|~redd.it|~wondershare.com.ru|~wondershare.com|~wondershare.com.*
+! *adjust.*^$important,domain=~reddit.com|~reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|~redd.it|~wondershare.com.ru|~wondershare.com|~wondershare.com.*
 ||rutrk.org^$important
 ||stat-analytics.mediavitrina.ru^$important
 ||pglstatp.com^$important
@@ -154,9 +154,9 @@
 /cycounter.png^$image
 !
 /liru.gif^$image
-/1px.*$image,xhr,important
-/px.*$image,xhr,important
-/blank.*$image,xhr,important
+/1px.*$image,xhr,important,redirect-rule=1x1-transparent.gif
+/px.*$image,xhr,important,redirect-rule=1x1-transparent.gif,domain=~adhigh.net
+/blank.*$image,xhr,important,redirect-rule=1x1-transparent.gif
 /analytics.js$script,domain=~analytics.google.com|~www.google-analytics.com
 ! */analytics.*^$script,important
 ! anki.bots/cdn/shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,domain=anki.bots,important
@@ -236,13 +236,13 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||s*.stc.yc.kpcdn.net/s*/*/adaptive/img/banner.gif$xhr,important
 ! sendsay.ru^
 ||lentainform.com^$important
-/1x1.*^$image,xhr,important,domain=~autocounter.lentainform.com|~lentainform.com|~bosch-home.ru|~bsh-group.ru|~comfy.ua|~oplmanager.com|~patagonia.com|~pgatour.com|~sport-express.ru|~zobiki.ru|~idaprikol.ru|~thg.ru
+/1x1.*^$image,xhr,important,domain=~autocounter.lentainform.com|~lentainform.com|~bosch-home.ru|~bsh-group.ru|~comfy.ua|~oplmanager.com|~patagonia.com|~pgatour.com|~sport-express.ru|~zobiki.ru|~idaprikol.ru|~thg.ru,redirect-rule=1x1-transparent.gif
 ||smotrim.ru/js/media-scope.js^$script,important
 /mh_files/*/imho.js^$script,domain=vesti.ru,important
 ||vesti.ru/i/bg.png$image,xhr,domain=vesti.ru,important
 ||api-voyage.jetcrm.ru/public/form/subscribe-form.js^$script
 ! life.ru/_next/static/chunks/2793.3fd7e7f2a78da9d92688.js^$script,domain=life.ru,important # 3.04.25: скрипта наверное нет уже.
-/p.*^$image,xhr,important
+/p.*^$image,xhr,important,redirect-rule=1x1-transparent.gif
 ||static.1tv.ru/player/config/banner.gif$image,domain=1tv.ru,important
 ||api.1tv.ru/v*/promo_places/alert_for_player^$xhr,domain=1tv.ru,important
 ||ad-tech.ru^
@@ -255,9 +255,9 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||tvc.ru/api/promo/$xhr,domain=tvc.ru,important
 ||otr-online.ru/cookie-accept^$xhr,domain=otr-online.ru,important
 ||otr-online.ru/public/scripts/5714.js^$script,domain=otr-online.ru,important
-||ctc.ru/turms/mediascope/counter/audience$xhr,domain=ctc.ru,important
+! ctc.ru/turms/mediascope/counter/audience$xhr,domain=ctc.ru,important
 ||static-api.mediavitrina.ru/v*/epg/*/ad-injections.json^$xhr,script,important
-/mediascope/counter/$xhr,script,important
+/mediascope/counter/$important,xhr,script
 ||tv3.ru/_nuxt/adfox-*.js^$script,domain=tv3.ru,important
 ||domashniy.ru/dist/assets/img/contest/pop-up-compilation.webp^$image,domain=domashniy.ru
 ||domashniy.ru/dist/js/before.js^$script,domain=domashniy.ru ,important
@@ -268,7 +268,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! static.tnt-online.ru/accept_cookie.js^$script,domain=tnt-online.ru,important (новое правило, строка 138 и 139)
 ||tnt-online.ru/images/*/icons/sprite.svg$image,domain=tnt-online.ru,important
 ||rutube.ru/static/img/png/adsdkbanner.png^$xhr,important
-/pixel.*^$image,xhr,script,important,domain=~statad.ru
+/pixel.*^$image,xhr,script,important,domain=~statad.ru,redirect-rule=1x1-transparent.gif
 ||api.*.ru/v*/distribution$xhr,domain=vc.ru|dtf.ru,important
 ||api.*.ru/v*/recommendations$xhr,domain=vc.ru|dtf.ru,important
 ||booster.osnova.io/*/relevant/many$xhr,domain=vc.ru|dtf.ru,important
@@ -379,7 +379,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^$important
-/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz|~certina.com
+/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz|~certina.com|~reddit.com|~redd.it
 ||getrcmx.com^$important
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.*.js^$script,domain=xcom-shop.ru,important
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -663,7 +663,7 @@ $cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicd
 $cookie=KIykI
 $cookie=L
 $cookie=bltsr
-$cookie=bh,third-party,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by|~yandex.kz|~ya.ru|~yandex.com
+$cookie=bh,third-party,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by|~yandex.kz|~ya.ru|~yandex.com|~yandex.net
 $cookie=coockoos
 $cookie=my,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by|~yandex.kz|~ya.ru|~yandex.com
 $cookie=/__ddg*_/,important
@@ -1421,7 +1421,7 @@ $cookie=qrator_jsr,important
 ||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/9/01/347569712924019.webp^$image,domain=rbc.ru
 ||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/4/50/347551601101504.webp^$image,domain=rbc.ru
 ||s0.rbk.ru/v6_top_pics/media/img/2/67/347569715167672.jpeg^$image,domain=rbc.ru
-||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/6/59/347551600344596.webp^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/*/59/3475*9*.webp^$image,domain=rbc.ru
 ||s0.rbk.ru/v6_top_pics/media/img/2/55/347570988620552.svg^$image,domain=rbc.ru
 ||s0.rbk.ru/v6_top_pics/media/img/7/40/347570905535407.png^$image,domain=rbc.ru
 ||edge-upvideo.rbc.ru/archive/2025/02/25/teaser_5_mp4/*.mp4^$media,domain=rbc.ru
@@ -1442,6 +1442,10 @@ $cookie=qrator_jsr,important
 ||s0.rbk.ru/v6_top_pics/resized/140xH/media/img/2/35/347346014321352.webp^$image,domain=sportrbc.ru
 ||s0.rbk.ru/v6_top_pics/media/img/5/54/347576005657545.svg^$image,domain=autonews.ru
 ||s0.rbk.ru/v6_top_pics/media/img/7/97/347576005610977.svg^$image,domain=autonews.ru
+||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/2/31/347465346466312.webp^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/3/80/347579635267803.webp^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/resized/640xH/media/img/6/28/347580346034286.webp^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/7/19/347465344440197.webp^$image,domain=rbc.ru
 ! =
 !
 !
@@ -1570,8 +1574,7 @@ $cookie=/utm_*/,important
 ! redditstatic.com/shreddit/*/shreddit-dynamic-ad-link-*.js^$script,domain=reddit.com
 ! redditstatic.com/shreddit/*/shreddit-dynamic-ad-link-*.js^$script,domain=reddit.com
 ! redditstatic.com/shreddit/*/category-takeover-ad-client-js-*.js^$script,domain=reddit.com
-||reddit.com/svc/shreddit/events^$xhr,domain=reddit.com,important
-||reddit.com^$cookie=session_tracker
+! reddit.com/svc/shreddit/events^$xhr,domain=reddit.com,important
 ||reddit.com^$cookie=subreddit,maxAge=20
 ||adjust.com^$important
 ||adjust.world^$important
@@ -1620,7 +1623,7 @@ $removeparam=yaCounter,doc,script,xhr
 ||vtb.am/*.gif^$image,domain=vtb.am
 ||vtb.am/40$xhr,domain=vtb.am
 ! /script.js?_=••1•••••9•••0 |/?_=••7••••4••••2 | .png?_=8•••5•••••7•• | .html?_=5•••6••••8•••
-!$removeparam=/^_=/[0-9],doc,script,xhr,image,other
+! $removeparam=/^_=/[0-9],doc,script,xhr,image,other
 ||chizhik.club/pic/telegram-icon.png^$image,domain=chizhik.club
 ||chizhik.club/pic/vk-icon.svg^$image,domain=chizhik.club
 ||chizhik-web.x5static.net/docs/_next/static/media/chizhikMovie$media,domain=chizhik.club
@@ -1632,6 +1635,21 @@ $removeparam=yaCounter,doc,script,xhr
 ||jay.vedomosti.ru/next_url^$xhr,domain=vedomosti.ru
 ||sentry.vedomosti.ru^$important
 ||kommersant.ru^$removeparam=from
+||sentry.ctcru.tech^$important
+||tv.mail.ru/*/js/cmpld/common/*/page-sentry.js^$script,domain=tv.mail.ru
+||tv.mail.ru/*/js/cmpld/tv/*/fast-slot.js^$script,domain=tv.mail.ru
+||vkvideo.ru/video_mediascope.php$image,important
+||vkvideo.ru/al_video.php?act=live_heartbeat$xhr,important
+||vitrina.getshop.tv/v*/vitrina/getAd?$xhr
+! catalog.api.2gis.ru/*/markers/clustered?key=*&*&locale=*&building_id=*&*&search_device_type=*&search_user_hash=*&viewpoint1=*&viewpoint2=*&search_type=*&fields=*&stat[sid]=*&stat[user]=*&shv=*&r=*$xhr,domain=2gis.ru
+||go-mpulse.net^$third-party
+||cdn.gpmdata.ru^$third-party
+||sentry.matchtv.ru^$important
+||nst.trex.media^$third-party
+||analytics.wikitide.net^$important
+/matomo.js$script,domain=~github.com
+||avtovzglyad.ru/api/article/stat/^$xhr,domain=avtovzglyad.ru
+||agrad.ru/themes/avtograd/assets/img/placeholder.gif^$image,domain=agrad.ru
 !
 !
 !
@@ -2791,6 +2809,8 @@ kommersant.ru##div[class^="footer_brand_logo"]
 kommersant.ru##div[class^="section_header section_header--link_to_all section_header--right_now"]
 kommersant.ru##div[class^="lenta_partner lenta_smi2"]
 kommersant.ru#?#div[class^="lazyload"]:has(> div:contains(/adv_/))
+mi.com###root > footer.site-footer:last-child > div.site-footer__content > div.site-container > section.site-footer__main:first-child > div.site-footer__aside:last-child > div.site-footer__connect:nth-child(2)
+avtovzglyad.ru##div[class^="content-footer__subscription"]
 !
 !
 ! - Scripts -
@@ -3930,6 +3950,12 @@ kommersant.ru#@#.footer_adv
 @@||vtb.by/image_captcha$image,domain=vtb.by
 @@||vtb.by/sites/all/modules/captcha/captcha.js$script,domain=vtb.by
 @@||youtube.com/youtubei/v*/like/like
+@@||reddit.com^$cookie=session_tracker
+@@||reddit.com/svc/shreddit/update-recaptcha
+@@||vkvsd*.okcdn.ru/dash/stream_*/stream.manifest
+@@||api.vkvideo.ru/method/video.getLiveStatus
+@@||is-go.fssp.gov.ru/refresh_visual_captcha$script,domain=fssp.gov.ru
+@@||bd.mk.ru/detect?r=$xhr
 !
 !
 ! -
@@ -4115,6 +4141,7 @@ kommersant.ru#@#.footer_adv
 ! #%#//scriptlet('set-cookie', '', '', 'none')
 ! #%#//scriptlet('prevent-element-src-loading', 'script', '')
 ! #%#//scriptlet('abort-on-property-read', 'adBlockDetected')
+! redirect-rule=1x1-transparent.gif
 !
 !
 ! Соцсети Facebook и Instagram заблокированы и запрещены на территории РФ, владеющая ими компания Meta признана экстремисткой и деятельность в РФ запрещена.
