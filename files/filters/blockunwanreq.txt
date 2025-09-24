@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.4.3-R
-! TimeUpdated: 2025-09-21T18:15:50+00:00
+! Version: 4.4.4-R
+! TimeUpdated: 2025-09-24T18:15:50+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -242,7 +242,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||vesti.ru/i/bg.png$image,xhr,domain=vesti.ru,important
 ||api-voyage.jetcrm.ru/public/form/subscribe-form.js^$script
 ! life.ru/_next/static/chunks/2793.3fd7e7f2a78da9d92688.js^$script,domain=life.ru,important # 3.04.25: скрипта наверное нет уже.
-/p.*^$image,xhr,important,redirect-rule=1x1-transparent.gif
+/p.*^$image,xhr,important,redirect-rule=1x1-transparent.gif,domain=~lyngsat.com
 ||static.1tv.ru/player/config/banner.gif$image,domain=1tv.ru,important
 ||api.1tv.ru/v*/promo_places/alert_for_player^$xhr,domain=1tv.ru,important
 ||ad-tech.ru^
@@ -367,10 +367,10 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /bitrix/tools/composite_data.php$xhr
 ||wasabisys.com^
 ||aplaut.io^$third-party
-.ru/metrika/tag.js^$script,domain=appleinsider.ru|androidinsider.ru
-.ru/gtag/js$script,domain=appleinsider.ru|androidinsider.ru
+.ru/metrika/tag.js^$script,domain=appleinsider.ru|androidinsider.ru|hi-news.ru
+.ru/gtag/js$script,domain=appleinsider.ru|androidinsider.ru|hi-news.ru
 ! */gtag/js$script
-/js/lazyLoadYandexAndTelegram.js$script,domain=appleinsider.ru|androidinsider.ru,important
+/js/lazyLoadYandexAndTelegram.js$script,domain=appleinsider.ru|androidinsider.ru|hi-news.ru,important
 ||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/YandexRecommendations*.js^$script,important,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/Smi24*.js^$script,important,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/Smi2*.js^$script,important,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
@@ -519,8 +519,8 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||rtvi.com/wp-content/themes/rtvi/images/pixel_1pixel.png^$xhr,domain=rtvi.com,important
 ||counter.rambler.ru^$important
 ||osnmedia.ru/wp-content/uploads/*/*/*-promo.png^$image,domain=osnmedia.ru,important
-.ru/wp-content/themes/*/img/tg*.jpg^$image,domain=androidinsider.ru|appleinsider.ru
-.ru/wp-content/themes/*/img/telegram*.svg^$image,domain=androidinsider.ru|appleinsider.ru
+.ru/wp-content/themes/*/img/tg*.jpg^$image,domain=androidinsider.ru|appleinsider.ru|hi-news.ru
+.ru/wp-content/themes/*/img/telegram*.svg^$image,domain=androidinsider.ru|appleinsider.ru|hi-news.ru
 ||vp.rambler.ru/player/sdk.js^$script,important
 ||developers.rambler.ru/likes/v*/widget.js^$script,third-party,important
 ||rambler.ru/location/$xhr
@@ -1201,7 +1201,7 @@ calltouch.js$script,xhr
 ||files.1mi.media/_next/static/media/tg.*.svg^$image,domain=prmira.ru
 ||api.beetv.kz/v*/epg/program_events/*/ads$xhr,domain=beetv.kz,important
 ||lyngsat.com/as10/intelsat_webinar.gif^$image,domain=lyngsat.com,important
-||apistats.rg.ru^
+||apistats.rg.ru^$important
 ||svibeacon.onezapp.com^
 ||static.wikia.nocookie.net/silversurfer/prod/latest/marketingNotificationsUnit*.js^$script,domain=fandom.com|*.fandom.com,important
 ||serverblight.com/audio/gamestartup*.mp3^$media,domain=serverblight.com
@@ -1650,6 +1650,21 @@ $removeparam=yaCounter,doc,script,xhr
 /matomo.js$script,domain=~github.com
 ||avtovzglyad.ru/api/article/stat/^$xhr,domain=avtovzglyad.ru
 ||agrad.ru/themes/avtograd/assets/img/placeholder.gif^$image,domain=agrad.ru
+.ru/visitors.json^$xhr,domain=appleinsider.ru|androidinsider.ru|hi-news.ru
+.ru/wp-content/themes/*/js/counters.js$script,domain=appleinsider.ru|androidinsider.ru|hi-news.ru
+.ru/wp-content/themes/*/img/2bitcoins.ru.png^$image,domain=androidinsider.ru|appleinsider.ru|hi-news.ru
+||appleinsider.ru/wp-content/plugins/wp-appstore-clicker/wp-appstore-clicker.js$script,domain=appleinsider.ru
+||m24.ru/widgets/telegram^$xhr,domain=m24.ru
+||m24.ru/news/next/$xhr,domain=m24.ru
+||cdnfiles.rg.ru/_next/static/chunks/65004.9480c4446de92d03.js^$script,domain=rg.ru
+||cdnfiles.rg.ru/_next/static/chunks/65004.9480c4446de92d03.js^$script,domain=rg.ru
+||archive.org^$cookie=donation-identifier
+||archive.org/components/donation-banner/$css,image,domain=archive.org
+||archive.org/includes/build/js/donation-banner.min.js$script,domain=archive.org
+||archive.org/includes/athena.js^$script,domain=archive.org
+||tenor.googleapis.com/v*/registerevent$ping,domain=tenor.com
+||cdn.lifehacker.ru/wp-content/uploads/2022/12/$image,domain=lifehacker.ru
+||logos44.ru/wp-content/uploads/2025/09/stometrovka_new$image,domain=logos44.ru
 !
 !
 !
@@ -1890,7 +1905,8 @@ wildberries.ru##li[data-menu-id="1236"]
 wildberries.ru##li[data-menu-id="1237"]
 !
 ! Раздел «Лотерийные билеты» в ЛК (Российская версия).
-wildberries.ru###body-layout > div.lk-menu:first-child > div.lk-menu__container.j-lk-menu-top > div.lk-menu-sub:nth-child(3) > div.lk-menu-sub__wrapper > ul.lk-menu-sub__list.lk-menu-sub__list--reports.active:nth-child(3) > li:last-child
+! wildberries.ru#?#div > li:has(div.lk-menu-sub__wrapper > ul.lk-menu-sub__list.lk-menu-sub__list--reports.active> a:contains(/mechtalliontickets/)) 
+wildberries.ru###body-layout > div.lk-menu:first-child > div.lk-menu__container.j-lk-menu-top > div.lk-menu-sub:nth-child(3) > div.lk-menu-sub__wrapper > ul.lk-menu-sub__list.lk-menu-sub__list--reports.active:nth-child(2) > li:last-child
 !
 ! Реклама туров сверху поиска (Российская версия).
 wildberries.ru###travelSwitcher
@@ -2811,6 +2827,21 @@ kommersant.ru##div[class^="lenta_partner lenta_smi2"]
 kommersant.ru#?#div[class^="lazyload"]:has(> div:contains(/adv_/))
 mi.com###root > footer.site-footer:last-child > div.site-footer__content > div.site-container > section.site-footer__main:first-child > div.site-footer__aside:last-child > div.site-footer__connect:nth-child(2)
 avtovzglyad.ru##div[class^="content-footer__subscription"]
+appleinsider.ru###main > div.social:nth-child(2)
+hi-news.ru###post > div.text:nth-child(10) > p:nth-child(8)
+hi-news.ru###post > div.text:nth-child(10) > p:nth-child(16)
+hi-news.ru###post > div.text:nth-child(10) > p:nth-child(22)
+hi-news.ru###post > div.text:nth-child(11) > p:nth-child(15)
+hi-news.ru###post > div.text:nth-child(11) > p:nth-child(9)
+hi-news.ru##a[href*="dzen.ru/hi-news.ru"]
+hi-news.ru##a[href*="t.me/sunduk_aliexpress"]
+hi-news.ru##a[class^="link-default"][href^="t.me/hinews_ru"]
+! Для тех у кого Яндекс.Браузер. - 24.09.2025: Тест.
+youtube.com##div[id^="y-banner-content"]
+!
+logos44.ru##main.block:nth-child(2) > article.col-9.col-lg-8.col-sm:first-child > ul.sidebar-banner.row:first-child
+logos44.ru##div[class^="cky-consent-container cky-hide"]
+logos44.ru##div[class^="informer row col-3 col-sm"]
 !
 !
 ! - Scripts -
@@ -3956,6 +3987,13 @@ kommersant.ru#@#.footer_adv
 @@||api.vkvideo.ru/method/video.getLiveStatus
 @@||is-go.fssp.gov.ru/refresh_visual_captcha$script,domain=fssp.gov.ru
 @@||bd.mk.ru/detect?r=$xhr
+@@/pl.m3u8
+@@||m24.ru/trans/air/pl.m3u8
+@@||m24.ru/trans/air/*.m3u8
+@@/*.m3u8$xhr
+@@||teletarget.ru^$domain=plus.rtrs.ru,~script
+@@/youtubei/v*/upload/$xhr,domain=youtube.com|studio.youtube.com
+@@||upload.youtube.com/?authuser=*&upload_id=*&upload_protocol=*&origin=*$xhr,domain=youtube.com|studio.youtube.com
 !
 !
 ! -
@@ -4142,6 +4180,7 @@ kommersant.ru#@#.footer_adv
 ! #%#//scriptlet('prevent-element-src-loading', 'script', '')
 ! #%#//scriptlet('abort-on-property-read', 'adBlockDetected')
 ! redirect-rule=1x1-transparent.gif
+! #?# > :has(>  > [])
 !
 !
 ! Соцсети Facebook и Instagram заблокированы и запрещены на территории РФ, владеющая ими компания Meta признана экстремисткой и деятельность в РФ запрещена.
