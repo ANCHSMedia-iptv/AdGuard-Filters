@@ -5,7 +5,7 @@ Repository for my AdGuard filters.
 Filters:
 - Removing unwanted parameters [Support temporarily stopped];
 - Block unwanted connections (Default + DNS + Experimental) [Supported].
--  Branching from BUC: F Unwanted Sites.
+- Branching from BUC: F Unwanted Sites.
 
 Updated 24.09.2025
 - BUC: 24.09
