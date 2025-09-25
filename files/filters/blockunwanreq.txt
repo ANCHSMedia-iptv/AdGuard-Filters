@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.4.4-R
-! TimeUpdated: 2025-09-24T18:15:50+00:00
+! Version: 4.4.5-R
+! TimeUpdated: 2025-09-25T18:17:50+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1065,11 +1065,11 @@ waf/fingerprint$xhr,important
 /waf*.js$script,important,domain=~limehd.tv
 ||adspector.io^$important
 ! 19.04.25: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/203491]
-||discord.com/api/v*/experiments?$domain=discord.com
+||discord.com/api/v*/experiments^$xhr,domain=discord.com
 !
 ! 19.04.25: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/203378]
-||facebook.com/ajax/qm/
-||instagram.com/ajax/qm/
+||facebook.com/ajax/qm/$xhr
+||instagram.com/ajax/qm/$xhr
 !
 !
 ||favicon.yandex.net^$app=com.avito.android
@@ -1100,8 +1100,8 @@ waf/fingerprint$xhr,important
 ||mp3lar.net^$important
 !
 ! 21.04.25: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/203538]
-||uber.com/v*/_events$domain=uber.com
-||uber.com/go/_events$domain=uber.com
+||uber.com/v*/_events$xhr,domain=uber.com
+||uber.com/go/_events$xhr,domain=uber.com
 !
 !
 ||report.cdnpure.com^$important
@@ -1665,6 +1665,18 @@ $removeparam=yaCounter,doc,script,xhr
 ||tenor.googleapis.com/v*/registerevent$ping,domain=tenor.com
 ||cdn.lifehacker.ru/wp-content/uploads/2022/12/$image,domain=lifehacker.ru
 ||logos44.ru/wp-content/uploads/2025/09/stometrovka_new$image,domain=logos44.ru
+||vk.com/al_video.php?act=live_heartbeat$xhr,important
+$cookie=smi_sid
+$cookie=smi_last_visit_time
+||services.fandom.com/geoip/location^$xhr
+||discord.com/api/v*/users/@me?with_analytics_token=true^$xhr,domain=discord.com
+||discord.com/api/v*/track/ott^$xhr,domain=discord.com
+/oneTrust/v*/consent/*/*.json$important
+/otSDKStub.js$important
+||uber.com/api/getBlockExperiments$important
+/bitrix/js/statistics_clicks.js$script
+||sentry.srv.habr.com^$important
+||instagram.com/*/embeds.js^$script,third-party,important,domain=~instagram.com
 !
 !
 !
@@ -2556,7 +2568,7 @@ habr.com##.disable-adblock-placeholder
 xn--80aafadvc9bifbaeqg0p.xn--p1ai##a[href^="://sferum.ru/"]
 xn--80aafadvc9bifbaeqg0p.xn--p1ai##a.floating-sferum-main:nth-child(4)
 !
-! 2.04.25: Взято отсюда [https://github.com/AdguardTeam/AdguardFilters/issues/202005#issuecomment-2768820548]
+! 02.04.25: Взято отсюда [https://github.com/AdguardTeam/AdguardFilters/issues/202005#issuecomment-2768820548]
 bing.com##.mmaAdCard
 !
 !
@@ -2842,6 +2854,13 @@ youtube.com##div[id^="y-banner-content"]
 logos44.ru##main.block:nth-child(2) > article.col-9.col-lg-8.col-sm:first-child > ul.sidebar-banner.row:first-child
 logos44.ru##div[class^="cky-consent-container cky-hide"]
 logos44.ru##div[class^="informer row col-3 col-sm"]
+texterra.ru##div.web-promo-banner
+texterra.ru##div.promo-banner
+texterra.ru##div.form-callback-content
+tvnews.by###fullnews > div.social_button > div.row > div.col-sm-3.col-xs-2:nth-child(2) > a > div.social_button_telegram
+tvnews.by###fullnews > div.social_button > div.row > div.col-sm-3.col-xs-2:last-child > a > div.social_button_viber
+tvnews.by###fullnews > div.social_button
+tvnews.by###fullnews > div.col-xs-12.col-sm-12.col-md-12:nth-child(10) > div.source > a:last-child
 !
 !
 ! - Scripts -
@@ -3095,8 +3114,10 @@ reddit.com#%#//scriptlet('set-local-storage-item', 'recent-subreddits-store', 'e
 ||*analytics.faregy.com^$important
 ||analytics.1clickvpn.com^
 ! аналитика расширения 1clickvpn (не реклама).
-||savefrom.net/goodbye.php
+||savefrom.net/goodbye.php?version=*&language=*&appid=*&country=*^$all
 ! блокировка загрузки страницы при удалении расширения Savefrom.
+||veepn.com/*/uninstall/*/*/?*&platform=*&udid=*^$all
+!
 ! =
 !
 !
@@ -3994,6 +4015,8 @@ kommersant.ru#@#.footer_adv
 @@||teletarget.ru^$domain=plus.rtrs.ru,~script
 @@/youtubei/v*/upload/$xhr,domain=youtube.com|studio.youtube.com
 @@||upload.youtube.com/?authuser=*&upload_id=*&upload_protocol=*&origin=*$xhr,domain=youtube.com|studio.youtube.com
+@@||api.vk.com/method/video.getLiveStatus
+@@||terminator.aeza.net^$websocket,xhr,domain=terminator.aeza.net
 !
 !
 ! -
