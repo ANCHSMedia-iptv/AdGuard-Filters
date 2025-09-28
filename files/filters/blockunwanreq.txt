@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.4.5-R
-! TimeUpdated: 2025-09-25T18:17:50+00:00
+! Version: 4.4.7-R
+! TimeUpdated: 2025-09-28T18:17:50+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -341,7 +341,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /GoogleAnalytics/content/scripts/tracking.js$script,important
 ||cdn.antisov.ru/advisor.js^$script,important
 ||goodmod.ru/scripts/*/api.js^$script,important
-/conversion/ajax_counter.php^$xhr,domain=~kino.tricolor.ru|~tricolor.ru|~arsplus.ru|~moba.ru
+/conversion/ajax_counter.php^$xhr,domain=~kino.tricolor.ru|~tricolor.ru|~arsplus.ru|~moba.ru|~dobrotsen.ru
 ||ekip-sport.ru/assets/template/js/cooki.js^$script,domain=ekip-sport.ru,important
 ||assets-cdn.mvideo.ru/*/sprites/sprite.css.svg^$image,domain=mvideo.ru
 ||mvideo.ru/bff/recommendations/$xhr,domain=mvideo.ru
@@ -659,7 +659,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 $cookie=adtech_uid
 $cookie=top100_id
 $cookie=dco.id
-$cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicdrama.eu|~pikabu.ru|~taptv.ru|~yes-ru.co.il|~yes.co.il|~nedohackers.site|~gotovim-doma.ru|~2ip.ru|~2ip.io|~1000.menu|~progdvb.com|~panasonic.com|~*.panasonic.com
+$cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicdrama.eu|~pikabu.ru|~taptv.ru|~yes-ru.co.il|~yes.co.il|~nedohackers.site|~gotovim-doma.ru|~2ip.ru|~2ip.io|~1000.menu|~progdvb.com|~panasonic.com|~*.panasonic.com|~skymedia.mn
 $cookie=KIykI
 $cookie=L
 $cookie=bltsr
@@ -782,7 +782,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 /themes/custom/initlab_cab/images/click-icon.png^$image,domain=cableman.ru|cableman.pro
 /themes/custom/initlab_cab/images/k-icon.png^$image,domain=cableman.ru|cableman.pro
 ||wifika.ru/wp-content/plugins/*/pro/images/blank.gif^$image,domain=wifika.ru,important
-/admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai|~tyuiu.ru|~me.jimjam.tv|~jimjam.tv|~*.jimjam.tv|~republic-tv.ru
+/admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai|~tyuiu.ru|~me.jimjam.tv|~jimjam.tv|~*.jimjam.tv|~republic-tv.ru|~xakep.ru
 ||userway.org^$third-party
 ||files.vm.ru/pdf/2025.02/original/thumb_1280_67c0a45f82682c09ce62d1a1.jpg^$image,xhr,domain=vm.ru
 ||stats.wp.com^
@@ -1567,14 +1567,6 @@ $cookie=/utm_*/,important
 ||dropmefiles.com/js/push/push-*.js^$script,domain=dropmefiles.com
 ||online.vtb.ru/services/shared/mf/metrics^$xhr,domain=online.vtb.ru,important
 ||d.vtb.ru/api/v*/$xhr,websocket,domain=online.vtb.ru,important
-! redditstatic.com/shreddit/*/ad-event-*-*.js^$script,domain=reddit.com
-! redditstatic.com/shreddit/*/v*-events-*.js^$script,domain=reddit.com
-! redditstatic.com/shreddit/*/*-report-from-v*-event-*.js^$script,domain=reddit.com
-! redditstatic.com/shreddit/*/pdp-ad-client-js-*.js^$script,domain=reddit.com
-! redditstatic.com/shreddit/*/shreddit-dynamic-ad-link-*.js^$script,domain=reddit.com
-! redditstatic.com/shreddit/*/shreddit-dynamic-ad-link-*.js^$script,domain=reddit.com
-! redditstatic.com/shreddit/*/category-takeover-ad-client-js-*.js^$script,domain=reddit.com
-! reddit.com/svc/shreddit/events^$xhr,domain=reddit.com,important
 ||reddit.com^$cookie=subreddit,maxAge=20
 ||adjust.com^$important
 ||adjust.world^$important
@@ -1677,6 +1669,21 @@ $cookie=smi_last_visit_time
 /bitrix/js/statistics_clicks.js$script
 ||sentry.srv.habr.com^$important
 ||instagram.com/*/embeds.js^$script,third-party,important,domain=~instagram.com
+||a.imput.net/js/script.js^$script
+||static.gazeta.ru/*/js/noindex/$script
+||static.gazeta.ru/*/js/block_counter
+-spclient.spotify.com/gabo-receiver-service*/v*/events
+||crash.ottmedia.ru^$important
+||tvroscosmos.ru/im/fancy/blank.gif^$xhr
+||services.sg101.prd.sctv.ch/reporting/*/tracking^$xhr,domain=tv.blue.ch,important
+||services.sg101.prd.sctv.ch/portfolio/featurestates/^$xhr,domain=tv.blue.ch
+||youtube.com/embed/$subdocument,removeparam=rel
+||osnmedia.ru/wp-content/themes/osn/assets/js/osn4partners.js^$script,third-party
+||osnmedia.ru/novosti-partnerov/$subdocument,third-party
+||player-metrics.kinescope.io^$important
+||mash.ru/static/analytics/yaMetric.js^$script,domain=mash.ru,important
+$cookie=MPTrack
+$cookie=MicexTrackID
 !
 !
 !
@@ -2861,6 +2868,27 @@ tvnews.by###fullnews > div.social_button > div.row > div.col-sm-3.col-xs-2:nth-c
 tvnews.by###fullnews > div.social_button > div.row > div.col-sm-3.col-xs-2:last-child > a > div.social_button_viber
 tvnews.by###fullnews > div.social_button
 tvnews.by###fullnews > div.col-xs-12.col-sm-12.col-md-12:nth-child(10) > div.source > a:last-child
+softdroids.com##div[class^="clearfix"]
+softdroids.com##ul[class^="banners"]
+worldofplayout.com###top > div.xtr-message-block:nth-child(3) > div.message-body-inner:nth-child(2) > div.xtr-message-block-text > h5:nth-child(2) > a.button--cta.button.button--icon.button--icon--write:last-child
+osnmedia.ru##div[style^="padding: 10px 4px;"]
+ruskline.ru##div[class^="telegram_channel"]
+ruskline.ru##div[class^="article-item__block"]
+ruskline.ru##div[class^="reklama"]
+##div[class*="smi24__informer"]
+##div[id*="yandex_rtb"]
+intermedia.ru,tvt.tj##div[class^="clear"]
+intermedia.ru##.social-links, .news-detail-vertical-panel
+tvt.tj##div[id^="block-block-8"][class^="block block-block informer informer"]
+##div.ad-container-index
+##div.ad-container-left
+xakep.ru###xpwdh
+xakep.ru###menu-item-505321
+ladys.media##div[class^="page-single__follow"]
+ladys.media###articles > article.article.page-single__article > footer.page-single__footer:last-child > div.page-single__follow:first-child > p:first-child
+ladys.media###articles > article.article.page-single__article > footer.page-single__footer:last-child > div.page-single__follow:first-child > ul:last-child > li:last-child
+! telesputnik.ru###page_509546 > div.page-article__wrapper:nth-child(6) > aside.article-sidebar.page-article__sidebar:last-child > section.subscription.page__subscription.subscription--sidebar
+! telesputnik.ru###page_509546 > div.article-others.page-article__others:last-child
 !
 !
 ! - Scripts -
@@ -3406,6 +3434,7 @@ ya.ru##div[class^="rythm-feed"]
 ||advice-ads.s3.amazonaws.com^
 ||analytics.adobe.io^
 ||adncdn.net^
+||ringier-advertising.ch^
 !
 ! --
 !
@@ -3993,7 +4022,7 @@ kommersant.ru#@#.footer_adv
 @@||ob-tb.ru^
 @@||cdnn*.img.ria.ru/min/js/libs/grecaptcha.js$script,domain=ria.ru
 @@||yastatic.net/s3/front-maps-static/maps-front-maps/build/client/map-widget
-@@||dropmefiles.com/*/securimage/show
+@@||dropmefiles.com/*/securimage/
 @@||wikipedia.org^$cookie
 @@||redditstatic.com/shreddit/*/adjust-search-query-link-*.js^$script,domain=reddit.com
 @@||static*.ntv.ru/assets/js/capcha-*.js
@@ -4016,7 +4045,18 @@ kommersant.ru#@#.footer_adv
 @@/youtubei/v*/upload/$xhr,domain=youtube.com|studio.youtube.com
 @@||upload.youtube.com/?authuser=*&upload_id=*&upload_protocol=*&origin=*$xhr,domain=youtube.com|studio.youtube.com
 @@||api.vk.com/method/video.getLiveStatus
-@@||terminator.aeza.net^$websocket,xhr,domain=terminator.aeza.net
+@@||reddit.com/svc/shreddit/events^$xhr,domain=reddit.com
+@@||smotrim.ru/api/articles/regionmix
+@@||mobdrm.1tv.ru^
+@@||1tv-live-gcore.gcdn.co^
+@@||ntv-hls-orig.cdnvideo.ru^
+@@||lfstrm.tv/*/*/*/index.m3u8?account=*&origin=*&provider_id=*
+@@||lfstrm.tv/*/*/*/index.m3u8
+@@||plbl.m9.lfstrm.tv^
+@@||m*.lfstrm.tv^
+@@||server*.musical.uz/tv/*/index.m3u8
+@@||skymedia.mn^$cookie=PHPSESSID
+@@||rambler.ru^$cookie=_blocker_hidden
 !
 !
 ! -
