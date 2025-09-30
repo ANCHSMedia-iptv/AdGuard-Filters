@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.0.2-R
+! Version: 4.0.3-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-09-28T18:21:30+00:00
+! TimeUpdated: 2025-09-230T16:51:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 28.09.2025 18:21 UTC
+! Last Modified: 30.09.2025 16:51 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -817,6 +817,25 @@
 ||exp.notion.so^
 ||crash.ottmedia.ru^$important
 ||player-metrics.kinescope.io^$important
+||p.cityadstrack.com^
+||asv.transsion.com^
+||mgs123.com^
+||well2266.com^
+||smetric.hilton.com^
+||edge.adobedc.net^
+||ads-engagement.presage.io^
+||siteintercept.qualtrics.com^
+||dwin1.com^
+||beam.koddi.com^
+||beacon.sojern.com^
+||adsrvr.org^
+||a.tribalfusion.com^
+||d3lqotgbn3npr.cloudfront.net^
+||ats.everesttech.net^
+||sentry.mos.ru^$important
+||*-sentry.k.avito.ru^$important
+||sntr.avito.ru^$important
+||frontmetrics.tutu.ru^$important
 !
 !
 !
