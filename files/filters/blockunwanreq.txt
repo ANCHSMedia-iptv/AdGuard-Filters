@@ -1699,7 +1699,7 @@ $cookie=MicexTrackID
 ||ok.ru/web-api/v*/reports/$xhr,domain=ok.ru,important
 ||ok.ru/mres/img/react/*/megafon-like_sup.png^$image,domain=ok.ru
 ||gazprom-neft.*/6$xhr,domain=gazprom-neft.ru|gazprom-neft.com
-/*.gif^$image,domain=gpnbonus.ru,redirect-rule=1x1-transparent.gif,important
+/*.gif^$image,domain=gpnbonus.ru|tj.gpnbonus.ru,redirect-rule=1x1-transparent.gif,important
 ||gpnbonus.ru/a$xhr,domain=gpnbonus.ru
 ||tj.gpnbonus.ru/7$xhr,domain=tj.gpnbonus.ru
 ||tj.gpnbonus.ru/bitrix/images/1.gif^$image,domain=tj.gpnbonus.ru,redirect-rule=1x1-transparent.gif,important
