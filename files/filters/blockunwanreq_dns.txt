@@ -836,6 +836,7 @@
 ||*-sentry.k.avito.ru^$important
 ||sntr.avito.ru^$important
 ||frontmetrics.tutu.ru^$important
+||sentry-relay.beeline.ru^$important
 !
 !
 !

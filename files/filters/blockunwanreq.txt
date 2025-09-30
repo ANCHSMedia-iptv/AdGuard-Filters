@@ -1756,6 +1756,10 @@ $cookie=MicexTrackID
 /api/v*/metrics
 ||cdn*.tu-tu.ru/lib-assets/*tutu/frontmetrics*/frontmetrics.*.js^$script,domain=tutu.ru,important
 ||frontmetrics.tutu.ru^$important
+||s3.t2.ru/ds-site/images/mia/mia-mini.png^$image,domain=t2.ru
+||t2.ru/c$xhr,domain=t2.ru
+||sentry-relay.beeline.ru^$important
+! ||megafon.ru/*/*qr*.png
 !
 !
 !
@@ -3019,6 +3023,8 @@ tutu.ru###__next > div:first-child > div.marginTop0_db3adada.marginTopLg450_db3a
 travelask.ru##div[class^="footer__bottom-liveinternet"]
 tourister.ru###right-block-raiting-main-i-lenta
 tourister.ru###footer > div.nt-foot1 > div.nt-foot-item:first-child > div.nt-foot-timestat:last-child
+t2.ru###portal
+t2.ru###root > div.page-container.info-tiles-page.new-menu-page.new-menu-page-2 > div.height-holder-mobile:first-child > div.height-holder-mobile > div > div.height-holder-mobile > div.page:last-child > div.main-content.main-content--dark:nth-child(2) > div:last-child
 !
 !
 ! - Scripts -
@@ -4196,6 +4202,7 @@ kommersant.ru#@#.footer_adv
 @@||shedevrum.ai/api/v*/notifications/counter$xhr,domain=shedevrum.ai,important
 farmlend.ru#@$#body { overflow: visible !important; }
 @@||hilton.com/.well-known/
+@@/ngenix-*/bot-challenge/
 !
 !
 ! -
