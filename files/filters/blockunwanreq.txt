@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.4.9-R
-! TimeUpdated: 2025-10-01T16:40:50+00:00
+! Version: 4.5.0-R
+! TimeUpdated: 2025-10-05T16:40:50+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -379,7 +379,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^$important
-/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~certina.com|~reddit.com|~redd.it|~78.ru
+/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~certina.com|~reddit.com|~redd.it|~78.ru|~instagram.com
 ||getrcmx.com^$important
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.*.js^$script,domain=xcom-shop.ru,important
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -1448,6 +1448,7 @@ $cookie=qrator_jsr,important
 ||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/7/19/347465344440197.webp^$image,domain=rbc.ru
 ||s0.rbk.ru/v6_top_pics/media/img/9/06/347588868292069.svg^$image,domain=rbc.ru
 ||s0.rbk.ru/v6_top_pics/media/img/6/54/347588868225546.svg^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/media/img/1/87/347544029134871.png
 ! =
 !
 !
@@ -1784,6 +1785,22 @@ $cookie=yaParams
 ||yota.ru/api/*/getWAEvents^$xhr,domain=yota.ru,important
 ! ||yota.ru/api/documents/*/footer_qr-app.png/
 ||tvr.by$removeparam=amp
+||autoweb.by/informer/autoweb.php$image,xhr,third-party
+||gismeteo.by^$third-party,domain=~gismeteo.by
+||tvpinsk.by/templates/uneedo_j3/warp/js/warp.js^$script,domain=tvpinsk.by
+||varjag.net/assets/image-cache/varjag/img/reklamaload/$image,domain=varjag.net
+||varjag.net/assets/varjag/img/reklamaload/$image,domain=varjag.net
+||ads.caramel.am^$important
+||errors.figma.com^$important
+||otzovik.com/static/img/1px.gif^$image,domain=otzovik.com,redirect-rule=1x1-transparent.gif,important
+||www.net.kg^$third-party
+||facebook.com/ig_xsite_user_info/
+||discord.com/api/v*/users/*/collectibles-marketing
+||delivery.adrecover.com^$important
+||analytics.ahrefs.com^$important
+||logincdn.msftauth.net/shared/*/chunks/oneds-analytics-js_*.js^$script
+||onedrive.live.com/_layouts/*/images/BLANK.gif^$xhr,domain=onedrive.live.com
+/templates/candle1/images/spacer.gif^$image,domain=iptvin.ru|denms.ru
 !
 !
 !
@@ -2524,7 +2541,7 @@ russianfood.com##div[align^="center"]
 life.ru##div[class^="styles_email__2Wd0i"]
 raiffeisen.ru##div[class^="CookieDialog"]
 baby.ru##div[id^="adriver_banner_side"]
-baby.ru##div[class^="learn-and-participate"]
+baby.ru###layout-content > section.container.container_gray > div.space_b_xl.grid.grid_m_rows.grid_d_size_xl.grid_d_columns_3:last-child > div.grid.grid_size_l.grid_rows.hide_m:last-child
 osnmedia.ru##div[style^="padding: 15px 10px; border-top: 1px solid rgb(179, 182, 187); font-size: 14px; font-weight: 600; line-height: 1.4;"]
 ##img[src*="counter.rambler.ru"]
 ##a[href*="www.liveinternet.ru"]
@@ -2718,7 +2735,7 @@ limehd.tv##li[aria-label="Установить на ПК"]
 ! Реклама в Peers TV
 peers.tv##div.header-wrap.clearfix:nth-child(4) > header.row > nav.col-md-16 > ul.list-inline.main-menu:nth-child(2) > li.b2b-link:last-child
 !
-fandom.com,telepedia.fandom.com##div.notifications-placeholder:nth-child(2) > div.marketing-notifications:first-child > div.marketing-notification__container.GxLxDKkiUGCcwujVwPVA
+telepedia.fandom.com#telepedia.fandom.com##div.notifications-placeholder
 torbobit.net###timeoutBox > div.payment-block:first-child
 torbobit.net###download-premium-btn
 torbobit.net##div.main-menu:nth-child(3) > div.main-menu-links > a:nth-child(2)
@@ -2980,7 +2997,7 @@ ruskline.ru##div[class^="article-item__block"]
 ruskline.ru##div[class^="reklama"]
 ##div[class*="smi24__informer"]
 ##div[id*="yandex_rtb"]
-intermedia.ru,tvt.tj##div[class^="clear"]
+intermedia.ru,tvt.tj,panarmenian.net##div[class^="clear"]
 intermedia.ru##.social-links, .news-detail-vertical-panel
 tvt.tj##div[id^="block-block-8"][class^="block block-block informer informer"]
 ##div.ad-container-index
@@ -3067,7 +3084,7 @@ md.kp.media##button[data-share]
 md.kp.media##div[class^="sc-1j1ncyf-0 cAwYkm"]
 md.kp.media##div[class^="sc-1j1ncyf-0 eIqMxu"]
 md.kp.media###app > div.sc-13iz5ku-0.gLVCYP:nth-child(3) > div.sc-1dpva40-0.dfKjHz:last-child > div:first-child > div.sc-1izj9yl-0.bRmmbj:last-child > div.sc-1izj9yl-2.kcKDrv > div:last-child > div.sc-1wayp1z-12.euEKOW:nth-child(2) > div.sc-1ktpw9t-0.hSknpe.sc-14f2vgk-3.fiVHQf.sc-1wayp1z-11.bvfyEk:last-child > div.sc-1ktpw9t-1.gATzXn > div.sc-14f2vgk-0.fqbslE > div.sc-14f2vgk-1.WDCqj:first-child > div.sc-1wayp1z-0.sc-1wayp1z-5.gwmrBl.chEeRL:first-child > p.sc-1wayp1z-16.dqbiXu:nth-child(16)
-ochakovo.ru##noindex:nth-child(13) > div.age.active:first-child
+! ochakovo.ru##noindex:nth-child(13) > div.age.active:first-child
 invitro.ru###ednamb-container > div.ednamb-left-buttons.ednamb-hide:last-child > div.ednamb-left-buttons-head:first-child
 invitro.ru##div.edna-banner.edna-banner_viber:nth-child(9) > div.edna-banner__wrapper:last-child
 invitro.ru###tagList > div.skeleton.ds_container:nth-child(2) > div.skeleton-block__tags
@@ -3080,6 +3097,28 @@ onclinic.ru##div[class^="hidden"]
 onclinic.ru##form[class^="n-footer-bottom__subscribe ajax_submit subscription-form"]
 yota.ru##span[class^="footer__bottom-cookies"]
 news.by##button.fixed.bottom-\[148px\].right-0.z-\[220\].flex.cursor-pointer.items-center.bg-main-blue.opacity-50.hover\:opacity-100.base\:z-\[220\].lg\:bottom-\[148px\]:nth-child(186)
+##a[href*="www.autoweb.by"]
+tvpinsk.by###sidebar-b > div.inner-box > div.grid-box.width100.grid-v:nth-child(9)
+tvpinsk.by##div[class^="grid-box width50 grid-h"]
+tvpinsk.by##section[id^="bottom-b"][class="grid-block"]
+~yandex.by##a[href*="metrika.yandex.by"]
+varjag.net##section.trending-area.theme-slide-template-two:nth-child(6)
+varjag.net##section.hero-post-area:nth-child(7) > div.container > div.post-area-wrap > div.post-area-right-2:first-child > div.post-card-wrap > div.post-card:first-child
+varjag.net##section.hero-post-area:nth-child(7) > div.container > div.post-area-wrap > div.post-area-right-2:first-child > div.post-card-wrap > div.post-card:last-child
+varjag.net##section.hero-post-area:nth-child(7) > div.container > div.post-area-wrap > div.post-area-right-2:first-child > div.post-card-wrap
+varjag.net##section.editor-blog-area:nth-child(8) > div.container > div.row > div.col-12.col-sm-12.col-md-12.col-xl-4.section1-sidebar:last-child > div.banner-sidebar.banner-sidebar--first.text-center:nth-child(2)
+varjag.net##section.editor-blog-area:nth-child(8) > div.container > div.row > div.col-12.col-sm-12.col-md-12.col-xl-4.section1-sidebar:last-child > div.banner-sidebar.banner-sidebar--first.text-center:last-child
+varjag.net###scrollup
+panarmenian.net##div[class^="fr margin_top_2"]
+panarmenian.net##div[class*="set_ad"]
+panarmenian.net##div[class*="ads panner"]
+312.kg##div[align="center"]
+simlock.ru###privacy
+iptvin.ru,denms.ru##div.Main:last-child > div.Sheet:first-child > div.Sheet-body:last-child > div.contentLayout:nth-child(2) > div.sidebar2:last-child > div.Block:nth-child(6)
+kinopoisk.ru##div.ReactModalPortal:nth-child(13) > div.styles_content__rTKOG.styles_fixed__0DFP9.styles_root__tmhRV
+rbc.ru###__next > header.site-header:first-child > div.life-header:last-child > div.life-header-inner > div.life-header-container.gutter > div.life-header-item:first-child
+producttoday.ru##div[class^="textwidget custom-html-widget"]
+iguides.ru##main:nth-child(15) > section.main-container.container-md.pt-30:nth-child(5) > section.row:nth-child(2) > section.col:first-child > div.row.text-10.text-sm-16.flex-column.flex-md-row.mb-0:nth-child(7)
 !
 !
 ! - Scripts -
@@ -4260,6 +4299,7 @@ farmlend.ru#@$#body { overflow: visible !important; }
 @@||hilton.com/.well-known/
 @@/ngenix-*/bot-challenge/
 @@||invitro.ru/bitrix/tools/composite_data.php^$xhr,domain=invitro.ru
+@@||instagram.com/api/graphql$domain=instagram.com
 !
 !
 ! -
