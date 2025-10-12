@@ -3151,7 +3151,7 @@ base64decode.org##div.row.main_center:first-child > div.content_color.column.gro
 ntvplus.tv##header.head:nth-child(3) > nav.head--top:first-child > div.head--top-container.container > div.head--age-label:first-child
 ##span[id*="sputnik-informer"]
 cityserver.ru##div[style^="margin-top: 15px; display: inline-block"][id="sputnik-informer"]
-##div[class^="clearfix"]
+! ##div[class^="clearfix"]
 tvzavr.ru###__next > div.wrap:last-child > div.cookie-warning_warningWrap__uX5bj:nth-child(3)
 mobihobby.ru##div[class^="twidget"]
 mobihobby.ru##div[class^="mobot_popup mobot_popup_subs"]
@@ -4352,6 +4352,7 @@ farmlend.ru#@$#body { overflow: visible !important; }
 @@||sso.dzen.ru/install?
 @@||yandex.ru^$cookie=_yasc,~third-party
 @@||yandex.*^$cookie=_yasc,~third-party
+@@||ajax.googleapis.com/ajax/libs/jqueryui/
 !
 !
 ! -
@@ -4549,5 +4550,7 @@ farmlend.ru#@$#body { overflow: visible !important; }
 ! Social network X (formerly Twitter) is blocked in the Russian Federation.
 ! Мессенджер Viber заблокирован 13.12.24 на территории РФ из-за нарушения законодательства.
 ! Viber messenger was blocked on 13.12.24 in the territory of the Russian Federation due to violations of the law.
+! Мессенджер Discord заблокирован 08.10.24 на территории РФ из-за нарушения законодательства.
+! Discord messenger was blocked on 08.10.24 in the territory of the Russian Federation due to violations of the law.
 !
 !
