@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 4.5.1-R
-! TimeUpdated: 2025-10-11T16:26:16+00:00
+! TimeUpdated: 2025-10-12T09:11:16+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1806,7 +1806,6 @@ $cookie=yaParams
 ||sentry.w6p.ru^$important
 /counter.php$~object
 ! ||sb.by/local/templates/html_dev/components/db.by/main.news.list/feed-detail-ajax$xhr
-||s3-alpha-sig.figma.com^$important
 ||okko.tv^$cookie=tagHash,important
 ||logger.id.sber.ru^$important
 ||id.sber.ru/ads.js^$script,domain=id.sber.ru|sber.ru,important
@@ -1827,6 +1826,8 @@ $cookie=remixdt|remixlgck|remixlgck|remixlgck|remixstlid|remixua|remixlang
 ||auto.ru/-/ajax/desktop/events$xhr,domain=auto.ru,important
 autoru-frontend/fingerprintjs_*.js^$script,domain=auto.ru
 autoru-frontend/AdminsMarketingPopup_*.js^$script,domain=auto.ru
+||assets.oldversion.s3.amazonaws.com/bundles/oldversionsite/images/theme/icons/google-plus-icon.gif^$image,domain=oldversion.com.ru|oldversion.com
+||stat.g2.plvideo.ru^$important
 !
 !
 !
@@ -3158,6 +3159,7 @@ mobihobby.ru##div[class^="mobot_popup mobot_popup_subs"]
 mobihobby.ru##noindex.cstm_popup_overlay:nth-child(13)
 mobihobby.ru##div.header._header:nth-child(2) > div.header-inner.g__main_width._main_width > table.top-table > tbody > tr > td.nav-cell:nth-child(2) > ul.header-nav > li:last-child
 mobihobby.ru##div.header._header:nth-child(2) > div.header-inner.g__main_width._main_width > table.top-table > tbody > tr > td.nav-cell:nth-child(3) > ul.header-nav > li:last-child
+plvideo.ru###root > div.mocked-styled-50._qxppr4_a1m139px:first-child > div.mocked-styled-39.insidw_rebbb7d:first-child > div.insidw_szb50lo:nth-child(2) > div.mocked-styled-22._r3z7u_rxkjssf.dvzqi7_d4qegwf > div.mocked-styled-23._r3z7u_c7y0x5t:last-child > div.mocked-styled-101._vt3a7o_r48pb17 > div.mocked-styled-102._vt3a7o_c5sytr2 > div.mocked-styled-103._vt3a7o_bcixxkz:nth-child(3) > div._99fvvg_rbchjxl > div._99fvvg_sgc556o:last-child > div._99fvvg_l152piis > a._99fvvg_lufi9y2:first-child
 !
 !
 ! - Scripts -
@@ -4353,6 +4355,7 @@ farmlend.ru#@$#body { overflow: visible !important; }
 @@||yandex.ru^$cookie=_yasc,~third-party
 @@||yandex.*^$cookie=_yasc,~third-party
 @@||ajax.googleapis.com/ajax/libs/jqueryui/
+@@||s3-alpha-sig.figma.com^
 !
 !
 ! -
