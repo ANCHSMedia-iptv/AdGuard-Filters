@@ -2708,7 +2708,7 @@ stolicaonego.ru##div[class^="footer_right_counters"]
 stolicaonego.ru##div[class^="top_bl"]
 stolicaonego.ru##div[class^="yandex_ad_one"]
 thevoicemag.ru##div[class^="carousel-vertical-videos detail-page__carousel-vertical-videos"]
-~yandex.by,~yandex.com,~yandex.kz,~yandex.ru,~ya.ru##a[href*="://yandex.ru/cy"]
+~yandex.by,~yandex.com,~yandex.kz,~yandex.ru,~ya.ru,~yandex.lv,~yandex.uz##a[href*="://yandex.ru/cy"]
 tele-satinfo.ru##div:last-child > table:nth-child(4) > tbody > tr > td:first-child > div > table:nth-child(41) > tbody > tr > td > center:last-child
 tele-satinfo.ru##div:last-child > table:nth-child(6) > tbody > tr > td:first-child
 tele-satinfo.ru##div:last-child > table:nth-child(6) > tbody > tr > td:nth-child(2)
