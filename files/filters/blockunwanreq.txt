@@ -1883,8 +1883,9 @@ autoru-frontend/AdminsMarketingPopup_*.js^$script,domain=auto.ru
 !
 ! Blocking hidden images in one pixel (1 x 1).
 ! Блокировка скрытых изображений в один пиксель (1 x 1).
-||4pda.to/s/PXti*.gif^$image,xmlhttprequest,domain=4pda.to,redirect-rule=1x1-transparent.gif
+||4pda.to/s/PXti*.gif^$image,xhr,domain=4pda.to,redirect-rule=1x1-transparent.gif
 !  4pda.to/static/module/lytebox/images/blank.gif^$image,domain=4pda.to
+||4pda.to/s/PXtiZXWM6dWEuL4ZNjHJslyIXa.gif^$image,domain=4pda.to,redirect-rule=1x1-transparent.gif
 !
 !
 !
