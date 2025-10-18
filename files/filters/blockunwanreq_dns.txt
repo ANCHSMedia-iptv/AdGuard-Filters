@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.0.7-R
+! Version: 4.0.8-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-10-15T16:12:00+00:00
+! TimeUpdated: 2025-10-18T17:12:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 15.10.2025 16:12 UTC
+! Last Modified: 18.10.2025 17:12 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -509,7 +509,7 @@
 ||pushapi.mail.ru^
 ||events.maps.mail.ru^$important
 ||ms.ok.ru^$important
-||ingest*.sentry.io^$important
+||ingest.*.sentry.io^$important
 ||cdn.aaacdn.net^
 ||sentry.x5.ru^$important
 ||tabun.info^
@@ -862,6 +862,12 @@
 ||sdk.mrf.io^
 ||sr.studiostack.com^
 ||setka.media^
+||error-analytics-sessions-production.shopifysvc.com^
+||hs-analytics.net^
+||hsadspixel.net^
+||hs-banner.com^
+||cnb.cnews.ru^
+||stat.media^
 !
 !
 !
@@ -1271,6 +1277,8 @@
 @@||plbl.m9.lfstrm.tv^
 @@||m*.lfstrm.tv^
 @@||s3-alpha-sig.figma.com^
+@@||static-verify.sec.xiaomi.com^
+@@||verify.sec.xiaomi.com^
 !
 !
 ! ===
