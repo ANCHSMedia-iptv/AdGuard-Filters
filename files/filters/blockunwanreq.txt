@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.5.3-R
-! TimeUpdated: 2025-10-18T17:11:16+00:00
+! Version: 4.5.4-R
+! TimeUpdated: 2025-10-19T17:01:42+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -46,7 +46,7 @@
 ||xray.mail.ru^
 ||*dbankcloud*^$important
 ||rayjump.com^$important
-||smi2.ru^$third-party,domain=~smi2.ru,important
+||smi2.ru^$important,domain=~smi2.ru,third-party
 ||24smi.net^$important,third-party
 ||umeng.com^$important
 ||api.bing.com^$third-party,domain=~bing.com,important
@@ -195,7 +195,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! *.103.*/js/cookiesNotificationBy.js^$script,important,domain=mag.103.* (новое правило, строка 138 и 139)
 ||d31j93rd8oukbv.cloudfront.net^$important
 ||d1tru86qrby720.cloudfront.net^$important
-||*site-chat.me/support/support*.js$third-party,script,important
+||site-chat.me/support/support$third-party,script,important
 ! gemotest.ru/local/templates/main/img/chat.svg^$image,domain=gemotest.ru
 !
 ||invitro.ru/edna/assets/multibutton.js$script,domain=invitro.ru
@@ -522,7 +522,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 .ru/wp-content/themes/*/img/tg*.jpg^$image,domain=androidinsider.ru|appleinsider.ru|hi-news.ru
 .ru/wp-content/themes/*/img/telegram*.svg^$image,domain=androidinsider.ru|appleinsider.ru|hi-news.ru
 ||vp.rambler.ru/player/sdk.js^$script,important
-||developers.rambler.ru/likes/v*/widget.js^$script,third-party,important
+||developers.rambler.ru/likes/v*/widget.js^$script,third-party,domain=~rambler.ru,important
 ||rambler.ru/location/$xhr
 ||banki.ru/service/layout-header/geo/^$xhr,domain=banki.ru
 ||cdn.banki.ru/static/common-static/common-scripts/build/base.*.js^$script,domain=banki.ru,important
@@ -690,10 +690,10 @@ $cookie=/__ddg*_/,important
 ! api.vigo.one/uxzoom/*/notify$xhr (779)
 ||tolstoycomments.com^$domain=2x2tv.ru
 ||s.rbk.ru/*rbcnews_static/rbcnews-*/scripts/build/_metrika-config.js^$script,domain=rbc.ru,important
-.ru/info-service/api/v*/ev/$xhr,ping,domain=rbc.ru|sportrbc.ru,important
-||rbc.ru/track/*/*/$xhr,domain=rbc.ru,important
+/info-service/api/v*/ev/$xhr,ping,domain=rbc.ru|sportrbc.ru,important
+||rbc.ru/track/*/*/$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,important
 !
-||rbc.ru/rbcmetr/stat/$xhr,domain=rbc.ru,important
+||rbc.ru/rbcmetr/stat/$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,important
 ||telegram.org/css/*widget*.css$css,domain=~telegram.org|~t.me,third-party
 ||iguides.ru/bitrix/templates/iguides-2015/js/tg-widget.js$xhr,domain=iguides.ru
 ||tourister.ru^$cookie=dis_is_retina
@@ -1290,7 +1290,7 @@ $cookie=qrator_jsr,important
 ||orbit-promo.ru/res/video/popup*.mp4^$media,domain=orbit-promo.ru
 /assets/PopupLayout-*.js^$script,domain=snickers.ru|twix.ru
 /assets/popup-*.js^$script,domain=snickers.ru|twix.ru
-||dsp-rambler.ru^$third-party
+||dsp-rambler.ru^$third-party,important
 ||api.corr.life/public/metrics/pageview/site$xhr,domain=life.ru
 ||cf.dxmcdn.com/dta/9wb.js^$script,domain=9tv.co.il
 ||advisor.api.2gis.*/api/*/advise/gta$xhr,domain=2gis.ru|2gis.*
@@ -1448,7 +1448,13 @@ $cookie=qrator_jsr,important
 ||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/7/19/347465344440197.webp^$image,domain=rbc.ru
 ||s0.rbk.ru/v6_top_pics/media/img/9/06/347588868292069.svg^$image,domain=rbc.ru
 ||s0.rbk.ru/v6_top_pics/media/img/6/54/347588868225546.svg^$image,domain=rbc.ru
-||s0.rbk.ru/v6_top_pics/media/img/1/87/347544029134871.png
+||s0.rbk.ru/v6_top_pics/media/img/1/87/347544029134871.png^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/9/94/347551601774949.webp^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/0/60/347603500239600.webp^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/0/60/347603500239600.webp^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/media/img/2/70/347600202479702.svg^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/media/img/8/06/347603496940068.jpeg^$image,domain=rbc.ru
+||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/0/43/347603500431430.webp^$image,domain=rbc.ru
 ! =
 !
 !
@@ -1885,6 +1891,43 @@ $cookie=qrator_ssid,important
 /.ghost/analytics/api/v*/page_hit?name=analytics_events$xhr,important
 ||telecomtrainer.com/assets/images/5G%206G%20Prime%20Membership%20Telecom.png$image,domain=telecomtrainer.com
 ||gc.onliner.by/assets/openapi.*.js^$script,domain=onliner.by|forum.onliner.by,important
+||browser-update.org^$important
+||megavtogal.com/*.gif^$image,domain=megavtogal.com,redirect-rule=1x1-transparent.gif
+/yastatic/share.js
+/yastatic/es5-shims.*.js
+||buro247.ru/images/pavel/alfabank-*.mp4^$media,domain=buro247.ru
+! ||buro247.ru/images/pavel/*.mp4^$media,domain=buro247.ru
+||buro247.ru/js/BnWidgets.*.js$script,domain=buro247.ru,important
+||gif.verstka.org^$important
+||mts.ru/api/sitesettings/layout_acceptcookies^$xhr,domain=mts.ru,important
+||mts.ru/api/bff/v*/ab-test-data/abtests^$xhr,domain=mts.ru
+||sentry.obs.mts.ru^$important
+||sentry.*.mts.ru^$important
+||c.mts.ru^
+||mts.ru/content/*/ad.gif^$image,domain=mts.ru,important
+||err.lenta.ru^$important
+/api/unity-id/v*/$xhr,important
+||megafoncenter.ru/i/footer-bg-dots-*.gif^$image,xhr,domain=megafoncenter.ru,redirect-rule=1x1-transparent.gif
+||cdn*.saby.ru/!ping/^$xhr,domain=saby.ru,important
+||cdn*.saby.ru/cdn/Boomerang/$script,domain=saby.ru
+||cdn*.saby.ru/cdn/Maintenance/*/js/checkSoftware.*.js^$script,domain=saby.ru
+||popmechanic.ru^$important
+||ducip.megafon.ru/show/$script,domain=megafon.ru
+||cdn.forbes.ru/_nuxt/Smi2.*.css^$css,domain=forbes.ru
+||cdn.forbes.ru/_nuxt/Sparrow*.css^$css,domain=forbes.ru
+||cdn.forbes.ru/_nuxt/Infox.*.css^$css,domain=forbes.ru
+||forbes.*/api/visiting/node$xhr,domain=forbes.*
+||snt.svyazon.ru^$important
+||cdn.svyazon.ru/upload/files/image/banner-image-id/274/8d2c7f6200c7c825e3c7300ce9d73bea$image,domain=svyazon.ru
+||cdn.svyazon.ru/upload/web/svyazon/img/svyazon-game$image,domain=svyazon.ru
+||svyazon.ru/_nuxt/1e9809b195f81e6ff0f897ca2fc57aea68000014/f717f07696458856225e33c4ed360fe1.svg^$image,domain=svyazon.ru
+||verbox.ru^$third-party,domain=~verbox.ru,important
+||iv.kommersant.ru/ContentFlex/images/placeholder.$image,domain=kommersant.ru
+||iv.kommersant.ru/ContentFlex/images/google_service_subscribe_$image,domain=kommersant.ru
+||app.rbc.ru/gpn/push-subscribe.html^$domain=rbc.ru
+/scripts/build/fn/_pushAllow.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru
+/scripts/build/fn/_firebase.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,important
+||bee-cake.ru^$domain=beeline.ru
 !
 !
 !
@@ -3264,6 +3307,20 @@ ffont.ru##footer:nth-child(4) > div.content > div.footer-menu-one:last-child > u
 ##img[src*="mc.yandex.*/watch/"]
 telecomtrainer.com###announcement-bar-root
 telecomtrainer.com###ghost-portal-root > iframe.gh-portal-triggerbtn-iframe
+ferra.ru##.YbTiHPLh
+buro247.ru###bn_d74c1b
+buro247.ru##div[class^="banner  commercial_"]
+buro247.ru##.sticky-container
+buro247.ru##div.main_content_container.active_art:nth-child(15) > div.infinity-page.js-infinity-page.tpl-show > div.wrapper:last-child
+buro247.ru###subscribeSector
+forbes.ru###article_484953 > div.bwWh8 > div._9LU0a:nth-child(3) > div.yzAGp:first-child > div.LIay6._1dVhJ.vzEn2._2ANCk:last-child > div.rxH4j:nth-child(2) > div.fVh36.DnvB1:last-child
+svyazon.ru###root > header.header-desktop:first-child > div.top-info-banner:first-child
+svyazon.ru###root > div.vue-portal-target:last-child > div.s-modal.s-modal--view-cookies.s-modal--color-cookies
+svyazon.ru###root > div.vue-portal-target:last-child
+svyazon.ru###root > header.header-desktop:first-child > div.header-bottom:last-child > div.header-bottom__container.s-container-new > div.header-bottom__content > div.header-bottom-play.header-bottom__play:last-child
+svyazon.ru###root > header.header-desktop:first-child > div.header-middle:nth-child(3) > div.header-middle__container.s-container-new > div.header-middle__content > div.header-middle-multibank:nth-child(3)
+kommersant.ru##div.layout.js-lenta-article:nth-child(16) > div.main.grid > div.grid-col.grid-col-s3:first-child > div.lenta_top_doc > article.doc.js-article.js-canonical.js-canonical-current > a.gs_subscribe.js-lazyimage.no_decor:nth-child(15)
+beeline.ru###react_0HNGF4IM0JGS8 > div.vNwrq.r0v8R.JEcdN.cZt5w:last-child > div.Ic8iR > div.pQugW > div.Tf89f.DbIR0:first-child > div:first-child > div.content.content-theme__secondary > p.n3jKk:nth-child(3)
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4482,6 +4539,9 @@ repack.me#@#a[href="/download"]
 @@||static-verify.sec.xiaomi.com
 @@||verify.sec.xiaomi.com^
 @@||verify.sec.xiaomi.com
+@@$cookie=cookie_consent
+@@||saby.ru^$cookie=lang
+@@||beeline.ru^$cookie=isAuthorized
 !
 !
 ! -
