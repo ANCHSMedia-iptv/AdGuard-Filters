@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.5.5-R
-! TimeUpdated: 2025-10-22T17:01:42+00:00
+! Version: 4.5.6-R
+! TimeUpdated: 2025-10-25T13:23:42+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -173,7 +173,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||store.bankiros.ru/js/metrics/*.js^$script,domain=bankiros.ru,important
 ||adhigh.net^$important
 ||rutarget.ru^$important
-||api.mindbox.ru^$important,domain=~mindbox.ruthird-party
+||api.mindbox.ru^$important,domain=~mindbox.ru,third-party
 ! */api/fl/id*^$xhr,important (новое правило, строка 589)
 ||s.rbk.ru/*_static/*-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,important
 ||trafffgen.rambler.ru^$important
@@ -666,7 +666,7 @@ $cookie=bltsr
 $cookie=bh,third-party,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by|~yandex.kz|~ya.ru|~yandex.com|~yandex.net|~yandex.lv|~yandex.uz
 $cookie=coockoos
 $cookie=my,domain=~api.browser.yandex.*|~yandex.ru|~yandex.by|~yandex.kz|~ya.ru|~yandex.com|~yandex.lv|~yandex.uz
-$cookie=/__ddg*_/,important
+$cookie=/__ddg*/,important
 ||sibdroid.ru/upload/is/settings/c52/k8m6dcpmm5aqnx6nu8hn2t16va4e404l/TG%20desktop%20(2).png^$image,domain=sibdroid.ru
 ! /wp-admin/admin-ajax.php?*views*$xhr (новое правило, строка 785)
 ||api.zadarma.com/calltracker$xhr,important
@@ -848,7 +848,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||pushapi.mail.ru^
 ||events.maps.mail.ru^$important
 ||ms.ok.ru^$important
-||ingest.*.sentry.io^$important,domain=~sentry.io
+||ingest.*.sentry.io^$domain=~sentry.io,important
 ||cdn.aaacdn.net^
 ||sentry.x5.ru^$important
 ||tabun.info^
@@ -1806,7 +1806,7 @@ $cookie=yaParams
 ||analytics.ahrefs.com^$important
 ||logincdn.msftauth.net/shared/*/chunks/oneds-analytics-js_*.js^$script
 ||onedrive.live.com/_layouts/*/images/BLANK.gif^$xhr,domain=onedrive.live.com,redirect-rule=1x1-transparent.gif
-/templates/candle1/images/spacer.gif^$image,domain=iptvin.ru|denms.ru,redirect-rule=1x1-transparent.gif
+/spacer.gif^$image,domain=iptvin.ru|denms.ru,redirect-rule=1x1-transparent.gif
 ||tricolor.ru/frontend-*/img/1px.png^$image,domain=tricolor.ru,redirect-rule=1x1-transparent.gif,important
 ||cdn.pochtabank.ru/_next/image?url=*files.pochtabank.ru/medialibrary/*/Telegram_logo.$image,domain=pochtabank.ru
 ||sentry.w6p.ru^$important
@@ -1856,7 +1856,7 @@ autoru-frontend/AdminsMarketingPopup_*.js^$script,domain=auto.ru
 ||habrastorage.org/getpro/habr/widget/854/3bb/641/8543bb641e977c1fba5597e7c70a9c51.png^$image,domain=habr.com
 ||habrastorage.org/webt/qq/ey/pn/qqeypn-py71suynxbusbakjdfjw.png^$image,domain=habr.com
 -script.dotmetrics.net
-! ||tomshardware.com/vite/assets/SponsoredScroll/$script,domain=tomshardware.com
+/vite/assets/SponsoredScroll/$script,domain=tomshardware.com|pcgamer.com|androidcentral.com|gamesradar.com|livescience.com|space.com|techradar.com|tomsguide.com|windowscentral.com
 ||cdn.mos.cms.futurecdn.net/7cUTDmN2PHNRiNBVqbKf56$image,domain=tomshardware.com
 ||pochta.ru/promotion/content/$image,domain=pochta.ru
 ||ura.news/404^$image,domain=ura.news
@@ -1977,6 +1977,20 @@ $cookie=flyid,important
 ||skillbox.ru/local/ajax/popup.php^$xhr,domain=skillbox.ru
 ||statscdn.nperf.com^
 $cookie=showed_vkid_onetap,important
+||livelib.ru^$cookie=__ll_ab_mp
+$cookie=si_p_user_stat
+||api.viqeo.tv/v*/data/track
+||hawky.pcgamer.com^$important
+||motivtelecom.ru/*.gif^$image,domain=motivtelecom.ru,redirect-rule=1x1-transparent.gif,important
+||motivtelecom.ru/d$xhr,domain=motivtelecom.ru
+||asus.com/nuxtStatic/js/mpulse/$script,domain=asus.com,important
+$removeparam=redirected
+||sentry.algoritmika.su^$important
+||algoritmika.org/api/gdpr/get-decision?fingerprint=$xhr,domain=algoritmika.org
+||storage-asset.msi.com/global/js/ccc_config.js^$script,domain=msi.com
+||storage-asset.msi.com/frontend/js/gaeventdirectpush.js^$script,domain=msi.com
+||securelist.ru$removeparam=kaspr
+||kaspersky.ru$removeparam=kaspr
 !
 !
 !
@@ -3312,7 +3326,7 @@ accuweather.com##div.template-root:first-child > div.two-column-page-content:nth
 habr.com##div[class*="adfox-banner"]
 habr.com###app > div.tm-layout__wrapper > div.header-banner-wrapper:nth-child(2)
 habr.com###app > div.tm-layout__wrapper > div.tm-layout:nth-child(4) > main.tm-layout__container:last-child > div.tm-page > div.tm-page-width > div.tm-page__wrapper > div.tm-page__sidebar:last-child > div.tm-layout-sidebar > div.tm-sexy-sidebar.tm-sexy-sidebar_stick-top:last-child
-tomshardware.com###affiliate-disclaimer
+tomshardware.com,pcgamer.com###affiliate-disclaimer
 tomshardware.com###article-body > aside.clear-both.pt-3.pb-4.mb-4.border-solid.border-y.border-neutral-300:nth-child(9)
 tomshardware.com##a[href^="://news.google.com/publications/CAAqLAgKIiZDQklTRmdnTWFoSUtFSFJ2YlhOb1lYSmtkMkZ5WlM1amIyMG9BQVAB"]
 tomshardware.com##img[src^="cdn.mos.cms.futurecdn.net/7cUTDmN2PHNRiNBVqbKf56"]
@@ -3358,7 +3372,7 @@ telecomtrainer.com###announcement-bar-root
 telecomtrainer.com###ghost-portal-root > iframe.gh-portal-triggerbtn-iframe
 ferra.ru##.YbTiHPLh
 buro247.ru###bn_d74c1b
-buro247.ru##div[class^="banner  commercial_"]
+buro247.ru##div[class*="banner  commercial_"]
 buro247.ru##.sticky-container
 buro247.ru##div.main_content_container.active_art:nth-child(15) > div.infinity-page.js-infinity-page.tpl-show > div.wrapper:last-child
 buro247.ru###subscribeSector
@@ -3399,6 +3413,19 @@ volte.yota.ru###sbs-1151071536-175196382511557630
 iphones.ru##div.header__menu-project-cont:nth-child(4) > div.container > ul.header__menu-project.need-telemetry
 iphones.ru##div.header__menu-project-cont:nth-child(4)
 iphones.ru###\31 168611 > div.content-wrap.content-wrap_post.content-wrap-mod:first-child > div.sidebar:last-child
+~armtorg.ru##a[href="://armtorg.ru/top/in/"]
+relasko.ru##td[align="center"]
+motivtelecom.ru###root > div.page__main-content-wrap > div.cookie-agreement:nth-child(6) > div.page__container.wrap-lg
+motivtelecom.ru###root > div.page__main-content-wrap > div.cookie-agreement:nth-child(6)
+tv41.ru###cookies_note
+skillbox.ru##main.content:nth-child(8) > div.page.style-update > div.page-wrap:first-child > div.noFullClass:nth-child(4) > div.article-inner:first-child > section:nth-child(2) > div.container:nth-child(2) > div.row.flex-row-rev:first-child > div.col-xl-9.col-lg-8.col-poster:last-child > div.container.container--setka > div.article-detail-text__setka:last-child > div.stk-post.stk-layout_12col_18068.stk-theme_26309 > div.stk-theme_26309__mb_15.stk-grid:nth-child(5) > div.stk-grid-col.stk-grid-col_last > div.stk-grid.stk-grid__layout_columns:nth-child(22)
+ligarobotov.ru###content > div.page-content:first-child > div.elementor.elementor-572:first-child > section.elementor-section.elementor-top-section.elementor-element.elementor-element-2aecf39f.elementor-section-full_width.elementor-hidden-tablet.elementor-hidden-mobile.elementor-section-height-default:nth-child(7)
+ligarobotov.ru###content > div.page-content:first-child > div.elementor.elementor-572:first-child > font:last-child > section.elementor-section.elementor-top-section.elementor-element.elementor-element-334f58b2.elementor-section-full_width.elementor-section-height-default:nth-child(2)
+ligarobotov.ru###elementor-popup-modal-3337 > div.dialog-widget-content.dialog-lightbox-widget-content.animated
+ligarobotov.ru###elementor-popup-modal-3337
+algoritmika-ekb.ru###elementor-popup-modal-14520 > div.dialog-widget-content.dialog-lightbox-widget-content.animated
+algoritmika-ekb.ru###elementor-popup-modal-14520
+
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3791,6 +3818,11 @@ $cookie=_ym_debug
 ||eda.yandex.ru/web-api/custom-logs
 ||eda.yandex.ru/web-api/chunk-metrics$important
 ||yastatic.net/s3/passport-sdk/autofill/v*/sdk-suggest-with-polyfills-
+||strm.yandex.ru/perf 
+||yandex.ru/internet/api/v*/stats
+||yandex.ru/internet/api/v*/share-link/
+||yandex.ru^$cookie,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz
+||yandex.*^$cookie,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -4025,7 +4057,6 @@ mi.com#@$#body { overflow: visible !important; }
 @@||stats.1clickvpn.com^$domain=pphgdbgldlmicfdkhondlafkiomnelnk
 ! отвечает за основной функционал расширения и приложений 1clickvpn (не реклама).
 @@||github.com^$cookie,~third-party
-@@||yandex.net^$cookie,~third-party
 @@||aliexpress.ru^$cookie
 !
 @@||clearurls.xyz^
@@ -4505,22 +4536,6 @@ serverblight.com#@##cursor
 @@/api/*/envelope/$ping,xhr,domain=pochta.ru
 @@||api-router.nexusmods.com/graphql^$xhr,domain=nexusmods.com,important
 @@||100i6fm.ru/cur_playing.txt$xhr,domain=radiocityonline.ru
-@@||api.browser.yandex.*^$cookie=bh,~third-party
-@@||api.browser.yandex.ru^$cookie=bh,~third-party
-@@||yandex.ru^$cookie=bh,~third-party
-@@||yandex.kz^$cookie=bh,~third-party
-@@||yandex.by^$cookie=bh,~third-party
-@@||ya.ru^$cookie=bh,~third-party
-@@||yandex.com^$cookie=bh,~third-party
-@@||api.browser.yandex.*^$cookie=my,~third-party
-@@||api.browser.yandex.ru^$cookie=my,~third-party
-@@||yandex.ru^$cookie=my,~third-party
-@@||yandex.kz^$cookie=my,~third-party
-@@||yandex.by^$cookie=my,~third-party
-@@||ya.ru^$cookie=my,~third-party
-@@||yandex.com^$cookie=my,~third-party
-@@||yandex.*^$cookie=is_gdpr,~third-party
-@@||yandex.*^$cookie=is_gdpr_b,~third-party
 @@||api.plus.yandex.*/graphql$xhr,domain=plus.yandex.ru|plus.yandex.*
 @@.cur|$image,domain=yandex.ru|ya.ru|yastatic.net
 ! Не работает плеер на сайтах радиостанций.
@@ -4625,6 +4640,9 @@ repack.me#@#a[href="/download"]
 xabar.uz#@#.counters
 @@||workupload.com/puzzle^$domain=workupload.com
 @@||workupload.com/captcha^$domain=workupload.com
+@@||stream*.tv41.ru^
+@@/ngenix-*/bot-challenge/
+@@||xiaomi.com^$cookie
 !
 !
 ! -
@@ -4749,6 +4767,7 @@ xabar.uz#@#.counters
 ||softversterport.gq^
 ||clk.li/SwmO^$all
 ||obqj2.com^$all
+||hellopeople.app.tc^$all
 !
 !
 !
