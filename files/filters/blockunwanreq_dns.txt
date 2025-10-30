@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.1.1-R
+! Version: 4.1.2-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-10-25T13:24:00+00:00
+! TimeUpdated: 2025-10-30T15:39:27+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 25.10.2025 13:24 UTC
+! Last Modified: 30.10.2025 15:39 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -187,6 +187,7 @@
 ||playmoviesdfe*.googleapis.com^
 ||calendarpushnotification*.googleapis.com^
 ||1e100.net^
+||appsgrowthpromo*.googleapis.com^$important
 !
 ! ===
 !
@@ -884,6 +885,9 @@
 ||sdk.mrf.io^
 ||i.viafoura.co^
 ||hawky.pcgamer.com^
+||sentry.sbercloud.tech^$important
+||sentry.papajohns.ltd^$important
+||sync.ad-cdek.ru^$important
 !
 !
 !
@@ -1032,6 +1036,7 @@
 ||weather.opera-api*.com^
 ||*merchandise.opera-api*.com^
 ! ||speeddials.opera.com^
+||*-proxy.satoshi.opera-api2.com^
 !
 ! -- =Other=
 !
@@ -1295,6 +1300,7 @@
 @@||s3-alpha-sig.figma.com^
 @@||static-verify.sec.xiaomi.com^
 @@||verify.sec.xiaomi.com^
+@@||stream*.tv41.ru^
 !
 !
 ! ===
@@ -1333,6 +1339,9 @@
 ||adalh-zcq.com^
 ||softversterport.gq^
 ||obqj2.com^
+||hellopeople.app.tc^
+||onclick3.shop^
+||cimurak.ru^
 !
 !
 !

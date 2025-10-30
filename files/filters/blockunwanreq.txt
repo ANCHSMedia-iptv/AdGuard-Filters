@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.5.6-R
-! TimeUpdated: 2025-10-25T13:23:42+00:00
+! Version: 4.5.7-R
+! TimeUpdated: 2025-10-30T15:39:14+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1991,6 +1991,13 @@ $removeparam=redirected
 ||storage-asset.msi.com/frontend/js/gaeventdirectpush.js^$script,domain=msi.com
 ||securelist.ru$removeparam=kaspr
 ||kaspersky.ru$removeparam=kaspr
+||sentry.sbercloud.tech^$important
+||sentry.papajohns.ltd^$important
+||sync.ad-cdek.ru^$important
+||api.cloud.ru/analyticsgateway/v*/$domain=cloud.ru,important
+||s.vtb.ru/mf/mf_*_ads/*/$script,css,domain=online.vtb.ru
+||h.vtb.ru/projects/vtbfl/models/sapphirePushNotificationBanner/$xhr,domain=online.vtb.ru
+||online.vtb.ru/msa/api-gw/private/loya/loya-sdv/counters/countersQuantity^$xhr,domain=online.vtb.ru
 !
 !
 !
@@ -2963,7 +2970,7 @@ outsidethebox.ms##div.site-container:first-child > div.footer-widgets:nth-child(
 moobl.ru###people
 moobl.ru###head-left > div.mRub.fa.fa-rub:nth-child(3)
 ##a[href*="/panel/?a=ustat"]
-lk.rt.ru###app-header > a.app-header_banner:first-child
+lk.rt.ru##div[class^="carousel banner-carousel banner-carousel-style-header"]
 sputnik24.tv##div[class^="cookie-warning_warningWrap__uX5bj"]
 shazam.com##div:nth-child(2) > div:first-child > div.Navigation_shzTransparentHeader__aDK0i:first-child > div.Navigation_headerBody__GSgjj.Navigation_atTop__jU9nA.isTransparent > div.Navigation_contentWrapper__tXnYC:first-child > div:first-child
 ! Раздел Мой мир на главном сайте Mail. 
@@ -3309,7 +3316,6 @@ base64decode.org##div.row.main_center:first-child > div.content_color.column.gro
 ntvplus.tv##header.head:nth-child(3) > nav.head--top:first-child > div.head--top-container.container > div.head--age-label:first-child
 ##span[id*="sputnik-informer"]
 cityserver.ru##div[style^="margin-top: 15px; display: inline-block"][id="sputnik-informer"]
-! ##div[class^="clearfix"]
 tvzavr.ru###__next > div.wrap:last-child > div.cookie-warning_warningWrap__uX5bj:nth-child(3)
 mobihobby.ru##div[class^="twidget"]
 mobihobby.ru##div[class^="mobot_popup mobot_popup_subs"]
@@ -3348,7 +3354,7 @@ servicebox.ru##div[class^="empty"]
 servicebox.ru##div[class^="popup-next"]
 !
 ! 16.10.25: После блокировки, к сожалению, ничего не работает на сайте.. хитро..
-rostelecom-shop-csrrr.vercel.app##dialog[class="modal-motion_root__cEPJb cookie-alert_root__GsSTa"]
+rostelecom-shop-csrrr.vercel.app##dialog[class^="modal-motion_root__cEPJb cookie-alert_root__GsSTa"]
 rostelecom-shop-csrrr.vercel.app##div[class^="cookie-alert_root__wrapper__TkjwZ container"]
 !
 !
@@ -3413,7 +3419,7 @@ volte.yota.ru###sbs-1151071536-175196382511557630
 iphones.ru##div.header__menu-project-cont:nth-child(4) > div.container > ul.header__menu-project.need-telemetry
 iphones.ru##div.header__menu-project-cont:nth-child(4)
 iphones.ru###\31 168611 > div.content-wrap.content-wrap_post.content-wrap-mod:first-child > div.sidebar:last-child
-~armtorg.ru##a[href="://armtorg.ru/top/in/"]
+~armtorg.ru##a[href*="://armtorg.ru/top/in/"]
 relasko.ru##td[align="center"]
 motivtelecom.ru###root > div.page__main-content-wrap > div.cookie-agreement:nth-child(6) > div.page__container.wrap-lg
 motivtelecom.ru###root > div.page__main-content-wrap > div.cookie-agreement:nth-child(6)
@@ -3425,7 +3431,7 @@ ligarobotov.ru###elementor-popup-modal-3337 > div.dialog-widget-content.dialog-l
 ligarobotov.ru###elementor-popup-modal-3337
 algoritmika-ekb.ru###elementor-popup-modal-14520 > div.dialog-widget-content.dialog-lightbox-widget-content.animated
 algoritmika-ekb.ru###elementor-popup-modal-14520
-
+androidinsider.ru##.link-default
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3670,6 +3676,7 @@ voka.tv#%#//scriptlet('set-local-storage-item', 'ALLOW_COOKIES', 'true')
 ||*merchandise.opera-api*.com^
 ||speeddials.opera.com/api/v*/partner-content$important
 ||speeddials.opera.com/api/v*/external-suggestions-config
+-proxy.satoshi.opera-api2.com^
 ! =
 !
 !
@@ -3897,6 +3904,7 @@ yandex.ru##.FuturisSnippet
 ||google.com/dfo$important
 ! /*/GenerateIT^$xhr,other
 ||cse.google.com/adsense/search/async-ads.js^$script,important
+||appsgrowthpromo*.googleapis.com^$important
 !
 ! ===
 !
@@ -4607,14 +4615,13 @@ kommersant.ru#@#.footer_adv
 @@||shedevrum.ai/api/v*/notifications/counter$xhr,domain=shedevrum.ai,important
 farmlend.ru#@$#body { overflow: visible !important; }
 @@||hilton.com/.well-known/
-@@/ngenix-*/bot-challenge/
 @@||invitro.ru/bitrix/tools/composite_data.php^$xhr,domain=invitro.ru
 @@||instagram.com/api/graphql$domain=instagram.com
 @@||voka.tv/spbtvplayer/$script,domain=voka.tv
 @@||tilda.ru/login/getcaptchastatus/^$xhr,domain=tilda.ru
 @@||sso.dzen.ru/install?
-@@||yandex.ru^$cookie=_yasc,~third-party
-@@||yandex.*^$cookie=_yasc,~third-party
+! @@||yandex.ru^$cookie,~third-party
+! @@||yandex.*^$cookie,~third-party
 @@||ajax.googleapis.com/ajax/libs/jqueryui/
 @@||s3-alpha-sig.figma.com^
 @@||cdn.discordapp.com/bad-domains/current_revision.txt^$xhr,domain=discord.com
@@ -4643,6 +4650,10 @@ xabar.uz#@#.counters
 @@||stream*.tv41.ru^
 @@/ngenix-*/bot-challenge/
 @@||xiaomi.com^$cookie
+@@||poiskzip.ru^$cookie=poiskzip:naive-theme
+@@||sso.*.*/install?
+! 30.10.25: ложная блокировка из-за фильтра xinggsf, в белом списке.
+@@||console.cloud.ru/u-api/bff-console/v*/me/banners$xhr,domain=console.cloud.ru
 !
 !
 ! -
@@ -4768,6 +4779,8 @@ xabar.uz#@#.counters
 ||clk.li/SwmO^$all
 ||obqj2.com^$all
 ||hellopeople.app.tc^$all
+||onclick3.shop^$all
+||cimurak.ru^$all
 !
 !
 !
