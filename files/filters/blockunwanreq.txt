@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.5.7-R
-! TimeUpdated: 2025-10-30T15:39:14+00:00
+! Version: 4.5.8-R
+! TimeUpdated: 2025-11-01T11:39:14+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -690,7 +690,7 @@ $cookie=/__ddg*/,important
 ! api.vigo.one/uxzoom/*/notify$xhr (779)
 ||tolstoycomments.com^$domain=2x2tv.ru
 ||s.rbk.ru/*rbcnews_static/rbcnews-*/scripts/build/_metrika-config.js^$script,domain=rbc.ru,important
-/info-service/api/v*/ev/$xhr,ping,domain=rbc.ru|sportrbc.ru,important
+.ru/info-service/api/v*/ev/$xhr,ping,domain=rbc.ru|sportrbc.ru,important
 ||rbc.ru/track/*/*/$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,important
 !
 ||rbc.ru/rbcmetr/stat/$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,important
@@ -848,7 +848,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||pushapi.mail.ru^
 ||events.maps.mail.ru^$important
 ||ms.ok.ru^$important
-||ingest.*.sentry.io^$domain=~sentry.io,important
+||ingest*.sentry.io^$domain=~sentry.io,important
 ||cdn.aaacdn.net^
 ||sentry.x5.ru^$important
 ||tabun.info^
@@ -1913,7 +1913,7 @@ $cookie=qrator_ssid,important
 ||cdn*.saby.ru/cdn/Maintenance/*/js/checkSoftware.*.js^$script,domain=saby.ru
 ||popmechanic.ru^$important
 ||ducip.megafon.ru/show/$script,domain=megafon.ru
-||cdn.forbes.ru/_nuxt/Smi2.*.css^$css,domain=forbes.ru
+||cdn.forbes.ru/_nuxt/Smi2*.css^$css,domain=forbes.ru
 ||cdn.forbes.ru/_nuxt/Sparrow*.css^$css,domain=forbes.ru
 ||cdn.forbes.ru/_nuxt/Infox.*.css^$css,domain=forbes.ru
 ||forbes.*/api/visiting/node$xhr,domain=forbes.*
@@ -1998,7 +1998,23 @@ $removeparam=redirected
 ||s.vtb.ru/mf/mf_*_ads/*/$script,css,domain=online.vtb.ru
 ||h.vtb.ru/projects/vtbfl/models/sapphirePushNotificationBanner/$xhr,domain=online.vtb.ru
 ||online.vtb.ru/msa/api-gw/private/loya/loya-sdv/counters/countersQuantity^$xhr,domain=online.vtb.ru
-!
+||consultant.ru/cookies/notification/^$xhr,domain=consultant.ru,important
+||habr.com/stats/$ping,domain=habr.com,important
+||portal-sentry-v*.vk.team^$important
+||vkcs-scripts.mrgcdn.ru/master/app-*.js^$script,domain=cloud.vk.com
+||adthrive.com^$third-party,domain=~adthrive.com,important
+||videoplayerhub.com^$important
+$cookie=qrator_msid,important
+||static.aio.media/v*/loader.js^$script,third-party,domain=~aio.media,important
+||meatydime.com^$important
+||api-router.kaspersky-labs.com/pulse/rum/$ping,domain=kaspersky.ru,important
+||kameleoon.io^$third-party,domain=~kameleoon.com,important
+||comss.ru/js/report.js^$script,domain=comss.ru
+||lc.rt.ru^$cookie=ahoy_visitor
+||lc.rt.ru^$cookie=ahoy_visit
+||lc.rt.ru/backend/packs/yandex_metrika-$script,domain=lc.rt.ru,important
+||intel.com$removeparam=fromnotif
+||api.telesputnik.ru/api/post-view^$xhr,domain=telesputnik.ru,important
 !
 !
 !
@@ -3382,7 +3398,7 @@ buro247.ru##div[class*="banner  commercial_"]
 buro247.ru##.sticky-container
 buro247.ru##div.main_content_container.active_art:nth-child(15) > div.infinity-page.js-infinity-page.tpl-show > div.wrapper:last-child
 buro247.ru###subscribeSector
-forbes.ru###article_484953 > div.bwWh8 > div._9LU0a:nth-child(3) > div.yzAGp:first-child > div.LIay6._1dVhJ.vzEn2._2ANCk:last-child > div.rxH4j:nth-child(2) > div.fVh36.DnvB1:last-child
+forbes.ru##.fVh36, .DnvB1
 svyazon.ru###root > header.header-desktop:first-child > div.top-info-banner:first-child
 svyazon.ru###root > div.vue-portal-target:last-child > div.s-modal.s-modal--view-cookies.s-modal--color-cookies
 svyazon.ru###root > div.vue-portal-target:last-child
@@ -3432,6 +3448,20 @@ ligarobotov.ru###elementor-popup-modal-3337
 algoritmika-ekb.ru###elementor-popup-modal-14520 > div.dialog-widget-content.dialog-lightbox-widget-content.animated
 algoritmika-ekb.ru###elementor-popup-modal-14520
 androidinsider.ru##.link-default
+consultant.ru##div[id*="ban__"]
+consultant.ru##div[class^="document-page__banner-middle bn width-container"]
+##div[class^="aio_banner"]
+##div[id^="AIONative"]
+##div[id*="aio-"]
+##div[id*="aio_"]
+##div[id*="strip-software-single-ad-zone"]
+##div[class^="vivo-track-px"]
+3dnews.ru##div[class^="vivo-wide"]
+rsload.net###gotop
+desmos.com###graph-container > div.dcg-dom-change-wrapper > div.dcg-calculator-api-container-v1_12 > div.dcg-container.dcg-tap-container.touchtracking_id_1.dcg-hovered > div.dcg-exppanel-outer__wrapper:first-child > div.dcg-exppanel-outer > div.dcg-exppanel-container.dcg-add-shadow.dcg-global-mute-on:first-child > div.dcg-exppanel.dcg-disable-horizontal-scroll-to-cursor:last-child > div.dcg-expressionlist > div.dcg-notice-wrapper.dcg-text-selectable:nth-child(4)
+desmos.com###graph-container > div.dcg-dom-change-wrapper > div.dcg-calculator-api-container-v1_12 > div.dcg-container.dcg-tap-container.touchtracking_id_1.dcg-hovered > div.dcg-exppanel-outer__wrapper:first-child > div.dcg-exppanel-outer > div.dcg-exppanel-container.dcg-add-shadow.dcg-global-mute-on:first-child > div.dcg-exppanel.dcg-disable-horizontal-scroll-to-cursor:last-child > div.dcg-expressionlist > div.dcg-notice-wrapper.dcg-text-selectable:nth-child(4) > aside.dcg-notice.dcg-notice--authenticate
+telesputnik.ru###page_509879 > div.page-article__wrapper:nth-child(6) > aside.article-sidebar.page-article__sidebar:last-child > section.subscription.page__subscription.subscription--sidebar
+telesputnik.ru###mount > div.wrapper > a.scroll-top._show:nth-child(6)
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3505,6 +3535,7 @@ voka.tv#%#//scriptlet('set-local-storage-item', 'applyCookie', 'true')
 voka.tv#%#//scriptlet('set-local-storage-item', 'ALLOW_COOKIES', 'true')
 #%#//scriptlet('set-local-storage-item', 'bugsnag-anonymous-id', '$remove$')
 4pda.*#$?#html[style] > body .advanced-area .post[itemid] ~ .post:not([itemid]):has(> [class] > script) { display: none !important }
+lc.rt.ru#%#//scriptlet('set-cookie', 'ahoy_track', 'false', 'none')
 ! (Waiting for adding more scripts..)
 !
 !
@@ -3853,6 +3884,7 @@ ya.ru##div[class^="rythm-feed"]
 ! yandex.ru/pogoda###react-aria-«Rcj9tldbnb» > div.AppSettingsClientModal_content__AFYNq.common_verticalScroll__sFq8B > ul.AppSettingsClientModal_content__list__K_0Ih.AppSettingsClientModal_content__list_rounded__B4H7H:last-child > li.AppSettingsClientModal_content__item__W2NI3:last-child > a
 ! yandex.ru/pogoda##div:nth-child(10) > div > div.AppLayoutCommon_overlay__h5IHD > div.AppLayoutTypeMain_contentWrapper__mZQ3q:last-child > aside.AppLayoutTypeMain_left__fUvzq:last-child > div:last-child > div.AppLeftPanelPromos_bottomLinks__WtJmk > a.AppLeftPanelPromos_bottomLinks__item__plzCV:first-child
 yandex.ru##.FuturisSnippet
+yandex.ru##.Distribution-Popup, .Distribution-Popup_hasShadow, .Distribution-Popup_motley_grey, .Distribution-Popup_layout_renew, .Distribution-Popup_animation_bounce, .Distribution-Popup_location_right-top, .Distribution-Popup_visible
 !
 !
 ! =
@@ -4655,6 +4687,13 @@ xabar.uz#@#.counters
 ! 30.10.25: ложная блокировка из-за фильтра xinggsf, в белом списке.
 @@||console.cloud.ru/u-api/bff-console/v*/me/banners$xhr,domain=console.cloud.ru
 !
+@@||vkcloud-static.ru^$cookie=frontapp
+@@||kaspersky-labs.com^$cookie=country
+@@||kaspersky.ru^$cookie=country
+@@||pdc.kaspersky.com/api/v*/download-bin/
+@@||pdc.kaspersky.com/DownloadManagers/*/*/
+@@||mathway.com^$cookie
+!
 !
 ! -
 ! Ломается сайт DeepL при применении правил блокировки к скриптам tracking-*.js, late-cookieBannerLax.*.js и стилю late-cookieBannerLax.*.css, которые приведены ниже и разрешены.
@@ -4781,6 +4820,8 @@ xabar.uz#@#.counters
 ||hellopeople.app.tc^$all
 ||onclick3.shop^$all
 ||cimurak.ru^$all
+||a-click68.icu^$all
+||vironin.info^$all
 !
 !
 !
