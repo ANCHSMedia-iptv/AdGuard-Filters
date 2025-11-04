@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.1.3-R
+! Version: 4.1.4-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-11-01T11:39:27+00:00
+! TimeUpdated: 2025-11-04T16:39:27+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 01.11.2025 11:39 UTC
+! Last Modified: 04.11.2025 16:39 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -894,6 +894,16 @@
 ||ads.adthrive.com^
 ||videoplayerhub.com^$important
 ||meatydime.com^$important
+||orbit-zenith.com^
+||stat.api.2gis.ru^$important
+||stat.api.2gis.*^$important
+||privacy.paramount.com^
+||spylog.com^$important
+||at.cbsi.com^
+||strangeclocks.com^
+||esm.apteka-april.ru^$important
+||service.banki.ru^$important
+||sgtm.kaspersky.de^$important
 !
 !
 !
@@ -1307,6 +1317,8 @@
 @@||static-verify.sec.xiaomi.com^
 @@||verify.sec.xiaomi.com^
 @@||stream*.tv41.ru^
+@@||msftncsi.com^
+@@||msftconnecttest.com^
 !
 !
 ! ===
@@ -1350,6 +1362,7 @@
 ||cimurak.ru^
 ||a-click68.icu^
 ||vironin.info^
+||rufanek.ru^
 !
 !
 !
