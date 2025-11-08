@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.6.1-R
-! TimeUpdated: 2025-11-07T15:39:14+00:00
+! Version: 4.6.2-R
+! TimeUpdated: 2025-11-08T18:37:45+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -287,7 +287,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||fga.citilink.ru/collect^$xhr,domain=citilink.ru,important
 ||dns-shop.ru/banner/get-header-banner/^$xhr,domain=dns-shop.ru
 ||alfastrah.ru/js/detectPrivateMode.*.js^$script,domain=alfastrah.ru,important
-||vk.com/al_video.php?act=track_player_events$xhr,important
+||vk.com/*video.php?act=track_player_events$xhr,important
 ||leto-leto.com/images/btn-sprite.png^$image,domain=leto-leto.com
 ! rlrt.ru/1rogx.min.js^$script
 ! bitrix24.sportmoda.ru/upload/crm/tag/call.tracker.js$script,domain=sportmoda.ru
@@ -1557,12 +1557,12 @@ $cookie=RadioStatistica
 ||pic.rutubelist.ru/links/2025-04-09/a4/d0/a4d01f661c2684ca33338d9fd1711207.svg^$image,domain=rutube.ru
 ||rutube.ru/api/abtests/active-tests/$xhr,domain=rutube.ru
 /?bxrand=$xhr
-/.well-known/ddos-guard/id/$third-party,image,important
+/.well-known/ddos-guard/id/$image,third-party,important
 ||cdn.iz.ru/profiles/portal/themes/purple/js/ads-tools.js$script,domain=iz.ru,important
 ||cdn.iz.ru/profiles/portal/themes/purple/js/index/two-col-with-advertise*/two-col-with-advertise*.js$script,domain=iz.ru,important
 ||aif.ru/redesign2018/img/sharings/*.svg$image,domain=aif.ru
 ||vkvideo.ru/dist/web/ads_light.*.js^$script,important
-||vkvideo.ru/al_video.php?act=track_player_events$xhr,important
+||vkvideo.ru/*video.php?act=track_player_events$xhr,important
 ||a.ria.ru^$important
 /js/libs/ria.share.js$script,domain=ria.ru|1prime.ru
 /js/libs/ria.share.sliding.js$script,domain=ria.ru|1prime.ru
@@ -1639,7 +1639,7 @@ $removeparam=yaCounter,doc,script,xhr
 ||tv.mail.ru/*/js/cmpld/common/*/page-sentry.js^$script,domain=tv.mail.ru
 ||tv.mail.ru/*/js/cmpld/tv/*/fast-slot.js^$script,domain=tv.mail.ru
 ||vkvideo.ru/video_mediascope.php$image,important
-||vkvideo.ru/al_video.php?act=live_heartbeat$xhr,important
+||vkvideo.ru/*video.php?act=live_heartbeat$xhr,important
 ||vitrina.getshop.tv/v*/vitrina/getAd?$xhr
 ! catalog.api.2gis.ru/*/markers/clustered?key=*&*&locale=*&building_id=*&*&search_device_type=*&search_user_hash=*&viewpoint1=*&viewpoint2=*&search_type=*&fields=*&stat[sid]=*&stat[user]=*&shv=*&r=*$xhr,domain=2gis.ru
 ||go-mpulse.net^$third-party
@@ -1665,7 +1665,7 @@ $removeparam=yaCounter,doc,script,xhr
 ||tenor.googleapis.com/v*/registerevent$ping,domain=tenor.com
 ||cdn.lifehacker.ru/wp-content/uploads/2022/12/$image,domain=lifehacker.ru
 ||logos44.ru/wp-content/uploads/2025/09/stometrovka_new$image,domain=logos44.ru
-||vk.com/al_video.php?act=live_heartbeat$xhr,important
+||vk.com/*video.php?act=live_heartbeat$xhr,important
 $cookie=smi_sid
 $cookie=smi_last_visit_time
 ||services.fandom.com/geoip/location^$xhr
@@ -2084,6 +2084,19 @@ $removeparam=yadiscount
 ||lug-info.ru/i/telegram-subscribe.avif$image,domain=lug-info.ru
 ||lug-info.ru/views_counter/$image,domain=lug-info.ru,important
 ||lug-info.ru/ajax/telegram/$xhr,domain=lug-info.ru
+||ynuf.aliapp.org^
+||ynuf.aliapp.org/saveWb.json
+$removeparam=__rr
+||proxydocker.com/template/img/blank.gif^$image,domain=proxydocker.com,redirect-rule=1x1-transparent.gif,important
+||savefrom.net/build/js/basicMetricsTracking.js$script,domain=savefrom.net,important
+||savefrom.net/build/js/experimentLoader.js$script,domain=savefrom.net,important
+||savefrom.net/build/js/chunk*web-vitals.js$script,domain=savefrom.net,important
+||vkvideo.ru$removeparam=partner_name
+||vkvideo.ru/*video.php?act=watch_stat$xhr,important
+||vk.com/*video.php?act=watch_stat$xhr,important
+||vkvideo.ru/*video.php?act=watch_stat$xhr,important
+||vkvideo.ru/*video.php?act=video_view_started$xhr,important
+||vk.com/*video.php?act=video_view_started$xhr,important
 !
 !
 !
@@ -2163,7 +2176,7 @@ $removeparam=yadiscount
 ! megamarket.ru/api/fl/idw-smm^$xhr (новое правило, строка 589)
 ||api.megamarket.tech/api/colibri/events/$xhr,domain=megamarket.ru,important
 ||megamarket.ru/api/*/v*/promoContentService/$xhr,domain=megamarket.ru,important
-||api.megamarket.tech/api/events/config$xhr,domain=megamarket.ru,important
+||api.megamarket.tech/api/events/$xhr,domain=megamarket.ru,important
 !
 ! Rule for blocking banner ad images (new design) (PC version).
 ! Правило блокировки рекламных баннеров (новый дизайн) (ПК версия).
@@ -2224,7 +2237,7 @@ $removeparam=yadiscount
 ||widgets.pinterest.com^$important
 ||*-net.pinterest.com^$important
 ||*-net.pinimg.com^$important
-||pinterest.com/resource/InviteSocialTrackingParamNonInviteResource/
+||pinterest.com/resource/InviteSocialTrackingParamNonInviteResource/$important
 !
 ! ===
 !
@@ -3944,10 +3957,10 @@ arsibtower-tyumen.ru#%#//scriptlet('set-session-storage-item', 'visited', 'n')
 ||advertising.yandex.ru^
 ||yandex.$removeparam=from
 ||ya.$removeparam=from
-||yandex.*^$removeparam=from
-||ya.*^$removeparam=from
-||yandex.ru^$removeparam=from
-||ya.ru^$removeparam=from
+||yandex.*$removeparam=from
+||ya.*$removeparam=from
+||yandex.ru$removeparam=from
+||ya.ru$removeparam=from
 ||yastatic.net/es5-shims/*/es5-shims.*.js$script,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz
 ! yastatic.net/s3/web4static/*/static/App-FootScript_advRsya*.js (Waiting for adding..)
 ||yastatic.net/s3/web4static/*/static/media/noize-transparent*.gif^$image,redirect-rule=1x1-transparent.gif
@@ -4000,8 +4013,9 @@ ya.ru##div[class^="rythm-feed"]
 ! yandex.ru/pogoda##div[class^="AppPromoInner_container__mT1cB"]
 ! yandex.ru/pogoda###react-aria-«Rcj9tldbnb» > div.AppSettingsClientModal_content__AFYNq.common_verticalScroll__sFq8B > ul.AppSettingsClientModal_content__list__K_0Ih.AppSettingsClientModal_content__list_rounded__B4H7H:last-child > li.AppSettingsClientModal_content__item__W2NI3:last-child > a
 ! yandex.ru/pogoda##div:nth-child(10) > div > div.AppLayoutCommon_overlay__h5IHD > div.AppLayoutTypeMain_contentWrapper__mZQ3q:last-child > aside.AppLayoutTypeMain_left__fUvzq:last-child > div:last-child > div.AppLeftPanelPromos_bottomLinks__WtJmk > a.AppLeftPanelPromos_bottomLinks__item__plzCV:first-child
+yandex.ru##.Distribution-Popup, .Distribution-Popup_hasShadow, .Distribution-Popup_motley_grey, .Distribution-Popup_layout_renew, .Distribution-Popup_animation_bounce, .Distribution-Popup_location_right-top, .Distribution-Popup_visible
 yandex.ru##.FuturisSnippet
-yandex.ru##.Distribution-Popup
+##a[href*="yabs.yandex.ru/count/"]
 !
 !
 ! =
@@ -4185,7 +4199,7 @@ yandex.ru##.Distribution-Popup
 @@||google.com/recaptcha/
 @@||*.googlevideo.com^$important
 aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
-@@||csp.yandex.net/csp
+! @@||csp.yandex.net/csp
 @@||pay.yandex.ru/sdk/v*/pay.js^$script,xhr
 @@||uglyemail.com^
 @@||google.com/*/cleardot.gif$image,important,domain=google.com|mail.google.com
@@ -4803,6 +4817,7 @@ xabar.uz#@#.counters
 @@/ngenix-*/bot-challenge/
 @@||xiaomi.com^$cookie
 @@||poiskzip.ru^$cookie=poiskzip:naive-theme
+@@||poiskzip.ru^$cookie=poiskzip:native-theme
 @@||sso.*.*/install?
 ! 30.10.25: ложная блокировка из-за фильтра xinggsf, в белом списке.
 @@||console.cloud.ru/u-api/bff-console/v*/me/banners$xhr,domain=console.cloud.ru
@@ -4823,6 +4838,7 @@ xabar.uz#@#.counters
 @@||msftconnecttest.com^
 @@||sentry.radolyn.com^$app=AyuGram.exe
 @@||plus.rtrs.ru/app/static*/shaka-player.*.js
+browserleaks.com$@$link[rel="manifest"]
 !
 !
 ! -
