@@ -3,7 +3,7 @@
 ! Version: 4.1.6-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-11-10T18:38:08+00:00
+! TimeUpdated: 2025-11-11T16:00:08+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 10.11.2025 18:38 UTC
+! Last Modified: 11.11.2025 16:00 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -915,6 +915,9 @@
 ||oko.sima-land.ru^$important
 ||cityadstrack.com^$important
 ||ynuf.aliapp.org^
+||pms.mail.ru^$important
+||sentry.adspower.com^$important
+||qoopler.ru^$important
 !
 !
 !
@@ -1330,7 +1333,7 @@
 @@||stream*.tv41.ru^
 @@||msftncsi.com^
 @@||msftconnecttest.com^
-@@||sentry.radolyn.com^$app=AyuGram.exe
+@@||sentry.radolyn.com^
 !
 !
 ! ===
@@ -1376,6 +1379,7 @@
 ||vironin.info^
 ||rufanek.ru^
 ||doburex.ru^
+||1win-14smu.top^
 !
 !
 !
