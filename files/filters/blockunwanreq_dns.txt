@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.1.6-R
+! Version: 4.1.7-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-11-11T16:00:08+00:00
+! TimeUpdated: 2025-11-17T15:51:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 11.11.2025 16:00 UTC
+! Last Modified: 17.11.2025 15:51 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -174,9 +174,9 @@
 ||google-analytics.com^$important
 ||*ds.metric.gstatic.com^$important
 ||analytics.google.com^$important
-||doubleclick.net^$important
-||googlesyndication.com^$important
-||adservice.google.com^$important
+||doubleclick.*^$important
+||googlesyndication.*^$important
+||adservice.google.*^$important
 ||googleanalytics.com^$important
 !
 ||appsgrowthpromo*.clients*.google.com^$important
@@ -190,6 +190,8 @@
 ||1e100.net^
 ||appsgrowthpromo*.googleapis.com^$important
 ||peoplestackwebexperiments*.clients*.google.com^
+||infinitedata*.googleapis.com^
+||safeframe.googleapis.com^$important
 !
 ! ===
 !
@@ -918,6 +920,7 @@
 ||pms.mail.ru^$important
 ||sentry.adspower.com^$important
 ||qoopler.ru^$important
+||prodregistryv2.org^$important
 !
 !
 !
