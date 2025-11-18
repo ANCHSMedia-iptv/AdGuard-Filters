@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.6.5-R
-! TimeUpdated: 2025-11-17T15:50:25+00:00
+! Version: 4.6.6-R
+! TimeUpdated: 2025-11-18T16:50:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2149,6 +2149,27 @@ $cookie=tvkuid,third-party
 ||id.vk.*$cookie,third-party,domain=~vk.com|~vk.ru
 ||afrinz.ru/site/storage/2023/10/logo_telegramm.png^$image,domain=afrinz.ru
 /banners/index.json^$xhr,domain=learn.microsoft.com
+||sock.bionika-digital.ru^
+/user-activity-tracker/user-activity-tracker.$script,important
+$cookie=cid
+||trudvsem.ru/assets/infoblocks/prr_site_agreement/default/agreement.html$xhr,domain=trudvsem.ru,important
+||trudvsem.ru/assets/main-theme/js/share.js$script,domain=trudvsem.ru
+/prr_site_agreement/*/agreement.html
+||goldapple.ru/front/api/event/$xhr,ping,domain=goldapple.ru,important
+||goldapple.ru/front/api/apm/$xhr,domain=goldapple.ru,important
+||udqrh6.ru^
+/bitrix/js/vidjet*/chat2.j$script
+/talosion/tracker.js$script,important
+/IMCallMeAskMe/$script
+||ortomini.ru/media/images/xb-skid20_3.jpg.pagespeed.ic.cib4BKjmzV.webp:^$image,domain=ortomini.ru
+_pagespeed_beacon
+/jquery.dotdotdot.$script
+||yastatic.net/s3/chat/widget.js^$script,domain=ortoatlant.ru
+||analytics.alloka.ru^$important
+||ortoatlant.ru/image/lk_klk.png^$image,domain=ortoatlant.ru
+$cookie=/*_referrer/
+/wp-content/plugins/wp-yandex-metrika/$script,important
+||planeta-orto.ru/files/zvonok.jpg^$image,domain=planeta-orto.ru
 !
 !
 !
@@ -2327,6 +2348,8 @@ $cookie=tvkuid,third-party
 ||*basket*.wbbasket.ru/vol*/site/j/spa/modules/onlineChat/onlineChatPopup.*.js^$script,domain=wildberries.ru|global.wildberries.ru
 ||*basket*.wbbasket.ru/vol*/site/s/*/style/modules/popups/chatPopup.*.css^$css,domain=wildberries.ru|global.wildberries.ru
 ||*basket*.wbbasket.ru/vol*/site/app/sentryInit.*.js^$script,domain=wildberries.ru|global.wildberries.ru
+||*basket*.wbbasket.ru/vol*/data/stores-data.json^$xhr,domain=wildberries.ru
+||wilberries.ru$removeparam=ab_testing
 !
 !
 !
@@ -2358,10 +2381,10 @@ $cookie=tvkuid,third-party
 wildberries.ru##div[class^="lk-advertisement"]
 !
 ! Раздел «Авиабилеты» сверху поиска (Российская версия).
-wildberries.ru###travelSwitcher > div.simple-menu__switch > a.simple-menu__switch-item.j-avia:nth-child(2)
+wildberries.ru###diamondsMenu > div.simple-menu__diamonds-wrap:last-child > ul.simple-menu__diamonds > li.diamondsItem--bKv2p.j-avia:nth-child(3)
 !
 ! Раздел «Wibes» сверху поиска (Российская версия).
-wildberries.ru###travelSwitcher > div.simple-menu__switch > a.simple-menu__switch-item:last-child
+wildberries.ru###diamondsMenu > div.simple-menu__diamonds-wrap:last-child > ul.simple-menu__diamonds > li.diamondsItem--bKv2p.j-wibes:first-child
 !
 ! Раздел «WB Travel» в ЛК (Российская версия).
 wildberries.ru###body-layout > div.lk-menu:first-child > div.lk-menu__container.j-lk-menu-top > div.lk-menu-main.hide-mobile:nth-child(2) > ul.lk-menu-main__content > li.lk-menu-main__item:nth-child(4)
@@ -2371,9 +2394,10 @@ wildberries.ru##a[href^="/subscription"]
 !
 ! Раздел «Отели» сверху поиска (Российская версия).
 wildberries.ru###travelHotelsSwitcher
+wildberries.ru###diamondsMenu > div.simple-menu__diamonds-wrap:last-child > ul.simple-menu__diamonds > li.diamondsItem--bKv2p.j-hotels:nth-child(2)
 !
 ! Раздел «Работа в Wildberries» (Российская версия).
-wildberries.ru##div.wrapper.j-wrapper:first-child > header.header.j-header:first-child > div.header__container > div.header__top.hide-mobile:first-child > ul.header__simple-menu.simple-menu:first-child > li.simple-menu__item:last-child
+wildberries.ru###diamondsMenu > div.simple-menu__diamonds-wrap:last-child > ul.simple-menu__diamonds > li.diamondsItem--bKv2p.j-work:last-child
 !
 ! Раздел «Авиабилеты» в меню каталога (Российская версия).
 wildberries.ru##li[data-menu-id="1236"]
@@ -2387,6 +2411,7 @@ wildberries.ru###body-layout > div.lk-menu:first-child > div.lk-menu__container.
 !
 ! Реклама туров сверху поиска (Российская версия).
 wildberries.ru###travelSwitcher
+wildberries.ru###diamondsMenu > div.simple-menu__diamonds-wrap:last-child > ul.simple-menu__diamonds > li.diamondsItem--bKv2p.j-funSun:nth-child(4)
 !
 ! Раздел «Лотерея» в меню каталога (Российская версия).
 wildberries.ru##li[data-menu-id="1238"]
@@ -2403,6 +2428,8 @@ wildberries.ru##li[data-menu-id="1234"]
 ! Раздел «Транспортные средства» в меню каталога (Российская версия).
 wildberries.ru##li[data-menu-id="130624"]
 !
+! Раздел «Новостройки» сверху поиска (Российская версия).
+wildberries.ru###diamondsMenu > div.simple-menu__diamonds-wrap:last-child > ul.simple-menu__diamonds > li.diamondsItem--bKv2p.j-realty:nth-child(7)
 !
 !
 !
@@ -2419,7 +2446,7 @@ wildberries.ru##li[data-menu-id="130624"]
 ! Rules for blocking scripts, styles (CSS) and ad images are present, as well as personalized recommendations.
 ! Присутствуют правила блокировки скриптов, стилей (CSS) и рекламных изображений, а также персонализированных рекомендаций.
 !
-||ir.ozone.ru/s3/cms/*/qr-code_*.png^$image,domain=ozon.ru|ozon.by
+/s3/cms/*/qr-code_*.png^$image,domain=ozon.ru|ozon.by
 ||st.ozone.ru/assets/*/detached/marketing*/entry.*.js^$script,domain=ozon.ru|ozon.by
 ||st.ozone.ru/s3/ozon-tag-manager/*/sdk.js^$script,important,domain=ozon.ru|ozon.by
 ! *ozon.*/api/entrypoint-api.bx/page/json/v*^$xhr,domain=ozon.ru|ozon.by **
@@ -2432,14 +2459,14 @@ wildberries.ru##li[data-menu-id="130624"]
 ! st.ozone.ru/assets/*/detached/search/search-tap-tags.js^$script,domain=ozon.ru|ozon.by **
 ! ozon.ru/api/composer-api.bx/_action/v*/getSearchTapTags^$xhr,domain=ozon.ru **
 ||st.ozone.ru/s3/client-metrics/*.js^$script,domain=ozon.ru|ozon.by
-||ir.ozone.ru/s3/cms/*/ozon_job-*.png^$image,domain=ozon.ru
-! ir.ozone.ru/s3/cms/*/*_11.11_*.jpg^$image,domain=ozon.ru
-||ir.ozone.ru/s3/cdn-public/ozoncreditcard.svg^$image,domain=ozon.ru
-||ir.ozone.ru/s3/cms/*/wc250/*.jpg^$image,domain=ozon.ru
-||ir.ozone.ru/s3/cms/0e/ta0/group_357649.png^$image,domain=ozon.ru
-||ir.ozone.ru/s3/cms/9b/te1/group_357648.png^$image,domain=ozon.ru
-||ir.ozone.ru/s3/cms/20/tcc/group_357647.png^$image,domain=ozon.ru
-||ir.ozone.ru/s3/cms/f7/tb3/rustore_desk.svg^$image,domain=ozon.ru
+/s3/cms/*/ozon_job-*.png^$image,domain=ozon.ru
+! i/s3/cms/*/*_11.11_*.jpg^$image,domain=ozon.ru
+/s3/cdn-public/ozoncreditcard.svg^$image,domain=ozon.ru
+/s3/cms/*/wc250/*.jpg^$image,domain=ozon.ru
+/s3/cms/0e/ta0/group_357649.png^$image,domain=ozon.ru
+/s3/cms/9b/te1/group_357648.png^$image,domain=ozon.ru
+/s3/cms/20/tcc/group_357647.png^$image,domain=ozon.ru
+/s3/cms/f7/tb3/rustore_desk.svg^$image,domain=ozon.ru
 !
 ! -The rule applies to Ozon and Ozon Bank's website. -
 ! - Правило применимо к сайту Озона и Озон Банка. -
@@ -2472,19 +2499,19 @@ ozon.ru###layoutPage > div.b6:first-child > div.d0m_9 > div > div.container.c:nt
 ozon.ru##div[class^="om_21_a om_21_a0"][style^="background-color: var(--bgSecondary);"]
 !
 ! Раздел «Ozon Travel» в ЛК в «Заказы» сверху (Российская версия). (кому это надо?)
-ozon.ru##a[href*="/my/travel/orderlist"][class^="if_15"]
+! ozon.ru##a[href*="/my/travel/orderlist"][class^="if_15"]
 !
 ! Раздел «Ozon Travel» в ЛК левом меню (Российская версия). (кому это надо?)
-ozon.ru##a[href*="/my/travel/orderlist"][class^="q4b1_3_0-a tsBody400Small h0u_23 hu0_23"]
+! ozon.ru##a[href*="/my/travel/orderlist"][class^="q4b1_3_0-a tsBody400Small h0u_23 hu0_23"]
 !
 ! Раздел «Ozon Рассрочка» в ЛК левом меню (Российская версия). (кому это надо?)
 ! [не актуально]
 !
 ! Раздел «Мои компании» в ЛК левом меню (Российская версия). (обычным покупателям это не надо)
-ozon.ru##a[href^="/my/legaldetails"][class^="q4b1_3_0-a uw_ag7"]
+! ozon.ru##a[href^="/my/legaldetails"][class^="q4b1_3_0-a uw_ag7"]
 !
 ! Раздел «Мой гараж» в ЛК левом меню (Российская версия). (кому это надо?)
-ozon.ru##a[href^="/my/garage"][class^="q4b1_3_0-a tsBody400Small h0u_23 hu0_23"]
+! ozon.ru##a[href^="/my/garage"][class^="q4b1_3_0-a tsBody400Small h0u_23 hu0_23"]
 !
 ! Плашка о куки и реком. технологиях (Российская версия).
 ozon.ru##div[class^="r0 r1"]
@@ -2498,12 +2525,12 @@ ozon.ru##div[style^="padding:0;margin-left:0;margin-right:0;margin-top:0;margin-
 ozon.ru##a[href*="/credit_card/"][class^="q4b1_3_0-a tsBody400Small h0u_23 hu0_23"]
 !
 ! Раздел «Билеты, отели» сверху у поиска (Российская версия).
-ozon.ru##a[href*="https://www.ozon.ru/travel/?"][class^="q4b1_3_0-a uw_a1i"]
+ozon.ru##a[href*="https://www.ozon.ru/travel/?"][class^="q4b1_3_0-a uw_a10"]
 !
 ! Рекламные блоки (Российская версия).
-ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:last-child > div > div.container.c > div:last-child > div > div.jd9_11:nth-child(3)
-ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:last-child > div > div.container.c > div:last-child > div > div.jd9_11:nth-child(7)
-ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a:last-child > div > div.container.c > div:last-child > div > div.jd9_11:nth-child(11)
+ozon.ru###layoutPage > div.b6:first-child > div.uw_ap2:last-child > div > div.container.c > div:last-child > div > div.jl3_11:nth-child(3)
+ozon.ru###layoutPage > div.b6:first-child > div.uw_ap2:last-child > div > div.container.c > div:last-child > div > div.dl3_11:nth-child(7)
+ozon.ru###layoutPage > div.b6:first-child > div.uw_ap2:last-child > div > div.container.c > div:last-child > div > div.jl3_11:nth-child(11)
 !
 ! Виджет в подвале сайта (Российская версия).
 ! Придётся придумывать что то другое..
@@ -3681,6 +3708,24 @@ leader-id.ru###footer > div.hOWxQVIgW\+Jv > div.ifL0E6jU1T3I:last-child > div:fi
 afrinz.ru###page-content > section.l-section.wpb_row.height_small.width_custom:nth-child(3) > div.l-section-h.i-cf > div.g-cols.vc_row.via_flex.valign_top.type_default.stacking_default > div.vc_col-sm-12.wpb_column.vc_column_container > div.vc_column-inner > div.wpb_wrapper > div.w-iconbox.us_custom_7e7a6314.iconpos_left.style_default.color_primary.align_center.no_text.icontype_img:nth-child(10)
 tenchat.ru###tenchat-web > div.grid.grid-rows-\[min-content_1fr\].transition-all.min-h-dvh.max-tablet\:grid-cols-1.grid-cols-\[260px_1fr\] > main.min-h-0:nth-child(3) > div.min-w-0.size-full.flex.flex-col.items-center > div.py-4.max-tablet\:px-5.max-mobile\:p-0.min-w-0.h-full.w-243.flex.flex-col.max-tablet\:w-full > div > div.mt-6.h-10.max-tablet\:mt-0.max-tablet\:h-auto:last-child > div.max-tablet\:bottom-16.max-mobile\:bottom-10.pointer-events-none.fixed.inset-x-0.bottom-0.z-40.flex.w-without-scrollbar.flex-col.items-start:first-child > div.z-50.flex.flex-col.items-end.pointer-events-auto.mb-10.self-end
 tenchat.ru###tenchat-web > div.grid.grid-rows-\[min-content_1fr\].transition-all.min-h-dvh.max-tablet\:grid-cols-1.grid-cols-\[260px_1fr\] > main.min-h-0:nth-child(3) > div.min-w-0.size-full.flex.flex-col.items-center > div.py-4.max-tablet\:px-5.max-mobile\:p-0.min-w-0.h-full.w-243.flex.flex-col.max-tablet\:w-full > div > div.mt-6.h-10.max-tablet\:mt-0.max-tablet\:h-auto:last-child > div.max-tablet\:bottom-16.max-mobile\:bottom-10.pointer-events-none.fixed.inset-x-0.bottom-0.z-40.flex.w-without-scrollbar.flex-col.items-start:first-child > div.z-50.flex.flex-col.items-end.pointer-events-auto.mb-10.self-end
+medvestnik.ru##div[class^="pjaxed spaced-top"]
+2gis.ru###root > div > div._121zpzx > div._1sf34doj:first-child > div._1u4plm2:first-child > div:last-child > div._r47nf > div._guxkefv > div:last-child > div._1xzra4e > div._1yfus1e > div._jcreqo:last-child > div._fjltwx:last-child > div._1vgcy7c > div._3zzdxk:first-child > div._1667t0u > div._1rkbbi0x > div._15gu4wr > div._18lzknl > div._qvsf7z:last-child > div:last-child > div._t0tx82:first-child > div._8sgdp4:first-child > div._599hh > div:nth-child(5)
+medvrus.ru##div.ordercall-smart-button.ordercall-smart-button_position_right-bottom:nth-child(20)
+medvrus.ru##.l-header__banner
+##.b24-widget-button-wrapper, .b24-widget-button-position-bottom-right, .b24-widget-button-visible
+ortomir24.ru##.awz_cookies_sett__message, .awz_cookies_sett__message_bottom_center, .awz_cookies_sett__bg1, .awz_cookies_sett__color2
+nadomnado.ru##div.timeout__vw-present.timeout__vw-location-default:first-child
+mt51.ru##div.ab__scroll_to_top_button:last-child
+ortomini.ru##header.header.clearfix:nth-child(5) > div.header_bottom:nth-child(3) > div.w955 > div.header_bottom__inn > a.header_b.header_b2:last-child > img:last-child
+ortomini.ru##div.fixed_panel:nth-child(20)
+ortomini.ru##div.scrolltop:nth-child(19)
+ortomini.ru##footer.footer:nth-child(7) > div.footer__bott:last-child > div.w955.w955--fix > div.w_foo_cols.clearfix > div.foo_bott_l:first-child
+ortoatlant.ru###overlay2
+ortoatlant.ru##.ya-chat-widget, .ya-chat-widget_desktop, .ya-chat-widget_theme_light, .ya-chat-widget_size_large
+ortoatlant.ru##.ya-chat-widget, .ya-chat-widget_mobile, .ya-chat-widget_theme_light, .ya-chat-widget_size_large
+orto-plus.ru##.product-row-right
+planeta-orto.ru###main_big_order_button
+salamat-med.ru##footer.n-footer__main:nth-child(18) > div.container > div.n-footer > div.n-footer__item.n-footer__item-cont:last-child > div.n-footer__cont-info:last-child
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -3759,7 +3804,8 @@ lc.rt.ru#%#//scriptlet('set-cookie', 'ahoy_track', 'false', 'none')
 arsibtower-tyumen.ru#%#//scriptlet('set-session-storage-item', 'visited', 'n')
 ~vk.com,~vk.ru#%#//scriptlet('set-session-storage-item', 'vk_code_verifier', '$remove$')
 #%#//scriptlet('set-session-storage-item', 'vk_redirect_url', '$remove$')
-~yandex.by,~yandex.com,~yandex.kz,~yandex.ru,~ya.ru,~yandex.lv,~yandex.uz,~yandex.net#%#//scriptlet('remove-cookie', '/bh|cycada|is_gdpr|is_gdpr_b|isa|redirectUrl|sae|sessar|Session_id|sessionid2|skid|yandex_login|yp|ys|yuidss|_yasc|yandexuid|yashr|ymex|i|bltsr/')
+~yandex.*#%#//scriptlet('remove-cookie', '/bh|cycada|is_gdpr|is_gdpr_b|isa|redirectUrl|sae|sessar|Session_id|/')
+~yandex.*#%#//scriptlet('remove-cookie', '/sessionid2|skid|yandex_login|yp|ys|yuidss|_yasc|yandexuid|yashr|ymex|i|bltsr/')
 ! (Waiting for adding more scripts..)
 !
 !
@@ -4940,6 +4986,15 @@ xabar.uz#@#.counters
 browserleaks.com$@$link[rel="manifest"]
 @@||api-gw.youla.ru/graphql$domain=youla.ru
 @@||i.mi.com^$cookie
+@@||mail.yandex.ru/api/v*/userid/counters
+@@||gov.ru^$cookie
+@@||antibot.wildberries.ru/statics/challenge_fingerprint_$script
+@@||antibot.wildberries.ru/api/v*/$xhr
+@@||antibot.wildberries.ru^
+@@||goldapple.ru^$cookie=ga-lang
+@@||ortoatlant.ru/*?route=product/product/captcha$image
+@@/globalRecaptchaContent/
+@@||recaptcha.umi.ru^
 !
 !
 ! -

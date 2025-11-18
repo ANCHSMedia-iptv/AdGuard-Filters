@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.1.7-R
+! Version: 4.1.8-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-11-17T15:51:00+00:00
+! TimeUpdated: 2025-11-18T16:51:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 17.11.2025 15:51 UTC
+! Last Modified: 18.11.2025 16:51 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -921,6 +921,9 @@
 ||sentry.adspower.com^$important
 ||qoopler.ru^$important
 ||prodregistryv2.org^$important
+||services.bionika-digital.ru^
+||udqrh6.ru^
+||analytics.alloka.ru^$important
 !
 !
 !
@@ -1337,6 +1340,8 @@
 @@||msftncsi.com^
 @@||msftconnecttest.com^
 @@||sentry.radolyn.com^
+@@||antibot.wildberries.ru^
+@@||recaptcha.umi.ru^
 !
 !
 ! ===
