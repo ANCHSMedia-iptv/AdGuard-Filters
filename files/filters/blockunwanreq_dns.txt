@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.1.8-R
+! Version: 4.1.9-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-11-18T16:51:00+00:00
+! TimeUpdated: 2025-11-30T16:51:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 18.11.2025 16:51 UTC
+! Last Modified: 30.11.2025 16:51 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -192,6 +192,11 @@
 ||peoplestackwebexperiments*.clients*.google.com^
 ||infinitedata*.googleapis.com^
 ||safeframe.googleapis.com^$important
+||meditation.goog^$important
+||sin.prod.via.google^
+||kul.prod.via.google^
+||adsense.google.com^$important
+||doubleclickbygoogle.com^$important
 !
 ! ===
 !
@@ -924,6 +929,14 @@
 ||services.bionika-digital.ru^
 ||udqrh6.ru^
 ||analytics.alloka.ru^$important
+||privacy-center.org^
+||sentry.nperf.com^$important
+||statscdn.nperf.com^$important
+||demdex.net^
+||al-adtech.com^
+||nativeroll.tv^$important
+||inshot.dev^
+||icanhazip.com^
 !
 !
 !
@@ -1388,6 +1401,8 @@
 ||rufanek.ru^
 ||doburex.ru^
 ||1win-14smu.top^
+||jebarix.ru^
+||click85.icu^
 !
 !
 !
