@@ -3810,7 +3810,7 @@ thevoicemag.ru#%#//scriptlet('set-session-storage-item', '/app_popup_session_*/'
 sputnik24.tv#%#//scriptlet('set-cookie', 'isShowCookieWarning', 'false', 'none')
 ! sports.ru#%#//scriptlet('set-local-storage-item', 'loglevel', '$remove$')
 okko.tv,okko.sport#%#//scriptlet('set-cookie', 'cookie-confirm', '1')
-#%#//scriptlet('set-session-storage-item', 'bis_data', 'emptyObj')
+~tyuiu.ru#%#//scriptlet('set-session-storage-item', 'bis_data', 'emptyObj')
 reddit.com#%#//scriptlet('set-session-storage-item', 'serverTimestamps', 'emptyObj')
 reddit.com#%#//scriptlet('set-local-storage-item', 'events-buffer-v2', '$remove$')
 reddit.com#%#//scriptlet('set-local-storage-item', 'good-visit-feeds-search', 'emptyObj')
@@ -5029,6 +5029,7 @@ gazeta.ru#@$#body { padding-top: 0!important; }
 @@||nperf.top^$app=com.nperf.master
 @@||wildberries.ru/__wbaas/challenges/antibot/
 @@||tyuiu.ru/theme/yui_combo.php?*/event-mousewheel/$script,domain=tyuiu.ru
+@@$cookie=MoodleSession
 !
 !
 ! -
