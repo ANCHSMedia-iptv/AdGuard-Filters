@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.6.7-R
-! TimeUpdated: 2025-11-30T16:50:25+00:00
+! Version: 4.6.8-R
+! TimeUpdated: 2025-12-03T16:50:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -403,7 +403,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||interfax.ru/footer__form_subscribe.html^$domain=interfax.ru,important
 ||rbp1.ru^$important
 ||doktor-khairov.ru/info/wp-content/plugins/wp-polls/images/default/pollbg.gif^$xhr,domain=doktor-khairov.ru
-/protocol/openid-connect/3p-cookies/*.html^$subdocument,document,other,domain=~tyuiu.ru,important
+/protocol/openid-connect/3p-cookies/*.html^$subdocument,document,other,domain=~tyuiu.ru
 ||cdn*.vedomosti.ru/*/assets/subscrib_email-*.png^$image,domain=vedomosti.ru
 ||forbes.*/api/*/special-adblock^$xhr,domain=forbes.*,important
 ||pravo.rg.ru/api/pravo-promo/^$xhr,domain=rg.ru
@@ -2184,6 +2184,23 @@ $cookie=/ADRUM_*/
 ||ok.ru/gwtlog$important
 ||inshot.dev^
 ||icanhazip.com^
+||zoom.us/user/anonymous/telemetry$important
+/vk-openapi.js$important
+||tproger.ru/wp-node/v*/post/view^$xhr,domain=tproger.ru,important
+||tproger.ru/wp-node/v*/entry/analytics^$xhr,domain=tproger.ru,important
+||tproger.ru/wp-node/v*/rupor/$xhr,domain=tproger.ru,important
+||tproger.ru/images/lubok-image-after-post.svg^$image,domain=tproger.ru
+||tproger.ru/_nuxt/TagsSubscriptionBanner.$script,domain=tproger.ru
+||tproger.ru/signed_image/rG8laumfzCkW24JG6NCqxSUvi2j6c7PyOyyPZihIDRk/*/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VzZXItdXBsb2Fkcy8xMTUxNDQvMjAyNS0xMS0xMy9jNzU1MzlhOC05YjljLTRmNjYtYmYxNC0zZWRmMzFkZWQ4YTEucG5n^$image,domain=tproger.ru
+||tproger.ru/signed_image/Ot7vmNprNuDOsvsKC_mezsdcFDhU63k0aqInk4vTC_s/*/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VzZXItdXBsb2Fkcy8xMTUxNDQvMjAyNS0xMS0xMy9lODRkNmNlOS02NGIxLTRmYjQtOTQ3MS03YjEyMDc1ODBjZmMucG5n^$image,domain=tproger.ru
+||tproger.ru/signed_image/fjfT0xd-tR6FzsyljJ6SvgiuXFmLN5Nuy30ug9in6Uc/*/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VzZXItdXBsb2Fkcy8xMTUxNDQvMjAyNS0xMS0xMy82MWExY2I1ZS0wNmVkLTQxNmMtYTI5Yi05YzU3MGMzYTc3NzEucG5n^$image,domain=tproger.ru
+||track*.tprg.ru^$important
+
+
+
+
+
+
 !
 !
 !
@@ -3746,6 +3763,7 @@ kommersant.ru##.network_announce_B
 iguides.ru##main:nth-child(13) > section.main-container.container-md.pt-30:nth-child(6) > section.row:nth-child(2) > section.col:first-child > div.i-content:nth-child(2) > div.i-content__post-content:last-child > blockquote:nth-child(8) > div
 texterra.ru##div.overlay:nth-child(9)
 ##a[href*="://download.moodle.org/mobile"]
+lenta.ru##.vk-video-popup__overlay, .js-vk-video-overlay
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5030,6 +5048,10 @@ gazeta.ru#@$#body { padding-top: 0!important; }
 @@||wildberries.ru/__wbaas/challenges/antibot/
 @@||tyuiu.ru/theme/yui_combo.php?*/event-mousewheel/$script,domain=tyuiu.ru
 @@$cookie=MoodleSession
+@@||sso.tyuiu.ru/js/keycloak.js
+@@||sso.tyuiu.ru/realms/master/protocol/openid-connect/3p-cookies/$important
+@@||zoom.us/client/*/ZoomInstallerFull
+@@||digicert.com^
 !
 !
 ! -
