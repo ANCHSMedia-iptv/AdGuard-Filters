@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.6.8-R
-! TimeUpdated: 2025-12-03T16:50:25+00:00
+! Version: 4.6.9-R
+! TimeUpdated: 2025-12-07T12:50:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -134,7 +134,7 @@
 ||adlook.me^$important
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru|rusradio.ru,important
-||vk.com/js/api/openapi.js$script,third-party,domain=~vk.com|~vk.ru,important
+!
 ||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com
 ||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com
 /itunes_referals.js^$script,third-party
@@ -1936,7 +1936,7 @@ $cookie=qrator_ssid,important
 ||livelib.ru/main/canshowpush^$xhr,domain=livelib.ru,important
 ||livelib.ru/main/viewed^$xhr,domain=livelib.ru,important
 ||promo.livelib.ru/js/load$script,domain=livelib.ru,important
-||vk.ru/dist/public/api/openapi$script,third-party,important,domain=~vk.com|~vk.ru
+||vk.*/dist/public/api/openapi$script,third-party,important,domain=~vk.com|~vk.ru
 $cookie=showed_vkid_onetap,domain=~vk.com|~vk.ru
 ||unpkg.com/*vkontakte/superappkit*/dist/
 ||vk.ru/domain.txt^$third-party,important,domain=~vk.com|~vk.ru
@@ -1946,7 +1946,7 @@ $cookie=showed_vkid_onetap,domain=~vk.com|~vk.ru
 ||login.vk.*/?act=$third-party,important,domain=~vk.com|~vk.ru
 ||api.vk.*/method/statEvents
 ||id.vk.*/stat_events_vkid_sdk$important
-||vk.ru/js/api/openapi.js$script,third-party,important,domain=~vk.com|~vk.ru
+||vk.*/js/api/openapi.js$script,third-party,important,domain=~vk.com|~vk.ru
 $cookie=prcl,third-party,domain=~vk.com|~vk.ru
 ||gdz.ru/img/i/vk-button-icon.svg^$image,domain=gdz.ru
 ||gdz.ru/img/mascot/mascot_cookie.svg^$image,domain=gdz.ru
@@ -2195,12 +2195,7 @@ $cookie=/ADRUM_*/
 ||tproger.ru/signed_image/Ot7vmNprNuDOsvsKC_mezsdcFDhU63k0aqInk4vTC_s/*/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VzZXItdXBsb2Fkcy8xMTUxNDQvMjAyNS0xMS0xMy9lODRkNmNlOS02NGIxLTRmYjQtOTQ3MS03YjEyMDc1ODBjZmMucG5n^$image,domain=tproger.ru
 ||tproger.ru/signed_image/fjfT0xd-tR6FzsyljJ6SvgiuXFmLN5Nuy30ug9in6Uc/*/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VzZXItdXBsb2Fkcy8xMTUxNDQvMjAyNS0xMS0xMy82MWExY2I1ZS0wNmVkLTQxNmMtYTI5Yi05YzU3MGMzYTc3NzEucG5n^$image,domain=tproger.ru
 ||track*.tprg.ru^$important
-
-
-
-
-
-
+||postium.ru/wp-content/themes/typer/assets/img/placeholder.png^$image,domain=postium.ru
 !
 !
 !
@@ -2299,21 +2294,22 @@ $cookie=/ADRUM_*/
 ! Блокировка рекламы, аналитики и прочего «мусора».
 !
 ! 
-||finance.ozon.ru/api/v*/creditProducts$xhr,domain=finance.ozon.ru
-||finance.ozon.ru/apps/promo/$xhr,domain=finance.ozon.ru
-||finance.ozon.ru/api/v*/premiumPartners/$xhr,domain=finance.ozon.ru
+/api/v*/creditProducts$xhr,domain=finance.ozon.ru
+/apps/promo/$xhr,domain=finance.ozon.ru
+/api/v*/premiumPartners/$xhr,domain=finance.ozon.ru
 ||cdn*.ozone.ru/s3/*/release/*/_app/immutable/assets/new-ozon-app-qr.*.svg^$image,domain=finance.ozon.ru
-||finance.ozon.ru/api/v*/performance^$xhr,ping,domain=finance.ozon.ru
-||finance.ozon.ru/*/promoter$xhr,domain=finance.ozon.ru
+/api/v*/performance^$xhr,ping,domain=finance.ozon.ru
+/*/promoter$xhr,domain=finance.ozon.ru
 ||st.ozone.ru/s3/*/performance-meter/*/index.*.js^$script,domain=finance.ozon.ru
 ||st.ozone.ru/s3/*/error-meter/*/index.*.js^$script,domain=finance.ozon.ru
-||io-bank.ozone.ru/metrixa/$xhr,domain=finance.ozon.ru
 ||finance.ozon.ru/e^$ping,xhr,domain=finance.ozon.ru
 ||cdn*.ozone.ru/s3/*/release/*/_app/immutable/assets/kionAccent.*.webp^$image,domain=finance.ozon.ru
 ||cdn*.ozone.ru/s3/*/release/apps/mgm/_app/immutable/chunks/sendTrackingEvent.*.js^$script,domain=finance.ozon.ru
 ||io-bank.ozone.ru/logs-gateway/$xhr,domain=finance.ozon.ru
 ||finance.ozon.ru/apps/mgm/api/banners/getBanners^$xhr,domain=finance.ozon.ru
 ||cdn*.ozone.ru/s3/*/release/*/_app/immutable/assets/Crown.*.webp^$image,domain=finance.ozon.ru
+||io-bank.ozone.ru/metrixa/$xhr,domain=finance.ozon.ru
+||finance.ozon.ru/sentry$xhr,domain=finance.ozon.ru
 !
 ! От блокировки картинки с QR кодом для скачивания приложения Ozon Банка, текст справа немного съехал налево 0_0.
 ! From blocking the picture with the QR code for downloading the Ozon Bank app, the text on the right has moved slightly to the left 0_0.
@@ -3764,6 +3760,7 @@ iguides.ru##main:nth-child(13) > section.main-container.container-md.pt-30:nth-c
 texterra.ru##div.overlay:nth-child(9)
 ##a[href*="://download.moodle.org/mobile"]
 lenta.ru##.vk-video-popup__overlay, .js-vk-video-overlay
+postium.ru##div.hype-popup.hype-popup-mini.hype-popup--visible:last-child
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
