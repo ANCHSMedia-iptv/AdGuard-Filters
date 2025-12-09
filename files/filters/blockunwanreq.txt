@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.6.9-R
-! TimeUpdated: 2025-12-07T12:50:25+00:00
+! Version: 4.7.0-R
+! TimeUpdated: 2025-12-09T17:50:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -135,8 +135,8 @@
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru|rusradio.ru,important
 !
-||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com
-||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com
+||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net
+||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net
 /itunes_referals.js^$script,third-party
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script,third-party
 ||improving.duckduckgo.com^$important
@@ -2105,6 +2105,9 @@ $removeparam=__rr
 ||wondershare.com^$cookie=/track_id_*/
 ||wondershare.com^$cookie=/download_id_*/
 ||wondershare.com^$cookie=ws_download
+||wondershare.com.*^$cookie=/track_id_*/
+||wondershare.com.*^$cookie=/download_id_*/
+||wondershare.com.*^$cookie=ws_download
 ||s3.amazonaws.com/www-itopvpn-com/blog/20251014/1760436001706798.png^$image,domain=ru.iobit.com|iobit.com|*.iobit.com
 ||windowsreport.com/wp-content/themes/reflectormedia-universalis/assets/images/*/google-preferred-source-badge-$image,domain=windowsreport.com
 $cookie=mwai_session_id
@@ -2196,6 +2199,10 @@ $cookie=/ADRUM_*/
 ||tproger.ru/signed_image/fjfT0xd-tR6FzsyljJ6SvgiuXFmLN5Nuy30ug9in6Uc/*/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VzZXItdXBsb2Fkcy8xMTUxNDQvMjAyNS0xMS0xMy82MWExY2I1ZS0wNmVkLTQxNmMtYTI5Yi05YzU3MGMzYTc3NzEucG5n^$image,domain=tproger.ru
 ||track*.tprg.ru^$important
 ||postium.ru/wp-content/themes/typer/assets/img/placeholder.png^$image,domain=postium.ru
+||adindex.ru/assets/img/logo/logo-smi2.svg^$xhr,image,domain=adindex.ru
+||survey-studio.com/js/bowser.$script,domain=survey-studio.com
+||survey-studio.com/images/telegram_logo.png^$image,domain=survey-studio.com
+||adminvps.ru/static/js/load_jivo.js$script,domain=adminvps.ru
 !
 !
 !
@@ -2676,8 +2683,8 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 .ru/eventea/*/eventea*.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 .ru/eventea/v*/tjournal.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 .ru/api/common/v*/ping$xhr,domain=tbank.ru|tinkoff.ru,important
-.ru/api/common/v*/session_status?appName=$xhr,domain=tbank.ru|tinkoff.ru,important
-.ru/api/common/v*/session?appName=$xhr,domain=tbank.ru|tinkoff.ru,important
+! .ru/api/common/v*/session_status?appName=$xhr,domain=tbank.ru|tinkoff.ru,important
+! .ru/api/common/v*/session?appName=$xhr,domain=tbank.ru|tinkoff.ru,important
 .ru/frontend-libraries/*/sentry/*/*.js^$script,domain=tbank.ru|tinkoff.ru,important
 .ru/*/*-web-performance-*.js^$script,xhr,domain=tbank.ru|tinkoff.ru,important
 ||error-hub.tinkoff.ru^$important
@@ -3761,6 +3768,15 @@ texterra.ru##div.overlay:nth-child(9)
 ##a[href*="://download.moodle.org/mobile"]
 lenta.ru##.vk-video-popup__overlay, .js-vk-video-overlay
 postium.ru##div.hype-popup.hype-popup-mini.hype-popup--visible:last-child
+lostfilm.life,lostfilm.download,lostfilmtv5.site,lostfilm.pro,lostfilm.uno,lostfilm.today,lostfilm.tv##div[class^="chototest"]
+adindex.ru##div[class^="news-footer__aggr"]
+adindex.ru##div[class^="news-bot"]
+adindex.ru##div[class^="counters"]
+adindex.ru##div[class^="top-place"]
+survey-studio.com##div.ss-container:nth-child(3) > footer.ss-footer.page-footer:nth-child(7) > div.ss-footer__copyright-container.footer-copyright:last-child > div.ss-footer__copyright.container > div.ss-footer__copyright-row.row > div.col.s12.m6:first-child > ul > li:first-child
+adminvps.ru###jivobtn
+iobit.com##div.footer.clearfix:nth-child(23) > div.container > div.subscribe:first-child
+detector404.ru###goup
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4172,6 +4188,7 @@ $cookie=_ym_debug
 ||ya.ru/clck/
 ||ya.ru/suggest/ad-rerequest-ya.cgi$important
 ! ||yastatic.net/s3/chat/widget.js^$script,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz
+@@||static-mon.yandex.net/static/main.js?pid=$xhr,domain=dzen.ru|ya.ru|yandex.*|yandex.by|yandex.kz|yandex.lv|yandex.ru|yandex.uz
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -4197,6 +4214,7 @@ yandex.ru,ya.ru##div[id^="feed-ssr"][class^="content-feed-ssr"]
 yandex.ru##.Distribution-Popup, .Distribution-Popup_hasShadow, .Distribution-Popup_motley_grey, .Distribution-Popup_layout_renew, .Distribution-Popup_animation_bounce, .Distribution-Popup_location_right-top, .Distribution-Popup_visible
 yandex.ru##.FuturisSnippet
 ##a[href*="yabs.yandex.ru/count/"]
+yandex.ru##div[class^="AdvMastHead"]
 !
 !
 ! =
@@ -5049,6 +5067,9 @@ gazeta.ru#@$#body { padding-top: 0!important; }
 @@||sso.tyuiu.ru/realms/master/protocol/openid-connect/3p-cookies/$important
 @@||zoom.us/client/*/ZoomInstallerFull
 @@||digicert.com^
+@@/simple_captcha.php$domain=lostfilm.life|lostfilm.download|lostfilmtv5.site|lostfilm.pro|lostfilm.uno|lostfilm.today|lostfilm.tv
+@@||api.browser.yandex.net/configs/video_translation
+@@/dntcaptchaimage/
 !
 !
 ! -
@@ -5182,6 +5203,13 @@ gazeta.ru#@$#body { padding-top: 0!important; }
 ||doburex.ru^$all
 ||jebarix.ru^$all
 ||click85.icu^$all
+||junarex.shop^$all
+||xelarik.shop^$all
+||vimonex.pro^$all
+||dubarek.shop^$all
+||zubanox.shop^$all
+||domenik.shop^$all
+||wanorex.shop^$all
 !
 !
 !
