@@ -73,7 +73,7 @@
 ||syndication.twitter.com^
 ||rexpush.pro^$important
 ||peiynu.com^$important
-||appspot.com^$domain=~appsalesgo2.appspot.com,app=~net.tsapps.appsales
+! appspot.com^$domain=~appsalesgo2.appspot.com,app=~net.tsapps.appsales
 ||yabro.ru^$important
 ||flowerpla.com^$important
 ||amocrm.ru^$important
@@ -83,7 +83,7 @@
 ||*analytics.tele2.ru^$important
 ! analytics.tele2.ru^$important
 ||bcebos.com^$important
-! *adjust.*^$important,domain=~reddit.com|~reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion|~redd.it|~wondershare.com.ru|~wondershare.com|~wondershare.com.*
+!
 ||rutrk.org^$important
 ||stat-analytics.mediavitrina.ru^$important
 ||pglstatp.com^$important
@@ -94,7 +94,7 @@
 ||adtech.com^$important
 ||statad.ru^$important
 ||mixpanel.*.com^$important,domain=~mixpanel.com
-!| |mixpanel*.com^$important,domain=~mixpanel.com
+! ||mixpanel*.com^$important,domain=~mixpanel.com
 ||btloader.com^$important
 ||digitalcaramel.com^$important
 ||ads*.twitter.com^$important
@@ -2087,8 +2087,8 @@ $removeparam=yadiscount
 ||lug-info.ru/i/telegram-subscribe.avif$image,domain=lug-info.ru
 ||lug-info.ru/views_counter/$image,domain=lug-info.ru,important
 ||lug-info.ru/ajax/telegram/$xhr,domain=lug-info.ru
-||ynuf.aliapp.org^
-||ynuf.aliapp.org/saveWb.json
+! ynuf.aliapp.org^
+! ynuf.aliapp.org/saveWb.json
 $removeparam=__rr
 ||proxydocker.com/template/img/blank.gif^$image,domain=proxydocker.com,redirect-rule=1x1-transparent.gif,important
 ||savefrom.net/build/js/basicMetricsTracking.js$script,domain=savefrom.net,important
