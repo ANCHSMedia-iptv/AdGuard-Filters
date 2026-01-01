@@ -1,15 +1,15 @@
 Repository for my AdGuard filters.
 
-
+Happy New Year!
 
 Filters:
 - Removing unwanted parameters [Support temporarily stopped];
 - Block unwanted connections (Default + DNS + Experimental) [Supported].
 - Branching from BUC: F Unwanted Sites.
 
-Updated 14.12.2025
-- BUC: 14.12
-- BUC DNS: 14.12
+Updated 31.12.2025
+- BUC: 31.12
+- BUC DNS: 31.12
 - FUS: The filter will not be updated after uploading to the repository after 29.03.2025.
 
 Started 22.09.2024
