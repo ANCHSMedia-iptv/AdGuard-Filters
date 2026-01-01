@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.2.1-R
+! Version: 4.2.3-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-12-14T17:51:00+00:00
+! TimeUpdated: 2025-12-31T17:51:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 14.12.2025 17:51 UTC
+! Last Modified: 31.12.2025 17:51 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -25,7 +25,7 @@
 ! Suitable for mobile devices and computers.
 ! Некоторые домены для блокировки взяты из других источников.
 !
-!
+! Happy New Year!
 !
 !
 !
@@ -158,6 +158,9 @@
 ||*telemetry.urs.microsoft.com^
 ||vortex*.data.microsoft.com^
 ||fp-afd-*-ccp.azureedge.net^
+||wpc.v0cdn.net^
+||iriscoremetadataprod.blob.core.windows.net^
+||nexusrules.officeapps.live.com^
 ! =
 !
 ! ===
@@ -198,6 +201,7 @@
 ||kul.prod.via.google^
 ||adsense.google.com^$important
 ||doubleclickbygoogle.com^$important
+||clouderrorreporting.googleapis.com^
 !
 ! ===
 !
@@ -240,7 +244,7 @@
 ||syndication.twitter.com^$dnsrewrite=REFUSED
 ||rexpush.pro^$dnsrewrite=REFUSED,important
 ||peiynu.com^$dnsrewrite=REFUSED,important
-||appspot.com^
+! appspot.com^
 ||yabro.ru^$important
 ||flowerpla.com^$dnsrewrite=REFUSED,important
 ||amocrm.ru^$dnsrewrite=REFUSED,important
@@ -735,7 +739,7 @@
 ||hue2b.com^$important,dnsrewrite=0.0.0.0
 ||bngtrak.com^$important,dnsrewrite=0.0.0.0
 ||pemsrv.com^$important,dnsrewrite=0.0.0.0
-||bs.serving-sys.ru^$important
+||serving-sys.ru^$important
 ||adm.dimonvideo.ru^
 ||stat2.okko.tv^$important
 ||apistats.rg.ru^$important
@@ -939,6 +943,15 @@
 ||inshot.dev^
 ||icanhazip.com^
 ||track*.tprg.ru^
+||cc34ea.cyberinsider.com^
+||geosurf.io^
+||cloud-f*.dev.drweb.com^
+||c*.dev.drweb.com^
+||sentry.iptv.rt.ru^$important
+||advisor.api.2gis.*^$important
+||clickstream.lenta.tech^$important
+||s*.ucoz.net^$important
+||*-devtools-frontend.appspot.com^
 !
 !
 !
@@ -1053,6 +1066,7 @@
 ||*CawcaFr^
 ||unknown.host^
 ||crl.fk.local^
+||ipwho.is^
 !
 !
 !
@@ -1095,6 +1109,10 @@
 ||*analytics-toolbar*^
 ||*analytics.faregy.com^
 ||analytics.1clickvpn.com^
+||analytics.iapure.com^
+||stats.1clickvpn.com^
+||analytics.urban-vpn.com^
+||stats.urban-vpn.com^
 !
 !
 !
@@ -1357,6 +1375,19 @@
 @@||sentry.radolyn.com^
 @@||antibot.wildberries.ru^
 @@||recaptcha.umi.ru^
+@@||crl.sectigo.com^
+@@||certificates.intel.com^
+@@||crl.trust-provider.com^
+@@||crl.microsoft.com^
+@@||crl.usertrust.com^
+@@||ts-crl.ws.symantec.com^
+@@||crl.thawte.com^
+@@||crl*.ame.gbl^
+@@||symcb.com^
+@@||crl.comodoca.com^
+@@||pki.intel.com^
+@@||crl.quovadisglobal.com^
+@@||ocsp.intel.com^
 !
 !
 ! ===
@@ -1382,40 +1413,52 @@
 ||*.vaterlines.com^$dnsrewrite=REFUSED
 ||otnolatrnup.com^$important
 ||resp.us^
-||meshuradres.best^
+||meshuradres.best^$dnsrewrite=BLOCKED
 ||lavatoryyourself.com^
-||antpeak.com^
-||bonuscudede.com^
+||antpeak.com^$dnsrewrite=BLOCKED
+||bonuscudede.com^$dnsrewrite=BLOCKED
 ||t2m.io^
-||vaycasino*.com^
-||87h6.cfd^
+||vaycasino*.com^$dnsrewrite=BLOCKED
+||87h6.cfd^$dnsrewrite=BLOCKED
 ||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^
-||clicks.af-pb06e2.com^
-||151.243.18.101^
-||adalh-zcq.com^
+||clicks.af-pb06e2.com^$dnsrewrite=0.0.0.0
+||151.243.18.101^$dnsrewrite=0.0.0.0
+||adalh-zcq.com^$dnsrewrite=BLOCKED
 ||softversterport.gq^
-||obqj2.com^
-||hellopeople.app.tc^
-||onclick3.shop^
-||cimurak.ru^
-||a-click68.icu^
-||vironin.info^
-||rufanek.ru^
-||doburex.ru^
-||1win-14smu.top^
-||jebarix.ru^
-||click85.icu^
-||click*.icu^
-||junarex.shop^
-||xelarik.shop^
-||vimonex.pro^
-||dubarek.shop^
-||zubanox.shop^
-||domenik.shop^
-||wanorex.shop^
-||dulinor.ru^
-||sipurek.shop^
-||morilex.shop^
+||obqj2.com^$dnsrewrite=BLOCKED
+||hellopeople.app.tc^$dnsrewrite=BLOCKED
+||onclick3.shop^$dnsrewrite=BLOCKED
+||cimurak.ru^$dnsrewrite=BLOCKED
+||a-click68.icu^$dnsrewrite=BLOCKED
+||vironin.info^$dnsrewrite=BLOCKED
+||rufanek.ru^$dnsrewrite=BLOCKED
+||doburex.ru^$dnsrewrite=BLOCKED
+||1win-14smu.top^$dnsrewrite=BLOCKED
+||jebarix.ru^$dnsrewrite=BLOCKED
+||click85.icu^$dnsrewrite=BLOCKED
+||click*.icu^$dnsrewrite=BLOCKED
+||junarex.shop^$dnsrewrite=BLOCKED
+||xelarik.shop^$dnsrewrite=BLOCKED
+||vimonex.pro^$dnsrewrite=BLOCKED
+||dubarek.shop^$dnsrewrite=BLOCKED
+||zubanox.shop^$dnsrewrite=BLOCKED
+||domenik.shop^$dnsrewrite=BLOCKED
+||wanorex.shop^$dnsrewrite=BLOCKED
+||dulinor.ru^$dnsrewrite=BLOCKED
+||sipurek.shop^$dnsrewrite=BLOCKED
+||morilex.shop^$dnsrewrite=BLOCKED
+||zolunex.shop^$dnsrewrite=BLOCKED
+||xuvonik.shop^$dnsrewrite=BLOCKED
+||liveupdt.com^$dnsrewrite=BLOCKED
+||dealctr.com^$dnsrewrite=BLOCKED
+||geronix.shop^$dnsrewrite=BLOCKED
+||ripanex.shop^$dnsrewrite=BLOCKED
+||korubin.shop^$dnsrewrite=BLOCKED
+||tezunok.shop^$dnsrewrite=BLOCKED
+||refeuficn.github.io^$dnsrewrite=0.0.0.0
+||mitarchive.info^$dnsrewrite=0.0.0.0
+||aitd.one^$dnsrewrite=0.0.0.0
+||piguiqproxy.com^$dnsrewrite=0.0.0.0
 !
 !
 !
