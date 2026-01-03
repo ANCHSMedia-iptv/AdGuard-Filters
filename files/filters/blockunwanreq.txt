@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.7.3-R
-! TimeUpdated: 2025-12-31T17:50:25+00:00
+! Version: 4.7.4-R
+! TimeUpdated: 2026-01-02T17:50:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -43,7 +43,7 @@
 ||*bugsnag*^$important
 ||vk-analytics.ru^$important
 ||*instabug*^$important
-||xray.mail.ru^
+||xray.mail.ru^$important
 ||*dbankcloud*^$important
 ||rayjump.com^$important
 ||smi2.ru^$important,domain=~smi2.ru,third-party
@@ -121,7 +121,7 @@
 ||api.x.com/*/jot/client_event.json^$xhr,important
 ||tns-counter.ru^$important,domain~tns-counter.ru,third-party
 .ru/*-context^$other,xhr,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
-||geosurf.io^
+||geosurf.io^$important
 ||platform.twitter.com/widgets.js^$script,important,domain=~x.com|~twitter.com,third-party
 ||instagram.com/embed.js^$script,third-party,important,domain=~instagram.com
 ||tiktok.com/embed.js^$script,third-party,important,domain=~tiktok.com
@@ -464,7 +464,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! rutube.ru/static/img/png/adsdkbanner.png^$xhr,domain=rutube.ru
 ||api.carrotquest.app/v*/users/*self_user/$ping,xhr,domain=tochka.com,important
 ||cdn.rt.com/scripts/adfox/*.js^$script,important,domain=russiatoday.ru
-||mediator.mail.ru/script/*/^$script,xhr,important
+||mediator.mail.ru^$important
 ||socialstat.rt.com/socialstat?url=$xhr,important,domain=russiatoday.ru
 /mcserverstop.jpg^$image
 ||cdn.jsdelivr.net/npm/sharer*/sharer.$script,important
@@ -971,10 +971,10 @@ qrator/qauth*.js$script,important
 qrator/validate$xhr,important
 ||ad-source.pro^$important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus
-/:\/\/yandex\. (ru|com)\^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.free.tiptop.vpn.proxy|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3
-/^77\.88\./$network,app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android
-||yastatic.net^$app=com.radioapp.mayakradio|com.avito.android
-/^5\.255\.255\.77/$network,app=ru.pyaterochka.app.browser|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|ru.rt.video.app.mobile|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android
+/:\/\/yandex\. (ru|com)\^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.free.tiptop.vpn.proxy|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app
+/^77\.88\./$network,app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app
+||yastatic.net^$app=com.radioapp.mayakradio|com.avito.android|ru.vk.store
+/^5\.255\.255\.77/$network,app=ru.pyaterochka.app.browser|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|ru.rt.video.app.mobile|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app
 ||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm
 ||s3.amazonaws.com^$app=com.viber.voip
 ||bing.com^$app=com.viber.voip
@@ -1002,7 +1002,7 @@ qrator/validate$xhr,important
 ||fandom.com/silver-surfer.html^$domain=fandom.com|*.fandom.com,important
 ||js.zi-scripts.com/zi-tag.js^$script,important
 ||js.zi-scripts.com/unified/v*/master/$xhr,important
-||appcenter.ms^$app=ru.mes.dnevnik.fgis|ru.pyaterochka.app.browser|ru.desport.android|bz.zaa.mibudsm8|ru.citilink
+||appcenter.ms^$app=ru.mes.dnevnik.fgis|ru.pyaterochka.app.browser|ru.desport.android|bz.zaa.mibudsm8|ru.citilink|www.metro.com
 ||zephyrsgroves.com^
 ||xn--80aafadvc9bifbaeqg0p.xn--p1ai/img/icons/sferum.svg^$image,domain=xn--80aafadvc9bifbaeqg0p.xn--p1ai
 !
@@ -1056,7 +1056,7 @@ images/*/Discord*logo.*$image,domain=fandom.com|telepedia.fandom.com|*.fandom.co
 ||log*.capcutapi.com^$important
 ||mobile-static.mindbox.ru^$important,domain=~mindbox.ru,third-party
 ||stat.teleport.media^$important
-||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile|com.idamob.tinkoff.android|ru.dublgis.dgismobile
+||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile|com.idamob.tinkoff.android|ru.dublgis.dgismobile|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable
 ||ortomir24.ru/rest/pull.config.get.json$xhr,domain=ortomir24.ru
 ||sp-man.ru/bitrix/templates/eshop_bootstrap_green/assets/img/halva-btn.png^$image,domain=sp-man.ru
 ||vk.com^$domain=shopogolic.net|shopogolic.club
@@ -1239,7 +1239,7 @@ calltouch.js$script,xhr
 ||sentry*.xiaomi.net^$important
 ||lk.rt.ru/redesign_2020_static/image/header/header-banner-new-large.png^$image,domain=lk.rt.ru
 ||api-hprof.odkl.ru/api/crash/$xhr,domain=mail.ru|ok.ru,important
-||reklama.mail.ru/*.gif$image,important
+||reklama.mail.ru^$important
 ||dzen.ru/zen-partner/mailru-morda$xhr,domain=mail.ru,important
 ||mail.ru/?news=main$xhr,domain=mail.ru
 ||mail.ru/undefined$xhr,domain=mail.ru
@@ -1375,7 +1375,7 @@ $cookie=qrator_jsr,important
 ||maps.2gis.com/v*/ald?*&ts=buyhere^$xhr,domain=2gis.ru|2gis.*,important
 ||maps.2gis.com/v*/ald?ts=*&x=*&y=*&z=*&lang=*^$xhr,domain=2gis.ru|2gis.*
 ||wink.ru/omnichat/*/trailer$domain=lk.rt.ru|my.rt.ru,important
-||privacy-cs.mail.ru^$third-party
+||privacy-cs.mail.ru^$important
 ||help-wifi.ru/wp-admin/admin-ajax.php?id=*&action=wpshop_views_counter$xhr,domain=help-wifi.ru
 ||help-wifi.com/wp-content/themes/wifi/images/soc_fb.png^$image,domain=help-wifi.com
 ||oao-tts.ru/bitrix/templates/tts/images/vk.png^$image,domain=oao-tts.ru
@@ -2240,6 +2240,52 @@ $removeparam=msclkid
 $removeparam=is_autologin_ya
 ||i-trailer.ru^$third-party
 -devtools-frontend.appspot.com^
+||clickstream-proxy.api.2gis.*^$important
+||advisor.api.2gis.*^$important
+||mediascope.mail.ru^$important
+||alt-xray.imgsmail.ru^$important
+||advmusic.com^
+||naydex.net^$important
+||1l-hit.mail.ru^
+||1l-view.mail.ru^
+||1link.mail.ru^
+||relap.mail.ru^$important
+||ad.mail.ru.netis.cc^$important
+||ad.net.mail.ru^$important
+||adv.mail.ru^$important
+||alt-*.radar.imgsmail.ru^$important
+||an.mail.ru^$important
+||radar.imgsmail.ru^$important
+||top.mail.ru^$important
+||cspreport.mail.ru^$important
+||e.mail.ru.consumer.id6589.com^$important
+||likemore-go.imgsmail.ru^
+||runconverge.com^$third-party,domain=~runconverge.com
+||mail.runconverge.com^
+||mediator.imgsmail.ru^$important
+||privacy-cs.mail.ru^$important
+||r0.mail.ru^$important
+||stat.browser.mail.ru^$important
+||stat.dl.mail.ru^$important
+||t.mail.ru^$important
+||top5.mail.ru^$important
+||e.mail.ru/api/v*/omicron/
+||honzik.avcdn.net^
+||api.syncle.io/prd/analytics$xhr,important
+||ketchcdn.com/*/v*/ip
+||ads.facebook.com^$important
+||an.facebook.com^$important
+||analytics.facebook.com^$important
+||ar-ar.facebook.com^$important
+||audiencenetwork.facebook.com^$important
+||badge.facebook.com^$important
+||clutchpoints-facebook.4taps.me^$important
+||dns.facebook.com^$important
+||facebook-ad-iq-academy.thinkific.com^$important
+||facebook-ads.hara.vn^$important
+||graph-fallback.facebook.com^$important
+||pixel.facebook.com^$important
+||places.facebook.com^$important
 !
 !
 !
@@ -4177,12 +4223,14 @@ beetv.kz#%#//scriptlet('set-local-storage-item', 'querySearchHistory', 'emptyObj
 ||banners*..yandex.net^$important
 ||appmetrica.yandex.net^$important
 ||appmetrica.yandex.ru^$important
+||appmetrika.yandex.ru^
+||appmetrica.yandex.com^
 ||bs.yandex.ru^$important
 ||direct.yandex.ru^$important
 ||tracking.ott.yandex.net^$important
 ||*adfox*^$important
 ||startup.mobile.yandex.net^$important
-||startup-mobile.ap.yandex-net.ru^$important
+||ap.yandex-net.ru^$important
 ||yandexadexchange.net^$important
 ||webvisor.com^$important
 ||appmetrica.yango.com^$important
@@ -4249,9 +4297,9 @@ beetv.kz#%#//scriptlet('set-local-storage-item', 'querySearchHistory', 'emptyObj
 ||static-mon.yandex.net/advert
 ||yandex.ru/znatoki/web-api/log
 ||mc.yandex.ru/metrika/tag_turbo.js
-||clck.yandex.ru^$~other
+||clck.yandex.*^$~other
 $cookie=_ym_debug
-||yandex.ru/metrika/
+||yandex.ru/metrika/$important
 ||yastatic.net/browser-updater/v*/
 ||static-mon.yandex.net/static/main.js
 ||auto.ru/static/yafp.html
@@ -4279,7 +4327,66 @@ $cookie=_ym_debug
 ||trust.yandex.*/*/otlp/spans/collect$ping
 -authproxy.taxi.yandex.ru/*/routestats$xhr,domain=taxi.yandex.ru
 -authproxy.taxi.yandex.ru/*/inapp-communications/promos-on-summary$xhr,domain=taxi.yandex.ru
-||mc.yandex.ru/metrika/advert.gif^$image,important
+||mc.yandex.ru/metrika/advert.gif^$image
+||abo.market.yandex.ru^$important
+||ad.maps.yandex.ru^$important
+||ads-captcha.yandex.ru^$important
+||adsdk.yandex.ru^$important
+||advertising.yandex.ru^$important
+||aflt.market.yandex.ru^$important$important
+||analytics.mobile.yandex.net^$important
+||lbs.yandex.ru^
+||audience.yandex.ru^$important
+||autoru-mag.s3.yandex.net^$important
+||awaps.yandex.*^$important
+||awsync.yandex.ru^$important
+||banners-slb.mobile.yandex.net^$important
+||banners.mobile.yandex.net^$important
+||browser-updater.yandex.net^$important
+||bs-meta.yandex.ru^
+||bs-metadsp.yandex.ru^
+||clck.yandex.*^$important
+||click.yandex.ru^$important
+||count.yandex.*^$important
+||count.yandex.*^$important
+||counter.yandex.*^$important
+||direct.yandex.*^$important
+||direkt.yandex.*^
+||dr.yandex.*^
+||pixel.plus.yandex.net^$important
+||grade.market.yandex.ru^
+||yandex.st^
+||ipc-ext.s3.yandex.net^
+||kiks.yandex.ru^
+||madmaxdojobegovayayandexru.banner-split-keyword.xyz^$important
+||market-click2.yandex.ru^$important
+||media-adv-aab.vs.market.yandex.net^$important
+||media-adv.vs.market.yandex.net^$important
+||media-adv.yandex.com^$important
+||metrica-yandex.com^$important
+||metrica.yandex.*^$important
+||ms.yandex.ru^$important
+||partner.market.yandex.ru^$important
+||partner.yandex.*^$important
+||qos-api.ott.yandex.net^$important
+||secure-ads.yandex.*^$important
+||share.yandex.net^
+||statchecker.yandex.ru^$important
+||tech.yandex.com^
+||ttnet.yandex.com.tr^$important
+||uptime-info.yandex.ru^$important
+||web-metrica.yandex.ru^$important
+||wordstat.yandex.ru^$important
+||adv.yandex.ru^$important
+||yandexdatafactory.com^$important
+||yastatic.yandex.net^
+||yabs.yandex.*^
+||yandexcloud-api.t2.ru^$important
+||ysa-static.passport.yandex.ru^
+||zdevx.yandex.ru^$important
+||messenger.yandex.*/report$important
+||ya.ru/clck/
+||yandex.ru/clck/
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -4466,6 +4573,7 @@ yandex.ru##div[class^="AdvMastHead"]
 ||experiments.parsely.com^
 ||champagne.futurecdn.net^
 ||events.cardsmobile.ru^$important
+||ev.stellarlabs.ai^
 !
 ! --
 !

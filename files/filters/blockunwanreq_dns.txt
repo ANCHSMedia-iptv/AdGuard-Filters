@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.2.3-R
+! Version: 4.2.4-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2025-12-31T17:51:00+00:00
+! TimeUpdated: 2026-01-02T17:51:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 31.12.2025 17:51 UTC
+! Last Modified: 02.01.2026 17:51 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -93,6 +93,60 @@
 ||mc.yango.com^$important
 ||events.plus.yandex.net^$important
 ||hdrc.yandex.net^
+||abo.market.yandex.ru^$important
+||ad.maps.yandex.ru^$important
+||ads-captcha.yandex.ru^$important
+||adsdk.yandex.ru^$important
+||advertising.yandex.ru^$important
+||aflt.market.yandex.ru^$important
+||analytics.mobile.yandex.net^$important
+||lbs.yandex.ru^
+||audience.yandex.ru^$important
+||autoru-mag.s3.yandex.net^$important
+||awaps.yandex.*^$important
+||awsync.yandex.ru^$important
+||banners-slb.mobile.yandex.net^
+||banners.mobile.yandex.net^$important
+||browser-updater.yandex.net^$important
+||bs-meta.yandex.ru^
+||bs-metadsp.yandex.ru^
+||click.yandex.ru^$important
+||count.yandex.*^$important
+||counter.yandex.*^$important
+||direct.yandex.*^$important
+||direkt.yandex.*^$important
+||dr.yandex.*^
+||pixel.plus.yandex.net^$important
+||grade.market.yandex.ru^$important
+||yandex.st^$important
+||ipc-ext.s3.yandex.net^$important
+||kiks.yandex.ru^$important
+||madmaxdojobegovayayandexru.banner-split-keyword.xyz^$important
+||market-click2.yandex.ru^$important
+||media-adv-aab.vs.market.yandex.net^$important
+||media-adv.vs.market.yandex.net^$important
+||media-adv.yandex.com^$important
+||metrica-yandex.com^$important
+||metrica.yandex.*^$important
+||ms.yandex.ru^$important
+||partner.market.yandex.ru^$important
+||partner.yandex.*^$important
+||qos-api.ott.yandex.net^$important
+||secure-ads.yandex.*^$important
+||share.yandex.net^
+||statchecker.yandex.ru^$important
+||tech.yandex.com^
+||ttnet.yandex.com.tr^$important
+||uptime-info.yandex.ru^$important
+||web-metrica.yandex.ru^$important
+||wordstat.yandex.ru^$important
+||adv.yandex.ru^$important
+||yandexdatafactory.com^$important
+||yastatic.yandex.net^
+||yabs.yandex.*^
+||yandexcloud-api.t2.ru^$important
+||ysa-static.passport.yandex.ru^
+||zdevx.yandex.ru^$important
 !
 !
 ! ===
@@ -253,7 +307,6 @@
 ||tiqcdn.com^$important
 ||*analytics.tele2.ru^$important
 ! analytics.tele2.ru^$important
-! *adjust.*^$important
 ||bcebos.com^$important
 ||rutrk.org^$important
 ||pglstatp.com^$dnsrewrite=REFUSED,important
@@ -796,24 +849,24 @@
 ||web-metrics.cdek.ru^$important
 ||sntrm.tass.ru^
 ||cdn.dmtgvn.com^
-||metrics.teamviewer.com^
-||analytics.slashdotmedia.com^
+||metrics.teamviewer.com^$important
+||analytics.slashdotmedia.com^$important
 ||public.profitwell.com^
-! ||ad-wa.anydesk.com^
+||ad-wa.anydesk.com^
 ||analytics.tiktok.com^$important
 ||unisound.cdnvideo.ru^
 ||mobi.sendsay.ru^$important
 ||stracker.rmg.ru^
 ||sentry.odysee.tv^$important
 ||sentry.runit.cc^$important
-||stat.radar.imgsmail.ru^$important
+||radar.imgsmail.ru^$important
 ||sentry.hh.ru^$important
 ://adsrv
 ||analytics.iportal.ru^$important
 ||sentry.viqeo.tv^$important
 ||sentry.interneturok.ru^$important
 ||pipedream.wistia.com^
-||a.ria.ru^
+||a.ria.ru^$important
 ||cleverwebserver.com^
 ||adjust.com^$important
 ||adjust.world^$important
@@ -824,8 +877,8 @@
 ||analytics.vgtimes.ru^$important
 ||sentry.vedomosti.ru^$important
 ||sentry.ctcru.tech^$important
-||w3-reporting.reddit.com^
-||media-advcycle.imgsmail.ru^
+||w3-reporting.reddit.com^$important
+||media-*.imgsmail.ru^$important
 ||sentry.matchtv.ru^$important
 ||analytics.wikitide.net^$important
 ||rtrs-stat.teletarget.ru^
@@ -853,8 +906,8 @@
 ||sntr.avito.ru^$important
 ||frontmetrics.tutu.ru^$important
 ||sentry-relay.beeline.ru^$important
-||eventstream.ring.com^
-||fls-na.amazon.com^
+||eventstream.ring.com^$important
+||fls-na.amazon.com^$important
 ||counter.molnet.ru^$important
 ||tpo.gg^$important
 ||sentry.avs.io^$important
@@ -868,7 +921,7 @@
 ||sentry.w6p.ru^$important
 ||logger.id.sber.ru^$important
 ||goto2024.ru^
-||ads.twitch.tv^
+||ads.twitch.tv^$important
 ||api-statist.tinkoff.ru^$important
 ||stat.g2.plvideo.ru^$important
 ||v*.plrjs.org^
@@ -877,9 +930,9 @@
 ||sdk.mrf.io^
 ||sr.studiostack.com^
 ||setka.media^
-||error-analytics-sessions-production.shopifysvc.com^
+||error-analytics-sessions-production.shopifysvc.com^$important
 ||hs-analytics.net^
-||hsadspixel.net^
+||hsadspixel.net^$important
 ||hs-banner.com^
 ||cnb.cnews.ru^
 ||stat.media^
@@ -944,7 +997,7 @@
 ||icanhazip.com^
 ||track*.tprg.ru^
 ||cc34ea.cyberinsider.com^
-||geosurf.io^
+||geosurf.io^$important
 ||cloud-f*.dev.drweb.com^
 ||c*.dev.drweb.com^
 ||sentry.iptv.rt.ru^$important
@@ -952,6 +1005,45 @@
 ||clickstream.lenta.tech^$important
 ||s*.ucoz.net^$important
 ||*-devtools-frontend.appspot.com^
+||mediator.mail.ru^$important
+||privacy-cs.mail.ru^$important
+||mediascope.mail.ru^$important
+||alt-xray.imgsmail.ru^$important
+||advmusic.com^
+||naydex.net^$important
+||1l-hit.mail.ru^
+||1l-view.mail.ru^
+||1link.mail.ru^
+||relap.mail.ru^$important
+||ad.mail.ru.netis.cc^$important
+||ad.net.mail.ru^$important
+||adv.mail.ru^$important
+||radar.imgsmail.ru^$important
+||top.mail.ru^$important
+||cspreport.mail.ru^$important
+||e.mail.ru.consumer.id6589.com^$important
+||likemore-go.imgsmail.ru^
+||mail.runconverge.com^$important
+||mediator.imgsmail.ru^$important
+||r0.mail.ru^$important
+||reklama.mail.ru^$important
+||stat.browser.mail.ru^$important
+||stat.dl.mail.ru^$important
+||t.mail.ru^$important
+||top5.mail.ru^$important
+||ads.facebook.com^$important
+||an.facebook.com^$important
+||analytics.facebook.com^$important
+||ar-ar.facebook.com^$important
+||audiencenetwork.facebook.com^$important
+||badge.facebook.com^$important
+||clutchpoints-facebook.4taps.me^$important
+||dns.facebook.com^$important
+||facebook-ad-iq-academy.thinkific.com^$important
+||facebook-ads.hara.vn^$important
+||graph-fallback.facebook.com^$important
+||pixel.facebook.com^$important
+||places.facebook.com^$important
 !
 !
 !
@@ -1067,6 +1159,8 @@
 ||unknown.host^
 ||crl.fk.local^
 ||ipwho.is^
+||mres^
+||xggd&f|x&gzo^
 !
 !
 !
