@@ -4333,7 +4333,7 @@ $cookie=_ym_debug
 ||ads-captcha.yandex.ru^$important
 ||adsdk.yandex.ru^$important
 ||advertising.yandex.ru^$important
-||aflt.market.yandex.ru^$important$important
+||aflt.market.yandex.ru^$important
 ||analytics.mobile.yandex.net^$important
 ||lbs.yandex.ru^
 ||audience.yandex.ru^$important
@@ -5517,4 +5517,5 @@ gazeta.ru#@$#body { padding-top: 0!important; }
 ! Мессенджер Discord заблокирован 08.10.24 на территории РФ из-за нарушения законодательства.
 ! Discord messenger was blocked on 08.10.24 in the territory of the Russian Federation due to violations of the law.
 !
+
 !
