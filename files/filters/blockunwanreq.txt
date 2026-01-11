@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.7.4-R
-! TimeUpdated: 2026-01-02T17:50:25+00:00
+! Version: 4.7.5-R
+! TimeUpdated: 2026-01-10T17:50:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -459,7 +459,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||vsesvets.com^$important
 ||yapx.ru^$important
 ||ru-minecraft.ru/uploads/forum/images/*/*_ad_sign.png^$image,domain=ru-minecraft.ru
-||api.expf.ru/api/v*/geo^$xhr
+||expf.ru^$third-party
 ||rutube.ru/api/video/recommendation$xhr,domain=rutube.ru,important
 ! rutube.ru/static/img/png/adsdkbanner.png^$xhr,domain=rutube.ru
 ||api.carrotquest.app/v*/users/*self_user/$ping,xhr,domain=tochka.com,important
@@ -586,7 +586,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/zen-subscribe.js^$script,domain=kp.ru|kp.*,important
 ||assets.habr.com/habr-web/img/*.webp^$image,domain=habr.com
 ! habr.com/kek/v*/reactions/counters$xhr,domain=habr.com (01.25: ломает счётчики на сайте)
-*/api/fl$xhr,other,important
+*/api/fl$xhr,other
 ||eaglercraft.com/js/fb.js^$script,domain=eaglercraft.com,important
 ||s.basicconfig.com/channel/20$script,domain=gid-minecraft.ru,important
 ||ixbt.com/site*/resources/javascript/kocmoc.js^$script,domain=ixbt.com,important
@@ -1188,7 +1188,7 @@ calltouch.js$script,xhr
 ||limehd.tv/script/exp-metrika.js^$script,important,domain=limehd.tv
 ||adm.dimonvideo.ru^
 ||millennialmedia.com.*^$important
-||ok.ru/gwtlog$ping,domain=ok.ru
+!
 ||dzen.ru/partner/$xhr
 ||2gis.*/public/promo/*.png^$image,domain=2gis.*
 ||ams*-cdn.2gis.*/raws/*.svg^$image,domain=2gis.*
@@ -1943,7 +1943,7 @@ $cookie=showed_vkid_onetap,domain=~vk.com|~vk.ru
 ||id.vk.*/floating_one_tap_auth$third-party,important,domain=~vk.com|~vk.ru
 ||static.vk.*/vkid/*/floating_one_tap_auth$third-party,important,domain=~vk.com|~vk.ru
 ||id.vk.*/vkid_sdk_get_config$third-party,important,domain=~vk.com|~vk.ru
-||login.vk.*/?act=$third-party,important,domain=~vk.com|~vk.ru
+||login.vk.*/?act=$third-party,important,domain=~vk.com|~vk.ru|~ok.ru
 ||api.vk.*/method/statEvents
 ||id.vk.*/stat_events_vkid_sdk$important
 ||vk.*/js/api/openapi.js$script,third-party,important,domain=~vk.com|~vk.ru
@@ -2184,7 +2184,6 @@ $cookie=/ADRUM_*/
 ||kommersant.ru/CorpImages/MainPage/8e086118-4e99-4323-b65d-17aba2bcf1f7.svg^$image,domain=kommersant.ru
 ||kommersant.ru/CorpImages/MainPage/0e1dfc0f-0b71-4b41-b507-d4b72c744144.svg^$image,domain=kommersant.ru
 ||nativeroll.tv^$important
-||ok.ru/gwtlog$important
 ||inshot.dev^
 ||icanhazip.com^
 ||zoom.us/user/anonymous/telemetry$important
@@ -2286,6 +2285,28 @@ $removeparam=is_autologin_ya
 ||graph-fallback.facebook.com^$important
 ||pixel.facebook.com^$important
 ||places.facebook.com^$important
+/themes/hodor/public/images/spacer.gif
+||static.rutube.ru/static//img/webp/wdp-premium/Icon_paid_subscription.webp^$image,domain=rutube.ru
+||test.rutube.ru^$important
+-pclog.3u.com^$important
+||updater.3u.com/3utools/configs/whitelist/whitelist_*.xml$app=3uTools.exe
+||telegram.org^$app=ru.oneme.app
+||whatsapp.*^$app=ru.oneme.app
+/ot-custom.js
+||evergage.com^
+||cdn.evgnet.com/beacon/$script
+||redditstatic.net^
+||tracking.intentsify.io^
+||ms.dzen.ru^
+||recostream.go.mail.ru^$important
+/mediascopeForMedia/
+||rees46.ru^
+||avito.ru/clickstream/$domain=avito.ru
+/backend/device_detect.php^$xhr
+||sentry.amediateka.tech^$important
+||lkoi3q.ru^
+||stat.amediateka.ru^$important
+||gtm.amediateka.tech^$important
 !
 !
 !
@@ -2831,6 +2852,8 @@ dom.ru,*.dom.ru##div[class^="sc-6e31cbc2-0 kKbgFL"]
 ||st-ok.cdn-vk.ru/res/assets/MetricsAnonymUserBehaviourImitation-*.js^$script,domain=ok.ru
 ||st-ok.cdn-vk.ru/res/assets/FingerprintJS-*.js^$script,domain=ok.ru
 ||st-ok.cdn-vk.ru/res/assets/DzBlockDetect-*.js^$script,domain=ok.ru
+||ok.ru/res/js/Mediascope$script,domain=ok.ru
+||st-ok-pts.cdn-vk.ru/web-api/pts/mediatopic$domain=ok.ru
 ! В скриптах полная жесть.. куча метрики и всякого «мусора», причём  зависимые - заблокируешь запрос, сломается сайт.
 !
 ! ==
@@ -3554,7 +3577,6 @@ tutu.ru###__next > div:first-child > div.marginTop0_db3adada.marginTopLg450_db3a
 travelask.ru##div[class^="footer__bottom-liveinternet"]
 tourister.ru###right-block-raiting-main-i-lenta
 tourister.ru###footer > div.nt-foot1 > div.nt-foot-item:first-child > div.nt-foot-timestat:last-child
-t2.ru###portal
 t2.ru###root > div.page-container.info-tiles-page.new-menu-page.new-menu-page-2 > div.height-holder-mobile:first-child > div.height-holder-mobile > div > div.height-holder-mobile > div.page:last-child > div.main-content.main-content--dark:nth-child(2) > div:last-child
 t2.ru###root > div.page-container.info-tiles-page.new-menu-page.new-menu-page-2 > div.height-holder-mobile:first-child > div.height-holder-mobile > div > div.height-holder-mobile > div.page:last-child > div.main-content.main-content--light:nth-child(2) > div:last-child
 rtrs.ru##div[class^="footer-found-error"]
@@ -3897,6 +3919,9 @@ id.vk.com##.AdvertisingBanner-navigationGroup-gzrhtr
 online.sberbank.ru###layout-main > div.cveDRKTNkPZZbnljhSQj:first-child
 ##iframe[src*="googletagmanager.com/ns.html"]
 ##img[src*="kazdsp.com"]
+recsquare.ru##div.icon_max:nth-child(18)
+starnet.md##div.fixed.bottom-\[16px\].right-\[12px\].lg\:bottom-\[20px\].lg\:right-\[20px\].max-w-\[calc\(100\%_-_24px\)\].md\:max-w-\[500px\].w-full.rounded-\[16px\].border.border-\[\#CFD0D3\].bg-\[\#fff\].p-\[20px\].text-\[\#000222\].z-10:nth-child(41)
+4cells.ru##.CookieBanner-module_CookieBannerContainer__HUMDV
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4002,7 +4027,7 @@ beetv.kz#%#//scriptlet('set-local-storage-item', 'querySearchHistory', 'emptyObj
 ||adserv.ai^$important
 ||tapulsads.ru^$important
 ||gonet-ads.com^$important
-||telecid.ru^
+||telecid.ru^$important
 ||tttturbonet.com^$app=com.dubox.drive
 ||*pavo*^$important,domain=~figma.com
 ||fancybox.in^
@@ -4387,6 +4412,16 @@ $cookie=_ym_debug
 ||messenger.yandex.*/report$important
 ||ya.ru/clck/
 ||yandex.ru/clck/
+||yastatic.net/pcode-native/loaders/$script
+!
+!
+||yandex.ru^$app=ru.yandex.weatherplugin
+||egress.yandex.net^$app=ru.yandex.weatherplugin
+||cloud-api.yandex.net^$app=ru.yandex.weatherplugin
+||api.browser.yandex.ru^$app=ru.yandex.weatherplugin
+||avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
+||favicon.yandex.net^$app=ru.yandex.weatherplugin
+!
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -4413,6 +4448,7 @@ yandex.ru##.Distribution-Popup, .Distribution-Popup_hasShadow, .Distribution-Pop
 yandex.ru##.FuturisSnippet
 ##a[href*="yabs.yandex.ru/count/"]
 yandex.ru##div[class^="AdvMastHead"]
+yandex.ru##.DistributionPopup, .DistributionPopup_motley_grey, .DistributionPopup_layout_rectangle, .DistributionPopup_animation_bounce, .DistributionPopup_location_bottom, .DistributionPopup_visible
 !
 !
 ! =
@@ -4614,7 +4650,7 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||iphones.ru/wp-content/themes/simpla2/images/sprites/ir-a18a0.png^$xhr,domain=iphones.ru
 @@||a.apkpure.*/captcha
 @@||accounts.google.com/*/cspreport$xhr,other
-! @msftconnecttest.com^
+@@||msftconnecttest.com^
 ! проверка соединения с интернетом на Виндовс (домен Майкрософт).
 @@||pay.yandex.ru^
 @@/.well-known/ddos-guard/$xhr,script,websocket,css
@@ -5287,6 +5323,11 @@ gazeta.ru#@$#body { padding-top: 0!important; }
 @@/antibot9/
 @@||ovego.tv/secure/
 @@||accounts.*.com/RotateCookies$xhr,document,subdocument
+@@||upload.ee^$cookie=lng
+@@||ok.ru/gwtlog$domain=ok.ru
+@@||geetest.com
+t2.ru#@##portal
+@@||token.stb.md/api/*/stream/*/metadata.json$xhr,important
 !
 !
 ! -
@@ -5517,5 +5558,4 @@ gazeta.ru#@$#body { padding-top: 0!important; }
 ! Мессенджер Discord заблокирован 08.10.24 на территории РФ из-за нарушения законодательства.
 ! Discord messenger was blocked on 08.10.24 in the territory of the Russian Federation due to violations of the law.
 !
-
 !
