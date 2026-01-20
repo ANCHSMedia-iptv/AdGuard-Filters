@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.2.5-R
+! Version: 4.2.7-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-01-10T17:51:00+00:00
+! TimeUpdated: 2026-01-20T16:51:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 10.01.2026 17:51 UTC
+! Last Modified: 20.01.2026 16:51 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -58,8 +58,8 @@
 ! -- == Яндекс: Аналитика, реклама и прочее. ==
 !
 ||banners*.yandex.net^$important
-||appmetrica.yandex.net^$important
-||appmetrica.yandex.ru^$important
+||appmetrica.yandex.net^
+||appmetrica.yandex.ru^
 ||bs.yandex.ru^$important
 ||direct.yandex.ru^$important
 ||tracking.ott.yandex.net^$important
@@ -147,6 +147,7 @@
 ||yandexcloud-api.t2.ru^$important
 ||ysa-static.passport.yandex.ru^
 ||zdevx.yandex.ru^$important
+||report.appmetrica.yandex.net.iberostar.com^
 !
 !
 ! ===
@@ -245,7 +246,7 @@
 ||androidtvgtvmfe*.googleapis.com^
 ||playmoviesdfe*.googleapis.com^
 ||calendarpushnotification*.googleapis.com^
-||1e100.net^
+! 1e100.net^
 ||appsgrowthpromo*.googleapis.com^$important
 ||peoplestackwebexperiments*.clients*.google.com^
 ||infinitedata*.googleapis.com^
@@ -577,7 +578,7 @@
 ||pushapi.mail.ru^
 ||events.maps.mail.ru^$important
 ||ms.ok.ru^$important
-||ingest.*.sentry.io^$important
+||*ingest.*.sentry.io^$important
 ||cdn.aaacdn.net^
 ||sentry.x5.ru^$important
 ||tabun.info^
@@ -1048,13 +1049,14 @@
 ||*-pclog.3u.com^$important
 ||evergage.com^
 ||redditstatic.net^
-||tracking.intentsify.io^
-||ms.dzen.ru^
+||tracking.intentsify.io^$important
+||ms.dzen.ru^$important
 ||recostream.go.mail.ru^$important
 ||sentry.amediateka.tech^$important
 ||lkoi3q.ru^
 ||stat.amediateka.ru^$important
 ||gtm.amediateka.tech^$important
+||vmetrics.goodgame.ru^$important
 !
 !
 !
@@ -1493,6 +1495,9 @@
 @@||pki.intel.com^
 @@||crl.quovadisglobal.com^
 @@||ocsp.intel.com^
+@@||token.stb.md^
+@@||188.255.31.197
+@@||smartcaptcha.cloud.yandex.ru^
 !
 !
 ! ===
