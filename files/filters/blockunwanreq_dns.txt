@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.2.7-R
+! Version: 4.2.8-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-01-20T16:51:00+00:00
+! TimeUpdated: 2026-01-29T16:51:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 20.01.2026 16:51 UTC
+! Last Modified: 29.01.2026 16:51 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -81,7 +81,7 @@
 ||an.yandex.*^$important
 ||startup.mob.*.yandex.net^$important
 ||taxi-promotions.s*yandex.net^
-||click.sender.yandex.ru^
+||click.sender.yandex.ru^$important
 ||webvisor.org^$important
 ||yandetruckingservices.com^
 ||yandexmetri*.com^$important
@@ -257,6 +257,7 @@
 ||adsense.google.com^$important
 ||doubleclickbygoogle.com^$important
 ||clouderrorreporting.googleapis.com^
+||googletagservices.com^
 !
 ! ===
 !
@@ -340,8 +341,8 @@
 ||clck.dzen.ru^$important
 ||*ads.unity3d.com^$important
 ||beacon.shazam.com^$important
-! tns-counter.ru^$important
-! geo.geosurf.io^$important
+||tns-counter.ru^$important
+||geosurf.io^$important
 ||relap.io^$important
 ||singular.net^$important
 ||*mediation.unity3d.com^$important
@@ -1057,6 +1058,14 @@
 ||stat.amediateka.ru^$important
 ||gtm.amediateka.tech^$important
 ||vmetrics.goodgame.ru^$important
+||mrworldwide.com^
+||kraken.rambler.ru^
+||pix.spot.im^
+||xc3.services.livejournal.com^
+||events.split.io^
+||a.sputniknews.com^
+||a.apkpure.net^
+||udbdf.apkpure.net^
 !
 !
 !
@@ -1569,6 +1578,7 @@
 ||mitarchive.info^$dnsrewrite=0.0.0.0
 ||aitd.one^$dnsrewrite=0.0.0.0
 ||piguiqproxy.com^$dnsrewrite=0.0.0.0
+||fewteraurums.com^
 !
 !
 !
