@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.2.8-R
+! Version: 4.2.9-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-01-29T16:51:00+00:00
+! TimeUpdated: 2026-01-30T16:51:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 29.01.2026 16:51 UTC
+! Last Modified: 30.01.2026 16:51 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -42,6 +42,7 @@
 ||firebasestorage*.googleapis.com^
 ||firebasedynamiclinks*.googleapis.com^
 ||firebaseappcheck.googleapis.com^$important
+||firebaseio.com^
 ! ===
 !
 ! -- == Google Crashlytics ==
@@ -58,7 +59,7 @@
 ! -- == Яндекс: Аналитика, реклама и прочее. ==
 !
 ||banners*.yandex.net^$important
-||appmetrica.yandex.net^
+||appmetrica.yandex.net^$important
 ||appmetrica.yandex.ru^
 ||bs.yandex.ru^$important
 ||direct.yandex.ru^$important
@@ -143,11 +144,11 @@
 ||adv.yandex.ru^$important
 ||yandexdatafactory.com^$important
 ||yastatic.yandex.net^
-||yabs.yandex.*^
+! yabs.yandex.*^
 ||yandexcloud-api.t2.ru^$important
 ||ysa-static.passport.yandex.ru^
 ||zdevx.yandex.ru^$important
-||report.appmetrica.yandex.net.iberostar.com^
+||appmetrica.yandex.net.iberostar.com^
 !
 !
 ! ===
@@ -579,7 +580,7 @@
 ||pushapi.mail.ru^
 ||events.maps.mail.ru^$important
 ||ms.ok.ru^$important
-||*ingest.*.sentry.io^$important
+||*ingest*.sentry.io^$important
 ||cdn.aaacdn.net^
 ||sentry.x5.ru^$important
 ||tabun.info^
@@ -1066,6 +1067,7 @@
 ||a.sputniknews.com^
 ||a.apkpure.net^
 ||udbdf.apkpure.net^
+||api.s.mindbox.ru^$important
 !
 !
 !
@@ -1174,7 +1176,7 @@
 ||=^$important
 ||initplayback^
 ||iptv.local^
-! ||ip-api.com^
+! ip-api.com^
 ! ||ifconfig.co^
 ||odc.null^
 ||*CawcaFr^
@@ -1468,7 +1470,6 @@
 @@||vod*.stb.tvime.ru^
 @@||vs*.cdn.tvime.ru^
 @@||clck.ru^
-@@||coworking.tyuiu.ru^
 @@||openapi-alpha.ivideon.com^
 @@||openapi-alpha-*.ivideon.com^
 @@||openapi-alpha.ivideon.com^
@@ -1504,9 +1505,23 @@
 @@||pki.intel.com^
 @@||crl.quovadisglobal.com^
 @@||ocsp.intel.com^
+@@||geetest.com^
 @@||token.stb.md^
 @@||188.255.31.197
+@@||crl*.digicert.com^
 @@||smartcaptcha.cloud.yandex.ru^
+@@||dns.yandex.net^
+!
+!
+!
+!
+!
+! =
+! TIU
+@@||coworking.tyuiu.ru^
+! =
+!
+!
 !
 !
 ! ===

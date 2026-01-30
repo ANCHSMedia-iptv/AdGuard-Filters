@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.7.8-R
-! TimeUpdated: 2026-01-29T16:50:25+00:00
+! Version: 4.7.9-R
+! TimeUpdated: 2026-01-30T16:50:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1002,7 +1002,7 @@ qrator/validate$xhr,important
 ||fandom.com/silver-surfer.html^$domain=fandom.com|*.fandom.com,important
 ||js.zi-scripts.com/zi-tag.js^$script,important
 ||js.zi-scripts.com/unified/v*/master/$xhr,important
-||appcenter.ms^$app=ru.mes.dnevnik.fgis|ru.pyaterochka.app.browser|ru.desport.android|bz.zaa.mibudsm8|ru.citilink|www.metro.com
+||appcenter.ms^$app=ru.mes.dnevnik.fgis|ru.pyaterochka.app.browser|ru.desport.android|bz.zaa.mibudsm8|ru.citilink|www.metro.com|com.vk.mail
 ||zephyrsgroves.com^
 ||xn--80aafadvc9bifbaeqg0p.xn--p1ai/img/icons/sferum.svg^$image,domain=xn--80aafadvc9bifbaeqg0p.xn--p1ai
 !
@@ -1178,7 +1178,7 @@ calltouch.js$script,xhr
 ||svc.iptv.rt.ru/event_collector$ping
 ||restream-media.net/event_collector$ping
 ||al-adtech.com^
-||player.smotrim.ru/js/piwik.js$important
+!
 ||player.smotrim.ru/js/advsdk.js$important
 ||player.smotrim.ru/js/ad-plugin-html5-$important
 ||senoval.cdn.sports.ru/cross-recommender/recommender.$script,domain=cyber.sports.ru
@@ -1998,7 +1998,7 @@ $removeparam=kaspr
 ||api.cloud.ru/analyticsgateway/v*/$domain=cloud.ru,important
 ||s.vtb.ru/mf/mf_*_ads/*/$script,css,domain=online.vtb.ru
 ||h.vtb.ru/projects/vtbfl/models/sapphirePushNotificationBanner/$xhr,domain=online.vtb.ru
-||online.vtb.ru/msa/api-gw/private/loya/loya-sdv/counters/countersQuantity^$xhr,domain=online.vtb.ru
+||online.vtb.ru/msa/api-gw/private/loya/loya-sdv/counters/$xhr,domain=online.vtb.ru
 ||consultant.ru/cookies/notification/^$xhr,domain=consultant.ru,important
 ||habr.com/stats/$ping,xhr,domain=habr.com,important
 ||portal-sentry-v2.vk.team^$important
@@ -2333,7 +2333,7 @@ $removeparam=is_autologin_ya
 ||static-cdn.spot.im/production/social/tags/v*/conversation/ad-container-bundle.
 ||pics.vesti.ru/counter/$important
 ||id.sber.ru^$domain=livejournal.com
-! split.io^$app=
+||split.io^$app=com.server.auditor.ssh.client
 ||static.pn.am/styles/ad.css^$css,domain=panarmenian.net
 ||static.pn.am/images/fb.gif^$image,domain=panarmenian.net
 ||a.sputniknews.com^$important
@@ -2346,6 +2346,7 @@ $removeparam=is_autologin_ya
 ||oren1.ru/api/articles?filter[is_super_promotion]=1&$xhr,domain=oren1.ru
 ||oren1.ru/bs/sm^$xhr,domain=oren1.ru
 ||resources.blogblog.com/img/blank.gif^$image,redirect-rule=1x1-transparent.gif
+||api.s.mindbox.ru^$important,domain=~mindbox.ru,third-party
 !
 !
 !
@@ -4165,13 +4166,15 @@ smotrim.ru#%#//scriptlet('set-local-storage-item', '/tmr_*/', '$remove$')
 ||=^$important
 ||initplayback^
 ||iptv.local^
-! ip-api.com^
+||ip-api.com^$third-party
 ! ifconfig.co^
 ||odc.null^
 ||*CawcaFr^
 ||unknown.host^
 ||crl.fk.local^
 ||ipwho.is^
+||mres^
+||xggd&f|x&gzo^
 !
 !
 !
@@ -4289,6 +4292,7 @@ smotrim.ru#%#//scriptlet('set-local-storage-item', '/tmr_*/', '$remove$')
 ||speeddials.opera.com/api/v*/partner-content$important
 ||speeddials.opera.com/api/v*/external-suggestions-config
 -proxy.satoshi.opera-api2.com^
+||composer.opera-api.com/api/v*/chat-suggestions
 ! =
 !
 !
@@ -4332,6 +4336,7 @@ smotrim.ru#%#//scriptlet('set-local-storage-item', '/tmr_*/', '$remove$')
 ||firebasestorage*.googleapis.com^
 ||firebasedynamiclinks*.googleapis.com^
 ||firebaseappcheck.googleapis.com^$important
+||firebaseio.com^
 ! ===
 !
 !
@@ -4507,10 +4512,11 @@ $cookie=_ym_debug
 ||adv.yandex.ru^$important
 ||yandexdatafactory.com^$important
 ||yastatic.yandex.net^
-||yabs.yandex.*^
+||yabs.yandex.*/count$important
 ||yandexcloud-api.t2.ru^$important
 ||ysa-static.passport.yandex.ru^
 ||zdevx.yandex.ru^$important
+||appmetrica.yandex.net.iberostar.com^
 ||messenger.yandex.*/report$important
 ||ya.ru/clck/
 ||yandex.ru/clck/
@@ -4519,7 +4525,7 @@ $cookie=_ym_debug
 $removeparam=yredirect
 ||yastatic.net/s3/web-alice/public/marketing-$document,subdocument,domain=alice.yandex.ru,important
 ||strm.yandex.net/ping$important
-||api.music.yandex.*/*/session/*/feedback/$xhr,domain=api.music.yandex.*|api.music.yandex.ru,important
+||api.music.yandex.*/*/session/*/feedback/$xhr,important
 ||yastatic.net/s3/distribution/yanalytics/v*/$important
 ||radio.api.music.yandex.ru/radio/v*/recommendations/record-event
 !
@@ -4530,6 +4536,10 @@ $removeparam=yredirect
 ||api.browser.yandex.ru^$app=ru.yandex.weatherplugin
 ||avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
 ||favicon.yandex.net^$app=ru.yandex.weatherplugin
+@@||weather.yandex.ru^$app=ru.yandex.weatherplugin
+@@||static-maps.yandex.ru^$app=ru.yandex.weatherplugin
+@@||login.yandex.ru^$app=ru.yandex.weatherplugin
+@@||passport.yandex.ru^$app=ru.yandex.weatherplugin
 !
 !
 ! = Cosmetic rules =
@@ -4711,8 +4721,10 @@ yandex.ru,ya.ru##.Distribution, .HeaderDesktopActions-Distribution, .HeaderDeskt
 ||appbaqend.com^$important
 ||richlifeads.ru^$important
 ||mintegral.net^$important
-||nr.bidderstack.com^$important
-||adsmetadata.mobileadexchange.net^$important
+! nr.bidderstack.com^$important
+||bidderstack.com^$important
+! adsmetadata.mobileadexchange.net^$important
+||mobileadexchange.net^$important
 ||mediameter.by^$important
 ||stat*.1internet.tv^$important
 ||analytics.cn.ru^
@@ -5110,7 +5122,6 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||static-api.mediavitrina.ru/v*/forced_capping/*/config.json$xhr
 @@||time.is/t*/?$xhr,domain=time.is
 @@||gosuslugi.ru/auth-provider/check-session^$xhr,domain=gosuslugi.ru
-@@||tyuiu.ru/wp-admin/admin-ajax.php^$xhr,domain=tyuiu.ru
 @@||*.id.facct.ru/id.html
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/deprecatingbrowsers.json$xhr,domain=online.sberbank.ru
 @@||c.pki.goog^
@@ -5252,8 +5263,6 @@ serverblight.com#@##cursor
 @@||clck.ru^
 @@/bitrix/tools/captcha.php$image,xhr
 @@||sputnik.systems^$cookie=USER_LANG
-@@||mnokol.tyuiu.ru/site/templates/*/js/cookie*.js$script,domain=mnokol.tyuiu.ru,important
-@@||coworking.tyuiu.ru^
 @@/wp-content/plugins/google-captcha/
 @@||gravatar.com^$image
 @@||arsplus.ru/bitrix/tools/conversion/ajax_counter.php^$xhr,domain=arsplus.ru
@@ -5396,6 +5405,7 @@ browserleaks.com$@$link[rel="manifest"]
 @@||i.mi.com^$cookie
 @@||mail.yandex.ru/api/v*/userid/counters
 @@||gov.ru^$cookie
+@@||sentry.radolyn.com^
 @@||antibot.wildberries.ru/statics/challenge_$script
 @@||antibot.wildberries.ru/api/v*/$xhr
 @@||antibot.wildberries.ru^
@@ -5410,10 +5420,7 @@ gazeta.ru#@$#body { padding-top: 0!important; }
 @@||repo.nperf.com/*/nperf/*.*$subdocument,document,other
 @@||nperf.top^$app=com.nperf.master
 @@||wildberries.ru/__wbaas/challenges/antibot/
-@@||tyuiu.ru/theme/yui_combo.php?*/event-mousewheel/$script,domain=tyuiu.ru
 @@$cookie=MoodleSession
-@@||sso.tyuiu.ru/js/keycloak.js$script
-@@||sso.tyuiu.ru/realms/master/protocol/openid-connect/3p-cookies/$important
 @@||zoom.us/client/*/ZoomInstallerFull
 @@||digicert.com^
 @@/simple_captcha.php$domain=lostfilm.life|lostfilm.download|lostfilmtv5.site|lostfilm.pro|lostfilm.uno|lostfilm.today|lostfilm.tv
@@ -5451,13 +5458,14 @@ t2.ru#@##portal
 @@||smartcaptcha.cloud.yandex.ru
 @@||crl*.digicert.com^
 @@/neodev/anubisbb/
-@@$stealth=referrer|3p-auth|3p-cache|3p-cookie,domain=sso.tyuiu.ru|tyuiu.ru
 @@||cdn.voka.tv/live/*.m3u8
 teletype.in#@#div.preloader
 @@||gazeta.ru^$removeparam=/^utm_auth=false$/,important
 @@||gazeta.ru/auth/sso.shtml?origin=
-@@||tyuiu.ru/lib/ajax/service.php?sesskey=
 @@/js-challenge-script-
+@@||1.1.1.1^$app=com.bluecord
+@@||dns.yandex.net^
+@@/LazyGoogleReCaptchaV*.js
 !
 !
 ! -
@@ -5471,6 +5479,24 @@ teletype.in#@#div.preloader
 ! Забыл добавить ещё тогда..
 !
 ! -
+!
+!
+!
+!
+! ==
+! TIU
+@@||tyuiu.ru/wp-admin/admin-ajax.php^$xhr,domain=tyuiu.ru
+@@||mnokol.tyuiu.ru/site/templates/*/js/cookie*.js$script,domain=mnokol.tyuiu.ru,important
+@@||coworking.tyuiu.ru^
+@@||tyuiu.ru/theme/yui_combo.php?*/event-mousewheel/$script,domain=tyuiu.ru
+@@||sso.tyuiu.ru/js/keycloak.js$script
+@@||sso.tyuiu.ru/realms/master/protocol/openid-connect/3p-cookies/$important
+@@$stealth=referrer|3p-auth|3p-cache|3p-cookie,domain=sso.tyuiu.ru|tyuiu.ru
+@@||tyuiu.ru/lib/ajax/service.php?sesskey=
+! ==
+!
+!
+!
 !
 !
 !
