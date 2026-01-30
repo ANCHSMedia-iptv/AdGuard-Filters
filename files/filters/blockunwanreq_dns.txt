@@ -79,7 +79,7 @@
 ||abt.*.yandex.net^$important
 ||media-adv.market.yandex.ru^$important
 ||mc.yandex.*^$important
-||an.yandex.*^$important
+! an.yandex.*^$important
 ||startup.mob.*.yandex.net^$important
 ||taxi-promotions.s*yandex.net^
 ||click.sender.yandex.ru^$important
