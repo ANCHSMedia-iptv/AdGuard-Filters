@@ -2383,7 +2383,7 @@ $removeparam=is_autologin_ya
 ! Blocking the script responsible for advertising (despite other filters blocking URLs of advertisements).
 ! Блокировка скрипта, отвечающего за рекламу (несмотря на блокировку URL адресов рекламы другими фильтрами).
 ||*4pda.to/s/j7793LgWtPTV.js$script,domain=4pda.to,important
-
+!
 !
 ! Blocking hidden images in one pixel (1 x 1).
 ! Блокировка скрытых изображений в один пиксель (1 x 1).
