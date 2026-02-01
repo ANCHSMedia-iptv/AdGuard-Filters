@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.7.9-R
-! TimeUpdated: 2026-01-30T16:50:25+00:00
+! Version: 4.8.0-R
+! TimeUpdated: 2026-01-01T14:50:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -659,7 +659,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 $cookie=adtech_uid
 $cookie=top100_id
 $cookie=dco.id
-$cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicdrama.eu|~pikabu.ru|~taptv.ru|~yes-ru.co.il|~yes.co.il|~nedohackers.site|~gotovim-doma.ru|~2ip.ru|~2ip.io|~1000.menu|~progdvb.com|~panasonic.com|~*.panasonic.com|~skymedia.mn|~11klasov.net,important
+! cookie=PHPSESSID,domain=~woobl.ru|~peers.tv|~monoreel.ru|~trives-shop.ru|~epicdrama.eu|~pikabu.ru|~taptv.ru|~yes-ru.co.il|~yes.co.il|~nedohackers.site|~gotovim-doma.ru|~2ip.ru|~2ip.io|~1000.menu|~progdvb.com|~panasonic.com|~*.panasonic.com|~skymedia.mn|~11klasov.net,important
 $cookie=KIykI
 $cookie=L
 $cookie=bltsr
@@ -672,7 +672,7 @@ $cookie=/__ddg*/,important
 ||api.zadarma.com/calltracker$xhr,important
 ||effect.habr.com^$important
 ||habr.com/kek/v*/articles/*/pageview$xhr,domain=habr.com
-||hawk.so/ws$websocket,important
+||hawk.so$websocket,important
 /*hawk*.js$script,xhr,important
 ||pikabu.ru/post_img/2025/01/14/8/17368606351450798.png^$image,domain=pikabu.ru
 ||d.pikabu.ru/counters/$xhr,domain=pikabu.ru
@@ -782,7 +782,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 /themes/custom/initlab_cab/images/click-icon.png^$image,domain=cableman.ru|cableman.pro
 /themes/custom/initlab_cab/images/k-icon.png^$image,domain=cableman.ru|cableman.pro
 ||wifika.ru/wp-content/plugins/*/pro/images/blank.gif^$image,domain=wifika.ru,redirect-rule=1x1-transparent.gif,important
-/admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai|~tyuiu.ru|~me.jimjam.tv|~jimjam.tv|~*.jimjam.tv|~republic-tv.ru|~xakep.ru|~rknweb.ru
+! admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai|~tyuiu.ru|~me.jimjam.tv|~jimjam.tv|~*.jimjam.tv|~republic-tv.ru|~xakep.ru|~rknweb.ru
 ||userway.org^$third-party
 ||files.vm.ru/pdf/2025.02/original/thumb_1280_67c0a45f82682c09ce62d1a1.jpg^$image,xhr,domain=vm.ru
 ||stats.wp.com^
@@ -2347,6 +2347,17 @@ $removeparam=is_autologin_ya
 ||oren1.ru/bs/sm^$xhr,domain=oren1.ru
 ||resources.blogblog.com/img/blank.gif^$image,redirect-rule=1x1-transparent.gif
 ||api.s.mindbox.ru^$important,domain=~mindbox.ru,third-party
+||stat.tildaapi.com/event/$important
+||ipcheck.ing/res/thordata/$image,domain=ipcheck.ing
+||ipregistry.co/assets/noticeable-ads.png^$image,domain=ipregistry.co
+||static.tildacdn.com/tild6330-3063-4065-b737-346162323562/max-messenger-$image,domain=ikosmos.tv
+||metro-set.ru/dummy.json^$domain=metro-set.ru
+||sentry.hcaptcha.com^$important
+||raiffeisen.ru/oapi/menu/public-view/$domain=raiffeisen.ru
+||d-assets.2gis.*/interestingCarousel.$script,domain=2gis.ru|2gis.*
+||ml314.com^
+||6sc.co^
+||crsspxl.com^
 !
 !
 !
@@ -2489,6 +2500,7 @@ $removeparam=is_autologin_ya
 ||*-net.pinterest.com^$important
 ||*-net.pinimg.com^$important
 ||pinterest.com/resource/InviteSocialTrackingParamNonInviteResource/$important
+||pinterest.com/resource/ActivateExperimentResource/
 !
 ! ===
 !
@@ -3089,7 +3101,7 @@ minecraftmain.ru###custom_html-5 > div.textwidget.custom-html-widget:last-child 
 alfabank.by##div[class^="sendpulse"]
 russianfood.com##div[align^="center"]
 life.ru##div[class^="styles_email__2Wd0i"]
-raiffeisen.ru##div[class^="CookieDialog"]
+raiffeisen.ru##.CookieDialog
 baby.ru##div[id^="adriver_banner_side"]
 baby.ru###layout-content > section.container.container_gray > div.space_b_xl.grid.grid_m_rows.grid_d_size_xl.grid_d_columns_3:last-child > div.grid.grid_size_l.grid_rows.hide_m:last-child
 osnmedia.ru##div[style^="padding: 15px 10px; border-top: 1px solid rgb(179, 182, 187); font-size: 14px; font-weight: 600; line-height: 1.4;"]
@@ -4027,6 +4039,19 @@ hdsatelit.com##div:nth-child(6) > div > div:nth-child(4) > button:nth-child(3)
 hdsatelit.com##div:nth-child(6) > div > div:nth-child(4) > button:nth-child(4)
 hdsatelit.com##div:nth-child(6) > div > div:nth-child(4) > button:nth-child(5)
 hdsatelit.com##div:nth-child(6) > div > div:nth-child(4) > button:last-child
+checko.ru###top > section.x-section:nth-child(5)
+checko.ru##.gF2k8M
+ipcheck.ing###sponsor-thor-data
+nanduq.com##.cookie-popup, .visible
+nanduq.com##.cookie-popup__button-show
+ncfu.ru##a.footer__telegram.btn.btn-blue.flb-cc.icon-telegram:nth-child(18)
+ncfu.ru##.footer__totop, .btn, .btn-blue, .flb-cc, .icon-arrow-up, .is-show
+ipregistry.co###ads
+ipregistry.co###ads-promotion
+ikosmos.tv###nav1601974481 > div.t228__maincontainer > div.t228__rightside:nth-child(4) > div.t228__rightcontainer > div.t-sociallinks:nth-child(2) > ul.t-sociallinks__wrapper > li.t-sociallinks__item.t-sociallinks__item_website:nth-child(2)
+##.SmartCaptcha-Shield_position_bottom, .SmartCaptcha-Shield_position_left, .SmartCaptcha-Shield, .SmartCaptcha-Shield_visible
+##a[class*="SmartCaptcha"][href^="cloud.yandex.ru/services/smartcaptcha"]
+metro-set.ru###float2top
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4741,6 +4766,7 @@ yandex.ru,ya.ru##.Distribution, .HeaderDesktopActions-Distribution, .HeaderDeskt
 ||events.cardsmobile.ru^$important
 ||ev.stellarlabs.ai^
 ||mrworldwide.com^
+||io.narrative.io^
 !
 ! --
 !
@@ -5466,6 +5492,7 @@ teletype.in#@#div.preloader
 @@||1.1.1.1^$app=com.bluecord
 @@||dns.yandex.net^
 @@/LazyGoogleReCaptchaV*.js
+! @@||^$permissions= =()
 !
 !
 ! -
