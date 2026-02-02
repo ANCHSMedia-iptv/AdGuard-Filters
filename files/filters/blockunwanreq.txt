@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.8.0-R
-! TimeUpdated: 2026-02-01T14:50:25+00:00
+! Version: 4.8.1-R
+! TimeUpdated: 2026-02-02T14:57:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -296,7 +296,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||sokolov.ru/api/v*/content/area/auth-banner/^$xhr,domain=sokolov.ru
 ||cdn.diginetica.net^$third-party
 ||r.revoplus.ru/javascripts/iframe/v*/revoiframe.js^$script,important
-||t2.ru/*.gif^$image,domain=t2.ru,redirect-rule=1x1-transparent.gif,important
+/*.gif^$image,domain=t2.ru|tele2.ru,redirect-rule=1x1-transparent.gif,important
 ||api.sunlight.net/v*/content/pages/banners/personal/^$xhr,domain=sunlight.net
 ||static*.megafon.ru/public/oldbrowser/is-old-browser.js$script,domain=megafon.ru
 ||beeline.ru/js-log.ashx^$xhr,domain=beeline.ru,important
@@ -866,7 +866,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||admost.com^$important
 ||appnext.com^$important
 ! *moatads*^$important (Waiting for adding..)
-! *mobile-static.adsafeprotected*^$important (Waiting for adding..)
+||adsafeprotected.com^$important
 ||adcolony.com^$important
 ! appnext.hs^$important (Waiting for adding..)
 ||supersonicads.com^$important
@@ -1763,8 +1763,8 @@ $cookie=MicexTrackID
 /api/v*/metrics
 ||cdn*.tu-tu.ru/lib-assets/*tutu/frontmetrics*/frontmetrics.$script,domain=tutu.ru,important
 ||frontmetrics.tutu.ru^$important
-||s3.t2.ru/ds-site/images/mia/mia-mini.png^$image,domain=t2.ru
-||t2.ru/c$xhr,domain=t2.ru
+.ru/ds-site/images/mia/mia-mini.png^$image,domain=t2.ru|tele2.ru
+.ru/c$xhr,domain=t2.ru|tele2.ru
 ||sentry-relay.beeline.ru^$important
 ! ||megafon.ru/*/*qr*.png
 ||d39xvdj9d5ntm1.cloudfront.net/common/*/consent-manager-*.*^$script,css,important
@@ -2358,6 +2358,23 @@ $removeparam=is_autologin_ya
 ||ml314.com^
 ||6sc.co^
 ||crsspxl.com^
+||data.mistat.*.xiaomi.com^
+||ironsource.mobi^
+-analytics.appspot.com^
+||ad.xiaomi.com^
+||tracking.*.miui.com^$important
+||tracking.miui.com^$important
+||mistat.xiaomi.com^$important
+||w3-reporting.reddit.com^$important
+||pixel.rubiconproject.com^
+||ads.linkedin.com^$important
+||px.srvcs.tumblr.com^$important
+||xp.apple.com^
+||pixel.quantserve.com^
+||pixel.mathtag.com^
+||api.impact.com^
+||api.impact.com.cdn.cloudflare.net^
+||analytics.twitter.com^
 !
 !
 !
@@ -3629,8 +3646,8 @@ tutu.ru###__next > div:first-child > div.marginTop0_db3adada.marginTopLg450_db3a
 travelask.ru##div[class^="footer__bottom-liveinternet"]
 tourister.ru###right-block-raiting-main-i-lenta
 tourister.ru###footer > div.nt-foot1 > div.nt-foot-item:first-child > div.nt-foot-timestat:last-child
-t2.ru###root > div.page-container.info-tiles-page.new-menu-page.new-menu-page-2 > div.height-holder-mobile:first-child > div.height-holder-mobile > div > div.height-holder-mobile > div.page:last-child > div.main-content.main-content--dark:nth-child(2) > div:last-child
-t2.ru###root > div.page-container.info-tiles-page.new-menu-page.new-menu-page-2 > div.height-holder-mobile:first-child > div.height-holder-mobile > div > div.height-holder-mobile > div.page:last-child > div.main-content.main-content--light:nth-child(2) > div:last-child
+t2.ru,tele2.ru###root > div.page-container.info-tiles-page.new-menu-page.new-menu-page-2 > div.height-holder-mobile:first-child > div.height-holder-mobile > div > div.height-holder-mobile > div.page:last-child > div.main-content.main-content--dark:nth-child(2) > div:last-child
+t2.ru,tele2.ru###root > div.page-container.info-tiles-page.new-menu-page.new-menu-page-2 > div.height-holder-mobile:first-child > div.height-holder-mobile > div > div.height-holder-mobile > div.page:last-child > div.main-content.main-content--light:nth-child(2) > div:last-child
 rtrs.ru##div[class^="footer-found-error"]
 kp.ru,kp.*,md.kp.media##div[class^="sc-14f2vgk-2 jdXAHR"]
 kp.ru,kp.*,md.kp.media##img[src*="/metrics/adaptive/favicon-"][alt="Boom metrics"][style="opacity:0;position:absolute;width:1px;height:1px;overflow:hidden"]
@@ -4396,7 +4413,7 @@ smotrim.ru#%#//scriptlet('set-local-storage-item', '/tmr_*/', '$remove$')
 ||appmetrica.yango.com^$important
 ||adfstat.yandex.ru^$domain=~captcha-api.yandex.ru,important
 ||push.yandex.ru/v*/subscribe/$websocket,important
-||csp.yandex.net/csp?from=messenger$xhr
+! ||csp.yandex.net/csp?from=messenger$xhr
 ||http-check-headers.yandex.ru^$important
 ||yandex.ru/messenger/api/$xhr,important
 ||*extmaps-api.yandex.net^$important
@@ -4663,6 +4680,7 @@ yandex.ru,ya.ru##.Distribution, .HeaderDesktopActions-Distribution, .HeaderDeskt
 ||youtube.com/api/stats/qoe
 ||google.*/pagead/$redirect=noopjs,important
 ||googletagservices.com^$important,xhr,script,redirect=googletagservices-gpt
+||tagmanager.google.com^
 !
 ! ===
 !
@@ -4746,7 +4764,6 @@ yandex.ru,ya.ru##.Distribution, .HeaderDesktopActions-Distribution, .HeaderDeskt
 ||appbaqend.com^$important
 ||richlifeads.ru^$important
 ||mintegral.net^$important
-! nr.bidderstack.com^$important
 ||bidderstack.com^$important
 ! adsmetadata.mobileadexchange.net^$important
 ||mobileadexchange.net^$important
@@ -4767,6 +4784,83 @@ yandex.ru,ya.ru##.Distribution, .HeaderDesktopActions-Distribution, .HeaderDeskt
 ||ev.stellarlabs.ai^
 ||mrworldwide.com^
 ||io.narrative.io^
+||metrics.mzstatic.com^
+||analytics-api.samsunghealthcn.com^
+||ads.roku.com^
+||smetrics.samsung.com^
+||kochava.com^
+||ads.oppomobile.com^
+||metrics.brightcove.com^
+||coinimp.com^
+||vungle.com^
+||propellerclick.com^
+||logs.roku.com^
+||api-adservices.apple.com^
+||iot-logser.realme.com^
+||fpjs.io^
+||ads.oppomobile.com^
+||adsfs.oppomobile.com^
+||samsungads.com^
+||device-metrics-us*.amazon.com^
+||iadsdk.apple.com^
+||iot-*-logser.realme.com^
+||popmyads.com^
+||onclickads.net^
+||siftscience.com^
+-analytics-events.apple.com^
+||nmetrics.samsung.com^
+||wzrkt.com^
+||partnerstack.com^
+||dpbolvw.net^
+||clickadu.com^
+||metrics.icloud.com^
+||bingads.microsoft.com^
+||popcash.net^
+||anrdoezrs.net^
+||bdapi-ads.realmemobile.com^
+||events.redditmedia.com^
+||open.oneplus.net^
+||crypto-loot.org^
+||click.oneplus.cn^
+||aan.amazon.com^
+||lgsmartad.com^
+||clevertap-prod.com^
+||bdapi-*-ads.realmemobile.com^
+||ad.lgappstv.com^
+||coinimp.com^
+||partnerstack.com^
+||ads.vizio.com^
+||mads-*.amazon.com^
+||ads-api.vivo.com^
+||ads.microsoft.com^
+||ads.huawei.com^
+||zenaps.com^
+||fingerprintjs.com^
+||tvinteractive.tv^
+||us.ibs.lgappstv.com^
+||us-ibs-lgappstv-com.aws-prd.net^
+||ngfts.lge.com^
+||a.lenovo.com^
+||adlog.vivo.com^
+||g.jwpsrv.com^
+||p.jwpcdn.com^
+||widget.intercom.io^
+||track.cj.akadns.net^
+||cdn.dynamicyield.com^
+||shareasale-analytics.com^
+||impactradius-event.com^
+||geolocation.onetrust.com^
+||cookiebot.com^
+||consent.trustarc.com^
+||cdn.privacy-mgmt.com^
+||app.usercentrics.eu^
+||2giga.link^
+||greatis.com^
+||mineralt.io^
+||juicyads.com^
+||popads.net^
+||graph.instagram.com^
+||i.instagram.com^
 !
 ! --
 !
@@ -4867,7 +4961,7 @@ vestifm.online$@$link[rel="manifest"]
 @@||sbstats.uk^
 @@||cdn.adguard.*/content/kb/ad_blocker/general/1_exact_address.svg^$image,domain=adguard.info|adguard.com|adguard.app 
 ! 10.04.25: блокировалось из-за фильтра xinggsf, в белом списке.
-@@||cdn.adguard.*/content/kb/ad_blocker/general$domain=adguard.info|adguard.com|adguard.app 
+@@/content/kb/ad_blocker/general$domain=adguard.info|adguard.com|adguard.app
 ! 10.04.25: блокировалось из-за фильтра xinggsf, в белом списке.
 @@||mirconnect.ru^
 @@||cid.yandex.net^
@@ -5478,7 +5572,7 @@ gazeta.ru#@$#body { padding-top: 0!important; }
 @@||upload.ee^$cookie=lng
 @@||ok.ru/gwtlog$domain=ok.ru
 @@||geetest.com
-t2.ru#@##portal
+t2.ru,tele2.ru#@##portal
 @@||token.stb.md/api/*/stream/*/metadata.json$xhr,important
 @@||188.255.31.197
 @@||smartcaptcha.cloud.yandex.ru
@@ -5492,6 +5586,7 @@ teletype.in#@#div.preloader
 @@||1.1.1.1^$app=com.bluecord
 @@||dns.yandex.net^
 @@/LazyGoogleReCaptchaV*.js
+@@||csp.yandex.net^$important
 ! @@||^$permissions= =()
 !
 !

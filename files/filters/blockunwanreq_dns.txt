@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.3.0-R
+! Version: 4.3.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-02-01T15:51:00+00:00
+! TimeUpdated: 2026-02-02T15:57:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 01.02.2026 15:51 UTC
+! Last Modified: 02.02.2026 15:57 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -259,6 +259,7 @@
 ||doubleclickbygoogle.com^$important
 ||clouderrorreporting.googleapis.com^
 ||googletagservices.com^
+||tagmanager.google.com^
 !
 ! ===
 !
@@ -597,7 +598,7 @@
 ||admost.com^$important
 ||appnext.com^$dnsrewrite=REFUSED,important
 ! ||*moatads*^$dnsrewrite=MXDOMAIN,important
-! ||*mobile-static.adsafeprotected*^$important
+||adsafeprotected.com^$important
 ||adcolony.com^$important
 ! ||appnext.hs^$dnsrewrite=NXDOMAIN,important (Waiting for adding..)
 ||supersonicads.com^$dnsrewrite=0.0.0.0,important
@@ -1069,6 +1070,99 @@
 ||udbdf.apkpure.net^
 ||api.s.mindbox.ru^$important
 ||sentry.hcaptcha.com^$important
+||metrics.mzstatic.com^
+||analytics-api.samsunghealthcn.com^
+||data.mistat.*.xiaomi.com^$important
+||ironsource.mobi^
+||ads.roku.com^
+||smetrics.samsung.com^
+||kochava.com^
+||ads.oppomobile.com^
+||metrics.brightcove.com^
+||coinimp.com^
+||vungle.com^
+||propellerclick.com^$dnsrewrite=ad-block.dns.adguard.com
+||logs.roku.com^
+||api-adservices.apple.com^
+||mon.byteoversea.com^
+||iot-logser.realme.com^
+||fpjs.io^
+||ads.oppomobile.com^
+||adsfs.oppomobile.com^
+||samsungads.com^
+||tracking.*.miui.com^$important
+||iadsdk.apple.com^
+||*-analytics.appspot.com^
+||iot-*-logser.realme.com^
+||popmyads.com^$dnsrewrite=ad-block.dns.adguard.com
+||ad.xiaomi.com^$important
+||onclickads.net^
+||*-analytics-events.apple.com^
+||nmetrics.samsung.com^
+||minero.cc^$dnsrewrite=0.0.0.0
+||tracking.miui.com^$important
+||dpbolvw.net^
+||clickadu.com^
+||metrics.icloud.com^
+||bingads.microsoft.com^
+||mistat.xiaomi.com^$important
+||liftoff.io^$important
+||liftoff-creatives.io^$important
+||popcash.net^$dnsrewrite=ad-block.dns.adguard.com
+||anrdoezrs.net^
+||bdapi-ads.realmemobile.com^
+||events.redditmedia.com^
+||open.oneplus.net^
+||crypto-loot.org^$dnsrewrite=0.0.0.0
+||click.oneplus.cn^
+||log*.byteoversea.com^$important
+||tnc*.byteoversea.com^$important
+||mon*.byteoversea.com^$important
+||mssdk*.byteoversea.com^$important
+||lgsmartad.com^
+||bdapi-*-ads.realmemobile.com^
+||ad.lgappstv.com^
+||pixel.rubiconproject.com^
+||ads.linkedin.com^$important
+||px.srvcs.tumblr.com^$important
+||xp.apple.com^
+||pixel.quantserve.com^
+||pixel.mathtag.com^
+||api.impact.com^
+||api.impact.com.cdn.cloudflare.net^
+||ads.vizio.com^
+||mads-*.amazon.com^
+||ads-api.vivo.com^
+||ads.microsoft.com^
+||ads.huawei.com^
+||zenaps.com^
+||fingerprintjs.com^
+||tvinteractive.tv^
+||us.ibs.lgappstv.com^
+||us-ibs-lgappstv-com.aws-prd.net^
+||ngfts.lge.com^
+||a.lenovo.com^
+||adlog.vivo.com^
+||g.jwpsrv.com^
+||p.jwpcdn.com^
+||widget.intercom.io^
+||track.cj.akadns.net^
+||cdn.dynamicyield.com^
+||shareasale-analytics.com^
+||impactradius-event.com^
+||geolocation.onetrust.com^
+||cookiebot.com^
+||consent.trustarc.com^
+||cdn.privacy-mgmt.com^
+||app.usercentrics.eu^
+||2giga.link^$dnsrewrite=0.0.0.0
+||greatis.com^$dnsrewrite=0.0.0.0
+||mineralt.io^$dnsrewrite=0.0.0.0
+||juicyads.com^$dnsrewrite=ad-block.dns.adguard.com
+||popads.net^$dnsrewrite=ad-block.dns.adguard.com
+||graph.instagram.com^
+||i.instagram.com^
+||analytics.twitter.com^$dnsrewrite=REFUSED,important
 !
 !
 !
@@ -1512,6 +1606,7 @@
 @@||crl*.digicert.com^
 @@||smartcaptcha.cloud.yandex.ru^
 @@||dns.yandex.net^
+@@||csp.yandex.net^$important
 !
 !
 !
