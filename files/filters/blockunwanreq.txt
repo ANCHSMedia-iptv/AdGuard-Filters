@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.8.1-R
-! TimeUpdated: 2026-02-02T14:57:25+00:00
+! Version: 4.8.2-R
+! TimeUpdated: 2026-02-03T14:57:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -186,7 +186,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||rbc.ru/v*/geoinfo/by-ip/$xhr,domain=rbc.ru
 ! ext.clickstream.sberbank.ru/metrics/$xhr,important (новое правило, строка 771)
 !
-||player.twitch.tv/js/embed/v*.js^$script,domain=~twitch.tv,important
+||player.twitch.tv/js/embed/$script,domain=~twitch.tv,important
 ||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com,important
 ||cdn.gamestatic.net/files/pictures/promo_banner_*.png^$image,domain=rbkgames.com,important
 ||alicdn.com/AWSC/et/*/et_f.js^$script,important
@@ -1602,7 +1602,7 @@ $removeparam=yaCounter,doc,script,xhr
 ||lizaalert.org/wp-content/uploads/2018/10/blackpixel.jpg^$image,domain=lizaalert.org
 ||5ka-cdn.x5static.net/_next/static/watch.$script,domain=5ka.ru,important
 ||pixel.id.x5.ru^$important
-||sync.otm-r.ru^$third-party,domain=~otm-r.ru,important
+||otm-r.ru^$third-party,domain=~otm-r.ru,important
 ||perekrestok.ru/assets/watch.js^$script,domain=perekrestok.ru,important
 ||sostav.ru/css/front/components/tgzen/styles.css$css,domain=sostav.ru
 ! rutube.ru/api/v*/activity/$xhr
@@ -1671,7 +1671,7 @@ $cookie=smi_sid
 $cookie=smi_last_visit_time
 ||services.fandom.com/geoip/location^$xhr
 ||discord.com/api/v*/users/@me?with_analytics_token=true^$xhr,domain=discord.com
-||discord.com/api/v*/track/ott^$xhr,domain=discord.com
+||discord.com/api/v*/track/$xhr,domain=discord.com
 /oneTrust/v*/consent/*/*.json$important
 /otSDKStub.js$important
 ||uber.com/api/getBlockExperiments$important
@@ -2122,7 +2122,6 @@ $cookie=mwai_session_id
 ||vk.*/rtrg$important
 ||ws.au.ru/listen/$websocket,domain=au.ru
 ||mail.ru$removeparam=autologin
-||mail.ru$cookie=/thirdparty_*/
 $cookie=/thirdparty_*/,domain=imgsmail.ru|mail.ru
 ||pms.mail.ru^$important
 ||vkvideo.ru/video_ext.php$domain=mail.ru
@@ -2375,6 +2374,7 @@ $removeparam=is_autologin_ya
 ||api.impact.com^
 ||api.impact.com.cdn.cloudflare.net^
 ||analytics.twitter.com^
+||tenor.googleapis.com^
 !
 !
 !
@@ -4039,7 +4039,6 @@ chita.ru###articleBody > div.py-4.px-6.uiArticleBlockLinks_mXGkD.hasTopBottomLin
 chita.ru###articleBody > div.uiArticleBlockText_NCfYZ.text-style-body-1.c-text.block_0DdLJ:last-child
 apkpure.net,apkpure.com##.aegon-card
 oren1.ru##.notifycation_notifycation__BeRRP
-##div[class^="notifycation_"]
 oren1.ru###promo-9
 oren1.ru##div[class^="bannersInnerArticle"]
 oren1.ru##.article-social_articleSocial__XxkFc
@@ -4069,6 +4068,7 @@ ikosmos.tv###nav1601974481 > div.t228__maincontainer > div.t228__rightside:nth-c
 ##.SmartCaptcha-Shield_position_bottom, .SmartCaptcha-Shield_position_left, .SmartCaptcha-Shield, .SmartCaptcha-Shield_visible
 ##a[class*="SmartCaptcha"][href^="cloud.yandex.ru/services/smartcaptcha"]
 metro-set.ru###float2top
+vk.com,vk.ru##.PageBottomBanner, .PageBottomBanner--unauth, .PageBottomBanner--animated, .PageBottomBanner--bg-blue
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4147,8 +4147,8 @@ lc.rt.ru#%#//scriptlet('set-cookie', 'ahoy_track', 'false', 'none')
 arsibtower-tyumen.ru#%#//scriptlet('set-session-storage-item', 'visited', 'n')
 ~vk.com,~vk.ru#%#//scriptlet('set-session-storage-item', 'vk_code_verifier', '$remove$')
 #%#//scriptlet('set-session-storage-item', 'vk_redirect_url', '$remove$')
-~yandex.*#%#//scriptlet('remove-cookie', '/bh|cycada|is_gdpr|is_gdpr_b|isa|redirectUrl/')
-~yandex.*#%#//scriptlet('remove-cookie', '/yandex_login|yp|ys|yuidss|_yasc|yandexuid|yashr|ymex|i|bltsr|alice_uuid/')
+~yandex.*,~ya.ru#%#//scriptlet('remove-cookie', '/bh|cycada|is_gdpr|is_gdpr_b|isa|redirectUrl/')
+~yandex.*,~ya.ru#%#//scriptlet('remove-cookie', '/yandex_login|yp|ys|yuidss|_yasc|yandexuid|yashr|ymex|i|bltsr|alice_uuid/')
 #%#//scriptlet('set-local-storage-item', '/_ym*_*/', '$remove$')
 #%#//scriptlet('set-local-storage-item', '/_ym_*/', 'emptyObj')
 beetv.kz#%#//scriptlet('set-local-storage-item', 'querySearchHistory', 'emptyObj')
@@ -4570,6 +4570,7 @@ $removeparam=yredirect
 ||api.music.yandex.*/*/session/*/feedback/$xhr,important
 ||yastatic.net/s3/distribution/yanalytics/v*/$important
 ||radio.api.music.yandex.ru/radio/v*/recommendations/record-event
+! ||dr*.yandex.*^
 !
 !
 ||yandex.ru^$app=ru.yandex.weatherplugin
