@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.8.2-R
-! TimeUpdated: 2026-02-03T14:57:25+00:00
+! Version: 4.8.3-R
+! TimeUpdated: 2026-02-04T14:57:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -21,7 +21,7 @@
 ! Некоторые домены и правила для блокировки взяты из других источников.
 ! Много чего собрано из моих «наблюдений» и добавлений. Все комментарии к правилам находятся в самом конце файла.
 !
-! Happy New Year!
+!
 !
 ||analytics.picsart.com^$important
 !
@@ -415,7 +415,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||medportal.ru/cookie_notice^$xhr,domain=medportal.ru,important
 ||fedpress.ru/themes/fp/js/share.js^$script,domain=fedpress.ru,important
 ||static.mel.fm/graph.js$script,domain=mel.fm,important
-||*cookie*.*^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~githubassets.com|~ya.ru|~yandex.ru|~yandex.net|~yandex.com
+||*cookie*.*^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~githubassets.com|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~youtube-nocookie.com
 ||b17.ru/img/0.gif^$image,domain=b17.ru,important
 ||ufamama.ru/UserStatistics/$xhr,important,domain=ufamama.ru
 ||ufamama.ru/services/BlogAdvisor/$xhr,important,domain=ufamama.ru
@@ -1457,7 +1457,7 @@ $cookie=qrator_jsr,important
 ||s0.rbk.ru/v6_top_pics/resized/300xH/media/img/0/43/347603500431430.webp^$image,domain=rbc.ru
 ||s0.rbk.ru/v6_top_pics/media/img/1/08/347477315840081.svg^$image,domain=rbc.ru
 ! =
-! Надо бы обновить..
+! Надо бы обновить.. | 3.02.26 Пора..
 !
 /tilda-events-*.*.js^$script,important
 ||media-engine.x10.name/usage-statistics/$xhr,important
@@ -2375,6 +2375,7 @@ $removeparam=is_autologin_ya
 ||api.impact.com.cdn.cloudflare.net^
 ||analytics.twitter.com^
 ||tenor.googleapis.com^
+/clear.gif$domain=notebookcheck-ru.com|notebookcheck-*.com|notebookcheck.com,redirect-rule=1x1-transparent.gif
 !
 !
 !
@@ -3755,9 +3756,9 @@ it-tehnik.ru###toTop
 overclockers.ru###otherPageContent > div.ui.grid:first-child > div.sixteen.wide.column.newsline > div.ui.grid:last-child > div.sixteen.wide.column > div.ui.blue.icon.message
 overclockers.ru##div.ui.inverted.segment.vertical.footer:nth-child(6) > div.ui.container.footer-wrap.main-wrap > div.ui.three.column.stackable.grid > div.two.wide.column.middle.aligned:last-child
 overclockers.ru##div.top-scroll.main:nth-child(7)
-kod.ru###__next > div.Layout_container__K63wR > div.Layout_cookies__IzB9Q.Layout_cookies--active__9JGHo:last-child
+kod.ru##div[class^="Layout_cookies"]
 kod.ru###__next > div.Layout_container__K63wR > div.Header_fixed__s_3S0:nth-child(3) > header.Header_header__YYQff > div.Header_desktop__IAgZu:first-child > div.BodyHeader_middle__Y3EJz:first-child > div.BodyHeader_buttons__RzyFJ.BodyHeader_buttons--no-flex__vG55K:last-child
-kod.ru##.SmallTgBanner_banner__N6i55
+kod.ru##div[class^="TgLinkCounter"][href*="t.me/+AMEkKQ_zOIdmYWUy"]
 fonts-online.ru###block-user-menu > ul.nav:last-child > li:first-child
 ffont.ru##footer:nth-child(4) > div.content > div.footer-menu-one:last-child > ul.navMenu:last-child
 ##img[src*="mc.yandex.ru/watch/"]
@@ -3991,8 +3992,7 @@ online.sberbank.ru###layout-main > div.cveDRKTNkPZZbnljhSQj:first-child
 ##img[src*="kazdsp.com"]
 recsquare.ru##div.icon_max:nth-child(18)
 starnet.md##div.fixed.bottom-\[16px\].right-\[12px\].lg\:bottom-\[20px\].lg\:right-\[20px\].max-w-\[calc\(100\%_-_24px\)\].md\:max-w-\[500px\].w-full.rounded-\[16px\].border.border-\[\#CFD0D3\].bg-\[\#fff\].p-\[20px\].text-\[\#000222\].z-10:nth-child(41)
-##div[class*="CookieBanner"]
-4cells.ru##.CookieBanner-module_CookieBannerContainer__HUMDV
+##div[class^="CookieBanner"]
 eadaily.com###content_column > div.semifooter:nth-child(7) > div.aggregator-box:nth-child(2)
 mcgrp.ru###manual-ai-chat
 iptvx.one##div.cc-window.cc-banner.cc-type-info.cc-theme-edgeless.cc-bottom.cc-color-override-1012863865
@@ -4013,7 +4013,7 @@ ura.news##.fX, .fu
 ura.news##.hz, .hB
 ura.news##.du, .eL
 ###unified-adblock-warning
-kod.ru##.TgBanner_banner__zKTkt
+kod.ru##div[class^="TgBanner_banner"][href*="t.me/+ZHAjVnEGgCM0ZTgy"]
 pikabu.ru###branding_ad_header
 pikabu.ru###specials
 pikabu.ru##div.app:nth-child(3) > div.app__inner:nth-child(3) > div.sidebar.sidebar_right:first-child > aside.sidebar__inner > section.sidebar-block.sidebar-block_border.sidebar-block_no-padding:nth-child(5)
@@ -4069,6 +4069,7 @@ ikosmos.tv###nav1601974481 > div.t228__maincontainer > div.t228__rightside:nth-c
 ##a[class*="SmartCaptcha"][href^="cloud.yandex.ru/services/smartcaptcha"]
 metro-set.ru###float2top
 vk.com,vk.ru##.PageBottomBanner, .PageBottomBanner--unauth, .PageBottomBanner--animated, .PageBottomBanner--bg-blue
+kod.ru##div[class^="Share_wrapper"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5589,6 +5590,8 @@ teletype.in#@#div.preloader
 @@/LazyGoogleReCaptchaV*.js
 @@||csp.yandex.net^$important
 ! @@||^$permissions= =()
+@@||strm-*-*.strm.yandex.net/music-v*/crypt/ysign1=*/*/*-mp4?
+@@||api.letsencrypt.org^
 !
 !
 ! -
