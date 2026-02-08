@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.8.4-R
-! TimeUpdated: 2026-02-08T14:57:25+00:00
+! Version: 4.8.5-R
+! TimeUpdated: 2026-02-08T17:57:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -100,8 +100,8 @@ yabro.ru^$important
 ||ads*.twitter.com^$important
 ||bitrix.info^$important
 ||skcrtxr.com^$important
-||avito.ru/stat/radar?data=*performance.env.prod.desktop.main*$image,domain=avito.ru
-! avito.ru/web/*/adv/network/creative^$xhr,domain=avito.ru
+! avito.ru/stat/radar?data=*$image,domain=avito.ru
+! avito.ru/web/*/adv/network/creative$xhr,domain=avito.ru
 ||*advert*^$image,important,domain=~everesttech.net
 /firebase*.*^$script,xhr,important
 ||d3c8j8snkzfr1n.cloudfront.net^$important
@@ -320,7 +320,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /bitrix/js/yandex.metrika/script.js$script,important
 ||iguides.ru/local/components/iguides/notifications.subscribe/manifest.json^$other,domain=iguides.ru,important
 ! cs*.pikabu.ru/apps/ub/*/*/sprite.svg^$xhr,domain=pikabu.ru (18.01.25: ломает сайт)
-||avito.ru/dstatic/build/client/fingerprint.*^$script,domain=avito.ru
+||avito.ru/dstatic/build/client/fingerprint.$script,domain=avito.ru
 !
 ! Рекомендации в виде блока Популярное (популярных объявлений) внизу у подвала страницы результатов поискового запроса (сайт объявлений Авито (avito .ru)).
 ||avito.ru/js/recommendations^$xhr,domain=avito.ru
@@ -2562,9 +2562,9 @@ $cookie=TSDK_trackerSessionId
 ||*basket*.wbbasket.ru/vol*/site/j/spa/modules/onlineChat/onlineChatPopup.$script,domain=wildberries.ru|global.wildberries.ru
 ||*basket*.wbbasket.ru/vol*/site/s/*/style/modules/popups/chatPopup.$css,domain=wildberries.ru|global.wildberries.ru
 ! *basket*.wbbasket.ru/vol*/site/app/sentryInit.$script,domain=wildberries.ru|global.wildberries.ru
-! *basket*.wbbasket.ru/vol*/data/stores-data.json^$xhr,domain=wildberries.ru
+||*basket*.wbbasket.ru/vol*/data/stores-data.json^$xhr,domain=wildberries.ru
 ||wilberries.ru$removeparam=ab_testing
-||*basket*.wbbasket.ru/vol*/site/app/*wildberries/sentry.$script,domain=wildberries.ru|global.wildberries.ru
+! *basket*.wbbasket.ru/vol*/site/app/*wildberries/sentry.$script,domain=wildberries.ru|global.wildberries.ru
 !
 !
 !
@@ -2667,7 +2667,7 @@ wildberries.ru###diamondsMenu > div.simple-menu__diamonds-wrap:last-child > ul.s
 ! *ozon.*/api/entrypoint-api.bx/page/json/v*^$xhr,domain=ozon.ru|ozon.by **
 /assets/*/marketing-desktop-adv-banner-$script,domain=ozon.ru|ozon.by
 ||st.ozone.ru/assets/*/common_molecules_adv-info_index_vue.$css,script,domain=ozon.ru
-xapi.ozon.*/api/logs-gateway/$important
+@@||xapi.ozon.*/api/logs-gateway/$xhr
 ! st.ozone.ru/assets/*/detached/*/autosplit-teams_*_components*_adv-*.js^$script,domain=ozon.ru|ozon.by **
 ||cdn1.ozonusercontent.com/s3/sellerassets/*/*.jpeg^$image,domain=ozon.ru|ozon.by
 ! st.ozone.ru/assets/*/detached/*/*-desktop-banner-carousel.js^$script,domain=ozon.ru **
@@ -2686,7 +2686,7 @@ xapi.ozon.*/api/logs-gateway/$important
 !
 ! -The rule applies to Ozon and Ozon Bank's website. -
 ! - Правило применимо к сайту Озона и Озон Банка. -
-||xapi.ozon.$ping,xhr,important
+||xapi.ozon.*/dlte^$ping,xhr
 ! -
 !
 ! Белорусская версия (ozon .by)
@@ -4084,6 +4084,9 @@ openwrt.org##.cookielaw-banner, .cookielaw-bottom
 ##a[href*="://qrator.net/"] > img
 club.dns-shop.ru###app > aside.club-sidebar.sidebar:nth-child(3) > div.club-sidebar__menu:first-child > nav.club-sidebar__nav > ul.club-sidebar__list > a.club-sidebar__dns-link.link.link_color-dark-charcoal:last-child
 cudy.com###shopify-section-sections--20080541401332__footer > footer.footer.color-background-2.gradient.section-sections--20080541401332__footer-padding:last-child > div.footer__content-top.page-width:first-child
+shop.megafon.ru##.Shape_shape__XcV6q, .Shape_default__bi8kP, .Shape_oneHundred__B56W6, .Shape_shadow__6kibq, .Shape_borderRounded__8WLgW, .styles_wrapper__r10rq, .Notification_notification__mjll8
+shop.megafon.ru##.PromoSamokat_container__NHBC1
+archive.yota.ru##._block_17ot2_23, ._appear_17ot2_50
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5597,7 +5600,7 @@ gazeta.ru#@$#body { padding-top: 0!important; }
 t2.ru,tele2.ru#@##portal
 @@||token.stb.md/api/*/stream/*/metadata.json$xhr,important
 @@||188.255.31.197
-@@||smartcaptcha.cloud.yandex.ru
+@@||smartcaptcha.cloud.yandex.ru^
 @@||crl*.digicert.com^
 @@/neodev/anubisbb/
 @@||cdn.voka.tv/live/*.m3u8
@@ -5618,7 +5621,8 @@ teletype.in#@#div.preloader
 ! 08.02.26: ложная блокировка из-за фильтра xinggsf, в белом списке.
 @@/images/banner$image,domain=club.dns-shop.ru|dns-shop.ru,important
 !
-@@||avito.ru/stat/radar?data=*frontend.new-desktop.env.prod.degradation*$image,domain=avito.ru
+@@||avito.ru/stat/radar?data=$image,domain=avito.ru
+@@||wbx-auth.wildberries.ru/v*/code/wb-captcha
 !
 !
 ! -
