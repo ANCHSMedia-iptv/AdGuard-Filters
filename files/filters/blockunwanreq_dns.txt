@@ -794,7 +794,7 @@
 ||ads.tiktok.com^$important
 ||partnerads.ysm.yahoo.com^$important
 ||analytics.peers.tv^$important
-||highrevenuenetwork.com^$important
+||highrevenuenetwork.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||aucdn.net^$important,dnsrewrite=ad-block.dns.adguard.com
 ||endowmentoverhangutmost.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||hue2b.com^$important,dnsrewrite=ad-block.dns.adguard.com
@@ -817,7 +817,6 @@
 ||dogo.intel.com^
 ||chaseherbalpasty.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||sentry*.xiaomi.net^$important
-||stat.radar.imgsmail.ru^
 ||fyber.com^
 ||dls-account.di.atlas.samsung.com^
 ||kidecyg.com^
@@ -867,7 +866,6 @@
 ||stracker.rmg.ru^
 ||sentry.odysee.tv^$important
 ||sentry.runit.cc^$important
-||radar.imgsmail.ru^$important
 ||sentry.hh.ru^$important
 ://adsrv
 ||analytics.iportal.ru^$important
@@ -1070,7 +1068,7 @@
 ||xc3.services.livejournal.com^
 ||split.io^
 ||a.sputniknews.com^
-||a.apkpure.net^
+||a.apkpure.net^$important
 ||udbdf.apkpure.net^
 ||api.s.mindbox.ru^$important
 ||sentry.hcaptcha.com^$important
@@ -1131,7 +1129,6 @@
 ||pixel.quantserve.com^
 ||pixel.mathtag.com^
 ||api.impact.com^
-||api.impact.com.cdn.cloudflare.net^
 ||ads.vizio.com^
 ||mads-*.amazon.com^
 ||ads-api.vivo.com^
@@ -1271,6 +1268,8 @@
 ||aax-*.amazon.com^
 ||ad.dm.gg^
 ||bcvp0rtal.com^
+||a.nel.cloudflare.com^$important
+||g.static.mega.co.nz^
 !
 !
 !
@@ -1313,13 +1312,13 @@
 !
 ! primis.tech^$important
 ! www.primis.tech^$important
-||feed.avplayer.com^$important
+||feed.avplayer.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||locp-*.viber.com^$important
 ! primis-amp.tech^$important
-||appnexusgslb.net^$important
-||player.avplayer.com^$important
-||primis*.openx.net^$important
-||rmp.rakuten.com^$important
+||appnexusgslb.net^$important,dnsrewrite=ad-block.dns.adguard.com
+||player.avplayer.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||primis*.openx.net^$important,dnsrewrite=ad-block.dns.adguard.com
+||rmp.rakuten.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||stats.viber.com^$important
 ||s.pc.qq.com^$important
 ||guanjia.qq.com^$important
@@ -1341,23 +1340,24 @@
 !
 !
 !
-||adserv.ai^$important
-||tapulsads.ru^$important
-||gonet-ads.com^$dnsrewrite=0.0.0.0,important
+||adserv.ai^$important,dnsrewrite=ad-block.dns.adguard.com
+||tapulsads.ru^$important,dnsrewrite=ad-block.dns.adguard.com
+||gonet-ads.com^$dnsrewrite=ad-block.dns.adguard.com,important
 ||telecid.ru^$important
-||tttturbonet.com^
+||tttturbonet.com^$dnsrewrite=ad-block.dns.adguard.com
 ||*pavo*^$important
-||fancybox.in^
+||fancybox.in^$dnsrewrite=ad-block.dns.adguard.com
 ||adlooxtracking.ru^$important
-||rixengine.com^$dnsrewrite=0.0.0.0
+||rixengine.com^$dnsrewrite=dnsrewrite=ad-block.dns.adguard.com
 ||weborama-tech.ru^$important
 ||trk.mail.ru^$important
-||svr-algorix.com^$dnsrewrite=0.0.0.0
-||kayzen.io^$dnsrewrite=REFUSED
+||svr-algorix.com^$dnsrewrite=dnsrewrite=ad-block.dns.adguard.com
+||kayzen.io^$dnsrewrite=ad-block.dns.adguard.com
 ||disk.akamaized.net^$app=com.dubox.drive
 ! disk.akamaized.net^
-||adinfinitum.in^$dnsrewrite=0.0.0.0,important
-||gamerplay*.space^$dnsrewrite=0.0.0.0
+||adinfinitum.in^$dnsrewrite=dnsrewrite=ad-block.dns.adguard.com,important
+||gamerplay*.space^$dnsrewrite=dnsrewrite=ad-block.dns.adguard.com
+||staticcc.com^$dnsrewrite=dnsrewrite=ad-block.dns.adguard.com
 !
 !
 !
@@ -1385,7 +1385,6 @@
 ||*CawcaFr^
 ||unknown.host^
 ||crl.fk.local^
-||ipwho.is^
 ||mres^
 ||xggd&f|x&gzo^
 !
@@ -1404,7 +1403,7 @@
 ! -- =Opera=
 !
 ||feednews.com^$dnsrewrite=0.0.0.0
-||oleads.com^$dnsrewrite=0.0.0.0,important
+||oleads.com^$dnsrewrite=ad-block.dns.adguard.com,important
 ||sitesuggestion.opera-api*.com^$dnsrewrite=0.0.0.0,important
 ||oscore.operacdn.com^$important
 ! ws-oscore.opera-api*.com^$important
@@ -1413,7 +1412,7 @@
 ||pns-sdk.opera-api*.com^$dnsrewrite=0.0.0.0,important
 ||ofa-*-sub.osp.opera.software^$dnsrewrite=0.0.0.0,important
 ||mcp.opera-api*.com^$dnsrewrite=0.0.0.0,important
-||mykonf.com^$dnsrewrite=0.0.0.0,important
+||mykonf.com^$dnsrewrite=ad-block.dns.adguard.com,important
 ! ofa-b-sub.osp.opera.software^
 ||xml.opera.com^$important
 ||thumbnails*opera.com^$important
@@ -1426,7 +1425,7 @@
 !
 ! -- =Other=
 !
-||sf-helper.com^
+||sf-helper.com^$dnsrewrite=ad-block.dns.adguard.com
 ||*analytics-toolbar*^
 ||*analytics.faregy.com^
 ||analytics.1clickvpn.com^
@@ -1718,6 +1717,8 @@
 @@||api.letsencrypt.org^
 @@||gdeslon.ru^$important
 @@||geetest.avito.com^
+@@||nperf.top^
+@@||mironline.ru^
 !
 !
 !
@@ -1817,6 +1818,7 @@
 @@||api.adguard.org^
 !
 !
+! ipwho.is^
 !
 !
 ! Соцсети Facebook и Instagram заблокированы на территории РФ, владеющая ими компания Meta признана экстремисткой и деятельность в РФ запрещена.
