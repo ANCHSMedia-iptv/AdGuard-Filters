@@ -1065,7 +1065,7 @@ waf/fingerprint$xhr,important
 /waf*.js$script,important,domain=~limehd.tv
 ||adspector.io^$important
 ! 19.04.25: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/203491]
-||discord.com/api/v*/experiments^$xhr,domain=discord.com
+||discord.com/api/v*/experiments
 !
 ! 19.04.25: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/203378]
 ||facebook.com/ajax/qm/$xhr
@@ -1343,7 +1343,7 @@ $cookie=s24id
 ||teletype.in/static/AD.*.*^$script,css,domain=teletype.in,important
 ||gambit-parent.dfs.ivi.ru/dist/*/*/Sentry.$script,domain=ivi.ru,important
 ||udc.yahoo.com^$important
-||mercusys.com/res/diff/*/getresponse.js$xhr,domain=mercusys.com,important
+||mercusys.com/res9/diff/*/getresponse.js$xhr,domain=mercusys.com,important
 ||tyuiu.ru/media/images/webp/a2a79090-b353-4cac-b4a7-9d2838b0e648.webp^$image,domain=tyuiu.ru
 ||old.tyuiu.ru/wp-content/themes/tsogu/images/*/social/*.png^$image,domain=old.tyuiu.ru
 ||old.tyuiu.ru/wp-content/plugins/wp-social-likes/*/social-likes*.*^$script,css,domain=old.tyuiu.ru
@@ -1670,8 +1670,8 @@ $removeparam=yaCounter,doc,script,xhr
 $cookie=smi_sid
 $cookie=smi_last_visit_time
 ||services.fandom.com/geoip/location^$xhr
-||discord.com/api/v*/users/@me?with_analytics_token=true^$xhr,domain=discord.com
-||discord.com/api/v*/track/$xhr,domain=discord.com
+||discord.com/api/v*/users/@me?with_analytics_token=true^
+||discord.com/api/v*/track/
 /oneTrust/v*/consent/*/*.json$important
 /otSDKStub.js$important
 ||uber.com/api/getBlockExperiments$important
@@ -6027,4 +6027,5 @@ teletype.in#@#div.preloader
 ! Мессенджер Discord заблокирован 08.10.24 на территории РФ из-за нарушения законодательства.
 ! Discord messenger was blocked on 08.10.24 in the territory of the Russian Federation due to violations of the law.
 !
+
 !
