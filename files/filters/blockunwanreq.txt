@@ -2383,6 +2383,7 @@ $cookie=TSDK_trackerSessionId
 /cdn/s/trekkie.storefront.
 ||jquery.pushstat.online/api/yandex-fingerprint
 ||usercentrics.eu^
+||a.nel.cloudflare.com^$important
 !
 !
 !
@@ -4493,7 +4494,7 @@ smotrim.ru#%#//scriptlet('set-local-storage-item', '/tmr_*/', '$remove$')
 ||static-mon.yandex.net/advert
 ||yandex.ru/znatoki/web-api/log
 ||mc.yandex.ru/metrika/tag_turbo.js$redirect=metrika-yandex-watch
-||clck.yandex.*^$~other
+||clck.yandex.*^$~other,important
 $cookie=_ym_debug
 ||yandex.ru/metrika/$important
 ||yastatic.net/browser-updater/v*/
@@ -4539,7 +4540,6 @@ $cookie=_ym_debug
 ||browser-updater.yandex.net^$important
 ||bs-meta.yandex.ru^
 ||bs-metadsp.yandex.ru^
-||clck.yandex.*^$important
 ||click.yandex.ru^$important
 ||count.yandex.*^$important
 ||count.yandex.*^$important
@@ -4597,6 +4597,7 @@ $removeparam=yredirect
 ||surveys.yandex.ru^
 ||market.yandex.ru^$removeparam=baobab_event_id
 ||market.yandex.ru^$removeparam=ysclid
+||clck.yandex.net^$app=com.yandex.aliceapp
 !
 !
 ||yandex.ru^$app=ru.yandex.weatherplugin
@@ -4605,6 +4606,9 @@ $removeparam=yredirect
 ||api.browser.yandex.ru^$app=ru.yandex.weatherplugin
 ||avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
 ||favicon.yandex.net^$app=ru.yandex.weatherplugin
+||avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
+||strm.yandex.net^$app=ru.yandex.weatherplugin
+/^77\.88\./$network,app=ru.yandex.weatherplugin
 @@||weather.yandex.ru^$app=ru.yandex.weatherplugin
 @@||static-maps.yandex.ru^$app=ru.yandex.weatherplugin
 @@||login.yandex.ru^$app=ru.yandex.weatherplugin
@@ -5197,8 +5201,9 @@ ya.ru$@$link[rel="manifest"]
 @@||mhd*.iptv2022.com^
 @@||mhd.iptv2022.com^
 @@||api.peers.tv/auth/*/token
-@@/^77\.88\./$network,app=ru.yandex.mail|ru.yandex.rasp
+@@/^77\.88\./$network,app=ru.yandex.mail|ru.yandex.rasp|ru.beru.android
 ! не приходят уведомления, не грузится приложение, в белом списке.
+@@/^5\.255\.255\.77/$network,app=ru.beru.android
 @@||peers.tv^$cookie=PHPSESSID
 @@||/assets/cookie-*.js$script,domain=24h.tv|clicktv.uz
 @@||github.githubassets.com/assets/*cookie*.js$script,domain=github.com,important
@@ -5753,6 +5758,9 @@ teletype.in#@#div.preloader
 @@||avito.st/dstatic/build/client/*/clickstream.$script,domain=avito.ru
 @@||avito.ru/dstatic/build/client/fingerprint.$script,domain=avito.ru
 @@||geetest.avito.com^
+@@||storage.mds.yandex.net^$app=ru.yandex.callerid
+@@||reddit.com^$app=com.overdevs.rdx
+@@||redd.it^$app=com.overdevs.rdx
 !
 !
 ! -
