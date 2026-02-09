@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.8.5-R
-! TimeUpdated: 2026-02-08T17:57:25+00:00
+! Version: 4.8.6-R
+! TimeUpdated: 2026-02-09T17:57:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -135,8 +135,8 @@ yabro.ru^$important
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru|rusradio.ru,important
 !
-||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net
-||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net
+||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cdn.cookielaw.org
+||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cdn.cookielaw.org
 /itunes_referals.js^$script,third-party
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script,third-party
 ||improving.duckduckgo.com^$important
@@ -320,7 +320,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /bitrix/js/yandex.metrika/script.js$script,important
 ||iguides.ru/local/components/iguides/notifications.subscribe/manifest.json^$other,domain=iguides.ru,important
 ! cs*.pikabu.ru/apps/ub/*/*/sprite.svg^$xhr,domain=pikabu.ru (18.01.25: ломает сайт)
-||avito.ru/dstatic/build/client/fingerprint.$script,domain=avito.ru
+! avito.ru/dstatic/build/client/fingerprint.$script,domain=avito.ru
 !
 ! Рекомендации в виде блока Популярное (популярных объявлений) внизу у подвала страницы результатов поискового запроса (сайт объявлений Авито (avito .ru)).
 ||avito.ru/js/recommendations^$xhr,domain=avito.ru
@@ -882,7 +882,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||tapjoyads.com^$important
 ||tapjoy.com^$important
 ||college.72to.ru/*.gif^$image,domain=college.72to.ru,redirect-rule=1x1-transparent.gif,important
-cookielaw.org^$third-party
+||cdn.cookielaw.org^$third-party,important
 ||*.rt.avito.ru^
 ||coop-land.ru/templates/CoopLand2016/js/adriver*.js$script,domain=coop-land.ru,important
 ! /adriver$script,xhr
@@ -1751,8 +1751,8 @@ $cookie=MicexTrackID
 ||tyumen-city.ru/c$xhr,domain=tyumen-city.ru
 -sentry.k.avito.ru^$important
 ||sntr.avito.ru^$important
-||cs.avito.ru/clickstream/$xhr,domain=avito.ru,important
-||avito.st/dstatic/build/client/*/clickstream.$script,domain=avito.ru,important
+||cs.avito.ru/clickstream/$domain=avito.ru,important
+! avito.st/dstatic/build/client/*/clickstream.$script,domain=avito.ru
 ||avito.st/dstatic/j/dfp/px.js^$script,domain=avito.ru,important
 ||avito.st/static/ims/*_alfa_promo_main_*_banner_light_*.png^$image,domain=avito.ru
 ||satkurier.pl/getRandomBanner_$xhr,domain=satkurier.pl,important
@@ -1851,7 +1851,7 @@ autoru-frontend/AdminsMarketingPopup_$script,domain=auto.ru
 ||awxcdn.com/adc/3rdpartycheck.html^$domain=accuweather.com
 ||9to5google.com/wp-content/uploads/sites/4/2025/10/73_mixdown-final.mp3^$media,domain=9to5google.com
 ||rustorka.com/forum/images/spacer.gif^$image,domain=rustorka.com,redirect-rule=1x1-transparent.gif
-||visualwebsiteoptimizer.com^$third-party,domain=~muse.mu
+||visualwebsiteoptimizer.com^$third-party,domain=~muse.mu,important
 ||habrastorage.org/r/w1560/files/1ba/550/d25/1ba550d25e8846ce8805de564da6aa63.png^$image,domain=habr.com
 ||habrastorage.org/getpro/habr/widget/854/3bb/641/8543bb641e977c1fba5597e7c70a9c51.png^$image,domain=habr.com
 ||habrastorage.org/webt/qq/ey/pn/qqeypn-py71suynxbusbakjdfjw.png^$image,domain=habr.com
@@ -2009,7 +2009,7 @@ $cookie=qrator_msid,important
 ||static.aio.media/v*/loader.js^$script,third-party,domain=~aio.media,important
 ||meatydime.com^$important
 ||api-router.kaspersky-labs.com/pulse/rum/$ping,domain=kaspersky.ru,important
-||kameleoon.io^$third-party,domain=~kameleoon.com,important
+||kameleoon.io^$third-party,domain=~kameleoon.com|~static.kameleoon.com,important
 ||comss.ru/js/report.js^$script,domain=comss.ru
 ||lc.rt.ru^$cookie=ahoy_visitor
 ||lc.rt.ru^$cookie=ahoy_visit
@@ -2117,7 +2117,7 @@ $cookie=mwai_session_id
 ||rarlab.com/zyaddr.js^$script,domain=rarlab.com
 ||rarlab.com/js/ckrule.js^$script,domain=rarlab.com
 ||avito.ru/web/*/u$image,domain=avito.ru,important
-||mon.avito.ru^$important
+! mon.avito.ru^$important
 ||api.youla.ru/api/v*/events/$xhr,domain=youla.ru,important
 ||vk.*/rtrg$important
 ||ws.au.ru/listen/$websocket,domain=au.ru
@@ -2331,7 +2331,7 @@ $removeparam=is_autologin_ya
 ||static-cdn.spot.im/production/social/tags/v*/conversation/ad-container-bundle.
 ||pics.vesti.ru/counter/$important
 ||id.sber.ru^$domain=livejournal.com
-||split.io^$app=com.server.auditor.ssh.client
+||split.io^
 ||static.pn.am/styles/ad.css^$css,domain=panarmenian.net
 ||static.pn.am/images/fb.gif^$image,domain=panarmenian.net
 ||a.sputniknews.com^$important
@@ -2376,12 +2376,13 @@ $removeparam=is_autologin_ya
 ||tenor.googleapis.com^
 /clear.gif$domain=notebookcheck-ru.com|notebookcheck-*.com|notebookcheck.com,redirect-rule=1x1-transparent.gif
 ! ||juniper.net/*/*/*/detail.cookielaw.html
-||analytics.tiktok.com^
+||analytics-sg.tiktok.com^
 $cookie=TSDK_trackerSessionId
 ||club-on-air-notifier.dns-shop.ru^
 ||cudy.com/api/collect$xhr
 /cdn/s/trekkie.storefront.
 ||jquery.pushstat.online/api/yandex-fingerprint
+||usercentrics.eu^
 !
 !
 !
@@ -4272,6 +4273,7 @@ smotrim.ru#%#//scriptlet('set-local-storage-item', '/tmr_*/', '$remove$')
 ||nexusrules.officeapps.live.com^
 ||wpc.v0cdn.net^
 ||iriscoremetadataprod.blob.core.windows.net^
+||optanon.blob.core.windows.net^
 ! =
 !
 !
@@ -4406,6 +4408,7 @@ smotrim.ru#%#//scriptlet('set-local-storage-item', '/tmr_*/', '$remove$')
 ||e.crashlytics.*^$important
 ||settings.crashlytics.com^$important
 ||crashlytics*.googleapis.com^$important
+||crashlytics.com^
 ! ===
 !
 !
@@ -4706,6 +4709,8 @@ kul.prod.via.google^
 ||google.*/pagead/$redirect=noopjs,important
 ||googletagservices.com^$important,xhr,script,redirect=googletagservices-gpt
 ||tagmanager.google.com^
+||clientservices.googleapis.com^
+||ads.youtube.com^
 !
 ! ===
 !
@@ -4814,7 +4819,7 @@ kul.prod.via.google^
 ||ads.roku.com^
 ||smetrics.samsung.com^
 ||kochava.com^
-||ads.oppomobile.com^
+||ads.oppomobile.com^$important
 ||metrics.brightcove.com^
 ||coinimp.com^
 ||vungle.com^
@@ -4823,7 +4828,6 @@ kul.prod.via.google^
 ||api-adservices.apple.com^
 ||iot-logser.realme.com^
 ||fpjs.io^
-||ads.oppomobile.com^
 ||adsfs.oppomobile.com^
 ||samsungads.com^
 ||device-metrics-us*.amazon.com^
@@ -4877,8 +4881,7 @@ kul.prod.via.google^
 ||geolocation.onetrust.com^
 ||cookiebot.com^
 ||consent.trustarc.com^
-||cdn.privacy-mgmt.com^
-||app.usercentrics.eu^
+||privacy-mgmt.com^
 ||2giga.link^
 ||greatis.com^
 ||mineralt.io^
@@ -4886,6 +4889,129 @@ kul.prod.via.google^
 ||popads.net^
 ||graph.instagram.com^
 ||i.instagram.com^
+||media.net^
+! static•media•net adservetx•media•net contextual•media•net edge•rms•media•net
+||app.getsentry.com^
+||cdn.ravenjs.com^
+||rollbar.com^$third-party,domain=~rollbar.com
+! cdn•rollbar•com api•rollbar•com
+||logrocket.io^
+! r•logrocket•io logs•logrocket•io cdn•logrocket•io
+||raygun.io^
+! cdn• api• raygun•io
+||trackjs.com^$third-party,domain=~trackjs.com
+! capture• usage•
+||airbrake.io^$third-party,domain=~airbrake.io
+! api• notifier•
+||fastpool.xyz^
+||cpu.js.org^
+||snap.licdn.com^
+||cookies-data.onetrust.io^
+||cdn.onetrust.com^$third-party
+||amazontrust.com^
+||honeybadger.io^$third-party,domain=~honeybadger.io
+||cdn.lr-ingest.com^
+||cryptoloot.org^
+||coin-hive.com^
+||coinhive.com^
+||coinhive-proxy.com^
+||coin-hive-proxy.com^
+||minero-proxy.com^
+||omine.org^
+||hashforcash.us^
+||nr-data.net^
+||ppoi.org^
+||jsecoin.com^
+||minergate.com^
+||bitcoinplus.com^
+||ads-twitter.com^
+||platform.linkedin.com^$third-party
+||staticxx.facebook.com^
+||analytics.pointdrive.linkedin.com^
+||events.reddit.com^
+||d.reddit.com^
+||addthis.com^
+||sharethis.com^
+||st-widget.s3.amazonaws.com^
+||2o7.net^
+||ad.samsungadhub.com^$important
+||ads-mas-*.vivobrowser.com^
+||ads-mas.vivobrowser.com^
+||consensu.org^
+||wrapper-api.sp-prod.net^
+||gdpr.trustarc.com^
+||rlcdn.com^
+||didomi.io^$third-party,domain=~didomi.io
+||betrad.com^
+||exponential.com^
+||consent-pref.trustarc.com^
+||privacymanager.io^
+||commission-junction.com^
+||emjcd.com^
+||apmebf.com^
+||jdoqocy.com^
+||lduhtrp.net^
+||awltovhc.com^
+||ftjcfx.com^
+||tqlkg.com^
+||qksrv.net^
+||afcyhf.com^
+||tkqlhce.com^
+||kqzyfj.com^
+||tkqlhce.com^
+||awin1.com^
+||shareasale.com^
+||skimresources.com^
+||admitad.com^
+||shrsl.com^
+||linksynergy.com^
+||optimizely.com^
+||launchdarkly.com^
+||vwo.com^
+||cdn-*.configcat.com^
+||cdn.configcat.com^
+||abtest.ai^
+||abtasty.com^
+||api.flagsmith.com^
+||kameleoon.eu^
+||static.kameleoon.com^
+||featuregates.org^
+||track.customer.io^
+||track.mailerlite.com^
+||sibautomation.com^
+||pixel.mailchimp.com^
+||sendinblue.com^ 
+||dripemail2.com^
+||mailerlite.com^
+||list-manage.com^
+||convertkit.com^
+||getresponse.com^
+||customeriomail.com^
+||getdrip.com^
+||aweber.com^
+||activecampaign.com^
+||trackcmp.net^
+||pardot.com^
+||mandrillapp.com^
+||mailgun.net^
+||mailgun.org^
+||hubspotemail.net^
+||hubspot.com^
+||constantcontact.com^
+||sendgrid.net^
+||springserve.com^
+||spotxcdn.com^
+||spotxchange.com^
+||2mdn.net^
+||fresnel.vimeocdn.com^
+||jwpltx.com^
+||connatix.com^
+||f.vimeocdn.com^
+||video-ads.twitter.com^
+||ads.dailymotion.com^
+||aax-*.amazon.com^
+||ad.dm.gg^
+||bcvp0rtal.com^
 !
 ! --
 !
@@ -5623,6 +5749,10 @@ teletype.in#@#div.preloader
 !
 @@||avito.ru/stat/radar?data=$image,domain=avito.ru
 @@||wbx-auth.wildberries.ru/v*/code/wb-captcha
+@@||web.archive.org/__wb/calendarcaptures/
+@@||avito.st/dstatic/build/client/*/clickstream.$script,domain=avito.ru
+@@||avito.ru/dstatic/build/client/fingerprint.$script,domain=avito.ru
+@@||geetest.avito.com^
 !
 !
 ! -

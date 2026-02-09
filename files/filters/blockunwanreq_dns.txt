@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.3.3-R
+! Version: 4.3.4-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-02-04T14:57:00+00:00
+! TimeUpdated: 2026-02-09T17:57:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 04.02.2026 14:57 UTC
+! Last Modified: 09.02.2026 17:57 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -52,6 +52,7 @@
 ||e.crashlytics.*^$important
 ||settings.crashlytics.com^$important
 ||crashlytics*.googleapis.com^$important
+||crashlytics.com^
 ! ===
 !
 !
@@ -87,7 +88,6 @@
 ||yandetruckingservices.com^
 ||yandexmetri*.com^$important
 ||trends.yandex.net^
-||click.sender.yandex.ru^
 ||advertising.yandex.ru^
 ||clck.yandex.ru^
 ||startup.mobile.yandex.nes^$important
@@ -218,6 +218,7 @@
 ||wpc.v0cdn.net^
 ||iriscoremetadataprod.blob.core.windows.net^
 ||nexusrules.officeapps.live.com^
+||optanon.blob.core.windows.net^
 ! =
 !
 ! ===
@@ -261,6 +262,8 @@
 ||clouderrorreporting.googleapis.com^
 ||googletagservices.com^
 ||tagmanager.google.com^
+||clientservices.googleapis.com^
+||ads.youtube.com^
 !
 ! ===
 !
@@ -571,7 +574,7 @@
 ||analytics.localytics.com^$important
 ||taboola*fastly.net^$important
 ||idm.iot.mi.com^
-||flurry.com^$dnsrewrite=0.0.0.0,important
+||flurry.com^$dnsrewrite=ad-block.dns.adguard.com,important
 ||api.sms.*.miui.com^$important
 ||alt-ad.mail.ru^$important
 ||connect.mail.ru^$important
@@ -598,12 +601,12 @@
 ||appsdt.com^$dnsrewrite=NXDOMAIN,important
 ||admost.com^$important
 ||appnext.com^$dnsrewrite=REFUSED,important
-! ||*moatads*^$dnsrewrite=MXDOMAIN,important
+! ||*moatads*^$dnsrewrite=NXDOMAIN,important
 ||adsafeprotected.com^$important
 ||adcolony.com^$important
 ! ||appnext.hs^$dnsrewrite=NXDOMAIN,important (Waiting for adding..)
 ||supersonicads.com^$dnsrewrite=0.0.0.0,important
-||startappservice.com^$dnsrewrite=NXDOMAIN,important
+||startappservice.com^$dnsrewrite=ad-block.dns.adguard.com,important
 ||adz.wattpad.com^$important
 ! ||ad.api.kaffnet.com^$dnsrewrite=REFUSED,important (Waiting for adding..)
 ||batmobil.net^$dnsrewrite=NXDOMAIN,important
@@ -663,21 +666,21 @@
 ||ybcrwm.com^
 ||tsyndicate.com^
 ||gothailand.xyz^$dnsrewrite=NXDOMAIN,important
-||exosrv.com^$important,dnsrewrite=0.0.0.0
+||exosrv.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||qywfe.com^
 !
-||exoclick.com^$important,dnsrewrite=0.0.0.0
-||metricswpsh.com^$important,dnsrewrite=0.0.0.0
-||nereserv.com^$important,dnsrewrite=0.0.0.0
-||zog.link^$important,dnsrewrite=0.0.0.0
-||pix-cdn.org*^$important,dnsrewrite=0.0.0.0
-||magsrv.com^$important,dnsrewrite=0.0.0.0
-||m3pd.com^$important,dnsrewrite=0.0.0.0
-||multstorage.com^$important,dnsrewrite=0.0.0.0
-||polotrex.com^$important,dnsrewrite=0.0.0.0
-||olopruy.com^$important,dnsrewrite=0.0.0.0
-||yomeno.xyz^$important,dnsrewrite=0.0.0.0
-||vstserv.com^$important,dnsrewrite=0.0.0.0
+||exoclick.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||metricswpsh.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||nereserv.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||zog.link^$important,dnsrewrite=ad-block.dns.adguard.com
+||pix-cdn.org*^$important,dnsrewrite=ad-block.dns.adguard.com
+||magsrv.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||m3pd.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||multstorage.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||polotrex.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||olopruy.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||yomeno.xyz^$important,dnsrewrite=ad-block.dns.adguard.com
+||vstserv.com^$important,dnsrewrite=ad-block.dns.adguard.com
 !
 ||sentry.ozon.ru^$important
 ||browser.sentry-cdn.com^$important
@@ -709,7 +712,7 @@
 ||business-api.tiktok.com^
 ||ads-api.tiktok.com^
 ||advertising.apple.com^
-||widgets.pinterest.com^
+||widgets.pinterest.com^$important
 ||advertising-api-eu.amazon.com^
 ||udcm.yahoo.com^
 ||ads-sg.tiktok.com^
@@ -721,7 +724,7 @@
 ||data-events.cdn.viber.com^$important
 ||ads.taxiaid.org^$important
 ||*-metrica.cabconnect.org^$important
-||zephyrsgroves.com^$important,dnsrewrite=NXDOMAIN
+||zephyrsgroves.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||admax.se^$important
 ||tags.svoboda.org^
 ||tags.currenttime.tv^
@@ -732,55 +735,55 @@
 ||q.stripe.com^$important
 ! static.line-scdn.net^
 ||siteintercept.qualtrics.com^$important
-||mnaspm.com^$important,dnsrewrite=0.0.0.0
+||mnaspm.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||gtm-server.healthline.com^$important
-||adspsp.com^$important
+||adspsp.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||doubleverify.com^$important
 ! adobedtm.com^
-||cdn-fc.com^$important,dnsrewrite=0.0.0.0
-||camconnections.live^$important,dnsrewrite=0.0.0.0
-||flepquix.com^$important,dnsrewrite=0.0.0.0
-||camspacelive.com^$important,dnsrewrite=0.0.0.0
-||60ah.com^$important,dnsrewrite=0.0.0.0
-||doppiocdn.com^$important,dnsrewrite=0.0.0.0
-||vsmvideo.com^$important,dnsrewrite=0.0.0.0
-||sacdnssedge.com^$important,dnsrewrite=0.0.0.0
-||tubecup.org^$important,dnsrewrite=0.0.0.0
-||reebr.com^$important,dnsrewrite=0.0.0.0
-||ahcdn.com^$important,dnsrewrite=0.0.0.0
-||montlusa.top^$important,dnsrewrite=0.0.0.0
-||medfoodsafety.com^$important,dnsrewrite=0.0.0.0
-||iloptrex.top^$important,dnsrewrite=0.0.0.0
-||bookmsg.com^$important,dnsrewrite=0.0.0.0
-||a64x.com^$important,dnsrewrite=0.0.0.0
-||gfxdn.pics^$important,dnsrewrite=0.0.0.0
-||mp3lar.net^$important,dnsrewrite=0.0.0.0
+||cdn-fc.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||camconnections.live^$important,dnsrewrite=ad-block.dns.adguard.com
+||flepquix.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||camspacelive.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||60ah.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||doppiocdn.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||vsmvideo.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||sacdnssedge.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||tubecup.org^$important,dnsrewrite=ad-block.dns.adguard.com
+||reebr.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||ahcdn.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||montlusa.top^$important,dnsrewrite=ad-block.dns.adguard.com
+||medfoodsafety.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||iloptrex.top^$important,dnsrewrite=ad-block.dns.adguard.com
+||bookmsg.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||a64x.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||gfxdn.pics^$important,dnsrewrite=ad-block.dns.adguard.com
+||mp3lar.net^$important,dnsrewrite=ad-block.dns.adguard.com
 ||log-sg.capcutapi.com^$important
 ||mobile-static.mindbox.ru^$important
 ||vitv.telecomid.ru^$important
 ||js-collector.icewood.net^$important
-||twinrdengine.com^$important,dnsrewrite=0.0.0.0
-||adthg.com^$important,dnsrewrite=0.0.0.0
-||etahub.com^$important,dnsrewrite=0.0.0.0
-||trafficjunky.net^$important,dnsrewrite=0.0.0.0
-||imdn.pics^$important,dnsrewrite=0.0.0.0
-||hotfree123.com^$important,dnsrewrite=0.0.0.0
-||kumcams.com^$important,dnsrewrite=0.0.0.0
-||cabnnr.com^$important,dnsrewrite=0.0.0.0
-||afcdn.net^$important,dnsrewrite=0.0.0.0
-||rtbadserv.com^$important,dnsrewrite=0.0.0.0
-||hostave3.net^$important,dnsrewrite=0.0.0.0
-||adbestnet.com^$important,dnsrewrite=0.0.0.0
-||onclck*.com^$important,dnsrewrite=0.0.0.0
-||onclmng.com^$important,dnsrewrite=0.0.0.0
-||glukropi.com^$important,dnsrewrite=0.0.0.0
-||rtmark.net^$important,dnsrewrite=0.0.0.0
+||twinrdengine.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||adthg.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||etahub.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||trafficjunky.net^$important,dnsrewrite=ad-block.dns.adguard.com
+||imdn.pics^$important,dnsrewrite=ad-block.dns.adguard.com
+||hotfree123.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||kumcams.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||cabnnr.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||afcdn.net^$important,dnsrewrite=ad-block.dns.adguard.com
+||rtbadserv.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||hostave3.net^$important,dnsrewrite=ad-block.dns.adguard.com
+||adbestnet.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||onclck*.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||onclmng.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||glukropi.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||rtmark.net^$important,dnsrewrite=ad-block.dns.adguard.com
 ||js.stripe.com^
 ||stripe.network^
-||yess-online.com^$important,dnsrewrite=0.0.0.0
-||bisniskini.biz.id^$important,dnsrewrite=0.0.0.0
-||kittygruff.com^$important,dnsrewrite=0.0.0.0
-||adspector.io^$important,dnsrewrite=0.0.0.0
+||yess-online.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||bisniskini.biz.id^$important,dnsrewrite=ad-block.dns.adguard.com
+||kittygruff.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||adspector.io^$important,dnsrewrite=ad-block.dns.adguard.com
 ||report.cdnpure.com^$important
 ||getads.ru^$important
 ||d26xw8rp6mlgfg.cloudfront.net^
@@ -792,11 +795,11 @@
 ||partnerads.ysm.yahoo.com^$important
 ||analytics.peers.tv^$important
 ||highrevenuenetwork.com^$important
-||aucdn.net^$important,dnsrewrite=0.0.0.0
-||endowmentoverhangutmost.com^$important,dnsrewrite=0.0.0.0
-||hue2b.com^$important,dnsrewrite=0.0.0.0
-||bngtrak.com^$important,dnsrewrite=0.0.0.0
-||pemsrv.com^$important,dnsrewrite=0.0.0.0
+||aucdn.net^$important,dnsrewrite=ad-block.dns.adguard.com
+||endowmentoverhangutmost.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||hue2b.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||bngtrak.com^$important,dnsrewrite=ad-block.dns.adguard.com
+||pemsrv.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||serving-sys.ru^$important
 ||adm.dimonvideo.ru^
 ||stat2.okko.tv^$important
@@ -812,7 +815,7 @@
 ||rum.cdnpure.com^$important
 ||adj.st^
 ||dogo.intel.com^
-||chaseherbalpasty.com^$important,dnsrewrite=0.0.0.0
+||chaseherbalpasty.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||sentry*.xiaomi.net^$important
 ||stat.radar.imgsmail.ru^
 ||fyber.com^
@@ -1015,7 +1018,7 @@
 ||mediascope.mail.ru^$important
 ||alt-xray.imgsmail.ru^$important
 ||advmusic.com^
-||naydex.net^$important
+! ||naydex.net^$important
 ||1l-hit.mail.ru^
 ||1l-view.mail.ru^
 ||1link.mail.ru^
@@ -1065,7 +1068,7 @@
 ||kraken.rambler.ru^
 ||pix.spot.im^
 ||xc3.services.livejournal.com^
-||events.split.io^
+||split.io^
 ||a.sputniknews.com^
 ||a.apkpure.net^
 ||udbdf.apkpure.net^
@@ -1078,17 +1081,15 @@
 ||ads.roku.com^
 ||smetrics.samsung.com^
 ||kochava.com^
-||ads.oppomobile.com^
+||ads.oppomobile.com^$important
 ||metrics.brightcove.com^
-||coinimp.com^
+||coinimp.com^$dnsrewrite=0.0.0.0
 ||vungle.com^
 ||propellerclick.com^$dnsrewrite=ad-block.dns.adguard.com
 ||logs.roku.com^
 ||api-adservices.apple.com^
-||mon.byteoversea.com^
 ||iot-logser.realme.com^
 ||fpjs.io^
-||ads.oppomobile.com^
 ||adsfs.oppomobile.com^
 ||samsungads.com^
 ||tracking.*.miui.com^$important
@@ -1154,8 +1155,8 @@
 ||geolocation.onetrust.com^
 ||cookiebot.com^
 ||consent.trustarc.com^
-||cdn.privacy-mgmt.com^
-||app.usercentrics.eu^
+||privacy-mgmt.com^
+||usercentrics.eu^
 ||2giga.link^$dnsrewrite=0.0.0.0
 ||greatis.com^$dnsrewrite=0.0.0.0
 ||mineralt.io^$dnsrewrite=0.0.0.0
@@ -1166,6 +1167,110 @@
 ||analytics.twitter.com^$dnsrewrite=REFUSED,important
 ||sync.otm-r.ru^
 ||error-report.com^
+||analytics-sg.tiktok.com^
+||pxl-*.ozone.ru^
+||wstat.ozon.ru^
+||media.net^
+||app.getsentry.com^
+||cdn.ravenjs.com^
+||logrocket.io^
+||raygun.io^
+||fastpool.xyz^$dnsrewrite=0.0.0.0
+||cpu.js.org^$dnsrewrite=0.0.0.0
+||snap.licdn.com^
+||cookies-data.onetrust.io^
+||lr-ingest.com^
+||cryptoloot.org^$dnsrewrite=0.0.0.0
+||coin-hive.com^$dnsrewrite=0.0.0.0
+||coinhive.com^$dnsrewrite=0.0.0.0,important
+||coinhive-proxy.com^$dnsrewrite=0.0.0.0
+||coin-hive-proxy.com^$dnsrewrite=0.0.0.0
+||minero-proxy.com^$dnsrewrite=0.0.0.0
+||hashforcash.us^$dnsrewrite=0.0.0.0
+||minergate.com^$dnsrewrite=0.0.0.0
+||bitcoinplus.com^$dnsrewrite=0.0.0.0
+||nr-data.net^
+||t.co^
+||ads-twitter.com^$dnsrewrite=REFUSED
+||staticxx.facebook.com^
+||analytics.pointdrive.linkedin.com^
+||events.reddit.com^
+||sharethis.com^
+||2o7.net^
+||ad.samsungadhub.com^$important
+||ads-mas-*.vivobrowser.com^
+||ads-mas.vivobrowser.com^
+||consensu.org^
+||wrapper-api.sp-prod.net^
+||gdpr.trustarc.com^
+||rlcdn.com^
+||exponential.com^
+||consent-pref.trustarc.com^
+||privacymanager.io^
+||commission-junction.com^
+||emjcd.com^
+||apmebf.com^
+||jdoqocy.com^
+||lduhtrp.net^
+||awltovhc.com^
+||ftjcfx.com^
+||tqlkg.com^
+||qksrv.net^
+||afcyhf.com^
+||tkqlhce.com^
+||kqzyfj.com^
+||tkqlhce.com^
+||awin1.com^
+||shareasale.com^
+||skimresources.com^
+||admitad.com^
+||shrsl.com^
+||linksynergy.com^
+||optimizely.com^
+||launchdarkly.com^
+||vwo.com^
+||cdn-*.configcat.com^
+||cdn.configcat.com^
+||abtest.ai^
+||abtasty.com^
+||api.flagsmith.com^
+||js.honeybadger.io^
+||track.customer.io^
+||track.mailerlite.com^
+||sibautomation.com^
+||pixel.mailchimp.com^
+||sendinblue.com^ 
+||dripemail2.com^
+||mailerlite.com^
+||list-manage.com^
+||convertkit.com^
+||getresponse.com^
+||customeriomail.com^
+||getdrip.com^
+||aweber.com^
+||activecampaign.com^
+||trackcmp.net^
+||pardot.com^
+||mandrillapp.com^
+||mailgun.net^
+||mailgun.org^
+||hubspotemail.net^
+||hubspot.com^
+||constantcontact.com^
+||sendgrid.net^
+||springserve.com^
+||spotxcdn.com^
+||spotxchange.com^
+||2mdn.net^
+||fresnel.vimeocdn.com^
+||jwpltx.com^
+||connatix.com^
+||f.vimeocdn.com^
+||video-ads.twitter.com^$dnsrewrite=REFUSED
+||ads.dailymotion.com^
+||aax-*.amazon.com^
+||ad.dm.gg^
+||bcvp0rtal.com^
 !
 !
 !
@@ -1611,6 +1716,8 @@
 @@||dns.yandex.net^
 @@||csp.yandex.net^$important
 @@||api.letsencrypt.org^
+@@||gdeslon.ru^$important
+@@||geetest.avito.com^
 !
 !
 !
