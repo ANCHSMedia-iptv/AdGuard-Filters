@@ -1343,7 +1343,7 @@ $cookie=s24id
 ||teletype.in/static/AD.*.*^$script,css,domain=teletype.in,important
 ||gambit-parent.dfs.ivi.ru/dist/*/*/Sentry.$script,domain=ivi.ru,important
 ||udc.yahoo.com^$important
-||mercusys.com/res9/diff/*/getresponse.js$xhr,domain=mercusys.com,important
+||mercusys.com/res/diff/*/getresponse.js$xhr,domain=mercusys.com,important
 ||tyuiu.ru/media/images/webp/a2a79090-b353-4cac-b4a7-9d2838b0e648.webp^$image,domain=tyuiu.ru
 ||old.tyuiu.ru/wp-content/themes/tsogu/images/*/social/*.png^$image,domain=old.tyuiu.ru
 ||old.tyuiu.ru/wp-content/plugins/wp-social-likes/*/social-likes*.*^$script,css,domain=old.tyuiu.ru
