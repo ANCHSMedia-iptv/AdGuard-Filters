@@ -1348,16 +1348,16 @@
 ||*pavo*^$important
 ||fancybox.in^$dnsrewrite=ad-block.dns.adguard.com
 ||adlooxtracking.ru^$important
-||rixengine.com^$dnsrewrite=dnsrewrite=ad-block.dns.adguard.com
+||rixengine.com^$dnsrewrite=ad-block.dns.adguard.com
 ||weborama-tech.ru^$important
 ||trk.mail.ru^$important
-||svr-algorix.com^$dnsrewrite=dnsrewrite=ad-block.dns.adguard.com
+||svr-algorix.com^$dnsrewrite=ad-block.dns.adguard.com
 ||kayzen.io^$dnsrewrite=ad-block.dns.adguard.com
 ||disk.akamaized.net^$app=com.dubox.drive
 ! disk.akamaized.net^
-||adinfinitum.in^$dnsrewrite=dnsrewrite=ad-block.dns.adguard.com,important
-||gamerplay*.space^$dnsrewrite=dnsrewrite=ad-block.dns.adguard.com
-||staticcc.com^$dnsrewrite=dnsrewrite=ad-block.dns.adguard.com
+||adinfinitum.in^$dnsrewrite=ad-block.dns.adguard.com,important
+||gamerplay*.space^$dnsrewrite=ad-block.dns.adguard.com
+||staticcc.com^$dnsrewrite=ad-block.dns.adguard.com
 !
 !
 !
