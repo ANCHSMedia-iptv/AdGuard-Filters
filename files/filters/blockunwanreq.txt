@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 4.8.6-R
-! TimeUpdated: 2026-02-11T16:57:25+00:00
+! TimeUpdated: 2026-02-13T16:57:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2312,7 +2312,7 @@ $removeparam=is_autologin_ya
 ||goodgame.ru/images/blank.gif^$image,domain=goodgame.ru,redirect-rule=1x1-transparent.gif
 ||goodgame.ru/js/advert.js$script,domain=goodgame.ru,important
 ||vmetrics.goodgame.ru^$important
-||ura.news^$removeparam=_rsc
+$removeparam=_rsc,domain=ura.news|zaa.bz
 ||pikabu.ru/s/games_showcase/*/$image,domain=pikabu.ru
 ||pikabu.ru/ajax/save_visited_stories.php^$xhr,domain=pikabu.ru
 ||pikabu.ru/s/2025/08/26/14/2edvlj6h.png^$image,domain=pikabu.ru
@@ -2388,6 +2388,12 @@ $cookie=TSDK_trackerSessionId
 ||mpsuadv.ru^$important
 ||new-retail.ru/instruments/banner_fixer.js^$script,domain=new-retail.ru
 ||kommersant.ru/common/popup$xhr,domain=kommersant.ru
+|ru/count/$domain=~yandex.by|~yandex.kz|~yandex.ru|~yandex.uz
+||media.nakanune.ru/images/tg_banner_$image,domain=nakanune.ru
+-tracking.youdo.com^
+||media.nakanune.ru/images/zen2RED.png^$image,domain=nakanune.ru
+||govoritmoskva.ru/static/img/TG.gif^$image,domain=govoritmoskva.ru
+||govoritmoskva.ru/static/img/max.jpg^$image,domain=govoritmoskva.ru
 !
 !
 !
@@ -2780,6 +2786,8 @@ ozon.ru##a[href*="/credit_card/"][class^="q4b1_3_0-a"]
 !
 ||*-irec.r-*.com/collect^$xhr,domain=irecommend.ru,important
 ||irecommend.ru/ss_t/collect^$xhr,domain=irecommend.ru,important
+||irecommend.ru^*superstat/
+! irecommend.ru^*stickblocks.
 !
 ! Рекламный скрипт.
 ||irecommend.ru/injector/reklamko.js^$script,domain=irecommend.ru,important
@@ -3769,7 +3777,7 @@ it-tehnik.ru###toTop
 overclockers.ru###otherPageContent > div.ui.grid:first-child > div.sixteen.wide.column.newsline > div.ui.grid:last-child > div.sixteen.wide.column > div.ui.blue.icon.message
 overclockers.ru##div.ui.inverted.segment.vertical.footer:nth-child(6) > div.ui.container.footer-wrap.main-wrap > div.ui.three.column.stackable.grid > div.two.wide.column.middle.aligned:last-child
 overclockers.ru##div.top-scroll.main:nth-child(7)
-kod.ru##div[class^="Layout_cookies"]
+kod.ru##.Layout_cookies__IzB9Q, .Layout_cookies--active__9JGHo
 kod.ru###__next > div.Layout_container__K63wR > div.Header_fixed__s_3S0:nth-child(3) > header.Header_header__YYQff > div.Header_desktop__IAgZu:first-child > div.BodyHeader_middle__Y3EJz:first-child > div.BodyHeader_buttons__RzyFJ.BodyHeader_buttons--no-flex__vG55K:last-child
 kod.ru##div[class^="TgLinkCounter"][href*="t.me/+AMEkKQ_zOIdmYWUy"]
 fonts-online.ru###block-user-menu > ul.nav:last-child > li:first-child
@@ -4098,6 +4106,12 @@ storage.googleapis.com##.Page-module--cookieConsentBannerRu--S0VeK, .Page-module
 ruinformer.com##.ps, .smoll, .telega
 ruinformer.com##.yasha2, .text_right
 new-retail.ru##.col-6, .col-sm-4
+nakanune.ru###footer > div.row > div.col-md-2.text-center:last-child
+nakanune.ru###footer > div.row > div.col-md-2.text-center:first-child
+nakanune.ru###footer > div.row > div.col-md-8:nth-child(2) > div:last-child > div:nth-child(16) > div > div.row > div.col-12 > span.seo_grey
+nakanune.ru###footer > div.row > div.col-md-8:nth-child(2) > div:last-child > div:nth-child(16)
+nakanune.ru##div.wrapper_nakanune:nth-child(11) > div.centralCol.centralCol-content:nth-child(2) > div.row:first-child > div.\31 newsCard.col-md-12.row > div._show.col-sm-12 > div.row._share:last-child > div.col-xs-12.col-md-5:first-child
+symbolab.com##div[class^="qb-banner-holder "]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4607,6 +4621,7 @@ $removeparam=yredirect
 ||market.yandex.ru^$removeparam=baobab_event_id
 ||market.yandex.ru^$removeparam=ysclid
 ||clck.yandex.net^$app=com.yandex.aliceapp
+||yandex.ru/ads/$important,domain=~limehd.tv|~litehd.tv|~pervyi-tv.online|~russia-tv.online|~shadowcore.ru|
 !
 !
 ||yandex.ru^$app=ru.yandex.weatherplugin
