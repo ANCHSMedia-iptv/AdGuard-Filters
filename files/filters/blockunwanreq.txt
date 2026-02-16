@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.8.6-R
-! TimeUpdated: 2026-02-13T16:57:25+00:00
+! Version: 4.8.7-R
+! TimeUpdated: 2026-02-16T16:57:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -167,7 +167,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.*.js^$script,important (новое правило, строка 138 и 139)
 /wp-content/plugins/*/assets/js/tracks.js$script,important
 /ad.js^$script,important
-/empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru|~lenta.com|~aptoide.com|~magnit.ru
+/empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru|~lenta.com|~aptoide.com|~magnit.ru|~mail.yandex.*
 */adv/*$image,xhr,script,domain=~pinterest.com|~aliexpress.ru|~aliexpress.com,important
 ! *empty*.*^$image,important
 ||store.bankiros.ru/js/metrics/*.js^$script,domain=bankiros.ru,important
@@ -2257,7 +2257,6 @@ $removeparam=is_autologin_ya
 ||runconverge.com^$third-party,domain=~runconverge.com
 ||mail.runconverge.com^
 ||mediator.imgsmail.ru^$important
-||privacy-cs.mail.ru^$important
 ||r0.mail.ru^$important
 ||stat.browser.mail.ru^$important
 ||stat.dl.mail.ru^$important
@@ -2394,7 +2393,37 @@ $cookie=TSDK_trackerSessionId
 ||media.nakanune.ru/images/zen2RED.png^$image,domain=nakanune.ru
 ||govoritmoskva.ru/static/img/TG.gif^$image,domain=govoritmoskva.ru
 ||govoritmoskva.ru/static/img/max.jpg^$image,domain=govoritmoskva.ru
-!
+||nestlebaby.ru/livechat/event-listen$xhr,domain=nestlebaby.ru
+||ord.vk.com/adv_info
+||vk.*/adv_info.php
+||vk.*/al_page.php?act=seen
+||vk.*/ads_rotate.php
+||vk.*/wkview.php?act=
+||calls.okcdn.tu/fb.do
+||static.vk.*/vkid/*/6c87bab03efe1ee9384267fcd5a4a752.png^$image,domain=vk.com|vk.ru
+||vk.*/dist/core_spa/chunks/stories-perf-metrics.$script,domain=vk.ru|vk.com
+||vk.*/easter-eggs
+||api.vk.*/method/adsint.registerAdEvents
+||api.ok.ru/fb.do
+||vk.*/account/static/banner_label.fbb4dda5824fa582ac16.svg^$image,domain=vk.com|vk.ru
+||sentry.mvk.com^$important
+||cpg.money.mail.ru^
+||consentmanager.net^
+-sentry.vkplay.ru^$important
+||vkplay.ru/tsmg_gen.js
+||vk.*/al_im.php?act=get_promoted_stickers
+||api.vkplay.ru/play/pockets/play2-promo-banner/
+||api.vkplay.ru/play/pockets/play2-promo/
+||r3.vkplay.ru^$important
+||api.vkplay.ru/play/streams/
+||reddit.com/svc/shreddit/data-protection-consent
+||static.onlinetrade.ru/img/banners/$image,domain=onlinetrade.ru
+img.hiteml.com$image
+vip.gophersport.com$image
+||retailcrm.tech/widget/$third-party
+||retailcrm.tech/api/client/v*/geoip
+||vist-lan.ru/api/customer/v*/product/card/*/last_seen
+||vist-lan.ru/api/customer/v*/collect
 !
 !
 !
@@ -4112,6 +4141,15 @@ nakanune.ru###footer > div.row > div.col-md-8:nth-child(2) > div:last-child > di
 nakanune.ru###footer > div.row > div.col-md-8:nth-child(2) > div:last-child > div:nth-child(16)
 nakanune.ru##div.wrapper_nakanune:nth-child(11) > div.centralCol.centralCol-content:nth-child(2) > div.row:first-child > div.\31 newsCard.col-md-12.row > div._show.col-sm-12 > div.row._share:last-child > div.col-xs-12.col-md-5:first-child
 symbolab.com##div[class^="qb-banner-holder "]
+nestlebaby.ru##.bm-teaser, .bm-teaser--2025, .bm-teaser--color-1, .is-visible
+vist-lan.ru##.CookieAgreement_popup__lJKu9, .getBoxShadowSkin_skin_boxShadow_md__17xWb
+vist-lan.ru##.consultant-tooltip-wrap, .consultant-tooltip-wrap_right-bottom
+vist-lan.ru##.SectionLayout_root__4EgFm, .getSpacingSkin_skin_v_gap_300__3miPi, .getSpacingSkin_skin_padding_top_350__c0ZwI, .getSpacingSkin_skin_padding_bottom_350__KobRL, .getBackgroundColorSkin_skin_background_secondary__AEMRv, .getSpacingSkin_skin_h_padding_200__T9zEN, .SectionLayout_touch_top_350__B3ThF, .SectionLayout_touch_bottom_350__o4dQK, .SectionLayout_touch_horizontal_200__inqyv
+ixbt.market###b-top-sidebar-77-in
+ixbt.market###page-wrapper > aside.toolbar.hidden-xs:last-child
+pult.ru##.pult__newsletter-popup
+##div[class^="i-flocktory"]
+pult.ru##a.b-link-up-page.js-link-up-page:nth-child(6)
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4190,14 +4228,18 @@ lc.rt.ru#%#//scriptlet('set-cookie', 'ahoy_track', 'false', 'none')
 arsibtower-tyumen.ru#%#//scriptlet('set-session-storage-item', 'visited', 'n')
 ~vk.com,~vk.ru#%#//scriptlet('set-session-storage-item', 'vk_code_verifier', '$remove$')
 #%#//scriptlet('set-session-storage-item', 'vk_redirect_url', '$remove$')
-!~yandex.*,~ya.ru#%#//scriptlet('remove-cookie', '/bh|cycada|is_gdpr|is_gdpr_b|isa|redirectUrl/')
-!~yandex.*,~ya.ru#%#//scriptlet('remove-cookie', '/yandex_login|yp|ys|yuidss|_yasc|yandexuid|yashr|ymex|i|bltsr|alice_uuid/')
+~yandex.*,~ya.ru#%#//scriptlet('remove-cookie', '/bh|cycada|is_gdpr|is_gdpr_b|isa|redirectUrl|sae|ancQTZw|ssesar')
+~yandex.*,~ya.ru#%#//scriptlet('remove-cookie', '/yandex_login|yp|ys|yuidss|_yasc|yandexuid|yashr|ymex|i|bltsr|alice_uuid|yandex_expboxes/')
 #%#//scriptlet('set-local-storage-item', '/_ym*_*/', '$remove$')
 #%#//scriptlet('set-local-storage-item', '/_ym_*/', 'emptyObj')
 beetv.kz#%#//scriptlet('set-local-storage-item', 'querySearchHistory', 'emptyObj')
 #%#//scriptlet('set-session-storage-item', 'sentryReplaySession', '$remove$')
 #%#//scriptlet('set-session-storage-item', '__ym_tab_guid', '$remove$')
 smotrim.ru#%#//scriptlet('set-local-storage-item', '/tmr_*/', '$remove$')
+vk.*#%#//scriptlet('set-cookie', 'adblock', '', '0')
+#%#//scriptlet('remove-cookie', 'ym_uid')
+pult.ru#%#//scriptlet('set-local-storage-item', 'newsletterPopupStart', '0')
+pult.ru#%#//scriptlet('set-local-storage-item', 'RCC__pending_events', 'emptyObj')
 ! (Waiting for adding more scripts..)
 !
 !
@@ -4456,7 +4498,7 @@ smotrim.ru#%#//scriptlet('set-local-storage-item', '/tmr_*/', '$remove$')
 ||webvisor.com^$important
 ||appmetrica.yango.com^$important
 ||adfstat.yandex.ru^$domain=~captcha-api.yandex.ru,important
-||push.yandex.ru/v*/subscribe/$websocket,important
+! push.yandex.ru/v*/subscribe/$websocket,important
 ! ||csp.yandex.net/csp?from=messenger$xhr
 ||http-check-headers.yandex.ru^$important
 ||yandex.ru/messenger/api/$xhr,important
@@ -4465,7 +4507,7 @@ smotrim.ru#%#//scriptlet('set-local-storage-item', '/tmr_*/', '$remove$')
 ||offerwall.yandex.net^$important
 ! push.yandex.ru^$important
 ||yastatic.net/s3/liza/*/promo-*.css^$css,domain=mail.yandex.ru|mail.yandex.*
-||yastatic.net/s3/liza/*/*ad-message.ogg^$media,domain=mail.yandex.ru|mail.yandex.*
+! yastatic.net/s3/liza/*/*ad-message.ogg^$media,domain=mail.yandex.ru|mail.yandex.*
 ||yastatic.net/s3/distribution/yanalytics/$important
 ! yastatic.net/s*/market-static/export-static/admon/frame.html^$document,domain=market.yandex.ru
 ||yastatic.net/s3/*/mail-liza-*/*.mail-liza.react-promo.$script,domain=mail.yandex.ru|mail.yandex.*
@@ -4504,8 +4546,6 @@ smotrim.ru#%#//scriptlet('set-local-storage-item', '/tmr_*/', '$remove$')
 ||yandex.$removeparam=from
 ||ya.$removeparam=from
 ||yandex.*$removeparam=from
-||ya.*$removeparam=from
-||yandex.ru$removeparam=from
 ||ya.ru$removeparam=from
 ||yastatic.net/es5-shims/*/es5-shims.$script,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz
 ! yastatic.net/s3/web4static/*/static/App-FootScript_advRsya (Waiting for adding..)
@@ -4621,9 +4661,27 @@ $removeparam=yredirect
 ||market.yandex.ru^$removeparam=baobab_event_id
 ||market.yandex.ru^$removeparam=ysclid
 ||clck.yandex.net^$app=com.yandex.aliceapp
-||yandex.ru/ads/$important,domain=~limehd.tv|~litehd.tv|~pervyi-tv.online|~russia-tv.online|~shadowcore.ru|
+||yandex.ru/ads/$important,domain=~limehd.tv|~litehd.tv|~pervyi-tv.online|~russia-tv.online|~shadowcore.ru
+||yastatic.net/naydex/yandex-mail/$redirect=noopjs
+||yastatic.net/daas/atom.js$important
+||yastatic.net/s3/psf/mail-liza-react-client/direct-$script,redirect=noopjs
+||yastatic.net/s3/liza/_/promo-$css
+||yastatic.net/s3/distribution/stardust/browser-urlerror
+||yandex.ru/web-api/journal/v*?_m=do-client-log
+||yandex.ru/web-api/journal/v*?_m=do-journal-log
+||yandex.ru/web-api/models/liza*?_m=promozavr-
+||yandex.ru/web-api/models/liza*?_m=get-user-events
+||yandex.ru/web-api/models/liza*?_m=get_user_activity
+||yandex.ru/monitoring_liza.txt$redirect=nooptext,important
+||yandex.ru/instant/stlog$redirect=nooptext,important
+||api.browser.yandex.*/ab/testids
+$document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
+/search/*$document,removeparam=suggest_reqid,domain=ya.ru|yandex.*
+||kit.yandex.ru/api/*/v*/kit*/collect
+||yandex.$removeparam=metric_client_id
 !
 !
+! =Block ads in Yandex Weather app. (15.02.26)=
 ||yandex.ru^$app=ru.yandex.weatherplugin
 ||egress.yandex.net^$app=ru.yandex.weatherplugin
 ||cloud-api.yandex.net^$app=ru.yandex.weatherplugin
@@ -4634,9 +4692,11 @@ $removeparam=yredirect
 ||strm.yandex.net^$app=ru.yandex.weatherplugin
 /^77\.88\./$network,app=ru.yandex.weatherplugin
 @@||weather.yandex.ru^$app=ru.yandex.weatherplugin
+!
 @@||static-maps.yandex.ru^$app=ru.yandex.weatherplugin
 @@||login.yandex.ru^$app=ru.yandex.weatherplugin
 @@||passport.yandex.ru^$app=ru.yandex.weatherplugin
+! =
 !
 !
 ! = Cosmetic rules =
@@ -4667,6 +4727,9 @@ yandex.ru,ya.ru##.FuturisSnippet
 yandex.ru,ya.ru##div[class^="AdvMastHead"]
 yandex.ru,ya.ru##.DistributionPopup, .DistributionPopup_motley_grey, .DistributionPopup_layout_rectangle, .DistributionPopup_animation_bounce, .DistributionPopup_location_bottom, .DistributionPopup_visible
 yandex.ru,ya.ru##.Distribution, .HeaderDesktopActions-Distribution, .HeaderDesktopActions-Item
+yandex.ru##.VideoViewer-Direct, .VideoViewer-Direct_placement_under-player, .VideoViewer-Direct_withStore
+mail.yandex.ru##.bDVhOgw1X3WEALZfVAdaptiveWidth
+mail.yandex.ru###js-mail-layout > div.PageLayout-m__body--xjMc4.PageLayout-m__pageLayoutWithGlobalBar--sa2zf:last-child > div.bHVBHhRxmwU8ZL5rsLiuK.bJUoNngtXwU8AJ4aTMy2ZWbs.bHVBHhRxmwU8ZL5rzKCCZVLvoqKMw7g707j5WbHVBHhRxmwU8ZL5rsLiuK.bHVBHhRxmwU8ZL5rsLiuKbHVBHhRxmwU8ZL5rzKCCZVLvoqKMw7g707j5W:last-child > div:first-child
 !
 !
 ! =
@@ -5040,6 +5103,7 @@ kul.prod.via.google^
 ||aax-*.amazon.com^
 ||ad.dm.gg^
 ||bcvp0rtal.com^
+||sgtm.ixbt.site^
 !
 ! --
 !
@@ -5786,6 +5850,9 @@ teletype.in#@#div.preloader
 @@||reddit.com^$app=com.overdevs.rdx
 @@||redd.it^$app=com.overdevs.rdx
 @@||mironline.ru^
+@@||id.vk.com/not_robot_captcha
+@@||static.vk.com/vkid/*/not_robot_captcha
+@@||yandex.ru/showcaptcha$important
 !
 !
 ! -
@@ -5822,7 +5889,7 @@ teletype.in#@#div.preloader
 !
 !
 ! ====
-! CURATOR Anto-DDos System (08.02.26)
+! CURATOR Anti-DDoS System (08.02.26)
 ! Не открывались сайты, защищённые Анти-DDos защитой от CURATOR.
 @@qrator/qauth$script,important
 @@qrator/validate$xhr,important
@@ -5831,6 +5898,14 @@ teletype.in#@#div.preloader
 @@$cookie=qrator_ssid2,important
 @@$cookie=qrator_jsid2,important
 !
+! ====
+!
+!
+! ====
+! Servicepipe Anti-DDoS System (16.02.26)
+! Не открывались сайты, защищённые Анти-DDos защитой от Servicepipe.
+@@||servicepipe.ru/static/$script,important
+@@||servicepipe.ru/loaders/$image,important
 !
 ! ====
 !
