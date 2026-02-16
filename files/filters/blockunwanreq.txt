@@ -2394,7 +2394,7 @@ $cookie=TSDK_trackerSessionId
 ||govoritmoskva.ru/static/img/TG.gif^$image,domain=govoritmoskva.ru
 ||govoritmoskva.ru/static/img/max.jpg^$image,domain=govoritmoskva.ru
 ||nestlebaby.ru/livechat/event-listen$xhr,domain=nestlebaby.ru
-||ord.vk.com/adv_info
+||ord.vk.*/adv_info
 ||vk.*/adv_info.php
 ||vk.*/al_page.php?act=seen
 ||vk.*/ads_rotate.php
