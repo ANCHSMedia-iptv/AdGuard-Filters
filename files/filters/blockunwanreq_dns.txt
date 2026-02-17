@@ -3,7 +3,7 @@
 ! Version: 4.3.5-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-02-16T6:57:00+00:00
+! TimeUpdated: 2026-02-17T6:57:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 16.02.2026 16:57 UTC
+! Last Modified: 17.02.2026 16:57 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -24,6 +24,7 @@
 ! Подойдёт для мобильных устройств и компьютеров.
 ! Suitable for mobile devices and computers.
 ! Некоторые домены для блокировки взяты из других источников.
+! Много чего собрано из моих «наблюдений» и добавлений.
 !
 !
 !
@@ -1280,6 +1281,8 @@
 ||track.onef.pro^
 ||jitsu.ixbt.site^
 ||turbotargeting.io^
+||adpushup.com^
+! ||bedsberry.com^
 !
 !
 !
@@ -1828,7 +1831,8 @@
 @@||api.adguard.org^
 !
 !
-! ipwho.is^
+!
+! ipwho.is^ (4.02.26: Issue from ipwhois-io)
 !
 !
 ! Соцсети Facebook и Instagram заблокированы на территории РФ, владеющая ими компания Meta признана экстремисткой и деятельность в РФ запрещена.

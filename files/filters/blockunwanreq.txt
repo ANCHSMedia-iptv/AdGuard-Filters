@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.8.7-R
-! TimeUpdated: 2026-02-16T16:57:25+00:00
+! Version: 4.8.8-R
+! TimeUpdated: 2026-02-17T16:57:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2311,7 +2311,7 @@ $removeparam=is_autologin_ya
 ||goodgame.ru/images/blank.gif^$image,domain=goodgame.ru,redirect-rule=1x1-transparent.gif
 ||goodgame.ru/js/advert.js$script,domain=goodgame.ru,important
 ||vmetrics.goodgame.ru^$important
-$removeparam=_rsc,domain=ura.news|zaa.bz
+$removeparam=_rsc
 ||pikabu.ru/s/games_showcase/*/$image,domain=pikabu.ru
 ||pikabu.ru/ajax/save_visited_stories.php^$xhr,domain=pikabu.ru
 ||pikabu.ru/s/2025/08/26/14/2edvlj6h.png^$image,domain=pikabu.ru
@@ -2422,8 +2422,12 @@ img.hiteml.com$image
 vip.gophersport.com$image
 ||retailcrm.tech/widget/$third-party
 ||retailcrm.tech/api/client/v*/geoip
-||vist-lan.ru/api/customer/v*/product/card/*/last_seen
-||vist-lan.ru/api/customer/v*/collect
+||vist-lan.ru/api/customer/v*/product/card/*/last_seen$domain=vist-lan.ru
+||vist-lan.ru/api/customer/v*/collect$domain=vist-lan.ru
+||api.imeicheck.com/site-stats/$domain=imeicheck.com
+||bedsberry.com^$third-party
+||adpushup.com^$third-party,domain=~adpushup.com,important
+||zadelom.ru/action/register_visit$domain=zadelom.ru
 !
 !
 !
@@ -4142,14 +4146,17 @@ nakanune.ru###footer > div.row > div.col-md-8:nth-child(2) > div:last-child > di
 nakanune.ru##div.wrapper_nakanune:nth-child(11) > div.centralCol.centralCol-content:nth-child(2) > div.row:first-child > div.\31 newsCard.col-md-12.row > div._show.col-sm-12 > div.row._share:last-child > div.col-xs-12.col-md-5:first-child
 symbolab.com##div[class^="qb-banner-holder "]
 nestlebaby.ru##.bm-teaser, .bm-teaser--2025, .bm-teaser--color-1, .is-visible
-vist-lan.ru##.CookieAgreement_popup__lJKu9, .getBoxShadowSkin_skin_boxShadow_md__17xWb
+vist-lan.ru##div[class^="CookieAgreement_popup"]
 vist-lan.ru##.consultant-tooltip-wrap, .consultant-tooltip-wrap_right-bottom
-vist-lan.ru##.SectionLayout_root__4EgFm, .getSpacingSkin_skin_v_gap_300__3miPi, .getSpacingSkin_skin_padding_top_350__c0ZwI, .getSpacingSkin_skin_padding_bottom_350__KobRL, .getBackgroundColorSkin_skin_background_secondary__AEMRv, .getSpacingSkin_skin_h_padding_200__T9zEN, .SectionLayout_touch_top_350__B3ThF, .SectionLayout_touch_bottom_350__o4dQK, .SectionLayout_touch_horizontal_200__inqyv
-ixbt.market###b-top-sidebar-77-in
+vist-lan.ru##section[data-testid="EmailSubscription"][class="SectionLayout_root"]
 ixbt.market###page-wrapper > aside.toolbar.hidden-xs:last-child
 pult.ru##.pult__newsletter-popup
 ##div[class^="i-flocktory"]
 pult.ru##a.b-link-up-page.js-link-up-page:nth-child(6)
+qms.ru###root > footer.footer.footer--dark:last-child > div.footer-container.container > div.footer-confidential:nth-child(2)
+imeicheck.com##section:nth-child(9) > div.bannerStyle.imebanner.Carrierbn > div.container > div.checkStatus.text-center > div.socail_links:last-child
+imeicheck.com##.swal2-container, .swal2-center, .swal2-backdrop-show
+xn--80aegp4abom.xn--p1ai##.ta_upscr, .bounceInup, .animated
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4233,14 +4240,15 @@ arsibtower-tyumen.ru#%#//scriptlet('set-session-storage-item', 'visited', 'n')
 #%#//scriptlet('set-local-storage-item', '/_ym*_*/', '$remove$')
 #%#//scriptlet('set-local-storage-item', '/_ym_*/', 'emptyObj')
 beetv.kz#%#//scriptlet('set-local-storage-item', 'querySearchHistory', 'emptyObj')
-#%#//scriptlet('set-session-storage-item', 'sentryReplaySession', '$remove$')
+#%#//scriptlet('set-session-storage-item', 'sentryReplaySession', 'emptyObj')
 #%#//scriptlet('set-session-storage-item', '__ym_tab_guid', '$remove$')
 smotrim.ru#%#//scriptlet('set-local-storage-item', '/tmr_*/', '$remove$')
-vk.*#%#//scriptlet('set-cookie', 'adblock', '', '0')
+#%#//scriptlet('set-cookie', 'adblock', '', '0')
 #%#//scriptlet('remove-cookie', 'ym_uid')
 pult.ru#%#//scriptlet('set-local-storage-item', 'newsletterPopupStart', '0')
 pult.ru#%#//scriptlet('set-local-storage-item', 'RCC__pending_events', 'emptyObj')
-! (Waiting for adding more scripts..)
+#%#//scriptlet('remove-cookie', '/cfz_*|OptanonConsent|zaraz-consent/')
+!
 !
 !
 ! -
@@ -4515,7 +4523,7 @@ pult.ru#%#//scriptlet('set-local-storage-item', 'RCC__pending_events', 'emptyObj
 ||media-adv.market.yandex.ru^$important
 ||yastatic.net/partner-code-bundles/$important,script,domain=~auto.ru,third-party
 ||yastatic.net/nearest.js^$script
-! browser.pay.yandex.*/api/v*/split-status$important
+||browser.pay.yandex.*/api/v*/split-status
 ||yastatic.net/safeframe-bundles/$important,script,domain=~captcha-api.yandex.ru|~smartcaptcha.cloud.yandex.ru
 ||pay.yandex.ru/web/cl/click$important
 ||site.yandex.net/*/js/suggest.js^$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz
@@ -4569,12 +4577,12 @@ $cookie=_ym_debug
 ||strm.yandex.ru/perf 
 ||yandex.ru/internet/api/v*/stats
 ||yandex.ru/internet/api/v*/share-link/
-||yandex.ru^$cookie,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz
+||yandex.ru^$cookie,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*
 ||yandex.*^$cookie,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*
 ||yandex.ru/cycounter$important
 ||hdrc.yandex.net^
 ||yandex.ru/ick/r
-||yandex.ru/search/_crpd/$important
+||yandex.ru/search/_crpd/$ping
 ||yandex.ru/search/reask-suggest-banners
 ||events.plus.yandex.net^$important
 ||yastatic.net/s3/trbro/v*/i/service_$third-party,image,important
@@ -4655,11 +4663,11 @@ $removeparam=yredirect
 ||radio.api.music.yandex.ru/radio/v*/recommendations/record-event
 ! ||dr*.yandex.*^
 ://yandex.*/appcry|
-||static-mon.yandex.net/event
+||static-mon.yandex.net/event$important
 ||real-time-poi.maps.yandex.*/tiles?l=personalized_poi_ads&lang=*&*/*/
 ||surveys.yandex.ru^
 ||market.yandex.ru^$removeparam=baobab_event_id
-||market.yandex.ru^$removeparam=ysclid
+$removeparam=ysclid
 ||clck.yandex.net^$app=com.yandex.aliceapp
 ||yandex.ru/ads/$important,domain=~limehd.tv|~litehd.tv|~pervyi-tv.online|~russia-tv.online|~shadowcore.ru
 ||yastatic.net/naydex/yandex-mail/$redirect=noopjs
@@ -4679,6 +4687,8 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 /search/*$document,removeparam=suggest_reqid,domain=ya.ru|yandex.*
 ||kit.yandex.ru/api/*/v*/kit*/collect
 ||yandex.$removeparam=metric_client_id
+||api.browser.yandex.*/user-events/
+||browser.yandex.*/welcome-static/pusher__worker-
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -5831,7 +5841,7 @@ teletype.in#@#div.preloader
 @@||dns.yandex.net^
 @@/LazyGoogleReCaptchaV*.js
 @@||csp.yandex.net^$important
-@@||strm-*-*.strm.yandex.net/music-v*/crypt/ysign1=*/*/*-mp4?
+@@||strm-*-*.strm.yandex.net/music-v*/crypt/ysign*=*/*/*-mp4?
 @@||api.letsencrypt.org^
 @@||youtube.com/api/stats/watchtime$image,domain=youtube.com|youtube-nocookie.com|youtu.be
 @@||yandex.*/captchapgrd
@@ -5853,6 +5863,8 @@ teletype.in#@#div.preloader
 @@||id.vk.com/not_robot_captcha
 @@||static.vk.com/vkid/*/not_robot_captcha
 @@||yandex.ru/showcaptcha$important
+@@||challenges.cloudflare.com/cdn-cgi/challenge-platform
+@@||yandex.ru/search/_crpd/$~ping,image,font
 !
 !
 ! -
@@ -5888,7 +5900,7 @@ teletype.in#@#div.preloader
 !
 !
 !
-! ====
+! ==
 ! CURATOR Anti-DDoS System (08.02.26)
 ! Не открывались сайты, защищённые Анти-DDos защитой от CURATOR.
 @@qrator/qauth$script,important
@@ -5898,16 +5910,16 @@ teletype.in#@#div.preloader
 @@$cookie=qrator_ssid2,important
 @@$cookie=qrator_jsid2,important
 !
-! ====
+! ==
 !
 !
-! ====
-! Servicepipe Anti-DDoS System (16.02.26)
-! Не открывались сайты, защищённые Анти-DDos защитой от Servicepipe.
+! ==
+! Servicepipe Anti-DDoS and Anti-Bot System (16.02.26)
+! Не открывались сайты, защищённые Анти-DDos и Анти-Бот защитой от Servicepipe.
 @@||servicepipe.ru/static/$script,important
 @@||servicepipe.ru/loaders/$image,important
 !
-! ====
+! ==
 !
 !
 !
@@ -6135,5 +6147,5 @@ teletype.in#@#div.preloader
 ! Мессенджер Discord заблокирован 08.10.24 на территории РФ из-за нарушения законодательства.
 ! Discord messenger was blocked on 08.10.24 in the territory of the Russian Federation due to violations of the law.
 !
-
+!
 !
