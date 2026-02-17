@@ -1310,7 +1310,7 @@ $cookie=s24id
 ! api.picsart.com/*/subscription/promo/special-offer$xhr,domain=picsart.com (Waiting for adding..)
 ||sentry.iptv2022.com^$important
 ||limehd.tv/_nuxt/sentry.client.config-$script,domain=limehd.tv,important
-||api.okcdn.ru/fb.do
+||okcdn.ru/fb.do
 ||russianfood.com/images/lb/best_yt_bg__*.png^$image,domain=russianfood.com
 ||russianfood.com/images/lb/best_fb_bg__*.png^$image,domain=russianfood.com
 ||eda.ru/api/v*/graphql^$xhr,domain=eda.ru
@@ -2399,7 +2399,7 @@ $cookie=TSDK_trackerSessionId
 ||vk.*/al_page.php?act=seen
 ||vk.*/ads_rotate.php
 ||vk.*/wkview.php?act=
-||calls.okcdn.tu/fb.do
+! calls.okcdn.ru/fb.do
 ||static.vk.*/vkid/*/6c87bab03efe1ee9384267fcd5a4a752.png^$image,domain=vk.com|vk.ru
 ||vk.*/dist/core_spa/chunks/stories-perf-metrics.$script,domain=vk.ru|vk.com
 ||vk.*/easter-eggs
