@@ -3,7 +3,7 @@
 ! Version: 4.3.5-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-02-17T6:57:00+00:00
+! TimeUpdated: 2026-02-18T6:57:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 17.02.2026 16:57 UTC
+! Last Modified: 18.02.2026 16:57 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -339,7 +339,7 @@
 ||adskeeper.co.uk^$important
 ||digitalcaramel.com^$important
 ||ads*.twitter.com^$dnsrewrite=REFUSED,important
-||ms.vk.com^$important
+||ms.vk.*^$important
 ||*ad.*.xiaomi.com^$important
 ||d3c8j8snkzfr1n.cloudfront.net^
 ||bitrix.info^$important
@@ -1283,6 +1283,7 @@
 ||turbotargeting.io^
 ||adpushup.com^
 ! ||bedsberry.com^
+||sentry.kontur.host^$important
 !
 !
 !
