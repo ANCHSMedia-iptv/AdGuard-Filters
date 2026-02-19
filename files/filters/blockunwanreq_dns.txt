@@ -3,7 +3,7 @@
 ! Version: 4.3.5-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-02-19T6:57:00+00:00
+! TimeUpdated: 2026-02-19T16:57:00+00:00
 ! 
 !
 !
