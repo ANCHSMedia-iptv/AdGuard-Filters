@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.8.9-R
-! TimeUpdated: 2026-02-18T16:57:25+00:00
+! Version: 4.9.0-R
+! TimeUpdated: 2026-02-19T16:57:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2123,8 +2123,8 @@ $cookie=mwai_session_id
 ||mail.ru$removeparam=autologin
 $cookie=/thirdparty_*/,domain=imgsmail.ru|mail.ru
 ||pms.mail.ru^$important
-||vk*.*/video_ext.php$domain=mail.ru
-||vk.*/js/api/videoplayer.js^$script,domain=mail.ru
+||vk*.*/video_ext.php$domain=mail.ru|lenta.ru
+||vk.*/js/api/videoplayer.js^$script,domain=mail.ru|lenta.ru
 ||sun*.userapi.com/impg/r-vtT5WJOsQWOvijQUvhBL-uPwVMql99LE47SQ/g5QBeUWmWbY.jpg$image,domain=mail.ru
 /wp-content/themes/woohoo/js/matchMedia.addListener.js^$script
 ||enkod.ru^$important,third-party,domain=~enkod.io
@@ -2232,8 +2232,7 @@ $removeparam=msclkid
 ||vk.com/video_mediascope.php$xhr,important
 ||ovego.tv/images/modern_icon_informers.gif^$image,domain=ovego.tv
 $removeparam=is_autologin_ya
-||i-trailer.ru^$third-party
--devtools-frontend.appspot.com^
+||i-trailer.ru^
 ||clickstream-proxy.api.2gis.*^$important
 ||advisor.api.2gis.*^$important
 ||mediascope.mail.ru^$important
@@ -2462,6 +2461,21 @@ vip.gophersport.com$image
 ||wibes.ru/stream/*?source=menu_to$domain=wibes.ru
 ||sentry.kontur.host^$important
 ||outsource.api.2gis.com/v*/vacancies/$domain=2gis.ru
+:///VM86$script
+||pixelscan.net/unleash/proxy/client/metrics$xhr,domain=pixelscan.net
+||pixelscan.net/assets/icons/header-bar-telegram-icon.svg^$image,domain=pixelscan.net
+onlinetrade.ru/5cff6583-c8c7-4a68-9381-c9f55c0b5a50
+$removeparam=tgclid
+$removeparam=mt_network
+$removeparam=mt_medium
+$removeparam=mt_campaign
+$removeparam=mt_creative
+$removeparam=mt_adset
+||rambler.ru/static/js/sentry-vendor.$script,domain=rambler.ru
+||yaplakal.com/style_images/*/spacer.gif$redirect-rule=1x1-transparent.gif,domain=yaplakal.com
+||yaplakal.com/html/static/opacity$image,redirect-rule=1x1-transparent.gif,domain=yaplakal.com
+||lapsha.media/storage/uploads/2025/09/01_1.jpg^$image,domain=lapsha.media
+||lapsha.media/storage/uploads/2024/07/2024-07-03-18.40.50-1.jpg^$image,domain=lapsha.media
 !
 !
 !
@@ -4188,8 +4202,8 @@ vist-lan.ru##.consultant-tooltip-wrap, .consultant-tooltip-wrap_right-bottom
 vist-lan.ru##section[data-testid="EmailSubscription"][class="SectionLayout_root"]
 ixbt.market###page-wrapper > aside.toolbar.hidden-xs:last-child
 pult.ru##.pult__newsletter-popup
-##div[class^="i-flocktory"]
 pult.ru##a.b-link-up-page.js-link-up-page:nth-child(6)
+##div[class^="i-flocktory"]
 qms.ru###root > footer.footer.footer--dark:last-child > div.footer-container.container > div.footer-confidential:nth-child(2)
 imeicheck.com##section:nth-child(9) > div.bannerStyle.imebanner.Carrierbn > div.container > div.checkStatus.text-center > div.socail_links:last-child
 imeicheck.com##.swal2-container, .swal2-center, .swal2-backdrop-show
@@ -4204,6 +4218,18 @@ secrets.tbank.ru###article > div.components_Grid_Grid_module_grid > div.componen
 2gis.ru,2gis.*##._xcqknf
 2gis.ru###root > div > div._121zpzx > div._1sf34doj:first-child > div._1u4plm2:first-child > div:last-child > div._r47nf:last-child > div._guxkefv > div > div._1xzra4e > div._1yfus1e > div._jcreqo:last-child > div._fjltwx:last-child > div._1vgcy7c > div._3zzdxk:first-child > div._1667t0u > div._8hh56jx > div._15gu4wr > div._18lzknl > div._qvsf7z:last-child > div:last-child > div._t0tx82:first-child > div._uplvmw:last-child > div > div
 koi.ai##.top-bar
+pixelscan.net###headerBanner
+onlinetrade.ru##.cookiePanel
+onlinetrade.ru##.indexHat__itemBnr
+onlinetrade.ru##.indexActions__minorHalf
+onlinetrade.ru##.fullWidth_bnr
+onlinetrade.ru##.infoTile, .infoTile__club
+onlinetrade.ru##.indexBnrAndItems__bnr
+wildberries.ru##.fixed-block, .j-fixed-block, .footer-expanded
+news.rambler.ru##.mqvZ5X8Q, .JmFBKqGU
+news.rambler.ru##.wgFW_JxM
+news.rambler.ru##.rc__4cfwtg, .rc__6wncmy, .rc__7dqqe9
+tsargrad.tv##.header__btn-small, .btn-yellow-small
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5918,6 +5944,9 @@ teletype.in#@#div.preloader
 @@||challenges.cloudflare.com/cdn-cgi/challenge-platform
 @@||yandex.ru/search/_crpd/$~ping,image,font
 @@/*vkid_captcha-
+@@||onlinetrade.ru/xpvnsulc/?
+@@||onlinetrade.ru^$cookie
+@@||ocsp.comodoca.com^
 !
 !
 ! -
@@ -5971,6 +6000,10 @@ teletype.in#@#div.preloader
 ! Не открывались сайты, защищённые Анти-DDos и Анти-Бот защитой от Servicepipe.
 @@||servicepipe.ru/static/$script,important
 @@||servicepipe.ru/loaders/$image,important
+! -
+@@||onlinetrade.ru^$permissions=identity-credentials-get=()
+@@||onlinetrade.ru^$permissions=private-state-token-issuance=()
+@@||onlinetrade.ru^$permissions=private-state-token-redemption=()
 !
 ! ==
 !
