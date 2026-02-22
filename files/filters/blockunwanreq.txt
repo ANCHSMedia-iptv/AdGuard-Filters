@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 4.9.0-R
-! TimeUpdated: 2026-02-19T16:57:25+00:00
+! TimeUpdated: 2026-02-22T16:57:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -135,8 +135,8 @@ yabro.ru^$important
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru|rusradio.ru,important
 !
-||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cdn.cookielaw.org|~2gis.ru|~2gis.*
-||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cdn.cookielaw.org|~2gis.ru|~2gis.*
+||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cdn.cookielaw.org|~2gis.ru|~2gis.*|~comnews.ru
+||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cdn.cookielaw.org|~2gis.ru|~2gis.*|~comnews.ru
 /itunes_referals.js^$script,third-party
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script,third-party
 ||improving.duckduckgo.com^$important
@@ -2461,7 +2461,6 @@ vip.gophersport.com$image
 ||wibes.ru/stream/*?source=menu_to$domain=wibes.ru
 ||sentry.kontur.host^$important
 ||outsource.api.2gis.com/v*/vacancies/$domain=2gis.ru
-:///VM86$script
 ||pixelscan.net/unleash/proxy/client/metrics$xhr,domain=pixelscan.net
 ||pixelscan.net/assets/icons/header-bar-telegram-icon.svg^$image,domain=pixelscan.net
 onlinetrade.ru/5cff6583-c8c7-4a68-9381-c9f55c0b5a50
@@ -2476,6 +2475,8 @@ $removeparam=mt_adset
 ||yaplakal.com/html/static/opacity$image,redirect-rule=1x1-transparent.gif,domain=yaplakal.com
 ||lapsha.media/storage/uploads/2025/09/01_1.jpg^$image,domain=lapsha.media
 ||lapsha.media/storage/uploads/2024/07/2024-07-03-18.40.50-1.jpg^$image,domain=lapsha.media
+/dist/web/market_analytics.$script,domain=vk.com|vk.ru
+||sentry-*.protontech.ch^$important
 !
 !
 !
@@ -4230,6 +4231,12 @@ news.rambler.ru##.mqvZ5X8Q, .JmFBKqGU
 news.rambler.ru##.wgFW_JxM
 news.rambler.ru##.rc__4cfwtg, .rc__6wncmy, .rc__7dqqe9
 tsargrad.tv##.header__btn-small, .btn-yellow-small
+blog.rt.ru##.blog__share, .sp-t-1-2, .flex-start-center, .sp-b-3, .td-sp-t-1-1, .md-d-block, .md-sp-b-2, .md-sp-t-0-4
+###cookie-notification
+##.cookie-consent__banner
+nextmobile.ru##div:nth-child(28)
+##.dc_promo, .curatorpromark
+3dnews.ru###feed-to-top
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4766,6 +4773,7 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||api.browser.yandex.*/user-events/
 ||browser.yandex.*/welcome-static/pusher__worker-
 ||browser-resources.s3.yandex.net/*/get/browser/launcher_images/*/not_yandex/$image
+||log.api-maps.yandex.ru^$important
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -5947,6 +5955,13 @@ teletype.in#@#div.preloader
 @@||onlinetrade.ru/xpvnsulc/?
 @@||onlinetrade.ru^$cookie
 @@||ocsp.comodoca.com^
+@@||comnews.ru/themes/site/js/jquery.cookie.js$domain=comnews.ru,important
+@@||crl.gosuslugi.ru^
+@@||ssl-reg.iitrust.ru^
+@@||speedtest-*.megafon.ru^
+@@||st.mtsws.net^
+@@||speedtest.*.gldn.net^
+@@||*-pool.linkmeter.net^
 !
 !
 ! -
