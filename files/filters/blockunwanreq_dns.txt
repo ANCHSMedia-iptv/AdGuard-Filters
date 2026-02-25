@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.3.5-R
+! Version: 4.3.6-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-02-22T16:57:00+00:00
+! TimeUpdated: 2026-02-25T16:57:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 22.02.2026 16:57 UTC
+! Last Modified: 25.02.2026 16:57 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -221,6 +221,7 @@
 ||iriscoremetadataprod.blob.core.windows.net^
 ||nexusrules.officeapps.live.com^
 ||optanon.blob.core.windows.net^
+||measure.office.com^
 ! =
 !
 ! ===
@@ -1286,6 +1287,7 @@
 ! ||bedsberry.com^
 ||sentry.kontur.host^$important
 ||sentry-*.protontech.ch^
+||growthbook-proxy.lenta.tech^$important
 !
 !
 !
@@ -1794,7 +1796,7 @@
 ||hellopeople.app.tc^$dnsrewrite=BLOCKED
 ||onclick3.shop^$dnsrewrite=BLOCKED
 ||cimurak.ru^$dnsrewrite=BLOCKED
-||a-click68.icu^$dnsrewrite=BLOCKED
+||click68.icu^$dnsrewrite=BLOCKED
 ||vironin.info^$dnsrewrite=BLOCKED
 ||rufanek.ru^$dnsrewrite=BLOCKED
 ||doburex.ru^$dnsrewrite=BLOCKED
@@ -1820,6 +1822,71 @@
 ||ripanex.shop^$dnsrewrite=BLOCKED
 ||korubin.shop^$dnsrewrite=BLOCKED
 ||tezunok.shop^$dnsrewrite=BLOCKED
+||kamorik.ru^$dnsrewrite=BLOCKED
+||zanireb.ru^$dnsrewrite=BLOCKED
+||yarunex.ru^$dnsrewrite=BLOCKED
+||bikonel.ru^$dnsrewrite=BLOCKED
+||lonirex.ru^$dnsrewrite=BLOCKED
+||tolarix.ru^$dnsrewrite=BLOCKED
+||vimerok.ru^$dnsrewrite=BLOCKED
+||wimorix.ru^$dnsrewrite=BLOCKED
+||zapurek.ru^$dnsrewrite=BLOCKED
+||golunex.ru^$dnsrewrite=BLOCKED
+||kemurik.ru^$dnsrewrite=BLOCKED
+||bomurex.ru^$dnsrewrite=BLOCKED
+||kazunor.ru^$dnsrewrite=BLOCKED
+||jumarek.ru^$dnsrewrite=BLOCKED
+||xomurek.ru^$dnsrewrite=BLOCKED
+||xiremal.shop^$dnsrewrite=BLOCKED
+||camorex.shop^$dnsrewrite=BLOCKED
+||gulonir.shop^$dnsrewrite=BLOCKED
+||ximorev.shop^$dnsrewrite=BLOCKED
+||fivanok.shop^$dnsrewrite=BLOCKED
+||torunex.shop^$dnsrewrite=BLOCKED
+||kemorix.shop^$dnsrewrite=BLOCKED
+||fimurex.shop^$dnsrewrite=BLOCKED
+||somarik.shop^$dnsrewrite=BLOCKED
+||tuvanok.shop^$dnsrewrite=BLOCKED
+||dexarib.shop^$dnsrewrite=BLOCKED
+||sipurek.shop^$dnsrewrite=BLOCKED
+||vekurex.shop^$dnsrewrite=BLOCKED
+||zapunik.shop^$dnsrewrite=BLOCKED
+||zubanox.shop^$dnsrewrite=BLOCKED
+||dubarek.com^$dnsrewrite=BLOCKED
+||vironin.org^$dnsrewrite=BLOCKED
+||tepurex.today^$dnsrewrite=BLOCKED
+||vimonex.pro^$dnsrewrite=BLOCKED
+||click42.icu^$dnsrewrite=BLOCKED
+||click55.icu^$dnsrewrite=BLOCKED
+||click62.icu^$dnsrewrite=BLOCKED
+||click92.icu^$dnsrewrite=BLOCKED
+||click72.icu^$dnsrewrite=BLOCKED
+||click50.icu^$dnsrewrite=BLOCKED
+||click36.icu^$dnsrewrite=BLOCKED
+||click76.icu^$dnsrewrite=BLOCKED
+||click39.icu^$dnsrewrite=BLOCKED
+||click91.icu^$dnsrewrite=BLOCKED
+||click93.icu^$dnsrewrite=BLOCKED
+||click48.icu^$dnsrewrite=BLOCKED
+||click78.icu^$dnsrewrite=BLOCKED
+||click60.icu^$dnsrewrite=BLOCKED
+||click49.icu^$dnsrewrite=BLOCKED
+||click71.icu^$dnsrewrite=BLOCKED
+||click6.icu^$dnsrewrite=BLOCKED
+||click73.icu^$dnsrewrite=BLOCKED
+||click98.icu^$dnsrewrite=BLOCKED
+||click02.icu^$dnsrewrite=BLOCKED
+||dopurex.ru^$dnsrewrite=BLOCKED
+||lopunex.ru^$dnsrewrite=BLOCKED
+||seburex.ru^$dnsrewrite=BLOCKED
+||kavunex.ru^$dnsrewrite=BLOCKED
+||nivonak.ru^$dnsrewrite=BLOCKED
+||solurex.ru^$dnsrewrite=BLOCKED
+||wikalon.ru^$dnsrewrite=BLOCKED
+||zubirak.ru^$dnsrewrite=BLOCKED
+||tegulon.ru^$dnsrewrite=BLOCKED
+||zanireb.ru^$dnsrewrite=BLOCKED
+||yarunex.ru^$dnsrewrite=BLOCKED
 ||refeuficn.github.io^$dnsrewrite=0.0.0.0
 ||mitarchive.info^$dnsrewrite=0.0.0.0
 ||aitd.one^$dnsrewrite=0.0.0.0

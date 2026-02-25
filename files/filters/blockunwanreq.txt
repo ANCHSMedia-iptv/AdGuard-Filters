@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.9.0-R
-! TimeUpdated: 2026-02-22T16:57:25+00:00
+! Version: 4.9.1-R
+! TimeUpdated: 2026-02-25T16:57:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -965,16 +965,16 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||s3.eu-central-1.amazonaws.com^$important
 ||collector-prod.perek.epoch8.ru^$important
 ||fda.middle-api.magnit.ru^
-||kaspersky-labs.com^$app=com.icemobile.lenta.prod
+||kaspersky-labs.com^$app=com.icemobile.lenta.prod|ru.sberbank.mobile
 ||s*.teraboxcdn.*/fe-opera-static/node-static-v*/fe-webv*-main/js/ad.*.$script,domain=terabox.*,important
 ! qrator/qauth$script,important (07.02.26: Защита от ДДос, из-за блокировки не заходит на сайты, где установлена защита от CURATOR)
 ! qrator/validate$xhr,important (07.02.26: Защита от ДДос, из-за блокировки не заходит на сайты, где установлена защита от CURATOR)
 ||ad-source.pro^$important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus
-/:\/\/yandex\.(ru|com)/^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.free.tiptop.vpn.proxy|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app
-/^77\.88\.(4|5){2}.(5|8){2}/$network,app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app
+/:\/\/yandex\.(ru|com)/^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.free.tiptop.vpn.proxy|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn
+/^77\.88\.(4|5){2}.(5|8){2}/$network,app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn
 yastatic.net^$app=com.radioapp.mayakradio|com.avito.android|ru.vk.store
-/^5\.255\.255\.77/$network,app=ru.pyaterochka.app.browser|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|ru.rt.video.app.mobile|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app
+/^5\.255\.255\.77/$network,app=ru.pyaterochka.app.browser|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|ru.rt.video.app.mobile|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn
 ||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm
 ||s3.amazonaws.com^$app=com.viber.voip
 ||bing.com^$app=com.viber.voip
@@ -1781,7 +1781,7 @@ $cookie=MOLNETSTATSESSID,important
 /boom/api/*/metrics/adaptive/favicon-*.png$image,domain=kp.ru|kp.*|md.kp.media,important
 ||vk.com^$app=ru.pyaterochka.app.browser
 ||a1.pronouncefix.com^
-||amazon.$removeparam=ref
+$removeparam=ref
 $cookie=BITRIX_SM_LAST_VISIT
 $cookie=BITRIX_SM_GUEST_ID
 $cookie=yaParams
@@ -2477,6 +2477,25 @@ $removeparam=mt_adset
 ||lapsha.media/storage/uploads/2024/07/2024-07-03-18.40.50-1.jpg^$image,domain=lapsha.media
 /dist/web/market_analytics.$script,domain=vk.com|vk.ru
 ||sentry-*.protontech.ch^$important
+||api.planeta.tc/Summary/Summary/GetMarketingGroupsByCity$xhr,domain=planeta.tc
+||planeta.tc/_next/image?url=http%3A%2F%2Fapp0.frontline.cordis.corp.itmh.ru%3A8028%2Fstatic%2Fbanner%2F2025%2Fplaneta-tg.png$image,domain=planeta.tc
+||yappy.media/api/google-play-available$xhr,domain=yappy.media
+||yappy.media/api/subscription/recommendation$xhr,domain=yappy.media
+||yappy.media/api/video/view$xhr,domain=yappy.media
+$cookie=WEBSENTRYINGRESSCOOKIE
+$cookie=__fingerprint__
+||growthbook.io^$third-party,domain=~growthbook.io
+||monetka.ru/service_feedback/index/$domain=monetka.ru
+||monetka.ru/uploads/homepage_banner/$image,domain=monetka.ru
+||growthbook-proxy.lenta.tech^$important
+||fp.kaspersky-labs.com/cld_track
+||magnit.ru/_nuxt/AdsBy$css,domain=magnit.ru
+||magnit.ru/webgate/ab/$xhr,domain=magnit.ru
+||magnit.ru/_nuxt/MobileAppBanner.$css,domain=magnit.ru
+||segment.com^$third-party,domain=~segment.com,important
+$cookie=BITRIX_MPS_GUEST_ID
+$cookie=BITRIX_MPS_LAST_VISIT
+||*analytics.t2.ru^$important
 !
 !
 !
@@ -4237,6 +4256,19 @@ blog.rt.ru##.blog__share, .sp-t-1-2, .flex-start-center, .sp-b-3, .td-sp-t-1-1, 
 nextmobile.ru##div:nth-child(28)
 ##.dc_promo, .curatorpromark
 3dnews.ru###feed-to-top
+##.notification, .js-cookie-notification, .notification--shown
+###cookie-bar
+planeta.tc###__next > div.css-1rz8i9c.er0yei90:last-child > div.css-iokqan.er0yei91 > div.content:first-child > div.row.css-ttsknn.e1ip4kte0:nth-child(3) > div.css-1btrsdx.e2tpg980:nth-child(2)
+youtube.com##.yt-list-item-view-model__label, .yt-list-item-view-model__container, .yt-list-item-view-model__container--compact, .yt-list-item-view-model__container--tappable
+yappy.media##.css-1t1saub, .e1ied3zo0
+dnschecker.org##.protected_now, .ps-1
+cnews.ru###back-to-top
+kp.ru###app > div.sc-13iz5ku-0.gLVCYP:nth-child(4) > div.sc-1dpva40-0.dfKjHz > div:first-child > div.sc-1izj9yl-0.bRmmbj:last-child > div.sc-1izj9yl-2.kcKDrv > div:last-child > div.sc-1ktpw9t-0.hSknpe.sc-1msp3sj-1.cUZlaP:first-child > div.sc-1ktpw9t-1.gATzXn > div.sc-1msp3sj-3.hDOchY > div.sc-1msp3sj-2.jhbyg > div.sc-1msp3sj-4.gluCOB:last-child > nav.sc-1msp3sj-5.LLzmN:first-child > a.sc-1jwipj4-0.lfZFmV.sc-1msp3sj-6.fQcBbC:nth-child(6)
+##.cookies
+monetka.ru##.banners_wrapper
+lenta.com##lnt-root:nth-child(3) > lu-layout:nth-child(2) > lu-mobile-app-widget:first-child
+magnit.ru##div[class^="unit-ad-block-message"]
+magnit-family.ru##.cookie
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4311,7 +4343,6 @@ voka.tv#%#//scriptlet('set-local-storage-item', 'ALLOW_COOKIES', 'true')
 #%#//scriptlet('set-local-storage-item', 'bugsnag-anonymous-id', '')
 4pda.*#$?#html[style] > body .advanced-area .post[itemid] ~ .post:not([itemid]):has(> [class] > script) { display: none !important }
 lc.rt.ru#%#//scriptlet('set-cookie', 'ahoy_track', 'false', 'none')
-! #%#//scriptlet('set-session-storage-item', 'History.store', 'emptyObj')
 arsibtower-tyumen.ru#%#//scriptlet('set-session-storage-item', 'visited', 'n')
 ~vk.com,~vk.ru#%#//scriptlet('set-session-storage-item', 'vk_code_verifier', '$remove$')
 #%#//scriptlet('set-session-storage-item', 'vk_redirect_url', '$remove$')
@@ -4320,7 +4351,7 @@ arsibtower-tyumen.ru#%#//scriptlet('set-session-storage-item', 'visited', 'n')
 #%#//scriptlet('set-local-storage-item', '/_ym*_*/', '$remove$')
 #%#//scriptlet('set-local-storage-item', '/_ym_*/', 'emptyObj')
 beetv.kz#%#//scriptlet('set-local-storage-item', 'querySearchHistory', 'emptyObj')
-#%#//scriptlet('set-session-storage-item', 'sentryReplaySession', 'emptyObj')
+#%#//scriptlet('set-session-storage-item', 'sentryReplaySession', '')
 #%#//scriptlet('set-session-storage-item', '__ym_tab_guid', '$remove$')
 smotrim.ru#%#//scriptlet('set-local-storage-item', '/tmr_*/', '$remove$')
 #%#//scriptlet('set-cookie', 'adblock', '', '0')
@@ -4331,6 +4362,17 @@ pult.ru#%#//scriptlet('set-local-storage-item', 'RCC__pending_events', 'emptyObj
 mail.ru#%#//scriptlet('set-local-storage-item', 'tip%3Aanonim', 'emptyObj')
 mail.ru#%#//scriptlet('set-local-storage-item', '@mail-core/dashboard:timespent_sections', 'emptyObj')
 tv.mail.ru#%#//scriptlet('set-local-storage-item', 'tv:portal-header-search-history', 'emptyObj')
+yappy.media#%#//scriptlet('set-local-storage-item', 'hotkeysPopupWasShown', '{"open":false,"isShown":false}')
+#%#//scriptlet('set-local-storage-item', 'gbFeaturesCache', '$remove$')
+#%#//scriptlet('set-local-storage-item', 'analyticHitsLog', '$remove$')
+#%#//scriptlet('set-local-storage-item', '/flockapi:*:*/', '$remove$')
+#%#//scriptlet('set-local-storage-item', 'rb_sync_id', '$remove$')
+#%#//scriptlet('set-local-storage-item', '/GrowthBook_*/', '$remove$')
+#%#//scriptlet('set-local-storage-item', 'adrcid', '$remove$'')
+#%#//scriptlet('set-local-storage-item', 'adrdel', '$remove$'')
+#%#//scriptlet('set-local-storage-item', 'COOKIE_POLICY_ACCEPTED_KEY', 'true')
+magnit.ru#%#//scriptlet('set-local-storage-item', 'app-banner-close', '1')
+#%#//scriptlet('set-local-storage-item', 'tc', 'NaN')
 !
 !
 !
@@ -4431,6 +4473,13 @@ tv.mail.ru#%#//scriptlet('set-local-storage-item', 'tv:portal-header-search-hist
 ||wpc.v0cdn.net^
 ||iriscoremetadataprod.blob.core.windows.net^
 ||optanon.blob.core.windows.net^
+||measure.office.com^
+!
+||config.edge.skype.com/config/v*/Edge/*?$removeparam=installdate
+||config.edge.skype.com/config/v*/Edge/*?$removeparam=soobe
+||config.edge.skype.com/config/v*/Edge/*?$removeparam=vm
+||config.edge.skype.com/config/v*/Edge/*?$removeparam=edu
+||config.edge.skype.com/config/v*/Edge/*?$removeparam=devicefamily
 ! =
 !
 !
@@ -4774,6 +4823,7 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||browser.yandex.*/welcome-static/pusher__worker-
 ||browser-resources.s3.yandex.net/*/get/browser/launcher_images/*/not_yandex/$image
 ||log.api-maps.yandex.ru^$important
+! ||yastatic.net/naydex/yandex-search/
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -4878,11 +4928,13 @@ yandex.ru##.Box-cYgNPZ, .eVbChU
 ||cse.google.com/adsense/search/async-ads.js^$script,important
 ! ||cse.google.com/adsense/$script,important
 ||appsgrowthpromo*.googleapis.com^$important
+! ↑ рекламный домен
 ||peoplestackwebexperiments*.clients*.google.com^
 ||safeframe.googleapis.*^$important
 meditation.goog$important
 sin.prod.via.google^
 kul.prod.via.google^
+! ↑ рекламные домены
 ||adsense.google.com^$important
 ||doubleclickbygoogle.com^$important
 ||clouderrorreporting.googleapis.com^
@@ -5962,6 +6014,9 @@ teletype.in#@#div.preloader
 @@||st.mtsws.net^
 @@||speedtest.*.gldn.net^
 @@||*-pool.linkmeter.net^
+@@||awswaf.com^*/verify$xhr
+@@||awswaf.com^*/challenge.js$script
+@@||awswaf.com^*/inputs$xhr
 !
 !
 ! -
@@ -6137,7 +6192,7 @@ teletype.in#@#div.preloader
 ||hellopeople.app.tc^$all
 ||onclick3.shop^$all
 ||cimurak.ru^$all
-||a-click68.icu^$all
+||click68.icu^$all
 ||vironin.info^$all
 ||rufanek.ru^$all
 ||doburex.ru^$all
@@ -6161,6 +6216,71 @@ teletype.in#@#div.preloader
 ||ripanex.shop^$all
 ||korubin.shop^$all
 ||tezunok.shop^$all
+||kamorik.ru^$all
+||zanireb.ru^$all
+||yarunex.ru^$all
+||bikonel.ru^$all
+||lonirex.ru^$all
+||tolarix.ru^$all
+||vimerok.ru^$all
+||wimorix.ru^$all
+||zapurek.ru^$all
+||golunex.ru^$all
+||kemurik.ru^$all
+||bomurex.ru^$all
+||kazunor.ru^$all
+||jumarek.ru^$all
+||xomurek.ru^$all
+||xiremal.shop^$all
+||camorex.shop^$all
+||gulonir.shop^$all
+||ximorev.shop^$all
+||fivanok.shop^$all
+||torunex.shop^$all
+||kemorix.shop^$all
+||fimurex.shop^$all
+||somarik.shop^$all
+||tuvanok.shop^$all
+||dexarib.shop^$all
+||sipurek.shop^$all
+||vekurex.shop^$all
+||zapunik.shop^$all
+||zubanox.shop^$all
+||dubarek.com^$all
+||vironin.org^$all
+||tepurex.today^$all
+||vimonex.pro^$all
+||click42.icu^$all
+||click55.icu^$all
+||click62.icu^$all
+||click92.icu^$all
+||click72.icu^$all
+||click50.icu^$all
+||click36.icu^$all
+||click76.icu^$all
+||click39.icu^$all
+||click91.icu^$all
+||click93.icu^$all
+||click48.icu^$all
+||click78.icu^$all
+||click60.icu^$all
+||click49.icu^$all
+||click71.icu^$all
+||click6.icu^$all
+||click73.icu^$all
+||click98.icu^$all
+||click02.icu^$all
+||dopurex.ru^$all
+||lopunex.ru^$all
+||seburex.ru^$all
+||kavunex.ru^$all
+||nivonak.ru^$all
+||solurex.ru^$all
+||wikalon.ru^$all
+||zubirak.ru^$all
+||tegulon.ru^$all
+||zanireb.ru^$all
+||yarunex.ru^$all
 ||piguiqproxy.com^$all
 ||temp.swtest.ru^$all
 ||shopsleta.ru^$all
