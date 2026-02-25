@@ -278,7 +278,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||zoon.ru/images/border.gif^$image,domain=zoon.ru
 ! (новое правило, строка 138 и 139)
 ! (новое правило, строка 138 и 139)
-||userapi.com/js/api/openapi.js$script,third-party,domain=~vk.com|~vk.ru,important
+||userapi.com/js/api/openapi.js$script,third-party,domain=~vk.com|~vk.ru|~vk.me,important
 ||analytics.vsem-edu-oblako.ru*/track^$xhr,important
 ||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,important
 |! sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com (новое правило, строка 285)
@@ -433,10 +433,10 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! /js/share*.js^$script,domain=~teraboxcdn.com|~terabox.com|~terabox.*|~living.ai,important (19.08.25: спорное правило)
 ||cubixworld.net/api/freepromo^$xhr,domain=cubixworld.net
 ||cubixworld.net/scripts/ga.js^$script,domain=cubixworld.net,important
-||vk.com/widget_comments.php$important,xhr,domain=~vk.com|~vk.ru,third-party
+||vk.com/widget_comments.php$important,xhr,domain=~vk.com|~vk.ru|~vk.me,third-party
 /js/mrl-web-api.js^$script,domain=minecraftrating.ru|misterlauncher.org
 ||tmonitoring.com/uploads/banners/*/*.*^$image,domain=tmonitoring.com
-||api.vk.com/method/widgets.getComments$script,xhr,third-party,important,domain=~vk.com|~vk.ru
+||api.vk.com/method/widgets.getComments$script,xhr,third-party,important,domain=~vk.com|~vk.ru|~vk.me
 /download_klauncher*.png^$image
 ||modsmc.ru/_nuxt/2415b65.js^$script,domain=modsmc.ru,important
 ||modsmc.ru/assets/icons/cookies.png^$image,domain=modsmc.ru
@@ -1352,9 +1352,9 @@ $cookie=s24id
 ||convertio.co/process/hit_logger^$xhr,domain=convertio.co,important
 ||3dnews.ru/track$important
 ||mnokol.tyuiu.ru/site/plugins/content/*/transparent.gif^$image,domain=mnokol.tyuiu.ru,important
-||api.vk.*/method/settingsGeneral.getCookiesPolicyVisible$xhr,domain=vk.com|vk.ru
-||st*-*.vk.com/dist/web/error_monitoring.$script,domain=vk.com|vk.ru
-||st*-*.vk.com/dist/web/jobs_devtools_notification.$script,domain=vk.com|vk.ru
+||api.vk.*/method/settingsGeneral.getCookiesPolicyVisible$xhr,domain=vk.com|vk.ru|vk.me
+||st*-*.vk.com/dist/web/error_monitoring.$script,domain=vk.com|vk.ru|vk.me
+||st*-*.vk.com/dist/web/jobs_devtools_notification.$script,domain=vk.com|vk.ru|vk.me
 ||apkpure.*/static/assets/*/analytics*.js^$script,domain=apkpure.net|apkpure.com,important
 ||lizardsystems.com/action/?action=uninstall
 ||softportal.com/js/adsense_advert$script,domain=softportal.com,important
@@ -1821,9 +1821,9 @@ $cookie=yaParams
 ||mail.ru/grstat$important
 $cookie=remixdt
 $cookie=remixlgck
-$cookie=remixstlid,third-party,domain=~vk.com|~vk.ru
+$cookie=remixstlid,third-party,domain=~vk.com|~vk.ru|~vk.me
 $cookie=remixua
-$cookie=remixlang,third-party,domain=~vk.com|~vk.ru
+$cookie=remixlang,third-party,domain=~vk.com|~vk.ru|~vk.me
 ! A
 ||nrk-nsk.ru/wp-content/uploads/2025/10/materialy-o-naczionalnom-messendzhere.jpg^$image,domain=nrk-nsk.ru
 ||nrk-nsk.ru/wp-content/uploads/2025/10/materialy-o-naczionalnom-messendzhere-003.jpg^$image,domain=nrk-nsk.ru
@@ -1935,18 +1935,18 @@ $cookie=fpm_referer
 ||livelib.ru/main/canshowpush^$xhr,domain=livelib.ru,important
 ||livelib.ru/main/viewed^$xhr,domain=livelib.ru,important
 ||promo.livelib.ru/js/load$script,domain=livelib.ru,important
-||vk.*/dist/public/api/openapi$script,third-party,important,domain=~vk.com|~vk.ru
-$cookie=showed_vkid_onetap,domain=~vk.com|~vk.ru
+||vk.*/dist/public/api/openapi$script,third-party,important,domain=~vk.com|~vk.ru|~vk.me
+$cookie=showed_vkid_onetap,domain=~vk.com|~vk.ru|~vk.me
 ||unpkg.com/*vkontakte/superappkit*/dist/
-||vk.ru/domain.txt^$third-party,important,domain=~vk.com|~vk.ru
-||id.vk.*/floating_one_tap_auth$third-party,important,domain=~vk.com|~vk.ru
-||static.vk.*/vkid/*/floating_one_tap_auth$third-party,important,domain=~vk.com|~vk.ru
-||id.vk.*/vkid_sdk_get_config$third-party,important,domain=~vk.com|~vk.ru
-||login.vk.*/?act=$third-party,important,domain=~vk.com|~vk.ru|~ok.ru
+||vk.ru/domain.txt^$third-party,important,domain=~vk.com|~vk.ru|~vk.me
+||id.vk.*/floating_one_tap_auth$third-party,important,domain=~vk.com|~vk.ru|~vk.me
+||static.vk.*/vkid/*/floating_one_tap_auth$third-party,important,domain=~vk.com|~vk.ru|~vk.me
+||id.vk.*/vkid_sdk_get_config$third-party,important,domain=~vk.com|~vk.ru|~vk.me
+||login.vk.*/?act=$third-party,important,domain=~vk.com|~vk.ru|~ok.ru|~vk.me
 ||api.vk.*/method/statEvents
 ||id.vk.*/stat_events_vkid_sdk$important
-||vk.*/js/api/openapi.js$script,third-party,important,domain=~vk.com|~vk.ru
-$cookie=prcl,third-party,domain=~vk.com|~vk.ru
+||vk.*/js/api/openapi.js$script,third-party,important,domain=~vk.com|~vk.ru|~vk.me
+$cookie=prcl,third-party,domain=~vk.com|~vk.ru|~vk.me
 ||gdz.ru/img/i/vk-button-icon.svg^$image,domain=gdz.ru
 ||gdz.ru/img/mascot/mascot_cookie.svg^$image,domain=gdz.ru
 ||euroki.org^$cookie=last_gdz
@@ -2147,7 +2147,7 @@ $cookie=/*_LAST_VISIT/
 ||runews24.ru/webp/assets/images/social_icons.png.webp^$xhr,domain=runews24.ru
 ||runews24.ru/assets/images/social_icons.png^$xhr,domain=runews24.ru
 $cookie=tvkuid,third-party
-||id.vk.*$cookie,third-party,domain=~vk.com|~vk.ru
+||id.vk.*$cookie,third-party,domain=~vk.com|~vk.ru|~vk.me
 ||afrinz.ru/site/storage/2023/10/logo_telegramm.png^$image,domain=afrinz.ru
 /banners/index.json^$xhr,domain=learn.microsoft.com
 ||sock.bionika-digital.ru^
@@ -2399,7 +2399,7 @@ $cookie=TSDK_trackerSessionId
 ||vk.*/wkview.php?act=
 ! calls.okcdn.ru/fb.do
 ||static.vk.*/vkid/*/6c87bab03efe1ee9384267fcd5a4a752.png^$image,domain=vk.com|vk.ru
-||vk.*/dist/core_spa/chunks/stories-perf-metrics.$script,domain=vk.ru|vk.com
+||vk.*/dist/core_spa/chunks/stories-perf-metrics.$script,domain=vk.ru|vk.com|vk.me
 ||vk.*/easter-eggs
 ||api.vk.*/method/adsint.registerAdEvents
 ||api.ok.ru/fb.do
@@ -2475,7 +2475,7 @@ $removeparam=mt_adset
 ||yaplakal.com/html/static/opacity$image,redirect-rule=1x1-transparent.gif,domain=yaplakal.com
 ||lapsha.media/storage/uploads/2025/09/01_1.jpg^$image,domain=lapsha.media
 ||lapsha.media/storage/uploads/2024/07/2024-07-03-18.40.50-1.jpg^$image,domain=lapsha.media
-/dist/web/market_analytics.$script,domain=vk.com|vk.ru
+/dist/web/market_analytics.$script,domain=vk.com|vk.ru|vk.me
 ||sentry-*.protontech.ch^$important
 ||api.planeta.tc/Summary/Summary/GetMarketingGroupsByCity$xhr,domain=planeta.tc
 ||planeta.tc/_next/image?url=http%3A%2F%2Fapp0.frontline.cordis.corp.itmh.ru%3A8028%2Fstatic%2Fbanner%2F2025%2Fplaneta-tg.png$image,domain=planeta.tc
@@ -4344,7 +4344,7 @@ voka.tv#%#//scriptlet('set-local-storage-item', 'ALLOW_COOKIES', 'true')
 4pda.*#$?#html[style] > body .advanced-area .post[itemid] ~ .post:not([itemid]):has(> [class] > script) { display: none !important }
 lc.rt.ru#%#//scriptlet('set-cookie', 'ahoy_track', 'false', 'none')
 arsibtower-tyumen.ru#%#//scriptlet('set-session-storage-item', 'visited', 'n')
-~vk.com,~vk.ru#%#//scriptlet('set-session-storage-item', 'vk_code_verifier', '$remove$')
+~vk.com,~vk.ru,~vk.me#%#//scriptlet('set-session-storage-item', 'vk_code_verifier', '$remove$')
 #%#//scriptlet('set-session-storage-item', 'vk_redirect_url', '$remove$')
 ~yandex.*,~ya.ru#%#//scriptlet('remove-cookie', '/bh|cycada|is_gdpr|is_gdpr_b|isa|redirectUrl|sae|ancQTZw|ssesar')
 ~yandex.*,~ya.ru#%#//scriptlet('remove-cookie', '/yandex_login|yp|ys|yuidss|_yasc|yandexuid|yashr|ymex|i|bltsr|alice_uuid|yandex_expboxes/')
