@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.9.1-R
-! TimeUpdated: 2026-02-25T16:57:25+00:00
+! Version: 4.9.2-R
+! TimeUpdated: 2026-02-26T16:57:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -53,7 +53,7 @@
 ||cellrebel.com^$important
 ||onesignal.com^$important,domain=~onesignal.com,third-party
 ||cdn.viglink.com^$important
-||connect.facebook.net^$important,domain=~facebook.com|~facebook.net|~fb.com
+||connect.facebook.net^$important
 ||connect.ok.ru^$important,domain=~ok.ru
 ||inappstory.ru^$important
 ||inappstory.com^$important
@@ -135,8 +135,8 @@ yabro.ru^$important
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru|rusradio.ru,important
 !
-||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cdn.cookielaw.org|~2gis.ru|~2gis.*|~comnews.ru
-||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cdn.cookielaw.org|~2gis.ru|~2gis.*|~comnews.ru
+||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cookielaw.org|~2gis.ru|~2gis.*|~comnews.ru|~tyuiu.ru
+||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cookielaw.org|~2gis.ru|~2gis.*|~comnews.ru|~tyuiu.ru
 /itunes_referals.js^$script,third-party
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script,third-party
 ||improving.duckduckgo.com^$important
@@ -154,9 +154,9 @@ yabro.ru^$important
 /cycounter.png^$image
 !
 /liru.gif^$image
-/1px.*$image,xhr,redirect-rule=1x1-transparent.gif,important
-/px.*$image,xhr,domain=~adhigh.net,redirect-rule=1x1-transparent.gif,important
-/blank.*$image,xhr,redirect-rule=1x1-transparent.gif,important
+/1px.$image,xhr,redirect-rule=1x1-transparent.gif,important
+/px.$image,xhr,redirect-rule=1x1-transparent.gif,domain=~adhigh.net,important
+/blank.$image,xhr,redirect-rule=1x1-transparent.gif,important
 /analytics.js$script,domain=~analytics.google.com|~www.google-analytics.com
 ! */analytics.*^$script,important
 ! anki.bots/cdn/shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,domain=anki.bots,important
@@ -167,7 +167,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.*.js^$script,important (новое правило, строка 138 и 139)
 /wp-content/plugins/*/assets/js/tracks.js$script,important
 /ad.js^$script,important
-/empty*.*^$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru|~lenta.com|~aptoide.com|~magnit.ru|~mail.yandex.*|~tenchat.ru
+/empty*.$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru|~lenta.com|~aptoide.com|~magnit.ru|~mail.yandex.*|~tenchat.ru
 */adv/*$image,xhr,script,domain=~pinterest.com|~aliexpress.ru|~aliexpress.com,important
 ! *empty*.*^$image,important
 ||store.bankiros.ru/js/metrics/*.js^$script,domain=bankiros.ru,important
@@ -2496,6 +2496,9 @@ $cookie=__fingerprint__
 $cookie=BITRIX_MPS_GUEST_ID
 $cookie=BITRIX_MPS_LAST_VISIT
 ||*analytics.t2.ru^$important
+/templates/*/images/px.gif$image,redirect-rule=1x1-transparent.gif
+||svyazon.ru/api/v*/banner-type$xhr,domain=svyazon.ru
+||cdn.svyazon.ru/upload/files/image/banner-image-id/$image,domain=svyazon.ru
 !
 !
 !
@@ -4373,6 +4376,7 @@ yappy.media#%#//scriptlet('set-local-storage-item', 'hotkeysPopupWasShown', '{"o
 #%#//scriptlet('set-local-storage-item', 'COOKIE_POLICY_ACCEPTED_KEY', 'true')
 magnit.ru#%#//scriptlet('set-local-storage-item', 'app-banner-close', '1')
 #%#//scriptlet('set-local-storage-item', 'tc', 'NaN')
+topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 !
 !
 !
@@ -6017,6 +6021,12 @@ teletype.in#@#div.preloader
 @@||awswaf.com^*/verify$xhr
 @@||awswaf.com^*/challenge.js$script
 @@||awswaf.com^*/inputs$xhr
+@@||officecdn.microsoft.com/pr/*/Office/Data/*_*.cab
+@@||officecdn.microsoft.com/pr/*/Office/Data/*/*.cab
+@@||officecdn.microsoft.com/pr/*/Office/Data/*/*.cab.phf
+@@||delivery.mp.microsoft.com^
+@@||prod.do.dsp.mp.microsoft.com^
+@@||update.microsoft.com^
 !
 !
 ! -
@@ -6048,6 +6058,7 @@ teletype.in#@#div.preloader
 @@||tyuiu.ru^$permissions=identity-credentials-get=()
 @@||tyuiu.ru^$permissions=private-state-token-issuance=()
 @@||tyuiu.ru^$permissions=private-state-token-redemption=()
+@@/jquery.cookie.js$script,domain=tyuiu.ru,important
 ! ==
 !
 !
@@ -6281,6 +6292,8 @@ teletype.in#@#div.preloader
 ||tegulon.ru^$all
 ||zanireb.ru^$all
 ||yarunex.ru^$all
+||ximarok.ru^$all
+||xebonak.ru^$all
 ||piguiqproxy.com^$all
 ||temp.swtest.ru^$all
 ||shopsleta.ru^$all
@@ -6356,6 +6369,7 @@ teletype.in#@#div.preloader
 ! #?# > :has(>  > [])
 ! ~yandex.by|~yandex.com|~yandex.kz|~yandex.ru|~ya.ru|~yandex.lv|~yandex.uz
 ! @@ ^$permissions= =()
+! ,domain=~facebook.com|~facebook.net|~fb.com
 !
 !
 !
