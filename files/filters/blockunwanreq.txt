@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 4.9.3-R
-! TimeUpdated: 2026-03-01T08:40:25+00:00
+! TimeUpdated: 2026-03-02T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2447,7 +2447,7 @@ vip.gophersport.com$image
 ||home.imgsmail.ru/resplash/*/i/2x2_$image,domain=mail.ru|~tv.mail.ru
 ||home.imgsmail.ru/resplash/*/i/subbotatv_$image,domain=mail.ru|~tv.mail.ru
 ||home.imgsmail.ru/resplash/*/i/muztv_$image,domain=mail.ru|~tv.mail.ru
-||r3.mail.ru/j/error/
+||r3.mail.ru/*/error/
 ||vkvideo.ru^$removeparam=autoplay
 ||mail.ru^$cookie=mtrc
 ||my.mail.ru/*/stat/$domain=my.mail.ru
@@ -2501,8 +2501,16 @@ $cookie=BITRIX_MPS_LAST_VISIT
 ||cdn.svyazon.ru/upload/files/image/banner-image-id/$image,domain=svyazon.ru
 ||static.browser.mi-img.com/mistat-data/onetrack/$script
 ||cdn.*.fds.api.mi-img.com/*/static/static/js/firebase$script,domain=mi.com|xiaomi.com
-||cdn.jsdelivr.net/gh/ad-shield/
+||cdn.jsdelivr.net/gh/ad-shield/*$script,third-party
 ||nowmodulo.com^$important,redirect=noopjs
+||data.sec.miui.com^$important
+://html-load.cc^$important
+||cdn.jsdelivr.net/gh/dobarkod/cookie-banner*/dist/cookiebanner.
+||kdv-group.com/html/css/popup-banner.css^$css,domain=kdv-group.com
+||kdv-group.com/js/*/popup-banner.$script,domain=kdv-group.com
+||sentry.pr-cy.io^$important
+||*gtm.hacklix.com^$important
+||lapsha.media/storage/uploads/2026/03/max-banner-v-stati.jpg^$image,domain=lapsha.media
 !
 !
 !
@@ -4276,6 +4284,12 @@ monetka.ru##.banners_wrapper
 lenta.com##lnt-root:nth-child(3) > lu-layout:nth-child(2) > lu-mobile-app-widget:first-child
 magnit.ru##div[class^="unit-ad-block-message"]
 magnit-family.ru##.cookie
+##.js-cookies-popup-custom, .cookies-popup-custom, ._openPopup
+chistayalinia.ru##div.wrapper:nth-child(2) > header.js-header.header._desk-grid:first-child > div.header__line._desk-bg-green:first-child > div.header__top._desk-grid._desk-align-i-c._width-sizer._mob-p._desk-color-white > button.js-subscribe-open.header__contact-us._desktop._uppercase._desk-btn-sd-1:nth-child(3)
+chistayalinia.ru##.mobile-arrow, .mobile-arrow--up, .mobile-arrow--active
+##.cookies-panel, .is-show
+printables.com###header-orange-bar
+lapsha.media##a[href^="max.ru/lapshamedia"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4700,7 +4714,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||yastatic.net/s3/web4static/*/static/media/noize-transparent$image,redirect-rule=1x1-transparent.gif
 ||startup.mobile.yandex.nes^$important
 ||mc.yango.com^$important
-||yandex.ru/suggest/suggest-ya.cgi$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz
+.ru/suggest/suggest-ya.cgi$third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz
 ||yandex.ru/portal/searchframe/*$third-party,script,subdocument,document,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz,important
 ||static-mon.yandex.net/advert
 ||yandex.ru/znatoki/web-api/log
@@ -4796,7 +4810,7 @@ $cookie=_ym_debug
 ||yastatic.net/pcode-native/loaders/$script
 ||api.plus.yandex.*/graphql?query_name=*%3FregisterSimpleActionWithPixel$xhr,important
 $removeparam=yredirect
-||yastatic.net/s3/web-alice/public/marketing-$document,subdocument,domain=alice.yandex.ru,important
+/marketing-$domain=alice.yandex.ru,redirect=nooptext,important
 ||strm.yandex.net/ping$important
 ||api.music.yandex.*/*/session/*/feedback/$xhr,important
 ||yastatic.net/s3/distribution/yanalytics/v*/$important
@@ -4822,7 +4836,7 @@ $removeparam=ysclid
 ||yandex.ru/web-api/models/liza*?_m=get_user_activity
 ||yandex.ru/monitoring_liza.txt$redirect=nooptext,important
 ||yandex.ru/instant/stlog$redirect=nooptext,important
-||api.browser.yandex.*/ab/testids
+||api.browser.yandex.*/ab/
 $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 /search/*$document,removeparam=suggest_reqid,domain=ya.ru|yandex.*
 ||kit.yandex.ru/api/*/v*/kit*/collect
@@ -4832,6 +4846,11 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||browser-resources.s3.yandex.net/*/get/browser/launcher_images/*/not_yandex/$image
 ||log.api-maps.yandex.ru^$important
 ! ||yastatic.net/naydex/yandex-search/
+/_crpd/*/counter$domain=ya.ru|yandex.*
+/portal/_crpd/$domain=ya.ru
+/user-id/api/prompthub?$domain=ya.ru|yandex.ru|yandex.*|~alice.yandex.ru
+/user-id/api/banrot/*/events/$domain=ya.ru|yandex.ru|yandex.*
+||yandex.ru/portal/set/any?gif=1$domain=ya.ru|yandex.ru
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -5260,6 +5279,7 @@ kul.prod.via.google^
 ||ad.dm.gg^
 ||bcvp0rtal.com^
 ||sgtm.ixbt.site^
+||quantserve.com^
 !
 ! --
 !
@@ -6033,6 +6053,7 @@ teletype.in#@#div.preloader
 @@||update.microsoft.com^
 @@||buy.mi.com/*/other/getimage$image,domain=mi.com
 @@||cdn.*.fds.api.mi-img.com/captcha/*/$script,domain=mi.com|xiaomi.com
+@@/xssremover.$script
 !
 !
 ! -

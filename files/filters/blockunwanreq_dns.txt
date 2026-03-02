@@ -3,7 +3,7 @@
 ! Version: 4.3.8-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-03-01T08:40:00+00:00
+! TimeUpdated: 2026-03-02T16:40:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 01.03.2026 08:40 UTC
+! Last Modified: 02.03.2026 16:40 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -1289,6 +1289,11 @@
 ||sentry-*.protontech.ch^
 ||growthbook-proxy.lenta.tech^$important
 ||nowmodulo.com^$important,dnsrewrite=0.0.0.0
+||data.sec.miui.com^$important
+||confiant-integrations.net^
+||html-load.cc^$important
+||sentry.pr-cy.io^$important
+||*gtm.hacklix.com^$important
 !
 !
 !
@@ -1748,6 +1753,7 @@
 @@||delivery.mp.microsoft.com^
 @@||prod.do.dsp.mp.microsoft.com^
 @@||update.microsoft.com^
+@@||pub-c6be29ccfadb4062b8691265e60c8bf1.r2.dev^$important
 !
 !
 !
