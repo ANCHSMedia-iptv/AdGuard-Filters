@@ -3,7 +3,7 @@
 ! Version: 4.3.8-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-03-02T16:40:00+00:00
+! TimeUpdated: 2026-03-04T16:40:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 02.03.2026 16:40 UTC
+! Last Modified: 04.03.2026 16:40 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -287,8 +287,8 @@
 ||*bugsnag*^$important
 ||vk-analytics.ru^$important
 ||*instabug*^$important
-||xray.mail.ru^$important,dnsrewrite=NXDOMAIN
-||ad.mail.ru^$important,dnsrewrite=NXDOMAIN
+||xray.mail.ru^$important
+||ad.mail.ru^$important
 ||*dbankcloud*^$important
 ||rayjump.com^$important
 ||smi2.ru^$important
@@ -1294,6 +1294,11 @@
 ||html-load.cc^$important
 ||sentry.pr-cy.io^$important
 ||*gtm.hacklix.com^$important
+||stat-api.gismeteo.net^
+||notif.services.livejournal.com^
+! 04.03.26: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/226217]
+||bdtelemetry.amazon^
+!
 !
 !
 !
