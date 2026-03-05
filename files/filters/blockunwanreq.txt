@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.9.4-R
-! TimeUpdated: 2026-03-04T16:40:25+00:00
+! Version: 4.9.5-R
+! TimeUpdated: 2026-03-05T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -882,7 +882,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||tapjoyads.com^$important
 ||tapjoy.com^$important
 ! college.72to.ru/*.gif^$image,domain=college.72to.ru,redirect-rule=1x1-transparent.gif,important (04.03.26: Temp disabled)
-||cdn.cookielaw.org^$third-party,important
+||cookielaw.org^$third-party,important
 ||*.rt.avito.ru^
 ||coop-land.ru/templates/CoopLand2016/js/adriver*.js$script,domain=coop-land.ru,important
 ! /adriver$script,xhr
@@ -3907,7 +3907,7 @@ overclockers.ru##div.ui.inverted.segment.vertical.footer:nth-child(6) > div.ui.c
 overclockers.ru##div.top-scroll.main:nth-child(7)
 kod.ru##.Layout_cookies__IzB9Q, .Layout_cookies--active__9JGHo
 kod.ru###__next > div.Layout_container__K63wR > div.Header_fixed__s_3S0:nth-child(3) > header.Header_header__YYQff > div.Header_desktop__IAgZu:first-child > div.BodyHeader_middle__Y3EJz:first-child > div.BodyHeader_buttons__RzyFJ.BodyHeader_buttons--no-flex__vG55K:last-child
-kod.ru##div[class^="TgLinkCounter"][href*="t.me/+AMEkKQ_zOIdmYWUy"]
+kod.ru##a[href*="t.me/+AMEkKQ_zOIdmYWUy"][class^="TgLinkCounter"]
 fonts-online.ru###block-user-menu > ul.nav:last-child > li:first-child
 ffont.ru##footer:nth-child(4) > div.content > div.footer-menu-one:last-child > ul.navMenu:last-child
 ##img[src*="mc.yandex.ru/watch/"]
@@ -4305,6 +4305,8 @@ fedresurs.ru##.wrapper
 uteka.ru##.app-mini-banner
 !
 mid.ru##button[class^="up-btn js-up-btn"]
+intel.com###idsa-signin-notification
+intel.com###onetrust-consent-sdk
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4825,7 +4827,7 @@ $cookie=_ym_debug
 ||yastatic.net/pcode-native/loaders/$script
 ||api.plus.yandex.*/graphql?query_name=*%3FregisterSimpleActionWithPixel$xhr,important
 $removeparam=yredirect
-||yastatic.net/s3/web-alice/public/marketing-*.html^$document,subdocument,domain=alice.yandex.ru,important,redirect=nooptext
+||yastatic.net/s3/web-alice/public/marketing-*.html^$document,domain=alice.yandex.ru,important,redirect=nooptext
 ||strm.yandex.net/ping$important
 ||api.music.yandex.*/*/session/*/feedback/$xhr,important
 ||yastatic.net/s3/distribution/yanalytics/v*/$important
@@ -4866,6 +4868,7 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 /user-id/api/prompthub?$domain=ya.ru|yandex.ru|yandex.*|~alice.yandex.ru
 /user-id/api/banrot/*/events/$domain=ya.ru|yandex.ru|yandex.*
 ||yandex.ru/portal/set/any?gif=1$domain=ya.ru|yandex.ru
+||maps-yandex-ru.naydex.net/*/static/v*/iframe-google-analytics.html^$document,domain=maps.yandex.ru
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -6070,6 +6073,7 @@ teletype.in#@#div.preloader
 @@||cdn.*.fds.api.mi-img.com/captcha/*/$script,domain=mi.com|xiaomi.com
 @@/xssremover.$script
 @@||ruwiki.ru/*/load.php?lang=ru&modules=*7Cruwiki.adfoxinfinity.utils*&$script,domain=ruwiki.ru,important
+@@||pravocaptcha.$script,css,xhr
 !
 !
 ! -
@@ -6160,6 +6164,13 @@ teletype.in#@#div.preloader
 ||ipgraber.ru^
 ||iplis.ru^
 ||02ip.ru^
+!
+!
+! 05.03.26: + от меня
+||ipv4-internet.yandex.net^$third-party
+||ipv6-internet.yandex.net^$third-party
+||ifconfig.me^$third-party
+||ip.mail.ru^$third-party
 !
 !
 ! ===
