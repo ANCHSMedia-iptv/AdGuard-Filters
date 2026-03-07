@@ -836,7 +836,7 @@
 ||pixel.wp.com^
 ||banner.consultant.ru^
 ||panorama.wixapps.net^
-! ||api-statist.tinkoff.ru^ (Waiting for adding..)
+||api-statist.tinkoff.ru^
 ||svi.online.sberbank.ru^$important
 ||adservings.ru^
 ||stmtag.ru^
@@ -931,7 +931,6 @@
 ||logger.id.sber.ru^$important
 ||goto2024.ru^
 ||ads.twitch.tv^$important
-||api-statist.tinkoff.ru^$important
 ||stat.g2.plvideo.ru^$important
 ||v*.plrjs.org^
 ||prebid.scope3.com^$important
@@ -1299,6 +1298,8 @@
 ! 04.03.26: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/226217]
 ||bdtelemetry.amazon^
 !
+||api-statist.tbank.ru^$important
+||api-statist.dev-tcsgroup.io^
 !
 !
 !
@@ -1759,6 +1760,10 @@
 @@||prod.do.dsp.mp.microsoft.com^
 @@||update.microsoft.com^
 @@||pub-c6be29ccfadb4062b8691265e60c8bf1.r2.dev^$important
+@@||fp.f6.security^
+@@||izhnt.ru.prod.hosts.ooklaserver.net^
+@@||lg-dme.fdcservers.net^
+@@||speedtest.omega-connect.net^
 !
 !
 !

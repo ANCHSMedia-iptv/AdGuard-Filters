@@ -135,8 +135,8 @@ yabro.ru^$important
 ||betweendigital.com^$important
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru|rusradio.ru,important
 !
-||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cookielaw.org|~2gis.ru|~2gis.*|~comnews.ru|~tyuiu.ru
-||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cookielaw.org|~2gis.ru|~2gis.*|~comnews.ru|~tyuiu.ru
+||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cookielaw.org|~2gis.ru|~2gis.*|~comnews.ru|~tyuiu.ru|~laratranslate.com
+||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cookielaw.org|~2gis.ru|~2gis.*|~comnews.ru|~tyuiu.ru|~laratranslate.com
 /itunes_referals.js^$script,third-party
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script,third-party
 ||improving.duckduckgo.com^$important
@@ -206,7 +206,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~ingest*.sentry.io|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*sentry.wb.ru|~sentry-dsn-customers.megamarket.tech|~vk.ru|~stacks.vk-portal.net|~stats.vk-portal.net,important
+*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~ingest*.sentry.io|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*sentry.wb.ru|~sentry-*.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~app.getsentry.com|~browser.sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net,important
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com,important
@@ -317,7 +317,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||express.dhl.ru/local/templates/dhl/components/bitrix/menu/*menu/images/left_menu_bg.gif^$xhr,domain=express.dhl.ru
 ||flocktory.com^$important
 ! websbol.clickstream.sberbank.ru/metrics/sbol^$xhr,domain=sberbank.ru (новое правило, строка 771)
-/bitrix/js/yandex.metrika/script.js$script,important
+/bitrix/js/yandex.metrika/script.js$script,important,redirect=metrika-yandex-watch
 ||iguides.ru/local/components/iguides/notifications.subscribe/manifest.json^$other,domain=iguides.ru,important
 ! cs*.pikabu.ru/apps/ub/*/*/sprite.svg^$xhr,domain=pikabu.ru (18.01.25: ломает сайт)
 ! avito.ru/dstatic/build/client/fingerprint.$script,domain=avito.ru
@@ -367,7 +367,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /bitrix/tools/composite_data.php$xhr,domain=~invitro.ru
 ||wasabisys.com^
 ||aplaut.io^$third-party
-.ru/metrika/tag.js^$script,domain=appleinsider.ru|androidinsider.ru|hi-news.ru
+.ru/metrika/tag.js^$script,domain=appleinsider.ru|androidinsider.ru|hi-news.ru,redirect=metrika-yandex-watch
 .ru/gtag/js$script,domain=appleinsider.ru|androidinsider.ru|hi-news.ru
 ! */gtag/js$script
 /js/lazyLoadYandexAndTelegram.js$script,domain=appleinsider.ru|androidinsider.ru|hi-news.ru,important
@@ -491,7 +491,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||cdn.jsdelivr.net/npm/cookify*/src/index.js^$script,important
 ||cdn.axeum.ru/assets/*/js/advertising$script,domain=axeum.ru,important
 ||cdn.axeum.ru/assets/*/js/yandex$script,domain=axeum.ru,important
-||cdn.axeum.ru/assets/*/plugins/mc_yandex_ru_metrika_tag$script,domain=axeum.ru,important
+||cdn.axeum.ru/assets/*/plugins/mc_yandex_ru_metrika_tag$script,domain=axeum.ru,redirect=metrika-yandex-watch,important
 ||linkunshorten.com/js/11.js^$script,domain=linkunshorten.com
 ||linkunshorten.com/js/559.js^$script,domain=linkunshorten.com
 ||linkunshorten.com/img/promo/*.png^$image,domain=linkunshorten.com
@@ -689,7 +689,7 @@ $cookie=/__ddg*/,important
 /images/site_180x81_1.gif^$image,domain=2x2tv.ru|online.2x2tv.ru
 ! api.vigo.one/uxzoom/*/notify$xhr (779)
 ||tolstoycomments.com^$domain=2x2tv.ru
-||s.rbk.ru/*rbcnews_static/rbcnews-*/scripts/build/_metrika-config.js^$script,domain=rbc.ru,important
+||s.rbk.ru/*rbcnews_static/rbcnews-*/scripts/build/_metrika-config.js^$script,domain=rbc.ru,redirect=metrika-yandex-watch,important
 .ru/info-service/api/v*/ev/$xhr,ping,domain=rbc.ru|sportrbc.ru,important
 ||rbc.ru/track/*/*/$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,important
 !
@@ -1111,7 +1111,7 @@ waf/fingerprint$xhr,important
 ||d26xw8rp6mlgfg.cloudfront.net^
 ||strm.yandex.net^$app=com.infolink.limeiptv
 ||rumor.press^$third-party,important
-||otcnet.ru/wp-content/plugins/wp-yandex-metrika/$script,xhr,domain=otcnet.ru
+||otcnet.ru/wp-content/plugins/wp-yandex-metrika/$script,xhr,redirect=metrika-yandex-watch,domain=otcnet.ru
 /ads/styles/all/theme/phpbbads.css$css
 ||smotret.tv/js/ads-2025.js^$script,domain=smotret.tv
 ||smotret.tv/js/lozad*.$script,domain=smotret.tv
@@ -1164,7 +1164,7 @@ calltouch.js$script,xhr
 ||ntvplus.ru/files/image/10/03/192/-i24.jpg^$image,domain=ntvplus.ru
 ||reporting.synapsetv.com/assets/channelbox$app=com.synapsetv.channelbox
 ||invitro.ru/web-nofification-sw.js^$script,domain=invitro.ru
-||invitro.ru/local/templates/invitro_main/metrika.$script,domain=invitro.ru,important
+||invitro.ru/local/templates/invitro_main/metrika.$script,domain=invitro.ru,redirect=metrika-yandex-watch,important
 ||invitro.ru/edna/assets/multibutton.css$css,domain=invitro.ru
 ||aucdn.net^$important
 ||endowmentoverhangutmost.com^$important
@@ -1185,7 +1185,7 @@ calltouch.js$script,xhr
 ||yandex.com^$app=jp.ne.ibis.ibispaintxapp
 ||limehd.tv/script/liveinternet.js^$script,important,domain=limehd.tv
 ||static-iptv2021.cdnvideo.ru/*-static/lime-events-config.json^$xhr,domain=limehd.tv
-||limehd.tv/script/exp-metrika.js^$script,important,domain=limehd.tv
+||limehd.tv/script/exp-metrika.js^$script,important,redirect=metrika-yandex-watch,domain=limehd.tv
 ||adm.dimonvideo.ru^
 ||millennialmedia.com.*^$important
 !
@@ -1335,7 +1335,7 @@ $cookie=s24id
 /images/cookie.png^$image,domain=prosto.tv|prosto.net
 ||tricolor.ru/api/debug.php^$xhr,domain=tricolor.ru
 ||metrics.tricolor.ru/v*/event^$xhr,domain=tricolor.ru,important
-||cdn.jsdelivr.net/npm/yandex-metrica-watch/
+||cdn.jsdelivr.net/npm/yandex-metrica-watch/$important,redirect=metrika-yandex-watch
 ||mcustore.ru/img/media/logo_tg.gif^$image,domain=mcustore.ru
 ||energizelab.com/upfile/image/20250805/1754405696_905178.jpg^$image,domain=energizelab.com
 ||energizelab.com/upfile/image/20250805/1754405704_461206.jpg^$image,domain=energizelab.com
@@ -1363,7 +1363,7 @@ $cookie=s24id
 ||softportal.com/*_desc.html^$domain=softportal.com
 ||convertio.co/js/track^$xhr,domain=convertio.co
 ||suenco.ru/local/templates/suenco/assets/images/icon-*.svg^$image,domain=suenco.ru
-/bitrix/js/*/metrika/dist/metrika$script,important
+/bitrix/js/*/metrika/dist/metrika$script,important,redirect=metrika-yandex-watch
 ||my-software.ru/sites/default/files/styles/recommend/public/field/image/recommend/*.png$image,domain=my-software.ru
 ||my-software.ru/sites/all/themes/mytheme/images/bg_recommend.png^$image,xhr,domain=my-software.ru
 ||my-software.ru/sites/default/files/styles/large/public/images/*.png$image,domain=my-software.ru
@@ -1382,11 +1382,11 @@ $cookie=s24id
 ||oao-tts.ru/bitrix/templates/tts/images/fb.png^$image,domain=oao-tts.ru
 ||oao-tts.ru/bitrix/templates/tts/images/mailru.png^$image,domain=oao-tts.ru
 ||oao-tts.ru/bitrix/templates/tts/images/ok.png^$image,domain=oao-tts.ru
-||college.72to.ru/1$xhr,domain=college.72to.ru
-/yandexMetrikaCounter.js$script,important
-/commonYaMetrika.js$script,important
-/loginYaMetrika.js$script,important
-/loginEsiaMetrika.js$script,important
+! college.72to.ru/1$xhr,domain=college.72to.ru (04.03.26: Temp disabled)
+/yandexMetrikaCounter.js$script,important,redirect=metrika-yandex-watch
+/commonYaMetrika.js$script,important,redirect=metrika-yandex-watch
+/loginYaMetrika.js$script,important,redirect=metrika-yandex-watch
+/loginEsiaMetrika.js$script,important,redirect=metrika-yandex-watch
 ||netscout.com/themes/custom/netscout/js/dest/google-analytics/$script,redirect=google-analytics,domain=netscout.com,important
 ||get.netscout.com/pd.js^$script,domain=netscout.com,important
 ||mb9pzp.ru^
@@ -1475,7 +1475,7 @@ $cookie=s24id
 ||dorognoe.ru/_nuxt/CookiePopUp.*.css^$xhr,domain=dorognoe.ru
 ||dorognoe.ru/_nuxt/playerAds.$css,domain=dorognoe.ru
 ||dorognoe.ru/js/ads/$script,domain=dorognoe.ru,important
-/yandex-metrika.js$important
+/yandex-metrika.js$important,redirect=metrika-yandex-watch
 ||api-geo.apptimizm.pro/api/geo^$xhr
 $cookie=RadioStatistica
 ||radiovera.ru/wp-content/themes/radiovera/img/social-*.png^$image,domain=radiovera.ru
@@ -1483,7 +1483,7 @@ $cookie=RadioStatistica
 ||radiovera.ru/wp-content/themes/radiovera/img/email-form-icon.svg^$image,domain=radiovera.ru
 ||wapi.afisha.ru/widget/methodstatistics$important
 ||europaplus.ru/ya-ads-system-context.js^$script,domain=europaplus.ru,important
-||europaplus.ru/y-metrika.js^$script,domain=europaplus.ru,important
+||europaplus.ru/y-metrika.js^$script,domain=europaplus.ru,redirect=metrika-yandex-watch,important
 ||europaplus.ru/_nuxt/AsideAdvertisings.*.css^$css,domain=europaplus.ru
 ||europaplus.ru/_nuxt/privacy.*.css^$css,domain=europaplus.ru
 ||marus.fm/assets/pixel-effect.js^$script,domain=marus.fm,important
@@ -1828,7 +1828,7 @@ $cookie=remixlang,third-party,domain=~vk.com|~vk.ru|~vk.me
 ||nrk-nsk.ru/wp-content/uploads/2025/10/materialy-o-naczionalnom-messendzhere.jpg^$image,domain=nrk-nsk.ru
 ||nrk-nsk.ru/wp-content/uploads/2025/10/materialy-o-naczionalnom-messendzhere-003.jpg^$image,domain=nrk-nsk.ru
 !
-||api-statist.tinkoff.ru^$important
+!
 ||figma.com^$removeparam=tracking_session_id
 ||windowsru.com/js/a.js^$script,domain=windowsru.com,important
 ||windowsru.com/pwk.phtml^$script,domain=windowsru.com,important
@@ -1842,7 +1842,7 @@ autoru-frontend/AdminsMarketingPopup_$script,domain=auto.ru
 ||xstat.gazeta.bo^
 ||statix.business-gazeta.ru/js/components/rightArticleBanner.js$script,domain=business.gazeta.com
 ||statix.business-gazeta.ru/js/components/metrics.js$script,domain=business.gazeta.com
-||weacom.ru/static/js/metrika.js^$script,domain=weacom.ru
+||weacom.ru/static/js/metrika.js^$script,domain=weacom.ru,redirect=metrika-yandex-watch
 ||err.ee/api/geoblock/
 ||discord.com/api/v*/promotions
 ||prebid.scope3.com^$important
@@ -1874,9 +1874,9 @@ $cookie=fpm_visit
 $cookie=fpm_referer
 ||relap.io^$important,third-party,domain=~relap.io
 ||servicebox.ru/js/banners.js$script,domain=servicebox.ru
-||servicebox.ru/js/metrika-ya.$script,domain=servicebox.ru
-/metrika-ya.min.js
-/metrika-ya.
+||servicebox.ru/js/metrika-ya.$script,domain=servicebox.ru,redirect=metrika-yandex-watch
+/metrika-ya.min.js$redirect=metrika-yandex-watch
+/metrika-ya.$redirect=metrika-yandex-watch
 ||servicebox.ru/js/socials.js$script,domain=servicebox.ru
 ||it-tehnik.ru/ip.html^$xhr,domain-it-tehnik.ru
 ||stat.media^$important
@@ -2012,7 +2012,7 @@ $cookie=qrator_msid,important
 ||comss.ru/js/report.js^$script,domain=comss.ru
 ||lc.rt.ru^$cookie=ahoy_visitor
 ||lc.rt.ru^$cookie=ahoy_visit
-||lc.rt.ru/backend/packs/yandex_metrika-$script,domain=lc.rt.ru,important
+||lc.rt.ru/backend/packs/yandex_metrika-$script,domain=lc.rt.ru,redirect=metrika-yandex-watch,important
 ||intel.com$removeparam=fromnotif
 ||api.telesputnik.ru/api/post-view^$xhr,domain=telesputnik.ru,important
 ||orbit-zenith.com^
@@ -2168,7 +2168,7 @@ _pagespeed_beacon
 ||analytics.alloka.ru^$important
 ||ortoatlant.ru/image/lk_klk.png^$image,domain=ortoatlant.ru
 $cookie=/*_referrer/
-/wp-content/plugins/wp-yandex-metrika/$script,important
+/wp-content/plugins/wp-yandex-metrika/$script,important,redirect=metrika-yandex-watch
 ||planeta-orto.ru/files/zvonok.jpg^$image,domain=planeta-orto.ru
 ||mail.ru^$cookie=mrcu
 ||privacy-center.org^$important
@@ -2520,6 +2520,10 @@ $cookie=BITRIX_MPS_LAST_VISIT
 ||bdtelemetry.amazon^
 !
 /sgtm/gtm.js
+||api-qa.diginetica.net/v*/prescoring/digi-cookie$xhr,other,third-party
+||api-statist.dev-tcsgroup.io^
+/zdconsent.js
+||player.vimeo.com^$removeparam=autoplay
 !
 !
 !
@@ -2983,7 +2987,7 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 ! == «Лишний мусор» с сайта (личного кабинета) Т-Банка (ex. Тинькофф). + сервисов самого банка и журнала Т-Ж (journal .tinkoff .ru, new address (from 02.25) t-j .ru) ==
 !
 .ru/api/front/$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
-.ru/gateway/v*/event$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+.ru/gateway/v*/event$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru|~api-statist.tinkoff.ru|~api-statist.tbank.ru,important
 ! tbank.ru/api/front/supreme-beer/$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 .ru/api/v*/log^$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 .ru/resources?name=analytics_config$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
@@ -2995,7 +2999,7 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 .ru/twa/ad-hoc/pixel-iframe/index.html^$domain=tbank.ru|tinkoff.ru|t-j.ru,important
 .ru/twa/hosted-libs/vk/v*/openapi.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 .ru/eventea/v*/eventea.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
-/hedge/v*/yandex-metrika*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+/hedge/v*/yandex-metrika*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=metrika-yandex-watch,important
 .ru/eventea/v*/pwa.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 .ru/eventea/v*/tj.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 /hedge/v*/vk-counter*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
@@ -3011,6 +3015,10 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 ||error-hub.tinkoff.ru^$important
 .ru/ws/monitoring/log|$image,domain=tbank.ru|tinkoff.ru,important
 ||mf-platform-production.t-static.ru/devtools/lockfile-boxy$domain=tbank.ru|tinkoff.ru
+||api-statist.tinkoff.ru^$important
+||api-statist.tbank.ru^$important
+||fingerprint.t-static.ru^
+||api-common.tinkoff.ru/front-logs/v*/logs$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
 !
 ! Чат поддержки, разные элементы, разделы и прочее в ЛК на сайте сломались в результате блокировки множества адресов (запросов).
 ! Хитро, хитро сделано.. привязанность аналитики и прочему «мусору» к чате поддержки и не только..
@@ -4514,11 +4522,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||optanon.blob.core.windows.net^
 ||measure.office.com^
 !
-||config.edge.skype.com/config/v*/Edge/*?$removeparam=installdate
-||config.edge.skype.com/config/v*/Edge/*?$removeparam=soobe
-||config.edge.skype.com/config/v*/Edge/*?$removeparam=vm
-||config.edge.skype.com/config/v*/Edge/*?$removeparam=edu
-||config.edge.skype.com/config/v*/Edge/*?$removeparam=devicefamily
+! -
 ! =
 !
 !
@@ -4682,7 +4686,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||http-check-headers.yandex.ru^$important
 ||yandex.ru/messenger/api/$xhr,important
 ||*extmaps-api.yandex.net^$important
-||metrika.yandex.*^$important
+||metrika.yandex.*^$important,redirect=metrika-yandex-watch
 ||offerwall.yandex.net^$important
 ! push.yandex.ru^$important
 ||yastatic.net/s3/liza/*/promo-*.css^$css,domain=mail.yandex.ru|mail.yandex.*
@@ -4738,7 +4742,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||mc.yandex.ru/metrika/tag_turbo.js$redirect=metrika-yandex-watch
 ||clck.yandex.*^$~other,important
 $cookie=_ym_debug
-||yandex.ru/metrika/$important
+||yandex.ru/metrika/$important,redirect=metrika-yandex-watch
 ||yastatic.net/browser-updater/v*/
 ||static-mon.yandex.net/static/main.js
 ||auto.ru/static/yafp.html
@@ -4868,7 +4872,8 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 /user-id/api/prompthub?$domain=ya.ru|yandex.ru|yandex.*|~alice.yandex.ru
 /user-id/api/banrot/*/events/$domain=ya.ru|yandex.ru|yandex.*
 ||yandex.ru/portal/set/any?gif=1$domain=ya.ru|yandex.ru
-||maps-yandex-ru.naydex.net/*/static/v*/iframe-google-analytics.html^$document,domain=maps.yandex.ru
+||naydex.net/*/static/v*/iframe-google-analytics.html^$document
+||soft.export.yandex.ru/status.xml?$xhr
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -5298,6 +5303,7 @@ kul.prod.via.google^
 ||bcvp0rtal.com^
 ||sgtm.ixbt.site^
 ||quantserve.com^
+||bumlam.com^
 !
 ! --
 !
@@ -6074,6 +6080,13 @@ teletype.in#@#div.preloader
 @@/xssremover.$script
 @@||ruwiki.ru/*/load.php?lang=ru&modules=*7Cruwiki.adfoxinfinity.utils*&$script,domain=ruwiki.ru,important
 @@||pravocaptcha.$script,css,xhr
+@@||fp.f6.security^
+@@||laratranslate.com/assets/cookies-$script,domain=laratranslate.com
+@@||izhnt.ru.prod.hosts.ooklaserver.net^
+@@||lg-dme.fdcservers.net^
+@@||speedtest.omega-connect.net^
+@@||cdn*.downdetector.com/cdn-cgi/image/width=*/*cdn*.downdetector.com/static/uploads/logo/Instagram_Logo_*.png^$image,domain=downdetector.com,important
+@@||b.cdnst.net/api/downdetector-eot?countryCode=$xhr,domain=speedtest.net|downdetector.com
 !
 !
 ! -
@@ -6128,6 +6141,9 @@ teletype.in#@#div.preloader
 ! Не открывались сайты, защищённые Анти-DDos и Анти-Бот защитой от Servicepipe.
 @@||servicepipe.ru/static/$script,important
 @@||servicepipe.ru/loaders/$image,important
+@@||servicepipe.ru^$permissions=identity-credentials-get=()
+@@||servicepipe.ru^$permissions=private-state-token-issuance=()
+@@||servicepipe.ru^$permissions=private-state-token-redemption=()
 ! -
 @@||onlinetrade.ru^$permissions=identity-credentials-get=()
 @@||onlinetrade.ru^$permissions=private-state-token-issuance=()
@@ -6166,7 +6182,7 @@ teletype.in#@#div.preloader
 ||02ip.ru^
 !
 !
-! 05.03.26: + от меня
+! 05.03.26: + от меня.
 ||ipv4-internet.yandex.net^$third-party
 ||ipv6-internet.yandex.net^$third-party
 ||ifconfig.me^$third-party
