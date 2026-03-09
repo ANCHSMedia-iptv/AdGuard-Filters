@@ -1304,6 +1304,7 @@
 ||ad-assets.futurecdn.net^
 ||cloudmetrics.xenforo.com^
 ||events.getpostman.com^
+||events-am.gw.postman.com^
 !
 !
 !
