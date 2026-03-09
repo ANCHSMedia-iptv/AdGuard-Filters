@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.9.5-R
-! TimeUpdated: 2026-03-05T16:40:25+00:00
+! Version: 4.9.6-R
+! TimeUpdated: 2026-03-09T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2524,6 +2524,12 @@ $cookie=BITRIX_MPS_LAST_VISIT
 ||api-statist.dev-tcsgroup.io^
 /zdconsent.js
 ||player.vimeo.com^$removeparam=autoplay
+||runonpc.com/images/ad/$image,domain=runonpc.com
+||taboola.com^$important
+||ad-assets.futurecdn.net^
+$removeparam=mt_click_id
+||events.getpostman.com^
+||events-am.gw.postman.com^
 !
 !
 !
@@ -4315,6 +4321,11 @@ uteka.ru##.app-mini-banner
 mid.ru##button[class^="up-btn js-up-btn"]
 intel.com###idsa-signin-notification
 intel.com###onetrust-consent-sdk
+driverdouble.com##.servive-block, .servive-block-red
+runonpc.com##div.WindowsDiv:nth-child(4) > div.Conten:nth-child(2) > div.DownloadOtherInfoDiv:nth-child(9) > div.Width100.TextAlignCenter:last-child
+newserverlife.com##.cookie-agreement
+3hcloud.kz##.hhhcloud-cookie__el
+mk.ru##a[href*="max.ru/mk"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5304,6 +5315,8 @@ kul.prod.via.google^
 ||sgtm.ixbt.site^
 ||quantserve.com^
 ||bumlam.com^
+||bordeaux.futurecdn.net^
+||champagne.futurecdn.net^
 !
 ! --
 !
@@ -6087,6 +6100,8 @@ teletype.in#@#div.preloader
 @@||speedtest.omega-connect.net^
 @@||cdn*.downdetector.com/cdn-cgi/image/width=*/*cdn*.downdetector.com/static/uploads/logo/Instagram_Logo_*.png^$image,domain=downdetector.com,important
 @@||b.cdnst.net/api/downdetector-eot?countryCode=$xhr,domain=speedtest.net|downdetector.com
+@@||runonpc.com/images/captcha/$image,domain=runonpc.com
+@@||localhost^$domain=postman.co
 !
 !
 ! -
