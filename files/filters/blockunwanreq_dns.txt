@@ -1406,6 +1406,7 @@
 !
 !
 ||checkip.amazonaws.*^
+||whoami.akamai.net^
 !
 !
 ||ikorrpa^
@@ -1774,6 +1775,7 @@
 @@||crl.rootca*.amazontrust.com^
 @@||crl.r2m01.amazontrust.com^
 @@||ocsp.*.amazontrust.com^
+@@||sspc.sec-smartswitch.com^
 !
 !
 !
