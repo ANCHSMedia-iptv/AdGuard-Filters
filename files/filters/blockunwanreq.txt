@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.9.6-R
-! TimeUpdated: 2026-03-09T16:40:25+00:00
+! Version: 4.9.7-R
+! TimeUpdated: 2026-03-11T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -733,7 +733,7 @@ support/widget_*.html^$domain=kontur.ru
 ||habr.com/kek/v*/actual_events^$xhr,domain=habr.com,important
 ||gymebyl.com^$important
 $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
-||s*.teraboxcdn.*/fe-opera-static/node-static-v*/fe-webv*-main/assets/libs/facebook*.$script,domain=terabox.*,important
+||s*.teraboxcdn.*/fe-opera-static/node-static-v*/fe-webv*-main/assets/libs/facebook*.$script,domain=terabox.*|terabox.com,important
 ||sofire.terabox.com^$important
 ||dropbox.com^$cookie=/dbx_js_analytics_id|t/
 ||dropbox.com/*/pap_event_logging$ping,xhr,domain=dropbox.com,important
@@ -966,7 +966,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||collector-prod.perek.epoch8.ru^$important
 ||fda.middle-api.magnit.ru^
 ||kaspersky-labs.com^$app=com.icemobile.lenta.prod|ru.sberbank.mobile
-||s*.teraboxcdn.*/fe-opera-static/node-static-v*/fe-webv*-main/js/ad.*.$script,domain=terabox.*,important
+||s*.teraboxcdn.*/fe-opera-static/node-static-v*/fe-webv*-main/js/ad.$script,domain=terabox.*|terabox.com,important
 ! qrator/qauth$script,important (07.02.26: Защита от ДДос, из-за блокировки не заходит на сайты, где установлена защита от CURATOR)
 ! qrator/validate$xhr,important (07.02.26: Защита от ДДос, из-за блокировки не заходит на сайты, где установлена защита от CURATOR)
 ||ad-source.pro^$important
@@ -2530,6 +2530,14 @@ $cookie=BITRIX_MPS_LAST_VISIT
 $removeparam=mt_click_id
 ||events.getpostman.com^
 ||events-am.gw.postman.com^
+||plausible.io/js/plausible.js^$script,third-party,important
+||api.sammobile.com/notifications^$domain=sammobile.com
+||sammobile.com/wp-content/themes/sammobile-*/settings/hits/track.php^$domain=sammobile.com
+||sammobile.com/wp-content/themes/sammobile-*/settings/topbar/topbar-ad.php^$xhr,domain=sammobile.com
+||cdn.jsdelivr.net/npm/in-view*/dist/in-view.
+||nephobox.com/api/analytics$important
+||nephobox.com/nodeapi/reporterror
+||nephobox.com/api/ad/$important
 !
 !
 !
@@ -4326,6 +4334,10 @@ runonpc.com##div.WindowsDiv:nth-child(4) > div.Conten:nth-child(2) > div.Downloa
 newserverlife.com##.cookie-agreement
 3hcloud.kz##.hhhcloud-cookie__el
 mk.ru##a[href*="max.ru/mk"]
+smart-48.ru##div[class^="coocppWrap"]
+samfw.com##div[id^="samfw.com_728x90_responsive_1"][style="text-align: center;"]
+samfw.com##div[class^="alert alert-success "][role="alert"]
+samfw.com##div[class^="alert alert-ask-upgrade"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5208,7 +5220,7 @@ kul.prod.via.google^
 ||snap.licdn.com^
 ||cookies-data.onetrust.io^
 ||cdn.onetrust.com^$third-party
-||amazontrust.com^
+||amazontrust.com^$domain=~crl.*.amazontrust.com|~ocsp.*.amazontrust.com
 ||honeybadger.io^$third-party,domain=~honeybadger.io
 ||cdn.lr-ingest.com^
 ||cryptoloot.org^
@@ -5317,6 +5329,8 @@ kul.prod.via.google^
 ||bumlam.com^
 ||bordeaux.futurecdn.net^
 ||champagne.futurecdn.net^
+||podname.com^
+||rum.corewebvitals.io^
 !
 ! --
 !
@@ -6102,6 +6116,9 @@ teletype.in#@#div.preloader
 @@||b.cdnst.net/api/downdetector-eot?countryCode=$xhr,domain=speedtest.net|downdetector.com
 @@||runonpc.com/images/captcha/$image,domain=runonpc.com
 @@||localhost^$domain=postman.co
+@@||crl.rootca*.amazontrust.com^
+@@||crl.r2m01.amazontrust.com^
+@@||ocsp.*.amazontrust.com^
 !
 !
 ! -
