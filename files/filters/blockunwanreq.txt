@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.9.7-R
-! TimeUpdated: 2026-03-11T16:40:25+00:00
+! Version: 4.9.8-R
+! TimeUpdated: 2026-03-13T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2538,6 +2538,12 @@ $removeparam=mt_click_id
 ||nephobox.com/api/analytics$important
 ||nephobox.com/nodeapi/reporterror
 ||nephobox.com/api/ad/$important
+||ads.themoneytizer.com^$important
+||a-ads.com^$important
+||stat.online.sberbank.ru^
+||tradplusad.com^
+||otvet.mail.ru/api/topic/feed/vk/video$xhr,domain=otvet.mail.ru
+||sweb.ru/common/*/blank.gif$domain=sweb.ru,redirect-rule=1x1-transparent.gif
 !
 !
 !
@@ -2593,10 +2599,14 @@ $removeparam=mt_click_id
 !
 !
 *appbk.4pda.to/er$xhr,domain=4pda.to
+://appbk.4pda.to^
 !
+!
+!
+||4pda.to/huawei/$domain=4pda.to
 !
 @@||i.4pda.ws/s/*.jpg?v=*^$domain=4pda.to
-@@||*4pda.to/s/*.js?_=*^$domain=4pda.to
+! @@||*4pda.to/s/*.js?_=*^$domain=4pda.to
 @@||*4pda.to/s/*/*/menu_item.gif^$image,domain=4pda.to
 @@||*4pda.to/s/*/*.gif^$image,domain=4pda.to
 @@||4pda.to/stat/go?u=$domain=4pda.to
@@ -3033,6 +3043,10 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 ||api-statist.tbank.ru^$important
 ||fingerprint.t-static.ru^
 ||api-common.tinkoff.ru/front-logs/v*/logs$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru
+||sage-collector.tbank.ru^$important
+||ms-ads-image.t-static.ru^$important
+||tads.tbank.ru^$important
+||webim-tknzr.tinkoff.ru^
 !
 ! Чат поддержки, разные элементы, разделы и прочее в ЛК на сайте сломались в результате блокировки множества адресов (запросов).
 ! Хитро, хитро сделано.. привязанность аналитики и прочему «мусору» к чате поддержки и не только..
@@ -3049,6 +3063,8 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 !
 ||api.detmir.ru/v*/ui/default-suggestions*^$xhr,domain=detmir.ru
 ||go.detmir.st/img/1731586870/6301b1732f0709bc7dbef85e5bf55185.svg^$image,domain=detmir.ru
+||api.detmir.ru/v*/client-events^$domain=detmir.ru
+||zoozavr.ru^$third-party,domain=detmir.ru
 !
 ! - Косметические правила -
 !
@@ -4505,6 +4521,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||crl.fk.local^
 ||mres^
 ||xggd&f|x&gzo^
+||searchapp.bundleassets.example^
 !
 !
 !
@@ -4627,6 +4644,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||speeddials.opera.com/api/v*/external-suggestions-config
 -proxy.satoshi.opera-api2.com^
 ||composer.opera-api.com/api/v*/chat-suggestions
+||mcp.operacdn.com/*/optimized/*_thumbnail_*.webp$app=com.opera.browser
 ! =
 !
 !
@@ -4704,7 +4722,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||yandexadexchange.net^$important
 ||webvisor.com^$important
 ||appmetrica.yango.com^$important
-||adfstat.yandex.ru^$domain=~captcha-api.yandex.ru,important
+||adfstat.yandex.*^$domain=~captcha-api.yandex.ru,important
 ! push.yandex.ru/v*/subscribe/$websocket,important
 ! ||csp.yandex.net/csp?from=messenger$xhr
 ||http-check-headers.yandex.ru^$important
@@ -4749,7 +4767,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||yastatic.net/s3/home-static/feeds/*/rythm/desktop/rythm-feed.js^$script,domain=ya.ru
 ||ya.ru/portal/proxy?blocks=Market_cart$xhr,script,domain=ya.ru,important
 ||ya.ru/portal/feed?*market*$xhr,domain=ya.ru
-||advertising.yandex.ru^
+||advertising.yandex.ru^$important
 ||yandex.$removeparam=from
 ||ya.$removeparam=from
 ||yandex.*$removeparam=from
@@ -4797,7 +4815,6 @@ $cookie=_ym_debug
 ||ad.maps.yandex.ru^$important
 ||ads-captcha.yandex.ru^$important
 ||adsdk.yandex.ru^$important
-||advertising.yandex.ru^$important
 ||aflt.market.yandex.ru^$important
 ||analytics.mobile.yandex.net^$important
 ||lbs.yandex.ru^
@@ -4811,7 +4828,6 @@ $cookie=_ym_debug
 ||bs-meta.yandex.ru^
 ||bs-metadsp.yandex.ru^
 ||click.yandex.ru^$important
-||count.yandex.*^$important
 ||count.yandex.*^$important
 ||counter.yandex.*^$important
 ||direct.yandex.*^$important
@@ -4867,7 +4883,7 @@ $removeparam=yredirect
 ||surveys.yandex.ru^
 ||market.yandex.ru^$removeparam=baobab_event_id
 $removeparam=ysclid
-||clck.yandex.net^$app=com.yandex.aliceapp
+||clck.yandex.net^
 ||yandex.ru/ads/$important,domain=~limehd.tv|~litehd.tv|~pervyi-tv.online|~russia-tv.online|~shadowcore.ru
 ||yastatic.net/naydex/yandex-mail/$redirect=noopjs
 ||yastatic.net/daas/atom.js$important
@@ -4898,6 +4914,7 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||yandex.ru/portal/set/any?gif=1$domain=ya.ru|yandex.ru
 ||naydex.net/*/static/v*/iframe-google-analytics.html^$document
 ||soft.export.yandex.ru/status.xml?$xhr
+||admetrica.ru^
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -5024,6 +5041,8 @@ kul.prod.via.google^
 ||tagmanager.google.com^
 ||clientservices.googleapis.com^
 ||ads.youtube.com^
+||googleads.com^
+||admob.com^
 !
 ! ===
 !
@@ -6121,6 +6140,19 @@ teletype.in#@#div.preloader
 @@||crl.r2m01.amazontrust.com^
 @@||ocsp.*.amazontrust.com^
 @@||sspc.sec-smartswitch.com^
+@@||market.yandex.ru/sw.js$script,domain=market.yandex.ru,important
+@@||hcaptcha.com^
+@@||avito.st/s/captcha/$script,domain=avito.ru
+@@||avito.ru/web/*/firewallCaptcha/$domain=avito.ru
+@@||recaptcha.net^
+@@||*---*-*-*.gvt1.com^
+@@||time.google.com^
+@@||time.android.com^
+@@||time.cloudflare.com^
+@@||time.apple.com^
+@@||*-safebrowsing.google.com^
+@@||safebrowsing.googleapis.com^
+@@||rr*---sn-*.gvt1.com^
 !
 !
 ! -

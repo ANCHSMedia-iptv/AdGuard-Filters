@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.4.0-R
+! Version: 4.4.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-03-11T16:40:00+00:00
+! TimeUpdated: 2026-03-13T16:40:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 11.03.2026 16:40 UTC
+! Last Modified: 13.03.2026 16:40 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -152,6 +152,7 @@
 ||appmetrica.yandex.net.iberostar.com^
 ! ||dr*.yandex.*^
 ||log.api-maps.yandex.ru^$important
+||admetrica.ru^
 !
 !
 ! ===
@@ -267,6 +268,8 @@
 ||tagmanager.google.com^
 ||clientservices.googleapis.com^
 ||ads.youtube.com^
+||googleads.com^
+||admob.com^
 !
 ! ===
 !
@@ -1307,6 +1310,12 @@
 ||events-am.gw.postman.com^
 ||srvb1.com^
 ||pbstck.com^
+||appbk.4pda.to^
+||sage-collector.tbank.ru^$important
+||ms-ads-image.t-static.ru^$important
+||tads.tbank.ru^$important
+||stat.online.sberbank.ru^
+||tradplusad.com^
 !
 !
 !
@@ -1425,6 +1434,7 @@
 ||crl.fk.local^
 ||mres^
 ||xggd&f|x&gzo^
+||searchapp.bundleassets.example^
 !
 !
 !
@@ -1776,6 +1786,17 @@
 @@||crl.r2m01.amazontrust.com^
 @@||ocsp.*.amazontrust.com^
 @@||sspc.sec-smartswitch.com^
+@@||market.yandex.ru/sw.js$script,domain=market.yandex.ru,important
+@@||hcaptcha.com^
+@@||recaptcha.net^
+@@||*---*-*-*.gvt1.com^
+@@||time.google.com^
+@@||time.android.com^
+@@||time.cloudflare.com^
+@@||time.apple.com^
+@@||*-safebrowsing.google.com^
+@@||safebrowsing.googleapis.com^
+@@||rr*---sn-*.gvt1.com^
 !
 !
 !
