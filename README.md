@@ -6,8 +6,8 @@ Filters:
 - Block unwanted connections (Default + DNS + Experimental) [Supported].
 - Branching from BUC: F Unwanted Sites.
 
-Updated 13.03.2026
-- BUC: 13.03
+Updated 14.03.2026
+- BUC: 14.03
 - BUC DNS: 13.03
 - FUS: The filter will not be updated after uploading to the repository after 29.03.2025.
 
