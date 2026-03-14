@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 4.9.8-R
-! TimeUpdated: 2026-03-13T16:40:25+00:00
+! TimeUpdated: 2026-03-14T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2544,6 +2544,11 @@ $removeparam=mt_click_id
 ||tradplusad.com^
 ||otvet.mail.ru/api/topic/feed/vk/video$xhr,domain=otvet.mail.ru
 ||sweb.ru/common/*/blank.gif$domain=sweb.ru,redirect-rule=1x1-transparent.gif
+||nds.nokia.com/uaprof
+||mgs123.com^
+||well2266.com^
+||cs44.pikabu.ru^
+||check-host.net/ip/widget.js^$script,domain=check-host.net,important
 !
 !
 !
@@ -4354,6 +4359,9 @@ smart-48.ru##div[class^="coocppWrap"]
 samfw.com##div[id^="samfw.com_728x90_responsive_1"][style="text-align: center;"]
 samfw.com##div[class^="alert alert-success "][role="alert"]
 samfw.com##div[class^="alert alert-ask-upgrade"]
+pikabu.ru##div.app:nth-child(3) > header.header:first-child > div.header__main:nth-child(3) > div.header__inner > div.header__wrapper:last-child > div.header__item.header__menu:first-child > div.header-menu > div.header-menu__item.header-menu__item_finances:nth-child(7) > a > span
+pikabu.ru##a[href*="sports.ru/football/match/"]
+pikabu.ru##a[href*="postila.ru/"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
