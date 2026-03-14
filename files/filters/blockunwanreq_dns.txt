@@ -3,7 +3,7 @@
 ! Version: 4.4.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-03-13T16:40:00+00:00
+! TimeUpdated: 2026-03-14T16:40:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 13.03.2026 16:40 UTC
+! Last Modified: 14.03.2026 16:40 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -282,7 +282,7 @@
 ||scorecardresearch.com^$important
 ||metricell.com^$important
 ||bronze.systems^$important
-||graph.facebook.com^$dnsrewrite=REFUSED
+||graph.facebook.com^$important
 ||optifyr.com^
 !
 ||amplreq.com^$important
@@ -1451,7 +1451,7 @@
 ! -- =Opera=
 !
 ||feednews.com^$dnsrewrite=0.0.0.0
-||oleads.com^$dnsrewrite=ad-block.dns.adguard.com,important
+||oleads.com^$dnsrewrite=0.0.0.0,important
 ||sitesuggestion.opera-api*.com^$dnsrewrite=0.0.0.0,important
 ||oscore.operacdn.com^$important
 ! ws-oscore.opera-api*.com^$important
@@ -1460,7 +1460,7 @@
 ||pns-sdk.opera-api*.com^$dnsrewrite=0.0.0.0,important
 ||ofa-*-sub.osp.opera.software^$dnsrewrite=0.0.0.0,important
 ||mcp.opera-api*.com^$dnsrewrite=0.0.0.0,important
-||mykonf.com^$dnsrewrite=ad-block.dns.adguard.com,important
+||mykonf.com^$dnsrewrite=0.0.0.0,important
 ! ofa-b-sub.osp.opera.software^
 ||xml.opera.com^$important
 ||thumbnails*opera.com^$important
