@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.9.8-R
-! TimeUpdated: 2026-03-14T16:40:25+00:00
+! Version: 4.9.9-R
+! TimeUpdated: 2026-03-15T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2535,7 +2535,7 @@ $removeparam=mt_click_id
 ||sammobile.com/wp-content/themes/sammobile-*/settings/hits/track.php^$domain=sammobile.com
 ||sammobile.com/wp-content/themes/sammobile-*/settings/topbar/topbar-ad.php^$xhr,domain=sammobile.com
 ||cdn.jsdelivr.net/npm/in-view*/dist/in-view.
-||nephobox.com/api/analytics$important
+||nephobox.com/api/analytics
 ||nephobox.com/nodeapi/reporterror
 ||nephobox.com/api/ad/$important
 ||ads.themoneytizer.com^$important
@@ -2549,6 +2549,14 @@ $removeparam=mt_click_id
 ||well2266.com^
 ||cs44.pikabu.ru^
 ||check-host.net/ip/widget.js^$script,domain=check-host.net,important
+||gstatic.com/firebasejs/
+! apm-proxy.obs.mts.ru^
+||bandcamp.com/img/0.gif$redirect-rule=1x1-transparent.gif
+||bcbits.com/client-bundle/*/GlobalJS_*/tko_trackpipe-$script,domain=bandcamp.com
+||bcbits.com/client-bundle/*/Tracker_*/analytics-$script,domain=bandcamp.com
+||bandcamp.com/client_log
+||my*.imgsmail.ru/mail/*/images/*/music-reskin/*/banner728x90_$script,domain=my.mail.ru
+||go.imgsmail.ru/mm$domain=my.mail.ru
 !
 !
 !
@@ -4362,6 +4370,12 @@ samfw.com##div[class^="alert alert-ask-upgrade"]
 pikabu.ru##div.app:nth-child(3) > header.header:first-child > div.header__main:nth-child(3) > div.header__inner > div.header__wrapper:last-child > div.header__item.header__menu:first-child > div.header-menu > div.header-menu__item.header-menu__item_finances:nth-child(7) > a > span
 pikabu.ru##a[href*="sports.ru/football/match/"]
 pikabu.ru##a[href*="postila.ru/"]
+yankodesign.com##div[class^="yanko-preferred-source"]
+yankodesign.com##div[class*="code-block code-block-"][style="margin: 8px 0; clear: both;"]
+ixbt.com###content-wrapper > article.topic.topic-type-.js-topic:nth-child(2) > footer.topic-footer:last-child > div.panel.panel-default.topic-footer-panel-soc:nth-child(7)
+mobile-review.com##.article__social
+mobile-review.com###pagewrapper > nav.mainmenu:first-child > div.mainmenu__topbar:first-child > div.mainmenu__item.mainmenu__item--brands:nth-child(3)
+sfirmware.com##a[class^="buy_on_amazon"][data-action="://amazon.com/s?"][rel="nofollow"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4912,7 +4926,7 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||yandex.$removeparam=metric_client_id
 ||api.browser.yandex.*/user-events/
 ||browser.yandex.*/welcome-static/pusher__worker-
-||browser-resources.s3.yandex.net/*/get/browser/launcher_images/*/not_yandex/$image
+||browser-resources.s3.yandex.net/*/get/browser/launcher_images/*/not_yandex/$image,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*
 ||log.api-maps.yandex.ru^$important
 ! ||yastatic.net/naydex/yandex-search/
 /_crpd/*/counter$domain=ya.ru|yandex.*
@@ -4923,6 +4937,9 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||naydex.net/*/static/v*/iframe-google-analytics.html^$document
 ||soft.export.yandex.ru/status.xml?$xhr
 ||admetrica.ru^
+||yandex.ru/an/$important
+||ya.ru/an/$important
+||yandex.ru/portal/ntp/banner$redirect=nooptext
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -5359,6 +5376,8 @@ kul.prod.via.google^
 ||champagne.futurecdn.net^
 ||podname.com^
 ||rum.corewebvitals.io^
+||teraverseapp.com^
+||dsp-api.moloco.com^
 !
 ! --
 !

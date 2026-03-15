@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.4.1-R
+! Version: 4.4.2-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-03-14T16:40:00+00:00
+! TimeUpdated: 2026-03-15T16:40:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 14.03.2026 16:40 UTC
+! Last Modified: 15.03.2026 16:40 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -1316,6 +1316,11 @@
 ||tads.tbank.ru^$important
 ||stat.online.sberbank.ru^
 ||tradplusad.com^
+||ads.themoneytizer.com^
+||a-ads.com^$dnsrewrite=0.0.0.0
+||bdstatic.com^$important
+||sofire.bdstatic.com^$important
+! apm-proxy.obs.mts.ru^
 !
 !
 !
@@ -1390,7 +1395,7 @@
 ||tapulsads.ru^$important,dnsrewrite=ad-block.dns.adguard.com
 ||gonet-ads.com^$dnsrewrite=ad-block.dns.adguard.com,important
 ||telecid.ru^$important
-||tttturbonet.com^$dnsrewrite=ad-block.dns.adguard.com
+||tttturbonet.com^$dnsrewrite=0.0.0.0
 ||*pavo*^$important
 ||fancybox.in^$dnsrewrite=ad-block.dns.adguard.com
 ||adlooxtracking.ru^$important
@@ -1403,7 +1408,7 @@
 ! disk.akamaized.net^
 ||adinfinitum.in^$dnsrewrite=ad-block.dns.adguard.com,important
 ||gamerplay*.space^$dnsrewrite=ad-block.dns.adguard.com
-||staticcc.com^$dnsrewrite=ad-block.dns.adguard.com
+||staticcc.com^$dnsrewrite=0.0.0.0
 !
 !
 !
