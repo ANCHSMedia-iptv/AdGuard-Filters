@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 4.9.9-R
-! TimeUpdated: 2026-03-15T16:40:25+00:00
+! TimeUpdated: 2026-03-16T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2557,6 +2557,8 @@ $removeparam=mt_click_id
 ||bandcamp.com/client_log
 ||my*.imgsmail.ru/mail/*/images/*/music-reskin/*/banner728x90_$script,domain=my.mail.ru
 ||go.imgsmail.ru/mm$domain=my.mail.ru
+||forpes.ru/images/logo-cloudlogs-64.png^$image,domain=forpes.ru
+||sentry.oits.su^$important
 !
 !
 !
@@ -4376,6 +4378,8 @@ ixbt.com###content-wrapper > article.topic.topic-type-.js-topic:nth-child(2) > f
 mobile-review.com##.article__social
 mobile-review.com###pagewrapper > nav.mainmenu:first-child > div.mainmenu__topbar:first-child > div.mainmenu__item.mainmenu__item--brands:nth-child(3)
 sfirmware.com##a[class^="buy_on_amazon"][data-action="://amazon.com/s?"][rel="nofollow"]
+forpes.ru###secondary > aside.widget.widget_recent_blogposts:nth-child(2) > div.widget_body:last-child
+cominf.org###block-block-7
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
