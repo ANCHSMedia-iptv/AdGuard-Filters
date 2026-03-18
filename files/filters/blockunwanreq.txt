@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 4.9.9-R
-! TimeUpdated: 2026-03-16T16:40:25+00:00
+! TimeUpdated: 2026-03-18T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1746,8 +1746,8 @@ $cookie=MicexTrackID
 ||sentry.mos.ru^$important
 ||uslugi.tyumen-city.ru/*.gif^$image,domain=tyumen-city.ru,redirect-rule=1x1-transparent.gif,important
 ||tyumen-city.ru/*.gif^$image,domain=tyumen-city.ru,redirect-rule=1x1-transparent.gif,important
-||uslugi.tyumen-city.ru/c$xhr,domain=tyumen-city.ru
-||tyumen-city.ru/c$xhr,domain=tyumen-city.ru
+! uslugi.tyumen-city.ru/c$xhr,domain=tyumen-city.ru (04.03.26: Temp disabled)
+! tyumen-city.ru/c$xhr,domain=tyumen-city.ru (04.03.26: Temp disabled)
 -sentry.k.avito.ru^$important
 ||sntr.avito.ru^$important
 ||cs.avito.ru/clickstream/$domain=avito.ru,important
@@ -1763,7 +1763,7 @@ $cookie=MicexTrackID
 ||cdn*.tu-tu.ru/lib-assets/*tutu/frontmetrics*/frontmetrics.$script,domain=tutu.ru,important
 ||frontmetrics.tutu.ru^$important
 .ru/ds-site/images/mia/mia-mini.png^$image,domain=t2.ru|tele2.ru
-.ru/c$xhr,domain=t2.ru|tele2.ru
+! .ru/c$xhr,domain=t2.ru|tele2.ru (04.03.26: Temp disabled)
 ||sentry-relay.beeline.ru^$important
 ! ||megafon.ru/*/*qr*.png
 ||d39xvdj9d5ntm1.cloudfront.net/common/*/consent-manager-$script,css,important
@@ -2063,7 +2063,7 @@ $cookie=BITRIX_SM_OT_GUEST_ID
 $cookie=trackingId
 ||sentry.io^$important,domain=~sentry.io
 ||us.i.mi.com/weblogs
-||call.beget.ru/widget/$script,third-party,domain=~beget.ru,important
+||call.beget.ru^$third-party,domain=~beget.ru,important
 /theme_adaptable/adaptablemarketingimages/*/maxthon1.png^$image,domain=efizika.ru
 /theme_adaptable/adaptablemarketingimages/*/avant.png^$image,domain=efizika.ru
 /theme_adaptable/adaptablemarketingimages/*/flashbrowser.png^$image,domain=efizika.ru
@@ -2559,6 +2559,7 @@ $removeparam=mt_click_id
 ||go.imgsmail.ru/mm$domain=my.mail.ru
 ||forpes.ru/images/logo-cloudlogs-64.png^$image,domain=forpes.ru
 ||sentry.oits.su^$important
+||ads.x5media.ru^
 !
 !
 !
@@ -5039,7 +5040,7 @@ yandex.ru##.Box-cYgNPZ, .eVbChU
 ||code.google.com/*/*/issues/detail$important
 ||googleapis.com/auth/games$important
 ||google.com/dfp$important
-! 1e100.net^
+!
 ||play.google.com/store/apps/collection/promotion_30$xhr,other
 ||googleanalytics.com^$important
 ||play.google.com/d$important
@@ -6242,9 +6243,9 @@ teletype.in#@#div.preloader
 @@||servicepipe.ru^$permissions=private-state-token-issuance=()
 @@||servicepipe.ru^$permissions=private-state-token-redemption=()
 ! -
-@@||onlinetrade.ru^$permissions=identity-credentials-get=()
-@@||onlinetrade.ru^$permissions=private-state-token-issuance=()
-@@||onlinetrade.ru^$permissions=private-state-token-redemption=()
+@@$permissions=identity-credentials-get=(),domain=onlinetrade.ru|5ka.ru
+@@$permissions=private-state-token-issuance=(),domain=onlinetrade.ru|5ka.ru
+@@$permissions=private-state-token-redemption=(),domain=onlinetrade.ru|5ka.ru
 !
 ! ==
 !
