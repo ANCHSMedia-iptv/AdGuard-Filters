@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 4.9.9-R
-! TimeUpdated: 2026-03-18T16:40:25+00:00
+! Version: 5.0.0-R
+! TimeUpdated: 2026-03-19T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -206,7 +206,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~ingest*.sentry.io|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*sentry.wb.ru|~sentry-*.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~app.getsentry.com|~browser.sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net,important
+*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~ingest*.sentry.io|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*sentry.wb.ru|~sentry-*.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~getsentry.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru,important
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com,important
@@ -2560,6 +2560,8 @@ $removeparam=mt_click_id
 ||forpes.ru/images/logo-cloudlogs-64.png^$image,domain=forpes.ru
 ||sentry.oits.su^$important
 ||ads.x5media.ru^
+_banner.swf
+||sentry-internal.x5.ru^$important
 !
 !
 !
