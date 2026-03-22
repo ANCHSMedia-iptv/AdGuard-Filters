@@ -3,7 +3,7 @@
 ! Version: 4.4.3-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-03-19T16:40:00+00:00
+! TimeUpdated: 2026-03-22T16:40:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 19.03.2026 16:40 UTC
+! Last Modified: 22.03.2026 16:40 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -341,7 +341,7 @@
 ||d3c8j8snkzfr1n.cloudfront.net^$important
 ||d1tru86qrby720.cloudfront.net^$important
 ||btloader.com^$important
-||adskeeper.co.uk^$important
+||adskeeper.co.uk^$important,dnsrewrite=ad-block.dns.adguard.com
 ||digitalcaramel.com^$important
 ||ads*.twitter.com^$dnsrewrite=REFUSED,important
 ||ms.vk.*^$important
@@ -1324,6 +1324,7 @@
 ||sentry.oits.su^
 ||ads.x5media.ru^
 ||sentry-internal.x5.ru^
+||appcenter.ms^$important
 !
 !
 !
@@ -1794,7 +1795,6 @@
 @@||crl.r2m01.amazontrust.com^
 @@||ocsp.*.amazontrust.com^
 @@||sspc.sec-smartswitch.com^
-@@||market.yandex.ru/sw.js$script,domain=market.yandex.ru,important
 @@||hcaptcha.com^
 @@||recaptcha.net^
 @@||*---*-*-*.gvt1.com^

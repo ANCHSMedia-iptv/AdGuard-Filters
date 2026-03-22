@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 5.0.0-R
-! TimeUpdated: 2026-03-19T16:40:25+00:00
+! TimeUpdated: 2026-03-22T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -852,7 +852,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||cdn.aaacdn.net^
 ||sentry.x5.ru^$important
 ||tabun.info^
-||appcenter.ms/logs^$important
+! appcenter.ms/logs^$important
 ||ads.vk.com^$important,domain=~ads.vk.ru
 ||events.maps.vk.com^$important
 ||madnet.ru^$important
@@ -1002,7 +1002,7 @@ yastatic.net^$app=com.radioapp.mayakradio|com.avito.android|ru.vk.store
 ||fandom.com/silver-surfer.html^$domain=fandom.com|*.fandom.com,important
 ||js.zi-scripts.com/zi-tag.js^$script,important
 ||js.zi-scripts.com/unified/v*/master/$xhr,important
-||appcenter.ms^$app=ru.mes.dnevnik.fgis|ru.pyaterochka.app.browser|ru.desport.android|bz.zaa.mibudsm8|ru.citilink|www.metro.com|com.vk.mail
+||appcenter.ms^$important
 ||zephyrsgroves.com^
 ||xn--80aafadvc9bifbaeqg0p.xn--p1ai/img/icons/sferum.svg^$image,domain=xn--80aafadvc9bifbaeqg0p.xn--p1ai
 !
@@ -2562,6 +2562,12 @@ $removeparam=mt_click_id
 ||ads.x5media.ru^
 _banner.swf
 ||sentry-internal.x5.ru^$important
+||pogoda.meta.ua^$third-party,domain=~meta.ua
+||service-cmp.com^
+||avesta.tj/wp-content/uploads/2025/10/Istanbul-oneway-RU-300x533-1.jpg^$image,domain=avesta.tj
+||vecherka.tj/wp-content/uploads/2025/05/avddl8bpv6g.jpg^$image,domain=vecherka.tj
+||xiaomi-mi.tj/js/addons/gdpr/$script,domain=xiaomi-mi.tj
+/include/chat/static/media/ReceivedMessage.$media,domain=eskhata.com
 !
 !
 !
@@ -4383,6 +4389,8 @@ mobile-review.com###pagewrapper > nav.mainmenu:first-child > div.mainmenu__topba
 sfirmware.com##a[class^="buy_on_amazon"][data-action="://amazon.com/s?"][rel="nofollow"]
 forpes.ru###secondary > aside.widget.widget_recent_blogposts:nth-child(2) > div.widget_body:last-child
 cominf.org###block-block-7
+vecherka.tj##img[src*="https://vecherka.tj/wp-content/uploads/2025/05/avddl8bpv6g.jpg"]
+vecherka.tj##img[src*="https://vecherka.tj/wp-content/uploads/2025/05/avddl8bpv6g"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4947,6 +4955,8 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||yandex.ru/an/$important
 ||ya.ru/an/$important
 ||yandex.ru/portal/ntp/banner$redirect=nooptext
+||brontp-beta.yandex.ru^$redirect=nooptext
+||brontp.yandex.ru^$redirect=nooptext
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
