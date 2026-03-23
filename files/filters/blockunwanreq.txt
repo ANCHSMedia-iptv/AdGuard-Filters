@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.0.0-R
-! TimeUpdated: 2026-03-22T16:40:25+00:00
+! Version: 5.0.1-R
+! TimeUpdated: 2026-03-23T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2545,13 +2545,11 @@ $removeparam=mt_click_id
 ||otvet.mail.ru/api/topic/feed/vk/video$xhr,domain=otvet.mail.ru
 ||sweb.ru/common/img/blank.gif$domain=sweb.ru
 ||nds.nokia.com/uaprof
-||mgs123.com^
-||well2266.com^
 ||cs44.pikabu.ru^
 ||check-host.net/ip/widget.js^$script,domain=check-host.net,important
 ||gstatic.com/firebasejs/
 ! apm-proxy.obs.mts.ru^
-||bandcamp.com/img/0.gif$redirect-rule=1x1-transparent.gif
+||bandcamp.com/img/0.gif
 ||bcbits.com/client-bundle/*/GlobalJS_*/tko_trackpipe-$script,domain=bandcamp.com
 ||bcbits.com/client-bundle/*/Tracker_*/analytics-$script,domain=bandcamp.com
 ||bandcamp.com/client_log
@@ -2568,6 +2566,10 @@ _banner.swf
 ||vecherka.tj/wp-content/uploads/2025/05/avddl8bpv6g.jpg^$image,domain=vecherka.tj
 ||xiaomi-mi.tj/js/addons/gdpr/$script,domain=xiaomi-mi.tj
 /include/chat/static/media/ReceivedMessage.$media,domain=eskhata.com
+||pikabu.ru/ajax.php?route=register_long_view$domain=pikabu.ru
+||px-cloud.net^
+||px-cdn.net^
+||change.org/*/xhr/b/s/$important
 !
 !
 !
@@ -4378,7 +4380,7 @@ smart-48.ru##div[class^="coocppWrap"]
 samfw.com##div[id^="samfw.com_728x90_responsive_1"][style="text-align: center;"]
 samfw.com##div[class^="alert alert-success "][role="alert"]
 samfw.com##div[class^="alert alert-ask-upgrade"]
-pikabu.ru##div.app:nth-child(3) > header.header:first-child > div.header__main:nth-child(3) > div.header__inner > div.header__wrapper:last-child > div.header__item.header__menu:first-child > div.header-menu > div.header-menu__item.header-menu__item_finances:nth-child(7) > a > span
+pikabu.ru##div.app:nth-child(3) > header.header:first-child > div.header__main:first-child > div.header__inner > div.header__wrapper:last-child > div.header__item.header__menu:first-child > div.header-menu > div.header-menu__item.header-menu__item_finances:nth-child(7) > a > span
 pikabu.ru##a[href*="sports.ru/football/match/"]
 pikabu.ru##a[href*="postila.ru/"]
 yankodesign.com##div[class^="yanko-preferred-source"]
@@ -4389,8 +4391,11 @@ mobile-review.com###pagewrapper > nav.mainmenu:first-child > div.mainmenu__topba
 sfirmware.com##a[class^="buy_on_amazon"][data-action="://amazon.com/s?"][rel="nofollow"]
 forpes.ru###secondary > aside.widget.widget_recent_blogposts:nth-child(2) > div.widget_body:last-child
 cominf.org###block-block-7
-vecherka.tj##img[src*="https://vecherka.tj/wp-content/uploads/2025/05/avddl8bpv6g.jpg"]
-vecherka.tj##img[src*="https://vecherka.tj/wp-content/uploads/2025/05/avddl8bpv6g"]
+vecherka.tj##img[src*="://vecherka.tj/wp-content/uploads/2025/05/avddl8bpv6g.jpg"]
+vecherka.tj##img[src*="://vecherka.tj/wp-content/uploads/2025/05/avddl8bpv6g"]
+pikabu.ru##a[href*="baby.ru/"]
+sweb.ru##a[href*="://rbc.ru/"]
+sweb.ru##a[href*="://companies.rbc.ru/"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4473,7 +4478,7 @@ arsibtower-tyumen.ru#%#//scriptlet('set-session-storage-item', 'visited', 'n')
 #%#//scriptlet('set-local-storage-item', '/_ym*_*/', '$remove$')
 #%#//scriptlet('set-local-storage-item', '/_ym_*/', 'emptyObj')
 beetv.kz#%#//scriptlet('set-local-storage-item', 'querySearchHistory', 'emptyObj')
-#%#//scriptlet('set-session-storage-item', 'sentryReplaySession', '')
+#%#//scriptlet('set-session-storage-item', 'sentryReplaySession', 'emptyObj')
 #%#//scriptlet('set-session-storage-item', '__ym_tab_guid', '$remove$')
 smotrim.ru#%#//scriptlet('set-local-storage-item', '/tmr_*/', '$remove$')
 #%#//scriptlet('set-cookie', 'adblock', '', '0')
@@ -4496,6 +4501,8 @@ yappy.media#%#//scriptlet('set-local-storage-item', 'hotkeysPopupWasShown', '{"o
 magnit.ru#%#//scriptlet('set-local-storage-item', 'app-banner-close', '1')
 #%#//scriptlet('set-local-storage-item', 'tc', 'NaN')
 topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
+! pxsid
+! px_fb9••c01 px_XXXXXXXX
 !
 !
 !
@@ -4908,7 +4915,7 @@ $cookie=_ym_debug
 ||yastatic.net/pcode-native/loaders/$script
 ||api.plus.yandex.*/graphql?query_name=*%3FregisterSimpleActionWithPixel$xhr,important
 $removeparam=yredirect
-||yastatic.net/s3/web-alice/public/marketing-*.html^$document,domain=alice.yandex.ru,important,redirect=nooptext
+||yastatic.net/s3/web-alice/public/marketing-lite.html$domain=alice.yandex.ru,important,redirect=nooptext
 ||strm.yandex.net/ping$important
 ||api.music.yandex.*/*/session/*/feedback/$xhr,important
 ||yastatic.net/s3/distribution/yanalytics/v*/$important
@@ -4948,8 +4955,8 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 /portal/_crpd/$domain=ya.ru
 /user-id/api/prompthub?$domain=ya.ru|yandex.ru|yandex.*|~alice.yandex.ru
 /user-id/api/banrot/*/events/$domain=ya.ru|yandex.ru|yandex.*
-||yandex.ru/portal/set/any?gif=1$domain=ya.ru|yandex.ru
-||naydex.net/*/static/v*/iframe-google-analytics.html^$document
+||yandex.ru/portal/set/any?yrsncd=1&gif=1&ip=$domain=ya.ru|yandex.ru
+||naydex.net/*/static/v*/iframe-google-analytics.html$document
 ||soft.export.yandex.ru/status.xml?$xhr
 ||admetrica.ru^
 ||yandex.ru/an/$important
@@ -4968,7 +4975,8 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||favicon.yandex.net^$app=ru.yandex.weatherplugin
 ||avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
 ||strm.yandex.net^$app=ru.yandex.weatherplugin
-/^77\.88\./$network,app=ru.yandex.weatherplugin
+/^77\.88\.(4|5){2}.(5|8){2}/$network,app=ru.yandex.weatherplugin
+/^5\.255\.255\.77/$network,app=ru.yandex.weatherplugin
 @@||weather.yandex.ru^$app=ru.yandex.weatherplugin
 !
 @@||static-maps.yandex.ru^$app=ru.yandex.weatherplugin
@@ -6197,6 +6205,8 @@ teletype.in#@#div.preloader
 @@||*-safebrowsing.google.com^
 @@||safebrowsing.googleapis.com^
 @@||rr*---sn-*.gvt1.com^
+@@||st.sweb.ru/upload?rand=
+@@||st.sweb.ru/file*?rand=
 !
 !
 ! -
