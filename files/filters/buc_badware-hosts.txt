@@ -26,7 +26,7 @@
 !
 !
 !
-! - Обнаруженные мною IP и хостеров -
+! - Обнаруженные мною IP и хостеры -
 |ve|^
 ||176.65.134.*^
 ||dnssec-failed.org^$dnsrewrite=0.0.0.0
@@ -37,8 +37,6 @@
 ||vps-6a92f300.vps.ovh.net$dnsrewrite=0.0.0.0
 ||example.*$dnsrewrite=0.0.0.0
 ||ec2-18-221-150-215.us-east-2.compute.amazonaws.com^
-||packagecloud.io^$important
-||_https._tcp.packagecloud.io^$important
 ||ipinfo.io^$important
 ||myexternalip.com^
 ||ident.me^$important
@@ -53,6 +51,11 @@
 !
 !
 !
+!
+! - Белый список -
+@@||packagecloud.io^
+@@||_https._tcp.packagecloud.io^
+! -
 !
 !
 !
