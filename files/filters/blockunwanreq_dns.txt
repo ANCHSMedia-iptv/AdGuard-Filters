@@ -3,7 +3,7 @@
 ! Version: 4.4.4-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-03-23T16:40:00+00:00
+! TimeUpdated: 2026-03-24T16:40:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 23.03.2026 16:40 UTC
+! Last Modified: 24.03.2026 16:40 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -1005,7 +1005,7 @@
 ||al-adtech.com^
 ||nativeroll.tv^$important
 ||inshot.dev^
-||icanhazip.com^
+||icanhazip.com^$important
 ||track*.tprg.ru^
 ||cc34ea.cyberinsider.com^
 ||geosurf.io^$important
@@ -1327,6 +1327,7 @@
 ||appcenter.ms^$important
 ||px-cloud.net^
 ||px-cdn.net^
+||log.aliyuncs.com^$important
 !
 !
 !

@@ -1,0 +1,59 @@
+! Title: Block Unwanted Connections - Badware Hosts
+! Description: Блокировка плохих хостов, IP адресов с которых сканируют порты, производят брут-форс, пытаются взломать, использовать в своих плохих целях, а также пытаются пролезть с помощью DNS Poisoning.
+! Version: 1.0.0
+! TimeUpdated: 2026-03-24T15:20:25+00:00
+! Expires: 72 hours
+! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
+!
+!
+! --
+! Идею создания этого фильтра дало то, что с чем столкнулся. Мой сервер начали сканировать и всячески атаковать.
+! Это было видно через журналы AdGuard Home. Сразу включил белый список и фаерволл.
+! Теперь сервер в безопасности и смотрю в логах фаерволла, что он отбрасывает незванных гостей. А журнал AdGuard Home теперь чист.
+! Спросите: сервер VPS или VDS?
+! Ответ: VPS.
+! На нём нет, как я понял, DDoS защиты от хостинга (причём бесплатная). Хотя должна быть..
+!
+!
+! - Аноним, 24.03.2026
+! --
+!
+!
+!
+!
+!
+!
+!
+!
+!
+! - Обнаруженные мною IP и хостеров -
+|ve|^
+||176.65.134.*^
+||dnssec-failed.org^$dnsrewrite=0.0.0.0
+||dnscheck.internet-measurement.com^
+||asertdnsresearch.com^$dnsrewrite=0.0.0.0
+||tool.lu^$important,dnsrewrite=0.0.0.0
+||definitely-not-a-real-domain-check.invalid^$important,dnsrewrite=0.0.0.0
+||vps-6a92f300.vps.ovh.net$dnsrewrite=0.0.0.0
+||example.*$dnsrewrite=0.0.0.0
+||ec2-18-221-150-215.us-east-2.compute.amazonaws.com^
+||packagecloud.io^$important
+||_https._tcp.packagecloud.io^$important
+||ipinfo.io^$important
+||myexternalip.com^
+||ident.me^$important
+! -
+!
+!
+! - Добавленные -
+||eth0.me^
+! -
+!
+!
+!
+!
+!
+!
+!
+!
+!
