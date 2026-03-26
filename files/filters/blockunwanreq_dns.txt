@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.4.5-R
+! Version: 4.4.6-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-03-25T16:40:00+00:00
+! TimeUpdated: 2026-03-26T16:40:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 25.03.2026 16:40 UTC
+! Last Modified: 26.03.2026 16:40 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -795,7 +795,7 @@
 ||d26xw8rp6mlgfg.cloudfront.net^
 ||teads.tv^$important
 ||mediasystems.am^$important
-||bid^$dnsrewrite=0.0.0.0
+||bid|^$dnsrewrite=0.0.0.0
 ||mobile-data.onetrust.io^$important
 ||ads.tiktok.com^$important
 ||partnerads.ysm.yahoo.com^$important
@@ -1069,7 +1069,7 @@
 ||vmetrics.goodgame.ru^$important
 ||mrworldwide.com^
 ||kraken.rambler.ru^
-||pix.spot.im^
+||pix.spot.im^$important
 ||xc3.services.livejournal.com^
 ||split.io^
 ||a.sputniknews.com^
@@ -1330,6 +1330,8 @@
 ||log.aliyuncs.com^$important
 ||events.character.ai^
 ||sentry.timeweb.cloud^$important
+||metrics-logger.spot.im^$important
+||direct-events-collector.spot.im^$important
 !
 !
 !

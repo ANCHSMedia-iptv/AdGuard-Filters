@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.0.3-R
-! TimeUpdated: 2026-03-25T16:40:25+00:00
+! Version: 5.0.4-R
+! TimeUpdated: 2026-03-26T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2324,8 +2324,8 @@ $removeparam=is_autologin_ya
 ||api-*.spot.im/v*/conversation/realtime/read
 ||api-*.spot.im/v*/conversation/read
 ||api-*.spot.im/v*/conversation/async
-||pix.spot.im^
-||static-cdn.spot.im/production/social/tags/v*/conversation/ad-container-bundle.
+||pix.spot.im^$important
+||static-cdn.spot.im/production/social/tags/v*/conversation/ad-container-bundle.$redirect=noopjs
 ||pics.vesti.ru/counter/$important
 ||id.sber.ru^$domain=livejournal.com
 ||split.io^
@@ -2580,6 +2580,11 @@ _banner.swf
 ||timeweb.cloud/landing-api/cms/cookie
 /roistat.js
 ||vk.com/js/api/openapi.js$script,domain=cloud.vk.com
+||publisher-assets.spot.im/ad/$redirect=noopjs
+||api-2-0.spot.im/v1.0.0/init
+||metrics-logger.spot.im^$important
+||direct-events-collector.spot.im^$important
+||static.kod.ru/scripts/fslightbox.js^$script,domain=kod.ru
 !
 !
 !
@@ -4933,7 +4938,7 @@ $cookie=_ym_debug
 ||yastatic.net/pcode-native/loaders/$script
 ||api.plus.yandex.*/graphql?query_name=*%3FregisterSimpleActionWithPixel$xhr,important
 $removeparam=yredirect
-||yastatic.net/s3/web-alice/public/marketing-lite.html$domain=alice.yandex.ru,important,redirect=nooptext
+||yastatic.net/s3/web-alice/public/marketing-lite.html$domain=alice.yandex.ru,important
 ||strm.yandex.net/ping$important
 ||api.music.yandex.*/*/session/*/feedback/$xhr,important
 ||yastatic.net/s3/distribution/yanalytics/v*/$important
@@ -4993,8 +4998,6 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||favicon.yandex.net^$app=ru.yandex.weatherplugin
 ||avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
 ||strm.yandex.net^$app=ru.yandex.weatherplugin
-/^77\.88\.(4|5){2}.(5|8){2}/$network,app=ru.yandex.weatherplugin
-/^5\.255\.255\.77/$network,app=ru.yandex.weatherplugin
 @@||weather.yandex.ru^$app=ru.yandex.weatherplugin
 !
 @@||static-maps.yandex.ru^$app=ru.yandex.weatherplugin
@@ -5424,6 +5427,7 @@ kul.prod.via.google^
 ||dsp-api.moloco.com^
 ||featureassets.org^
 ||events.character.ai^$important
+||bi-events-collector.spot.im^
 !
 ! --
 !
