@@ -3,7 +3,7 @@
 ! Version: 4.4.6-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-03-26T16:40:00+00:00
+! TimeUpdated: 2026-03-27T16:40:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 26.03.2026 16:40 UTC
+! Last Modified: 27.03.2026 16:40 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -1332,6 +1332,7 @@
 ||sentry.timeweb.cloud^$important
 ||metrics-logger.spot.im^$important
 ||direct-events-collector.spot.im^$important
+||sentry.obs.mws-team.ru^$important
 !
 !
 !
@@ -1478,6 +1479,8 @@
 ||mcp.opera-api*.com^$dnsrewrite=0.0.0.0,important
 ||mykonf.com^$dnsrewrite=0.0.0.0,important
 ! ofa-b-sub.osp.opera.software^
+||adx.opera.com^$dnsrewrite=0.0.0.0,important
+!
 ||xml.opera.com^$important
 ||thumbnails*opera.com^$important
 ||af.opera.com^$important
