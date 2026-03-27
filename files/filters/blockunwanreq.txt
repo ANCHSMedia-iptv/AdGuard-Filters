@@ -2585,7 +2585,7 @@ _banner.swf
 ||metrics-logger.spot.im^$important
 ||direct-events-collector.spot.im^$important
 ||static.kod.ru/scripts/fslightbox.js^$script,domain=kod.ru
-||serveradmin.ru/watch.js^$script,domain=serveradmin.ru
+||serveradmin.ru/watch.js^$script,domain=serveradmin.ru,redirect=metrika-yandex-watch
 /watch.js$redirect=metrika-yandex-watch
 ||serveradmin.ru/wp-content/uploads/2025/04/mikro-$image,domain=serveradmin.ru
 ||serveradmin.ru/wp-content/uploads/2025/09/mikro-$image,domain=serveradmin.ru
