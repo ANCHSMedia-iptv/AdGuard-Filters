@@ -16,3 +16,7 @@ Started 22.09.2024
 22.12.24: 3 months!
 22.03.25: 6 months!
 22.09.25: 1 year!
+
+
+> [!NOTE]
+> Third-party use is prohibited.
