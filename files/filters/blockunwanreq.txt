@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.0.5-R
-! TimeUpdated: 2026-03-27T16:40:25+00:00
+! Version: 5.0.6-R
+! TimeUpdated: 2026-03-28T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2586,7 +2586,6 @@ _banner.swf
 ||direct-events-collector.spot.im^$important
 ||static.kod.ru/scripts/fslightbox.js^$script,domain=kod.ru
 ||serveradmin.ru/watch.js^$script,domain=serveradmin.ru,redirect=metrika-yandex-watch
-/watch.js$redirect=metrika-yandex-watch
 ||serveradmin.ru/wp-content/uploads/2025/04/mikro-$image,domain=serveradmin.ru
 ||serveradmin.ru/wp-content/uploads/2025/09/mikro-$image,domain=serveradmin.ru
 ||serveradmin.ru/wp-content/uploads/2025/05/regru-logo-color-4-2.png^$image,domain=serveradmin.ru
@@ -2599,6 +2598,11 @@ _banner.swf
 ||sentry.obs.mws-team.ru^$important
 ||u1host.com/mancgi/counter
 *$document,removeparam=clid,domain=adguard-dns.io
+||cdn.vesti.ru/static/_nuxt/HeaderDesktop.$css,domain=vesti.ru
+||cdn.vesti.ru/static/_nuxt/HeaderMobile.$css,domain=vesti.ru
+||collector.githubapp.com^$important
+||docs.github.com/api/events
+/tilda-stat-$script
 !
 !
 !
@@ -4314,7 +4318,7 @@ metro-set.ru###float2top
 vk.*##.PageBottomBanner, .PageBottomBanner--unauth, .PageBottomBanner--animated, .PageBottomBanner--bg-blue
 kod.ru##div[class^="Share_wrapper"]
 openwrt.org##.cookielaw-banner, .cookielaw-bottom
-4cells.ru##div[class^="CookieBanner"]
+4cells.ru##.HUMDVd
 ##a[href*="://qrator.net/"]
 ##a[href*="://qrator.net/"] > img
 club.dns-shop.ru###app > aside.club-sidebar.sidebar:nth-child(3) > div.club-sidebar__menu:first-child > nav.club-sidebar__nav > ul.club-sidebar__list > a.club-sidebar__dns-link.link.link_color-dark-charcoal:last-child
@@ -4443,6 +4447,14 @@ serveradmin.ru###text-html-widget-34
 serveradmin.ru###text-html-widget-25 > div.widget-container:last-child > div:first-child > table > tbody > tr:last-child
 serveradmin.ru###the-post > div.post-inner:first-child > div.entry:nth-child(4) > h4:last-child
 serveradmin.ru##.mot
+vesti.ru##.top-block
+vesti.ru##.nested-page-top
+vesti.ru##.main-page__right
+vesti.ru##.nested-page-body__right
+###cookies-policy
+firstvds.ru###scrollUp
+firstvds.ru##.banner-article
+detector404.ru##.qms, .show
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5065,6 +5077,7 @@ mail.yandex.ru##.bDVhOgw1X3WEALZfVAdaptiveWidth
 mail.yandex.ru###js-mail-layout > div.PageLayout-m__body--xjMc4.PageLayout-m__pageLayoutWithGlobalBar--sa2zf:last-child > div.bHVBHhRxmwU8ZL5rsLiuK.bJUoNngtXwU8AJ4aTMy2ZWbs.bHVBHhRxmwU8ZL5rzKCCZVLvoqKMw7g707j5WbHVBHhRxmwU8ZL5rsLiuK.bHVBHhRxmwU8ZL5rsLiuKbHVBHhRxmwU8ZL5rzKCCZVLvoqKMw7g707j5W:last-child > div:first-child
 yandex.ru##.Box-cYgNPZ, .eVbChU
 yandex.ru###hYF3siGBwNgvu__dkrg0xnnmcdcyyuh59he-PqmL7TJ > div.hYF3smmhxOwM > div.hYF3smmhxOwM-Item:first-child
+##html[class^="i-ua_js_no i-ua_css_standart i-ua_browser_yandexbrowser i-ua_browser-engine_webkit i-ua_browser_desktop"]
 !
 !
 ! =
@@ -5456,6 +5469,7 @@ kul.prod.via.google^
 ||events.character.ai^$important
 ||bi-events-collector.spot.im^
 ||singular.net^
+||rumstat.cdnvideo.ru^
 !
 ! --
 !
