@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.0.7-R
-! TimeUpdated: 2026-03-30T16:40:25+00:00
+! Version: 5.0.8-R
+! TimeUpdated: 2026-03-31T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -971,10 +971,10 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ! qrator/validate$xhr,important (07.02.26: Защита от ДДос, из-за блокировки не заходит на сайты, где установлена защита от CURATOR)
 ||ad-source.pro^$important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus
-/:\/\/yandex\.(ru|com)/^$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.free.tiptop.vpn.proxy|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp
-/^77\.88\.(4|5){2}.(5|8){2}/$network,app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp
-yastatic.net^$app=com.radioapp.mayakradio|com.avito.android|ru.vk.store
-/^5\.255\.255\.77/$network,app=ru.pyaterochka.app.browser|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|ru.rt.video.app.mobile|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp
+/:\/\/yandex\.(ru|com)/$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.free.tiptop.vpn.proxy|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp|jp.ne.ibis.ibispaintxapp|com.allgoritm.youla|ru.sports
+/^77\.88\.(4|5){2}.(5|8){2}/$network,app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp|com.allgoritm.youla|ru.sports
+yastatic.net^$app=com.radioapp.mayakradio|com.avito.android|ru.vk.store|com.allgoritm.youla|ru.sports
+/^5\.255\.255\.77/$network,app=ru.pyaterochka.app.browser|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|ru.rt.video.app.mobile|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp|com.allgoritm.youla|ru.sports
 ||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm
 ||s3.amazonaws.com^$app=com.viber.voip
 ||bing.com^$app=com.viber.voip
@@ -1056,7 +1056,7 @@ images/*/Discord*logo.*$image,domain=fandom.com|telepedia.fandom.com|*.fandom.co
 ||log*.capcutapi.com^$important
 ||mobile-static.mindbox.ru^$important,domain=~mindbox.ru,third-party
 ||stat.teleport.media^$important
-||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile|com.idamob.tinkoff.android|ru.dublgis.dgismobile|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable
+||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile|com.idamob.tinkoff.android|ru.dublgis.dgismobile|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|com.allgoritm.youla|ru.sports|com.popularapp.periodcalendar
 ||ortomir24.ru/rest/pull.config.get.json$xhr,domain=ortomir24.ru
 ||sp-man.ru/bitrix/templates/eshop_bootstrap_green/assets/img/halva-btn.png^$image,domain=sp-man.ru
 ||vk.com^$domain=shopogolic.net|shopogolic.club
@@ -1109,7 +1109,7 @@ waf/fingerprint$xhr,important
 /report$xhr,domain=apkpure.net|apkpure.com,important
 ||getads.ru^$important
 ||d26xw8rp6mlgfg.cloudfront.net^
-||strm.yandex.net^$app=com.infolink.limeiptv
+||strm.yandex.*^$app=com.infolink.limeiptv,redirect=noopvast-3.0
 ||rumor.press^$third-party,important
 ||otcnet.ru/wp-content/plugins/wp-yandex-metrika/$script,xhr,redirect=metrika-yandex-watch,domain=otcnet.ru
 /ads/styles/all/theme/phpbbads.css$css
@@ -1182,7 +1182,7 @@ calltouch.js$script,xhr
 ||player.smotrim.ru/js/advsdk.js$important
 ||player.smotrim.ru/js/ad-plugin-html5-$important
 ||senoval.cdn.sports.ru/cross-recommender/recommender.$script,domain=cyber.sports.ru
-||yandex.com^$app=jp.ne.ibis.ibispaintxapp
+! yandex.com^$app=jp.ne.ibis.ibispaintxapp
 ||limehd.tv/script/liveinternet.js^$script,important,domain=limehd.tv
 ||static-iptv2021.cdnvideo.ru/*-static/lime-events-config.json^$xhr,domain=limehd.tv
 ||limehd.tv/script/exp-metrika.js^$script,important,redirect=metrika-yandex-watch,domain=limehd.tv
@@ -2426,7 +2426,7 @@ vip.gophersport.com$image
 ||bedsberry.com^$third-party
 ||adpushup.com^$third-party,domain=~adpushup.com,important
 ||zadelom.ru/action/register_visit$domain=zadelom.ru
-||cudy.net^$3p,domain=~localhost|~127.0.0.1|~[::1]|~0.0.0.0|~[::]|~local
+||cudy.net^$third-party,domain=~localhost|~127.0.0.1|~[::1]|~0.0.0.0|~[::]|~local
 ||vk.*/ads_light.php$important
 ||vkplay.ru/tracker
 ||mail.ru/k
@@ -2604,6 +2604,7 @@ _banner.swf
 ||docs.github.com/api/events
 /tilda-stat-$script
 ||anltcs.llimonix.dev^
+/yandexRtb.js
 !
 !
 !
@@ -4902,7 +4903,7 @@ $cookie=_ym_debug
 ||eda.yandex.ru/web-api/custom-logs
 ||eda.yandex.ru/web-api/chunk-metrics$important
 ||yastatic.net/s3/passport-sdk/autofill/v*/sdk-suggest-with-polyfills-
-||strm.yandex.ru/perf 
+||strm.yandex.*/perf 
 ||yandex.ru/internet/api/v*/stats
 ||yandex.ru/internet/api/v*/share-link/
 ||yandex.ru^$cookie,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*
@@ -4910,7 +4911,7 @@ $cookie=_ym_debug
 ||yandex.ru/cycounter$important
 ||hdrc.yandex.net^
 ||yandex.ru/ick/r
-||yandex.ru/search/_crpd/$ping,important
+||yandex.ru/search/_crpd/*$ping,important
 ||yandex.ru/search/reask-suggest-banners
 ||events.plus.yandex.net^$important
 ||yastatic.net/s3/trbro/v*/i/service_$third-party,image,important
@@ -4948,7 +4949,7 @@ $cookie=_ym_debug
 ||grade.market.yandex.ru^
 ||yandex.st^
 ||ipc-ext.s3.yandex.net^
-||kiks.yandex.ru^
+||kiks.yandex.
 ||madmaxdojobegovayayandexru.banner-split-keyword.xyz^$important
 ||market-click2.yandex.ru^$important
 ||media-adv-aab.vs.market.yandex.net^$important
@@ -4983,7 +4984,7 @@ $cookie=_ym_debug
 ||api.plus.yandex.*/graphql?query_name=*%3FregisterSimpleActionWithPixel$xhr,important
 $removeparam=yredirect
 ||yastatic.net/s3/web-alice/public/marketing-lite.html$domain=alice.yandex.ru,important
-||strm.yandex.net/ping$important
+||strm.yandex.*/ping$important
 ||api.music.yandex.*/*/session/*/feedback/$xhr,important
 ||yastatic.net/s3/distribution/yanalytics/v*/$important
 ||radio.api.music.yandex.ru/radio/v*/recommendations/record-event
@@ -4996,7 +4997,7 @@ $removeparam=yredirect
 *$removeparam=ysclid
 ||clck.yandex.net^
 ||yandex.ru/ads/$important,domain=~limehd.tv|~litehd.tv|~pervyi-tv.online|~russia-tv.online|~shadowcore.ru
-||yastatic.net/naydex/yandex-mail/$redirect=noopjs
+!||yastatic.net/naydex/yandex-mail/$redirect=noopjs
 ||yastatic.net/daas/atom.js$important
 ||yastatic.net/s3/psf/mail-liza-react-client/direct-$script,redirect=noopjs
 ||yastatic.net/s3/liza/_/promo-$css
@@ -5031,7 +5032,9 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||yandex.ru/portal/ntp/banner$redirect=nooptext
 ! ||brontp-beta.yandex.ru^$redirect=nooptext
 ! ||brontp.yandex.ru^$redirect=nooptext
-||yastatic.net/q/set/s/rsya-tag-users/
+! ||yastatic.net/q/set/s/rsya-tag-users/
+||yastatic.net/q/
+*$removeparam=appmetrica_device_id
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -5042,7 +5045,7 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
 ||favicon.yandex.net^$app=ru.yandex.weatherplugin
 ||avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
-||strm.yandex.net^$app=ru.yandex.weatherplugin
+||strm.yandex.*^$app=ru.yandex.weatherplugin,redirect=noopvast-3.0
 @@||weather.yandex.ru^$app=ru.yandex.weatherplugin
 !
 @@||static-maps.yandex.ru^$app=ru.yandex.weatherplugin
@@ -5179,7 +5182,7 @@ kul.prod.via.google^
 ||ad.mail.ru^$important
 ||buzzoola.com^$important
 ||stats.rustore.ru^$important
-||log.strm.yandex.ru^$important
+||log.strm.yandex.*^$important
 ||amc.yandex.ru^$important
 ||applovin.com^$important
 ||hybrid.ai^$important
@@ -6204,7 +6207,7 @@ teletype.in#@#div.preloader
 @@||dns.yandex.net^
 @@/LazyGoogleReCaptchaV*.js
 @@||csp.yandex.net^$important
-@@||strm-*-*.strm.yandex.net/music-v*/crypt/ysign*=*/*/*-mp4?
+@@||strm-*-*.strm.yandex.*/music-v*/crypt/ysign*=*/*/*-mp4?
 @@||api.letsencrypt.org^
 @@||youtube.com/api/stats/watchtime$image,domain=youtube.com|youtube-nocookie.com|youtu.be
 @@||yandex.*/captchapgrd
@@ -6227,7 +6230,7 @@ teletype.in#@#div.preloader
 @@||static.vk.com/vkid/*/not_robot_captcha
 @@||yandex.ru/showcaptcha$important
 @@||challenges.cloudflare.com/cdn-cgi/challenge-platform
-@@||yandex.ru/search/_crpd/$~ping
+! @@||yandex.ru/search/_crpd/$~ping
 @@/*vkid_captcha-
 @@||onlinetrade.ru/xpvnsulc/?
 @@||onlinetrade.ru^$cookie
