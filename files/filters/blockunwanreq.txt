@@ -5041,7 +5041,7 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||yandex.ru^$app=ru.yandex.weatherplugin
 ||egress.yandex.net^$app=ru.yandex.weatherplugin
 ||cloud-api.yandex.net^$app=ru.yandex.weatherplugin
-||api.browser.yandex.ru^$app=ru.yandex.weatherplugin
+! api.browser.yandex.ru^$app=ru.yandex.weatherplugin
 ||avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
 ||favicon.yandex.net^$app=ru.yandex.weatherplugin
 ||avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
