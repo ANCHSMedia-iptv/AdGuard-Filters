@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.4.8-R
+! Version: 4.4.9-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-04-03T16:40:00+00:00
+! TimeUpdated: 2026-04-05T16:40:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 03.04.2026 16:40 UTC
+! Last Modified: 05.04.2026 16:40 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -943,9 +943,9 @@
 ||sr.studiostack.com^
 ||setka.media^
 ||error-analytics-sessions-production.shopifysvc.com^$important
-||hs-analytics.net^
+||hs-analytics.net^$important
 ||hsadspixel.net^$important
-||hs-banner.com^
+||hs-banner.com^$important
 ||cnb.cnews.ru^
 ||stat.media^
 ||browser-update.org^$important
@@ -1338,6 +1338,21 @@
 ||collector.githubapp.com^$important
 ||anltcs.llimonix.dev^
 ||events.telega.info^
+||metro.sentry.beta.agency^$important
+||sentry-ingest.kuper.ru^$important
+||stat.tildacdn.com^
+||kimberlite.io^
+||tpembars.com^
+||error-tracking.samokat.ru^$important
+||traces-http.samokat.ru^$important
+||a.omappapi.com^
+||jsonip.com^
+||script.crazyegg.com^
+||hs-scripts.com^$important
+||scout-cdn.salesloft.com^
+||hubspot-forms-static-embed.s3.amazonaws.com^
+||ads-twitter.com^$dnsrewrite=REFUSED
+||p.typekit.net^
 !
 !
 !

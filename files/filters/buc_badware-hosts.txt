@@ -1,7 +1,7 @@
 ! Title: Block Unwanted Connections - Badware Hosts
 ! Description: Блокировка плохих хостов, IP адресов с которых сканируют порты, производят брут-форс, пытаются взломать, использовать в своих плохих целях, а также пытаются пролезть с помощью DNS Poisoning.
-! Version: 1.0.1
-! TimeUpdated: 2026-03-26T15:20:25+00:00
+! Version: 1.0.2
+! TimeUpdated: 2026-04-05T15:20:25+00:00
 ! Expires: 72 hours
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -37,9 +37,7 @@
 ||vps-6a92f300.vps.ovh.net$dnsrewrite=0.0.0.0
 ||example.*$dnsrewrite=0.0.0.0
 ||ec2-18-221-150-215.us-east-2.compute.amazonaws.com^
-||ipinfo.io^
 ||myexternalip.com^
-||ident.me^$important
 ! -
 !
 !
@@ -55,6 +53,11 @@
 ! - Белый список -
 @@||packagecloud.io^
 @@||_https._tcp.packagecloud.io^
+@@||api.ip.sb^
+@@||check-host.net^
+@@||ipinfo.io^
+@@||ident.me^
+@@||seeip.org^
 ! -
 !
 !

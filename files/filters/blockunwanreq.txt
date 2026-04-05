@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.1.0-R
-! TimeUpdated: 2026-04-03T16:40:25+00:00
+! Version: 5.1.1-R
+! TimeUpdated: 2026-04-05T16:40:25+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -183,7 +183,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||img*.russianfood.com/images/common/bottom_line_bg.gif^$image,domain=russianfood.com
 ||stat*.russianfood.com/tapi^$xhr,domain=russianfood.com,important
 ||russianfood.com/images/blg.png^$image,domain=russianfood.com,important
-||rbc.ru/v*/geoinfo/by-ip/$xhr,domain=rbc.ru
+/v*/geoinfo/by-ip/$domain=rbc.ru
 ! ext.clickstream.sberbank.ru/metrics/$xhr,important (новое правило, строка 771)
 !
 ||player.twitch.tv/js/embed/$script,domain=~twitch.tv,important
@@ -206,7 +206,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*sentry.wb.ru|~sentry-*.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~getsentry.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~ingest*.sentry.io|~sentry.obs.mws-team.ru,important
+*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*sentry.wb.ru|~sentry-*.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~getsentry.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~ingest*.sentry.io|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru,important
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com,important
@@ -379,7 +379,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^$important
-/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~ya.ru|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.net|~certina.com|~reddit.com|~redd.it|~78.ru|~instagram.com|~api.weather.yandex.ru|~youla.ru|~smotrim.ru
+/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~ya.ru|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.net|~certina.com|~reddit.com|~redd.it|~78.ru|~instagram.com|~api.weather.yandex.ru|~youla.ru|~smotrim.ru|~supergraph.metro-cc.ru
 ||getrcmx.com^$important
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.$script,domain=xcom-shop.ru,important
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -616,9 +616,9 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||cdn*.spravportal.ru/Images/Creatives/fl_getgift.png^$image,domain=spravportal.ru
 ||cdn*.spravportal.ru/Images/Creatives/WCBot_RC.jpg^$image,domain=spravportal.ru
 ||8sot.su/js/other/advisvisble.js^$script,domain=8sot.su,important
-||core-colibri-api.samokat.ru/api/clickstream^$xhr,domain=samokat.ru,important
-||core-colibri-api.samokat.ru/api/events/$xhr,domain=samokat.ru,important
-||samokat.ru/api/metrics^$xhr,ping,domain=samokat.ru,important
+||core-colibri-api.samokat.ru/api/clickstream^$xhr,domain=samokat.ru,redirect=nooptext,important
+||core-colibri-api.samokat.ru/api/events/$xhr,domain=samokat.ru,redirect=nooptext,important
+||samokat.ru/api/metrics^$xhr,ping,domain=samokat.ru,redirect=nooptext,important
 ||sfr7ag.ru^
 ||samokat.ru/weborama.html^$domain=samokat.ru,important
 ||api-web.samokat.ru/showcase/recommendations/whatToTryProducts$xhr,domain=samokat.ru
@@ -768,7 +768,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||apptornado.com^$important
 ||bugly.qq.com^$important
 !
-||clickstream.sberbank.ru^$important
+||clickstream.sberbank.ru^$important,redirect=nooptext
 ||check.unity.*^$important
 ||appbrain.com^$third-party
 ||js.memberful.com/embed.js^$script,important
@@ -1295,7 +1295,7 @@ $cookie=s24id
 ||cf.dxmcdn.com/dta/9wb.js^$script,domain=9tv.co.il
 ||advisor.api.2gis.*/api/*/advise/gta$xhr,redirect=nooptext,domain=2gis.ru|2gis.*
 ||stmtag.ru^$important
-/clickstream.js$important,domain=~stmtag.ru
+/clickstream.js$important,domain=~stmtag.ru,redirect=noopjs
 ||vk.*/share.php$third-party,domain=~vk.com|~vk.ru|~vk.me,important
 ||go3.*/api/*/sections/recommendations?$xhr,domain=go3.lt|go3.lv|go3.tv
 ||redcdn.pl/file/*/web/tdbc/*/index.html$subdocument,third-party
@@ -2228,13 +2228,13 @@ $removeparam=msclkid
 ||vkpic.ru/api/track^$xhr,domain=vkpic.ru
 ||id.vk.com/account/static/*_banner_*.*.*$image,domain=id.vk.com
 ||catalog.api.2gis.*/*/ads/$xhr,domain=2gis.ru|2gis.*,redirect=nooptext,important
-||clickstream.lenta.tech^$important
+||clickstream.lenta.tech^$important,redirect=nooptext
 ||s*.ucoz.net^$important
 ||vk.com/video_mediascope.php$xhr,important
 ||ovego.tv/images/modern_icon_informers.gif^$image,domain=ovego.tv
 *$document,removeparam=is_autologin_ya
 ||i-trailer.ru^
-||clickstream-proxy.api.2gis.*^$important
+||clickstream-proxy.api.2gis.*^$important,redirect=nooptext
 ||advisor.api.2gis.*^$important
 ||mediascope.mail.ru^$important
 ||alt-xray.imgsmail.ru^$important
@@ -2294,7 +2294,7 @@ $removeparam=msclkid
 ||recostream.go.mail.ru^$important
 /mediascopeForMedia/$important
 ||rees46.ru^
-||avito.ru/clickstream/$domain=avito.ru
+||avito.ru/clickstream/$domain=avito.ru,redirect=nooptext
 /backend/device_detect.php^$xhr
 ||sentry.amediateka.tech^$important
 ||lkoi3q.ru^
@@ -2620,6 +2620,27 @@ _banner.swf
 ||resources.blogblog.com/img/blank.gif$redirect-rule=1x1-transparent.gif
 /yandex-metrika.js$redirect=metrika-yandex-watch
 ||hotbot.ai^$third-party,domain=~hotbot.ai
+||stellarlabs.ai^$third-party,domain=~stellarlabs.ai
+||metro.sentry.beta.agency^$important
+||sentry-ingest.kuper.ru^$important
+/dfp_page$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,redirect=noopjs
+||s.rbk.ru/*/common/common-*/scripts/build/fn/_lozad.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru
+||s.rbk.ru/*/common/common-*/scripts/build/fn/_stickyBlock.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru
+tildastat-*.$script,redirect=noopjs
+||facebook.com/impression.php/
+||stat.tildacdn.com^$redirect=nooptext
+||tpembars.com^
+||cdn.iportal.ru/static/promocodes/$image,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
+||error-tracking.samokat.ru^$important
+||traces-http.samokat.ru^$important
+||api-web.samokat.ru/promo/*/$domain=samokat.ru
+||a.omappapi.com^
+||jsonip.com^
+||hs-scripts.com^
+||hsforms.com/embed/v*/counters.gif$important
+||ads-twitter.com^
+||p.typekit.net^
+about:blank^$domain=greynoise.io
 !
 !
 !
@@ -4505,6 +4526,17 @@ blog.dynamoo.com###HTML2
 x.com###layers > div.css-175oi2r.r-aqfbo4.r-zchlnj.r-1d2f490.r-1xcajam.r-1p0dtai.r-12vffkv > div.css-175oi2r.r-12vffkv:first-child
 leto-leto.com##.vm--container, .scrollable
 leto-leto.com##.hotbot-widget
+habr.com##.floating-image
+rbc.ru,sportrbc.ru,autonews.ru,rbcautonews.ru##.sticky-wrapper
+rbc.ru,sportrbc.ru,autonews.ru,rbcautonews.ru##.style_promo__3MuRI, .style_promo-aside__8uUGU, .style_promo-mobile__ShC16
+rbc.ru,sportrbc.ru,autonews.ru,rbcautonews.ru###\36 9d253ca9a7947c9450fce5c > div.m-gutter-b:first-child > div.card-wrapper:last-child > p.paragraph
+rbc.ru,sportrbc.ru,autonews.ru,rbcautonews.ru##a[href*="://max.ru/rbc"]
+rbc.ru##.article__issue-next-material-inner
+nsk.plus.rbc.ru##.l-base__col__right
+rskrf.ru##.col-xl-4, .f-subscribe
+2gis.ru##._n1367pl
+cloudwards.net##.code-block, .code-block-d41d8cd98f00b204e9800998ecf8427e, .code-block-4, .code-block-block-4
+cloudwards.net##.cws_newsletter, .cws_newsletter_footer
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5081,6 +5113,8 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||yastatic.net/q/
 $removeparam=appmetrica_device_id
 ||yandexcdn.com/cdn-cgi/trace
+||yastatic.net/s3/*/public/js/chunks/analytics__items.$script
+||yastatic.net/s3/*/public/js/chunks/analytics__banners.$script
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -5528,6 +5562,7 @@ ya.ru##a[href^="https://ya.ru/an/"]
 ||bi-events-collector.spot.im^
 ||singular.net^
 ||rumstat.cdnvideo.ru^
+||st.hbrd.io^
 !
 ! --
 !
@@ -6334,6 +6369,7 @@ teletype.in#@#div.preloader
 @@||st.sweb.ru/file*?rand=
 @@||apis.smotrim.ru/graphql$domain=smotrim.ru,important
 @@||sba.yandex.net/clientreport/phishing
+@@||supergraph.metro-cc.ru^
 !
 !
 ! -
