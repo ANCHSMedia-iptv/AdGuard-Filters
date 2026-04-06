@@ -379,7 +379,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^$important,redirect=noopjs
-/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~ya.ru|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.net|~certina.com|~reddit.com|~redd.it|~78.ru|~instagram.com|~api.weather.yandex.ru|~youla.ru|~smotrim.ru|~supergraph.metro-cc.ru
+/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~ya.ru|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.net|~certina.com|~reddit.com|~redd.it|~78.ru|~instagram.com|~api.weather.yandex.ru|~youla.ru|~smotrim.ru|~supergraph.metro-cc.ru|~onedrive.live.com
 ||getrcmx.com^$important
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.$script,domain=xcom-shop.ru,important
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -1805,7 +1805,7 @@ $cookie=yaParams
 ||delivery.adrecover.com^$important
 ||analytics.ahrefs.com^$important
 ||logincdn.msftauth.net/shared/*/chunks/oneds-analytics-js_*.js^$script
-||onedrive.live.com/_layouts/*/images/BLANK.gif^$xhr,domain=onedrive.live.com,redirect-rule=1x1-transparent.gif
+||onedrive.live.com/_layouts/*/images/BLANK.gif$domain=onedrive.live.com,redirect-rule=1x1-transparent.gif
 /spacer.gif^$image,domain=iptvin.ru|denms.ru,redirect-rule=1x1-transparent.gif
 ||tricolor.ru/frontend-*/img/1px.png^$image,domain=tricolor.ru,redirect-rule=1x1-transparent.gif,important
 ||cdn.pochtabank.ru/_next/image?url=*files.pochtabank.ru/medialibrary/*/Telegram_logo.$image,domain=pochtabank.ru
@@ -6405,6 +6405,7 @@ teletype.in#@#div.preloader
 @@||sba.yandex.net/clientreport/phishing
 @@||supergraph.metro-cc.ru^
 @@||*-lg.h2.nexus:8008/ws-ping$websocket,domain=h2.nexus
+@@||onedrive.live.com/*/*/_api/v*/graphql$xhr,domain=onedrive.live.com
 !
 !
 ! -
