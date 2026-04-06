@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.4.9-R
+! Version: 4.5.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-04-05T16:40:00+00:00
+! TimeUpdated: 2026-04-06T16:40:00+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 05.04.2026 16:40 UTC
+! Last Modified: 06.04.2026 16:40 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -68,7 +68,7 @@
 ||tracking.ott.yandex.net^$important
 ||*adfox*^$important
 ||startup.mobile.yandex.net^$important
-||startup-mobile.ap.yandex-net.ru^$important
+||ap.yandex-net.ru^$important
 ||yandexadexchange.net^$important
 ||webvisor.com^$important
 ||appmetrica.yango.com^$important
@@ -90,7 +90,7 @@
 ||yandexmetri*.com^$important
 ||trends.yandex.net^
 ||advertising.yandex.ru^
-||clck.yandex.ru^
+||clck.yandex.*^
 ||startup.mobile.yandex.nes^$important
 ||mc.yango.com^$important
 ||events.plus.yandex.net^$important
@@ -154,6 +154,7 @@
 ||log.api-maps.yandex.ru^$important
 ||admetrica.ru^
 ||im*-tub-*.yandex.net^
+||uaas.yandex.ru^
 !
 !
 ! ===
@@ -259,7 +260,7 @@
 ||peoplestackwebexperiments*.clients*.google.com^
 ||infinitedata*.googleapis.com^
 ||safeframe.googleapis.com^$important
-||meditation.goog^$important
+||mediation.goog^$important
 ||sin.prod.via.google^
 ||kul.prod.via.google^
 ||adsense.google.com^$important
@@ -1275,7 +1276,7 @@
 ||aax-*.amazon.com^
 ||ad.dm.gg^
 ||bcvp0rtal.com^
-||a.nel.cloudflare.com^$important
+||nel.cloudflare.com^$dnsrewrite=0.0.0.0,important
 ||g.static.mega.co.nz^
 ||mpsuadv.ru^
 ||*-tracking.youdo.com^
@@ -1318,7 +1319,7 @@
 ||stat.online.sberbank.ru^
 ||tradplusad.com^
 ||ads.themoneytizer.com^
-||a-ads.com^$dnsrewrite=0.0.0.0
+||a-ads.com^$dnsrewrite=ad-block.dns.adguard.com
 ||bdstatic.com^$important
 ||sofire.bdstatic.com^$important
 ! apm-proxy.obs.mts.ru^
@@ -1353,6 +1354,19 @@
 ||hubspot-forms-static-embed.s3.amazonaws.com^
 ||ads-twitter.com^$dnsrewrite=REFUSED
 ||p.typekit.net^
+||gtm.deepl.com^
+||s.deepl.com^
+||collect.alipay.com^
+||q7wiow.ru^
+||analytics.ff.avast.com^$dnsrewrite=0.0.0.0
+||jupiter.*.sys.miui.com^$important
+||*videonow.com^
+||i-trailer.ru^
+||videoroll.net^
+||videoplayerhub.com^
+||performance.radar.cloudflare.com^$dnsrewrite=0.0.0.0
+||html-load.cc^$dnsrewrite=0.0.0.0
+||tpembar.com^
 !
 !
 !
@@ -1837,6 +1851,7 @@
 @@||safebrowsing.googleapis.com^
 @@||rr*---sn-*.gvt1.com^
 @@||yandex-team.ru^
+@@||*-lg.h2.nexus^
 !
 !
 !
