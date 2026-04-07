@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections (Experimental)
-! Version: 20260406
-! Last Modified: 06.04.2026
+! Version: 20260407
+! Last Modified: 07.04.2026
 ! It is updated frequently because it contains experimental filtering rules.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Description: Блокировка нежелательных запросов - экспериментальные правила.
@@ -19,7 +19,7 @@
 !
 !
 !
-||im*-tub-ru.yandex.net^$domain=~*yandex.*
+!
 !
 !
 !
