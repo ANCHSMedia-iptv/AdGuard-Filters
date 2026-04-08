@@ -8,7 +8,7 @@ Filters:
 
 Updated 08.04.2026
 - BUC: 08.04
-- BUC DNS: 07.04
+- BUC DNS: 08.04
 - FUS: The filter will not be updated after uploading to the repository after 29.03.2025.
 
 Started 22.09.2024
