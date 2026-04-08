@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.5.3-R
+! Version: 4.5.4-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-04-08T16:11:46+00:00
+! TimeUpdated: 2026-04-08T18:17:15+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 08.04.2026 16:11 UTC
+! Last Modified: 08.04.2026 18:17 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -195,7 +195,7 @@
 ! -- == Аналитика Microsoft (Майкрософт) ==
 !
 ||events.data.microsoft.com^$important
-||pipe.aria.microsoft.com^$important
+||aria.microsoft.com^$important
 ||events.data.msn.com^$important
 ||telemetry.microsoft.us^$important
 !
@@ -407,7 +407,7 @@
 ||artfut.com^$important
 ||d1tracker.ru^$important
 ||adpod.in^
-||logs.unchecky.com^$important
+||logs.unchecky.com^$important,dnsrewrite=0.0.0.0
 ||cpa.hh.ru^$important
 ||s*.wi-fi.ru^$important
 ||static.addtoany.com^$important
@@ -1388,6 +1388,23 @@
 ||slackb.com^
 ||sentry.walletbot.me^$important
 ||analytics.ff.avast.com^
+||config-factory.com^
+||api-statist.tinkoff.ru^$important
+||stacks.vk-portal.net^$important
+||api-statist.tbank.ru^$important
+||dsp.groupminteraction.ru^$important
+||ophan.theguardian.com^
+||deltarockme.com^
+||rum.hlx.page^
+||consent.trustarc.com^
+||cdn-rtb.sape.ru^
+||bidder.criteo.com^
+||static.criteo.net^
+||marketo.net^
+||bizible.com^
+||all.by^
+||cdnssl.clicktale.net^
+||static.terratraf.io^
 !
 !
 !
@@ -1587,7 +1604,7 @@
 @@||smartcaptcha.yandexcloud.net^
 @@||support.avito.ru
 @@||stats.1clickvpn.com^
-@@||stacks.vk-portal.net^
+!
 @@||clearurls.xyz^
 @@||api.catcast.tv^
 @@||vgtrk.cdnvideo.ru^

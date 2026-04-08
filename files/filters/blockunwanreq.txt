@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.1.4-R
-! TimeUpdated: 2026-04-07T14:45:25+00:00
+! Version: 5.1.5-R
+! TimeUpdated: 2026-04-07T18:16:47+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -280,8 +280,8 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! (новое правило, строка 138 и 139)
 ||userapi.com/js/api/openapi.js$script,third-party,domain=~vk.com|~vk.ru|~vk.me,important
 ||analytics.vsem-edu-oblako.ru*/track^$xhr,important,redirect=nooptext
-||counter.dsp.groupminteraction.ru/DSPCounter.js^$script,important,redirect=noopjs
-|! sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com (новое правило, строка 285)
+||dsp.groupminteraction.ru^$important
+! sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com (новое правило, строка 285)
 ||sa.hoodmaps.com^$important,domain=hoodmaps.com,redirect=noopjs
 ! citilink.ru/graphql/^$xhr,domain=citilink.ru (новое правило, строка 382)
 ||fga.citilink.ru/collect^$xhr,domain=citilink.ru,redirect=nooptext,important
@@ -379,7 +379,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^$important,redirect=noopjs
-/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~ya.ru|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*|~yandex.net|~certina.com|~reddit.com|~redd.it|~78.ru|~instagram.com|~api.weather.yandex.ru|~youla.ru|~smotrim.ru|~supergraph.metro-cc.ru|~onedrive.live.com|~live.com
+/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~ya.ru|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*|~yandex.net|~certina.com|~reddit.com|~redd.it|~78.ru|~instagram.com|~api.weather.yandex.ru|~youla.ru|~smotrim.ru|~supergraph.metro-cc.ru|~onedrive.live.com|~live.com|~github.com|~whatsapp.com
 ||getrcmx.com^$important
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.$script,domain=xcom-shop.ru,important,redirect=noopjs
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -415,7 +415,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||medportal.ru/cookie_notice^$xhr,domain=medportal.ru,redirect=nooptext,important
 ||fedpress.ru/themes/fp/js/share.js^$script,domain=fedpress.ru,redirect=noopjs,important
 ||static.mel.fm/graph.js$script,domain=mel.fm,important
-||*cookie*.*^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~githubassets.com|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~youtube-nocookie.com|~2gis.ru|~2gis.*,redirect=noopcss
+||*cookie*.css^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~githubassets.com|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~youtube-nocookie.com|~2gis.ru|~2gis.*|~comnews.ru|~tyuiu.ru|~laratranslate.com,redirect=noopcss
 ||b17.ru/img/0.gif^$image,domain=b17.ru,important
 ||ufamama.ru/UserStatistics/$xhr,important,domain=ufamama.ru
 ||ufamama.ru/services/BlogAdvisor/$xhr,important,domain=ufamama.ru
@@ -2661,7 +2661,7 @@ about:blank^$domain=greynoise.io
 ||poiskvps.ru/images/9aGaYUN9zALTTtkPqR/f1eab2671f82347b903e3c3d21307ee0.gif^$image,domain=poiskvps.ru
 ||poiskvps.ru/images/9aGaYUN9zALTTtkPqR/79f63848b57fd4a7ee951b9dcda4a259.svg^$image,domain=poiskvps.ru
 ||poiskvps.ru/images/icons/telegram.png^$image,domain=poiskvps.ru
-||hostinghub.ru/ajaxblocks?blocks=views-side_recommend-block$xhr,domain=hostinghub.ru,redirect=nooptext
+||hostinghub.ru/ajaxblocks?blocks=views-side_recommend-block$xhr,domain=hostinghub.ru
 ||hostinghub.ru/sites/default/files/styles/logo_grid/public/logo/$image,domain=hostinghub.ru
 ||ant.sberbank.ru^$important
 ||cdnflow.ru^
@@ -2689,6 +2689,11 @@ about:blank^$domain=greynoise.io
 ! ||js.hostingradio.ru/melon/melon-player-ad.js^$script,redirect=noopjs (soon..)
 ||sentry.walletbot.me^$important
 ||analytics.ff.avast.com^
+||config-factory.com^$important
+||sweb.ru/common/css/img/blank.gif^$image,domain=sweb.ru,redirect=1x1-transparent.gif
+||otvet-front.cdn-vk.net/*/_nuxt/AdvertBlockInFeedMultiple.$css,domain=otvet.mail.ru,redirect=noopcss
+||otvet-front.cdn-vk.net/*/_nuxt/VkVideo.$css,domain=otvet.mail.ru,redirect=noopcss
+||reuters.com/pf/resources/dist/ads/$script,domain=reuters.com,redirect=noopjs,important
 !
 !
 !
@@ -2718,13 +2723,13 @@ about:blank^$domain=greynoise.io
 ! Blocking hidden images in one pixel (1 x 1).
 ! Блокировка скрытых изображений в один пиксель (1 x 1).
 ! *4pda.to/s/PXti*.gif^$image,xhr,domain=4pda.to,redirect=1x1-transparent.gif,important
-!  4pda.to/static/module/lytebox/images/blank.gif^$image,domain=4pda.to
+!  4pda.to/static/module/lytebox/images/blank.gif^$image,domain=4pda.to,redirect=1x1-transparent.gif
 !
 !
 !
 !
 ! (22.01.25: скрытые изображения исходят через image запрос, важные через xhr - эксперименты)
-! 4pda.to/s/*.gif^$image,xhr,domain=4pda.to
+! 4pda.to/s/*.gif^$image,xhr,domain=4pda.to,redirect=1x1-transparent.gif
 !
 !
 ! Рекл. изображения
@@ -3193,7 +3198,7 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 ||tads.tbank.ru^$important
 ||webim-tknzr.tinkoff.ru^
 ||error-hub.tbank.ru^
-||ms-dsp.tinkoff.ru^$redirect=1x1-transparent.gif
+||ms-dsp.tinkoff.ru^$important
 *.ru/performance/$domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=empty
 !
 ! Чат поддержки, разные элементы, разделы и прочее в ЛК на сайте сломались в результате блокировки множества адресов (запросов).
@@ -4792,7 +4797,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ! == Microsoft Analytics ==
 ! == Аналитика Microsoft (Майкрософт) ==
 !
-||pipe.aria.microsoft.com^$important
+||aria.microsoft.com^$important
 ||events.data.microsoft.com^$important
 ||events.data.msn.com^$important
 ||telemetry.microsoft.us^$important
@@ -5191,6 +5196,9 @@ $removeparam=appmetrica_device_id
 ||yastatic.net/s3/*/public/js/chunks/analytics__items.$script
 ||yastatic.net/s3/*/public/js/chunks/analytics__banners.$script
 ||im*-tub-*.yandex.net^
+||api.browser.yandex.*/installstats/$important
+||yandex.*/secure-ads/$important
+||egress.yandex.net^
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -5620,7 +5628,7 @@ ya.ru##a[href^="https://ya.ru/an/"]
 ||fresnel.vimeocdn.com^
 ||jwpltx.com^
 ||connatix.com^
-||f.vimeocdn.com^
+! ||f.vimeocdn.com^
 ||video-ads.twitter.com^
 ||ads.dailymotion.com^
 ||aax-*.amazon.com^
@@ -6460,6 +6468,8 @@ teletype.in#@#div.preloader
 @@||vsd*.okcdn.ru/dash/stream_*/stream.manifest/*/*/srcAg/*/*/frag-*-*.dash
 @@||vkvsd*.okcdn.ru/dash/stream_*/stream.manifest/*/*/srcAg/*/*/stream-*.*?
 @@||vkvsd*.okcdn.ru/dash/stream_*/stream.manifest/*/*/srcAg/*/*/frag-*-*.dash
+@@||github.com/_graphql
+@@||whatsapp.com/api/graphql/
 !
 !
 ! -
