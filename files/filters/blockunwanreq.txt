@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 5.1.6-R
-! TimeUpdated: 2026-04-09T14:44:04+00:00
+! TimeUpdated: 2026-04-11T15:44:04+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -677,7 +677,7 @@ $cookie=/__ddg*/,important
 ||pikabu.ru/post_img/2025/01/14/8/17368606351450798.png^$image,domain=pikabu.ru
 ||d.pikabu.ru/counters/$xhr,domain=pikabu.ru
 ||matchtv.ru/api/v*/banners?$xhr,domain=matchtv.ru,important
-||idam.metro-cc.ru/authorize/api/oauth2/check_cookie_iframe^$domain=metro-cc.ru,redirect=noopframe,important
+!
 ||calc.ru/include/ads.php$xhr,domain=calc.ru,important
 ||calc.ru/js/informer.js$script,domain=calc.ru,important
 ||calc.ru/include/adsbygoogle.php$xhr,domain=calc.ru,redirect=googlesyndication-adsbygoogle,important
@@ -853,7 +853,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||sentry.x5.ru^$important
 ||tabun.info^
 ! appcenter.ms/logs^$important
-||ads.vk.com^$important,domain=~ads.vk.ru
+||ads.vk.com^$important,domain=~ads.vk.ru|~ads.vk.com
 ||events.maps.vk.com^$important
 ||madnet.ru^$important
 ||mydas.mobi^$important
@@ -2698,6 +2698,9 @@ about:blank^$domain=greynoise.io
 ||reuters.com/pf/resources/dist/ads/$script,domain=reuters.com,redirect=noopjs,important
 ||cs45.pikabu.ru/ev.php$domain=pikabu.ru
 ||cs16.pikabu.ru/s/2026/03/31/11/zkxsjtw3.jpg^$image,domain=pikabu.ru
+||st.vk.*/dist/core_spa/error_monitoring.$script,domain=vk.com|vk.ru,redirect=noopjs
+||nnmstatic.win/forum/misc/js/share.js^$script,domain=nnmclub.to,redirect=noopjs
+||me.gvt1.com^$app=ru.oneme.app
 !
 !
 !
@@ -4619,7 +4622,7 @@ poiskvps.ru###SubMainDiv2 > div > div:nth-child(2) > div.navbar.headbar:last-chi
 poiskvps.ru###SubMainDiv2 > div > div:nth-child(2) > div.navbar.headbar:last-child > div.inner > ul.headbar-right:nth-child(3) > li:first-child
 poiskvps.ru###UpDiv
 hostinghub.ru###block-views-side-recommend-block
-rknweb.ru##.afvertising-
+!rknweb.ru##.afvertising-
 rknweb.ru##.afvertising
 rbc.ru##.styles_aside-top__fvBSg
 rbc.ru###\36 2a1eac49a79478250299d07 > div.stroke-y.gutter-y.m-gutter-b:nth-child(2)
@@ -4628,6 +4631,13 @@ pikabu.ru##div.sidebar-block.sidebar-block_border.sidebar-block_mail.email-block
 pikabu.ru##div[id*="adfox"]
 pikabu.ru##.page-story__before-comments
 pikabu.ru##div.sidebar.sidebar_right:first-child > aside.sidebar__inner > section.sidebar-block.sidebar-block_border.sidebar-block_no-padding:nth-child(5)
+! 11.04.26: Взято отсюда: [https://github.com/AdguardTeam/AdguardFilters/issues/227998] (my issue lol)
+vesti.ru##.floating-controls
+vesti.ru#$#.news feed .zoom-block-wrapper[data-v-b1194a93]:has(> a.router-link-active) { position: static !important; }
+vesti.ru##.social-links
+vesti.ru##.top-block
+vesti.ru##.nested-page-top
+!
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -6484,6 +6494,8 @@ teletype.in#@#div.preloader
 @@||whatsapp.com/api/graphql/
 @@||yandex.*/maps/api/masstransit/getLayerRegions
 @@||api.kod.ru/graphql
+@@||idam.metro-cc.ru/authorize/api/oauth2/check_cookie_iframe^$domain=metro-cc.ru
+@@||ads.vk.*^$important,domain=ads.vk.com|ads.vk.ru
 !
 !
 ! -
