@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.1.6-R
-! TimeUpdated: 2026-04-11T15:44:04+00:00
+! Version: 5.1.7-R
+! TimeUpdated: 2026-04-13T16:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -44,7 +44,7 @@
 ||vk-analytics.ru^$important
 ||*instabug*^$important
 ||xray.mail.ru^$important,redirect=empty
-||*dbankcloud*^$important
+! *dbankcloud*^$important,domain=~huawei.com
 ||rayjump.com^$important
 ||smi2.ru^$important,domain=~smi2.ru,third-party
 ||24smi.net^$important,third-party
@@ -1073,7 +1073,7 @@ waf/fingerprint$xhr,important
 !
 !
 ||favicon.yandex.net^$app=com.avito.android
-||avatars.mds.yandex.net^$app=com.avito.android
+||avatars.mds.yandex.net^$app=com.avito.android|free.vpn.proxy.secure|com.now.vpn|octohide.vpn|com.free.tiptop.vpn.proxy|free.vpn.unblock.proxy.turbovpn
 ||twinrdengine.com^$important,redirect=noopjs
 ||adthg.com^$important,redirect=noopjs
 ||etahub.com^$important,redirect=noopjs
@@ -1109,7 +1109,7 @@ waf/fingerprint$xhr,important
 /report$xhr,domain=apkpure.net|apkpure.com,important
 ||getads.ru^$important
 ||d26xw8rp6mlgfg.cloudfront.net^
-||strm.yandex.*^$app=com.infolink.limeiptv,redirect=noopvast-3.0
+||strm.yandex.*^$app=com.infolink.limeiptv|octohide.vpn,redirect=noopvast-3.0
 ||rumor.press^$third-party,important
 ||otcnet.ru/wp-content/plugins/wp-yandex-metrika/$script,xhr,redirect=metrika-yandex-watch,domain=otcnet.ru
 /ads/styles/all/theme/phpbbads.css$css
@@ -2701,7 +2701,18 @@ about:blank^$domain=greynoise.io
 ||st.vk.*/dist/core_spa/error_monitoring.$script,domain=vk.com|vk.ru,redirect=noopjs
 ||nnmstatic.win/forum/misc/js/share.js^$script,domain=nnmclub.to,redirect=noopjs
 ||me.gvt1.com^$app=ru.oneme.app
-!
+||cdn.yandex.net^$app=free.vpn.proxy.secure|com.zoogvpn.android|com.freevpnplanet|com.free.tiptop.vpn.proxy|free.vpn.unblock.proxy.turbovpn
+||rutube.ru^$app=com.zoogvpn.android
+||ximitime.com/wp-content/themes/xiaomiuiwp/assets/psmemeos.gif^$image,domain=ximitime.com
+||metrics*.data.hicloud.com^
+||metrics.data.hicloud.com^
+||grs.hicloud.com^
+||logservice.hicloud.com^
+||logservice*.hicloud.com^
+||logbak.hicloud.com^
+||ads.huawei.com^
+||st.okcdn.ru/static/calls_*/*/kws_*$redirect=empty
+||api.ok.ru/api/log$redirect=empty
 !
 !
 !
@@ -3532,7 +3543,8 @@ promocodes.hi-tech.mail.ru##div[class^="coupon-modal__banners"]
 promocodes.hi-tech.mail.ru##div[class^="scroll-banner"]
 promocodes.hi-tech.mail.ru##div[class^="retailer-coupon--partner"]
 mega.comfortkino.ru##div[class^="popup-wrap"]
-xiaomitime.com##a[class^="our_app"]
+! xiaomitime.com##a[class^="our_app"] (9.04.26: XiaomiTime: New name (reason: DMCA strike from Xiaomi)) [See: t.me/xiaomiui/20698, x.com/timexiaomi/status/2042178571423064564?s=20]
+ximitime.com##a[class^="our_app"]
 sportmaster.ru##div[class^="sm-cookie-agreement-old"]
 sportmaster.ru##a[class^="sm-plate sm-plate--target"]
 demix.ru##div[class^="product-bnpl product-page__bnpl"]
@@ -4638,6 +4650,8 @@ vesti.ru##.social-links
 vesti.ru##.top-block
 vesti.ru##.nested-page-top
 !
+##div[class^="featuredb_ad"]
+pikabu.ru##a[href*="promokod.pikabu.ru/shops/aroma-butik?"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4997,10 +5011,10 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ! == Яндекс: Аналитика, реклама и прочее. ==
 !
 ||banners*.yandex.net^$important
-||appmetrica.yandex.net^$domain=~redirect.appmetrica.yandex.net
-||appmetrica.yandex.ru^$domain=~redirect.appmetrica.yandex.ru
+||appmetrica.yandex.net^$important
+||appmetrica.yandex.ru^$important
 ||appmetrika.yandex.ru^
-||appmetrica.yandex.com^$domain=~redirect.appmetrica.yandex.com
+||appmetrica.yandex.com^$important
 ||bs.yandex.ru^$important
 ||direct.yandex.ru^$important
 ||tracking.ott.yandex.net^$important
@@ -5210,8 +5224,8 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||yandex.ru/portal/ntp/banner$redirect=nooptext
 ! ||brontp-beta.yandex.ru^$redirect=nooptext
 ! ||brontp.yandex.ru^$redirect=nooptext
-! ||yastatic.net/q/set/s/rsya-tag-users/
-||yastatic.net/q/
+||yastatic.net/q/*/rsya-tag-users/
+! ||yastatic.net/q/
 $removeparam=appmetrica_device_id
 ||yandexcdn.com/cdn-cgi/trace
 ||yastatic.net/s3/*/public/js/chunks/analytics__items.$script
@@ -5221,13 +5235,13 @@ $removeparam=appmetrica_device_id
 ||yandex.*/secure-ads/$important
 ||egress.yandex.net^
 ||yandex.ru/maps/_crpd/*/*/*|$xhr
+||api-maps.yandex.ru/v*/counters
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
 ||yandex.ru^$app=ru.yandex.weatherplugin
 ||egress.yandex.net^$app=ru.yandex.weatherplugin
 ||cloud-api.yandex.net^$app=ru.yandex.weatherplugin
-||avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
 ||favicon.yandex.net^$app=ru.yandex.weatherplugin
 ||avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
 ||strm.yandex.*^$app=ru.yandex.weatherplugin,redirect=noopvast-3.0
@@ -5671,6 +5685,7 @@ ya.ru##a[href^="https://ya.ru/an/"]
 ||singular.net^
 ||rumstat.cdnvideo.ru^
 ||st.hbrd.io^
+||adx.com.ru^
 !
 ! --
 !
@@ -6495,7 +6510,9 @@ teletype.in#@#div.preloader
 @@||yandex.*/maps/api/masstransit/getLayerRegions
 @@||api.kod.ru/graphql
 @@||idam.metro-cc.ru/authorize/api/oauth2/check_cookie_iframe^$domain=metro-cc.ru
-@@||ads.vk.*^$important,domain=ads.vk.com|ads.vk.ru
+@@||ads.vk.*^$domain=ads.vk.com|ads.vk.ru
+@@/counters^$domain=astral.ru|au.ru|av.by|glavagronom.ru|itpc.ru|letu.ru|mos.ru|pay.tns-e.ru|pikabu.ru
+@@||ximitime.com^
 !
 !
 ! -
@@ -6678,7 +6695,6 @@ teletype.in#@#div.preloader
 ||clck.ru/3PBAni^$all
 ||151.243.18.101/auto_campaign$all
 ||clck.ru/3P9b4M^$all
-||softversterport.gq^
 ||clk.li/SwmO^$all
 ||obqj2.com^$all
 ||hellopeople.app.tc^$all

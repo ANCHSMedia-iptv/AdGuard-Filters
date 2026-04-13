@@ -3,7 +3,7 @@
 ! Version: 4.5.4-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-04-11T15:46:15+00:00
+! TimeUpdated: 2026-04-13T16:28:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 11.04.2026 15:46 UTC
+! Last Modified: 13.04.2026 16:28 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -294,7 +294,7 @@
 ||*instabug*^$important
 ||xray.mail.ru^$important
 ||ad.mail.ru^$important
-||*dbankcloud*^$important
+! ||*dbankcloud*^$important
 ||rayjump.com^$important
 ||smi2.ru^$important
 ||24smi.net^$important
@@ -1406,6 +1406,7 @@
 ||cdnssl.clicktale.net^
 ||static.terratraf.io^
 ||188.186.154.88^
+||ads.huawei.com^
 !
 !
 !
@@ -1897,6 +1898,7 @@
 @@||*-lg.h2.nexus^
 @@||ohttp-relay-safebrowsing-android.google.fastly-edge.com^
 @@||ohttp-relay-safebrowsing-*.google.fastly-edge.com^
+@@||ximitime.com^
 !
 !
 !
