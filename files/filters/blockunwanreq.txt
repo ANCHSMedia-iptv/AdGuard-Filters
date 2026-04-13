@@ -44,7 +44,7 @@
 ||vk-analytics.ru^$important
 ||*instabug*^$important
 ||xray.mail.ru^$important,redirect=empty
-! *dbankcloud*^$important,domain=~huawei.com
+! ||*dbankcloud*^$important,domain=~huawei.com
 ||rayjump.com^$important
 ||smi2.ru^$important,domain=~smi2.ru,third-party
 ||24smi.net^$important,third-party
