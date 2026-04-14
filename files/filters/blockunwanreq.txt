@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.1.7-R
-! TimeUpdated: 2026-04-13T16:30:30+00:00
+! Version: 5.1.8-R
+! TimeUpdated: 2026-04-14T16:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1496,7 +1496,7 @@ $cookie=RadioStatistica
 ||leto-leto.com/storage/2024/01/09/703a1a5899a2f8bb97a4471cd170148abe96d327.svg^$image,domain=leto-leto.com,important
 ||geocam.ru/images/pix.gif^$image,domain=geocam.ru,redirect=1x1-transparent.gif,important
 ||interfax.ru/cnt/
-*.*/undefined^$xhr,image,script,other,redirect=empty
+*.*/undefined|^$xhr,image,script,other,redirect=empty,domain=~wix-code.com|~wix.com|~wixapps.net
 ||playground.ru/build/49.57005fe8.js^$script,domain=playground.ru
 ||vimeo.com/wh/log$xhr,important,redirect=empty
 ||sentry.odysee.tv^$important
@@ -2713,6 +2713,8 @@ about:blank^$domain=greynoise.io
 ||ads.huawei.com^
 ||st.okcdn.ru/static/calls_*/*/kws_*$redirect=empty
 ||api.ok.ru/api/log$redirect=empty
+||bi-flogger-alb-ext-343643057.us-east-1.elb.amazonaws.com^
+||panorama.wixapps.net^
 !
 !
 !
@@ -3268,7 +3270,7 @@ dom.ru,*.dom.ru##div[class^="sc-6e31cbc2-0 kKbgFL"]
 !
 !
 !
-! = OK .ru =
+! = OK (Odnoklassniki) =
 !
 ||st-ok.cdn-vk.ru/res/assets/LogClicks$script,redirect=noopjs,domain=ok.ru
 ||st-ok.cdn-vk.ru/res/assets/MediascopeTracker$script,redirect=noopjs,domain=ok.ru
@@ -3285,10 +3287,10 @@ dom.ru,*.dom.ru##div[class^="sc-6e31cbc2-0 kKbgFL"]
 ||st-ok.cdn-vk.ru/res/js/Adf_TransportJs$script,redirect=noopjs,domain=ok.ru
 ||st-ok.cdn-vk.ru/res/js/TracerService$script,redirect=noopjs,domain=ok.ru
 ||ok.ru/mres/img/t.gif^$image,redirect=1x1-transparent.gif,domain=ok.ru,important
-||ok.ru/web-api/v*/reports/$xhr,domain=ok.ru,redirect=empty,important
+||ok.ru/web-api/v*/reports/$xhr,redirect=empty,important
 ||ok.ru/mres/img/react/*/megafon-like_sup.png^$image,domain=ok.ru
 ||api.ok.ru/fb.do
-||ok.ru/web-api/v*/resource-timings/$xhr,redirect=empty,domain=ok.ru
+||ok.ru/web-api/v*/resource-timings/$xhr,redirect=empty
 ||st-ok.cdn-vk.ru/res/js/tracerPlaceholder$script,redirect=noopjs
 ||st-ok.cdn-vk.ru/res/js/EventBus$script,redirect=noopjs
 ||st-ok.cdn-vk.ru/res/js/EventFactoryForEventBus$script,redirect=noopjs
@@ -4652,6 +4654,7 @@ vesti.ru##.nested-page-top
 !
 ##div[class^="featuredb_ad"]
 pikabu.ru##a[href*="promokod.pikabu.ru/shops/aroma-butik?"]
+securitylab.ru###js-banner-wrapper-69de8650875ab
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5033,7 +5036,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||metrika.yandex.*^$important,redirect=metrika-yandex-watch
 ||offerwall.yandex.net^$important
 ! push.yandex.ru^$important
-/s3/liza/*/promo-*.css^$css,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*
+/s3/liza/*/promo-*.css^$css,redirect=noopcss,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*
 ! /s3/liza/*/*ad-message.ogg^$media,redirect=noopmp3-0.1s,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*
 ||yastatic.net/s3/distribution/yanalytics/$important
 ! yastatic.net/s*/market-static/export-static/admon/$domain=market.yandex.ru
@@ -5174,7 +5177,7 @@ $cookie=_ym_debug
 ||yastatic.net/pcode-native/loaders/$script
 ||api.plus.yandex.*/graphql?query_name=*%3FregisterSimpleActionWithPixel$xhr,important
 $removeparam=yredirect
-||yastatic.net/s3/web-alice/public/marketing-lite.html$domain=alice.yandex.ru,important
+||yastatic.net/s3/web-alice/public/marketing-lite.html$document,domain=alice.yandex.ru,important
 ||strm.yandex.*/ping$important
 ||api.music.yandex.*/*/session/*/feedback/$xhr,important
 ||yastatic.net/s3/distribution/yanalytics/v*/$important
@@ -5239,19 +5242,30 @@ $removeparam=appmetrica_device_id
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
+! Updated 12.04
 ||yandex.ru^$app=ru.yandex.weatherplugin
 ||egress.yandex.net^$app=ru.yandex.weatherplugin
 ||cloud-api.yandex.net^$app=ru.yandex.weatherplugin
 ||favicon.yandex.net^$app=ru.yandex.weatherplugin
-||avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
+://avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
 ||strm.yandex.*^$app=ru.yandex.weatherplugin,redirect=noopvast-3.0
 ://api.browser.yandex.ru^$app=ru.yandex.weatherplugin
-@@||weather.yandex.ru^$app=ru.yandex.weatherplugin
 ||yandex.com^$app=ru.yandex.weatherplugin
 !
+@@||weather.yandex.ru^$app=ru.yandex.weatherplugin
 @@||static-maps.yandex.ru^$app=ru.yandex.weatherplugin
 @@://login.yandex.ru^$app=ru.yandex.weatherplugin
 @@||passport.yandex.ru^$app=ru.yandex.weatherplugin
+! =
+!
+! =Block analytics in other Yandex apps. (14.04.2026)=
+! Updated 14.04
+! -Y.Music-
+||yandex.ru^$app=ru.yandex.music
+!
+@@||vh.yandex.ru^$$app=ru.yandex.music
+@@||iot.quasar.yandex.ru^$app=ru.yandex.music
+! --
 ! =
 !
 !
@@ -6513,6 +6527,10 @@ teletype.in#@#div.preloader
 @@||ads.vk.*^$domain=ads.vk.com|ads.vk.ru
 @@/counters^$domain=astral.ru|au.ru|av.by|glavagronom.ru|itpc.ru|letu.ru|mos.ru|pay.tns-e.ru|pikabu.ru
 @@||ximitime.com^
+@@||rapidsave.com/download.php?permalink=
+@@||habr.com/service-worker.js^$domain=habr.com
+@@||gstatic.com^$app=com.pinterest
+@@||gstatic.com^$domain=pinterest.com
 !
 !
 ! -
@@ -6545,6 +6563,7 @@ teletype.in#@#div.preloader
 @@||tyuiu.ru^$permissions=private-state-token-issuance=()
 @@||tyuiu.ru^$permissions=private-state-token-redemption=()
 @@/jquery.cookie.js$script,domain=tyuiu.ru,important
+@@||tyuiu.ru/lib/ajax/setuserpref.php?sesskey=
 ! ==
 !
 !
