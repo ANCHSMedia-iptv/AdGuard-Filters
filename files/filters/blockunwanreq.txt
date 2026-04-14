@@ -107,7 +107,7 @@ yabro.ru^$important
 ||d3c8j8snkzfr1n.cloudfront.net^$important
 ||adskeeper.co.uk^$important
 ||metrika-informer.com^$important
-||stats.habr.com^$important,redirect=empty
+||stats.habr.com^$important
 ||clck.dzen.ru^$important
 !
 ! GitHub Analytics (блокировка мешает нормальной работаспособности сайта, разблокированы)
@@ -279,7 +279,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! (новое правило, строка 138 и 139)
 ! (новое правило, строка 138 и 139)
 ||userapi.com/js/api/openapi.js$script,third-party,domain=~vk.com|~vk.ru|~vk.me,important
-||analytics.vsem-edu-oblako.ru^$important,redirect=empty
+||analytics.vsem-edu-oblako.ru^$important
 ||dsp.groupminteraction.ru^$important
 ! sa.hoodmaps.com/latest.js^$script,domain=hoodmaps.com (новое правило, строка 285)
 ||sa.hoodmaps.com^$important,domain=hoodmaps.com,redirect=noopjs
@@ -464,8 +464,8 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! rutube.ru/static/img/png/adsdkbanner.png^$xhr,domain=rutube.ru
 ||api.carrotquest.app/v*/users/*self_user/$ping,xhr,domain=tochka.com,important
 ||cdn.rt.com/scripts/adfox/$script,important,domain=russiatoday.ru,redirect=noopjs
-||mediator.mail.ru^$important,redirect=empty
-||socialstat.rt.com^$redirect=nooptext
+||mediator.mail.ru^$important
+||socialstat.rt.com^
 /mcserverstop.jpg^$image
 ||cdn.jsdelivr.net/npm/sharer*/sharer.$script,important
 ||url.xenolith.ru/js/anonymize.js^$script,domain=xenolith.ru,important
@@ -529,7 +529,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||banki.ru/products/currencyNodejsApi/getTrackingUrlList/^$xhr,domain=banki.ru,important
 ||mywebpc.ru/wp-content/uploads/2024/07/telegram-chanel.png^$image,domain=mywebpc.ru
 ||anycomment.io/*/comment/stream^$xhr,important
-||apptracer.ru^$important,redirect=empty
+||apptracer.ru^$important
 ||xkkh.starkai.com/admin_tpl_css.css^$css,domain=energizelab.com
 ||energizelab.com/*/images/getemail.svg^$image,domain=energizelab.com
 ||alexametrics.com^$important
@@ -768,7 +768,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||apptornado.com^$important
 ||bugly.qq.com^$important
 !
-||clickstream.sberbank.ru^$important,redirect=empty
+||clickstream.sberbank.ru^$important
 ||check.unity.*^$important
 ||appbrain.com^$third-party
 ||js.memberful.com/embed.js^$script,important
@@ -842,18 +842,18 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||alt-ad.mail.ru^$important
 ||connect.mail.ru^$important,domain=~mail.ru
 ||media-*.mail.ru^$important
-||rs.mail.ru^$important,redirect=empty
+||rs.mail.ru^$important
 ||push-me.mail.ru^
 ||alt-push-me.mail.ru^
 ||pushapi.mail.ru^
 ||events.maps.mail.ru^$important
-||ms.ok.ru^$important,redirect=empty
+||ms.ok.ru^$important
 ||ingest*.sentry.io^$important,domain=~sentry.io
 ||cdn.aaacdn.net^
 ||sentry.x5.ru^$important
 ||tabun.info^
 ! appcenter.ms/logs^$important
-||ads.vk.com^$important,domain=~ads.vk.ru|~ads.vk.com
+||ads.vk.*^$important,domain=~ads.vk.ru|~ads.vk.com
 ||events.maps.vk.com^$important
 ||madnet.ru^$important
 ||mydas.mobi^$important
@@ -965,7 +965,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||s3.eu-central-1.amazonaws.com^$important
 ||collector-prod.perek.epoch8.ru^$important
 ||fda.middle-api.magnit.ru^
-||kaspersky-labs.com^$app=com.icemobile.lenta.prod|ru.sberbank.mobile,redirect=empty
+||kaspersky-labs.com^$app=com.icemobile.lenta.prod|ru.sberbank.mobile
 /fe-opera-static/node-static-v*/fe-webv*-main/js/ad.$script,domain=terabox.*|terabox.com|1024tera.com,redirect=noopjs,important
 ! qrator/qauth$script,important (07.02.26: Защита от ДДос, из-за блокировки не заходит на сайты, где установлена защита от CURATOR)
 ! qrator/validate$xhr,important (07.02.26: Защита от ДДос, из-за блокировки не заходит на сайты, где установлена защита от CURATOR)
@@ -1514,7 +1514,7 @@ $cookie=RadioStatistica
 ||tavria.tv/imgs/icons/tg.svg^$image,domain=tavria.tv
 ||vidiq.com/_next/static/chunks/5473.c4391834e2ac4669.js^$script,domain=vidiq.com,important
 ||cfriuxb2f3.execute-api.us-east-1.amazonaws.com^$domain=vidiq.com,important
-||clarity.ms^$important,redirect=empty
+||clarity.ms^$important
 ||kommersant.ru/doc/doclazyload/$xhr,domain=kommersant.ru
 ||kommersant.ru/doc/SaveRecomendEvent^$xhr,domain=kommersant.ru,important
 ||popularmechanics.com/_assets/fre/scopes/hdm/_next/static/media/tag-manager.script.$script,domain=popularmechanics.com,redirect=noopjs,important
@@ -1529,7 +1529,7 @@ $cookie=RadioStatistica
 ||imgsmail.ru/informers/$important,redirect=empty
 ||vk.*/feed2.php$xhr
 ||mail.ru/apic/$xhr,important,redirect=empty
-||stat.radar.imgsmail.ru^$important,redirect=empty
+||stat.radar.imgsmail.ru^$important
 ||multimedia.pulse.mail.ru/api/v*/reco/build?stream_id=lenta_main_mail$xhr,domain=mail.ru,redirect=empty
 ||i.hh.ru/js/External/TargetAds_*.js^$script,domain=hh.ru,important
 ||i.hh.ru/js/External/smart-script.js^$script,domain=hh.ru,important
@@ -1683,7 +1683,7 @@ $cookie=smi_last_visit_time
 ||static.gazeta.ru/*/js/noindex/$script
 ||static.gazeta.ru/*/js/block_counter.
 -spclient.spotify.com/gabo-receiver-service*/v*/events
-||crash.ottmedia.ru^$important,redirect=empty
+||crash.ottmedia.ru^$important
 ||tvroscosmos.ru/im/fancy/blank.gif^$xhr,domain=tvroscosmos.ru
 ||services.sg101.prd.sctv.ch/reporting/*/tracking^$xhr,domain=tv.blue.ch,important
 ||services.sg101.prd.sctv.ch/portfolio/featurestates/^$xhr,domain=tv.blue.ch
@@ -2230,16 +2230,16 @@ $removeparam=msclkid
 ||vkpic.ru/api/track^$xhr,domain=vkpic.ru
 ||id.vk.com/account/static/*_banner_*.*.*$image,domain=id.vk.com
 ||catalog.api.2gis.*/*/ads/$xhr,domain=2gis.ru|2gis.*,redirect=empty,important
-||clickstream.lenta.tech^$important,redirect=empty
+||clickstream.lenta.tech^$important
 ||s*.ucoz.net^$important
 ||vk.com/video_mediascope.php$xhr,important
 ||ovego.tv/images/modern_icon_informers.gif^$image,domain=ovego.tv
 *$document,removeparam=is_autologin_ya
 ||i-trailer.ru^
-||clickstream-proxy.api.2gis.*^$important,redirect=empty
+||clickstream-proxy.api.2gis.*^$important
 ||advisor.api.2gis.*^$important
-||mediascope.mail.ru^$important,redirect=empty
-||alt-xray.imgsmail.ru^$important,redirect=empty
+||mediascope.mail.ru^$important
+||alt-xray.imgsmail.ru^$important
 ||advmusic.com^
 ! ||naydex.net^$important
 ||1l-hit.mail.ru^
@@ -2249,21 +2249,21 @@ $removeparam=msclkid
 ||ad.mail.ru.netis.cc^$important
 ||ad.net.mail.ru^$important
 ||adv.mail.ru^$important
-||radar.imgsmail.ru^$important,redirect=empty
-||an.mail.ru^$important,redirect=empty
+||radar.imgsmail.ru^$important
+||an.mail.ru^$important
 ||top.mail.ru^$important
 ||cspreport.mail.ru^$important
 ||e.mail.ru.consumer.id6589.com^$important
 ||likemore-go.imgsmail.ru^
 ||runconverge.com^$third-party,domain=~runconverge.com
 ||mail.runconverge.com^
-||mediator.imgsmail.ru^$important,redirect=empty
+||mediator.imgsmail.ru^$important
 ||r0.mail.ru^$important,redirect=empty
 ||stat.browser.mail.ru^$important
 ||stat.dl.mail.ru^$important
 ||t.mail.ru^$important
 ||top5.mail.ru^$important
-||e.mail.ru/api/v*/omicron/$redirect=empty
+||e.mail.ru/api/v*/omicron/
 ||honzik.avcdn.net^
 ||api.syncle.io/prd/analytics$xhr,important
 ||ketchcdn.com/*/v*/ip
@@ -2292,7 +2292,7 @@ $removeparam=msclkid
 ||cdn.evgnet.com/beacon/$script
 ||redditstatic.net^
 ||tracking.intentsify.io^$important
-||ms.dzen.ru^$important,redirect=empty
+||ms.dzen.ru^$important
 ||recostream.go.mail.ru^$important
 /mediascopeForMedia/$important
 ||rees46.ru^
@@ -2438,7 +2438,7 @@ vip.gophersport.com$image
 ||vk.*/*video.php?act=ads_stat
 ||vk.*/*video.php?act=inc_view_counter
 ||vkvideo.ru/*video.php?act=track
-||b2.mail.ru^$important,redirect=empty
+||b2.mail.ru^$important
 ||home.imgsmail.ru/whiteline/assets/project-icons/580CED.svg^$image,domain=mail.ru
 ||home.imgsmail.ru/resplash/*/i/1tv_$image,domain=mail.ru|~tv.mail.ru
 ||home.imgsmail.ru/resplash/*/i/ctc_$image,domain=mail.ru|~tv.mail.ru
@@ -2630,11 +2630,11 @@ _banner.swf
 ||s.rbk.ru/*/common/common-*/scripts/build/fn/_stickyBlock.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,redirect=noopjs
 tildastat-*.$script,redirect=noopjs
 ||facebook.com/impression.php/
-||stat.tildacdn.com^$redirect=empty
+||stat.tildacdn.com^
 ||tpembars.com^
 ||cdn.iportal.ru/static/promocodes/$image,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
-||error-tracking.samokat.ru^$important,redirect=empty
-||traces-http.samokat.ru^$important,redirect=empty
+||error-tracking.samokat.ru^$important
+||traces-http.samokat.ru^$important
 ||api-web.samokat.ru/promo/*/$domain=samokat.ru
 ||a.omappapi.com^
 ||jsonip.com^$redirect=noopjs
@@ -2803,7 +2803,7 @@ about:blank^$domain=greynoise.io
 ||main-cdn.sbermegamarket.ru/upload/mnt/*.jpg^$image,domain=megamarket.ru
 !
 ||megamarket.ru/static/dist/images/cookies.*.webp^$image,domain=megamarket.ru,important
-||sentry-dsn-customers.megamarket.tech^$important,redirect=empty
+||sentry-dsn-customers.megamarket.tech^$important
 !
 ! ===
 !
@@ -2888,9 +2888,9 @@ about:blank^$domain=greynoise.io
 ||*basket*.wbbasket.ru/vol*/data/banners-main-*-*.json^$script,xhr,domain=wildberries.ru|global.wildberries.ru
 ||*basket*.wbbasket.ru/vol*/site/*/*/*/*recommendationsList$script,xhr,domain=wildberries.ru
 ||*basket*.wbbasket.ru/vol*/site/t/*/cookies.*.json^$xhr,domain=wildberries.ru,important,redirect=empty
-||a.wb.ru^$important,redirect=empty
-||wbx-logs.wildberries.ru^$important,redirect=empty
-||*sentry.wb.ru^$important,redirect=empty
+||a.wb.ru^$important
+||wbx-logs.wildberries.ru^$important
+||*sentry.wb.ru^$important
 ||banners-website.wildberries.ru/public/v*/banners*^$xhr,domain=wildberries.ru|global.wildberries.ru,redirect=nooptext
 /i/v*/apps/qr*.svg^$image,domain=wildberries.ru|global.wildberries.ru
 ||*basket*.wbbasket.ru/vol*/site/t/jst/onlineChatPopup.*.json^$xhr,domain=wildberries.ru|global.wildberries.ru,redirect=noopjson
