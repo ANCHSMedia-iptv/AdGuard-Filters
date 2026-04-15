@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.1.8-R
-! TimeUpdated: 2026-04-14T16:30:30+00:00
+! Version: 5.1.9-R
+! TimeUpdated: 2026-04-15T16:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2188,9 +2188,9 @@ $cookie=/ADRUM_*/
 ||icanhazip.com^$important
 ||zoom.us/user/anonymous/telemetry$important
 /vk-openapi.js$important
-||tproger.ru/wp-node/v*/post/view^$xhr,domain=tproger.ru,important
-||tproger.ru/wp-node/v*/entry/analytics^$xhr,domain=tproger.ru,important
-||tproger.ru/wp-node/v*/rupor/$xhr,domain=tproger.ru,important
+! tproger.ru/wp-node/v*/post/view^$xhr,domain=tproger.ru,redirect=nooptext,important
+||tproger.ru/wp-node/v*/entry/analytics^$xhr,domain=tproger.ru,redirect=nooptext,important
+||tproger.ru/wp-node/v*/rupor/$xhr,domain=tproger.ru,redirect=nooptext,important
 ||tproger.ru/images/lubok-image-after-post.svg^$image,domain=tproger.ru
 ||tproger.ru/_nuxt/TagsSubscriptionBanner.$script,domain=tproger.ru,redirect=noopjs
 ||tproger.ru/signed_image/rG8laumfzCkW24JG6NCqxSUvi2j6c7PyOyyPZihIDRk/*/aHR0cHM6Ly9tZWRpYS50cHJvZ2VyLnJ1L3VzZXItdXBsb2Fkcy8xMTUxNDQvMjAyNS0xMS0xMy9jNzU1MzlhOC05YjljLTRmNjYtYmYxNC0zZWRmMzFkZWQ4YTEucG5n^$image,domain=tproger.ru
@@ -2223,7 +2223,7 @@ $cookie=/ADRUM_*/
 ||sentry.iptv.rt.ru^$important
 ||serving-sys.ru^$important
 /api/sites/counters/$script
-$removeparam=msclkid
+*$removeparam=msclkid
 ||ruwiki.ru/api/ruwiki/rest/metrics$xhr,domain=ruwiki.ru,important
 ||onlinetrade.ru/ajax.php?handler=bannersstat$xhr,domain=onlinetrade.ru
 ||sdamgia.ru/help?*&name=about_cookie^$xhr,domain=sdamgia.ru,redirect=empty
@@ -2637,8 +2637,8 @@ tildastat-*.$script,redirect=noopjs
 ||traces-http.samokat.ru^$important
 ||api-web.samokat.ru/promo/*/$domain=samokat.ru
 ||a.omappapi.com^
-||jsonip.com^$redirect=noopjs
-||hs-scripts.com^$redirect=noopjs
+||jsonip.com^
+||hs-scripts.com^
 ||hsforms.com/embed/v*/counters.gif$important
 ||ads-twitter.com^
 ||p.typekit.net^
@@ -2688,7 +2688,7 @@ about:blank^$domain=greynoise.io
 ||slackb.com^
 /xray.$script,domain=mail.ru,redirect=noopjs
 /themes/*/*/spacer.gif$image,redirect=1x1-transparent.gif
-! ||js.hostingradio.ru/melon/melon-player-ad.js^$script,redirect=noopjs (soon..)
+||js.hostingradio.ru/melon/melon-player-ad.js^$script,redirect=noopjs
 ||sentry.walletbot.me^$important
 ||analytics.ff.avast.com^
 ||config-factory.com^$important
@@ -2711,8 +2711,7 @@ about:blank^$domain=greynoise.io
 ||logservice*.hicloud.com^
 ||logbak.hicloud.com^
 ||ads.huawei.com^
-||st.okcdn.ru/static/calls_*/*/kws_*$redirect=empty
-||api.ok.ru/api/log$redirect=empty
+||api.ok.ru/api/log
 ||bi-flogger-alb-ext-343643057.us-east-1.elb.amazonaws.com^
 ||panorama.wixapps.net^
 !
@@ -5040,7 +5039,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ! /s3/liza/*/*ad-message.ogg^$media,redirect=noopmp3-0.1s,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*
 ||yastatic.net/s3/distribution/yanalytics/$important
 ! yastatic.net/s*/market-static/export-static/admon/$domain=market.yandex.ru
-/s3/*/mail-liza-*/*.mail-liza.react-promo.$script,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*
+/s3/*/mail-liza-*/*.mail-liza.react-promo.$script,redirect=noopjs,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*
 ||mail.yandex.ru/web-api/journal/v*^$ping,domain=mail.yandex.ru
 ||media-adv.market.yandex.ru^$important
 ||yastatic.net/partner-code-bundles/$important,script,domain=~auto.ru,third-party
@@ -5104,7 +5103,7 @@ $cookie=_ym_debug
 ||yandex.ru/cycounter$important
 ||hdrc.yandex.net^
 ||yandex.ru/ick/r
-||yandex.ru/search/_crpd/*$ping,important
+||yandex.ru/search/_crpd/$ping,important
 ||yandex.ru/search/reask-suggest-banners
 ||events.plus.yandex.net^$important
 ||yastatic.net/s3/trbro/v*/i/service_$third-party,image,important,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*
@@ -5176,7 +5175,7 @@ $cookie=_ym_debug
 ||yandex.*/clck/
 ||yastatic.net/pcode-native/loaders/$script
 ||api.plus.yandex.*/graphql?query_name=*%3FregisterSimpleActionWithPixel$xhr,important
-$removeparam=yredirect
+*$removeparam=yredirect
 ||yastatic.net/s3/web-alice/public/marketing-lite.html$document,domain=alice.yandex.ru,important
 ||strm.yandex.*/ping$important
 ||api.music.yandex.*/*/session/*/feedback/$xhr,important
@@ -5188,7 +5187,7 @@ $removeparam=yredirect
 ||real-time-poi.maps.yandex.*/tiles?l=personalized_poi_ads&lang=*&*/*/
 ||surveys.yandex.ru^
 ||market.yandex.$removeparam=baobab_event_id
-$removeparam=ysclid
+*$removeparam=ysclid
 ||clck.yandex.net^
 ||yandex.ru/ads/$important,domain=~limehd.tv|~litehd.tv|~pervyi-tv.online|~russia-tv.online|~shadowcore.ru
 !||yastatic.net/naydex/yandex-mail/$redirect=noopjs
@@ -5196,11 +5195,11 @@ $removeparam=ysclid
 ||yastatic.net/s3/psf/mail-liza-react-client/direct-$script,redirect=noopjs,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*
 ||yastatic.net/s3/liza/_/promo-$css,redirect=noopcss
 ||yastatic.net/s3/distribution/stardust/browser-urlerror
-||mail.yandex.*/web-api/journal/v*?_m=do-client-log$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*
-||mail.yandex.*/web-api/journal/v*?_m=do-journal-log$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*
-||mail.yandex.*/web-api/models/liza*?_m=promozavr-$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*
-||mail.yandex.*/web-api/models/liza*?_m=get-user-events$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*
-||mail.yandex.*/web-api/models/liza*?_m=get_user_activity$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*
+||mail.yandex.*/web-api/journal/v*?_m=do-client-log$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext
+||mail.yandex.*/web-api/journal/v*?_m=do-journal-log$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext
+||mail.yandex.*/web-api/models/liza*?_m=promozavr-$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext
+||mail.yandex.*/web-api/models/liza*?_m=get-user-events$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext
+||mail.yandex.*/web-api/models/liza*?_m=get_user_activity$domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext
 ||mail.yandex.*/monitoring_liza.txt$redirect=nooptext,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,important
 ||yandex.ru/instant/stlog$redirect=nooptext,important
 ||api.browser.yandex.*/ab/
@@ -5209,17 +5208,16 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||ya.ru$removeparam=suggest_reqid
 ||kit.yandex.ru/api/*/v*/kit*/collect
 ||yandex.$removeparam=metric_client_id
-||api.browser.yandex.*/user-events/
-||browser.yandex.*/welcome-static/pusher__worker-
+||api.browser.yandex.*/user-events/$redirect=nooptext
 ||browser-resources.s3.yandex.net/*/get/browser/launcher_images/*/not_yandex/$image,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*
 ||log.api-maps.yandex.ru^$important
 ! ||yastatic.net/naydex/yandex-search/
-/_crpd/*/counter$domain=ya.ru|yandex.*
-/portal/_crpd/$domain=ya.ru
-/user-id/api/prompthub?$domain=ya.ru|yandex.*|~alice.yandex.ru
-/user-id/api/banrot/*/events/$domain=ya.ru|yandex.*
+*/_crpd/*/counter$domain=ya.ru|yandex.*
+*/portal/_crpd/$domain=ya.ru
+*/user-id/api/prompthub?$domain=ya.ru|yandex.*|~alice.yandex.ru
+*/user-id/api/banrot/*/events/$domain=ya.ru|yandex.*
 ||yandex.*/portal/set/any?yrsncd=1&gif=1&ip=$domain=ya.ru|yandex.*
-||naydex.net/*/static/v*/iframe-google-analytics.html$redirect=noopframe
+||naydex.net/*/static/v*/iframe-google-analytics.html$document,redirect=noopframe
 ||soft.export.yandex.ru/status.xml?$xhr
 ||admetrica.ru^
 ||yandex.*/an/$important
@@ -5227,18 +5225,19 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||yandex.ru/portal/ntp/banner$redirect=nooptext
 ! ||brontp-beta.yandex.ru^$redirect=nooptext
 ! ||brontp.yandex.ru^$redirect=nooptext
-||yastatic.net/q/*/rsya-tag-users/
-! ||yastatic.net/q/
-$removeparam=appmetrica_device_id
+||yastatic.net/q/*/rsya-tag-users/$script,~image
+! yastatic.net/q/
+*$removeparam=appmetrica_device_id
 ||yandexcdn.com/cdn-cgi/trace
-||yastatic.net/s3/*/public/js/chunks/analytics__items.$script
-||yastatic.net/s3/*/public/js/chunks/analytics__banners.$script
+||yastatic.net/s3/*/public/js/chunks/analytics__items.$script,redirect=noopjs
+||yastatic.net/s3/*/public/js/chunks/analytics__banners.$script,redirect=noopjs
 ||im*-tub-*.yandex.net^
-||api.browser.yandex.*/installstats/$important
+||api.browser.yandex.*/installstats/$important,redirect=nooptext
 ||yandex.*/secure-ads/$important
 ||egress.yandex.net^
 ||yandex.ru/maps/_crpd/*/*/*|$xhr
 ||api-maps.yandex.ru/v*/counters
+||yastatic.net/lego/_/$image,redirect=1x1-transparent.gif
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -6523,7 +6522,7 @@ teletype.in#@#div.preloader
 @@||whatsapp.com/api/graphql/
 @@||yandex.*/maps/api/masstransit/getLayerRegions
 @@||api.kod.ru/graphql
-@@||idam.metro-cc.ru/authorize/api/oauth2/check_cookie_iframe^$domain=metro-cc.ru
+@@||idam.metro-cc.ru/authorize/api/oauth2/check_cookie_iframe$domain=metro-cc.ru
 @@||ads.vk.*^$domain=ads.vk.com|ads.vk.ru
 @@/counters^$domain=astral.ru|au.ru|av.by|glavagronom.ru|itpc.ru|letu.ru|mos.ru|pay.tns-e.ru|pikabu.ru
 @@||ximitime.com^
