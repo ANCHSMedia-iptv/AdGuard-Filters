@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.1.9-R
-! TimeUpdated: 2026-04-15T16:30:30+00:00
+! Version: 5.2.0-R
+! TimeUpdated: 2026-04-16T16:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -144,7 +144,7 @@ yabro.ru^$important
 ||gstatic.com/cv/js/sender/v*/cast_sender.js^$script
 ||gstatic.com/cast/sdk/libs/sender/*/cast_framework.js^$script
 ||virustotal.com/ui/cookie_disclaimer^$xhr,domain=virustotal.com,redirect=empty,important
-||virustotal.com/gui/_log-error^$xhr,domain=virustotal.com,redirect=empty,important
+||virustotal.com/gui/_log-error^$xhr,domain=virustotal.com,important
 !
 ! */yandex.*^$image
 /liveinternet.*^$image
@@ -232,7 +232,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||cdn.iz.ru/profiles/portal/themes/purple/js/statistics/custom_criteo2.js$script,domain=iz.ru,redirect=noopjs,important
 ||static.gazeta.ru/nm2021/js/others_scripts_$script,domain=gazeta.ru,redirect=noopjs,important
 ||sync.rambler.ru^$important
-||s*.stc.yc.kpcdn.net/share/i/beige/*.gif^$image,important
+! s*.stc.yc.kpcdn.net/share/i/beige/*.gif^$image,important
 ||s*.stc.yc.kpcdn.net/s*/*/adaptive/img/banner.gif$xhr,important
 ||sendsay.ru^$third-party,domain=~sendsay.ru|~mobi.sendsay.ru,important
 ||lentainform.com^$important
@@ -1263,9 +1263,9 @@ $cookie=s24id
 ||production-cmp.isgprivacy.cbsi.com/cps/shamanNotifier.js^$script
 ||rt.ru/rb$xhr,ping,domain=lk.rt.ru|my.rt.ru|rt.ru,important
 ||visor.sberbank.ru^$important
-||esa-res.online.sberbank.ru/ESA/bizone/*/bfd.js$script,domain=online.sberbank.ru,redirect=noopjs
-||bfds.sberbank.ru/api/v*/ws$websocket,redirect=empty,domain=online.sberbank.ru
-||bfds.sberbank.ru/api/v*/send$xhr,redirect=empty,domain=online.sberbank.ru
+||esa-res.online.sberbank.ru/ESA/bizone/*/bfd.js$script,domain=online.sberbank.ru
+||bfds.sberbank.ru/api/v*/ws$websocket,domain=online.sberbank.ru
+||bfds.sberbank.ru/api/v*/send$xhr,domain=online.sberbank.ru
 ||enigmasoftware.com/tools/ip2country/get.php^$xhr,domain=enigmasoftware.com
 ||enigmasoftware.com/wp-content/plugins/exit-popup/js/*/exit-popup.js.php$script,domain=enigmasoftware.com
 ||enigmasoftware.com/wp-content/plugins/rotatead/enigma--*/script.js.php$script,domain=enigmasoftware.com
@@ -1369,7 +1369,7 @@ $cookie=s24id
 ||my-software.ru/sites/default/files/styles/large/public/images/*.png$image,domain=my-software.ru
 ||my-software.ru/images/linuxstudio.png^$image,domain=my-software.ru
 ||dmosk.ru/jas/*.js^$script,domain=dmosk.ru,important
-/proxy/services/sberlogger/$xhr,domain=sberbank.ru|sberbank.com,redirect=empty,important
+/proxy/services/sberlogger/$xhr,domain=sberbank.ru|sberbank.com,important
 ||2gis.ru/_/log$redirect=empty
 ||2gis.ru/_/metrics$redirect=empty
 ||maps.2gis.com/v*/ald?*&ts=buyhere^$xhr,domain=2gis.ru|2gis.*,redirect=nooptext,important
@@ -2645,13 +2645,13 @@ tildastat-*.$script,redirect=noopjs
 about:blank^$domain=greynoise.io
 ||gtm.deepl.com^$redirect=googletagservices-gpt
 ||s.deepl.com^
-/template/stat.js^$script,redirect=noopjs
+/template/stat.js^$script
 ||looking.house/images/sizes/lg/$image,domain=looking.house
 ||collect.alipay.com^
 ||cdn.banki.ru/static/node-wikibank/build/advBanner.$script,domain=banki.ru,redirect=noopjs
 ||cdn.banki.ru/static/widget-news/build/collect-mail.$script,domain=banki.ru,redirect=noopjs
 ||q7wiow.ru^
-||banki.ru/mybanki/api/v*/send-event-batch^$domain=banki.ru,redirect=empty
+||banki.ru/mybanki/api/v*/send-event-batch^$domain=banki.ru
 ||securitylab.ru/img/detailed/tg.svg^$image,domain=securitylab.ru
 ||securitylab.ru/js/infinity-artile-scroll.js^$script,domain=securitylab.ru,redirect=noopjs
 ||b.stripecdn.com/stripethirdparty-srv/assets/v*/GoogleTagManager.html$domain=stripe.com
@@ -2714,6 +2714,7 @@ about:blank^$domain=greynoise.io
 ||api.ok.ru/api/log
 ||bi-flogger-alb-ext-343643057.us-east-1.elb.amazonaws.com^
 ||panorama.wixapps.net^
+||kp.ru/sendsay_push_sw.js^$script
 !
 !
 !
@@ -3210,7 +3211,7 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 ||mf-platform-production.t-static.ru/devtools/lockfile-boxy$domain=tbank.ru|tinkoff.ru,redirect=noopjs
 ||api-statist.tinkoff.ru^$important
 ||api-statist.tbank.ru^$important
-||fingerprint.t-static.ru^
+||fingerprint.t-static.ru^$important
 ||api-common.tinkoff.ru/front-logs/v*/logs$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=empty
 ||sage-collector.tbank.ru^$important
 ||ms-ads-image.t-static.ru^$important
@@ -3219,6 +3220,8 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 ||error-hub.tbank.ru^
 ||ms-dsp.tinkoff.ru^$important
 *.ru/performance/$domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=empty
+/web-fingerprint/api/v*/$domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=empty
+||fingerprint.t-static.ru^$script,redirect=noopjs
 !
 ! Чат поддержки, разные элементы, разделы и прочее в ЛК на сайте сломались в результате блокировки множества адресов (запросов).
 ! Хитро, хитро сделано.. привязанность аналитики и прочему «мусору» к чате поддержки и не только..
@@ -3754,7 +3757,7 @@ video.sports.ru###root > div.MuiCollapse-root.MuiCollapse-vertical.MuiCollapse-e
 1tv.ru##div[class^="eump-flexmenu-select-option eump-adblock-textblock eump-options-quality-select-item"]
 1tv.ru##div[class^="eump-ab-options-ctrl-sticker"]
 vesti.ru##.footer__counters
-online.sberbank.ru##div[aria-labelledby="cookie-policy-title"][data-testid="cookie-policy"]
+online.sberbank.ru##div[class*="cve"][data-testid="cookie-policy"]
 enigmasoftware.com##div.dynamic-container.no-print.active
 enigmasoftware.com###disclaimer
 enigmasoftware.com##header.header:nth-child(2) > div.container > div.header-items.has-menu:first-child > div.item.licenses:nth-child(3)
@@ -4654,6 +4657,7 @@ vesti.ru##.nested-page-top
 ##div[class^="featuredb_ad"]
 pikabu.ru##a[href*="promokod.pikabu.ru/shops/aroma-butik?"]
 securitylab.ru###js-banner-wrapper-69de8650875ab
+kp.ru##.sc-1swemae-0, .dEGxpY
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
