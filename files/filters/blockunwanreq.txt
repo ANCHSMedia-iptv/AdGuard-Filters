@@ -378,7 +378,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe.*^$css,script,domain=asiaplustj.info
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
-||tpembar.com^$important,redirect=noopjs
+||tpembar.com^$important
 /graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~ya.ru|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*|~yandex.net|~certina.com|~reddit.com|~redd.it|~78.ru|~instagram.com|~api.weather.yandex.ru|~youla.ru|~smotrim.ru|~supergraph.metro-cc.ru|~onedrive.live.com|~live.com|~github.com|~whatsapp.com|~kod.ru|~durovscode.com
 ||getrcmx.com^$important
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.$script,domain=xcom-shop.ru,important,redirect=noopjs
@@ -2631,7 +2631,7 @@ _banner.swf
 tildastat-*.$script,redirect=noopjs
 ||facebook.com/impression.php/
 ||stat.tildacdn.com^
-||tpembars.com^
+||tpembars.com^$important
 ||cdn.iportal.ru/static/promocodes/$image,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 ||error-tracking.samokat.ru^$important
 ||traces-http.samokat.ru^$important
@@ -2715,6 +2715,9 @@ about:blank^$domain=greynoise.io
 ||bi-flogger-alb-ext-343643057.us-east-1.elb.amazonaws.com^
 ||panorama.wixapps.net^
 ||kp.ru/sendsay_push_sw.js^$script
+||sgtm.kaspersky.de^
+||ksn-a-stat-geo.kaspersky-labs.com^
+||ksn-crypto-stat-geo.kaspersky-labs.com^
 !
 !
 !
@@ -5262,12 +5265,15 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ! =
 !
 ! =Block analytics in other Yandex apps. (14.04.2026)=
-! Updated 14.04
+! Updated 17.04
 ! -Y.Music-
 ||yandex.ru^$app=ru.yandex.music
 !
-@@||vh.yandex.ru^$$app=ru.yandex.music
+@@||vh.yandex.ru^$app=ru.yandex.music
 @@||iot.quasar.yandex.ru^$app=ru.yandex.music
+@@||mediabilling.yandex.ru^$app=ru.yandex.music
+@@||api.browser.yandex.ru^$app=ru.yandex.music
+@@||plus.yandex.ru^$app=ru.yandex.music
 ! --
 ! =
 !
@@ -5308,6 +5314,9 @@ yandex.ru###hYF3siGBwNgvu__dkrg0xnnmcdcyyuh59he-PqmL7TJ > div.hYF3smmhxOwM > div
 ##html[class^="i-ua_js_no i-ua_css_standart i-ua_browser_yandexbrowser i-ua_browser-engine_webkit i-ua_browser_desktop"]
 yandex.*##a[href^="https://yandex.ru/an/"]
 ya.ru##a[href^="https://ya.ru/an/"]
+! Баннер-блокировка «Похоже, вы используйте VPN» на сервисах Яндекса [17.04.2026]
+yandex.ru##div[id="root"][class^="page__block-19-84"]
+!
 !
 !
 ! =
@@ -5386,6 +5395,9 @@ ya.ru##a[href^="https://ya.ru/an/"]
 ||admob.com^
 ||accounts.google.com/gsi/log$redirect=nooptext
 ||youtube.com/ad_companion$important
+||fundingchoicesmessages.google.com^
+||geomobileservices*.googleapis.com^$important
+||federatedcompute*.googleapis.com^$important
 !
 ! ===
 !
@@ -5703,6 +5715,22 @@ ya.ru##a[href^="https://ya.ru/an/"]
 ||rumstat.cdnvideo.ru^
 ||st.hbrd.io^
 ||adx.com.ru^
+||weborama.fr^
+||refersion.com^
+||bar.love.mail.ru^
+||adroll.com^
+||sgali-mcs.byteoversea.com^
+||*logfiles.zoom.us^
+||counter.reddigital.ru^
+||pxaction.com^
+||dit.whatsapp.net^
+||dsp.upravel.com^
+||intelliscapesolutions.com^
+||*-intake-datadoghq.com^
+||push4site.com^
+||luxcdn.com^
+||fsdifhj.com^
+||slackb.com^
 !
 ! --
 !
@@ -6534,6 +6562,8 @@ teletype.in#@#div.preloader
 @@||habr.com/service-worker.js^$domain=habr.com
 @@||gstatic.com^$app=com.pinterest
 @@||gstatic.com^$domain=pinterest.com
+@@||doas.top^$important
+@@||chelpus.com/luckypatcher/LuckyPatcherInstaller.apk^$important
 !
 !
 ! -

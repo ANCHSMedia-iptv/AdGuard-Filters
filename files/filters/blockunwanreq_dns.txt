@@ -3,7 +3,7 @@
 ! Version: 4.5.5-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-04-16T16:28:30+00:00
+! TimeUpdated: 2026-04-17T16:28:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 16.04.2026 16:28 UTC
+! Last Modified: 17.04.2026 16:28 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -272,6 +272,9 @@
 ||ads.youtube.com^
 ||googleads.com^
 ||admob.com^
+||fundingchoicesmessages.google.com^
+||geomobileservices*.googleapis.com^$important
+||federatedcompute*.googleapis.com^$important
 !
 ! ===
 !
@@ -1343,7 +1346,7 @@
 ||sentry-ingest.kuper.ru^$important
 ||stat.tildacdn.com^
 ||kimberlite.io^
-||tpembars.com^
+||tpembars.com^$important
 ||error-tracking.samokat.ru^$important
 ||traces-http.samokat.ru^$important
 ||a.omappapi.com^
@@ -1366,7 +1369,7 @@
 ||videoplayerhub.com^
 ||performance.radar.cloudflare.com^$dnsrewrite=0.0.0.0
 ||html-load.cc^$dnsrewrite=0.0.0.0
-||tpembar.com^
+||tpembar.com^$important
 ||error-hub.tbank.ru^
 ||ms-dsp.tinkoff.ru^
 ||ant.sberbank.ru^$important
@@ -1412,6 +1415,10 @@
 ||fingerprint.t-static.ru^
 ||bh.beeline.ru^
 ||blocked.mts.ru^
+||adnitro.pro^
+||lngtd.com^$important
+||ksn-a-stat-geo.kaspersky-labs.com^
+||ksn-crypto-stat-geo.kaspersky-labs.com^
 !
 !
 !
@@ -1436,6 +1443,13 @@
 ||ipgraber.ru^
 ||iplis.ru^
 ||02ip.ru^
+!
+!
+! 05.03.26: + от меня.
+||ipv4-internet.yandex.net^$third-party
+||ipv6-internet.yandex.net^$third-party
+||ifconfig.me^$third-party
+||ip.mail.ru^$third-party
 !
 !
 ! ===
@@ -1904,6 +1918,8 @@
 @@||ohttp-relay-safebrowsing-android.google.fastly-edge.com^
 @@||ohttp-relay-safebrowsing-*.google.fastly-edge.com^
 @@||ximitime.com^
+@@||doas.top^$important
+@@||chelpus.com^$important
 !
 !
 !
