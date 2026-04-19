@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.5.5-R
+! Version: 4.5.6-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-04-17T16:28:30+00:00
+! TimeUpdated: 2026-04-16T16:28:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 17.04.2026 16:28 UTC
+! Last Modified: 18.04.2026 16:28 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -1408,17 +1408,32 @@
 ||all.by^
 ||cdnssl.clicktale.net^
 ||static.terratraf.io^
-||188.186.154.88^
 ||ads.huawei.com^
 ||bi-flogger-alb-ext-343643057.us-east-1.elb.amazonaws.com^
 ||image.sendsay.ru^
 ||fingerprint.t-static.ru^
-||bh.beeline.ru^
-||blocked.mts.ru^
 ||adnitro.pro^
 ||lngtd.com^$important
 ||ksn-a-stat-geo.kaspersky-labs.com^
 ||ksn-crypto-stat-geo.kaspersky-labs.com^
+||adx-*.dbankcloud.*^$important
+||adx-*.op.dbankcloud.com.edgekey.net^
+||browsercfg-*.cloud.dbankcloud.cn^$important
+||grs.dbankcloud.*^$important
+||datacollector-*.dt.dbankcloud.ru^$important
+||logservice*.dbankcloud.cn^$important
+||logservice-*.platform.dbankcloud.cn^$important
+||ubacollect-*.cloud.dbankcloud.cn^$important
+||hwpub-s01-*.cloud.dbankcloud.cn^$important
+||recommend-*.hms.dbankcloud.cn^$important
+||rms-*.platform.dbankcloud.cn^$important
+||weather-community-*.weather.dbankcloud.cn^$important
+||d1jum8517nhtf1.cloudfront.net^
+||obvknawel.com^
+||selfgems.com^
+||services.vlitag.com^
+||profitablecpm*.com^
+||madcpms.com^
 !
 !
 !
@@ -1446,13 +1461,15 @@
 !
 !
 ! 05.03.26: + от меня.
-||ipv4-internet.yandex.net^$third-party
-||ipv6-internet.yandex.net^$third-party
-||ifconfig.me^$third-party
-||ip.mail.ru^$third-party
+||ipv4-internet.yandex.net^
+||ipv6-internet.yandex.net^
+||ifconfig.me^
+||ip.mail.ru^
 !
 !
 ! ===
+!
+!
 !
 !
 !

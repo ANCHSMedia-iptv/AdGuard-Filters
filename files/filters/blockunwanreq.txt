@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.2.0-R
-! TimeUpdated: 2026-04-16T16:30:30+00:00
+! Version: 5.2.2-R
+! TimeUpdated: 2026-04-18T16:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2718,6 +2718,23 @@ about:blank^$domain=greynoise.io
 ||sgtm.kaspersky.de^
 ||ksn-a-stat-geo.kaspersky-labs.com^
 ||ksn-crypto-stat-geo.kaspersky-labs.com^
+||adx-*.dbankcloud.$important
+||adx-*.op.dbankcloud.com.edgekey.net^
+||browsercfg-*.cloud.dbankcloud.cn^$important
+||grs.dbankcloud.$important
+||datacollector-*.dt.dbankcloud.ru^
+||logservice*.dbankcloud.cn^$important
+||logservice-*.platform.dbankcloud.cn^$important
+||ubacollect-*.cloud.dbankcloud.cn^$important
+||hwpub-s01-*.cloud.dbankcloud.cn^$important
+||recommend-*.hms.dbankcloud.cn^$important
+||rms-*.platform.dbankcloud.cn^$important
+||weather-community-*.weather.dbankcloud.cn^$important
+||selfgems.com^
+||prosmart.by/templates/it_drive_ps/images/social/$image,domain=prosmart.by
+||profitablecpm*.com^$all
+||madcpms.com^
+||redditstatic.com/shreddit/sentry-$script,domain=reddit.com|redd.it,redirect=noopjs
 !
 !
 !
@@ -2747,6 +2764,7 @@ about:blank^$domain=greynoise.io
 ! Блокировка скрытых изображений в один пиксель (1 x 1).
 ! *4pda.to/s/PXti*.gif^$image,xhr,domain=4pda.to,redirect=1x1-transparent.gif,important
 !  4pda.to/static/module/lytebox/images/blank.gif^$image,domain=4pda.to,redirect=1x1-transparent.gif
+*4pda.to/s/*:|$image,domain=4pda.to,redirect=1x1-transparent.gif
 !
 !
 !
@@ -2777,6 +2795,22 @@ about:blank^$domain=greynoise.io
 !
 !
 ||4pda.to/huawei/$domain=4pda.to
+!
+!
+! -Картинка над плеером YouTube-
+4pda.to/s/PXtidnGz2p0q20shIYoomlMoMnKDNCMR1qjf.svg^$image,domain=4pda.to
+! -
+!
+4pda.to##img[src*="//4pda.to/s/"][width="1px"][height="1px"][style="position:fixed;left:0;top:0;opacity:.01;"]
+4pda.to##div.second-menu > ul.menu-brands > li:nth-child(2) > a[href^="/huawei/?utm_source=huawei_button"]
+! 4pda.to##div.second-menu > ul.menu-brands > li:nth-child(2) > a
+4pda.to##div.second-menu > ul.menu-brands > li:nth-child(3) > a[href^="/honor"]
+! 4pda.to##div.second-menu > ul.menu-brands > li:nth-child(3) > a
+4pda.to##div.second-menu > ul.menu-brands > li:nth-child(4) > a[href^="/realme"]
+! 4pda.to##div.second-menu > ul.menu-brands > li:nth-child(4) > a
+4pda.to##.menu-brands
+!
+!
 !
 @@||i.4pda.ws/s/*.jpg?v=*^$domain=4pda.to
 ! @@||*4pda.to/s/*.js?_=*^$domain=4pda.to
@@ -4661,6 +4695,8 @@ vesti.ru##.nested-page-top
 pikabu.ru##a[href*="promokod.pikabu.ru/shops/aroma-butik?"]
 securitylab.ru###js-banner-wrapper-69de8650875ab
 kp.ru##.sc-1swemae-0, .dEGxpY
+4pda.to###clys8x4080
+###ScrollToTop
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4726,10 +4762,10 @@ sputnik24.tv#%#//scriptlet('set-cookie', 'isShowCookieWarning', 'false', 'none')
 ! sports.ru#%#//scriptlet('set-local-storage-item', 'loglevel', '$remove$')
 okko.tv,okko.sport#%#//scriptlet('set-cookie', 'cookie-confirm', '1')
 ~tyuiu.ru#%#//scriptlet('set-session-storage-item', 'bis_data', 'emptyObj')
-reddit.com#%#//scriptlet('set-session-storage-item', 'serverTimestamps', 'emptyObj')
-reddit.com#%#//scriptlet('set-local-storage-item', 'events-buffer-v2', '$remove$')
-reddit.com#%#//scriptlet('set-local-storage-item', 'good-visit-feeds-search', 'emptyObj')
-reddit.com#%#//scriptlet('set-local-storage-item', 'recent-subreddits-store', 'emptyObj')
+reddit.com,redd.it#%#//scriptlet('set-session-storage-item', 'serverTimestamps', 'emptyObj')
+reddit.com,redd.it#%#//scriptlet('set-local-storage-item', 'events-buffer-v2', '$remove$')
+reddit.com,redd.it#%#//scriptlet('set-local-storage-item', 'good-visit-feeds-search', 'emptyObj')
+reddit.com,redd.it#%#//scriptlet('set-local-storage-item', 'recent-subreddits-store', 'emptyObj')
 voka.tv#%#//scriptlet('set-local-storage-item', 'applyCookie', 'true')
 voka.tv#%#//scriptlet('set-local-storage-item', 'ALLOW_COOKIES', 'true')
 #%#//scriptlet('set-local-storage-item', 'bugsnag-anonymous-id', '')
@@ -5193,7 +5229,7 @@ $cookie=_ym_debug
 ||static-mon.yandex.net/event$important
 ||real-time-poi.maps.yandex.*/tiles?l=personalized_poi_ads&lang=*&*/*/
 ||surveys.yandex.ru^
-||market.yandex.$removeparam=baobab_event_id
+||yandex.$removeparam=baobab_event_id
 *$removeparam=ysclid
 ||clck.yandex.net^
 ||yandex.ru/ads/$important,domain=~limehd.tv|~litehd.tv|~pervyi-tv.online|~russia-tv.online|~shadowcore.ru
@@ -6294,7 +6330,7 @@ kommersant.ru#@#.footer_adv
 @@||yastatic.net/s3/front-maps-static/maps-front-maps/build/client/map-widget
 @@||dropmefiles.com/*/securimage/
 @@||wikipedia.org^$cookie
-@@||redditstatic.com/shreddit/*/adjust-search-query-link-*.js^$script,domain=reddit.com
+@@||redditstatic.com/shreddit/*/adjust-search-query-link-*.js^$script,domain=reddit.com|redd.it
 @@||static*.ntv.ru/assets/js/capcha-*.js
 @@||vtrans.s3-private.mds.yandex.net^
 @@||google.com^$cookie,~third-party
@@ -6315,7 +6351,7 @@ kommersant.ru#@#.footer_adv
 @@/youtubei/v*/upload/$xhr,domain=youtube.com|studio.youtube.com
 @@||upload.youtube.com/?authuser=*&upload_id=*&upload_protocol=*&origin=*$xhr,domain=youtube.com|studio.youtube.com
 @@||api.vk.com/method/video.getLiveStatus
-@@||reddit.com/svc/shreddit/events^$xhr,domain=reddit.com
+@@||reddit.com/svc/shreddit/events^$xhr,domain=reddit.com|redd.it
 @@||smotrim.ru/api/articles/regionmix
 @@||mobdrm.1tv.ru^
 @@||1tv-live-gcore.gcdn.co^
@@ -6564,6 +6600,8 @@ teletype.in#@#div.preloader
 @@||gstatic.com^$domain=pinterest.com
 @@||doas.top^$important
 @@||chelpus.com/luckypatcher/LuckyPatcherInstaller.apk^$important
+@@||yandex.ru/portal/ntp/informers/$important
+@@||api.browser.yandex.*/ntp/widgets
 !
 !
 ! -
