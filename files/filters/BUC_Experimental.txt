@@ -1,5 +1,5 @@
 ! Title: Block unwanted connections (Experimental)
-! Version: 20260415
+! Version: 20260420
 ! Last Modified: 15.04.2026
 ! It is updated frequently because it contains experimental filtering rules.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
@@ -79,6 +79,7 @@ avito.ru##div[data-marker="story-previewer"]
 !
 ||setka.news^$third-party
 ||st.okcdn.ru/static/calls_*/*/kws_*
+||*basket*.wbbasket.ru/vol*/site/app/kukpolice.$script,domain=wildberries.ru|global.wildberries.ru,redirect=noopjs
 !
 !
 !

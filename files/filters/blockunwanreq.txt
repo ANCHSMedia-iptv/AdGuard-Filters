@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.2.2-R
-! TimeUpdated: 2026-04-19T16:30:30+00:00
+! Version: 5.2.3-R
+! TimeUpdated: 2026-04-20T16:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -206,7 +206,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,redirect=nooptext,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*sentry.wb.ru|~sentry-*.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~getsentry.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~ingest*.sentry.io|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru,important
+*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-*.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~getsentry.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~ingest*.sentry.io|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru,important
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com,important
@@ -2667,7 +2667,7 @@ about:blank^$domain=greynoise.io
 ||hostinghub.ru/sites/default/files/styles/logo_grid/public/logo/$image,domain=hostinghub.ru
 ||ant.sberbank.ru^$important
 ||cdnflow.ru^
-/common/*/js/dynatrace.js^$script,domain=sberbank.ru,redirect=noopjs
+/common/*/js/dynatrace.js^$script,domain=sberbank.ru
 ||akashi.vk-portal.net/api/v*/nel$redirect=empty
 ||vk.*/browser_reports$redirect=empty
 /videos1234/other/
@@ -2704,11 +2704,9 @@ about:blank^$domain=greynoise.io
 ||cdn.yandex.net^$app=free.vpn.proxy.secure|com.zoogvpn.android|com.freevpnplanet|com.free.tiptop.vpn.proxy|free.vpn.unblock.proxy.turbovpn
 ||rutube.ru^$app=com.zoogvpn.android
 ||ximitime.com/wp-content/themes/xiaomiuiwp/assets/psmemeos.gif^$image,domain=ximitime.com
-||metrics*.data.hicloud.com^
-||metrics.data.hicloud.com^
+||metrics*.data.hicloud.com^$important
 ||grs.hicloud.com^
-||logservice.hicloud.com^
-||logservice*.hicloud.com^
+||logservice*.hicloud.com^$important
 ||logbak.hicloud.com^
 ||ads.huawei.com^
 ||api.ok.ru/api/log
@@ -2722,7 +2720,7 @@ about:blank^$domain=greynoise.io
 ||adx-*.op.dbankcloud.com.edgekey.net^
 ||browsercfg-*.cloud.dbankcloud.cn^$important
 ||grs.dbankcloud.$important
-||datacollector-*.dt.dbankcloud.ru^
+||datacollector-*.dt.dbankcloud.ru^$important
 ||logservice*.dbankcloud.cn^$important
 ||logservice-*.platform.dbankcloud.cn^$important
 ||ubacollect-*.cloud.dbankcloud.cn^$important
@@ -2735,6 +2733,7 @@ about:blank^$domain=greynoise.io
 ||profitablecpm*.com^$all
 ||madcpms.com^
 ||redditstatic.com/shreddit/sentry-$script,domain=reddit.com|redd.it,redirect=noopjs
+||radar.cloudflare.com/api/analytics
 !
 !
 !
@@ -2828,12 +2827,12 @@ about:blank^$domain=greynoise.io
 ! Blocking ads, analytics and other “garbage”.
 ! Блокировка рекламы, аналитики и прочего «мусора».
 !
-||megamarket.ru/api/*/v*/analyticsDataService/$xhr,domain=megamarket.ru,important,redirect=empty
+||megamarket.ru/api/*/v*/analyticsDataService/$xhr,domain=megamarket.ru,important
 ! megamarket.ru/api/mobile/v*/promoContentService/promoContent/get^$xhr,domain=megamarket.ru,important,redirect=empty
 ! megamarket.ru/api/fl/idw-smm^$xhr (новое правило, строка 589)
-||api.megamarket.tech/api/colibri/events/$xhr,domain=megamarket.ru,important,redirect=empty
+||api.megamarket.tech/api/colibri/events/$xhr,domain=megamarket.ru,important
 ||megamarket.ru/api/*/v*/promoContentService/$xhr,domain=megamarket.ru,important,redirect=empty
-||api.megamarket.tech/api/events/$xhr,domain=megamarket.ru,important,redirect=empty
+||api.megamarket.tech/api/events/$xhr,domain=megamarket.ru,important
 !
 ! Rule for blocking banner ad images (new design) (PC version).
 ! Правило блокировки рекламных баннеров (новый дизайн) (ПК версия).
@@ -2896,7 +2895,7 @@ about:blank^$domain=greynoise.io
 ||*-net.pinterest.com^$important
 ||*-net.pinimg.com^$important
 ||pinterest.com/resource/InviteSocialTrackingParamNonInviteResource/$important
-||pinterest.com/resource/ActivateExperimentResource/
+||pinterest.com/resource/ActivateExperimentResource/$important
 !
 ! ===
 !
@@ -2928,6 +2927,7 @@ about:blank^$domain=greynoise.io
 ||a.wb.ru^$important
 ||wbx-logs.wildberries.ru^$important
 ||*sentry.wb.ru^$important
+||*-sentry.wb.ru^
 ||banners-website.wildberries.ru/public/v*/banners*^$xhr,domain=wildberries.ru|global.wildberries.ru,redirect=nooptext
 /i/v*/apps/qr*.svg^$image,domain=wildberries.ru|global.wildberries.ru
 ||*basket*.wbbasket.ru/vol*/site/t/jst/onlineChatPopup.*.json^$xhr,domain=wildberries.ru|global.wildberries.ru,redirect=noopjson
@@ -2936,7 +2936,17 @@ about:blank^$domain=greynoise.io
 ! *basket*.wbbasket.ru/vol*/site/app/sentryInit.$script,domain=wildberries.ru|global.wildberries.ru,redirect=noopjs
 ||*basket*.wbbasket.ru/vol*/data/stores-data.json^$xhr,domain=wildberries.ru,redirect=noopjson
 ||wilberries.ru$removeparam=ab_testing
-! *basket*.wbbasket.ru/vol*/site/app/*wildberries/sentry.$script,domain=wildberries.ru|global.wildberries.ru
+||*basket*.wbbasket.ru/vol*/site/app/*wildberries/sentry.$script,domain=wildberries.ru|global.wildberries.ru,redirect=noopjs
+||*basket*.wbbasket.ru/vol*/site/app/btnAdvertising-$script,domain=wildberries.ru,redirect=noopjs
+||*basket*.wbbasket.ru/vol*/site/app/btnAdvertising.$css,domain=wildberries.ru,redirect=noopcss
+||journal-bt.wildberries.ru^$important
+||*basket*.wbbasket.ru/vol*/site/app/chatView-model.$script,css,domain=wildberries.ru|global.wildberries.ru,redirect=noopjs
+||*basket*.wbbasket.ru/vol*/site/app/chatView-model.$css,domain=wildberries.ru|global.wildberries.ru,redirect=noopcss
+||chat-prod.wildberries.ru/api/wbtravel-wb-chat/$xhr,domain=wildberries.ru|global.wildberries.ru
+||*basket*.wbbasket.ru/vol*/site/app/performanceAnalytics$script,domain=wildberries.ru|global.wildberries.ru,redirect=noopjs
+||*basket*.wb.ru/vol*/dynamic_onboarding/WABANGA_OVERLAY_*.png^$image,domain=wildberries.ru
+||*basket*.wb.ru/vol*/dynamic_onboarding/WABANGA_*.png^$image,domain=wildberries.ru
+||banners-website.wildberries.ru^
 !
 !
 !
@@ -3035,6 +3045,7 @@ wildberries.ru###diamondsMenu > div.simple-menu__diamonds-wrap:last-child > ul.s
 !
 /s3/cms/*/qr-code_*.png^$image,domain=ozon.ru|ozon.by
 /assets/*/detached/marketing*/entry.*.js^$script,domain=ozon.ru|ozon.by,redirect=noopjs
+/assets/*/detached/*/entry.marketing.js^$script,domain=ozon.ru|ozon.by,redirect=noopjs
 /s3/ozon-tag-manager/$script,important,domain=ozon.ru|ozon.by,redirect=noopjs
 ! *ozon.*/api/entrypoint-api.bx/page/json/v*^$xhr,domain=ozon.ru|ozon.by **
 /assets/*/marketing-desktop-adv-banner-$script,domain=ozon.ru|ozon.by,redirect=noopjs
@@ -6602,6 +6613,8 @@ teletype.in#@#div.preloader
 @@||chelpus.com/luckypatcher/LuckyPatcherInstaller.apk^$important
 @@||yandex.ru/portal/ntp/informers/$important
 @@||api.browser.yandex.*/ntp/widgets
+@@||ozon.ru/abt/
+@@||antibot.wildberries.ru^
 !
 !
 ! -

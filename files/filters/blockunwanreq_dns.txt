@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.5.6-R
+! Version: 4.5.7-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-04-19T16:28:30+00:00
+! TimeUpdated: 2026-04-20T16:28:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 19.04.2026 16:28 UTC
+! Last Modified: 20.04.2026 16:28 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -709,6 +709,7 @@
 ||online-metrix.net^$important
 ||s3.eu-central-1.amazonaws.com^$important
 ||*sentry.wb.ru^$important
+||*-sentry.wb.ru^$important
 ||collector-prod.perek.epoch8.ru^$important
 ||fda.middle-api.magnit.ru^
 ||fp.kaspersky-labs.com^
@@ -1407,6 +1408,10 @@
 ||all.by^
 ||cdnssl.clicktale.net^
 ||static.terratraf.io^
+||metrics*.data.hicloud.com^$important
+||grs.hicloud.com^
+||logservice*.hicloud.com^$important
+||logbak.hicloud.com^
 ||ads.huawei.com^
 ||bi-flogger-alb-ext-343643057.us-east-1.elb.amazonaws.com^
 ||image.sendsay.ru^
@@ -1433,6 +1438,8 @@
 ||services.vlitag.com^
 ||profitablecpm*.com^
 ||madcpms.com^
+||journal-bt.wildberries.ru^$important
+||banners-website.wildberries.ru^
 !
 !
 !
@@ -1936,6 +1943,8 @@
 @@||ximitime.com^
 @@||doas.top^$important
 @@||chelpus.com^$important
+@@||antibot.wildberries.ru^
+@@||dns.msftncsi.com^
 !
 !
 !
