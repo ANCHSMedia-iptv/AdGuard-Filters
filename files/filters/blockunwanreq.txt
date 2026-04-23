@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.2.3-R
-! TimeUpdated: 2026-04-20T16:30:30+00:00
+! Version: 5.2.4-R
+! TimeUpdated: 2026-04-21T16:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -379,7 +379,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||asiaplustj.info/sites/all/themes/asiaplus/*/subscribe-box.*^$css,script,domain=asiaplustj.info
 ||logs.tourister.ru^$important
 ||tpembar.com^$important
-/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~ya.ru|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*|~yandex.net|~certina.com|~reddit.com|~redd.it|~78.ru|~instagram.com|~api.weather.yandex.ru|~youla.ru|~smotrim.ru|~supergraph.metro-cc.ru|~onedrive.live.com|~live.com|~github.com|~whatsapp.com|~kod.ru|~durovscode.com
+/graphql*$xhr,other,domain=~kinopoisk.ru|~gitlab.com|~x.com|~twitter.com|~nexusmods.com|~ya.ru|~yandex.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*|~yandex.net|~certina.com|~reddit.com|~redd.it|~78.ru|~instagram.com|~api.weather.yandex.ru|~youla.ru|~smotrim.ru|~supergraph.metro-cc.ru|~metro-cc.ru|~onedrive.live.com|~live.com|~github.com|~whatsapp.com|~kod.ru|~durovscode.com|~sierra.chat|~intrepidtravel.com
 ||getrcmx.com^$important
 ||xcom-shop.ru/local/templates/shop2022/js/local/notify.$script,domain=xcom-shop.ru,important,redirect=noopjs
 ||digital.xcom.ru/api/x-js/*/info^$xhr,domain=xcom-shop.ru
@@ -2734,6 +2734,7 @@ about:blank^$domain=greynoise.io
 ||madcpms.com^
 ||redditstatic.com/shreddit/sentry-$script,domain=reddit.com|redd.it,redirect=noopjs
 ||radar.cloudflare.com/api/analytics
+||sierra.chat/*/api/events
 !
 !
 !
@@ -4708,6 +4709,7 @@ securitylab.ru###js-banner-wrapper-69de8650875ab
 kp.ru##.sc-1swemae-0, .dEGxpY
 4pda.to###clys8x4080
 ###ScrollToTop
+kod.ru##.Aside_aside__1F1ia
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -6648,6 +6650,7 @@ teletype.in#@#div.preloader
 @@||tyuiu.ru^$permissions=private-state-token-redemption=()
 @@/jquery.cookie.js$script,domain=tyuiu.ru,important
 @@||tyuiu.ru/lib/ajax/setuserpref.php?sesskey=
+@@||sierra.chat/*/api/graphql
 ! ==
 !
 !
