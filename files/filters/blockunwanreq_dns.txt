@@ -1440,6 +1440,11 @@
 ||madcpms.com^
 ||journal-bt.wildberries.ru^$important
 ||banners-website.wildberries.ru^
+||banners-bt.wildberries.ru^
+||sgtm.beget.com^
+||events.mapbox.com^$important
+||www.clarity.ms^
+||gator.volces.com^
 !
 !
 !
@@ -1880,7 +1885,6 @@
 @@||msftncsi.com^
 @@||msftconnecttest.com^
 @@||sentry.radolyn.com^
-@@||antibot.wildberries.ru^
 @@||recaptcha.umi.ru^
 @@||crl.sectigo.com^
 @@||certificates.intel.com^

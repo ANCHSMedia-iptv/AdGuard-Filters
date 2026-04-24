@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 5.2.4-R
-! TimeUpdated: 2026-04-21T16:30:30+00:00
+! TimeUpdated: 2026-04-24T16:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -582,8 +582,8 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||ecdn.sovcombank.ru/js/em.js^$script,domain=sovcombank.ru,important,redirect=noopjs
 ||api-app.sovcombank.ru/em^$xhr,domain=sovcombank.ru,important,redirect=empty
 ||helpdesk.unistream.ru/js/modules/chat_widget/media/exquisite.*.ogg^$media,redirect=noopmp3-0.1s,domain=unistream.ru
-||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/share.js^$script,domain=kp.ru|kp.*|md.kp.media,important
-||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/zen-subscribe.js^$script,domain=kp.ru|kp.*,important
+||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/share.js^$script,domain=kp.ru|kp.*|md.kp.media,redirect=noopjs,important
+||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/zen-subscribe.js^$script,domain=kp.ru|kp.*,important,redirect=noopjs
 ||assets.habr.com/habr-web/img/*.webp^$image,domain=habr.com
 ! habr.com/kek/v*/reactions/counters$xhr,domain=habr.com (01.25: ломает счётчики на сайте)
 */api/fl$xhr,other
@@ -1779,7 +1779,7 @@ $cookie=MOLNETSTATSESSID,important
 ||sentry.avs.io^$important
 ||maps.googleapis.com/maps-api-v*/api/js/*/*/log.js$important
 ||static.criteo.net^$third-party,domain=~novayagazeta.ru
-||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/telegram-subscribe.js^$script,domain=kp.ru|kp.*
+||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/telegram-subscribe.js^$script,domain=kp.ru|kp.*,redirect=noopjs
 /boom/api/*/metrics/adaptive/favicon-*.png$image,domain=kp.ru|kp.*|md.kp.media,important
 ||vk.com^$app=ru.pyaterochka.app.browser
 ||a1.pronouncefix.com^
@@ -2054,7 +2054,7 @@ $cookie=BITRIX_SM_OT_GUEST_ID
 /wp-content/mu-plugins/jetpack-*/_inc/blocks/sharing-button/view.$script,css
 ||lngtd.com^$important
 ||kargo.com^$third-party,important
-||acint.net^$important,third-party
+||acint.net^$important
 ||api-router.kaspersky-labs.com/logger*/metrics/
 ||kaspersky.antivirus.lv/images/i/px.gif^$image,domain=kaspersky.antivirus.lv,redirect=1x1-transparent.gif,important
 !||tyuiu.ru/*-*-*-*-*/^*$script,domain=tyuiu.ru
@@ -2735,6 +2735,13 @@ about:blank^$domain=greynoise.io
 ||redditstatic.com/shreddit/sentry-$script,domain=reddit.com|redd.it,redirect=noopjs
 ||radar.cloudflare.com/api/analytics
 ||sierra.chat/*/api/events
+||sgtm.beget.com^$important,redirect=googletagservices-gpt
+||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/max-subscribe.js^$script,domain=kp.ru|kp.*,redirect=noopjs
+||s*.stc.yc.kpcdn.net/share/i/beige/*.gif^$domain=kp.ru|kp.*,redirect=1x1-transparent.gif
+||events.mapbox.com^
+||detector404.ru/posdata
+-data.volccdn.com/obj/data-static/log-sdk/$script,redirect=noopjs
+||apm.volccdn.com/mars-web/apmplus/web/browser.cn$script,redirect=noopjs
 !
 !
 !
@@ -2948,6 +2955,7 @@ about:blank^$domain=greynoise.io
 ||*basket*.wb.ru/vol*/dynamic_onboarding/WABANGA_OVERLAY_*.png^$image,domain=wildberries.ru
 ||*basket*.wb.ru/vol*/dynamic_onboarding/WABANGA_*.png^$image,domain=wildberries.ru
 ||banners-website.wildberries.ru^
+||banners-bt.wildberries.ru^
 !
 !
 !
@@ -3935,7 +3943,7 @@ aif.ru##div[class^="count_box_nodisplay"]
 ria.ru,1prime.ru##div[class^="ultraright"]
 tassphoto.com##div.cookie-modal
 oilgasforum.ru###__next > footer.footer.js-header-theme-trigger:nth-child(3) > div.footer-inner.wrapper > div.footer-top:first-child > div.footer-top-left:first-child > div.footer-news
-##iframe[src*="//www.acint.net"]
+##iframe[src*="//www.acint.net/mc"]
 invitro.ru##.article-inner__container, .analisys-in-article
 invitro.ru##div[class^="c2c-call__container"]
 browserleaks.com##a[id^="vpn"][href^="/vpn"]
@@ -4710,6 +4718,9 @@ kp.ru##.sc-1swemae-0, .dEGxpY
 4pda.to###clys8x4080
 ###ScrollToTop
 kod.ru##.Aside_aside__1F1ia
+5-tv.ru###Zakon
+starhit.ru##.sticky-block, .py-3
+starhit.ru###app > div.app.app_ArticlesPage:nth-child(2) > div.container.layout-before-footer:nth-child(7)
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5830,7 +5841,7 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||onlinetrade.ru^$ghide
 @@||onlinetrade.ru/xpvnsulc/sp_rotated_captcha/
 !
-@@||s09.stc.yc.kpcdn.net/share/i/beige/325472601571f31e1bf00674c368d335.gif^$domain=kp.ru
+!
 @@||group-ib.com^
 @@||smartcaptcha.yandexcloud.net
 @@||mega.nz^$ghide
@@ -6443,12 +6454,11 @@ xabar.uz#@#.counters
 browserleaks.com$@$link[rel="manifest"]
 @@||api-gw.youla.ru/graphql$domain=youla.ru
 @@||i.mi.com^$cookie
-@@||mail.yandex.ru/api/v*/userid/counters
+!@@||mail.yandex.ru/api/v*/userid/counters
 @@||gov.ru^$cookie
 @@||sentry.radolyn.com^
 @@||antibot.wildberries.ru/statics/challenge_$script
 @@||antibot.wildberries.ru/api/v*/$xhr
-@@||antibot.wildberries.ru^
 @@||goldapple.ru^$cookie=ga-lang
 @@||ortoatlant.ru/*?route=product/product/captcha$image
 @@/globalRecaptchaContent/
@@ -6605,7 +6615,7 @@ teletype.in#@#div.preloader
 @@||api.kod.ru/graphql
 @@||idam.metro-cc.ru/authorize/api/oauth2/check_cookie_iframe$domain=metro-cc.ru
 @@||ads.vk.*^$domain=ads.vk.com|ads.vk.ru
-@@/counters^$domain=astral.ru|au.ru|av.by|glavagronom.ru|itpc.ru|letu.ru|mos.ru|pay.tns-e.ru|pikabu.ru
+@@/counters^$domain=astral.ru|au.ru|av.by|glavagronom.ru|itpc.ru|letu.ru|mos.ru|pay.tns-e.ru|pikabu.ru|habr.com|mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*
 @@||ximitime.com^
 @@||rapidsave.com/download.php?permalink=
 @@||habr.com/service-worker.js^$domain=habr.com
@@ -6617,6 +6627,7 @@ teletype.in#@#div.preloader
 @@||api.browser.yandex.*/ntp/widgets
 @@||ozon.ru/abt/
 @@||antibot.wildberries.ru^
+@@||api.beget.com/website/captcha/
 !
 !
 ! -
