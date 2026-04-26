@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.2.4-R
-! TimeUpdated: 2026-04-24T16:30:30+00:00
+! Version: 5.2.5-R
+! TimeUpdated: 2026-04-26T16:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2698,7 +2698,6 @@ about:blank^$domain=greynoise.io
 ||reuters.com/pf/resources/dist/ads/$script,domain=reuters.com,redirect=noopjs,important
 ||cs45.pikabu.ru/ev.php$domain=pikabu.ru
 ||cs16.pikabu.ru/s/2026/03/31/11/zkxsjtw3.jpg^$image,domain=pikabu.ru
-||st.vk.*/dist/core_spa/error_monitoring.$script,domain=vk.com|vk.ru,redirect=noopjs
 ||nnmstatic.win/forum/misc/js/share.js^$script,domain=nnmclub.to,redirect=noopjs
 ||me.gvt1.com^$app=ru.oneme.app
 ||cdn.yandex.net^$app=free.vpn.proxy.secure|com.zoogvpn.android|com.freevpnplanet|com.free.tiptop.vpn.proxy|free.vpn.unblock.proxy.turbovpn
@@ -2735,13 +2734,16 @@ about:blank^$domain=greynoise.io
 ||redditstatic.com/shreddit/sentry-$script,domain=reddit.com|redd.it,redirect=noopjs
 ||radar.cloudflare.com/api/analytics
 ||sierra.chat/*/api/events
-||sgtm.beget.com^$important,redirect=googletagservices-gpt
+||sgtm.beget.com^$important
 ||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/max-subscribe.js^$script,domain=kp.ru|kp.*,redirect=noopjs
 ||s*.stc.yc.kpcdn.net/share/i/beige/*.gif^$domain=kp.ru|kp.*,redirect=1x1-transparent.gif
 ||events.mapbox.com^
 ||detector404.ru/posdata
 -data.volccdn.com/obj/data-static/log-sdk/$script,redirect=noopjs
 ||apm.volccdn.com/mars-web/apmplus/web/browser.cn$script,redirect=noopjs
+||s3-cdn.iportal.ru/static/mediadash/tracker.iife.$script,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru,redirect=noopjs
+||analytics.mediadash.ru^
+||vk.*/q_frame.html
 !
 !
 !
@@ -4721,6 +4723,23 @@ kod.ru##.Aside_aside__1F1ia
 5-tv.ru###Zakon
 starhit.ru##.sticky-block, .py-3
 starhit.ru###app > div.app.app_ArticlesPage:nth-child(2) > div.container.layout-before-footer:nth-child(7)
+gismeteo.ru##.top-media-extender
+gismeteo.ru##main.content.wrap:nth-child(5) > div.content-column:nth-child(2)
+gismeteo.ru##main.content.wrap:nth-child(5) > div.content-column:last-child
+gismeteo.ru##.extender, .h400
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru###app > div:first-child > header.pageHeaderTemplate_ELqbW.d-flex.align-items-c.justify-content-c.w-100:first-child > div.w-100:first-child > div
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru###app > div:first-child > div.container_YXfHd.grid_YXfHd:nth-child(3) > aside.gridAside_YXfHd.gridAsideLeft_YXfHd:first-child > section.baseBlock_eTWoY.light_eTWoY.d-flex.align-items-c.flex-column.w-100.h-100 > div.newsFeedBlock_j0RKX:last-child > div.advWrapper_j0RKX:nth-child(3) > div > div.creativePlaceholder_h2Ctx._vb-left-1.hasBackground_h2Ctx.hasBorders_h2Ctx.d-flex.flex-column.justify-content-c.flex-grow-1.w-100
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru###app > div:first-child > div.container_YXfHd.grid_YXfHd:nth-child(3) > main.gridContent_YXfHd:last-child > div.gridContainer:last-child > div.wrap-cp_rTVTL.gridFullMobile.gridOneThirdLaptop:nth-child(4)
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru###app > div:first-child > div.container_YXfHd.grid_YXfHd:nth-child(3) > main.gridContent_YXfHd:last-child > div.gridContainer:last-child > div.wrap-cp_rTVTL.gridFullMobile:nth-child(8)
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru###app > div:first-child > div.container_YXfHd.grid_YXfHd:nth-child(3) > main.gridContent_YXfHd:last-child > div.gridContainer:last-child > div.wrap-cp_rTVTL.gridFullMobile.gridOneThirdLaptop:nth-child(13)
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru###app > div:first-child > div.container_YXfHd.grid_YXfHd:nth-child(3) > aside.gridAside_YXfHd.gridAsideLeft_YXfHd:first-child > section.baseBlock_eTWoY.light_eTWoY.d-flex.align-items-c.flex-column.w-100.h-100 > div.newsFeedBlock_j0RKX:last-child > div.advWrapper_j0RKX:nth-child(28)
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru###app > div:first-child > div.container_YXfHd.grid_YXfHd:nth-child(3) > main.gridContent_YXfHd:last-child > div.gridContainer:last-child > div.wrap-cp_rTVTL.gridFullMobile:nth-child(25)
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru###app > div:first-child > div.container_YXfHd.grid_YXfHd:nth-child(3) > aside.gridAside_YXfHd.gridAsideLeft_YXfHd:first-child > section.baseBlock_eTWoY.light_eTWoY.d-flex.align-items-c.flex-column.w-100.h-100 > div.newsFeedBlock_j0RKX:last-child > div.advWrapper_j0RKX:nth-child(39)
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru###app > div:first-child > div.container_YXfHd.grid_YXfHd:nth-child(3) > aside.gridAside_YXfHd.gridAsideLeft_YXfHd:first-child > section.baseBlock_eTWoY.light_eTWoY.d-flex.align-items-c.flex-column.w-100.h-100 > div.newsFeedBlock_j0RKX:last-child > div.stickyBlock_8LmG0.my-4:last-child
+###app > div:first-child > div.gridArticle_KMjUr:nth-child(3) > div.grid_KMjUr > aside.gridAside_KMjUr:nth-child(5) > div:first-child
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru##.inline_61I4k, .mb-8
+116.ru,14.ru,161.ru,164.ru,173.ru,26.ru,29.ru,35.ru,43.ru,45.ru,48.ru,51.ru,53.ru,56.ru,59.ru,60.ru,63.ru,68.ru,71.ru,72.ru,74.ru,76.ru,86.ru,89.ru,93.ru,chita.ru,e1.ru,fontanka.ru,ircity.ru,izh1.ru,mgorsk.ru,msk1.ru,ngs.ru,ngs22.ru,ngs24.ru,ngs42.ru,ngs55.ru,ngs70.ru,nn.ru,sochi1.ru,sterlitamak1.ru,tolyatty.ru,ufa1.ru,v1.ru,vladivostok1.ru,voronezh1.ru,ya62.ru###app > div:first-child > div.gridArticle_KMjUr:nth-child(3) > div.grid_KMjUr > main.gridContent_KMjUr:nth-child(3) > section.mb-6:first-child > div:nth-child(9)
+vk.*##iframe[src^="/q_frame.html"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5305,6 +5324,8 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||yandex.ru/maps/_crpd/*/*/*|$xhr
 ||api-maps.yandex.ru/v*/counters
 ||yastatic.net/lego/_/$image,redirect=1x1-transparent.gif
+! ||browser.yandex.*/welcome-update/c/empty
+||yandex.ru/promo/yobject/welcome/
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
