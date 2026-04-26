@@ -154,7 +154,7 @@
 ||log.api-maps.yandex.ru^$important
 ||admetrica.ru^
 ||im*-tub-*.yandex.net^
-||uaas.yandex.ru^
+||uaas.yandex.ru^$important
 !
 !
 ! ===
