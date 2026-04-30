@@ -3,7 +3,7 @@
 ! Version: 4.5.9-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-04-26T16:28:30+00:00
+! TimeUpdated: 2026-04-29T16:28:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 26.04.2026 16:28 UTC
+! Last Modified: 29.04.2026 16:28 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -73,7 +73,7 @@
 ||webvisor.com^$important
 ||appmetrica.yango.com^$important
 ||adfstat.yandex.ru^$important
-||push.yandex.ru^$important
+! push.yandex.ru^$important
 ||http-check-headers.yandex.ru^$important
 ||*extmaps-api.yandex.net^$important
 ||metrika.yandex.*^$important
@@ -1248,28 +1248,28 @@
 ||track.mailerlite.com^
 ||sibautomation.com^
 ||pixel.mailchimp.com^
-||sendinblue.com^ 
-||dripemail2.com^
-||mailerlite.com^
+!||sendinblue.com^ 
+!||dripemail2.com^
+!||mailerlite.com^
 ||list-manage.com^
-||convertkit.com^
-||getresponse.com^
-||customeriomail.com^
-||getdrip.com^
-||aweber.com^
-||activecampaign.com^
+!||convertkit.com^
+!||getresponse.com^
+!||customeriomail.com^
+!||getdrip.com^
+!||aweber.com^
+!||activecampaign.com^
 ||trackcmp.net^
-||pardot.com^
-||mandrillapp.com^
-||mailgun.net^
-||mailgun.org^
-||hubspotemail.net^
-||hubspot.com^
-||constantcontact.com^
-||sendgrid.net^
-||springserve.com^
-||spotxcdn.com^
-||spotxchange.com^
+!||pardot.com^
+!||mandrillapp.com^
+!||mailgun.net^
+!||mailgun.org^
+!||hubspotemail.net^
+!||hubspot.com^
+!||constantcontact.com^
+!||sendgrid.net^
+!||springserve.com^
+!||spotxcdn.com^
+!||spotxchange.com^
 ||2mdn.net^
 ||fresnel.vimeocdn.com^
 ||jwpltx.com^
@@ -1950,6 +1950,7 @@
 @@||chelpus.com^$important
 @@||antibot.wildberries.ru^
 @@||dns.msftncsi.com^
+@@||ipregistry.co^$important
 !
 !
 !
