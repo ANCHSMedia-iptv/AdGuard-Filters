@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.2.6-R
-! TimeUpdated: 2026-04-29T16:30:30+00:00
+! Version: 5.2.7-R
+! TimeUpdated: 2026-05-01T16:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1662,7 +1662,7 @@ $removeparam=yaCounter,doc,script,xhr
 ||cdnfiles.rg.ru/_next/static/chunks/65004.9480c4446de92d03.js^$script,domain=rg.ru
 ||archive.org^$cookie=donation-identifier
 ||archive.org/components/donation-banner/$css,image,domain=archive.org
-||archive.org/includes/build/js/donation-banner.min.js$script,domain=archive.org
+||archive.org/includes/build/js/donation-banner.$script,domain=archive.org
 ||archive.org/includes/athena.js^$script,domain=archive.org
 ||tenor.googleapis.com/v*/registerevent$ping,domain=tenor.com,redirect=empty
 ||cdn.lifehacker.ru/wp-content/uploads/2022/12/$image,domain=lifehacker.ru
@@ -2384,7 +2384,7 @@ $cookie=TSDK_trackerSessionId
 ||jquery.pushstat.online/api/yandex-fingerprint
 ||usercentrics.eu^
 ||nel.cloudflare.com^$important
-||performance.radar.cloudflare.com^
+||performance.radar.cloudflare.com^$important
 ||mpsuadv.ru^$important
 ||new-retail.ru/instruments/banner_fixer.js^$script,domain=new-retail.ru,redirect=noopjs
 ||kommersant.ru/common/popup$xhr,domain=kommersant.ru,redirect=nooptext
@@ -2735,6 +2735,17 @@ about:blank^$domain=greynoise.io
 ||streamily.com/api/trackingPageSession
 ||streamily.com/api/siteNotice
 ||api.expertise.ai/v*/location/*-*-*/analytics/
+||static.cloudflareinsights.com/beacon.$important
+||gosuslugi.ru/api/zdrav-metrics/
+||vd.visionlabs.ai^
+||archive.org/_static/css/banner-styles.css$css,domain=archive.org
+/metrika/tag.js$redirect=metrica-yandex-watch-tag
+||archive.org/includes/donate.php$domain=archive.org
+||archive.org/includes/apollo.js^$script,domain=archive.org
+||apollo.archive.org^
+||relay-api.*.2gis.*^
+||relay-api.2gis.*^
+||trace-flow.ru^
 !
 !
 !
@@ -2758,6 +2769,7 @@ about:blank^$domain=greynoise.io
 ! Blocking the script responsible for advertising (despite other filters blocking URLs of advertisements).
 ! Блокировка скрипта, отвечающего за рекламу (несмотря на блокировку URL адресов рекламы другими фильтрами).
 ||*4pda.to/s/j7793LgWtPTV.js$script,domain=4pda.to,important
+||*4pda.to/s/PXticMV92IyK.js?_=$script,domain=4pda.to,important
 !
 !
 ! Blocking hidden images in one pixel (1 x 1).
@@ -3230,34 +3242,34 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 ! == "Superfluous garbage" from the website (personal cabinet) of T-Bank (ex. Tinkoff). ==
 ! == «Лишний мусор» с сайта (личного кабинета) Т-Банка (ex. Тинькофф). + сервисов самого банка и журнала Т-Ж (journal .tinkoff .ru, new address (from 02.25) t-j .ru) ==
 !
-*.ru/api/front/$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
-*.ru/gateway/v*/event$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru|~api-statist.tinkoff.ru|~api-statist.tbank.ru,important,redirect=empty
-*.ru/api/front/supreme-beer/$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
-*.ru/api/v*/log^$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
-*.ru/resources?name=analytics_config$domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
+*/api/front/$domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
+*/gateway/v*/event$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru|~api-statist.tinkoff.ru|~api-statist.tbank.ru,important,redirect=empty
+*/api/front/supreme-beer/$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
+*/api/v*/log^$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
+*/resources?name=analytics_config$domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
 */tracking/mappings/test/active-mapping.json^$script,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjs
-*.ru/api/cfg/web-gateway/getResponse$domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
-*.ru/api-gateway/v*/getToggles^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
-*.ru/twa/hosted-libs/top-mail/v*/code.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjs
-*.ru/twa/hosted-libs/target-ads/v*/targetads-sdk-*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=noopjs,important
-*.ru/twa/ad-hoc/pixel-iframe/index.html^$domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=noopframe,important
-*.ru/twa/hosted-libs/vk/v*/openapi.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+*/api/cfg/web-gateway/getResponse$domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
+*/api-gateway/v*/getToggles^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
+*/twa/hosted-libs/top-mail/v*/code.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjs
+*/twa/hosted-libs/target-ads/v*/targetads-sdk-*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=noopjs,important
+*/twa/ad-hoc/pixel-iframe/index.html^$domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=noopframe,important
+*/twa/hosted-libs/vk/v*/openapi.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
 !*.ru/eventea/v*/eventea.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjs
 */hedge/v*/yandex-metrika$script,domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=metrika-yandex-watch,important
 !*.ru/eventea/v*/pwa.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=noopjson,important
 !*.ru/eventea/v*/tj.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjson
 */hedge/v*/vk-counter$script,domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=noopjs,important
 */hedge/v*/mercury-tracking-event.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=noopjs,important
-*.ru/twa/*/tinkoff-pwa/*/*/index.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjs
-*.ru/eventea/$script,xhr,other,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
+*/twa/*/tinkoff-pwa/*/*/index.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjs
+*/eventea/$script,xhr,other,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
 ! .ru/eventea/v*/tjournal.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjson
-*.ru/api/common/v*/ping$xhr,domain=tbank.ru|tinkoff.ru,important,redirect=empty
+*/api/common/v*/ping$domain=tbank.ru|tinkoff.ru,important,redirect=empty
 ! .ru/api/common/v*/session_status?appName=$xhr,domain=tbank.ru|tinkoff.ru,important,redirect=empty
 ! .ru/api/common/v*/session?appName=$xhr,domain=tbank.ru|tinkoff.ru,important,redirect=empty
-*.ru/frontend-libraries/*/sentry/*/*.js^$script,domain=tbank.ru|tinkoff.ru,important,redirect=noopjs
-*.ru/*/*-web-performance-*.js^$script,xhr,domain=tbank.ru|tinkoff.ru,important,redirect=noopjs
+*/frontend-libraries/*/sentry/*/*.js^$script,domain=tbank.ru|tinkoff.ru,important,redirect=noopjs
+*.*/*/*-web-performance-*.js^$script,xhr,domain=tbank.ru|tinkoff.ru,important,redirect=noopjs
 ||error-hub.tinkoff.ru^$important
-*.ru/ws/monitoring/log|$image,domain=tbank.ru|tinkoff.ru,important,redirect=empty
+*.*/ws/monitoring/log|$image,domain=tbank.ru|tinkoff.ru,important,redirect=empty
 ||mf-platform-production.t-static.ru/devtools/lockfile-boxy$domain=tbank.ru|tinkoff.ru,redirect=noopjs
 ||api-statist.tinkoff.ru^$important
 ||api-statist.tbank.ru^$important
@@ -3269,9 +3281,10 @@ aliexpress.ru##.CommonShelf_CommonShelf__profitShelf__1gmlo
 ||webim-tknzr.tinkoff.ru^
 ||error-hub.tbank.ru^
 ||ms-dsp.tinkoff.ru^$important
-*.ru/performance/$domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=empty
-/web-fingerprint/api/v*/$domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=empty
+*.*/performance/$domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=empty
+*/web-fingerprint/api/v*/$domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=empty
 ||fingerprint.t-static.ru^
+||sso-forms-prod.t-static.ru/client/*/*/browserDetect/browserDetect-$script,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjs
 !
 ! Чат поддержки, разные элементы, разделы и прочее в ЛК на сайте сломались в результате блокировки множества адресов (запросов).
 ! Хитро, хитро сделано.. привязанность аналитики и прочему «мусору» к чате поддержки и не только..
@@ -4735,6 +4748,7 @@ dev.2gis.ru##div.rounded-20.bg-surface-base-secondary.fixed.right-0.bottom-14.le
 streamily.com##.MuiDialog-root
 streamily.com###root > header.jss38.jss39.show:last-child
 streamily.com###root > div.home-page__sections__container:nth-child(4) > div.jss10.jss11:last-child > div.jss12.jss13.dark:nth-child(2) > div.MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-6 > div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-12.MuiGrid-grid-md-5.MuiGrid-grid-lg-6:nth-child(2) > div.MuiBox-root.jss45 > div:first-child
+uslugi.tyumen-city.ru###rm-greeting-widget
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5322,6 +5336,8 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ! ||browser.yandex.*/welcome-update/c/empty
 ||yandex.ru/promo/yobject/welcome/
 ||mc.yandex.*/metrika/tag_phono.js$redirect=metrika-yandex-tag
+||mobileproxy.passport.yandex.net/tmgrdfrend/checkvpn
+||mob-manager-aws.mob.taxi.yandex.net^
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
