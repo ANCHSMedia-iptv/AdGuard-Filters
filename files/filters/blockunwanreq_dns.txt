@@ -3,7 +3,7 @@
 ! Version: 4.6.0-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-05-01T16:28:30+00:00
+! TimeUpdated: 2026-05-02T16:28:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 01.05.2026 16:28 UTC
+! Last Modified: 02.05.2026 16:28 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -393,7 +393,7 @@
 ||api.mindbox.ru^$important
 ||acint.net^$important
 ||a.ria.ru^$important
-||infox.sg^$important
+||*.infox.sg^$important
 ||digitaltarget.ru^$important
 ||push4site.com^$important
 ||criteo.net^$important
@@ -465,7 +465,7 @@
 ||yapx.ru^$important
 ||log.rutube.ru^$important
 ||pingdom.net^
-||rb.infox.sg^
+! rb.infox.sg^
 ||mediametrics.ru^$important
 ||pubmatic.com^$important
 ||rassilkatest.ru^$important
@@ -1451,6 +1451,13 @@
 ||trace-flow.ru^
 ||relay-api.*.2gis.*^
 ||relay-api.2gis.*^
+||config.edge.skype.com^
+||trap.skype.com^
+||skypewebexperience.live.com^
+||config.edge.skype.com.trafficmanager.net^
+||pipe.skype.com^
+||click.email.microsoftemail.com^
+||target.microsoft.com^
 !
 !
 !

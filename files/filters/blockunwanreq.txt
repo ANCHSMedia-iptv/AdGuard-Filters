@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 5.2.7-R
-! TimeUpdated: 2026-05-01T16:30:30+00:00
+! TimeUpdated: 2026-05-02T16:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -175,7 +175,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||rutarget.ru^$important
 ||api.mindbox.ru^$important,domain=~mindbox.ru,third-party
 ! */api/fl/id*^$xhr,important (новое правило, строка 589)
-||s.rbk.ru/*_static/*-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,important
+||s.rbk.ru/*_static/*-*/scripts/build/_gt-targeting.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,important
 ||trafffgen.rambler.ru^$important
 ||gotovim-doma.ru/img/*/*.gif^$image,domain=gotovim-doma.ru,important
 ||img*.russianfood.com/images/common/main_menu_bg1.gif^$image,domain=russianfood.com
@@ -183,7 +183,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||img*.russianfood.com/images/common/bottom_line_bg.gif^$image,domain=russianfood.com
 ||stat*.russianfood.com/tapi^$xhr,domain=russianfood.com,important
 ||russianfood.com/images/blg.png^$image,domain=russianfood.com,important
-/v*/geoinfo/by-ip/$domain=rbc.ru
+/v*/geoinfo/by-ip/$domain=rbc.ru|rbclifemedia.ru|autonews.ru|sportrbc.ru
 ! ext.clickstream.sberbank.ru/metrics/$xhr,important (новое правило, строка 771)
 !
 ||player.twitch.tv/js/embed/$script,domain=~twitch.tv,important
@@ -689,11 +689,11 @@ $cookie=/__ddg*/,important
 /images/site_180x81_1.gif^$image,domain=2x2tv.ru|online.2x2tv.ru
 ! api.vigo.one/uxzoom/*/notify$xhr (779)
 ||tolstoycomments.com^$domain=2x2tv.ru
-||s.rbk.ru/*rbcnews_static/rbcnews-*/scripts/build/_metrika-config.js^$script,domain=rbc.ru,redirect=metrika-yandex-watch,important
+||s.rbk.ru/*/*/scripts/build/_metrika-config.js^$script,domain=rbc.ru|rbclifemedia.ru,redirect=metrika-yandex-watch,important
 .ru/info-service/api/v*/ev/$xhr,ping,domain=rbc.ru|sportrbc.ru,important
-||rbc.ru/track/*/*/$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,important
+||rbc.ru/track/*/*/$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,important
 !
-||rbc.ru/rbcmetr/stat/$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,important,redirect=empty
+||rbc.ru/rbcmetr/stat/$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,important,redirect=empty
 ||telegram.org/css/*widget*.css$css,third-party,domain=~telegram.org|~t.me
 ||iguides.ru/bitrix/templates/iguides-2015/js/tg-widget.js$xhr,domain=iguides.ru
 ||tourister.ru^$cookie=dis_is_retina
@@ -1401,11 +1401,11 @@ $cookie=s24id
 ! ad-wa.anydesk.com^
 ||ad-wa.anydesk.com/js/container_$script,domain=anydesk.com,important
 ||liveinternet.ru/stat/*/index.html$important
-||s.rbk.ru/v*_*_static/*/scripts/build/fn/_foxDetector.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru
+||s.rbk.ru/v*_*_static/*/scripts/build/fn/_foxDetector.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru
 ||s.rbk.ru/v*_rbcnews_static/rbcnews-*/scripts/build/fn/_devEvent.js^$script,domain=rbc.ru
 /ajax/get-news-feed/project/$xhr,domain=rbc.ru|sportrbc.ru
 ||rbc.ru/v*/ajax/news/slide/$xhr,domain=rbc.ru
-||s.rbk.ru/v*_rbcbanners_static/rbcbanners-*/fox/build/app.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru
+||s.rbk.ru/v*_rbcbanners_static/rbcbanners-*/fox/build/app.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru
 ||rbc.ru/v*/ajax/oprosso-$xhr,domain=rbc.ru
 !
 !
@@ -1591,7 +1591,7 @@ $cookie=/utm_*/,important
 ||resh.edu.ru/uploads/cinema-online.jpg^$image,domain=resh.edu.ru
 ||s.rbk.ru/v*_tv_static/common/common-*/scripts/build/fn/_ipMonitoring.js^$script,domain=tv.rbc.ru
 ||sck*.rbc.ru/t.$image,domain=tv.rbc.ru,important
-/dfp_site^$script,domain=tv.rbc.ru|autonews.ru|rbcautonews.ru
+/dfp_site^$script,domain=tv.rbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru
 ||autonews.ru^$cookie=splituid
 $cookie=yabm
 ||mos.ru/api/analytics-forwarder/v*/events^$xhr,domain=mos.ru,redirect=empty,important
@@ -1926,8 +1926,8 @@ $cookie=fpm_referer
 ||kommersant.ru/ContentFlex/images/placeholder.$image,domain=kommersant.ru
 ||kommersant.ru/ContentFlex/images/google_service_subscribe_$image,domain=kommersant.ru
 ||app.rbc.ru/gpn/push-subscribe.html^$domain=rbc.ru
-/scripts/build/fn/_pushAllow.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru
-/scripts/build/fn/_firebase.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,important
+/scripts/build/fn/_pushAllow.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,redirect=noopjs
+/scripts/build/fn/_firebase.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,important
 ||bee-cake.ru^$domain=beeline.ru
 /templates/11klasov/js/share.js^$script,domain=11klasov.net|go.11klasov.net
 /templates/11klasov/images/telegram-icon.svg^$image,domain=11klasov.net|go.11klasov.net
@@ -2625,9 +2625,9 @@ _banner.swf
 ||stellarlabs.ai^$third-party,domain=~stellarlabs.ai
 ||metro.sentry.beta.agency^$important
 ||sentry-ingest.kuper.ru^$important
-/dfp_page$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,redirect=noopjs
-||s.rbk.ru/*/common/common-*/scripts/build/fn/_lozad.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,redirect=noopjs
-||s.rbk.ru/*/common/common-*/scripts/build/fn/_stickyBlock.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru,redirect=noopjs
+/dfp_page$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,redirect=noopjs
+||s.rbk.ru/*/common/common-*/scripts/build/fn/_lozad.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,redirect=noopjs
+||s.rbk.ru/*/common/common-*/scripts/build/fn/_stickyBlock.js^$script,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,redirect=noopjs
 tildastat-*.$script,redirect=noopjs
 ||facebook.com/impression.php/
 ||stat.tildacdn.com^
@@ -2746,6 +2746,21 @@ about:blank^$domain=greynoise.io
 ||relay-api.*.2gis.*^
 ||relay-api.2gis.*^
 ||trace-flow.ru^
+||rbc.ru/api/rbcnews/*/social-networks/$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,redirect=empty
+||rbc.ru/api/rbcnews/v*/topline-branding$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,redirect=empty
+||rbc.ru/api/rbcnews/v*/newsfeed-block$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,redirect=empty
+||rbc.ru/api/rbcnews/v*/publisher/main_for_live_timer$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,redirect=empty
+||rbc.ru/api/*/second-wirc/*/*?*$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru
+||rbc.ru/api/rbcnews/v*/get-read-more/interesting_on_rbc/$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru
+||rbclifemedia.ru^$cookie=/utmReferrer|xrft|splituid/
+||rbc.ru/api/rbcnews/v*/champions-league-matches$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru
+||config.edge.skype.com^
+||trap.skype.com^
+||skypewebexperience.live.com^
+||config.edge.skype.com.trafficmanager.net^
+||pipe.skype.com^
+||click.email.microsoftemail.com^
+||target.microsoft.com^
 !
 !
 !
@@ -3882,7 +3897,7 @@ pochta.ru###main-content > div.Box-sc-7ax6ia-0.eztcbC > div.PageContainer-sc-1d3
 ping-admin.com###result_links > div.uk-grid-small.uk-margin-large-bottom.uk-grid.uk-grid-stack:nth-child(3) > div.uk-width-1-1.uk-width-expand\@l.uk-grid-margin.uk-first-column:last-child > div:last-child
 ##span[id*="openstat"]
 rbc.ru##div[class^="js-mts-floor-aida-place"]
-rbc.ru,sportrbc.ru,rbcautonews.ru##div[class^="g-zeropixel"]
+rbc.ru,sportrbc.ru,rbcautonews.ru,rbclifemedia.ru,autonews.ru##div[class^="g-zeropixel"]
 rbc.ru##ul[class^="footer__counter"]
 dipol.fm###cookies
 ###cookies
@@ -4679,10 +4694,10 @@ x.com###layers > div.css-175oi2r.r-aqfbo4.r-zchlnj.r-1d2f490.r-1xcajam.r-1p0dtai
 leto-leto.com##.vm--container, .scrollable
 leto-leto.com##.hotbot-widget
 habr.com##.floating-image
-rbc.ru,sportrbc.ru,autonews.ru,rbcautonews.ru##.sticky-wrapper
-rbc.ru,sportrbc.ru,autonews.ru,rbcautonews.ru##.style_promo__3MuRI, .style_promo-aside__8uUGU, .style_promo-mobile__ShC16
-rbc.ru,sportrbc.ru,autonews.ru,rbcautonews.ru###\36 9d253ca9a7947c9450fce5c > div.m-gutter-b:first-child > div.card-wrapper:last-child > p.paragraph
-rbc.ru,sportrbc.ru,autonews.ru,rbcautonews.ru##a[href*="://max.ru/rbc"]
+rbc.ru,sportrbc.ru,autonews.ru,rbcautonews.ru,rbclifemedia.ru##.sticky-wrapper
+rbc.ru,sportrbc.ru,autonews.ru,rbcautonews.ru,rbclifemedia.ru##.style_promo__3MuRI, .style_promo-aside__8uUGU, .style_promo-mobile__ShC16
+rbc.ru,sportrbc.ru,autonews.ru,rbcautonews.ru,rbclifemedia.ru###\36 9d253ca9a7947c9450fce5c > div.m-gutter-b:first-child > div.card-wrapper:last-child > p.paragraph
+rbc.ru,sportrbc.ru,autonews.ru,rbcautonews.ru,rbclifemedia.ru##a[href*="://max.ru/rbc"]
 rbc.ru##.article__issue-next-material-inner
 nsk.plus.rbc.ru##.l-base__col__right
 rskrf.ru##.col-xl-4, .f-subscribe
