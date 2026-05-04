@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.6.0-R
+! Version: 4.6.1-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-05-02T16:28:30+00:00
+! TimeUpdated: 2026-05-03T16:28:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 02.05.2026 16:28 UTC
+! Last Modified: 03.05.2026 16:28 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -155,6 +155,9 @@
 ||admetrica.ru^
 ||im*-tub-*.yandex.net^
 ||uaas.yandex.ru^$important
+||mob-manager-aws.mob.taxi.yandex.net^
+||yastat.net^
+||csp.yandex.*^
 !
 !
 ! ===
@@ -225,6 +228,21 @@
 ||nexusrules.officeapps.live.com^
 ||optanon.blob.core.windows.net^
 ||measure.office.com^
+||config.edge.skype.com^
+||trap.skype.com^
+||skypewebexperience.live.com^
+||config.edge.skype.com.trafficmanager.net^
+||pipe.skype.com^
+||click.email.microsoftemail.com^
+||target.microsoft.com^
+||smartscreen.microsoft.com^
+||checkappexec.microsoft.com^
+||activity.windows.com^
+||arc.msn.com^
+||iris.microsoft.com^
+||msdx-cdn-y86ykn8r9v.azureedge.net^
+||settings-prod-*.*.cloudapp.azure.com^
+||atm-settingsfe-prod-*.trafficmanager.net^
 ! =
 !
 ! ===
@@ -275,6 +293,26 @@
 ||fundingchoicesmessages.google.com^
 ||geomobileservices*.googleapis.com^$important
 ||federatedcompute*.googleapis.com^$important
+||marketingplatform.google.com^
+||ads.google.com^
+||s0-2mdn-net.l.google.com^
+||googleadsserving.cn^
+||googleadservices.com^
+||mt34.mtree.com^
+||displayads-formats.googleusercontent.com^
+||pagead-googlehosted.l.google.com^
+||analytics-api-samples.googlecode.com^
+||video-stats.video.google.com^
+||blueadvertise.com^
+||affiliate.googleusercontent.com^
+||*-google-analtyic.com^
+||*-google-analytics.l.google.com^
+||clientmetrics*.googleapis.com^
+||pagead.l.google.com^
+||partnerad.l.google.com^
+||wintricksbanner.googlepages.com^
+||ads.google.com^
+||ogads*.clients6.google.com^$important
 !
 ! ===
 !
@@ -1342,7 +1380,7 @@
 ||rumstat.cdnvideo.ru^
 ||collector.githubapp.com^$important
 ||anltcs.llimonix.dev^
-||events.telega.info^
+||events.telega.*^
 ||metro.sentry.beta.agency^$important
 ||sentry-ingest.kuper.ru^$important
 ||stat.tildacdn.com^
@@ -1451,13 +1489,27 @@
 ||trace-flow.ru^
 ||relay-api.*.2gis.*^
 ||relay-api.2gis.*^
-||config.edge.skype.com^
-||trap.skype.com^
-||skypewebexperience.live.com^
-||config.edge.skype.com.trafficmanager.net^
-||pipe.skype.com^
-||click.email.microsoftemail.com^
-||target.microsoft.com^
+||posthog.com^
+||stats.iobit.com^
+||adtech.de^
+||events.archive.org^
+||analytics.archive.org^
+||athena.archive.org^
+||wwwb-events.archive.org^
+||hit.gemius.pl^
+||cloudflareinsights.com^$important
+||metrics.cloudflarebolt.com^
+||ad.bench.utorrent.com^
+||omtrdc.net^
+||ensighten.com^
+||optimizely.com^
+||cdn.dynamicyield.com^
+||exp.notion.so^
+||http-inputs-notion.splunkcloud.com^
+! ||transcend-cdn.com^
+||cane.intel.com^
+||player.stats.live-video.net^$important
+||intake-analytics.wikimedia.org^
 !
 !
 !
@@ -1963,6 +2015,10 @@
 @@||antibot.wildberries.ru^
 @@||dns.msftncsi.com^
 @@||ipregistry.co^$important
+@@||rt-*-*-htlive.cdn.ngenix.net^
+@@||kir22.ru^$important
+@@||656c797369756d.app^$important
+@@||video-edge-*.*.hls.live-video.net^$important
 !
 !
 !
