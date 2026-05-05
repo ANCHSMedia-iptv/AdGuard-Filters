@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.6.1-R
+! Version: 4.6.2-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-05-03T16:28:30+00:00
+! TimeUpdated: 2026-05-05T16:28:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 03.05.2026 16:28 UTC
+! Last Modified: 05.05.2026 16:28 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -243,7 +243,8 @@
 ||msdx-cdn-y86ykn8r9v.azureedge.net^
 ||settings-prod-*.*.cloudapp.azure.com^
 ||atm-settingsfe-prod-*.trafficmanager.net^
-! =
+||win-global-asimov-leafs-events-data.trafficmanager.net^
+||onedscolprdeus12.eastus.cloudapp.azure.com^
 !
 ! ===
 !
@@ -665,7 +666,7 @@
 ||tapas.net^$dnsrewrite=NXDOMAIN,important
 ||tapjoyads.com^$dnsrewrite=NXDOMAIN,important
 ||tapjoy.com^$dnsrewrite=NXDOMAIN,important
-! cdn.cookielaw.org^
+||cdn.cookielaw.org^$important
 ||zap^$dnsrewrite=NXDOMAIN,important
 ||burp^$dnsrewrite=NXDOMAIN,important
 ||*.rt.avito.ru^
@@ -1508,8 +1509,10 @@
 ||http-inputs-notion.splunkcloud.com^
 ! ||transcend-cdn.com^
 ||cane.intel.com^
-||player.stats.live-video.net^$important
+||stats.live-video.net^$important
 ||intake-analytics.wikimedia.org^
+||pixel.spotify.com^
+||pixel-static.spotify.com^
 !
 !
 !
@@ -2169,6 +2172,7 @@
 ||piguiqproxy.com^$dnsrewrite=0.0.0.0
 ||fewteraurums.com^
 ||qxgolds.com^$dnsrewrite=BLOCKED
+||kgwhg.com^$dnsrewrite=BLOCKED
 !
 !
 !

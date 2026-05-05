@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.2.8-R
-! TimeUpdated: 2026-05-03T16:30:30+00:00
+! Version: 5.2.9-R
+! TimeUpdated: 2026-05-05T16:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2090,7 +2090,7 @@ $removeparam=yadiscount
 ||lug-info.ru/ajax/telegram/$xhr,domain=lug-info.ru
 ! ynuf.aliapp.org^
 ! ynuf.aliapp.org/saveWb.json
-*$removeparam=__rr
+! *$removeparam=__rr
 ||proxydocker.com/template/img/blank.gif^$image,domain=proxydocker.com,redirect=1x1-transparent.gif,important
 ||savefrom.net/build/js/basicMetricsTracking.js$script,domain=savefrom.net,important
 ||savefrom.net/build/js/experimentLoader.js$script,domain=savefrom.net,important
@@ -2656,7 +2656,7 @@ about:blank^$domain=greynoise.io
 ||securitylab.ru/js/infinity-artile-scroll.js^$script,domain=securitylab.ru,redirect=noopjs
 ||b.stripecdn.com/stripethirdparty-srv/assets/v*/GoogleTagManager.html$domain=stripe.com
 ||stripe.com/cookie-settings/$domain=stripe.com,redirect=empty
-||habr.com/kek/v*/ad_pixles$xhr,domain=habr.com,redirect=empty
+||habr.com/kek/v*/ad_pixles$xhr,domain=habr.com,redirect=1x1-transparent.gif
 ||mail.hosting101.ru/_misc/hoster_ru_$image,domain=hosting101.ru
 ||poiskvps.ru/images/9aGaYUN9zALTTtkPqR/b70ca34aea819d81f9c420999aad29ac.svg^$image,domain=poiskvps.ru
 ||poiskvps.ru/images/9aGaYUN9zALTTtkPqR/403fe5cbe21f560ad6f98d6a3445d95f.png^$image,domain=poiskvps.ru
@@ -2791,8 +2791,15 @@ about:blank^$domain=greynoise.io
 ||assets.twitch.tv/assets/features.ads.components.dsa-wizard.components.$script,domain=twitch.tv,redirect=noopjs
 ||assets.twitch.tv/assets/features.ads.components.client-side-video-ads.instream-and-vertical-video-ad-player-$script,domain=twitch.tv,redirect=noopjs
 ||assets.twitch.tv/assets/features.ads.components.client-side-video-ads.instream-and-vertical-video-ad-player-$css,domain=twitch.tv,redirect=noopcss
-||player.stats.live-video.net^$important
+||stats.live-video.net^$important
 ||intake-analytics.wikimedia.org^
+||archive.org/services/donations/banner.php$domain=archive.org
+||archive.org/services/offshoot/abtest.php$domain=archive.org
+||firefox-api-proxy.cdn.mozilla.net/*/v*/recommendations
+||spclient.wg.spotify.com/gabo-receiver-service*/v*/events
+||spotify.com/api/growth-events/wwwanalyticsagnostic
+||scdn.co/static/yna/*_bananas_yna.png^$image,domain=spotify.com
+||cdn.iguides.ru/local/templates/iguides-2022/js/advert.js^$script,domain=iguides.ru,redirect=noopjs
 !
 !
 !
@@ -4802,6 +4809,8 @@ rutube.ru###root > div:last-child > div.header-module__mainHeader:first-child > 
 my-dict.ru##.app-banner
 studfile.net##.advert
 chatgpt.com##div:nth-child(4) > div.flex.h-svh.w-screen.flex-col > div:last-child
+iguides.ru###cookies-agreement
+t-j.ru##._subscription_1avt4_14
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5025,6 +5034,11 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||activity.windows.com^
 ||arc.msn.com^
 ||iris.microsoft.com^
+||msdx-cdn-y86ykn8r9v.azureedge.net^
+||settings-prod-*.*.cloudapp.azure.com^
+||atm-settingsfe-prod-*.trafficmanager.net^
+||win-global-asimov-leafs-events-data.trafficmanager.net^
+||onedscolprdeus12.eastus.cloudapp.azure.com^
 !
 ! -
 ! =
@@ -5405,6 +5419,10 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||mob-manager-aws.mob.taxi.yandex.net^
 ||yastat.net^
 ||csp.yandex.*^
+||yandex.$removeparam=lr
+||ya.ru$removeparam=lr
+||yandex.$removeparam=win
+||ya.ru$removeparam=win
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -7057,6 +7075,7 @@ teletype.in#@#div.preloader
 ||159.138.237.10^
 ||qxgolds.com^$all
 /cdn/t.gif
+||kgwhg.com^$all
 !
 !
 !
