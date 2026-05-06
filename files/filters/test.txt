@@ -1,5 +1,5 @@
 7! Title: Breaking GeoRestrictions [DNS-only]
-! Version: 1.8-v4
+! Version: 1.8-v5
 ! Updated: 06.05.2026
 !
 ! Breaking Geoblock Restrictions using DNS!
@@ -180,6 +180,7 @@
 77.239.114.0 open.spotifycdn.com
 77.239.114.0 clienttoken.spotify.com
 77.239.114.0 exp.wg.spotify.com
+77.239.114.0 gew4-spclient.spotify.com
 !
 ! Supercell [Games] [Left Russia and Belarus, Full Geoblock]
 77.239.114.0 accounts.supercell.com
