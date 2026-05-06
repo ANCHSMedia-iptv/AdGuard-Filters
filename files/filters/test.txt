@@ -1,5 +1,5 @@
 7! Title: Breaking GeoRestrictions [DNS-only]
-! Version: 1.8-v3
+! Version: 1.8-v4
 ! Updated: 06.05.2026
 !
 ! Breaking Geoblock Restrictions using DNS!
@@ -67,31 +67,23 @@
 ! Google AI - Gemini, Veo, Nano Banana, AI Studio, Flow, Antigravity, etc.. [AI] [Geoblock]
 ! Tested: 100%
 62.133.62.97 aisandbox-pa.googleapis.com
-62.133.62.97 aisandbox.googleapis.com
 62.133.62.97 aistudio.google.com
 62.133.62.97 aitestkitchen.withgoogle.com
 62.133.62.97 alkalimakersuite-pa.clients6.google.com
-62.133.62.97 alkalimakersuite.clients6.google.com
 62.133.62.97 assistant-s3-pa.googleapis.com
-62.133.62.97 assistant-s3.googleapis.com
 62.133.62.97 gemini.google.com
-62.133.62.97 generativelanguage.googleapis.com 
-62.133.62.97 generativelanguage-pa.googleapis.com 
+62.133.62.97 generativelanguage.googleapis.com  
 62.133.62.97 jules.google.com
 62.133.62.97 labs.google
 62.133.62.97 notebooklm.google
 62.133.62.97 notebooklm.google.com
 62.133.62.97 o.pki.goog
-62.133.62.97 proactivebackend.googleapis.com
 62.133.62.97 proactivebackend-pa.googleapis.com
 62.133.62.97 robinfrontend-pa.googleapis.com
-62.133.62.97 robinfrontend.googleapis.com
 62.133.62.97 stitch.withgoogle.com
 62.133.62.97 webchannel-alkalimakersuite-pa.clients6.google.com
-62.133.62.97 webchannel-alkalimakersuite.clients6.google.com
 62.133.62.97 ai.google.dev
 62.133.62.97 developerprofiles-pa.googleapis.com
-62.133.62.97 developerprofiles.googleapis.com
 62.133.62.97 google.dev
 62.133.62.97 deepmind.google
 62.133.62.97 flow.google
@@ -102,11 +94,8 @@
 ! 62.133.62.97 antigravity.google.com
 ! Additional
 62.133.62.97 signaler-pa.clients6.google.com
-62.133.62.97 signaler.clients6.google.com
 62.133.62.97 waa-pa.clients6.google.com
-62.133.62.97 waa.clients6.google.com
 62.133.62.97 people-pa.clients6.google.com
-62.133.62.97 people.clients6.google.com
 !  android.apis.google.com
 !  apis.google.com
 !  mtalk.google.com
@@ -173,7 +162,7 @@
 77.239.114.0 ap-gew1.spotify.com
 77.239.114.0 api-partner.spotify.com
 77.239.114.0 api.spotify.com
-77.239.114.0 appresolve.spotify.co
+77.239.114.0 appresolve.spotify.com
 77.239.114.0 encore.scdn.co
 77.239.114.0 login.app.spotify.com
 77.239.114.0 login5.spotify.com
@@ -181,11 +170,11 @@
 77.239.114.0 spclient.wg.spotify.com
 77.239.114.0 www.spotify.com
 77.239.114.0 xpui.app.spotify.com
-77.239.114.0 www-growth.scdn.co
 77.239.114.0 gew1-spclient.spotify.com
 77.239.114.0 accounts.scdn.co
 77.239.114.0 gew1-dealer.spotify.com
 ! Additional
+77.239.114.0 www-growth.scdn.co
 77.239.114.0 apresolve.spotify.com
 77.239.114.0 spotifycdn.com
 77.239.114.0 open.spotifycdn.com
