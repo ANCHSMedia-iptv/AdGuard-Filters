@@ -304,8 +304,6 @@
 77.239.114.0 sfedownload.mediatek.com
 77.239.114.0 sgepodownload.mediatek.com
 77.239.114.0 sgedownload.mediatek.com
-77.239.114.0 wildcard-global-sni.mediatek.com.edgesuite.net
-77.239.114.0 a407.d.akamai.net
 77.239.114.0 xtrapath1.izatcloud.net
 77.239.114.0 xtrapath2.izatcloud.net
 77.239.114.0 xtrapath3.izatcloud.net
@@ -317,16 +315,7 @@
 77.239.114.0 xtrapath9.izatcloud.net
 77.239.114.0 xtrapath*.izatcloud.net
 77.239.114.0 xtrapath.izatcloud.net
-77.239.114.0 qcomgeo2.com
-77.239.114.0 path3_new.qcomgeo2.com
-77.239.114.0 path1_new.qcomgeo2.com
-77.239.114.0 path_new.qcomgeo2.com
-77.239.114.0 path4_new.qcomgeo2.com
-77.239.114.0 path5_new.qcomgeo2.com
-77.239.114.0 path6_new.qcomgeo2.com
-77.239.114.0 path7_new.qcomgeo2.com
-77.239.114.0 path8_new.qcomgeo2.com
-77.239.114.0 path9_new.qcomgeo2.com
+! 77.239.114.0 qcomgeo2.com
 77.239.114.0 path3.xtracloud.net
 77.239.114.0 path*.xtracloud.net
 77.239.114.0 path1.xtracloud.net
