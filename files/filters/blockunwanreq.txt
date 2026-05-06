@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.2.9-R
-! TimeUpdated: 2026-05-05T16:30:30+00:00
+! Version: 5.3.0-R
+! TimeUpdated: 2026-05-06T16:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -613,8 +613,8 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 !
 ||trial-sport.ru/images_g/2019/7/22/5417489_s.jpg^$image,domain=trial-sport.ru
 ||static.line-scdn.net/liff/*/sdk.js^$script,xhr,important
-||cdn*.spravportal.ru/Images/Creatives/fl_getgift.png^$image,domain=spravportal.ru
-||cdn*.spravportal.ru/Images/Creatives/WCBot_RC.jpg^$image,domain=spravportal.ru
+||spravportal.ru/Images/Creatives/fl_getgift.png^$image,domain=spravportal.ru
+||spravportal.ru/Images/Creatives/WCBot_RC.jpg^$image,domain=spravportal.ru
 ||8sot.su/js/other/advisvisble.js^$script,domain=8sot.su,important
 ||core-colibri-api.samokat.ru/api/clickstream^$xhr,domain=samokat.ru,redirect=empty,important
 ||core-colibri-api.samokat.ru/api/events/$xhr,domain=samokat.ru,redirect=empty,important
@@ -1725,13 +1725,13 @@ $cookie=MicexTrackID
 ||asv.transsion.com^
 ||mgs123.com^
 ||well2266.com^
-||cdn*.spravportal.ru/Images/api/b2b/sp-api-whocalls-tpd.png^$image,domain=spravportal.ru,important
-||cdn*.spravportal.ru/Images/Platform/ReSpace.png^$image,domain=spravportal.ru,important
+||spravportal.ru/Images/api/b2b/sp-api-whocalls-tpd.png^$image,domain=spravportal.ru
+||spravportal.ru/Images/Platform/ReSpace.png^$image,domain=spravportal.ru
 ||spravportal.ru/WebResource.axd$script,image,domain=spravportal.ru,important
 ||spravportal.ru^$cookie=sp_test_ab
 ||spravportal.ru^$cookie=sp_adnewuser
-||cdn*.spravportal.ru/assets/js/spcoredesktop*.$script,domain=spravportal.ru,important
-||cdn*.spravportal.ru/assets/js/sp-dev.$script,domain=spravportal.ru,important
+||spravportal.ru/assets/js/spcoredesktop*.$script,domain=spravportal.ru
+||spravportal.ru/assets/js/sp-dev.$script,domain=spravportal.ru,
 ||lifemart.ru/_nuxt/Metrika.*.css^$css,domain=lifemart.ru,important,redirect=noopcss
 ||stats.vk-portal.net^$important
 ||zhivika.ru/api/promo/notifications/$xhr,domain=zhivika.ru
@@ -2800,6 +2800,9 @@ about:blank^$domain=greynoise.io
 ||spotify.com/api/growth-events/wwwanalyticsagnostic
 ||scdn.co/static/yna/*_bananas_yna.png^$image,domain=spotify.com
 ||cdn.iguides.ru/local/templates/iguides-2022/js/advert.js^$script,domain=iguides.ru,redirect=noopjs
+||spravportal.ru/Images/api/b2b/img/$image,domain=spravportal.ru
+||spravportal.ru/assets/img/social/$image,domain=spravportal.ru
+||ssl.gstatic.com/translate/twitter_round_updated.png
 !
 !
 !
@@ -4811,6 +4814,7 @@ studfile.net##.advert
 chatgpt.com##div:nth-child(4) > div.flex.h-svh.w-screen.flex-col > div:last-child
 iguides.ru###cookies-agreement
 t-j.ru##._subscription_1avt4_14
+spravportal.ru###div-main-part > div.col-md-12.col-lg-12:first-child > a:nth-child(3)
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')

@@ -1,0 +1,474 @@
+! Title: Breaking GeoRestrictions [DNS-only]
+! Version: 1.8
+! Updated: 06.05.2026
+!
+! Breaking Geoblock Restrictions using DNS!
+! DNS Rewriting
+!
+!
+! ==
+! ChatGPT (OpenAI) [AI] [Geoblock]
+! Tested: 100%
+77.239.114.0 ab.chatgpt.com
+77.239.114.0 android.chat.openai.com
+77.239.114.0 api.openai.com
+77.239.114.0 auth.openai.com
+77.239.114.0 auth0.openai.com
+77.239.114.0 cdn.auth0.com
+77.239.114.0 cdn.oaistatic.com
+77.239.114.0 chatgpt.com
+77.239.114.0 files.oaiusercontent.com
+77.239.114.0 ios.chat.openai.com
+77.239.114.0 operator.chatgpt.com
+77.239.114.0 platform.openai.com
+77.239.114.0 tcr9i.chat.openai.com
+77.239.114.0 videos.openai.com
+77.239.114.0 webrtc.chatgpt.com
+77.239.114.0 mobile.openai.com
+77.239.114.0 api.revenuecat.com
+77.239.114.0 chat.openai.com
+77.239.114.0 sora.chatgpt.com
+77.239.114.0 sora.com
+!
+! Claude [AI] [Geoblock]
+77.239.114.0 api.anthropic.com
+77.239.114.0 auth.anthropic.com
+77.239.114.0 claude.ai
+77.239.114.0 console.anthropic.com
+!
+! Deepl [Accurate Translator] [Geoblock]
+! XXX.XXX.XXX.X api-free.deepl.com
+! XXX.XXX.XXX.X auth.deepl.com
+! XXX.XXX.XXX.X backend.deepl.com
+! XXX.XXX.XXX.X clearance.deepl.com
+! XXX.XXX.XXX.X deepl.com
+! XXX.XXX.XXX.X dict.deepl.com
+! XXX.XXX.XXX.X experimentation-grpc.deepl.com
+! XXX.XXX.XXX.X experimentation.deepl.com
+! XXX.XXX.XXX.X ita-free.app.deepl.com
+! XXX.XXX.XXX.X ita-free.www.deepl.com
+! XXX.XXX.XXX.X login-wall.deepl.com
+! XXX.XXX.XXX.X oneshot-free.www.deepl.com
+! XXX.XXX.XXX.X ott.deepl.com
+! XXX.XXX.XXX.X shield.deepl.com
+! XXX.XXX.XXX.X w.deepl.com
+! XXX.XXX.XXX.X write-free.www.deepl.com
+! XXX.XXX.XXX.X www.deepl.com
+! XXX.XXX.XXX.X www2.deepl.com
+! XXX.XXX.XXX.X voice-proxy.www.deepl.com
+!
+! Deezer [Music streaming service] [Left Russia]
+! Tested: 100%
+104.84.152.233 deezer.com
+104.84.152.233 dzcdn.net
+104.84.152.233 payment.deezer.com
+104.84.152.233 www.deezer.com
+!
+! Google AI - Gemini, Veo, Nano Banana, AI Studio, Flow, Antigravity, etc.. [AI] [Geoblock]
+! Tested: 100%
+62.133.62.97 aisandbox-pa.googleapis.com
+62.133.62.97 aisandbox.googleapis.com
+62.133.62.97 aistudio.google.com
+62.133.62.97 aitestkitchen.withgoogle.com
+62.133.62.97 alkalimakersuite-pa.clients6.google.com
+62.133.62.97 alkalimakersuite.clients6.google.com
+62.133.62.97 assistant-s3-pa.googleapis.com
+62.133.62.97 assistant-s3.googleapis.com
+62.133.62.97 gemini.google.com
+62.133.62.97 generativelanguage.googleapis.com 
+62.133.62.97 generativelanguage-pa.googleapis.com 
+62.133.62.97 jules.google.com
+62.133.62.97 labs.google
+! 62.133.62.97 labs.google.com
+62.133.62.97 notebooklm.google
+62.133.62.97 notebooklm.google.com
+62.133.62.97 o.pki.goog
+62.133.62.97 proactivebackend.googleapis.com
+62.133.62.97 proactivebackend-pa.googleapis.com
+62.133.62.97 robinfrontend-pa.googleapis.com
+62.133.62.97 robinfrontend.googleapis.com
+62.133.62.97 stitch.withgoogle.com
+62.133.62.97 webchannel-alkalimakersuite-pa.clients6.google.com
+62.133.62.97 webchannel-alkalimakersuite.clients6.google.com
+62.133.62.97 ai.google.dev
+62.133.62.97 developerprofiles-pa.googleapis.com
+62.133.62.97 developerprofiles.googleapis.com
+62.133.62.97 google.dev
+62.133.62.97 gemini.gstatic.com
+62.133.62.97 deepmind.google
+62.133.62.97 flow.google
+62.133.62.97 docs.google.com
+62.133.62.97 antigravity.google
+! 62.133.62.97 deepmind.google.com
+! 62.133.62.97 flow.google.com
+! 62.133.62.97 antigravity.google.com
+! Additional
+62.133.62.97 signaler-pa.clients6.google.com
+62.133.62.97 signaler.clients6.google.com
+62.133.62.97 waa-pa.clients6.google.com
+62.133.62.97 waa.clients6.google.com
+62.133.62.97 people-pa.clients6.google.com
+62.133.62.97 people.clients6.google.com
+!  android.apis.google.com
+!  apis.google.com
+!  mtalk.google.com
+!
+!
+! Grok - X (formerly Twitter) [xAI] [AI] [Blocked]
+77.239.114.0 accounts.x.ai
+77.239.114.0 assets.grok.com
+77.239.114.0 grok.com
+!
+!
+! Microsoft Copilot and Xbox + Microsoft Rewards + Xbox Cloud Gaming [AI] [Games] [Geoblock, regional restrictions]
+89.108.98.20 copilot.microsoft.com
+89.108.98.20 copilot.cloud.microsoft
+80.74.29.235 edgeservices.bing.com
+150.171.28.10 rewards.bing.com
+62.133.62.97 sydney.bing.com
+89.108.98.20 xboxdesignlab.xbox.com
+89.108.98.20 xgpuweb.gssv-play-prod.xboxlive.com
+89.108.98.20 xgpuwebf2p.gssv-play-prod.xboxlive.com
+89.108.98.20 xsts.auth.xboxlive.com
+! -Own-
+89.108.98.20 addr.tools
+89.108.98.20 accounts.xboxlive.com
+62.133.62.97 cp.microsoft.com
+89.108.98.20 device.auth.xboxlive.com
+89.108.98.20 dlassets-ssl.xboxlive.com
+89.108.98.20 gamepass.com
+89.108.98.20 gfx.ms
+89.108.98.20 images-eds-ssl.xboxlive.com
+89.108.98.20 mgt.xboxlive.com
+89.108.98.20 microsoftonline.com
+89.108.98.20 mp.microsoft.com
+89.108.98.20 packages.xboxlive.com
+89.108.98.20 pmservices.cp.microsoft.com
+89.108.98.20 rta.xboxlive.com
+89.108.98.20 title.auth.xboxlive.com
+89.108.98.20 titlestorage.xboxlive.com
+89.108.98.20 user.auth.xboxlive.com
+89.108.98.20 xbl-smooth.xboxlive.com
+89.108.98.20 xbox.com
+89.108.98.20 xboxab.com
+89.108.98.20 teal.xboxservices.com
+89.108.98.20 silver.xboxservices.com
+! Additional
+62.133.62.97 digicert.com
+62.133.62.97 msftauth.net
+62.133.62.97 msn.com
+62.133.62.97 login.live.com
+62.133.62.97 account.live.com
+62.133.62.97 account.microsoft.com
+! -
+!
+!
+! GitHub Copilot [AI] [Coding] [Regional Restrictions and Geoblock]
+77.239.114.0 api.github.com
+77.239.114.0 api.individual.githubcopilot.com
+77.239.114.0 proxy.individual.githubcopilot.com
+!
+! Spotify [Music streaming service] [Left Russia, Full Geoblock]
+! Tested: 100%
+77.239.114.0 accounts.spotify.com
+77.239.114.0 aet.spotify.com
+77.239.114.0 ap-gew1.spotify.com
+77.239.114.0 api-partner.spotify.com
+77.239.114.0 api.spotify.com
+77.239.114.0 appresolve.spotify.co
+77.239.114.0 encore.scdn.co
+77.239.114.0 login.app.spotify.com
+77.239.114.0 login5.spotify.com
+77.239.114.0 open.spotify.com
+77.239.114.0 spclient.wg.spotify.com
+77.239.114.0 www.spotify.com
+77.239.114.0 xpui.app.spotify.com
+77.239.114.0 spotify.com
+77.239.114.0 www-growth.scdn.co
+77.239.114.0 gew1-spclient.spotify.com
+77.239.114.0 accounts.scdn.co
+77.239.114.0 gew1-dealer.spotify.com
+77.239.114.0 apresolve.spotify.com
+77.239.114.0 spotifycdn.com
+77.239.114.0 open.spotifycdn.com
+77.239.114.0 clienttoken.spotify.com
+77.239.114.0 exp.wg.spotify.com
+! Additional
+77.239.114.0 i.scdn.co
+77.239.114.0 scdn.co
+77.239.114.0 mosaic.scdn.co
+77.239.114.0 www-growth.scdn.co
+77.239.114.0 p.scdn.co
+77.239.114.0 wwwmarketing.scdn.co 
+77.239.114.0 charts-images.scdn.co
+77.239.114.0 t.scdn.co
+77.239.114.0 image-cdn-ak.spotifycdn.com
+77.239.114.0 pickasso.spotifycdn.com
+77.239.114.0 platform-lookaside.fbsbx.com
+77.239.114.0 content-tooling.spotifycdn.com
+77.239.114.0 concerts.spotifycdn.com
+77.239.114.0 image-cdn-fa.spotifycdn.com
+!
+! Supercell [Games] [Left Russia and Belarus, Full Geoblock]
+77.239.114.0 accounts.supercell.com
+77.239.114.0 cdn.id.supercell.com
+77.239.114.0 clashofclans.inbox.supercell.com
+185.246.223.127 game.brawlstarsgame.com
+62.133.62.97 game.clashroyaleapp.com
+62.133.62.97 game.mocogame.com
+108.61.167.26 game.squadbustersgame.com
+77.239.114.0 game-assets.brawlstarsgame.com
+193.23.209.189 game-assets.clashofclans.com
+77.239.114.0 game-assets.clashroyaleapp.com
+193.23.209.189 gamea.clashofclans.com
+77.239.114.0 security.id.supercell.com
+77.239.114.0 store.supercell.com
+!
+! Twitch [Streaming] [Regional restrictions (for example: the resolution of video streams, the lack of certain functions, etc..)]
+! Tested: 100%
+13.33.235.111 twitch.tv
+13.33.235.111 gql.twitch.tv
+18.165.140.115 usher.ttvnw.net
+! Additional
+13.33.235.111 assets.twitch.tv
+13.33.235.111 k.twitchcdn.net
+13.33.235.111 irc-ws.chat.twitch.tv
+13.33.235.111 passport.twitch.tv
+13.33.235.111 hermes.twitch.tv
+18.165.140.115 hls.live-video.net
+18.165.140.115 prod.ivs-device-config.live-video.net
+18.165.140.115 global.poe.live-video.net
+18.165.140.115 vod-secure.twitch.tv
+!
+! 4PDA [Forums] [Some topics are closed from Russian IP-addresses, Regional Restrictions]
+8.47.69.0 4pda.to
+13.33.235.111 app.4pda.to
+8.47.69.0 s.4pda.to
+! Additional
+8.47.69.0 4pda.ws
+!
+!
+! -Own-
+! Znanija (Brainly) [Education] [Blocked]
+! Tested: 100%
+13.33.235.111 znanija.com
+13.33.235.111 styleguide.znanija.com
+13.33.235.111 tex.z-dn.net
+13.33.235.111 z-dn.net
+13.33.235.111 brainly.com
+!
+!
+! Canva [Creating] [Full Geoblock]
+45.95.233.23 www.canva.com
+45.95.233.23 canva.com
+45.95.233.23 content-management-files.canva.com
+45.95.233.23 static.canva.com
+!
+!
+! Intel [Software] [Left Russia and Belarus, Full Geoblock]
+! Tested: 100%
+89.108.98.20 www.intel.com
+89.108.98.20 intel.com
+! Additional
+89.108.98.20 dsadata.intel.com
+89.108.98.20 gameplay.intel.com
+62.133.62.97 certificates.intel.com
+62.133.62.97 pki.intel.com
+62.133.62.97 ocsp.intel.com
+!
+!
+! Web Archive (Wayback Machine) [?] [Censorship restrictions]
+142.54.189.106 web.archive.org
+142.54.189.106 archive.org
+! Additional
+142.54.189.106 web-static.archive.org
+142.54.189.106 wayback-api.archive.org
+142.54.189.106 pragma.archivelab.org
+142.54.189.106 archivelab.org
+142.54.189.106 ca.archive.org
+!
+!
+! Triage [CyberSecurity] [Geoblock]
+62.133.62.97 tria.ge
+!
+!
+! Tiktok [Social] [Regional Restrictions]
+77.239.114.0 tiktok.com
+77.239.114.0 www.tiktok.com
+! Только на сайте. Приложение определяет регион по оператору, а не по IP. Поэтому есть моды.
+! Additional
+23.73.2.132 bytedapm.com
+23.73.2.132 byteoversea.com
+77.239.114.0 muscdn.com
+77.239.114.0 musical.ly
+77.239.114.0 tik-tokapi.com
+77.239.114.0 tiktok-minis.com
+77.239.114.0 tiktok-row.net
+23.73.2.132 tiktokcdn-eu.com
+23.73.2.132 tiktokcdn-us.com
+23.73.2.132 tiktokcdn.com
+77.239.114.0 tiktokd.net
+77.239.114.0 tiktokd.org
+23.73.2.132 tiktokeu-cdn.com
+77.239.114.0 tiktokglobalshopv.com
+77.239.114.0 tiktokminis.us
+23.73.2.132 tiktokrow-cdn.com
+77.239.114.0 tiktokv.com
+77.239.114.0 tiktokv.eu
+77.239.114.0 tiktokv.us
+77.239.114.0 tiktokw.eu
+77.239.114.0 tiktokw.us
+77.239.114.0 ttcdn-us.com
+77.239.114.0 ttlivecdn.com
+77.239.114.0 ttoverseaus.net
+77.239.114.0 ttwstatic.com
+77.239.114.0 tiktokcdn-us.com.edgesuite.net
+77.239.114.0 tiktokcdn.com.akamaized.net
+77.239.114.0 tiktokcdn.com.edgesuite.net
+77.239.114.0 tiktokv.com.edgekey.net
+77.239.114.0 tiktokv.com.edgesuite.net
+77.239.114.0 p16-tiktokcdn-com.akamaized.net
+!
+! A-GPS [Software] [Embargo]
+! Unblock access to A-GPS data from vendors Qualcomm, Broadcom and MediaTek.
+77.239.114.0 sfepodownload.mediatek.com
+77.239.114.0 sfedownload.mediatek.com
+77.239.114.0 sgepodownload.mediatek.com
+77.239.114.0 sgedownload.mediatek.com
+77.239.114.0 wildcard-global-sni.mediatek.com.edgesuite.net
+77.239.114.0 a407.d.akamai.net
+77.239.114.0 xtrapath1.izatcloud.net
+77.239.114.0 xtrapath2.izatcloud.net
+77.239.114.0 xtrapath3.izatcloud.net
+77.239.114.0 xtrapath4.izatcloud.net
+77.239.114.0 xtrapath5.izatcloud.net
+77.239.114.0 xtrapath6.izatcloud.net
+77.239.114.0 xtrapath7.izatcloud.net
+77.239.114.0 xtrapath8.izatcloud.net
+77.239.114.0 xtrapath9.izatcloud.net
+77.239.114.0 xtrapath*.izatcloud.net
+77.239.114.0 xtrapath.izatcloud.net
+77.239.114.0 qcomgeo2.com
+77.239.114.0 path3_new.qcomgeo2.com
+77.239.114.0 path1_new.qcomgeo2.com
+77.239.114.0 path_new.qcomgeo2.com
+77.239.114.0 path4_new.qcomgeo2.com
+77.239.114.0 path5_new.qcomgeo2.com
+77.239.114.0 path6_new.qcomgeo2.com
+77.239.114.0 path7_new.qcomgeo2.com
+77.239.114.0 path8_new.qcomgeo2.com
+77.239.114.0 path9_new.qcomgeo2.com
+77.239.114.0 path3.xtracloud.net
+77.239.114.0 path*.xtracloud.net
+77.239.114.0 path1.xtracloud.net
+77.239.114.0 path.xtracloud.net
+77.239.114.0 path2.xtracloud.net
+77.239.114.0 path4.xtracloud.net
+77.239.114.0 path5.xtracloud.net
+77.239.114.0 path6.xtracloud.net
+77.239.114.0 path7.xtracloud.net
+77.239.114.0 path8.xtracloud.net
+77.239.114.0 path9.xtracloud.net
+77.239.114.0 gllto.glpals.com
+77.239.114.0 gllto1.glpals.com
+77.239.114.0 gllto2.glpals.com
+77.239.114.0 gllto3.glpals.com
+77.239.114.0 gllto4.glpals.com
+77.239.114.0 gllto5.glpals.com
+77.239.114.0 gllto6.glpals.com
+77.239.114.0 gllto7.glpals.com
+77.239.114.0 gllto8.glpals.com
+77.239.114.0 gllto9.glpals.com
+77.239.114.0 gllto*.glpals.com
+77.239.114.0 gps_netops.broadcom.com
+77.239.114.0 ssl.izatcloud.net
+!
+77.239.114.0 ssl.gpsonextra.net
+77.239.114.0 xtra1.gpsonextra.net
+77.239.114.0 xtra2.gpsonextra.net
+77.239.114.0 xtra3.gpsonextra.net
+77.239.114.0 xtra4.gpsonextra.net
+77.239.114.0 xtra5.gpsonextra.net
+77.239.114.0 xtra*.gpsonextra.net
+!
+!
+! HP [Software]
+89.108.98.20 sudf-resources.hpcloud.hp.com
+!
+!
+! Wix [?] [Regional Restrictions and Geoblock]
+89.108.98.20 wix-code.com
+89.108.98.20 wix.com
+89.108.98.20 wixapps.net
+89.108.98.20 wixmp.com
+!
+! DevianArt [Creating] [Restrictions on use VPN]
+77.239.114.0 www.deviantart.com
+77.239.114.0 deviantart.com
+77.239.114.0 st.deviantart.net
+77.239.114.0 static.parastorage.com
+77.239.114.0 a.deviantart.net
+!
+! Habr [?] [Some articles are closed to Russian IP-addresses, Regional Restrictions]
+77.239.114.0 habr.com
+77.239.114.0 habrastorage.org
+77.239.114.0 assets.habr.com
+!
+!
+! -
+!
+!
+! WB Games [Games] [Regional Restrictions]
+89.108.98.20 k1-api.wbagora.com
+89.108.98.20 prod-network-api.wbagora.com
+89.108.98.20 account.wbgames.com
+89.108.98.20 metallica-api.wbagora.com
+134.0.118.88 k1-api.wbagora.com
+134.0.118.88 prod-network-api.wbagora.com
+134.0.118.88 account.wbgames.com
+134.0.118.88 metallica-api.wbagora.com
+!
+!
+! Truth Social [Social] [?]
+8.47.69.0 truthsocial.com
+8.47.69.0 static-assets-1.truthsocial.com
+!
+!
+! Other [Regional Restrictions, Geoblock, other]
+130.255.77.28 ntc.party
+23.216.134.205 developer.nvidia.com
+77.239.114.0 profile.broadcom.com
+104.103.64.8 www.dell.com
+89.108.98.20 www.notion.so
+104.103.64.8 dell.com
+89.108.98.20 notion.so
+77.239.114.0 api-global.squareup.com
+77.239.114.0 api.squareup.com
+77.239.114.0 api.cdnlibs.org
+146.75.116.193 api.imgur.com
+77.239.114.0 patreon.com
+77.239.114.0 www.patreon.com
+! Additional
+77.239.114.0 www.qualcomm.com
+77.239.114.0 qualcomm.com
+23.73.2.132 ntc.rkn.quest
+77.239.114.0 jobs.ashbyhq.com
+77.239.114.0 c14.patreon.com
+77.239.114.0 c*.patreon.com
+77.239.114.0 c5.patreon.com
+77.239.114.0 time.xtracloud.net
+77.239.114.0 nts.xtracloud.net
+77.239.114.0 info.izatcloud.net
+89.108.98.20 notion.site
+89.108.98.20 img.notionusercontent.com
+89.108.98.20 notionusercontent.com
+77.239.114.0 flagcdn.com
+77.239.114.0 data-cdn.mbamupdates.com
+!
+!
+! ==
+! Breaking Bad
+!
+!
+! The hosts files MalwDNS and ComssDNS were used. + using собственные отобранные домены.
+!
