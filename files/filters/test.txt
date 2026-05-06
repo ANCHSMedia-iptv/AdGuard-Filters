@@ -1,5 +1,5 @@
 7! Title: Breaking GeoRestrictions [DNS-only]
-! Version: 1.8-v2
+! Version: 1.8-v3
 ! Updated: 06.05.2026
 !
 ! Breaking Geoblock Restrictions using DNS!
@@ -93,7 +93,6 @@
 62.133.62.97 developerprofiles-pa.googleapis.com
 62.133.62.97 developerprofiles.googleapis.com
 62.133.62.97 google.dev
-62.133.62.97 gemini.gstatic.com
 62.133.62.97 deepmind.google
 62.133.62.97 flow.google
 62.133.62.97 docs.google.com
@@ -187,26 +186,12 @@
 77.239.114.0 gew1-spclient.spotify.com
 77.239.114.0 accounts.scdn.co
 77.239.114.0 gew1-dealer.spotify.com
+! Additional
 77.239.114.0 apresolve.spotify.com
 77.239.114.0 spotifycdn.com
 77.239.114.0 open.spotifycdn.com
 77.239.114.0 clienttoken.spotify.com
 77.239.114.0 exp.wg.spotify.com
-! Additional
-77.239.114.0 i.scdn.co
-77.239.114.0 scdn.co
-77.239.114.0 mosaic.scdn.co
-77.239.114.0 www-growth.scdn.co
-77.239.114.0 p.scdn.co
-77.239.114.0 wwwmarketing.scdn.co 
-77.239.114.0 charts-images.scdn.co
-77.239.114.0 t.scdn.co
-77.239.114.0 image-cdn-ak.spotifycdn.com
-77.239.114.0 pickasso.spotifycdn.com
-77.239.114.0 platform-lookaside.fbsbx.com
-77.239.114.0 content-tooling.spotifycdn.com
-77.239.114.0 concerts.spotifycdn.com
-77.239.114.0 image-cdn-fa.spotifycdn.com
 !
 ! Supercell [Games] [Left Russia and Belarus, Full Geoblock]
 77.239.114.0 accounts.supercell.com
@@ -234,9 +219,6 @@
 13.33.235.111 irc-ws.chat.twitch.tv
 13.33.235.111 passport.twitch.tv
 13.33.235.111 hermes.twitch.tv
-18.165.140.115 hls.live-video.net
-18.165.140.115 prod.ivs-device-config.live-video.net
-18.165.140.115 global.poe.live-video.net
 18.165.140.115 vod-secure.twitch.tv
 !
 ! 4PDA [Forums] [Some topics are closed from Russian IP-addresses, Regional Restrictions]
