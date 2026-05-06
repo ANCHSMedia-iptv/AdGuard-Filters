@@ -1,5 +1,5 @@
-! Title: Breaking GeoRestrictions [DNS-only]
-! Version: 1.8
+7! Title: Breaking GeoRestrictions [DNS-only]
+! Version: 1.8-v2
 ! Updated: 06.05.2026
 !
 ! Breaking Geoblock Restrictions using DNS!
@@ -79,7 +79,6 @@
 62.133.62.97 generativelanguage-pa.googleapis.com 
 62.133.62.97 jules.google.com
 62.133.62.97 labs.google
-! 62.133.62.97 labs.google.com
 62.133.62.97 notebooklm.google
 62.133.62.97 notebooklm.google.com
 62.133.62.97 o.pki.goog
@@ -98,7 +97,8 @@
 62.133.62.97 deepmind.google
 62.133.62.97 flow.google
 62.133.62.97 docs.google.com
-62.133.62.97 antigravity.google
+62.133.62.97 antigravity.Google
+! 62.133.62.97 labs.google.com
 ! 62.133.62.97 deepmind.google.com
 ! 62.133.62.97 flow.google.com
 ! 62.133.62.97 antigravity.google.com
@@ -183,7 +183,6 @@
 77.239.114.0 spclient.wg.spotify.com
 77.239.114.0 www.spotify.com
 77.239.114.0 xpui.app.spotify.com
-77.239.114.0 spotify.com
 77.239.114.0 www-growth.scdn.co
 77.239.114.0 gew1-spclient.spotify.com
 77.239.114.0 accounts.scdn.co
