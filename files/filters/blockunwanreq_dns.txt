@@ -3,7 +3,7 @@
 ! Version: 4.6.2-R
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-05-05T16:28:30+00:00
+! TimeUpdated: 2026-05-07T16:28:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 05.05.2026 16:28 UTC
+! Last Modified: 07.05.2026 16:28 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -245,6 +245,7 @@
 ||atm-settingsfe-prod-*.trafficmanager.net^
 ||win-global-asimov-leafs-events-data.trafficmanager.net^
 ||onedscolprdeus12.eastus.cloudapp.azure.com^
+||cs.dds.microsoft.com^
 !
 ! ===
 !
@@ -1513,6 +1514,7 @@
 ||intake-analytics.wikimedia.org^
 ||pixel.spotify.com^
 ||pixel-static.spotify.com^
+||log16-platform-*.tiktokv.com^
 !
 !
 !
@@ -1751,7 +1753,7 @@
 @@||vkusnoitochka.ru^
 @@||orderapp.burgerkingrus.ru^
 @@||ksn-crypto-whocalls-geo.kaspersky-labs.com^
-@@||github.com^
+! @@||github.com^
 @@||githubusercontent.com^$important
 @@||*-rt-*.cdn.ngenix.net^
 @@||config.theexplorers.com^
@@ -2173,6 +2175,7 @@
 ||fewteraurums.com^
 ||qxgolds.com^$dnsrewrite=BLOCKED
 ||kgwhg.com^$dnsrewrite=BLOCKED
+||claude-pro.com^$dnsrewrite=BLOCKED
 !
 !
 !

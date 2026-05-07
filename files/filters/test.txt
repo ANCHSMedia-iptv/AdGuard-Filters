@@ -1,6 +1,6 @@
 ! Title: Breaking GeoRestrictions [DNS-only]
-! Version: 1.8-v7
-! Updated: 06.05.2026
+! Version: 1.9
+! Updated: 07.05.2026
 !
 ! Breaking Geoblock Restrictions using DNS!
 ! DNS Rewriting
@@ -29,33 +29,36 @@
 77.239.114.0 chat.openai.com
 77.239.114.0 sora.chatgpt.com
 77.239.114.0 sora.com
+77.239.114.0 developers.openai.com
 !
 ! Claude [AI] [Geoblock]
 77.239.114.0 api.anthropic.com
 77.239.114.0 auth.anthropic.com
 77.239.114.0 claude.ai
 77.239.114.0 console.anthropic.com
+77.239.114.0 platform.claude.com
+77.239.114.0 a.claude.ai
 !
 ! Deepl [Accurate Translator] [Geoblock]
-! XXX.XXX.XXX.X api-free.deepl.com
-! XXX.XXX.XXX.X auth.deepl.com
-! XXX.XXX.XXX.X backend.deepl.com
-! XXX.XXX.XXX.X clearance.deepl.com
-! XXX.XXX.XXX.X deepl.com
-! XXX.XXX.XXX.X dict.deepl.com
-! XXX.XXX.XXX.X experimentation-grpc.deepl.com
-! XXX.XXX.XXX.X experimentation.deepl.com
-! XXX.XXX.XXX.X ita-free.app.deepl.com
-! XXX.XXX.XXX.X ita-free.www.deepl.com
-! XXX.XXX.XXX.X login-wall.deepl.com
-! XXX.XXX.XXX.X oneshot-free.www.deepl.com
-! XXX.XXX.XXX.X ott.deepl.com
-! XXX.XXX.XXX.X shield.deepl.com
-! XXX.XXX.XXX.X w.deepl.com
-! XXX.XXX.XXX.X write-free.www.deepl.com
-! XXX.XXX.XXX.X www.deepl.com
-! XXX.XXX.XXX.X www2.deepl.com
-! XXX.XXX.XXX.X voice-proxy.www.deepl.com
+77.239.114.0 api-free.deepl.com
+77.239.114.0 auth.deepl.com
+77.239.114.0 backend.deepl.com
+77.239.114.0 clearance.deepl.com
+77.239.114.0 deepl.com
+77.239.114.0 dict.deepl.com
+77.239.114.0 experimentation-grpc.deepl.com
+77.239.114.0 experimentation.deepl.com
+77.239.114.0 ita-free.app.deepl.com
+77.239.114.0 ita-free.www.deepl.com
+77.239.114.0 login-wall.deepl.com
+77.239.114.0 oneshot-free.www.deepl.com
+77.239.114.0 ott.deepl.com
+77.239.114.0 shield.deepl.com
+77.239.114.0 w.deepl.com
+77.239.114.0 write-free.www.deepl.com
+77.239.114.0 www.deepl.com
+77.239.114.0 www2.deepl.com
+77.239.114.0 voice-proxy.www.deepl.com
 !
 ! Deezer [Music streaming service] [Left Russia]
 ! Tested: 100%
@@ -141,12 +144,12 @@
 89.108.98.20 teal.xboxservices.com
 89.108.98.20 silver.xboxservices.com
 ! Additional
-62.133.62.97 digicert.com
-62.133.62.97 msftauth.net
-62.133.62.97 msn.com
-62.133.62.97 login.live.com
-62.133.62.97 account.live.com
-62.133.62.97 account.microsoft.com
+!62.133.62.97 digicert.com
+!62.133.62.97 msftauth.net
+!62.133.62.97 msn.com # 07.05: This won't work because the IP address is assigned to the domain.
+!62.133.62.97 login.live.com
+!62.133.62.97 account.live.com
+!62.133.62.97 account.microsoft.com
 ! -
 !
 !
@@ -211,11 +214,10 @@
 18.165.140.115 vod-secure.twitch.tv
 !
 ! 4PDA [Forums] [Some topics are closed from Russian IP-addresses, Regional Restrictions]
-8.47.69.0 4pda.to
-8.47.69.0 app.4pda.to
-8.47.69.0 s.4pda.to
-! Additional
-8.47.69.0 4pda.ws
+! 07.05: This won't work because the IP address is assigned to the domain.
+!8.47.69.0 4pda.to
+!8.47.69.0 app.4pda.to
+!8.47.69.0 s.4pda.to
 !
 !
 ! -Own-
@@ -229,33 +231,31 @@
 !
 !
 ! Canva [Creating] [Full Geoblock]
-45.95.233.23 www.canva.com
-45.95.233.23 canva.com
-45.95.233.23 content-management-files.canva.com
-45.95.233.23 static.canva.com
+77.239.114.0 www.canva.com
+77.239.114.0 content-management-files.canva.com
+77.239.114.0 static.canva.com
 !
 !
 ! Intel [Software] [Left Russia and Belarus, Full Geoblock]
 ! Tested: 100%
-89.108.98.20 www.intel.com
-89.108.98.20 intel.com
+77.239.114.0 www.intel.com
 ! Additional
-89.108.98.20 dsadata.intel.com
-89.108.98.20 gameplay.intel.com
-62.133.62.97 certificates.intel.com
-62.133.62.97 pki.intel.com
-62.133.62.97 ocsp.intel.com
+77.239.114.0 dsadata.intel.com
+77.239.114.0 gameplay.intel.com
+77.239.114.0 certificates.intel.com
+77.239.114.0 pki.intel.com
+77.239.114.0 ocsp.intel.com
 !
 !
 ! Web Archive (Wayback Machine) [?] [Censorship restrictions]
-142.54.189.106 web.archive.org
-142.54.189.106 archive.org
+103.27.157.38 web.archive.org
+103.27.157.38 archive.org
 ! Additional
-142.54.189.106 web-static.archive.org
-142.54.189.106 wayback-api.archive.org
-142.54.189.106 pragma.archivelab.org
-142.54.189.106 archivelab.org
-142.54.189.106 ca.archive.org
+103.27.157.38 web-static.archive.org
+103.27.157.38 wayback-api.archive.org
+103.27.157.38 pragma.archivelab.org
+103.27.157.38 archivelab.org
+103.27.157.38 ca.archive.org
 !
 !
 ! Triage [CyberSecurity] [Geoblock]
@@ -263,7 +263,6 @@
 !
 !
 ! Tiktok [Social] [Regional Restrictions]
-77.239.114.0 tiktok.com
 77.239.114.0 www.tiktok.com
 ! Только на сайте. Приложение определяет регион по оператору, а не по IP. Поэтому есть моды.
 ! Additional
@@ -300,7 +299,7 @@
 77.239.114.0 p16-tiktokcdn-com.akamaized.net
 !
 ! A-GPS [Software] [Embargo]
-! Unblock access to A-GPS data from vendors Qualcomm, Broadcom and MediaTek.
+! Unblock access to A-GPS data from vendors Qualcomm, Broadcom.
 ! 77.239.114.0 sfepodownload.mediatek.com
 ! 77.239.114.0 sfedownload.mediatek.com
 ! 77.239.114.0 sgepodownload.mediatek.com
@@ -369,9 +368,10 @@
 77.239.114.0 a.deviantart.net
 !
 ! Habr [?] [Some articles are closed to Russian IP-addresses, Regional Restrictions]
-77.239.114.0 habr.com
-77.239.114.0 habrastorage.org
-77.239.114.0 assets.habr.com
+! This won't work because the IP address is assigned to the domain.
+!77.239.114.0 habr.com
+!77.239.114.0 habrastorage.org
+!77.239.114.0 assets.habr.com
 !
 !
 ! -
@@ -388,9 +388,9 @@
 134.0.118.88 metallica-api.wbagora.com
 !
 !
-! Truth Social [Social] [?]
-8.47.69.0 truthsocial.com
-8.47.69.0 static-assets-1.truthsocial.com
+! Truth Social [Social] [Geoblock]
+103.27.157.38 truthsocial.com
+103.27.157.38 static-assets-1.truthsocial.com
 !
 !
 ! Other [Regional Restrictions, Geoblock, other]
@@ -399,17 +399,14 @@
 77.239.114.0 profile.broadcom.com
 104.103.64.8 www.dell.com
 89.108.98.20 www.notion.so
-104.103.64.8 dell.com
-89.108.98.20 notion.so
 77.239.114.0 api-global.squareup.com
 77.239.114.0 api.squareup.com
 77.239.114.0 api.cdnlibs.org
 146.75.116.193 api.imgur.com
-77.239.114.0 patreon.com
 77.239.114.0 www.patreon.com
+77.239.114.0 calendar.notion.so
 ! Additional
 77.239.114.0 www.qualcomm.com
-77.239.114.0 qualcomm.com
 23.73.2.132 ntc.rkn.quest
 77.239.114.0 jobs.ashbyhq.com
 77.239.114.0 c14.patreon.com
@@ -423,6 +420,7 @@
 89.108.98.20 notionusercontent.com
 77.239.114.0 flagcdn.com
 77.239.114.0 data-cdn.mbamupdates.com
+77.239.114.0 uupdump.net
 !
 !
 ! ==

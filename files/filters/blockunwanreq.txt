@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.3.0-R
-! TimeUpdated: 2026-05-06T16:30:30+00:00
+! Version: 5.3.1-R
+! TimeUpdated: 2026-05-07T16:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2803,6 +2803,7 @@ about:blank^$domain=greynoise.io
 ||spravportal.ru/Images/api/b2b/img/$image,domain=spravportal.ru
 ||spravportal.ru/assets/img/social/$image,domain=spravportal.ru
 ||ssl.gstatic.com/translate/twitter_round_updated.png
+||comss.ru/pagehit.php$domain=comss.ru,redirect=noopjson
 !
 !
 !
@@ -5043,6 +5044,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||atm-settingsfe-prod-*.trafficmanager.net^
 ||win-global-asimov-leafs-events-data.trafficmanager.net^
 ||onedscolprdeus12.eastus.cloudapp.azure.com^
+||cs.dds.microsoft.com^
 !
 ! -
 ! =
@@ -5427,6 +5429,7 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||ya.ru$removeparam=lr
 ||yandex.$removeparam=win
 ||ya.ru$removeparam=win
+||mc.yandex.*/metrika/match.html
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -6788,6 +6791,7 @@ teletype.in#@#div.preloader
 @@||w-ix.ru/graph/daily
 @@$removeparam=/^OCID=.*$/i,app=Microsoft.Msn.News.exe
 @@||msn.com^$app=msedgewebview2.exe,removeparam=ocid
+@@||chrome-devtools-frontend.appspot.com/serve_file/*/core/i18n/locales/*.json
 !
 !
 ! -
@@ -7080,6 +7084,8 @@ teletype.in#@#div.preloader
 ||qxgolds.com^$all
 /cdn/t.gif
 ||kgwhg.com^$all
+||claude-pro.com^4all
+||8.217.190.58^
 !
 !
 !
