@@ -1,5 +1,5 @@
 7! Title: Breaking GeoRestrictions [DNS-only]
-! Version: 1.8-v5
+! Version: 1.8-v6
 ! Updated: 06.05.2026
 !
 ! Breaking Geoblock Restrictions using DNS!
@@ -212,7 +212,7 @@
 !
 ! 4PDA [Forums] [Some topics are closed from Russian IP-addresses, Regional Restrictions]
 8.47.69.0 4pda.to
-13.33.235.111 app.4pda.to
+8.47.69.0 app.4pda.to
 8.47.69.0 s.4pda.to
 ! Additional
 8.47.69.0 4pda.ws
