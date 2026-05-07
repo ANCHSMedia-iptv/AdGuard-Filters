@@ -1,4 +1,4 @@
-7! Title: Breaking GeoRestrictions [DNS-only]
+! Title: Breaking GeoRestrictions [DNS-only]
 ! Version: 1.8-v6
 ! Updated: 06.05.2026
 !
@@ -301,10 +301,10 @@
 !
 ! A-GPS [Software] [Embargo]
 ! Unblock access to A-GPS data from vendors Qualcomm, Broadcom and MediaTek.
-77.239.114.0 sfepodownload.mediatek.com
-77.239.114.0 sfedownload.mediatek.com
-77.239.114.0 sgepodownload.mediatek.com
-77.239.114.0 sgedownload.mediatek.com
+! 77.239.114.0 sfepodownload.mediatek.com
+! 77.239.114.0 sfedownload.mediatek.com
+! 77.239.114.0 sgepodownload.mediatek.com
+! 77.239.114.0 sgedownload.mediatek.com
 77.239.114.0 xtrapath1.izatcloud.net
 77.239.114.0 xtrapath2.izatcloud.net
 77.239.114.0 xtrapath3.izatcloud.net
