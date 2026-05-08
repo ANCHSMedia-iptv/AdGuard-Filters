@@ -1,5 +1,5 @@
 ! Title: Breaking GeoRestrictions [DNS-only]
-! Version: 1.9
+! Version: 1.9-prerelease
 ! Updated: 07.05.2026
 !
 ! Breaking Geoblock Restrictions using DNS!
@@ -30,6 +30,7 @@
 77.239.114.0 sora.chatgpt.com
 77.239.114.0 sora.com
 77.239.114.0 developers.openai.com
+77.239.114.0 cdn.platform.openai.com
 !
 ! Claude [AI] [Geoblock]
 77.239.114.0 api.anthropic.com
@@ -90,7 +91,7 @@
 62.133.62.97 google.dev
 62.133.62.97 deepmind.google
 62.133.62.97 flow.google
-62.133.62.97 antigravity.Google
+62.133.62.97 antigravity.google
 ! 62.133.62.97 labs.google.com
 ! 62.133.62.97 deepmind.google.com
 ! 62.133.62.97 flow.google.com
@@ -144,12 +145,12 @@
 89.108.98.20 teal.xboxservices.com
 89.108.98.20 silver.xboxservices.com
 ! Additional
-!62.133.62.97 digicert.com
-!62.133.62.97 msftauth.net
-!62.133.62.97 msn.com # 07.05: This won't work because the IP address is assigned to the domain.
-!62.133.62.97 login.live.com
-!62.133.62.97 account.live.com
-!62.133.62.97 account.microsoft.com
+! 62.133.62.97 digicert.com
+! 62.133.62.97 msftauth.net
+! 62.133.62.97 msn.com # 07.05: This won't work because the IP address is assigned to the domain.
+! 62.133.62.97 login.live.com
+! 62.133.62.97 account.live.com
+! 62.133.62.97 account.microsoft.com
 ! -
 !
 !
@@ -215,9 +216,9 @@
 !
 ! 4PDA [Forums] [Some topics are closed from Russian IP-addresses, Regional Restrictions]
 ! 07.05: This won't work because the IP address is assigned to the domain.
-!8.47.69.0 4pda.to
-!8.47.69.0 app.4pda.to
-!8.47.69.0 s.4pda.to
+! 8.47.69.0 4pda.to
+! 8.47.69.0 app.4pda.to
+! 8.47.69.0 s.4pda.to
 !
 !
 ! -Own-
@@ -361,17 +362,18 @@
 89.108.98.20 wixmp.com
 !
 ! DevianArt [Creating] [Restrictions on use VPN]
-77.239.114.0 www.deviantart.com
-77.239.114.0 deviantart.com
-77.239.114.0 st.deviantart.net
-77.239.114.0 static.parastorage.com
-77.239.114.0 a.deviantart.net
+! This won't work because the IP address is assigned to the domain.
+! 77.239.114.0 www.deviantart.com
+! 77.239.114.0 deviantart.com
+! 77.239.114.0 st.deviantart.net
+! 77.239.114.0 static.parastorage.com
+! 77.239.114.0 a.deviantart.net
 !
 ! Habr [?] [Some articles are closed to Russian IP-addresses, Regional Restrictions]
 ! This won't work because the IP address is assigned to the domain.
-!77.239.114.0 habr.com
-!77.239.114.0 habrastorage.org
-!77.239.114.0 assets.habr.com
+! 77.239.114.0 habr.com
+! 77.239.114.0 habrastorage.org
+! 77.239.114.0 assets.habr.com
 !
 !
 ! -

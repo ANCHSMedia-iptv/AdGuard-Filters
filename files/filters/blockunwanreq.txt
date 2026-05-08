@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.3.1-R
-! TimeUpdated: 2026-05-07T16:30:30+00:00
+! Version: 5.3.3
+! TimeUpdated: 2026-05-08T16:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -206,7 +206,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,redirect=nooptext,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-*.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~getsentry.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io,important
+*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-*.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~getsentry.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru,important
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com,important
@@ -785,7 +785,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ! admin-ajax.php$xhr,domain=~1giper.ru|~removal.ai|~tyuiu.ru|~me.jimjam.tv|~jimjam.tv|~*.jimjam.tv|~republic-tv.ru|~xakep.ru|~rknweb.ru
 ||userway.org^$third-party
 ||files.vm.ru/pdf/2025.02/original/thumb_1280_67c0a45f82682c09ce62d1a1.jpg^$image,xhr,domain=vm.ru
-||stats.wp.com^
+||stats.wp.com^$important
 ||sp72ru.ru/wp-content/uploads/2022/08/alhakk.jpg^$image,domain=sp72ru.ru
 !
 ||cdn.consentmanager.net/delivery/autoblocking/$script,xhr,important,redirect=noopjs
@@ -1315,9 +1315,9 @@ $cookie=s24id
 ||russianfood.com/images/lb/best_fb_bg__*.png^$image,domain=russianfood.com
 ||eda.ru/api/v*/graphql^$xhr,domain=eda.ru
 ||mvideo.ru/blog/wp-content/uploads/*/wide-*-*.png^$image,domain=mvideo.ru
-/gtaAds.*.js^$script,domain=2gis.ru|2gis.*,redirect=noopjs,important
-||ams2-cdn.2gis.com/previews/1099498697869230083/c26d4cb0-d993-428c-bb4e-9722e22c780b/1/image_32x32.png^$image,domain=2gis.ru
-||ams2-cdn.2gis.com/previews/1210192388937482240/370df819-0c4e-4a63-8c24-6e11809e1ffe/1/ru/image_32x32.png^$image,domain=2gis.ru
+/gtaAds.$script,domain=2gis.ru|2gis.*,redirect=noopjs,important
+/previews/1099498697869230083/c26d4cb0-d993-428c-bb4e-9722e22c780b/1/image_32x32.png^$image,domain=2gis.ru
+/previews/1210192388937482240/370df819-0c4e-4a63-8c24-6e11809e1ffe/1/ru/image_32x32.png^$image,domain=2gis.ru
 /clickstream/$script,domain=2gis.ru|2gis.*,redirect=noopjs,important
 /afScript/script.js^$script,domain=2gis.ru|2gis.*,redirect=noopjs,important
 ||p.imgur.com^
@@ -2804,6 +2804,31 @@ about:blank^$domain=greynoise.io
 ||spravportal.ru/assets/img/social/$image,domain=spravportal.ru
 ||ssl.gstatic.com/translate/twitter_round_updated.png
 ||comss.ru/pagehit.php$domain=comss.ru,redirect=noopjson
+||market-backend.api.2gis.*/*/realty/items?$xhr,domain=2gis.ru|2gis.*
+/gtaAdsBannersSlider.$script,domain=2gis.ru|2gis.*,redirect=noopjs,important
+/images/lazy/base_lazy_image.gif$image,redirect=1x1-transparent.gif
+||sentry.np-internal.ru^$important
+/partytown-*.js
+/partytown.js
+||sentry.medrocket.ru^$important
+||sysstat.tildacdn.com^
+/tilda-errors-$script,redirect=noopjs
+||feeds.tildaapi.com/api/setpostviewed/
+||neo.tildacdn.com^
+||stat.tildaapi.com^$important
+||googleanalytics.erocms.net^
+||google.yescolours.com^
+||myip.yandex.*^
+||stat.tildaapi.one^
+||geo.tildacdn.com^
+||pixel.wp.pl^
+||websocket.wp.pl^
+||wp.aliexpress.com^
+||analytics.rewixecommerce.com^
+||ding.wix.com^
+||wce-frog.wix.com^
+||stores-counters.wix.com^
+||htlbid.com^$important
 !
 !
 !
@@ -2859,8 +2884,8 @@ about:blank^$domain=greynoise.io
 *4pda.to/s/*:|$xhr,important
 !
 !
-*appbk.4pda.to/er$xhr,domain=4pda.to
-://appbk.4pda.to^
+!*appbk.4pda.to/er$xhr,domain=4pda.to
+*appbk.4pda.to^
 !
 !
 !
@@ -4816,6 +4841,9 @@ chatgpt.com##div:nth-child(4) > div.flex.h-svh.w-screen.flex-col > div:last-chil
 iguides.ru###cookies-agreement
 t-j.ru##._subscription_1avt4_14
 spravportal.ru###div-main-part > div.col-md-12.col-lg-12:first-child > a:nth-child(3)
+2gis.ru###root > div > div._121zpzx > div._1sf34doj:first-child > div._1u4plm2:first-child > div:last-child > div > div._r47nf > div._guxkefv > div:last-child > div._1xzra4e > div._jcreqo > div._fjltwx:last-child > div._1vgcy7c > div._3zzdxk > div._1667t0u > div._8hh56jx > div._15gu4wr > div > div._bsl8pv > div._dn1bj5:first-child > div._10fp1fs:last-child
+kdl.ru##header.header.js-header:first-child > div.header-container:first-child > div.header-bottom:last-child > div.container > div.header-nav.js-nav.swiper.swiper-container-horizontal:first-child > div.swiper-wrapper:first-child > a.header-nav__link.swiper-slide:nth-child(5)
+kdl.ru##a[href*="https://max.ru/kdl_ru"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -4998,7 +5026,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 !
 ||aria.microsoft.com^$important
 ||events.data.microsoft.com^$important
-||events.data.msn.com^$important
+||events.data.msn.*^$important
 ||telemetry.microsoft.us^$important
 !
 ! = For Windows =
@@ -5044,7 +5072,107 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||atm-settingsfe-prod-*.trafficmanager.net^
 ||win-global-asimov-leafs-events-data.trafficmanager.net^
 ||onedscolprdeus12.eastus.cloudapp.azure.com^
-||cs.dds.microsoft.com^
+||cdds.microsoft.com^
+||dds.microsoft.com^
+||checkappexec.microsoft.com^
+||clarity.microsoft.com^
+||c.microsoftcasualgames.com^
+||collections.md.*.microsoft.com^
+||cxcs.microsoft.net^
+||diagnostics.support.microsoft.com^
+||diagnostics.support.services.microsoft.com^
+||diagnostics.windows.cloud.microsoft^
+||feedback.search.microsoft.com^
+||ds.microsoft.com^
+||fpt*.*.microsoft.com^
+||*prod.do.dsp.mp.microsoft.com^
+||settings.data.microsoft.com.akadns.net^
+||has.spserv.microsoft.com^
+||microsoftmetrics.com^
+||mtag.microsoft.com^
+||otelrules.svc.static.microsoft^
+||oca.microsoft.com^
+||rddiagnostics-g-*-*.wvd.microsoft.com^
+||statsfe*.*.microsoft.com^
+||smartscreen-prod.microsoft.com^
+||spynet*.microsoft.com^
+||uhf.microsoft.com^
+||uif.microsoft.com^
+||vlscppe.microsoft.com^
+||webxtsvc.microsoft.com^
+||watson.microsoft.com^$important
+||bingads.microsoft.com^
+||applicationinsights.io^
+||applicationinsights.azure.*^
+||inference-app-gateway.*.cloudapp.azure.com^
+||collector.azure.*^
+||monitor.azure.com^
+||adsdkpreprod*.azureedge.net^
+||adsdkprod*.azureedge.net^
+||msadsscale.azureedge.net^
+||*-diagnostics-office-com-*.*.azurefd.net^
+||location-microsoft-com.*.b-msedge.net^
+||a4.bing.com^
+||adserver.bing.com^
+||ads.bing.com^
+||c.bing.com^
+||commerce.bing.com^
+||raka.bing.com^
+||c.bingapis.com^
+||insights.cloud.microsoft^
+||measure.office.net.edgesuite.net^
+||analytics.live.com^
+||c.live.com^
+||location.live.net^
+||nexusrules.live.com^
+-telemetry*.officeapps.live.com^
+||telemetry*.officeapps.live.com^
+||outlookads.live.com^
+||rad.live.com^
+||ssw.live.com^
+||watson.live.com^
+||ads.microsoft.com^
+||adsdk.microsoft.com^
+||advertising.microsoft.com^
+||analyticspixel.microsoft.com^
+||applicationinsights.microsoft.com^
+||collector.azure.microsoft.cloud^
+||collector.azure.microsoft.scloud^
+||azurewatson.microsoft.com^
+||azurewatsontest.microsoft.com^
+||bingads.microsoft.com^
+||track.notif.careersppe.microsoft.com^
+||c1.microsoft.com^
+||edgeoffer.microsoft.com^
+||ieonline.microsoft.com^
+||location.microsoft.com^
+||redir.metaservices.microsoft.com^
+||track.mp.microsoft.com^
+||oca.microsoft.com^
+||watson.officeint.microsoft.com^
+||i1.services.social.microsoft.com^
+||tar.microsoft.com^
+||telecommandsvc.microsoft.com^
+||telemetrycollector.microsoft.com^
+||telemetry.visualstudio.microsoft.com^
+||gateway.bingviz.microsoftapp.net^
+||msads.net^
+||az667904.vo.msecnd.net^
+||a-ring*.msedge.net^
+||b-ring*.msedge.net^
+||c-ring*.msedge.net^
+-s-ring*.msedge.net^
+||fp.msedge.net^
+||k-ring*.msedge.net^
+||ln-ring*.msedge.net^
+||s-ring*.msedge.net^
+||t-ring*.msedge.net^
+||t-s1-ring.msedge.net^
+||ad.msn.com^
+||ads.msn.com^
+||win10-trt.msedge.net^
+||metric.appex-rf.msn.com^
+||measure.office.net^
 !
 ! -
 ! =
@@ -5195,21 +5323,21 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||banners*.yandex.net^$important
 ||appmetrica.yandex.net^$important
 ||appmetrica.yandex.ru^$important
-||appmetrika.yandex.ru^
+||appmetrika.yandex.*^
 ||appmetrica.yandex.com^$important
 ||bs.yandex.ru^$important
 ||direct.yandex.ru^$important
 ||tracking.ott.yandex.net^$important
 ||*adfox*^$important
 ||startup.mobile.yandex.net^$important
-||ap.yandex-net.ru^$important
+||ap.yandex-net.*^$important
 ||yandexadexchange.net^$important
 ||webvisor.com^$important
 ||appmetrica.yango.com^$important
 ||adfstat.yandex.*^$domain=~captcha-api.yandex.ru,important
 ! push.yandex.ru/v*/subscribe/$websocket,important
 ! ||csp.yandex.net/csp?from=messenger$xhr
-||http-check-headers.yandex.ru^$important
+||http-check-headers.yandex.*^$important
 ||yandex.ru/messenger/api/$xhr,important
 ||*extmaps-api.yandex.net^$important
 ||metrika.yandex.*^$important,redirect=metrika-yandex-watch
@@ -5239,7 +5367,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||certificate.mobile.yandex.net/api/v*/$important
 ||startup.mob.*.yandex.net^$important
 ||taxi-promotions.s*.yandex.net^
-||click.sender.yandex.ru^$important
+||click.sender.yandex.*^$important
 ||webvisor.org^$important
 ||yandetruckingservices.com^
 ||yandexmetri*.com^$important
@@ -5296,32 +5424,31 @@ $cookie=_ym_debug
 -authproxy.taxi.yandex.ru/*/inapp-communications/promos-on-summary$xhr,domain=taxi.yandex.ru
 ||mc.yandex.*/metrika/advert.gif^$image,redirect=1x1-transparent.gif
 ||abo.market.yandex.ru^$important
-||ad.maps.yandex.ru^$important
-||ads-captcha.yandex.ru^$important
+||ad.maps.yandex.*^$important
+||ads-captcha.yandex.*^$important
 ||adsdk.yandex.ru^$important
 ||aflt.market.yandex.ru^$important
 ||analytics.mobile.yandex.net^$important
-||lbs.yandex.ru^
-||audience.yandex.ru^$important
+||lbs.yandex.*^
+||audience.yandex.*^$important
 ||autoru-mag.s3.yandex.net^$important
 ||awaps.yandex.*^$important
-||awsync.yandex.ru^$important
+||awsync.yandex.r*^$important
 ||banners-slb.mobile.yandex.net^$important
 ||banners.mobile.yandex.net^$important
 ||browser-updater.yandex.net^$important
-||bs-meta.yandex.ru^
-||bs-metadsp.yandex.ru^
-||click.yandex.ru^$important
+||bs-meta.yandex.*^
+||bs-metadsp.yandex.*^
+||click.yandex.*^$important
 ||count.yandex.*^$important
 ||counter.yandex.*^$important
 ||direct.yandex.*^$important
 ||direkt.yandex.*^
-||dr.yandex.*^
 ||pixel.plus.yandex.net^$important
 ||grade.market.yandex.ru^
 ||yandex.st^
 ||ipc-ext.s3.yandex.net^
-||kiks.yandex.
+||kiks.yandex.*^
 ||madmaxdojobegovayayandexru.banner-split-keyword.xyz^$important
 ||market-click2.yandex.ru^$important
 ||media-adv-aab.vs.market.yandex.net^$important
@@ -5330,25 +5457,25 @@ $cookie=_ym_debug
 ||metrica-yandex.com^$important
 ||metrica-yandex.*^$important
 ||metrica.yandex.*^$important
-||ms.yandex.ru^$important
+||ms.yandex.*^$important
 ||partner.market.yandex.ru^$important
 ||partner.yandex.*^$important
 ||qos-api.ott.yandex.net^$important
 ||secure-ads.yandex.*^$important
 ||share.yandex.net^
-||statchecker.yandex.ru^$important
+||statchecker.yandex.*^$important
 ||tech.yandex.com^
 ||ttnet.yandex.com.tr^$important
-||uptime-info.yandex.ru^$important
-||web-metrica.yandex.ru^$important
-||wordstat.yandex.ru^$important
-||adv.yandex.ru^$important
+||uptime-info.yandex.*^$important
+||web-metrica.yandex.*^$important
+||wordstat.yandex.*^$important
+||adv.yandex.*^$important
 ||yandexdatafactory.com^$important
 ||yastatic.yandex.net^
 ||yabs.yandex.*/count$important
 ||yandexcloud-api.t2.ru^$important
-||ysa-static.passport.yandex.ru^
-||zdevx.yandex.ru^$important
+||ysa-static.passport.yandex.*^
+||zdevx.yandex.*^$important
 ||appmetrica.yandex.net.iberostar.com^
 ||messenger.yandex.*/report$important
 ||ya.ru/clck/
@@ -5365,10 +5492,10 @@ $cookie=_ym_debug
 ://yandex.*/appcry|
 ||static-mon.yandex.net/event$important
 ||real-time-poi.maps.yandex.*/tiles?l=personalized_poi_ads&lang=*&*/*/
-||surveys.yandex.ru^
+||surveys.yandex.*^
 ||yandex.$removeparam=baobab_event_id
 *$removeparam=ysclid
-||clck.yandex.net^
+||clck.yandex.*^
 ||yandex.ru/ads/$important,domain=~limehd.tv|~litehd.tv|~pervyi-tv.online|~russia-tv.online|~shadowcore.ru
 !||yastatic.net/naydex/yandex-mail/$redirect=noopjs
 ||yastatic.net/daas/atom.js$important
@@ -5399,7 +5526,7 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||yandex.*/portal/set/any?yrsncd=1&gif=1&ip=$domain=ya.ru|yandex.*
 ||naydex.net/*/static/v*/iframe-google-analytics.html$document,redirect=noopframe
 ||soft.export.yandex.ru/status.xml?$xhr
-||admetrica.ru^
+||admetrica.*^
 ||yandex.*/an/$important
 ||ya.ru/an/$important
 ||yandex.ru/portal/ntp/banner$redirect=nooptext
@@ -5430,6 +5557,10 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||yandex.$removeparam=win
 ||ya.ru$removeparam=win
 ||mc.yandex.*/metrika/match.html
+||analytics.mobile.yandex.net^
+||adsdk.yandex.*^
+||datalens.yandex^
+||metrika.yandex^
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -5589,7 +5720,7 @@ alice.yandex.ru##.Standalone-MobileApp
 ||ads.youtube.com^
 ||googleads.com^
 ||admob.com^
-||accounts.google.com/gsi/log$redirect=nooptext
+||accounts.google.com/gsi/log$xhr,redirect=nooptext
 ||youtube.com/ad_companion$important
 ||fundingchoicesmessages.google.com^
 ||geomobileservices*.googleapis.com^$important
@@ -5617,6 +5748,43 @@ alice.yandex.ru##.Standalone-MobileApp
 ||gstatic.com/glue/cookienotificationbar/
 ||ogads*.clients6.google.com^$important
 ||inputtools.google.com/ping$image,redirect=1x1-transparent.gif
+||ampcid.google.*^
+||android-context-data*.googleapis.com^
+||androidtvchannels*.googleapis.com^
+||auditrecording*.googleapis.com^
+||bluestacks-cloud-appplayer-logs.storage.googleapis.com^
+||clienttracing*.googleapis.com^
+||csp.withgoogle.com^
+||eligibility-panelresearch.googlevideo.com^
+||espresso*.clients6.google.com^
+||fcmatch.google.com^
+||feedback*.clients6.google.com^
+||feedback*.googleapis.com^
+||footprints*.googleapis.com^
+||geoar*.googleapis.com^
+||google-cloud-api.com^
+||googleoptimize.com^
+||googleusaanalytics.com^
+||id.google.*^
+||mdh*.googleapis.com^
+||mobilecrashreporting*.googleapis.com^
+||mobilenetworkscoring*.googleapis.com^
+||monitoring*.clients6.google.com^
+||myscoop-tracking.googlecode.com^
+||peoplestackwebexperiments*.clients6.google.com^
+||playapprecommendations*.googleapis.com^
+||recommendationengine*.googleapis.com^
+||sb-ssl.google.com^
+||spot*.googleapis.com^
+||t13.9to5google.com^
+||tracedepot*.clients6.google.com^
+||video-stats.l.google.com^
+||video-analytics.l.google.com^
+||*-googletagmanager.l.google.com^
+||linux*.googlerenewals.net^
+||bot*.googlerenewals.net^
+||cdn.googletoolservices.com^
+||accesspoints*.googleapis.com^
 !
 ! ===
 !
@@ -6081,9 +6249,6 @@ ya.ru$@$link[rel="manifest"]
 @@||peers.tv/cnplayer/cnp/cnp.adbutton.j$script,domain=peers.tv
 @@||restream-media.net/api/v*/user/drm_settings^$xhr
 @@||cdn.ngenix.net/*/js/test-*.js^$script,xhr
-! @@||collector.github.com^$important
-! @@||collector.github.com/github/collect^$xhr,domain=github.com,important
-! api.github.com/_private/browser/$xhr,domain=github.com,important
 @@.m3u8^$stealth=referrer|token|q|ref|offset|client|utcstart|utc|lutc|timeshift|timenow
 @@.ts^$stealth=ref|token|referrer|q
 @@.mpd^$stealth=referrer|token|ref|offset|utcstart|utc|lutc|timeshift|timenow
@@ -6092,7 +6257,6 @@ ya.ru$@$link[rel="manifest"]
 @@||limehd.tv/api/v*/ads$xhr,domain=limehd.tv
 @@||ext-cloudcdn-*-*.cdn.yandex.net
 @@/cdn-cgi/challenge-platform/$xhr,script
-@@||github.githubassets.com^
 @@||woobl.ru/*/*/*.m3u8
 @@||woobl.ru^
 @@||graphql.kinopoisk.ru^
@@ -6141,7 +6305,7 @@ ya.ru$@$link[rel="manifest"]
 @@/^5\.255\.255\.77/$network,app=ru.beru.android
 @@||peers.tv^$cookie=PHPSESSID
 @@||/assets/cookie-*.js$script,domain=24h.tv|clicktv.uz
-@@||github.githubassets.com/assets/*cookie*.js$script,domain=github.com,important
+!@@||github.githubassets.com/assets/*cookie*.js$script,domain=github.com,important
 @@||s*.storage.yandex.net^
 @@||pkvc-hls.cdnvideo.ru^
 @@||pkvc-hls*.cdnvideo.ru^
@@ -6717,9 +6881,6 @@ teletype.in#@#div.preloader
 @@||officecdn.microsoft.com/pr/*/Office/Data/*_*.cab
 @@||officecdn.microsoft.com/pr/*/Office/Data/*/*.cab
 @@||officecdn.microsoft.com/pr/*/Office/Data/*/*.cab.phf
-@@||delivery.mp.microsoft.com^
-@@||prod.do.dsp.mp.microsoft.com^
-@@||update.microsoft.com^
 @@||buy.mi.com/*/other/getimage$image,domain=mi.com
 @@||cdn.*.fds.api.mi-img.com/captcha/*/$script,domain=mi.com|xiaomi.com
 @@/xssremover.$script
