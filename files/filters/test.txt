@@ -1,6 +1,6 @@
 ! Title: Breaking GeoRestrictions [DNS-only]
-! Version: 1.9-prerelease
-! Updated: 07.05.2026
+! Version: 2.0-prerelease
+! Updated: 08.05.2026
 !
 ! Breaking Geoblock Restrictions using DNS!
 ! DNS Rewriting
@@ -223,12 +223,12 @@
 !
 ! -Own-
 ! Znanija (Brainly) [Education] [Blocked]
-! Tested: 100%
-13.33.235.111 znanija.com
-13.33.235.111 styleguide.znanija.com
-13.33.235.111 tex.z-dn.net
-13.33.235.111 z-dn.net
-13.33.235.111 brainly.com
+! This won't work because the IP address is assigned to the domain..
+! 13.33.235.111 znanija.com
+! 13.33.235.111 styleguide.znanija.com
+! 13.33.235.111 tex.z-dn.net
+! 13.33.235.111 z-dn.net
+! 13.33.235.111 brainly.com
 !
 !
 ! Canva [Creating] [Full Geoblock]
