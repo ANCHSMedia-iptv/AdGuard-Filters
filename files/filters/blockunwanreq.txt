@@ -2736,7 +2736,7 @@ about:blank^$domain=greynoise.io
 ||streamily.com/api/siteNotice$xhr,domain=streamily.com
 ||api.expertise.ai/v*/location/*-*-*/analytics/*
 ||api.expertise.ai/v*/location/us-east-1/analytics/*
-||static.cloudflareinsights.com/beacon.$important
+! static.cloudflareinsights.com/beacon.$important
 ||gosuslugi.ru/api/zdrav-metrics/
 ||vd.visionlabs.ai^
 /metrika/tag.js$redirect=metrica-yandex-watch-tag
@@ -2778,7 +2778,7 @@ about:blank^$domain=greynoise.io
 ||athena.archive.org^
 ||wwwb-events.archive.org^
 ||hit.gemius.pl^
-! ||cloudflareinsights.com^$important
+||cloudflareinsights.com^$important
 ||metrics.cloudflarebolt.com^
 ||rainberrytv.com^$app=msedgewebview2.exe
 ||hp.com/wcc-assets/content/dam/hp-wcc/libs/scripts/udl_analytics.js^$script,domain=support.hp.com|hp.com

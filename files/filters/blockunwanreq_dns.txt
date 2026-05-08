@@ -1202,7 +1202,7 @@
 ||advisor.api.2gis.*^$important
 ||clickstream.lenta.tech^$important
 ||s*.ucoz.net^$important
-||*-devtools-frontend.appspot.com^
+! *-devtools-frontend.appspot.com^
 ||mediator.mail.ru^$important
 ||privacy-cs.mail.ru^$important
 ||mediascope.mail.ru^$important
