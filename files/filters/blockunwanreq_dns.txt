@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.6.3
+! Version: 4.6.4
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-05-09T12:31:30+00:00
+! TimeUpdated: 2026-05-09T17:31:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 09.05.2026 12:31 UTC
+! Last Modified: 09.05.2026 17:31 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -371,7 +371,7 @@
 ||adservice.google.*^$important
 ||googleanalytics.com^$important
 !
-||appsgrowthpromo*.clients*.google.com^$important
+||appsgrowthpromo*.clients6.google.com^$important
 ||mail-ads.google.com^$important
 ! ||imasdk.googleapis.com^
 ! ||gvt1.com^
@@ -381,7 +381,7 @@
 ||calendarpushnotification*.googleapis.com^
 !
 ||appsgrowthpromo*.googleapis.com^$important
-||peoplestackwebexperiments*.clients*.google.com^
+||peoplestackwebexperiments*.clients*.google.com^$important
 ||infinitedata*.googleapis.com^
 ||safeframe.googleapis.com^$important
 ||mediation.goog^$important
@@ -441,7 +441,6 @@
 ||mobilenetworkscoring*.googleapis.com^
 ||monitoring*.clients6.google.com^
 ||myscoop-tracking.googlecode.com^
-||peoplestackwebexperiments*.clients6.google.com^$important
 ||playapprecommendations*.googleapis.com^$important
 ||recommendationengine*.googleapis.com^$important
 ||sb-ssl.google.com^
@@ -1680,6 +1679,9 @@
 ||htlbid.com^$important
 ||adriver.ru^$important
 ||getsentry.com^$important
+||fastly-insights.com^
+||feature-flagging.deepl.com^$important
+||kraken.rambler.ru^
 !
 !
 !
@@ -1709,7 +1711,7 @@
 ! 05.03.26: + от меня.
 ||ipv4-internet.yandex.net^
 ||ipv6-internet.yandex.net^
-||ifconfig.me^
+! ifconfig.me^
 ||ip.mail.ru^
 !
 !
@@ -1791,7 +1793,7 @@
 ||whoami.akamai.net^
 ||ipaddress.my^
 ||ipinfo.io^
-||ifconfig.co^
+||ifconfig.*^
 ||ip-api.com^
 !
 !
@@ -1829,16 +1831,16 @@
 ! -- =Opera=
 !
 ||feednews.com^$dnsrewrite=0.0.0.0
-||oleads.com^$dnsrewrite=0.0.0.0,important
-||sitesuggestion.opera-api*.com^$dnsrewrite=0.0.0.0,important
+||oleads.com^$important
+||sitesuggestion.opera-api*.com^$important
 ||oscore.operacdn.com^$important
 ! ws-oscore.opera-api*.com^$important
 ||*-oscore.opera-api*.com^$important
 ||oscore.opera-api*.com^$important
-||pns-sdk.opera-api*.com^$dnsrewrite=0.0.0.0,important
-||ofa-*-sub.osp.opera.software^$dnsrewrite=0.0.0.0,important
-||mcp.opera-api*.com^$dnsrewrite=0.0.0.0,important
-||mykonf.com^$dnsrewrite=0.0.0.0,important
+||pns-sdk.opera-api*.com^$important
+||ofa-*-sub.osp.opera.software^$important
+||mcp.opera-api*.com^$important
+||mykonf.com^$important
 ! ofa-b-sub.osp.opera.software^
 ||adx.opera.com^$dnsrewrite=0.0.0.0,important
 !
@@ -1850,6 +1852,7 @@
 ||*merchandise.opera-api*.com^
 ! ||speeddials.opera.com^
 ||*-proxy.satoshi.opera-api2.com^
+||composer.opera-api.com^
 !
 ! -- =Other=
 !
@@ -2150,7 +2153,6 @@
 @@||speedtest.*.gldn.net^
 @@||*-pool.linkmeter.net^
 @@||pub-c6be29ccfadb4062b8691265e60c8bf1.r2.dev^$important
-@@||fp.f6.security^
 @@||izhnt.ru.prod.hosts.ooklaserver.net^
 @@||lg-dme.fdcservers.net^
 @@||speedtest.omega-connect.net^

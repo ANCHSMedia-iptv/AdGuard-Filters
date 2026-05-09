@@ -1,14 +1,11 @@
 ! Title: Breaking GeoRestrictions [DNS-only]
-! Version: 2.0-prerelease
-! Updated: 08.05.2026
+! Version: 2.1-prerelease
+! Updated: 09.05.2026
 !
-! Breaking Geoblock Restrictions using DNS!
-! DNS Rewriting
 !
 !
 ! ==
 ! ChatGPT (OpenAI) [AI] [Geoblock]
-! Tested: 100%
 77.239.114.0 ab.chatgpt.com
 77.239.114.0 android.chat.openai.com
 77.239.114.0 api.openai.com
@@ -31,6 +28,8 @@
 77.239.114.0 sora.com
 77.239.114.0 developers.openai.com
 77.239.114.0 cdn.platform.openai.com
+! Additional
+77.239.114.0 status.openai.com
 !
 ! Claude [AI] [Geoblock]
 77.239.114.0 api.anthropic.com
@@ -60,16 +59,19 @@
 77.239.114.0 www.deepl.com
 77.239.114.0 www2.deepl.com
 77.239.114.0 voice-proxy.www.deepl.com
+! Additional
+77.239.114.0 api-demo-proxy.deepl.com
+77.239.114.0 write-free.app.deepl.com
 !
 ! Deezer [Music streaming service] [Left Russia]
-! Tested: 100%
 77.239.114.0 deezer.com
 77.239.114.0 dzcdn.net
 77.239.114.0 payment.deezer.com
 77.239.114.0 www.deezer.com
+! Additional
+77.239.114.0 api.deezer.com
 !
 ! Google AI - Gemini, Veo, Nano Banana, AI Studio, Flow, Antigravity, etc.. [AI] [Geoblock]
-! Tested: 100%
 62.133.62.97 aisandbox-pa.googleapis.com
 62.133.62.97 aistudio.google.com
 62.133.62.97 aitestkitchen.withgoogle.com
@@ -160,7 +162,6 @@
 77.239.114.0 proxy.individual.githubcopilot.com
 !
 ! Spotify [Music streaming service] [Left Russia, Full Geoblock]
-! Tested: 100%
 77.239.114.0 accounts.spotify.com
 77.239.114.0 aet.spotify.com
 77.239.114.0 ap-gew1.spotify.com
@@ -180,11 +181,10 @@
 ! Additional
 77.239.114.0 www-growth.scdn.co
 77.239.114.0 apresolve.spotify.com
-77.239.114.0 spotifycdn.com
-77.239.114.0 open.spotifycdn.com
 77.239.114.0 clienttoken.spotify.com
 77.239.114.0 exp.wg.spotify.com
 77.239.114.0 gew4-spclient.spotify.com
+77.239.114.0 api.spotify.com
 !
 ! Supercell [Games] [Left Russia and Belarus, Full Geoblock]
 77.239.114.0 accounts.supercell.com
@@ -202,7 +202,6 @@
 77.239.114.0 store.supercell.com
 !
 ! Twitch [Streaming] [Regional restrictions (for example: the resolution of video streams, the lack of certain functions, etc..)]
-! Tested: 100%
 13.33.235.111 twitch.tv
 13.33.235.111 gql.twitch.tv
 18.165.140.115 usher.ttvnw.net
@@ -222,24 +221,17 @@
 !
 !
 ! -Own-
-! Znanija (Brainly) [Education] [Blocked]
-! This won't work because the IP address is assigned to the domain..
-! 13.33.235.111 znanija.com
-! 13.33.235.111 styleguide.znanija.com
-! 13.33.235.111 tex.z-dn.net
-! 13.33.235.111 z-dn.net
-! 13.33.235.111 brainly.com
-!
 !
 ! Canva [Creating] [Full Geoblock]
 77.239.114.0 www.canva.com
+77.239.114.0 canva.com
 77.239.114.0 content-management-files.canva.com
 77.239.114.0 static.canva.com
 !
 !
 ! Intel [Software] [Left Russia and Belarus, Full Geoblock]
-! Tested: 100%
 77.239.114.0 www.intel.com
+77.239.114.0 intel.com
 ! Additional
 77.239.114.0 dsadata.intel.com
 77.239.114.0 gameplay.intel.com
@@ -252,11 +244,11 @@
 103.27.157.38 web.archive.org
 103.27.157.38 archive.org
 ! Additional
-103.27.157.38 web-static.archive.org
-103.27.157.38 wayback-api.archive.org
-103.27.157.38 pragma.archivelab.org
-103.27.157.38 archivelab.org
-103.27.157.38 ca.archive.org
+!103.27.157.38 web-static.archive.org
+!103.27.157.38 wayback-api.archive.org
+!103.27.157.38 pragma.archivelab.org
+!103.27.157.38 archivelab.org
+!103.27.157.38 ca.archive.org
 !
 !
 ! Triage [CyberSecurity] [Geoblock]
@@ -265,6 +257,7 @@
 !
 ! Tiktok [Social] [Regional Restrictions]
 77.239.114.0 www.tiktok.com
+77.239.114.0 tiktok.com
 ! Только на сайте. Приложение определяет регион по оператору, а не по IP. Поэтому есть моды.
 ! Additional
 23.73.2.132 bytedapm.com
@@ -300,11 +293,12 @@
 77.239.114.0 p16-tiktokcdn-com.akamaized.net
 !
 ! A-GPS [Software] [Embargo]
-! Unblock access to A-GPS data from vendors Qualcomm, Broadcom.
-! 77.239.114.0 sfepodownload.mediatek.com
-! 77.239.114.0 sfedownload.mediatek.com
-! 77.239.114.0 sgepodownload.mediatek.com
-! 77.239.114.0 sgedownload.mediatek.com
+! Unlocking access to A-GPS data from vendors Qualcomm and Broadcom.
+! Will it work? It's still unclear..
+! XXX.XXX.XXX.X sfepodownload.mediatek.com
+! XXX.XXX.XXX.X sfedownload.mediatek.com
+! XXX.XXX.XXX.X sgepodownload.mediatek.com
+! XXX.XXX.XXX.X sgedownload.mediatek.com
 77.239.114.0 xtrapath1.izatcloud.net
 77.239.114.0 xtrapath2.izatcloud.net
 77.239.114.0 xtrapath3.izatcloud.net
@@ -352,17 +346,19 @@
 !
 !
 ! HP [Software]
+! Will it work? It's still unclear..
 89.108.98.20 sudf-resources.hpcloud.hp.com
 !
 !
 ! Wix [?] [Regional Restrictions and Geoblock]
+! Will it work? It's still unclear..
 89.108.98.20 wix-code.com
 89.108.98.20 wix.com
 89.108.98.20 wixapps.net
 89.108.98.20 wixmp.com
 !
 ! DevianArt [Creating] [Restrictions on use VPN]
-! This won't work because the IP address is assigned to the domain.
+! 07.05: This won't work because the IP address is assigned to the domain..
 ! 77.239.114.0 www.deviantart.com
 ! 77.239.114.0 deviantart.com
 ! 77.239.114.0 st.deviantart.net
@@ -370,7 +366,7 @@
 ! 77.239.114.0 a.deviantart.net
 !
 ! Habr [?] [Some articles are closed to Russian IP-addresses, Regional Restrictions]
-! This won't work because the IP address is assigned to the domain.
+! 07.05: This won't work because the IP address is assigned to the domain..
 ! 77.239.114.0 habr.com
 ! 77.239.114.0 habrastorage.org
 ! 77.239.114.0 assets.habr.com
@@ -414,20 +410,22 @@
 77.239.114.0 c14.patreon.com
 77.239.114.0 c*.patreon.com
 77.239.114.0 c5.patreon.com
+! Will it work? It's still unclear..
 77.239.114.0 time.xtracloud.net
 77.239.114.0 nts.xtracloud.net
 77.239.114.0 info.izatcloud.net
-89.108.98.20 notion.site
-89.108.98.20 img.notionusercontent.com
-89.108.98.20 notionusercontent.com
-77.239.114.0 flagcdn.com
 77.239.114.0 data-cdn.mbamupdates.com
 77.239.114.0 uupdump.net
+77.239.114.0 metrolist.cc
+!
 !
 !
 ! ==
 ! Breaking Bad
 !
 !
-! The hosts files MalwDNS and ComssDNS were used. + using собственные отобранные домены.
+! The hosts files MalwDNS and ComssDNS were used. + using domains we have personally selected.
+!
+! Breaking Geoblock Restrictions using DNS!
+! DNS Rewriting
 !

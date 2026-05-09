@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.3.3
-! TimeUpdated: 2026-05-09T12:30:30+00:00
+! Version: 5.3.4
+! TimeUpdated: 2026-05-09T17:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -31,7 +31,7 @@
 ||api.picsart.com/location^$xhr,domain=picsart.com
 !
 !
-||scorecardresearch.com^$important,redirect=scorecardresearch-beacon
+||scorecardresearch.com^$important
 ||metricell.com^$important
 ||bronze.systems^$important
 ||graph.facebook.com^$important
@@ -74,7 +74,7 @@
 ||rexpush.pro^$important
 ||peiynu.com^$important
 ! appspot.com^$domain=~appsalesgo2.appspot.com,app=~net.tsapps.appsales
-yabro.ru^$important
+||yabro.ru^$important
 ||flowerpla.com^$important
 ||amocrm.ru^$important
 ||gtrxlnd2.com^$important
@@ -882,7 +882,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||tapjoyads.com^$important
 ||tapjoy.com^$important
 ! college.72to.ru/*.gif^$image,domain=college.72to.ru,redirect=1x1-transparent.gif,important (04.03.26: Temp disabled)
-||cookielaw.org^$third-party,important,redirect=noopjs
+||cookielaw.org^$third-party,important
 ||*.rt.avito.ru^
 ||coop-land.ru/templates/CoopLand2016/js/adriver*.js$script,domain=coop-land.ru,important
 ! /adriver$script,xhr
@@ -1025,9 +1025,9 @@ images/*/Discord*logo.*$image,domain=fandom.com|telepedia.fandom.com|*.fandom.co
 ||limehd.tv/api/v*/event^$xhr,domain=limehd.tv,redirect=empty,important
 ! limehd.tv/ads/$image,domain=limehd.tv,important
 ||vitv.telecomid.ru^$important
-||mosspf.net^$important,redirect=noopjs
-||businessork.ru^$important,redirect=noopjs
-||foisonad.com^$important,redirect=noopjs
+||mosspf.net^$important
+||businessork.ru^$important
+||foisonad.com^$important
 !
 ||medi.ru/imagen/ord_adv.gif^$image,domain=medi.ru
 ||mnaspm.com^$important
@@ -2490,7 +2490,7 @@ $cookie=__fingerprint__
 ||growthbook.io^$third-party,domain=~growthbook.io
 ||monetka.ru/service_feedback/index/$domain=monetka.ru
 ||monetka.ru/uploads/homepage_banner/$image,domain=monetka.ru
-||growthbook-proxy.lenta.tech^$important
+||growthbook-*.lenta.*^$important
 ||fp.kaspersky-labs.com/cld_track
 ||magnit.ru/_nuxt/AdsBy$css,domain=magnit.ru,redirect=noopcss
 ||magnit.ru/webgate/ab/$xhr,domain=magnit.ru,redirect=empty
@@ -2829,6 +2829,17 @@ about:blank^$domain=greynoise.io
 ||wce-frog.wix.com^
 ||stores-counters.wix.com^
 ||htlbid.com^$important
+||chatgpt.com/ces/v*/t$xhr,redirect=noopjson
+||chatgpt.com/ces/v*/p|$xhr,redirect=noopjson
+||chatgpt.com/ces/v*/m$xhr,redirect=noopjson
+||icmp0.ru^
+||analytics.yahoo.com^
+||gumgum.com^
+||beacon.wiki-services.com^
+||ad.gt^
+||adsvr.org^
+||feature-flagging.deepl.com^$important
+||kraken.rambler.ru^
 !
 !
 !
@@ -4844,6 +4855,7 @@ spravportal.ru###div-main-part > div.col-md-12.col-lg-12:first-child > a:nth-chi
 2gis.ru###root > div > div._121zpzx > div._1sf34doj:first-child > div._1u4plm2:first-child > div:last-child > div > div._r47nf > div._guxkefv > div:last-child > div._1xzra4e > div._jcreqo > div._fjltwx:last-child > div._1vgcy7c > div._3zzdxk > div._1667t0u > div._8hh56jx > div._15gu4wr > div > div._bsl8pv > div._dn1bj5:first-child > div._10fp1fs:last-child
 kdl.ru##header.header.js-header:first-child > div.header-container:first-child > div.header-bottom:last-child > div.container > div.header-nav.js-nav.swiper.swiper-container-horizontal:first-child > div.swiper-wrapper:first-child > a.header-nav__link.swiper-slide:nth-child(5)
 kdl.ru##a[href*="https://max.ru/kdl_ru"]
+chatgpt.com##div[role="dialog"][class^="z-[100] w-full max-w-full overflow-hidden bg-token-bg-tertiary border-token-border-heavy flex flex-col gap-2 border-t p-4 pb-6"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5007,7 +5019,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||initplayback^
 ||iptv.local^
 ||ip-api.com^$third-party
-! ifconfig.co^
+||ifconfig.*^
 ||odc.null^
 ||*CawcaFr^
 ||unknown.host^
@@ -5255,7 +5267,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||speeddials.opera.com/api/v*/partner-content$important
 ||speeddials.opera.com/api/v*/external-suggestions-config
 -proxy.satoshi.opera-api2.com^
-||composer.opera-api.com/api/v*/chat-suggestions
+||composer.opera-api.com^
 ||mcp.operacdn.com/*/optimized/*_thumbnail_*.webp$app=com.opera.browser
 ! =
 !
@@ -5697,7 +5709,7 @@ alice.yandex.ru##.Standalone-MobileApp
 ! ||cse.google.com/adsense/$script,important
 ||appsgrowthpromo*.googleapis.com^$important
 ! ↑ рекламный домен
-||peoplestackwebexperiments*.clients*.google.com^
+||peoplestackwebexperiments*.clients6.google.com^^$important
 ||safeframe.googleapis.*^$important
 ://mediation.goog^$important
 ://sin.prod.via.google^
@@ -5770,7 +5782,6 @@ alice.yandex.ru##.Standalone-MobileApp
 ||mobilenetworkscoring*.googleapis.com^
 ||monitoring*.clients6.google.com^
 ||myscoop-tracking.googlecode.com^
-||peoplestackwebexperiments*.clients6.google.com^$important
 ||playapprecommendations*.googleapis.com^$important
 ||recommendationengine*.googleapis.com^$important
 ||sb-ssl.google.com^
@@ -6887,7 +6898,6 @@ teletype.in#@#div.preloader
 @@/xssremover.$script
 @@||ruwiki.ru/*/load.php?lang=ru&modules=*7Cruwiki.adfoxinfinity.utils*&$script,domain=ruwiki.ru,important
 @@||pravocaptcha.$script,css,xhr
-@@||fp.f6.security^
 @@||laratranslate.com/assets/cookies-$script,domain=laratranslate.com
 @@||izhnt.ru.prod.hosts.ooklaserver.net^
 @@||lg-dme.fdcservers.net^
@@ -7055,10 +7065,10 @@ teletype.in#@#div.preloader
 !
 !
 ! 05.03.26: + от меня.
-||ipv4-internet.yandex.net^$third-party
-||ipv6-internet.yandex.net^$third-party
-||ifconfig.me^$third-party
-||ip.mail.ru^$third-party
+||ipv4-internet.yandex.net^
+||ipv6-internet.yandex.net^
+! ifconfig.me^
+||ip.mail.ru^
 !
 !
 ! ===
