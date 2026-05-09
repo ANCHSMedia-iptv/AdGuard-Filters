@@ -1679,6 +1679,7 @@
 ||googleads.github.io^
 ||htlbid.com^$important
 ||adriver.ru^$important
+||getsentry.com^$important
 !
 !
 !

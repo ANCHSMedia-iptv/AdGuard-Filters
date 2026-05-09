@@ -5967,7 +5967,7 @@ alice.yandex.ru##.Standalone-MobileApp
 ||i.instagram.com^
 ||media.net^
 ! static•media•net adservetx•media•net contextual•media•net edge•rms•media•net
-||app.getsentry.com^
+||getsentry.com^
 ||cdn.ravenjs.com^
 ||rollbar.com^$third-party,domain=~rollbar.com
 ! cdn•rollbar•com api•rollbar•com
