@@ -3,7 +3,7 @@
 ! Version: 4.6.3
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-05-08T16:28:30+00:00
+! TimeUpdated: 2026-05-09T12:31:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 08.05.2026 16:28 UTC
+! Last Modified: 09.05.2026 12:31 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -403,7 +403,6 @@
 ||ads.google.com^
 ||s0-2mdn-net.l.google.com^
 ||googleadsserving.cn^
-||googleadservices.com^
 ||mt34.mtree.com^
 ||displayads-formats.googleusercontent.com^
 ||pagead-googlehosted.l.google.com^
@@ -417,13 +416,13 @@
 ||pagead.l.google.com^
 ||partnerad.l.google.com^
 ||wintricksbanner.googlepages.com^
-||ads.google.com^
+||ads.google.com^$important
 ||ogads*.clients6.google.com^$important
 ||ampcid.google.*^
 ||android-context-data*.googleapis.com^
 ||androidtvchannels*.googleapis.com^
 ||auditrecording*.googleapis.com^
-||bluestacks-cloud-appplayer-logs.storage.googleapis.com^
+||bluestacks-cloud-appplayer-logs.storage.googleapis.com^$important
 ||clienttracing*.googleapis.com^
 ||csp.withgoogle.com^
 ||eligibility-panelresearch.googlevideo.com^
@@ -442,9 +441,9 @@
 ||mobilenetworkscoring*.googleapis.com^
 ||monitoring*.clients6.google.com^
 ||myscoop-tracking.googlecode.com^
-||peoplestackwebexperiments*.clients6.google.com^
-||playapprecommendations*.googleapis.com^
-||recommendationengine*.googleapis.com^
+||peoplestackwebexperiments*.clients6.google.com^$important
+||playapprecommendations*.googleapis.com^$important
+||recommendationengine*.googleapis.com^$important
 ||sb-ssl.google.com^
 ||spot*.googleapis.com^
 ||t13.9to5google.com^
@@ -456,6 +455,9 @@
 ||bot*.googlerenewals.net^
 ||cdn.googletoolservices.com^
 ||accesspoints*.googleapis.com^
+||safebrowsing.googleapis.com^$important
+||safebrowsingohttpgateway.googleapis.com^$important
+||retail.googleapis.com^
 !
 ! ===
 !
@@ -1676,6 +1678,7 @@
 ||collector.github.com^
 ||googleads.github.io^
 ||htlbid.com^$important
+||adriver.ru^$important
 !
 !
 !
@@ -2133,7 +2136,6 @@
 @@||crl*.digicert.com^
 @@||smartcaptcha.cloud.yandex.ru^
 @@||dns.yandex.net^
-@@||csp.yandex.net^$important
 @@||api.letsencrypt.org^
 @@||gdeslon.ru^$important
 @@||geetest.avito.com^

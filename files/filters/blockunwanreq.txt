@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 5.3.3
-! TimeUpdated: 2026-05-08T16:30:30+00:00
+! TimeUpdated: 2026-05-09T12:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -5727,10 +5727,9 @@ alice.yandex.ru##.Standalone-MobileApp
 ||federatedcompute*.googleapis.com^$important
 ||maps.googleapis.com/maps-api-v*/api/js/*/stats.js
 ||marketingplatform.google.com^
-||ads.google.com^
+||ads.google.com^$important
 ||s0-2mdn-net.l.google.com^
 ||googleadsserving.cn^
-||googleadservices.com^
 ||mt34.mtree.com^
 ||displayads-formats.googleusercontent.com^
 ||pagead-googlehosted.l.google.com^
@@ -5744,7 +5743,7 @@ alice.yandex.ru##.Standalone-MobileApp
 ||pagead.l.google.com^
 ||partnerad.l.google.com^
 ||wintricksbanner.googlepages.com^
-||ads.google.com^
+||ads.google.com^$important
 ||gstatic.com/glue/cookienotificationbar/
 ||ogads*.clients6.google.com^$important
 ||inputtools.google.com/ping$image,redirect=1x1-transparent.gif
@@ -5752,7 +5751,7 @@ alice.yandex.ru##.Standalone-MobileApp
 ||android-context-data*.googleapis.com^
 ||androidtvchannels*.googleapis.com^
 ||auditrecording*.googleapis.com^
-||bluestacks-cloud-appplayer-logs.storage.googleapis.com^
+||bluestacks-cloud-appplayer-logs.storage.googleapis.com^$important
 ||clienttracing*.googleapis.com^
 ||csp.withgoogle.com^
 ||eligibility-panelresearch.googlevideo.com^
@@ -5771,9 +5770,9 @@ alice.yandex.ru##.Standalone-MobileApp
 ||mobilenetworkscoring*.googleapis.com^
 ||monitoring*.clients6.google.com^
 ||myscoop-tracking.googlecode.com^
-||peoplestackwebexperiments*.clients6.google.com^
-||playapprecommendations*.googleapis.com^
-||recommendationengine*.googleapis.com^
+||peoplestackwebexperiments*.clients6.google.com^$important
+||playapprecommendations*.googleapis.com^$important
+||recommendationengine*.googleapis.com^$important
 ||sb-ssl.google.com^
 ||spot*.googleapis.com^
 ||t13.9to5google.com^
@@ -5785,6 +5784,9 @@ alice.yandex.ru##.Standalone-MobileApp
 ||bot*.googlerenewals.net^
 ||cdn.googletoolservices.com^
 ||accesspoints*.googleapis.com^
+||safebrowsing.googleapis.com^$important
+||safebrowsingohttpgateway.googleapis.com^$important
+||retail.googleapis.com^
 !
 ! ===
 !
@@ -6094,7 +6096,7 @@ alice.yandex.ru##.Standalone-MobileApp
 ||podname.com^
 ||rum.corewebvitals.io^
 ||teraverseapp.com^
-||dsp-api.moloco.com^
+||moloco.com^
 ||featureassets.org^
 ||events.character.ai^$important
 ||bi-events-collector.spot.im^
@@ -6839,7 +6841,6 @@ teletype.in#@#div.preloader
 @@||1.1.1.1^$app=com.bluecord
 @@||dns.yandex.net^
 @@/LazyGoogleReCaptchaV*.js
-@@||csp.yandex.net^$important
 @@||strm-*-*.strm.yandex.*/music-v*/crypt/ysign*=*/*/*-mp4?
 @@||api.letsencrypt.org^
 @@||youtube.com/api/stats/watchtime$image,domain=youtube.com|youtube-nocookie.com|youtu.be
@@ -6953,6 +6954,7 @@ teletype.in#@#div.preloader
 @@$removeparam=/^OCID=.*$/i,app=Microsoft.Msn.News.exe
 @@||msn.com^$app=msedgewebview2.exe,removeparam=ocid
 @@||chrome-devtools-frontend.appspot.com/serve_file/*/core/i18n/locales/*.json
+@@||mcp.operacdn.com/dynamiccontent/domain_data/*.bin
 !
 !
 ! -
