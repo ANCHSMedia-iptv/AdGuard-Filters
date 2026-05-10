@@ -1,4 +1,4 @@
-! Title: Breaking GeoRestrictions [DNS-only]
+! Title: Breaking GeoRestrictions [DNS only]
 ! Version: 2.2-prerelease
 ! Updated: 10.05.2026
 !
