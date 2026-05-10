@@ -112,7 +112,7 @@
 !
 ! GitHub Analytics (блокировка мешает нормальной работаспособности сайта, разблокированы)
 ||api.github.com/_private/browser/$xhr,important,redirect=empty
-|collector.github.com^$important
+||collector.github.com^$important
 !
 !
 ||unpkg.com/pwacompat^$script,xhr
@@ -2853,7 +2853,7 @@ about:blank^$domain=greynoise.io
 ||check-host.net/images/avahosting*.svg
 ||audioeye.com^
 ||twin.mentat.su^
-$csp=upgrade-insecure-requests,domain=ocsp.digicert.com|c.lencr.org|crl.usertrust.com|ocsp.globalsign.com|ocsp*.globalsign.com|ocsp.comodoca.com|ocsp.intel.com|ocsp.pki.goog|c.pki.goog|ocsp.*.amazontrust.com|certificates.intel.com|crl*.digicert.com|statusd.digitalcertvalidation.com|api.letsencrypt.org|crl.sectigo.com|crl.verisign.com|crl.trust-provider.com|crl.microsoft.com|ts-crl.ws.symantec.com|crl.thawte.com|crl*.ame.gbl|crl.quovadisglobal.com|crl.rootca*.amazontrust.com|crl.gosuslugi.ru|crl*.digicert.com|crl.digicert.com|crl.comodoca.com|symcb.com|msftncsi.com|crl.*.amazontrust.com
+$csp=upgrade-insecure-requests,domain=ocsp.digicert.com|c.lencr.org|crl.usertrust.com|ocsp.globalsign.com|ocsp*.globalsign.com|ocsp.comodoca.com|ocsp.intel.com|ocsp.pki.goog|c.pki.goog|ocsp.*.amazontrust.com|certificates.intel.com|crl*.digicert.com|statusd.digitalcertvalidation.com|api.letsencrypt.org|crl.sectigo.com|crl.verisign.com|crl.trust-provider.com|crl.microsoft.com|ts-crl.ws.symantec.com|crl.thawte.com|crl*.ame.gbl|crl.quovadisglobal.com|crl.rootca*.amazontrust.com|crl.rootca.amazontrust.com|crl.gosuslugi.ru|crl*.digicert.com|crl.digicert.com|crl.comodoca.com|symcb.com|msftncsi.com|crl.*.amazontrust.com
 ||umengcloud.com^$important
 ||sec.intl.miui.com^$important
 ||inf.miui.com^$important
@@ -6318,7 +6318,7 @@ ya.ru$@$link[rel="manifest"]
 @@||ok.ru/dk
 @@||recaptcha.net^
 @@/channel/*/index.m3u8?q=
-@@/gdprCookieBanner.*.js^$script,domain=2gis.*|2gis.ru,important
+! @@/gdprCookieBanner.*.js^$script,domain=2gis.*|2gis.ru,important
 @@/play/id*/*.m3u8?q=
 @@/ts/*/*.ts?q=
 @@||gitlab.com/api/graphql^$xhr,domain=gitlab.com
@@ -6359,8 +6359,8 @@ ya.ru$@$link[rel="manifest"]
 ! не приходят уведомления, не грузится приложение, в белом списке.
 @@/^5\.255\.255\.77/$network,app=ru.beru.android
 @@||peers.tv^$cookie=PHPSESSID
-@@||/assets/cookie-*.js$script,domain=24h.tv|clicktv.uz
-!@@||github.githubassets.com/assets/*cookie*.js$script,domain=github.com,important
+! @@/assets/cookie-*.js$script,domain=24h.tv|clicktv.uz
+! @@||github.githubassets.com/assets/*cookie*.js$script,domain=github.com,important
 @@||s*.storage.yandex.net^
 @@||pkvc-hls.cdnvideo.ru^
 @@||pkvc-hls*.cdnvideo.ru^
@@ -6925,9 +6925,9 @@ teletype.in#@#div.preloader
 @@||onlinetrade.ru/xpvnsulc/?
 @@||onlinetrade.ru^$cookie
 @@||ocsp.comodoca.com^
-@@||comnews.ru/themes/site/js/jquery.cookie.js$domain=comnews.ru,important
+! @@||comnews.ru/themes/site/js/jquery.cookie.js$domain=comnews.ru
 @@||crl.gosuslugi.ru^
-@@||ssl-reg.iitrust.ru^
+!@@||ssl-reg.iitrust.ru^
 @@||speedtest-*.megafon.ru^
 @@||st.mtsws.net^
 @@||speedtest.*.gldn.net^
@@ -6943,7 +6943,7 @@ teletype.in#@#div.preloader
 @@/xssremover.$script
 @@||ruwiki.ru/*/load.php?lang=ru&modules=*7Cruwiki.adfoxinfinity.utils*&$script,domain=ruwiki.ru,important
 @@||pravocaptcha.$script,css,xhr
-@@||laratranslate.com/assets/cookies-$script,domain=laratranslate.com
+! @@||laratranslate.com/assets/cookies-$script,domain=laratranslate.com
 @@||izhnt.ru.prod.hosts.ooklaserver.net^
 @@||lg-dme.fdcservers.net^
 @@||speedtest.omega-connect.net^
@@ -6952,6 +6952,7 @@ teletype.in#@#div.preloader
 @@||runonpc.com/images/captcha/$image,domain=runonpc.com
 @@||localhost^$domain=postman.co
 @@||crl.rootca*.amazontrust.com^
+@@||crl.rootca.amazontrust.com^
 @@||crl.r2m01.amazontrust.com^
 @@||ocsp.*.amazontrust.com^
 @@||sspc.sec-smartswitch.com^

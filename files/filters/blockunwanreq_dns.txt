@@ -1678,7 +1678,7 @@
 ||ding.wix.com^
 ||wce-frog.wix.com^
 ||stores-counters.wix.com^
-||collector.github.com^
+||collector.github.com^$important
 ||googleads.github.io^
 ||htlbid.com^$important
 ||adriver.ru^$important
@@ -2175,7 +2175,7 @@
 @@||mironline.ru^
 @@||ocsp.comodoca.com^
 @@||crl.gosuslugi.ru^
-@@||ssl-reg.iitrust.ru^
+!@@||ssl-reg.iitrust.ru^
 @@||speedtest-*.megafon.ru^
 @@||st.mtsws.net^
 @@||speedtest.*.gldn.net^
@@ -2185,6 +2185,7 @@
 @@||lg-dme.fdcservers.net^
 @@||speedtest.omega-connect.net^
 @@||crl.rootca*.amazontrust.com^
+@|||crl.rootca.amazontrust.com^
 @@||crl.r2m01.amazontrust.com^
 @@||ocsp.*.amazontrust.com^
 @@||crl.*.amazontrust.com^
