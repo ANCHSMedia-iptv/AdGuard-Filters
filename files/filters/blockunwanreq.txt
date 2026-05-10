@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.3.4
-! TimeUpdated: 2026-05-09T17:30:30+00:00
+! Version: 5.3.5
+! TimeUpdated: 2026-05-10T15:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -112,7 +112,7 @@
 !
 ! GitHub Analytics (блокировка мешает нормальной работаспособности сайта, разблокированы)
 ||api.github.com/_private/browser/$xhr,important,redirect=empty
-||collector.github.com/github/collect^$xhr,important,redirect=empty
+|collector.github.com^$important
 !
 !
 ||unpkg.com/pwacompat^$script,xhr
@@ -206,7 +206,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,redirect=nooptext,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-*.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~getsentry.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru,important
+*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-*.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~getsentry.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru|~sentry-next.wixpress.com,important
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com,important
@@ -815,7 +815,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 ||*3g.cn^$important
 ||*ppmobiles.com^$important
 ||vmnews.ru/ajax/?action=news_vcount$xhr,domain=vmnews.ru,important
-||acjs.aliyun.com/error$domain=cainiao.ru|aliexpress.ru|aliexpress.com|alibaba.com,important
+||acjs.aliyun.com^$important
 !
 !
 ||promo-images.prod.ya.magnit.ru^
@@ -974,7 +974,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru
 /:\/\/yandex\.(ru|com)/$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.free.tiptop.vpn.proxy|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp|jp.ne.ibis.ibispaintxapp|com.allgoritm.youla|ru.sports
 /^77\.88\.(4|5){2}.(5|8){2}/$network,app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp|com.allgoritm.youla|ru.sports
 yastatic.net^$app=com.radioapp.mayakradio|com.avito.android|ru.vk.store|com.allgoritm.youla|ru.sports
-/^5\.255\.255\.77/$network,app=ru.pyaterochka.app.browser|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|ru.rt.video.app.mobile|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp|com.allgoritm.youla|ru.sports
+/^5\.255\.255\.77/$network,app=ru.pyaterochka.app.browser|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|ru.rt.video.app.mobile|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp|com.allgoritm.youla|ru.sports,important
 ||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm
 ||s3.amazonaws.com^$app=com.viber.voip
 ||bing.com^$app=com.viber.voip
@@ -2786,7 +2786,7 @@ about:blank^$domain=greynoise.io
 ||notion.so/api/v*/etClient
 ||exp.notion.so^$important
 ||notion.site/api/v*/ping$redirect=noopjson
-/v*/rgstr?k=client-$xmlhttprequest,redirect-rule=noopjson
+/v*/rgstr?k=client-$xhr,redirect-rule=noopjson
 ||assets.twitch.tv/assets/cookie_pink-$image,domain=twitch.tv
 ||assets.twitch.tv/assets/features.ads.components.dsa-wizard.components.$script,domain=twitch.tv,redirect=noopjs
 ||assets.twitch.tv/assets/features.ads.components.client-side-video-ads.instream-and-vertical-video-ad-player-$script,domain=twitch.tv,redirect=noopjs
@@ -2825,6 +2825,7 @@ about:blank^$domain=greynoise.io
 ||websocket.wp.pl^
 ||wp.aliexpress.com^
 ||analytics.rewixecommerce.com^
+||t13.9to5google.com^
 ||ding.wix.com^
 ||wce-frog.wix.com^
 ||stores-counters.wix.com^
@@ -2840,6 +2841,28 @@ about:blank^$domain=greynoise.io
 ||adsvr.org^
 ||feature-flagging.deepl.com^$important
 ||kraken.rambler.ru^
+||default.exp-tas.com^$important
+||w.usabilla.com^$important
+||sentry-next.wixpress.com^$important
+||wix.com/api/v*/analytics
+||clients*.google.com/tools/pso/ping
+||gstatic.com/glue/cookienotificationbar/
+||check-host.net/images/alexrhost.png
+||check-host.net/images/ipiz.svg
+||check-host.net/images/privatealps.png
+||check-host.net/images/avahosting*.svg
+||audioeye.com^
+||twin.mentat.su^
+$csp=upgrade-insecure-requests,domain=ocsp.digicert.com|c.lencr.org|crl.usertrust.com|ocsp.globalsign.com|ocsp*.globalsign.com|ocsp.comodoca.com|ocsp.intel.com|ocsp.pki.goog|c.pki.goog|ocsp.*.amazontrust.com|certificates.intel.com|crl*.digicert.com|statusd.digitalcertvalidation.com|api.letsencrypt.org|crl.sectigo.com|crl.verisign.com|crl.trust-provider.com|crl.microsoft.com|ts-crl.ws.symantec.com|crl.thawte.com|crl*.ame.gbl|crl.quovadisglobal.com|crl.rootca*.amazontrust.com|crl.gosuslugi.ru|crl*.digicert.com|crl.digicert.com|crl.comodoca.com|symcb.com|msftncsi.com|crl.*.amazontrust.com
+||umengcloud.com^$important
+||sec.intl.miui.com^$important
+||inf.miui.com^$important
+||gtglobal.intl.miui.com^
+||stun*.l.google.com^
+||stun.l.google.com^
+||img.shields.io^$third-party
+||ase.aidcgroup.net^$important
+||epss.alibaba-inc.com^$important
 !
 !
 !
@@ -3055,6 +3078,9 @@ about:blank^$domain=greynoise.io
 ||*basket*.wb.ru/vol*/dynamic_onboarding/WABANGA_*.png^$image,domain=wildberries.ru
 ||banners-website.wildberries.ru^
 ||banners-bt.wildberries.ru^
+||user-banner.wb.ru^
+||marketing-info.wildberries.ru^
+||carousel.wildberries.ru^
 !
 !
 !
@@ -3307,11 +3333,17 @@ otzovik.com##div[class^="produkt"][class$="sortable"]
 ||st.aestatic.net/mixer/ssr/*/aer-assets/tracker.$script,domain=aliexpress.ru,redirect=noopjs
 ||st.aestatic.net/mixer/ssr/*/aer-assets/reasons.$script,domain=aliexpress.ru,redirect=noopjs
 ||st.aestatic.net/mixer/widgets/bx/RecommendationFeedV*/*/system/RecommendationFeedV*.*^$css,script,domain=aliexpress.ru
-||st.aestatic.net/mixer/widgets/bx/RedOrderRecommendationFeedModal/*/system/RedOrderRecommendationFeedModal.*^$css,script,domain=aliexpress.ru
+||st.aestatic.net/mixer/widgets/bx/RecommendationFeedV*/*/system/RecommendationFeedV*.*^$css,domain=aliexpress.ru
+||st.aestatic.net/mixer/widgets/bx/RedOrderRecommendationFeedModal/*/system/RedOrderRecommendationFeedModal.*^$script,domain=aliexpress.ru
+||st.aestatic.net/mixer/widgets/bx/RedOrderRecommendationFeedModal/*/system/RedOrderRecommendationFeedModal.*^$css,domain=aliexpress.ru
 ||st.aestatic.net/mixer/widgets/bx/RecommendationFeedOrderSimilarWrapper/*/system/RecommendationFeedOrderSimilarWrapper.js^$script,domain=aliexpress.ru,redirect=noopjs
 ||aliexpress.ru/aer-jsonapi/bx/web/recommend/just-for-you-new-ru-sell^$xhr,domain=aliexpress.ru
 ||aliexpress.ru^$cookie=_yasc
 ! aliexpress.ru/aer-api/v*/bx/account/v*/web/geo/set-auto-geo-cookie$domain=aliexpress.ru
+||g.alicdn.com/trace/trace/$script,redirect=noopjs
+||st.aestatic.net/mixer-storage/baxia/verificationMetricsV$script,redirect=noopjs
+||aliexpress.*/*/_____tmd_____/report?x5secdata=$xhr,redirect=nooptext
+||aliexpress.*/_____tmd_____/report?x5secdata=$xhr,redirect=nooptext
 !
 ! = Cosmetic rules =
 ! = Косметические правила =
@@ -4856,6 +4888,10 @@ spravportal.ru###div-main-part > div.col-md-12.col-lg-12:first-child > a:nth-chi
 kdl.ru##header.header.js-header:first-child > div.header-container:first-child > div.header-bottom:last-child > div.container > div.header-nav.js-nav.swiper.swiper-container-horizontal:first-child > div.swiper-wrapper:first-child > a.header-nav__link.swiper-slide:nth-child(5)
 kdl.ru##a[href*="https://max.ru/kdl_ru"]
 chatgpt.com##div[role="dialog"][class^="z-[100] w-full max-w-full overflow-hidden bg-token-bg-tertiary border-token-border-heavy flex flex-col gap-2 border-t p-4 pb-6"]
+texterra.ru##header.header.header--toggle-bottom.header--fixed:nth-child(4) > div.header__body:last-child > div.container.container--full > div.header__row > div.header__col:nth-child(3) > a.header__button.button.button--purple.button--fix:last-child
+
+
+
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5490,8 +5526,8 @@ $cookie=_ym_debug
 ||zdevx.yandex.*^$important
 ||appmetrica.yandex.net.iberostar.com^
 ||messenger.yandex.*/report$important
-||ya.ru/clck/
-||yandex.*/clck/
+||ya.ru/clck/$important
+||yandex.*/clck/$important
 ||yastatic.net/pcode-native/loaders/$script
 ||api.plus.yandex.*/graphql?query_name=*%3FregisterSimpleActionWithPixel$xhr,important
 *$removeparam=yredirect
@@ -5525,7 +5561,7 @@ $cookie=_ym_debug
 $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||yandex.$removeparam=suggest_reqid
 ||ya.ru$removeparam=suggest_reqid
-||kit.yandex.ru/api/*/v*/kit*/collect
+||kit.yandex.*/api/*/v*/kit*/collect
 ||yandex.$removeparam=metric_client_id
 ||api.browser.yandex.*/user-events/$redirect=nooptext
 ||browser-resources.s3.yandex.net/*/get/browser/launcher_images/*/not_yandex/$image,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*
@@ -5573,6 +5609,9 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||adsdk.yandex.*^
 ||datalens.yandex^
 ||metrika.yandex^
+||yandex.$removeparam=mongoID
+||yandex.$removeparam=download_date
+||yandex.$removeparam=statpromo
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -5734,7 +5773,7 @@ alice.yandex.ru##.Standalone-MobileApp
 ||admob.com^
 ||accounts.google.com/gsi/log$xhr,redirect=nooptext
 ||youtube.com/ad_companion$important
-||fundingchoicesmessages.google.com^
+||fundingchoicesmessages.google.com^$important
 ||geomobileservices*.googleapis.com^$important
 ||federatedcompute*.googleapis.com^$important
 ||maps.googleapis.com/maps-api-v*/api/js/*/stats.js
@@ -5756,7 +5795,6 @@ alice.yandex.ru##.Standalone-MobileApp
 ||partnerad.l.google.com^
 ||wintricksbanner.googlepages.com^
 ||ads.google.com^$important
-||gstatic.com/glue/cookienotificationbar/
 ||ogads*.clients6.google.com^$important
 ||inputtools.google.com/ping$image,redirect=1x1-transparent.gif
 ||ampcid.google.*^
@@ -5786,7 +5824,6 @@ alice.yandex.ru##.Standalone-MobileApp
 ||recommendationengine*.googleapis.com^$important
 ||sb-ssl.google.com^
 ||spot*.googleapis.com^
-||t13.9to5google.com^
 ||tracedepot*.clients6.google.com^
 ||video-stats.l.google.com^
 ||video-analytics.l.google.com^
@@ -5795,9 +5832,13 @@ alice.yandex.ru##.Standalone-MobileApp
 ||bot*.googlerenewals.net^
 ||cdn.googletoolservices.com^
 ||accesspoints*.googleapis.com^
-||safebrowsing.googleapis.com^$important
-||safebrowsingohttpgateway.googleapis.com^$important
+!||safebrowsing.googleapis.com^
+||safebrowsingohttpgateway.googleapis.com^
 ||retail.googleapis.com^
+||ohttp-relay-safebrowsing-android.google.fastly-edge.com^
+||ohttp-relay-safebrowsing-*.google.fastly-edge.com^
+||*-safebrowsing.google.com^
+||app-measurement.com^$important
 !
 ! ===
 !
@@ -5834,7 +5875,7 @@ alice.yandex.ru##.Standalone-MobileApp
 ||tnc*.isnssdk.com^$important
 ||pangle.io^$important
 ||adashx4ae.ut.taobao.com^$important
-||*iad-*.braze.com^$important
+||iad-*.braze.com^$important
 ||logs.unchecky.com^$important
 ||*infeng.site^$important
 ||*iad.appboy.com^$important
@@ -6312,6 +6353,7 @@ ya.ru$@$link[rel="manifest"]
 @@||peers.tv/streaming/*/*/*.m3u8
 @@||mhd*.iptv2022.com^
 @@||mhd.iptv2022.com^
+@@||3gppnetwork.org^
 @@||api.peers.tv/auth/*/token
 @@/^77\.88\./$network,app=ru.yandex.mail|ru.yandex.rasp|ru.beru.android
 ! не приходят уведомления, не грузится приложение, в белом списке.
@@ -6513,8 +6555,11 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||esa-res.online.sberbank.ru/ESA/sbol/r-*/deprecatingbrowsers.json$xhr,domain=online.sberbank.ru
 @@||c.pki.goog^
 @@||x*.c.lencr.org^
+@@||ye.c.lencr.org^
 @@||crl.verisign.com^
 @@||ocsp.globalsign.com^
+@@||ocsp*.globalsign.com^
+@@||crl.globalsign.com^
 @@||ocsp.pki.goog^
 @@||images.wondershare.com/*/*/*/*adjust*.*^$domain=wondershare.com.ru|wondershare.com|wondershare.com.*,important
 @@||auth.okko.sport/v*/sso?redirectUri=
@@ -6655,7 +6700,7 @@ serverblight.com#@##cursor
 @@||arsplus.ru/bitrix/tools/conversion/ajax_counter.php^$xhr,domain=arsplus.ru
 @@||college.72to.ru/static/facebox/*.gif^$image,domain=college.72to.ru
 @@||college.72to.ru/static/vendor/extjs/resources/images/gray/*.gif$image,domain=college.72to.ru
-@@/api/*/envelope/$ping,xhr,domain=pochta.ru
+!@@/api/*/envelope/$ping,xhr,domain=pochta.ru
 @@||api-router.nexusmods.com/graphql^$xhr,domain=nexusmods.com,important
 @@||100i6fm.ru/cur_playing.txt$xhr,domain=radiocityonline.ru
 @@||api.plus.yandex.*/graphql$xhr,domain=plus.yandex.ru|plus.yandex.*
@@ -6920,8 +6965,6 @@ teletype.in#@#div.preloader
 @@||time.android.com^
 @@||time.cloudflare.com^
 @@||time.apple.com^
-@@||*-safebrowsing.google.com^
-@@||safebrowsing.googleapis.com^
 @@||rr*---sn-*.gvt1.com^
 @@||st.sweb.ru/upload?rand=
 @@||st.sweb.ru/file*?rand=
@@ -6930,8 +6973,6 @@ teletype.in#@#div.preloader
 @@||supergraph.metro-cc.ru^
 @@||*-lg.h2.nexus:8008/ws-ping$websocket,domain=h2.nexus
 @@||onedrive.live.com/*/*/_api/v*/graphql$xhr,domain=onedrive.live.com,important
-@@||ohttp-relay-safebrowsing-android.google.fastly-edge.com^
-@@||ohttp-relay-safebrowsing-*.google.fastly-edge.com^
 @@||vsd*.okcdn.ru/hls/*.m3u8/*/srcIp/*/urls/*/clientType/*/srcAg/*/*/*/video.m3u8$media
 @@||vsd*.okcdn.ru/hls/*.m3u8/*/srcIp/*/urls/*/clientType/*/srcAg/*/*/*_*/index.m3u8$media
 @@||vsd*.okcdn.ru/hls/*.m3u8/*/srcIp/*/urls/*/clientType/*/srcAg/*/*/*_*/*_*.ts$media
@@ -6965,13 +7006,18 @@ teletype.in#@#div.preloader
 @@||msn.com^$app=msedgewebview2.exe,removeparam=ocid
 @@||chrome-devtools-frontend.appspot.com/serve_file/*/core/i18n/locales/*.json
 @@||mcp.operacdn.com/dynamiccontent/domain_data/*.bin
+@@||ssl.gstatic.com/*/common/netcheck.gif
+@@||lencr.org^
+@@||crl.*.amazontrust.com^
+@@||kaltura.com^
+@@||supl.google.com^$important
+@@||ims.mts.ru^
+@@||alive.github.com^
 !
 !
 ! -
-! Ломается сайт DeepL при применении правил блокировки к скриптам tracking-*.js, late-cookieBannerLax.*.js и стилю late-cookieBannerLax.*.css, которые приведены ниже и разрешены.
-! The site DeepL crashes when applying blocking rules to the tracking-*.js, late-cookieBannerLax.*.js and late-cookieBannerLax.*.css scripts, which are listed below and allowed.
-@@||static.deepl.com/gatsby/tracking-*.js^$script,domain=deepl.com
-@@||static.deepl.com/gatsby/*cookieBanner*.*^$script,css,domain=deepl.com
+||static.deepl.com/gatsby/tracking-*.js^$script,domain=deepl.com,redirect=noopjs
+! @@||static.deepl.com/gatsby/*cookieBanner*.*^$script,css,domain=deepl.com
 !
 ! Сервис заблокировал доступ пользователям из РФ и Беларуси 18.06.2025.
 ! Неизвестно почему, но, возможно, из-за эмарго или же санкций.

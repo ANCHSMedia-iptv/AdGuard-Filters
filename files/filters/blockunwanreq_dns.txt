@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.6.4
+! Version: 4.6.5
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-05-09T17:31:30+00:00
+! TimeUpdated: 2026-05-10T15:31:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 09.05.2026 17:31 UTC
+! Last Modified: 10.05.2026 15:31 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -396,7 +396,7 @@
 ||ads.youtube.com^
 ||googleads.com^
 ||admob.com^
-||fundingchoicesmessages.google.com^
+||fundingchoicesmessages.google.com^$important,dnsrewrite=NXDOMAIN
 ||geomobileservices*.googleapis.com^$important
 ||federatedcompute*.googleapis.com^$important
 ||marketingplatform.google.com^
@@ -445,7 +445,6 @@
 ||recommendationengine*.googleapis.com^$important
 ||sb-ssl.google.com^
 ||spot*.googleapis.com^
-||t13.9to5google.com^
 ||tracedepot*.clients6.google.com^
 ||video-stats.l.google.com^
 ||video-analytics.l.google.com^
@@ -454,9 +453,13 @@
 ||bot*.googlerenewals.net^
 ||cdn.googletoolservices.com^
 ||accesspoints*.googleapis.com^
-||safebrowsing.googleapis.com^$important
-||safebrowsingohttpgateway.googleapis.com^$important
+!||safebrowsing.googleapis.com^
+||safebrowsingohttpgateway.googleapis.com^
 ||retail.googleapis.com^
+||ohttp-relay-safebrowsing-android.google.fastly-edge.com^
+||ohttp-relay-safebrowsing-*.google.fastly-edge.com^
+!||*-safebrowsing.google.com^
+||app-measurement.com^$important,dnsrewrite=NXDOMAIN
 !
 ! ===
 !
@@ -1671,6 +1674,7 @@
 ||websocket.wp.pl^
 ||wp.aliexpress.com^
 ||analytics.rewixecommerce.com^
+||t13.9to5google.com^
 ||ding.wix.com^
 ||wce-frog.wix.com^
 ||stores-counters.wix.com^
@@ -1682,6 +1686,26 @@
 ||fastly-insights.com^
 ||feature-flagging.deepl.com^$important
 ||kraken.rambler.ru^
+||default.exp-tas.com^$important
+||w.usabilla.com^$important
+||sentry-next.wixpress.com^$important
+||audioeye.com^
+||twin.mentat.su^
+||umengcloud.com^$important
+||iad-*.braze.com^$important,dnsrewrite=NXDOMAIN
+||sec.intl.miui.com^$important
+||inf.miui.com^$important
+||gtglobal.intl.miui.com^
+||user-banner.wb.ru^
+||marketing-info.wildberries.ru^
+||carousel.wildberries.ru^
+||stun*.l.google.com^
+||stun.l.google.com^
+! ||img.shields.io^
+||mmstat.com^$important
+||ase.aidcgroup.net^$important
+||acjs.aliyun.com^$important
+||epss.alibaba-inc.com^$important
 !
 !
 !
@@ -2067,8 +2091,11 @@
 @@||update.ayugram.one^
 @@||c.pki.goog^
 @@||x*.c.lencr.org^
+@@||ye.c.lencr.org^
 @@||crl.verisign.com^
 @@||ocsp.globalsign.com^
+@@||ocsp*.globalsign.com^
+@@||crl.globalsign.com^
 @@||ocsp.pki.goog^
 @@||wpad.IGD_Rostelecom^
 @@||wpad.igd_rostelecom^
@@ -2159,6 +2186,7 @@
 @@||crl.rootca*.amazontrust.com^
 @@||crl.r2m01.amazontrust.com^
 @@||ocsp.*.amazontrust.com^
+@@||crl.*.amazontrust.com^
 @@||sspc.sec-smartswitch.com^
 @@||hcaptcha.com^
 @@||recaptcha.net^
@@ -2180,6 +2208,11 @@
 @@||kir22.ru^$important
 @@||656c797369756d.app^$important
 @@||video-edge-*.*.hls.live-video.net^$important
+@@||lencr.org^
+@@||kaltura.com^
+@@||supl.google.com^$important
+@@||ims.mts.ru^
+@@||alive.github.com^
 !
 !
 !

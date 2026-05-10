@@ -1,6 +1,6 @@
 ! Title: Breaking GeoRestrictions [DNS-only]
-! Version: 2.1-prerelease
-! Updated: 09.05.2026
+! Version: 2.2-prerelease
+! Updated: 10.05.2026
 !
 !
 !
@@ -227,6 +227,7 @@
 77.239.114.0 canva.com
 77.239.114.0 content-management-files.canva.com
 77.239.114.0 static.canva.com
+77.239.114.0 canva.me
 !
 !
 ! Intel [Software] [Left Russia and Belarus, Full Geoblock]
@@ -296,9 +297,7 @@
 ! Unlocking access to A-GPS data from vendors Qualcomm and Broadcom.
 ! Will it work? It's still unclear..
 ! XXX.XXX.XXX.X sfepodownload.mediatek.com
-! XXX.XXX.XXX.X sfedownload.mediatek.com
 ! XXX.XXX.XXX.X sgepodownload.mediatek.com
-! XXX.XXX.XXX.X sgedownload.mediatek.com
 77.239.114.0 xtrapath1.izatcloud.net
 77.239.114.0 xtrapath2.izatcloud.net
 77.239.114.0 xtrapath3.izatcloud.net
@@ -355,7 +354,10 @@
 89.108.98.20 wix-code.com
 89.108.98.20 wix.com
 89.108.98.20 wixapps.net
-89.108.98.20 wixmp.com
+89.108.98.20 support.wix.com
+89.108.98.20 duplexer.wix.com
+89.108.98.20 status.wix.com
+89.108.98.20 users.wix.com
 !
 ! DevianArt [Creating] [Restrictions on use VPN]
 ! 07.05: This won't work because the IP address is assigned to the domain..
