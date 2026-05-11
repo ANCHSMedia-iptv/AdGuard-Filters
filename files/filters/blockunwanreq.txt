@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 5.3.6
-! TimeUpdated: 2026-05-10T15:30:30+00:00
+! TimeUpdated: 2026-05-11T17:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -206,7 +206,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,redirect=nooptext,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-*.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~getsentry.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru|~sentry-next.wixpress.com,important
+*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-*.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~getsentry.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru|~sentry-next.wixpress.com|~reporting.honeygain.com|~sentry-relay.opera-api.com,important
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com,important
@@ -2853,7 +2853,7 @@ about:blank^$domain=greynoise.io
 ||check-host.net/images/avahosting*.svg
 ||audioeye.com^
 ||twin.mentat.su^
-$csp=upgrade-insecure-requests,domain=ocsp.digicert.com|c.lencr.org|crl.usertrust.com|ocsp.globalsign.com|ocsp*.globalsign.com|ocsp.comodoca.com|ocsp.intel.com|ocsp.pki.goog|c.pki.goog|ocsp.*.amazontrust.com|certificates.intel.com|crl*.digicert.com|statusd.digitalcertvalidation.com|api.letsencrypt.org|crl.sectigo.com|crl.verisign.com|crl.trust-provider.com|crl.microsoft.com|ts-crl.ws.symantec.com|crl.thawte.com|crl*.ame.gbl|crl.quovadisglobal.com|crl.rootca*.amazontrust.com|crl.rootca.amazontrust.com|crl.gosuslugi.ru|crl*.digicert.com|crl.digicert.com|crl.comodoca.com|symcb.com|msftncsi.com|crl.*.amazontrust.com
+$csp=upgrade-insecure-requests,domain=ocsp.digicert.com|c.lencr.org|crl.usertrust.com|ocsp.globalsign.com|ocsp*.globalsign.com|ocsp.comodoca.com|ocsp.intel.com|pki.intel.com|ocsp.pki.goog|c.pki.goog|o.pki.goog|ocsp.*.amazontrust.com|certificates.intel.com|crl*.digicert.com|statusd.digitalcertvalidation.com|api.letsencrypt.org|crl.sectigo.com|crl.verisign.com|crl.trust-provider.com|crl.microsoft.com|ts-crl.ws.symantec.com|crl.thawte.com|crl*.ame.gbl|crl.quovadisglobal.com|crl.rootca*.amazontrust.com|crl.rootca.amazontrust.com|crl.gosuslugi.ru|crl*.digicert.com|crl.digicert.com|crl.comodoca.com|symcb.com|msftncsi.com|crl.*.amazontrust.com
 ||umengcloud.com^$important
 ||sec.intl.miui.com^$important
 ||inf.miui.com^$important
@@ -2864,6 +2864,16 @@ $csp=upgrade-insecure-requests,domain=ocsp.digicert.com|c.lencr.org|crl.usertrus
 ||ase.aidcgroup.net^$important
 ||epss.alibaba-inc.com^$important
 ||bfds.sberbank.ru^$important
+||reports.proton.me^
+||cookiebot.eu^$important
+||kaspersky.com/Error/
+||api-router.kaspersky-labs.com^
+||my.kaspersky.com/api/banners
+||reporting.honeygain.com^$important
+||honeygain.com/metrics/
+||widget.trustpilot.com^$third-party
+||ff.honeygain.com^
+||sentry-relay.opera-api.com^$important
 !
 !
 !
@@ -4892,6 +4902,8 @@ chatgpt.com##div[role="dialog"][class^="z-[100] w-full max-w-full overflow-hidde
 texterra.ru##header.header.header--toggle-bottom.header--fixed:nth-child(4) > div.header__body:last-child > div.container.container--full > div.header__row > div.header__col:nth-child(3) > a.header__button.button.button--purple.button--fix:last-child
 sberbank.ru##img[src*="://bfds.sberbank.ru/"]
 sberbank.ru##iframe[src*=".cdnflow.ru/"]
+honeygain.com##div.sc-1b930a10-0.cWJOXf
+honeygain.com##.sc-hTZjHc, .kTLBjU
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5550,12 +5562,12 @@ $cookie=_ym_debug
 ||yastatic.net/s3/psf/mail-liza-react-client/direct-$script,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=noopjs
 ||yastatic.net/s3/liza/_/promo-$css,redirect=noopcss
 ||yastatic.net/s3/distribution/stardust/browser-urlerror
-*/web-api/journal/v1?_m=do-client-log$xhr,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext
-*/web-api/journal/v1?_m=do-journal-log$xhr,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext
-*/web-api/models/liza1?_m=promozavr-*$xhr,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext
-*/web-api/models/liza1?_m=get-user-events$xhr,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext
-*/web-api/models/liza1?_m=get_user_activity$xhr,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext
-*/monitoring_liza.txt?$xhr,other,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext,important
+!*/web-api/journal/v1?_m=do-client-log$xhr,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext
+!*/web-api/journal/v1?_m=do-journal-log$xhr,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext
+!*/web-api/models/liza1?_m=promozavr-*$xhr,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext
+!*/web-api/models/liza1?_m=get-user-events$xhr,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext
+!*/web-api/models/liza1?_m=get_user_activity$xhr,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext
+!*/monitoring_liza.txt?$xhr,other,domain=mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*,redirect=nooptext,important
 ||yandex.ru/instant/stlog$redirect=nooptext,important
 ||api.browser.yandex.*/ab/
 $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
@@ -5691,11 +5703,15 @@ yandex.ru###hYF3siGBwNgvu__dkrg0xnnmcdcyyuh59he-PqmL7TJ > div.hYF3smmhxOwM > div
 ##html[class^="i-ua_js_no i-ua_css_standart i-ua_browser_yandexbrowser i-ua_browser-engine_webkit i-ua_browser_desktop"]
 yandex.*##a[href^="https://yandex.ru/an/"]
 ya.ru##a[href^="https://ya.ru/an/"]
+!
 ! -Баннер-блокировка «Похоже, вы используйте VPN» на сервисах Яндекса [17.04.2026]-
 yandex.ru##div[id="root"][class^="page__block-19-84"]
 ! -
 !
 alice.yandex.ru##.Standalone-MobileApp
+mail.yandex.ru###js-neuroexpert-button
+mail.yandex.ru###global-bar-container > div > div._GlobalBarRoot_12n6w_1.GlobalBar-m__globalBarContainer--tb5M6 > div._GlobalBarContainer_12n6w_9 > div._Container_1di3h_1:last-child > div:first-child
+!
 !
 ! =
 !
@@ -7014,6 +7030,10 @@ teletype.in#@#div.preloader
 @@||supl.google.com^$important
 @@||ims.mts.ru^
 @@||alive.github.com^
+@@||kaspersky.com/discovery/captcha_services
+@@||kaspersky.com/captcha/
+@@||kaspersky.com/api/config/reCaptcha
+@@||yastatic.net/s3/psf/mail-liza-react-client/empty-*.png$important
 !
 !
 ! -
