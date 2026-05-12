@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 5.3.6
-! TimeUpdated: 2026-05-11T17:30:30+00:00
+! TimeUpdated: 2026-05-12T17:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1859,7 +1859,7 @@ autoru-frontend/AdminsMarketingPopup_$script,domain=auto.ru,redirect=noopjs
 -script.dotmetrics.net
 /vite/assets/SponsoredScroll/$script,domain=tomshardware.com|pcgamer.com|androidcentral.com|gamesradar.com|livescience.com|space.com|techradar.com|tomsguide.com|windowscentral.com,redirect=noopjs
 ||cdn.mos.cms.futurecdn.net/7cUTDmN2PHNRiNBVqbKf56$image,domain=tomshardware.com
-||pochta.ru/promotion/content/$image,domain=pochta.ru
+||pochta.ru/api/promotion/$domain=pochta.ru
 ||ura.news/404^$image,domain=ura.news
 ||track24.ru/js/browser.js^$script,domain=track24.ru,redirect=noopjs
 ||track24.ru/js/highcharts.$script,domain=track24.ru,redirect=noopjs
@@ -2874,6 +2874,9 @@ $csp=upgrade-insecure-requests,domain=ocsp.digicert.com|c.lencr.org|crl.usertrus
 ||widget.trustpilot.com^$third-party
 ||ff.honeygain.com^
 ||sentry-relay.opera-api.com^$important
+||proton.me/api/feature/v*/frontend/client/metrics
+||pochta.ru/api/events-aggregator/$domain=pochta.ru
+||pochta.ru/assets/vtb_new_0_lg_$image,domain=pochta.ru
 !
 !
 !
@@ -4883,7 +4886,7 @@ gismeteo.ru##.extender, .h400
 vk.*##iframe[src^="/q_frame.html"]
 dev.2gis.ru##div.rounded-20.bg-surface-base-secondary.fixed.right-0.bottom-14.left-0.z-\[100\].m-auto.flex.max-w-\[798px\].items-center.justify-between.gap-2.px-9.py-6.text-sm.leading-\[1\.125rem\].max-sm\:bottom-4.max-sm\:mx-4.max-sm\:items-start.max-sm\:px-5.max-sm\:py-6.max-sm\:text-sm:nth-child(41)
 streamily.com##header[class^="sc-eulNck epwpvk"]
-streamily.com##div[role="presentation"][class^="MuiDialog-root"][class="MuiDialog-root"]
+streamily.com##div[role="presentation"][class^="MuiDialog-root"]
 streamily.com###root > div.home-page__sections__container:nth-child(4) > div.jss10.jss11:last-child > div.jss12.jss13.dark:nth-child(2) > div.MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-6 > div.MuiGrid-root.MuiGrid-item.MuiGrid-grid-sm-12.MuiGrid-grid-md-5.MuiGrid-grid-lg-6:nth-child(2) > div.MuiBox-root.jss45 > div:first-child
 uslugi.tyumen-city.ru###rm-greeting-widget
 rutube.ru##.premium-subscription-entrypoint-module__premium-entrypoint
@@ -4904,6 +4907,7 @@ sberbank.ru##img[src*="://bfds.sberbank.ru/"]
 sberbank.ru##iframe[src*=".cdnflow.ru/"]
 honeygain.com##div.sc-1b930a10-0.cWJOXf
 honeygain.com##.sc-hTZjHc, .kTLBjU
+pochta.ru###main-content > div.Box-sc-7ax6ia-0.eztcbC > div.PageContainer-sc-1d3tiqt-0.gALiKB.account-layout-page-container > div.GridBox-sc-a3sce5-0.iNIYYf > main.GridBox-sc-a3sce5-0.hCIhsF:last-child > div.Box-sc-7ax6ia-0.dvTpFT:last-child > div.Box-sc-7ax6ia-0.Accountstyled__ContainerWrapper-sc-1cypuul-8.dvTpFT.ckdxZO:first-child > div.Box-sc-7ax6ia-0.dvTpFT:last-child > section.Box-sc-7ax6ia-0.iXLXZb:nth-child(3)
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
