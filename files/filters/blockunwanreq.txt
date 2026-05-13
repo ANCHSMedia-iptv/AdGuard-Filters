@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.3.6
-! TimeUpdated: 2026-05-12T17:30:30+00:00
+! Version: 5.3.7
+! TimeUpdated: 2026-05-13T17:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2877,6 +2877,14 @@ $csp=upgrade-insecure-requests,domain=ocsp.digicert.com|c.lencr.org|crl.usertrus
 ||proton.me/api/feature/v*/frontend/client/metrics
 ||pochta.ru/api/events-aggregator/$domain=pochta.ru
 ||pochta.ru/assets/vtb_new_0_lg_$image,domain=pochta.ru
+||allsoftru.webim.ru^
+||webim.ru^
+/bitrix/templates/*/js/kickSovetnik.$script
+||af.click.ru^
+||personalization-speedtest.g.mindbox.ru^
+! www.aviasales.ru/?marker=••••••.••••••_rsload_ru
+||aviasales.ru$removeparam=marker
+!
 !
 !
 !
@@ -4908,6 +4916,8 @@ sberbank.ru##iframe[src*=".cdnflow.ru/"]
 honeygain.com##div.sc-1b930a10-0.cWJOXf
 honeygain.com##.sc-hTZjHc, .kTLBjU
 pochta.ru###main-content > div.Box-sc-7ax6ia-0.eztcbC > div.PageContainer-sc-1d3tiqt-0.gALiKB.account-layout-page-container > div.GridBox-sc-a3sce5-0.iNIYYf > main.GridBox-sc-a3sce5-0.hCIhsF:last-child > div.Box-sc-7ax6ia-0.dvTpFT:last-child > div.Box-sc-7ax6ia-0.Accountstyled__ContainerWrapper-sc-1cypuul-8.dvTpFT.ckdxZO:first-child > div.Box-sc-7ax6ia-0.dvTpFT:last-child > section.Box-sc-7ax6ia-0.iXLXZb:nth-child(3)
+allsoft.ru##div[id^="footer-cookie-banner"]
+##img[src*=".webim.ru/"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
