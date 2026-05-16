@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.6.7
+! Version: 4.6.8
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-05-13T17:31:30+00:00
+! TimeUpdated: 2026-05-15T17:31:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 13.05.2026 17:31 UTC
+! Last Modified: 15.05.2026 17:31 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -81,7 +81,7 @@
 ||abt.*.yandex.net^$important
 ||media-adv.market.yandex.ru^$important
 ||mc.yandex.*^$important
-! an.yandex.*^$important
+||an.yandex.*^$important,dnsrewrite=NXDOMAIN
 ||startup.mob.*.yandex.net^$important
 ||taxi-promotions.s*yandex.net^
 ||click.sender.yandex.*^$important
@@ -156,12 +156,13 @@
 ||mob-manager-aws.mob.taxi.yandex.net^
 ||yastat.net^
 ||csp.yandex.*^
-||analytics.mobile.yandex.net^
+||analytics.mobile.yandex.net^$important
 ||adsdk.yandex.*^
 ||datalens.yandex^
 ||metrika.yandex^
 ||appmetrika.yandex.*^
 ||surveys.yandex.*^
+||feeds-admin-media-eats-promotions.s3.yandex.net^
 !
 !
 ! ===
@@ -458,8 +459,9 @@
 ||retail.googleapis.com^
 ||ohttp-relay-safebrowsing-android.google.fastly-edge.com^
 ||ohttp-relay-safebrowsing-*.google.fastly-edge.com^
-!||*-safebrowsing.google.com^
+||*-safebrowsing.google.com^$important
 ||app-measurement.com^$important,dnsrewrite=NXDOMAIN
+||csi.gstatic.com^
 !
 ! ===
 !
@@ -1089,7 +1091,6 @@
 ||exp.notion.so^
 ||crash.ottmedia.ru^$important
 ||player-metrics.kinescope.io^$important
-||p.cityadstrack.com^
 ||asv.transsion.com^
 ||mgs123.com^
 ||well2266.com^
@@ -1484,7 +1485,7 @@
 ||nowmodulo.com^$important,dnsrewrite=0.0.0.0
 ||data.sec.miui.com^$important
 ||confiant-integrations.net^
-||html-load.cc^$important
+||html-load.cc^$important,dnsrewrite=0.0.0.0
 ||sentry.pr-cy.io^$important
 ||*gtm.hacklix.com^$important
 ||stat-api.gismeteo.net^
@@ -1553,7 +1554,6 @@
 ||i-trailer.ru^
 ||videoroll.net^
 ||videoplayerhub.com^
-||html-load.cc^$dnsrewrite=0.0.0.0
 ||tpembar.com^$important
 ||error-hub.tbank.ru^
 ||ms-dsp.tinkoff.ru^
@@ -1707,17 +1707,27 @@
 ||acjs.aliyun.com^$important
 ||epss.alibaba-inc.com^$important
 ||bfds.sberbank.ru^$important
-||reports.proton.me^
+||reports.proton.me^$important
 ||cookiebot.eu^$important
-||api-router.kaspersky-labs.com^
+||api-router.kaspersky-labs.com^$important
 ||reporting.honeygain.com^$important
-||ff.honeygain.com^
+||ff.honeygain.com^$important
 ||cmp.osano.com^
 ||sentry-relay.opera-api.com^$important
 ||allsoftru.webim.ru^
 ||webim.ru^
-||af.click.ru^
+||af.click.ru^$important
 ||personalization-speedtest.g.mindbox.ru^
+||trorqeok.com^
+||sentry.viju.ru^$important
+||dsml.viju.ru^$important
+||g4blin.ru^
+||get4click.ru^$important
+||error-report.com^$important,dnsrewrite=0.0.0.0
+||content-loader.com^$important,dnsrewrite=0.0.0.0
+||abroad.api.comm.intl.miui.com^$important
+||privacy.api.intl.miui.com^
+||io.mi.com^$important
 !
 !
 !
@@ -2222,10 +2232,16 @@
 @@||656c797369756d.app^$important
 @@||video-edge-*.*.hls.live-video.net^$important
 @@||lencr.org^
+@@||crl.*.amazontrust.com^
 @@||kaltura.com^
 @@||supl.google.com^$important
 @@||ims.mts.ru^
 @@||alive.github.com^
+@@||ts-aia.ws.symantec.com^
+@@||crl.globalsign.com^
+@@||ocsp.apple.com^
+@@||crl.apple.com^
+@@||secure.globalsign.com^
 !
 !
 !
