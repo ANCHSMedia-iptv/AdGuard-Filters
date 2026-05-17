@@ -3,7 +3,7 @@
 ! Version: 4.6.8
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-05-15T17:31:30+00:00
+! TimeUpdated: 2026-05-17T17:31:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 15.05.2026 17:31 UTC
+! Last Modified: 17.05.2026 17:31 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -81,7 +81,7 @@
 ||abt.*.yandex.net^$important
 ||media-adv.market.yandex.ru^$important
 ||mc.yandex.*^$important
-||an.yandex.*^$important,dnsrewrite=NXDOMAIN
+||an.yandex.*^$important
 ||startup.mob.*.yandex.net^$important
 ||taxi-promotions.s*yandex.net^
 ||click.sender.yandex.*^$important
@@ -397,7 +397,7 @@
 ||ads.youtube.com^
 ||googleads.com^
 ||admob.com^
-||fundingchoicesmessages.google.com^$important,dnsrewrite=NXDOMAIN
+||fundingchoicesmessages.google.com^$important
 ||geomobileservices*.googleapis.com^$important
 ||federatedcompute*.googleapis.com^$important
 ||marketingplatform.google.com^
@@ -460,7 +460,8 @@
 ||ohttp-relay-safebrowsing-android.google.fastly-edge.com^
 ||ohttp-relay-safebrowsing-*.google.fastly-edge.com^
 ||*-safebrowsing.google.com^$important
-||app-measurement.com^$important,dnsrewrite=NXDOMAIN
+||safebrowsing.googleapis.com^$important
+||app-measurement.com^$important
 ||csi.gstatic.com^
 !
 ! ===
@@ -1692,7 +1693,7 @@
 ||audioeye.com^
 ||twin.mentat.su^
 ||umengcloud.com^$important
-||iad-*.braze.com^$important,dnsrewrite=NXDOMAIN
+||iad-*.braze.com^$important
 ||sec.intl.miui.com^$important
 ||inf.miui.com^$important
 ||gtglobal.intl.miui.com^
@@ -1728,6 +1729,10 @@
 ||abroad.api.comm.intl.miui.com^$important
 ||privacy.api.intl.miui.com^
 ||io.mi.com^$important
+||icmp0.ru^$important
+||cnb.cnews.ru^
+||errortracking.deepl.com^
+||api.comfolks.com^
 !
 !
 !

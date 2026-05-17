@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.3.8
-! TimeUpdated: 2026-05-15T17:30:30+00:00
+! Version: 5.3.9
+! TimeUpdated: 2026-05-17T17:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2912,6 +2912,16 @@ $csp=upgrade-insecure-requests,domain=ocsp.digicert.com|c.lencr.org|crl.usertrus
 ||privacy.api.intl.miui.com^
 ||io.mi.com^$important
 ||cdn-asset.ura.news/header-max.png^$image,domain=ura.news
+||errortracking.deepl.com^
+||assets.habr.com/qna/*/assets/gtag-$script,domain=qna.habr.com,redirect=noopjs
+||assets.habr.com/qna/*/assets/fixed-banner-$script,domain=qna.habr.com,redirect=noopjs
+||assets.habr.com/qna/*/assets/fixed-banner-$css,domain=qna.habr.com,redirect=noopcss
+||assets.habr.com/qna/*/assets/stories-$script,domain=qna.habr.com,redirect=noopjs
+||assets.habr.com/qna/*/assets/stories-$css,domain=qna.habr.com,redirect=noopcss
+||assets.habr.com/qna/*/assets/setup-app-$script,domain=qna.habr.com,redirect=noopjs
+||api.comfolks.com^$third-party
+||tcell.tj/undefined$image,domain=tcell.tj
+/static/js/CollapsingBlockWithStateTracking.$script,domain=t2.ru|tele2.ru,redirect=noopjs
 !
 !
 !
@@ -5688,7 +5698,7 @@ $cookie=_ym_d
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
-! Updated 12.04
+! Updated 17.05
 ||yandex.ru^$app=ru.yandex.weatherplugin
 ||egress.yandex.net^$app=ru.yandex.weatherplugin
 ||cloud-api.yandex.net^$app=ru.yandex.weatherplugin
@@ -5700,12 +5710,13 @@ $cookie=_ym_d
 !
 @@||weather.yandex.ru^$app=ru.yandex.weatherplugin
 @@||static-maps.yandex.ru^$app=ru.yandex.weatherplugin
-@@://login.yandex.ru^$app=ru.yandex.weatherplugin
+@@||login.yandex.ru^$app=ru.yandex.weatherplugin
 @@||passport.yandex.ru^$app=ru.yandex.weatherplugin
+@@||alice.yandex.ru^$app=ru.yandex.weatherplugin
 ! =
 !
 ! =Block analytics in other Yandex apps. (14.04.2026)=
-! Updated 02.05
+! Updated 17.05
 ! -Y.Music-
 ||yandex.ru^$app=ru.yandex.music
 !
@@ -5720,9 +5731,16 @@ $cookie=_ym_d
 ! -
 !
 ! -Y.Keyboard-
+://yandex.ru^$app=ru.yandex.androidkeyboard
 ! -
 !
 ! -Yandex ID (ex. Yandex Key)-
+! -
+!
+! -Yandex Translate-
+||yandex.ru^$app=ru.yandex.translate
+!
+@@||api.browser.yandex.ru^$app=ru.yandex.translate
 ! -
 !
 ! =
@@ -5915,6 +5933,7 @@ mail.yandex.ru###global-bar-container > div > div._GlobalBarRoot_12n6w_1.GlobalB
 ||ohttp-relay-safebrowsing-android.google.fastly-edge.com^
 ||ohttp-relay-safebrowsing-*.google.fastly-edge.com^
 ||*-safebrowsing.google.com^$important
+||safebrowsing.googleapis.com^$important
 ||app-measurement.com^$important
 ||csi.gstatic.com^
 !
@@ -7103,6 +7122,8 @@ teletype.in#@#div.preloader
 @@||crl.apple.com^
 @@||secure.globalsign.com^
 @@||ura.news/api/graphql
+@@||cnews.ru/inc/js/captcha/$css,script,domain=cnews.ru
+@@/static/media/logo.*.gif^$image,domain=t2.ru|tele2.ru,important
 !
 !
 ! -
