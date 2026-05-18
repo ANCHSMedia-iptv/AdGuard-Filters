@@ -3,7 +3,7 @@
 ! Version: 4.6.8
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-05-17T17:31:30+00:00
+! TimeUpdated: 2026-05-18T17:31:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 17.05.2026 17:31 UTC
+! Last Modified: 18.05.2026 17:31 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -1733,6 +1733,10 @@
 ||cnb.cnews.ru^
 ||errortracking.deepl.com^
 ||api.comfolks.com^
+||vak345.com^
+||ilkopushchupervyeru.dmses.ru^
+||dmses.ru^
+||sender-click.net^
 !
 !
 !
@@ -2247,6 +2251,8 @@
 @@||ocsp.apple.com^
 @@||crl.apple.com^
 @@||secure.globalsign.com^
+@@||multiqr.ru^
+@@||qr.nspk.ru^
 !
 !
 !
@@ -2399,6 +2405,7 @@
 ||qxgolds.com^$dnsrewrite=BLOCKED
 ||kgwhg.com^$dnsrewrite=BLOCKED
 ||claude-pro.com^$dnsrewrite=BLOCKED
+||kittiescraftsmp.com^$dnsrewrite=BLOCKED
 !
 !
 !
