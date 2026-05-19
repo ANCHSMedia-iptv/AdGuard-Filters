@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.4.0
-! TimeUpdated: 2026-05-18T17:30:30+00:00
+! Version: 5.4.1
+! TimeUpdated: 2026-05-19T17:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -653,10 +653,13 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||ws.getzend.digital^$important
 ||rcmjs.rambler.ru/static/recommender.js^$script,important
 ||hye1eaipby4w.matham.ws^$important
+! -
 ||esports.ru/wp-content/uploads/2024/12/winline_logo_main_rgb.svg^$image,domain=esports.ru
 ||esports.ru/wp-content/uploads/2024/05/pari-logo-backing.svg^$image,domain=esports.ru
 ||esports.ru/wp-content/uploads/2024/12/freebet_*.gif^$image,domain=esports.ru
-||esports.ru/wp-content/uploads/2025/01/414x60.gif^$image,domain=esports.ru
+||esports.ru/wp-content/uploads/2024/0*/*kh*.gif^$image,domain=esports.ru
+||esports.ru/wp-content/uploads/2025/10/frame-*.jpg^$image,domain=esports.ru
+! -
 ! matomo-el5.x5.ru^$important (новое правило, строка 688)
 ||frontlogger.dodois.io^$important
 $cookie=adtech_uid
@@ -2466,7 +2469,7 @@ vip.gophersport.com$image
 ||wibes.ru/monetization/promo$domain=wibes.ru
 ||wibes.ru/stream/*?source=menu_to$domain=wibes.ru
 ||sentry.kontur.host^$important
-||outsource.api.2gis.com/v*/vacancies/$domain=2gis.ru
+||outsource.api.2gis.*/v*/vacancies/$domain=2gis.ru|2gis.*,redirect=noopjson
 ||pixelscan.net/unleash/proxy/client/metrics$xhr,domain=pixelscan.net
 ||pixelscan.net/assets/icons/header-bar-telegram-icon.svg^$image,domain=pixelscan.net
 onlinetrade.ru/5cff6583-c8c7-4a68-9381-c9f55c0b5a50
@@ -2930,6 +2933,21 @@ $csp=upgrade-insecure-requests,domain=ocsp.digicert.com|c.lencr.org|crl.usertrus
 ||console.cloud.ru/api/notification-api/tracking/
 ||sender-click.net^
 ||pinterest.*/email/open/
+||stat.envir.ee^
+||cmp.meteored.com^
+||services.meteored.com/web/usr/v*/check/
+||smartape.ru/scripts/counters-ru.js^$script,domain=smartape.ru
+||widgets.mango-office.ru^$important
+||cp.smartape.ru^
+||adfinity.pro^
+||functions.yandexcloud.net/d4e9o18miqundpjjh2vb
+$ping,third-party
+! -
+||storage.yandexcloud.net/s3-metaratings-storage/images/3c/2c/3c2c84a149f5ecfb7581ba34df44a99b.png^$image,domain=metaratings.ru
+||storage.yandexcloud.net/s3-metaratings-storage/images/3c/2c/3c2c84a149f5ecfb7581ba34df44a99b.png^$image,domain=metaratings.ru
+! -
+||esports.ru/wp-content/themes/esports/public/js/blocks/steam-balance-promo.js$script,domain=esports.ru
+||cybersport.ru/_nuxt/img/betBoom-*.*.png^$image,domain=cybersport.ru
 !
 !
 !
@@ -4976,6 +4994,13 @@ mcgrp.ru##.pt-3
 mcgrp.ru##div.app-shell.relative:nth-child(30) > main.bg-gray-50.pt-16:last-child > div.pb-8.pt-4.sm\:pb-12.sm\:pt-9:last-child > div.container.relative.justify-between > div.pb-8.pt-4.sm\:pb-12.sm\:pt-5 > div.container.relative.flex.flex-wrap.justify-between > div.w-full.sm\:w-1\/3.lg\:w-1\/5:last-child
 mcgrp.ru##div.app-shell.relative:nth-child(30) > main.bg-gray-50.pt-16:last-child > div.pb-8.pt-4.sm\:pb-12.sm\:pt-9:last-child > div.container.relative.justify-between > div.pb-8.pt-4.sm\:pb-12.sm\:pt-5 > div.container.relative.flex.flex-wrap.justify-between > div.hidden.w-1\/5.lg\:flex:first-child
 mcgrp.ru##.item-ad-slot
+lvgmc.lv##.content, .v
+esports.ru##div[class^="flex flex-col rounded-tl-xl rounded-tr-xl fixed left-0 right-0 bottom-0 z-10 mx-auto w-295 max-w-full js-catfish  hidden t-sm:block"]
+esports.ru##section[class^="mb-4 px-4 t-sm:px-0 mb-6 t-lg:mb-8"]
+esports.ru##a[href*="://esports.ru/popolnienie-steam-v-rossii/"]
+esports.ru##a[href*="://go.esports.ru/free-bet"]
+cybersport.ru##a[href*="://betboom.ru/land/cyber?utm_source="]
+2gis.ru,2gis.*###root > div > div._121zpzx > div._1sf34doj:first-child > div._1u4plm2:first-child > div:last-child > div:first-child > div._r47nf:last-child > div._guxkefv > div > div._1xzra4e > div._1yfus1e > div._jcreqo:last-child > div._fjltwx:last-child > div._1vgcy7c > div._3zzdxk:first-child > div._1667t0u > div._8hh56jx > div._15gu4wr > div > div._18lzknl > div._qvsf7z:last-child > div:last-child > div._t0tx82:first-child > div._8sgdp4:nth-child(2) > div._599hh > div:nth-child(5) > div._172gbf8
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5658,7 +5683,7 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 */portal/_crpd/$domain=ya.ru
 */user-id/api/prompthub?$domain=ya.ru|yandex.*|~alice.yandex.ru
 */user-id/api/banrot/*/events/$domain=ya.ru|yandex.*
-||yandex.*/portal/set/any?yrsncd=1&gif=1&ip=$domain=ya.ru|yandex.*
+||yandex.*/portal/set/any?*&gif=1$image,domain=ya.ru|yandex.*,redirect=1x1-transparent.gif
 ||naydex.net/*/static/v*/iframe-google-analytics.html$document,redirect=noopframe
 ||soft.export.yandex.ru/status.xml?$xhr
 ||admetrica.*^
@@ -5705,6 +5730,15 @@ $cookie=_ym_d
 ||feeds-admin-media-eats-promotions.s3.yandex.net^
 ! mc.yandex.*/metrika/tag_jet_beta.js$redirect=metrika-yandex-tag
 ! mc.yandex.*/metrika/tag_jet.js$redirect=metrika-yandex-tag
+||passport.yandex.*/pwl-yandex/api/client-log
+||passport.yandex.*/pwl-yandex/api/passport/stats
+||passport.yandex.*/pwl-yandex/api/passport/js_fingerprint
+||yastatic.net/s3/weather-frontend/front2/_next/static/media/backgroundYa.e4d7d466.png^$image
+||dr.yandex.net^
+||dr*.yandex.net^
+||static-mon.yandex.net^$important
+||yastatic.net/s3/weather-frontend/front2/_next/static/chunks/rateMe.$script,redirect=noopjs
+||yastatic.net/taxi-widget/ya-taxi-widget.js^$script,third-party
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=

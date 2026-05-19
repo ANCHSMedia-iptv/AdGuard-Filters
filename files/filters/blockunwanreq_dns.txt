@@ -3,7 +3,7 @@
 ! Version: 4.6.8
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-05-18T17:31:30+00:00
+! TimeUpdated: 2026-05-19T17:31:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 18.05.2026 17:31 UTC
+! Last Modified: 19.05.2026 17:31 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -163,6 +163,9 @@
 ||appmetrika.yandex.*^
 ||surveys.yandex.*^
 ||feeds-admin-media-eats-promotions.s3.yandex.net^
+||dr.yandex.net^
+||dr*.yandex.net^
+||static-mon.yandex.net^$important
 !
 !
 ! ===
@@ -1737,6 +1740,14 @@
 ||ilkopushchupervyeru.dmses.ru^
 ||dmses.ru^
 ||sender-click.net^
+||stat.envir.ee^
+||cmp.meteored.com^
+||es-config.sensic.net^
+||widgets.mango-office.ru^
+||cp.smartape.ru^
+||adfinity.pro^
+||trk.mail.ru^$important
+||telecid.ru^$important
 !
 !
 !
@@ -1819,21 +1830,19 @@
 ||adserv.ai^$important,dnsrewrite=ad-block.dns.adguard.com
 ||tapulsads.ru^$important,dnsrewrite=ad-block.dns.adguard.com
 ||gonet-ads.com^$dnsrewrite=ad-block.dns.adguard.com,important
-||telecid.ru^$important
-||tttturbonet.com^$dnsrewrite=0.0.0.0
+||tttturbonet.com^$important
 ||*pavo*^$important
 ||fancybox.in^$dnsrewrite=ad-block.dns.adguard.com
 ||adlooxtracking.ru^$important
 ||rixengine.com^$dnsrewrite=ad-block.dns.adguard.com
 ||weborama-tech.ru^$important
-||trk.mail.ru^$important
 ||svr-algorix.com^$dnsrewrite=ad-block.dns.adguard.com
 ||kayzen.io^$dnsrewrite=ad-block.dns.adguard.com
-||disk.akamaized.net^$app=com.dubox.drive
-! disk.akamaized.net^
+! disk.akamaized.net^$app=com.dubox.drive
+||disk.akamaized.net^
 ||adinfinitum.in^$dnsrewrite=ad-block.dns.adguard.com,important
 ||gamerplay*.space^$dnsrewrite=ad-block.dns.adguard.com
-||staticcc.com^$dnsrewrite=0.0.0.0
+||staticcc.com^$important
 !
 !
 !
