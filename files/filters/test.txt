@@ -1,6 +1,6 @@
 ! Title: Breaking GeoRestrictions [DNS only]
 ! Version: 2.2-prerelease
-! Updated: 10.05.2026
+! Updated: 20.05.2026
 !
 !
 !
@@ -157,7 +157,7 @@
 !
 !
 ! GitHub Copilot [AI] [Coding] [Regional Restrictions and Geoblock]
-77.239.114.0 api.github.com
+! 77.239.114.0 api.github.com # 20.05: This won't work because the IP address is assigned to the domain.
 77.239.114.0 api.individual.githubcopilot.com
 77.239.114.0 proxy.individual.githubcopilot.com
 !
@@ -295,6 +295,8 @@
 !
 ! A-GPS [Software] [Embargo]
 ! Unlocking access to A-GPS data from vendors Qualcomm and Broadcom.
+! 10.05: На Xiaomi доступ к A-GPS данным от Mediatek разблокируется путём смена региона в настройках. (без использования VPN)
+! Вероятно, также работает и в случаи с Qualcomm (на Xiaomi).. И наверное даже с Broadcom..
 ! Will it work? It's still unclear..
 ! XXX.XXX.XXX.X sfepodownload.mediatek.com
 ! XXX.XXX.XXX.X sgepodownload.mediatek.com
@@ -418,7 +420,6 @@
 77.239.114.0 info.izatcloud.net
 77.239.114.0 data-cdn.mbamupdates.com
 77.239.114.0 uupdump.net
-77.239.114.0 metrolist.cc
 !
 !
 !
