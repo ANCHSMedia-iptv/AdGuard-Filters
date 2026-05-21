@@ -5756,9 +5756,9 @@ $cookie=_ym_d
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
-! Updated 17.05
-||yandex.ru^$app=ru.yandex.weatherplugin
-||egress.yandex.net^$app=ru.yandex.weatherplugin
+! Updated 21.05
+://yandex.ru^$app=ru.yandex.weatherplugin
+! egress.yandex.net^$app=ru.yandex.weatherplugin
 ||cloud-api.yandex.net^$app=ru.yandex.weatherplugin
 ||favicon.yandex.net^$app=ru.yandex.weatherplugin
 ://avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
