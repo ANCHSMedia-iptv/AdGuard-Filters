@@ -1,6 +1,6 @@
 ! Title: Breaking GeoRestrictions [DNS only]
 ! Version: 2.2-prerelease
-! Updated: 20.05.2026
+! Updated: 21.05.2026
 !
 !
 !
@@ -184,7 +184,6 @@
 77.239.114.0 clienttoken.spotify.com
 77.239.114.0 exp.wg.spotify.com
 77.239.114.0 gew4-spclient.spotify.com
-77.239.114.0 api.spotify.com
 !
 ! Supercell [Games] [Left Russia and Belarus, Full Geoblock]
 77.239.114.0 accounts.supercell.com
@@ -203,15 +202,15 @@
 !
 ! Twitch [Streaming] [Regional restrictions (for example: the resolution of video streams, the lack of certain functions, etc..)]
 13.33.235.111 twitch.tv
-13.33.235.111 gql.twitch.tv
+! 13.33.235.111 gql.twitch.tv
 18.165.140.115 usher.ttvnw.net
 ! Additional
-13.33.235.111 assets.twitch.tv
-13.33.235.111 k.twitchcdn.net
-13.33.235.111 irc-ws.chat.twitch.tv
-13.33.235.111 passport.twitch.tv
-13.33.235.111 hermes.twitch.tv
-18.165.140.115 vod-secure.twitch.tv
+!13.33.235.111 assets.twitch.tv
+! 13.33.235.111 k.twitchcdn.net
+!13.33.235.111 irc-ws.chat.twitch.tv
+!13.33.235.111 passport.twitch.tv
+!13.33.235.111 hermes.twitch.tv
+!18.165.140.115 vod-secure.twitch.tv
 !
 ! 4PDA [Forums] [Some topics are closed from Russian IP-addresses, Regional Restrictions]
 ! 07.05: This won't work because the IP address is assigned to the domain.
