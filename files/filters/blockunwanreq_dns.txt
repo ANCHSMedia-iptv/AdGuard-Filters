@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.6.8
+! Version: 4.6.9
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-05-20T17:31:30+00:00
+! TimeUpdated: 2026-05-21T17:31:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 20.05.2026 17:31 UTC
+! Last Modified: 21.05.2026 17:31 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -353,7 +353,6 @@
 ||ads.msn.com^
 ||win10-trt.msedge.net^
 ||metric.appex-rf.msn.com^
-||measure.office.net^
 !
 ! ===
 !
@@ -1532,7 +1531,9 @@
 ||rumstat.cdnvideo.ru^
 ||collector.githubapp.com^$important
 ||anltcs.llimonix.dev^
-||events.telega.*^
+||telega.*^$important
+||telega.*^$important
+! ||events.telega.*^
 ||metro.sentry.beta.agency^$important
 ||sentry-ingest.kuper.ru^$important
 ||stat.tildacdn.com^
@@ -1749,6 +1750,11 @@
 ||trk.mail.ru^$important
 ||telecid.ru^$important
 ||plausible.canine.tools^
+||traces-sensors.thepoizon.ru^$important
+||dmpkit.lemanapro.ru^$important
+||stat1.clickfraud.dev^$important
+||stat*.clickfraud.dev^$important
+||clickfraud.dev^
 !
 !
 !

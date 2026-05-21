@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.4.1
-! TimeUpdated: 2026-05-19T17:30:30+00:00
+! Version: 5.4.2
+! TimeUpdated: 2026-05-21T17:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2156,7 +2156,7 @@ $cookie=/*_LAST_VISIT/
 ||runews24.ru/webp/assets/images/social_icons.png.webp^$xhr,domain=runews24.ru
 ||runews24.ru/assets/images/social_icons.png^$xhr,domain=runews24.ru
 $cookie=tvkuid,third-party
-||id.vk.*$cookie,third-party,domain=~vk.com|~vk.ru|~vk.me
+||id.vk.*$cookie,third-party,domain=~vk.com|~vk.ru|~vk.me|~mail.ru
 ||afrinz.ru/site/storage/2023/10/logo_telegramm.png^$image,domain=afrinz.ru
 /banners/index.json^$xhr,domain=learn.microsoft.com
 ||sock.bionika-digital.ru^
@@ -2234,7 +2234,7 @@ $cookie=/ADRUM_*/
 ||onlinetrade.ru/ajax.php?handler=bannersstat$xhr,domain=onlinetrade.ru
 ||sdamgia.ru/help?*&name=about_cookie^$xhr,domain=sdamgia.ru,redirect=empty
 ||vkpic.ru/api/track^$xhr,domain=vkpic.ru
-||id.vk.com/account/static/*_banner_*.*.*$image,domain=id.vk.com
+||id.vk.*/account/static/*_banner_*.*.*$image,domain=id.vk.*
 ||catalog.api.2gis.*/*/ads/$xhr,domain=2gis.ru|2gis.*,redirect=empty,important
 ||clickstream.lenta.tech^$important
 ||s*.ucoz.net^$important
@@ -2618,7 +2618,8 @@ _banner.swf
 ||thewindowsclub.com/wp-content/uploads/2026/02/OpManager-Plus.$image,domain=thewindowsclub.com
 ||thewindowsclub.com/wp-content/uploads/2026/02/Site24x7.png^$image,domain=thewindowsclub.com
 /wp-content/plugins/advanced-ads/
-||api.telega.*^$app=ru.dahl.messenger
+||telega.*^$important
+! ||api.telega.*^$app=ru.dahl.messenger
 ||serverspace.ru/wp-content/uploads/2025/06/frame-1321314229-6-4-2.svg^$image,domain=serverspace.ru
 ||serverspace.ru/wp-content/uploads/2023/05/vpn-server-$image,domain=serverspace.ru
 ||serverspace.ru/assets/v*/js/custom-block-loader.$script,domain=serverspace.ru
@@ -2793,9 +2794,9 @@ about:blank^$domain=greynoise.io
 ||notion.site/api/v*/ping$redirect=noopjson
 /v*/rgstr?k=client-$xhr,redirect-rule=noopjson
 ||assets.twitch.tv/assets/cookie_pink-$image,domain=twitch.tv
-||assets.twitch.tv/assets/features.ads.components.dsa-wizard.components.$script,domain=twitch.tv,redirect=noopjs
-||assets.twitch.tv/assets/features.ads.components.client-side-video-ads.instream-and-vertical-video-ad-player-$script,domain=twitch.tv,redirect=noopjs
-||assets.twitch.tv/assets/features.ads.components.client-side-video-ads.instream-and-vertical-video-ad-player-$css,domain=twitch.tv,redirect=noopcss
+! assets.twitch.tv/assets/features.ads.components.dsa-wizard.components.$script,domain=twitch.tv,redirect=noopjs
+! assets.twitch.tv/assets/features.ads.components.client-side-video-ads.instream-and-vertical-video-ad-player-$script,domain=twitch.tv,redirect=noopjs
+! assets.twitch.tv/assets/features.ads.components.client-side-video-ads.instream-and-vertical-video-ad-player-$css,domain=twitch.tv,redirect=noopcss
 ||stats.live-video.net^$important
 ||intake-analytics.wikimedia.org^
 ||archive.org/services/donations/banner.php$domain=archive.org
@@ -2948,6 +2949,18 @@ $ping,third-party
 ! -
 ||esports.ru/wp-content/themes/esports/public/js/blocks/steam-balance-promo.js$script,domain=esports.ru
 ||cybersport.ru/_nuxt/img/betBoom-*.*.png^$image,domain=cybersport.ru
+||traces-sensors.thepoizon.ru^$important
+||thepoizon.ru/api/v*/*/abtest/result/report/$xhr,domain=thepoizon.ru,redirect=noopjson
+otel-trace/otel.$script,redirect=noopjs
+||thepoizon.ru/api/v*/*/gw/intl/marketing/activity/popup/$xhr,domain=thepoizon.ru,redirect=noopjson
+||id.vk.*/button_one_tap_auth$third-party,important,domain=~vk.com|~vk.ru|~vk.me|~mail.ru
+||dmpkit.lemanapro.ru^$important
+||stat1.clickfraud.dev^$important
+||stat*.clickfraud.dev^$important
+||calltracking.ru^$third-party
+||callscoring.ru^$third-party
+||clickfraud.ru^$third-party
+||clickfraud.dev^
 !
 !
 !
@@ -4634,7 +4647,7 @@ rbc.ru###maincontent > div.l-col-main__inner > section.g-overflow.l-filler:nth-c
 rbc.ru###maincontent > div.l-col-main__inner > section.g-overflow.l-filler:nth-child(4) > div.js-index-central-column:first-child > div:first-child
 rbc.ru###maincontent > div.l-col-main__inner > section.g-overflow.l-filler:nth-child(4) > div.js-index-central-column:first-child > div:nth-child(6)
 rbc.ru###maincontent > div.l-col-main__inner > section.g-overflow.l-filler:nth-child(4) > div.js-index-central-column:first-child > div:nth-child(11)
-id.vk.com##.AdvertisingBanner-navigationGroup-gzrhtr
+id.vk.*##.AdvertisingBanner-navigationGroup-gzrhtr
 ##iframe[src*="googletagmanager.com/ns.html"]
 ##img[src*="kazdsp.com"]
 recsquare.ru##div.icon_max:nth-child(18)
@@ -5001,6 +5014,8 @@ esports.ru##a[href*="://esports.ru/popolnienie-steam-v-rossii/"]
 esports.ru##a[href*="://go.esports.ru/free-bet"]
 cybersport.ru##a[href*="://betboom.ru/land/cyber?utm_source="]
 2gis.ru,2gis.*###root > div > div._121zpzx > div._1sf34doj:first-child > div._1u4plm2:first-child > div:last-child > div:first-child > div._r47nf:last-child > div._guxkefv > div > div._1xzra4e > div._1yfus1e > div._jcreqo:last-child > div._fjltwx:last-child > div._1vgcy7c > div._3zzdxk:first-child > div._1667t0u > div._8hh56jx > div._15gu4wr > div > div._18lzknl > div._qvsf7z:last-child > div:last-child > div._t0tx82:first-child > div._8sgdp4:nth-child(2) > div._599hh > div:nth-child(5) > div._172gbf8
+securitylab.ru##footer.page-footer.px-3:nth-child(2) > div.container.py-6:first-child > section.p-section.section-subscribe-social.d-none.d-sm-block:first-child
+gazpromcosmos.ru##.x-close, .foobar-wrapper, .shadow, .bottom
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5329,7 +5344,6 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||ads.msn.com^
 ||win10-trt.msedge.net^
 ||metric.appex-rf.msn.com^
-||measure.office.net^
 ||edge.microsoft.com/serviceexperimentation/v*/
 ||api.edgeoffer.microsoft.com/edgeoffer/pb/experiments
 !
@@ -5834,6 +5848,7 @@ yandex.ru##div[id="root"][class^="page__block-19-84"]
 alice.yandex.ru##.Standalone-MobileApp
 mail.yandex.ru###js-neuroexpert-button
 mail.yandex.ru###global-bar-container > div > div._GlobalBarRoot_12n6w_1.GlobalBar-m__globalBarContainer--tb5M6 > div._GlobalBarContainer_12n6w_9 > div._Container_1di3h_1:last-child > div:first-child
+yandex.ru##div[class*="Warning_type_roskomnadzor"]
 !
 !
 ! =
@@ -6006,7 +6021,6 @@ mail.yandex.ru###global-bar-container > div > div._GlobalBarRoot_12n6w_1.GlobalB
 ||silvermob.com^$important
 ||adrta.com^$important
 ||adriver.ru^$important
-||app-measurement.com^$important
 ||umengcloud.com^$important
 ||bdstatic.com^$important
 ||gvt2.com^$important
@@ -7060,8 +7074,8 @@ teletype.in#@#div.preloader
 @@||reddit.com^$app=com.overdevs.rdx
 @@||redd.it^$app=com.overdevs.rdx
 @@||mironline.ru^
-@@||id.vk.com/not_robot_captcha
-@@||static.vk.com/vkid/*/not_robot_captcha
+@@||id.vk.*/not_robot_captcha
+@@||static.vk.*/vkid/*/not_robot_captcha
 @@||yandex.ru/showcaptcha$important
 @@||challenges.cloudflare.com/cdn-cgi/challenge-platform
 ! @@||yandex.ru/search/_crpd/$~ping
