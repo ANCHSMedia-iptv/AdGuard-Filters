@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.6.9
+! Version: 4.7.0
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-05-21T17:31:30+00:00
+! TimeUpdated: 2026-05-22T17:31:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 21.05.2026 17:31 UTC
+! Last Modified: 22.05.2026 17:31 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -1424,7 +1424,7 @@
 ||admitad.com^
 ||shrsl.com^
 ||linksynergy.com^
-||optimizely.com^
+||cdn.optimizely.com^
 ||launchdarkly.com^
 ||vwo.com^
 ||cdn-*.configcat.com^
@@ -1654,11 +1654,10 @@
 ||ad.bench.utorrent.com^
 ||omtrdc.net^
 ||ensighten.com^
-||optimizely.com^
 ||cdn.dynamicyield.com^
 ||exp.notion.so^
 ||http-inputs-notion.splunkcloud.com^
-! ||transcend-cdn.com^
+||transcend-cdn.com^
 ||cane.intel.com^
 ||stats.live-video.net^$important
 ||intake-analytics.wikimedia.org^
@@ -1755,6 +1754,12 @@
 ||stat1.clickfraud.dev^$important
 ||stat*.clickfraud.dev^$important
 ||clickfraud.dev^
+||evs.icy-lake.kickstarter.com^
+||featureassets.org^
+||cdn.siftscience.com^
+||siteintercept.qualtrics.com^
+||top100.ru^
+||backend.reshak.ru^
 !
 !
 !

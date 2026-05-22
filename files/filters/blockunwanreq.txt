@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.4.2
-! TimeUpdated: 2026-05-21T17:30:30+00:00
+! Version: 5.4.3
+! TimeUpdated: 2026-05-22T17:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -102,7 +102,7 @@
 ||skcrtxr.com^$important
 ! avito.ru/stat/radar?data=*$image,domain=avito.ru
 ! avito.ru/web/*/adv/network/creative$xhr,domain=avito.ru,redirect=empty
-||*advert*^$image,important,domain=~everesttech.net
+||*advert*^$image,important,domain=~everesttech.net|~tele2life.ru
 /firebase*.*^$script,xhr,important
 ||d3c8j8snkzfr1n.cloudfront.net^$important
 ||adskeeper.co.uk^$important
@@ -2961,6 +2961,10 @@ otel-trace/otel.$script,redirect=noopjs
 ||callscoring.ru^$third-party
 ||clickfraud.ru^$third-party
 ||clickfraud.dev^
+||evs.icy-lake.kickstarter.com^
+||cdn.siftscience.com^
+||flags.kick.com/flagd.evaluation.v*.Service/EventStream
+||st.top100.ru/top100/top100.js^$script,domain=rambler.ru|m.gazeta.ru|motor.ru|ferra.ru,important,redirect=noopjs
 !
 !
 !
@@ -5016,6 +5020,7 @@ cybersport.ru##a[href*="://betboom.ru/land/cyber?utm_source="]
 2gis.ru,2gis.*###root > div > div._121zpzx > div._1sf34doj:first-child > div._1u4plm2:first-child > div:last-child > div:first-child > div._r47nf:last-child > div._guxkefv > div > div._1xzra4e > div._1yfus1e > div._jcreqo:last-child > div._fjltwx:last-child > div._1vgcy7c > div._3zzdxk:first-child > div._1667t0u > div._8hh56jx > div._15gu4wr > div > div._18lzknl > div._qvsf7z:last-child > div:last-child > div._t0tx82:first-child > div._8sgdp4:nth-child(2) > div._599hh > div:nth-child(5) > div._172gbf8
 securitylab.ru##footer.page-footer.px-3:nth-child(2) > div.container.py-6:first-child > section.p-section.section-subscribe-social.d-none.d-sm-block:first-child
 gazpromcosmos.ru##.x-close, .foobar-wrapper, .shadow, .bottom
+tele2life.ru###page-body > div.post.bg2:nth-child(6)
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5756,7 +5761,7 @@ $cookie=_ym_d
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
-! Updated 21.05
+! Updated 22.05
 ://yandex.ru^$app=ru.yandex.weatherplugin
 ! egress.yandex.net^$app=ru.yandex.weatherplugin
 ||cloud-api.yandex.net^$app=ru.yandex.weatherplugin
@@ -5765,6 +5770,7 @@ $cookie=_ym_d
 ||strm.yandex.*^$app=ru.yandex.weatherplugin
 ://api.browser.yandex.ru^$app=ru.yandex.weatherplugin
 ||yandex.com^$app=ru.yandex.weatherplugin
+! ||yastatic.net^$app=ru.yandex.weatherplugin
 !
 @@||weather.yandex.ru^$app=ru.yandex.weatherplugin
 @@||static-maps.yandex.ru^$app=ru.yandex.weatherplugin
