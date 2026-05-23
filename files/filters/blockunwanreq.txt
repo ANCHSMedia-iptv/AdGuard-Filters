@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 5.4.3
-! TimeUpdated: 2026-05-22T17:30:30+00:00
+! TimeUpdated: 2026-05-23T17:30:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2965,6 +2965,7 @@ otel-trace/otel.$script,redirect=noopjs
 ||cdn.siftscience.com^
 ||flags.kick.com/flagd.evaluation.v*.Service/EventStream
 ||st.top100.ru/top100/top100.js^$script,domain=rambler.ru|m.gazeta.ru|motor.ru|ferra.ru,important,redirect=noopjs
+||bat.bing.com^$important
 !
 !
 !
@@ -4897,8 +4898,8 @@ adminvps.ru###elementor-popup-modal-8861\
 retn.ru###__next > div.CookieWindow__Wrapper-sc-uhdlpk-0.cytfwE:nth-child(6)
 dtf.ru##.supbar, .supbar--top
 dtf.ru##.rotator, .entry-rotator
-dtf.ru##.sidebar-item__success-text
-dtf.ru###app > div.layout-wrapper:nth-child(3) > div.layout > div.aside.aside--left:first-child > div.scrollable > div.sidebar > div.sidebar__section:first-child > a.sidebar-item:nth-child(6) > div.sidebar-item__text:last-child > div.sidebar-item__success-text
+dtf.ru,vc.ru##.sidebar-item__success-text
+dtf.ru,vc.ru###app > div.layout-wrapper:nth-child(3) > div.layout > div.aside.aside--left:first-child > div.scrollable > div.sidebar > div.sidebar__section:first-child > a.sidebar-item:last-child > div.sidebar-item__text:last-child > div.sidebar-item__success-text
 telega.in###fancybox-container-1
 telega.in##.site-promo, .site-promo--blue
 telega.in##.scrollup, .js-mobile-fixed-button, .active
@@ -4986,7 +4987,7 @@ chatgpt.com##div:nth-child(4) > div.flex.h-svh.w-screen.flex-col > div:last-chil
 iguides.ru###cookies-agreement
 t-j.ru##._subscription_1avt4_14
 spravportal.ru###div-main-part > div.col-md-12.col-lg-12:first-child > a:nth-child(3)
-2gis.ru###root > div > div._121zpzx > div._1sf34doj:first-child > div._1u4plm2:first-child > div:last-child > div > div._r47nf > div._guxkefv > div:last-child > div._1xzra4e > div._jcreqo > div._fjltwx:last-child > div._1vgcy7c > div._3zzdxk > div._1667t0u > div._8hh56jx > div._15gu4wr > div > div._bsl8pv > div._dn1bj5:first-child > div._10fp1fs:last-child
+2gis.ru,2gis.*###root > div > div._121zpzx > div._1sf34doj:first-child > div._1u4plm2:first-child > div:last-child > div > div._r47nf > div._guxkefv > div:last-child > div._1xzra4e > div._jcreqo > div._fjltwx:last-child > div._1vgcy7c > div._3zzdxk > div._1667t0u > div._8hh56jx > div._15gu4wr > div > div._bsl8pv > div._dn1bj5:first-child > div._10fp1fs:last-child
 kdl.ru##header.header.js-header:first-child > div.header-container:first-child > div.header-bottom:last-child > div.container > div.header-nav.js-nav.swiper.swiper-container-horizontal:first-child > div.swiper-wrapper:first-child > a.header-nav__link.swiper-slide:nth-child(5)
 kdl.ru##a[href*="://max.ru/kdl_ru"]
 chatgpt.com##div[role="dialog"][class^="z-[100] w-full max-w-full overflow-hidden bg-token-bg-tertiary border-token-border-heavy flex flex-col gap-2 border-t p-4 pb-6"]
@@ -5273,7 +5274,7 @@ topnomer.ru#%#//scriptlet('set-cookie', 'terms-consent-confirmed', '', '1')
 ||statsfe*.*.microsoft.com^
 ||smartscreen-prod.microsoft.com^
 ||spynet*.microsoft.com^
-||uhf.microsoft.com^
+||uhf.microsoft.com^$important
 ||uif.microsoft.com^
 ||vlscppe.microsoft.com^
 ||webxtsvc.microsoft.com^
@@ -5770,7 +5771,7 @@ $cookie=_ym_d
 ||strm.yandex.*^$app=ru.yandex.weatherplugin
 ://api.browser.yandex.ru^$app=ru.yandex.weatherplugin
 ||yandex.com^$app=ru.yandex.weatherplugin
-! ||yastatic.net^$app=ru.yandex.weatherplugin
+||yastatic.net^$app=ru.yandex.weatherplugin
 !
 @@||weather.yandex.ru^$app=ru.yandex.weatherplugin
 @@||static-maps.yandex.ru^$app=ru.yandex.weatherplugin
@@ -5782,7 +5783,7 @@ $cookie=_ym_d
 ! =Block analytics in other Yandex apps. (14.04.2026)=
 ! Updated 17.05
 ! -Y.Music-
-||yandex.ru^$app=ru.yandex.music
+://yandex.ru^$app=ru.yandex.music
 !
 @@||vh.yandex.ru^$app=ru.yandex.music
 @@||iot.quasar.yandex.ru^$app=ru.yandex.music
@@ -5802,7 +5803,7 @@ $cookie=_ym_d
 ! -
 !
 ! -Yandex Translate-
-||yandex.ru^$app=ru.yandex.translate
+://yandex.ru^$app=ru.yandex.translate
 !
 @@||api.browser.yandex.ru^$app=ru.yandex.translate
 ! -
