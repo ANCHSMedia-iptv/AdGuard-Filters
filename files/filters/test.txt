@@ -1,6 +1,6 @@
 ! Title: Breaking GeoRestrictions [DNS only]
-! Version: 2.2-prerelease
-! Updated: 21.05.2026
+! Version: 2.3-prerelease
+! Updated: 24.05.2026
 !
 !
 !
@@ -201,16 +201,24 @@
 77.239.114.0 store.supercell.com
 !
 ! Twitch [Streaming] [Regional restrictions (for example: the resolution of video streams, the lack of certain functions, etc..)]
-13.33.235.111 twitch.tv
+! 13.33.235.111 twitch.tv
+77.239.114.0 twitch.tv
 ! 13.33.235.111 gql.twitch.tv
-18.165.140.115 usher.ttvnw.net
+77.239.114.0 gql.twitch.tv
+! 18.165.140.115 usher.ttvnw.net
+77.239.114.0 usher.ttvnw.net
 ! Additional
 !13.33.235.111 assets.twitch.tv
 ! 13.33.235.111 k.twitchcdn.net
-!13.33.235.111 irc-ws.chat.twitch.tv
-!13.33.235.111 passport.twitch.tv
-!13.33.235.111 hermes.twitch.tv
-!18.165.140.115 vod-secure.twitch.tv
+77.239.114.0 k.twitchcdn.net
+! 13.33.235.111 irc-ws.chat.twitch.tv
+77.239.114.0 irc-ws.chat.twitch.tv
+! 13.33.235.111 passport.twitch.tv
+77.239.114.0 passport.twitch.tv
+! 13.33.235.111 hermes.twitch.tv
+77.239.114.0 hermes.twitch.tv
+! 18.165.140.115 vod-secure.twitch.tv
+77.239.114.0 vod-secure.twitch.tv
 !
 ! 4PDA [Forums] [Some topics are closed from Russian IP-addresses, Regional Restrictions]
 ! 07.05: This won't work because the IP address is assigned to the domain.
