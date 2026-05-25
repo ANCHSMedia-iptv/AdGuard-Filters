@@ -2558,7 +2558,7 @@ $removeparam=mt_click_id
 ||cs44.pikabu.ru^
 ||check-host.net/ip/widget.js^$script,domain=check-host.net,important,redirect=noopjs
 ||gstatic.com/firebasejs/
-! apm-proxy.obs.mts.ru^
+||apm-proxy.obs.mts.ru^$important
 ||bandcamp.com/img/0.gif
 ||bcbits.com/client-bundle/*/GlobalJS_*/tko_trackpipe-$script,domain=bandcamp.com,redirect=noopjs
 ||bcbits.com/client-bundle/*/Tracker_*/analytics-$script,domain=bandcamp.com,redirect=noopjs
@@ -2999,7 +2999,6 @@ otel-trace/otel.$script,redirect=noopjs
 ||consent.deezer.com^
 $cookie=/euconsent-v*/
 ||cdn-assets.dzcdn.net/common/js/gdpr-appliance.js^$script,domain=deezer.com,redirect=noopjs
-||music.apm-proxy.obs.mts.ru^$important
 ||a.mts.ru^
 ||zvuk.com^$cookie=ip
 ||zvuk.com^$cookie=redirectUrl

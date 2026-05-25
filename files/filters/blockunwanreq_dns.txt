@@ -1516,7 +1516,7 @@
 ||a-ads.com^$dnsrewrite=ad-block.dns.adguard.com
 ||bdstatic.com^$important
 ||sofire.bdstatic.com^$important
-! apm-proxy.obs.mts.ru^
+||apm-proxy.obs.mts.ru^$important
 ||sentry.oits.su^
 ||ads.x5media.ru^
 ||sentry-internal.x5.ru^
@@ -1777,7 +1777,6 @@
 ||clmbtech.com^
 ||static.growthrx.in^
 ||agi-static.indiatimes.com^
-||music.apm-proxy.obs.mts.ru^$important
 ||report.zvuk.com^$important
 ||alloy-web.zvuk.com^
 ||nowupot.com^
