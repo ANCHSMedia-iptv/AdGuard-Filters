@@ -1,6 +1,6 @@
 ! Title: Breaking GeoRestrictions [DNS only]
 ! Version: 2.3-prerelease
-! Updated: 24.05.2026
+! Updated: 26.05.2026
 !
 !
 !
@@ -70,6 +70,9 @@
 77.239.114.0 www.deezer.com
 ! Additional
 77.239.114.0 api.deezer.com
+77.239.114.0 pipe.deezer.com
+77.239.114.0 live.deezer.com
+77.239.114.0 auth.deezer.com
 !
 ! Google AI - Gemini, Veo, Nano Banana, AI Studio, Flow, Antigravity, etc.. [AI] [Geoblock]
 62.133.62.97 aisandbox-pa.googleapis.com
