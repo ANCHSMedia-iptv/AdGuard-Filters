@@ -1790,6 +1790,8 @@
 ||parsely.com^$important
 ||rum.dzen.ru^$important
 ||gewfwdgd.site^
+||public.profitwell.com^
+||embed.tawk.to^
 !
 !
 !
