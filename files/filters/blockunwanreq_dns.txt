@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.7.1
+! Version: 4.7.2
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-05-26T17:31:30+00:00
+! TimeUpdated: 2026-05-28T13:12:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 26.05.2026 17:31 UTC
+! Last Modified: 28.05.2026 13:12 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -466,6 +466,7 @@
 ||app-measurement.com^$important
 ||csi.gstatic.com^
 ||ulp1p*.googleapis.com^$important
+||safebrowsing.google.com^$important
 !
 ! ===
 !
@@ -1792,6 +1793,25 @@
 ||gewfwdgd.site^
 ||public.profitwell.com^
 ||embed.tawk.to^
+||clean.gg^
+||mxpnl.com^$important
+||librato-collector.genius.com^
+||chartbeat.com^
+||bugherd.com^
+||howuku.com^$important
+||hotjar.com^
+||script.leadboxer.com^
+||sleeknotecustomerscripts.sleeknote.com^
+||collection.activedemand.com^$important
+||umami.datacentermedia.com^
+||events.mapbox.com^
+||adconfiguration.api.roblox.com^$important
+||cdn-spotify-experiments.conductrics.com^
+||tab.volces.com^$important
+||ads-api.tiktok.com^
+||ads-dev.pinterest.com^
+||ads-sg.tiktok.com^
+||api.helpshift.com^$important
 !
 !
 !
