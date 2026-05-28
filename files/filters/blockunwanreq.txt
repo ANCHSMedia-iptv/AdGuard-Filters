@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 5.4.7
-! TimeUpdated: 2026-05-28T13:12:30+00:00
+! TimeUpdated: 2026-05-28T15:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -3050,6 +3050,9 @@ $cookie=jd_pr,domain=quprawholesale.com
 ||ads-dev.pinterest.com^
 ||ads-sg.tiktok.com^
 ||api.helpshift.com^$important
+||clickstream.goldapple.ru^$important
+||goldapple.ru/front/api/event$xhr,domain=goldapple.ru,important
+||adapex.io^$important
 !
 !
 !
@@ -5132,6 +5135,7 @@ znanija.com##div[class^="flash-messages-container js-flash-messages js-flash-mes
 znanija.com##.brn-qpage-layout__right
 znanija.com##.Tooltip-module__brn-tooltip-box--OSHC1, .Tooltip-module__brn-tooltip-box--top-start-arrow-only--DXbL5
 datacentermap.com###__next > div.pushable > div.pusher > div:nth-child(2) > main:nth-child(2) > div.ui.centered.grid > div.ui.container.stackable.grid.maxwidth > div.left.aligned.floated.eleven.wide.column:nth-child(2) > div.ui.horizontal.divider.hrpad:nth-child(13)
+goldapple.ru##._ga-ticker_position_bottom_t8td6_5
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
