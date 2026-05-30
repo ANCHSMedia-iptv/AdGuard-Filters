@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.7.2
+! Version: 4.7.3
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-05-28T15:36:30+00:00
+! TimeUpdated: 2026-05-30T15:36:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 28.05.2026 15:36 UTC
+! Last Modified: 30.05.2026 15:36 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -496,7 +496,7 @@
 ||umeng.com^$important
 ||cellrebel.com^$important
 ||onesignal.com^$important
-||cdn.viglink.com^
+||viglink.com^$important
 ||connect.facebook.net^$important
 ||inappstory.ru^$dnsrewrite=REFUSED,important
 ||inappstory.com^$dnsrewrite=REFUSED,important
@@ -639,7 +639,7 @@
 ||to.getnitropack.com^
 ||getrcmx.com^
 ||dpd-site-analytics-backend-api-prod.dpd.ru^$important
-||js-agent.newrelic.com^$important
+! js-agent.newrelic.com^$important
 ! ||graphql.kazanexpress.ru^
 ||hc.uralweb.ru^$important
 ||clarity.ms^
@@ -914,12 +914,11 @@
 ||gemini.yahoo.com^
 ||log.fc.yahoo.com^
 ||business-api.tiktok.com^
-||ads-api.tiktok.com^
+||ads*.tiktok.com^$important
 ||advertising.apple.com^
 ||widgets.pinterest.com^$important
 ||advertising-api-eu.amazon.com^
 ||udcm.yahoo.com^
-||ads-sg.tiktok.com^
 ||advertising.yahooinc.com^
 ||adtech.yahooinc.com^
 ||d2wy8f7a9ursnm.cloudfront.net^
@@ -994,8 +993,8 @@
 ||teads.tv^$important
 ||mediasystems.am^$important
 ||bid|^$dnsrewrite=0.0.0.0
-||mobile-data.onetrust.io^$important
-||ads.tiktok.com^$important
+! mobile-data.onetrust.io^$important
+! ads.tiktok.com^$important
 ||partnerads.ysm.yahoo.com^$important
 ||analytics.peers.tv^$important
 ||highrevenuenetwork.com^$important,dnsrewrite=ad-block.dns.adguard.com
@@ -1028,7 +1027,6 @@
 ||impactradius-event.com^
 ||fpt.microsoft.com^
 ||lptag.liveperson.net^
-||ads.linkedin.com^
 ||pixel.everesttech.net^
 ||rtd-tm.everesttech.net^
 ||supportmetrics.apple.com^$important
@@ -1064,7 +1062,7 @@
 ||analytics.slashdotmedia.com^$important
 ||public.profitwell.com^
 ||ad-wa.anydesk.com^
-||analytics.tiktok.com^$important
+||analytics*.tiktok.com^$important
 ||unisound.cdnvideo.ru^
 ||mobi.sendsay.ru^$important
 ||stracker.rmg.ru^
@@ -1276,7 +1274,7 @@
 ||sentry.hcaptcha.com^$important
 ||metrics.mzstatic.com^
 ||analytics-api.samsunghealthcn.com^
-||data.mistat.*.xiaomi.com^$important
+||mistat.*.xiaomi.com^$important
 ||ironsource.mobi^
 ||ads.roku.com^
 ||smetrics.samsung.com^
@@ -1311,7 +1309,7 @@
 ||liftoff.io^$important
 ||liftoff-creatives.io^$important
 ||popcash.net^$dnsrewrite=ad-block.dns.adguard.com
-||anrdoezrs.net^
+||anrdoezrs.net^$important
 ||bdapi-ads.realmemobile.com^
 ||events.redditmedia.com^
 ||open.oneplus.net^
@@ -1325,10 +1323,9 @@
 ||bdapi-*-ads.realmemobile.com^
 ||ad.lgappstv.com^
 ||pixel.rubiconproject.com^
-||ads.linkedin.com^$important
 ||px.srvcs.tumblr.com^$important
 ||xp.apple.com^
-||pixel.quantserve.com^
+! pixel.quantserve.com^
 ||pixel.mathtag.com^
 ||api.impact.com^
 ||ads.vizio.com^
@@ -1351,11 +1348,11 @@
 ||cdn.dynamicyield.com^
 ||shareasale-analytics.com^
 ||impactradius-event.com^
-||geolocation.onetrust.com^
-||cookiebot.com^
-||consent.trustarc.com^
-||privacy-mgmt.com^
-||usercentrics.eu^
+||onetrust.com^$important
+||cookiebot.com^$important
+||consent.trustarc.com^$important
+||privacy-mgmt.com^$important
+||usercentrics.eu^$important
 ||2giga.link^$dnsrewrite=0.0.0.0
 ||greatis.com^$dnsrewrite=0.0.0.0
 ||mineralt.io^$dnsrewrite=0.0.0.0
@@ -1364,22 +1361,21 @@
 ||graph.instagram.com^
 ||i.instagram.com^
 ||analytics.twitter.com^$dnsrewrite=REFUSED,important
-! ||sync.otm-r.ru^
+! sync.otm-r.ru^
 ||otm-r.ru^
 ||error-report.com^
-||analytics-sg.tiktok.com^
 ||pxl-*.ozone.ru^
 ||wstat.ozon.ru^
 ||media.net^
-||app.getsentry.com^
+! app.getsentry.com^
 ||cdn.ravenjs.com^
 ||logrocket.io^
 ||raygun.io^
 ||fastpool.xyz^$dnsrewrite=0.0.0.0
 ||cpu.js.org^$dnsrewrite=0.0.0.0
 ||snap.licdn.com^
-||cookies-data.onetrust.io^
-||lr-ingest.com^
+||onetrust.io^
+||lr-ingest.com^$important
 ||cryptoloot.org^$dnsrewrite=0.0.0.0
 ||coin-hive.com^$dnsrewrite=0.0.0.0
 ||coinhive.com^$dnsrewrite=0.0.0.0,important
@@ -1391,7 +1387,7 @@
 ||bitcoinplus.com^$dnsrewrite=0.0.0.0
 ||nr-data.net^
 ||t.co^
-||ads-twitter.com^$dnsrewrite=REFUSED
+||ads-twitter.com^
 ||staticxx.facebook.com^
 ||analytics.pointdrive.linkedin.com^
 ||events.reddit.com^
@@ -1403,7 +1399,7 @@
 ||consensu.org^
 ||wrapper-api.sp-prod.net^
 ||gdpr.trustarc.com^
-||rlcdn.com^
+||rlcdn.com^$important
 ||exponential.com^
 ||consent-pref.trustarc.com^
 ||privacymanager.io^
@@ -1426,7 +1422,7 @@
 ||admitad.com^
 ||shrsl.com^
 ||linksynergy.com^
-||cdn.optimizely.com^
+||optimizely.com^$important
 ||launchdarkly.com^
 ||vwo.com^
 ||cdn-*.configcat.com^
@@ -1479,7 +1475,6 @@
 ||consentmanager.net^
 ||*-sentry.vkplay.ru^$important
 ||r3.vkplay.ru^$important
-||rlcdn.com^
 ||track.onef.pro^
 ||jitsu.ixbt.site^
 ||turbotargeting.io^
@@ -1549,7 +1544,6 @@
 ||hs-scripts.com^$important
 ||scout-cdn.salesloft.com^
 ||hubspot-forms-static-embed.s3.amazonaws.com^
-||ads-twitter.com^$dnsrewrite=REFUSED
 ||p.typekit.net^
 ||gtm.deepl.com^
 ||s.deepl.com^
@@ -1656,7 +1650,6 @@
 ||ad.bench.utorrent.com^
 ||omtrdc.net^
 ||ensighten.com^
-||cdn.dynamicyield.com^
 ||exp.notion.so^
 ||http-inputs-notion.splunkcloud.com^
 ||transcend-cdn.com^
@@ -1718,7 +1711,7 @@
 ||api-router.kaspersky-labs.com^$important
 ||reporting.honeygain.com^$important
 ||ff.honeygain.com^$important
-||cmp.osano.com^
+||cmp.osano.com^$important
 ||sentry-relay.opera-api.com^$important
 ||allsoftru.webim.ru^
 ||webim.ru^
@@ -1808,12 +1801,105 @@
 ||adconfiguration.api.roblox.com^$important
 ||cdn-spotify-experiments.conductrics.com^
 ||tab.volces.com^$important
-||ads-api.tiktok.com^
 ||ads-dev.pinterest.com^
-||ads-sg.tiktok.com^
 ||api.helpshift.com^$important
 ||clickstream.goldapple.ru^$important
 ||adapex.io^$important
+||mgid.com^
+||mouseflow.com^
+||freshmarketer.com^
+||luckyorange.com^
+||heapanalytics.com^
+||mixpanel.*.com^$important
+||api.mixpanel.com^$important
+||api-js.mixpanel.com^
+||decide.mixpanel.com^
+||events.segment.io^
+||fullstory.com^
+||rudderlabs.com^$important
+||snowplowanalytics.com^
+||fpjs.io^
+||siftscience.com^
+||permutive.com^
+||bluekai.com^
+||onetag-sys.com^
+||pippio.com^
+||id5-sync.com^
+||mathtag.com^
+||crwdcntrl.net^
+||bidswitch.net^
+||tapad.com^$dnsrewrite=ad-block.dns.adguard.com
+||everesttech.net^
+||prod.uidapi.com^
+||branch.io^
+||bnc.lt^
+||kochava.com^
+||wzrkt.com^
+||clevertap-prod.com^
+||nowplow.io^
+||nr-data.net^
+||coinimp.com^
+||webminepool.com^
+||minero.cc^
+||monerominer.rocks^
+||popmyads.com^$dnsrewrite=ad-block.dns.adguard.com
+||clickadu.com^
+||statdynamic.com^
+||pixel.facebook.com^
+||tr.facebook.com^
+||sc-static.net^
+||tr.snapchat.com^
+||ads.snapchat.com^$important
+||analytics.pointdrive.linkedin.com^
+||ads*.x.com^
+||analytics.x.com^
+||pixel.redditmedia.com^
+||d.reddit.com^
+||mcs-*.tiktokv.com^$important
+||mon.tiktokv.com^$important
+||pixel.quora.com^$important
+||qevents.quora.com^
+||px.srvcs.tumblr.com^$important
+||open.oneplus.net^
+||grs.hicloud.com^
+||logbak.hicloud.com^
+||2o7.net^
+||yumenetworks.com^
+||smartclip.net^
+||smartclip.com^
+||amoeba.web.roku.com^
+||smartclip.tv^
+||mgr.consensu.org^$important
+||dpbolvw.net^
+||tkqlhce.com^
+||shareasale.com^
+||shareasale-analytics.com^
+||impact.com^
+||impactradius-event.com^
+||awin1.com^
+||zenaps.com^
+||prf.hn^
+||partnerstack.com^$important
+||refersion.com^
+||pepperjamnetwork.com^
+||skimresources.com^
+||redirectingat.com^
+||st.dynamicyield.com^
+||track.hubspot.com^
+||marketo.net^
+||trackcmp.net^
+||click.mailchimp.com^
+||js.driftt.com^
+||a.klaviyo.com^
+||prd.jwpltx.com^$important
+||mssl.fwmrm.net^
+||cd.connatix.com^
+||capi.connatix.com^
+||vid.connatix.com^
+||s.innovid.com^
+||tremorhub.com^
+||beyondwickedmapping.org^$important
+||d2jjzw81hqbuqv.cloudfront.net^
 !
 !
 !

@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.4.7
-! TimeUpdated: 2026-05-29T15:36:30+00:00
+! Version: 5.4.8
+! TimeUpdated: 2026-05-30T15:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -52,7 +52,7 @@
 ||api.bing.com^$third-party,domain=~bing.com,important
 ||cellrebel.com^$important
 ||onesignal.com^$important,domain=~onesignal.com,third-party
-||cdn.viglink.com^$important
+||viglink.com^$important
 ||connect.facebook.net^$important
 ||connect.ok.ru^$important,domain=~ok.ru
 ||inappstory.ru^$important
@@ -93,15 +93,15 @@
 ||metrics.viqeo.tv^$important
 ||adtech.com^$important
 ||statad.ru^$important
-||mixpanel.*.com^$important,domain=~mixpanel.com
-! ||mixpanel*.com^$important,domain=~mixpanel.com
+||mixpanel.*.com^$important
+||api.mixpanel.com^$important
 ||btloader.com^$important
 ||digitalcaramel.com^$important
 ||ads*.twitter.com^$important
 ||bitrix.info^$important
 ||skcrtxr.com^$important
 ! avito.ru/stat/radar?data=*$image,domain=avito.ru
-! avito.ru/web/*/adv/network/creative$xhr,domain=avito.ru,redirect=empty
+! avito.ru/web/*/adv/network/creative$xhr,domain=avito.ru
 ||*advert*^$image,important,domain=~everesttech.net|~tele2life.ru|~log.api-maps.yandex.ru|~log.api-maps.yandex.*
 /firebase*.*^$script,xhr,important
 ||d3c8j8snkzfr1n.cloudfront.net^$important
@@ -202,7 +202,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 !
 ||invitro.ru/edna/assets/multibutton.js$script,domain=invitro.ru
 ||invitro.ru/local/templates/invitro_main/webrtc/*/*.*^$script,css,domain=invitro.ru
-||*.*/*.gif^$image,domain=invitro.ru|gazprom-neft.ru|gazprom-neft.com|t2.ru|tele2.ru|college.72to.ru|edu.ru|vtb.am|gpnbonus.ru|tj.gpnbonus.ru|gpnbonus.by|megavtogal.com|motivtelecom.ru|ruwiki.ru|tyumen-city.ru|gov.ru|*.gov.ru|rt-solar.ru,important,redirect=1x1-transparent.gif
+||*.*/*.gif^$image,domain=invitro.ru|gazprom-neft.ru|gazprom-neft.com|t2.ru|tele2.ru|college.72to.ru|edu.ru|vtb.am|gpnbonus.ru|tj.gpnbonus.ru|gpnbonus.by|megavtogal.com|motivtelecom.ru|ruwiki.ru|tyumen-city.ru|gov.ru|*.gov.ru|rt-solar.ru|agt72.ru,important,redirect=1x1-transparent.gif
 ||burp^$important
 ||zap^$important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
@@ -990,11 +990,11 @@ yastatic.net^$app=com.radioapp.mayakradio|com.avito.android|ru.vk.store|com.allg
 ||gemini.yahoo.com^
 ||log.fc.yahoo.com^
 ||business-api.tiktok.com^
-||ads-api.tiktok.com^
+||ads*.tiktok.com^$important
 ||advertising.apple.com^
 ||advertising-api-eu.amazon.com^
 ||udcm.yahoo.com^$important
-||ads-sg.tiktok.com^
+!
 ||adtech.yahooinc.com^
 ||d2wy8f7a9ursnm.cloudfront.net^
 ||autocomplete.diginetica.net^
@@ -2363,10 +2363,10 @@ $cookie=/ADRUM_*/,important
 ||ml314.com^
 ||6sc.co^
 ||crsspxl.com^
-||data.mistat.*.xiaomi.com^
+||mistat.*.xiaomi.com^$important
 ||ironsource.mobi^
 -analytics.appspot.com^
-||ad.xiaomi.com^
+||ad.xiaomi.com^$important
 ||tracking.*.miui.com^$important
 ||tracking.miui.com^$important
 ||mistat.xiaomi.com^$important
@@ -2389,7 +2389,7 @@ $cookie=TSDK_trackerSessionId,important
 ||cudy.com/api/collect$xhr
 /cdn/s/trekkie.storefront.
 ||jquery.pushstat.online/api/yandex-fingerprint
-||usercentrics.eu^
+||usercentrics.eu^$important
 ||nel.cloudflare.com^$important
 ||performance.radar.cloudflare.com^$important
 ||mpsuadv.ru^$important
@@ -3028,6 +3028,7 @@ $cookie=/euconsent-v*/
 ||otvet.mail.ru/question/xray.$script,domain=otvet.mail.ru,redirect=noopjs
 ||yadro.ru^$important
 $cookie=_cf_bm,important
+$cookie=__cf_bm,important
 ||gewfwdgd.site^
 ||d3l739e8r8y9v7.cloudfront.net^
 ||mxpnl.com^$important
@@ -3045,14 +3046,125 @@ $cookie=jd_pr,domain=quprawholesale.com
 ||adconfiguration.api.roblox.com^$important
 ||cdn-spotify-experiments.conductrics.com^
 ||tab.volces.com^$important
-||ads-api.tiktok.com^
-||ads-api.twitter.com^
 ||ads-dev.pinterest.com^
-||ads-sg.tiktok.com^
 ||api.helpshift.com^$important
 ||clickstream.goldapple.ru^$important
 ||goldapple.ru/front/api/event$xhr,domain=goldapple.ru,important
 ||adapex.io^$important
+||mgid.com^
+||mouseflow.com^
+||freshmarketer.com^
+||luckyorange.com^
+||heapanalytics.com^
+||mixpanel.*.com^$important
+||api.mixpanel.com^$important
+||api-js.mixpanel.com^
+||decide.mixpanel.com^
+||events.segment.io^
+||fullstory.com^
+||rudderlabs.com^$important
+||snowplowanalytics.com^
+||fpjs.io^
+||siftscience.com^
+||permutive.com^
+||bluekai.com^
+||onetag-sys.com^
+||pippio.com^
+||id5-sync.com^
+||mathtag.com^
+||crwdcntrl.net^
+||bidswitch.net^
+||tapad.com^
+||everesttech.net^
+||prod.uidapi.com^
+||branch.io^
+||bnc.lt^
+||kochava.com^
+||wzrkt.com^
+||clevertap-prod.com^
+||nowplow.io^
+||nr-data.net^
+||coinimp.com^
+||webminepool.com^
+||minero.cc^
+||monerominer.rocks^
+||popmyads.com^
+||clickadu.com^
+||statdynamic.com^
+||pixel.facebook.com^
+||tr.facebook.com^
+||sc-static.net^
+||tr.snapchat.com^
+||ads.snapchat.com^$important
+||analytics.pointdrive.linkedin.com^
+||ads*.x.com^
+||analytics.x.com^
+||pixel.redditmedia.com^
+||d.reddit.com^
+||mcs-*.tiktokv.com^$important
+||mon.tiktokv.com^$important
+||pixel.quora.com^$important
+||qevents.quora.com^
+||px.srvcs.tumblr.com^$important
+||open.oneplus.net^
+||grs.hicloud.com^
+||logbak.hicloud.com^
+||2o7.net^
+||yumenetworks.com^
+||smartclip.net^
+||smartclip.com^
+||amoeba.web.roku.com^
+||smartclip.tv^
+||mgr.consensu.org^$important
+||dpbolvw.net^
+||tkqlhce.com^
+||shareasale.com^
+||shareasale-analytics.com^
+||impact.com^
+||impactradius-event.com^
+||awin1.com^
+||zenaps.com^
+||prf.hn^
+||partnerstack.com^$important
+||refersion.com^
+||pepperjamnetwork.com^
+||skimresources.com^
+||redirectingat.com^
+||st.dynamicyield.com^
+||track.hubspot.com^
+||marketo.net^
+||trackcmp.net^
+||click.mailchimp.com^
+||js.driftt.com^
+||a.klaviyo.com^
+||prd.jwpltx.com^$important
+||mssl.fwmrm.net^
+||cd.connatix.com^
+||capi.connatix.com^
+||vid.connatix.com^
+||s.innovid.com^
+||tremorhub.com^
+||d2jjzw81hqbuqv.cloudfront.net^
+||x.com^$cookie=personalization_id
+||x.com^$cookie=guest_id
+||x.com^$cookie=csrf_id
+||privacy-mgmt.com^$important
+||mgr.consensu.org^$important
+||static-tracking.klaviyo.com^$important
+||prd.jwpltx.com^$important
+||tremorhub.com^
+$cookie=kognetiks_unique_id,important
+$cookie=_cfuvid
+||beyondwickedmapping.org^$important
+$cookie=_vwo_consent
+||bestchange.ru^$cookie=pixel
+||bestchange.ru^$cookie=spid
+||bestchange.ru^$cookie=source
+||bestchange.biz/unleash/client/metrics
+||bestchange.biz/unleash?
+||travelask.ru^$cookie=incognito_session_id
+||travelask.ru/api/v*/banner_link_toolbar$xhr,domain=travelask.ru
+||telecomdaily.ru/api/ad^$xhr,domain=telecomdaily.ru
 !
 !
 !
@@ -5136,6 +5248,9 @@ znanija.com##.brn-qpage-layout__right
 znanija.com##.Tooltip-module__brn-tooltip-box--OSHC1, .Tooltip-module__brn-tooltip-box--top-start-arrow-only--DXbL5
 datacentermap.com###__next > div.pushable > div.pusher > div:nth-child(2) > main:nth-child(2) > div.ui.centered.grid > div.ui.container.stackable.grid.maxwidth > div.left.aligned.floated.eleven.wide.column:nth-child(2) > div.ui.horizontal.divider.hrpad:nth-child(13)
 goldapple.ru##._ga-ticker_position_bottom_t8td6_5
+bestchange.biz##.CookieModal-module-scss-module__CuUk2G__root, .CookieModal-module-scss-module__CuUk2G__target
+dc.tj##.modal__social
+sputniknews.ru,tj.sputniknews.ru##a[href*="://max.ru/sputnik"]
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -6171,7 +6286,7 @@ yandex.ru##div[class*="Warning_type_roskomnadzor"]
 ||*mediation.unity3d.com^$important
 ! domain=~aiondb.ru
 ||mc.yandex.*^$important,domain=~aiondb.ru
-||an.yandex.*^$important,app=~com.badmanners.murglar
+||an.yandex.*^$app=~com.badmanners.murglar,important
 ||analytics.mobile.yandex.net^$important
 ||*footprintdns.com^$important
 ||inmobi.com^$important
@@ -6245,7 +6360,7 @@ yandex.ru##div[class*="Warning_type_roskomnadzor"]
 ||iot-logser.realme.com^
 ||fpjs.io^
 ||adsfs.oppomobile.com^
-||samsungads.com^
+||samsungads.com^$important
 ||device-metrics-us*.amazon.com^
 ||iadsdk.apple.com^
 ||iot-*-logser.realme.com^
@@ -6268,10 +6383,10 @@ yandex.ru##div[class*="Warning_type_roskomnadzor"]
 ||crypto-loot.org^
 ||click.oneplus.cn^
 ||aan.amazon.com^
-||lgsmartad.com^
-||clevertap-prod.com^
+||lgsmartad.com^$important
+||clevertap-prod.com^$important
 ||bdapi-*-ads.realmemobile.com^
-||ad.lgappstv.com^
+||ad.lgappstv.com^$important
 ||coinimp.com^
 ||partnerstack.com^
 ||ads.vizio.com^
@@ -6294,8 +6409,8 @@ yandex.ru##div[class*="Warning_type_roskomnadzor"]
 ||cdn.dynamicyield.com^
 ||shareasale-analytics.com^
 ||impactradius-event.com^
-||geolocation.onetrust.com^
-||cookiebot.com^
+||onetrust.com^$important
+||cookiebot.com^$important
 ||consent.trustarc.com^
 ||privacy-mgmt.com^
 ||2giga.link^
@@ -6307,7 +6422,7 @@ yandex.ru##div[class*="Warning_type_roskomnadzor"]
 ||i.instagram.com^
 ||media.net^
 ! static•media•net adservetx•media•net contextual•media•net edge•rms•media•net
-||getsentry.com^
+||getsentry.com^$important
 ||cdn.ravenjs.com^
 ||rollbar.com^$third-party,domain=~rollbar.com
 ! cdn•rollbar•com api•rollbar•com
@@ -6322,8 +6437,7 @@ yandex.ru##div[class*="Warning_type_roskomnadzor"]
 ||fastpool.xyz^
 ||cpu.js.org^
 ||snap.licdn.com^
-||cookies-data.onetrust.io^
-||cdn.onetrust.com^$third-party
+||onetrust.io^$important
 ||amazontrust.com^$domain=~crl.*.amazontrust.com|~ocsp.*.amazontrust.com
 ||honeybadger.io^$third-party,domain=~honeybadger.io
 ||cdn.lr-ingest.com^
