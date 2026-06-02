@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.5.0
-! TimeUpdated: 2026-06-01T15:36:30+00:00
+! Version: 5.5.1
+! TimeUpdated: 2026-06-02T15:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1119,14 +1119,14 @@ waf/fingerprint$xhr,important
 ||rumor.press^$third-party,important
 ||otcnet.ru/wp-content/plugins/wp-yandex-metrika/$script,xhr,redirect=metrika-yandex-watch,domain=otcnet.ru
 /ads/styles/all/theme/phpbbads.css$css
-||smotret.tv/js/ads-2025.js^$script,domain=smotret.tv
-||smotret.tv/js/lozad*.$script,domain=smotret.tv
+/js/ads-2025.js^$script,domain=smotret.tv|smotret.top
+/js/lozad*.$script,domain=smotret.tv|smotret.top
 ||tv2free.ru/core/modules/statistics/statistics.php^$xhr,subdocument,domain=tv2free.ru
 /pwa-sw.js$script
 ||1tv.ru/push_service_worker.js^$script,domain=1tv.ru
 /no-js.*$subdocument,script
-||tvapp.*/assets/js/player/counter.js^$script,domain=tvapp.*
-||tvapp.*/assets/js/player/disable.js^$script,domain=tvapp.*
+/assets/js/player/counter.js^$script,domain=tvapp.*|rapp.su|yootv.online,redirect=noopjs
+/assets/js/player/disable.js^$script,domain=tvapp.*|rapp.su|yootv.online,redirect=noopjs
 ||tva.org.ua/wp-content/uploads/2023/10/izobrazhenie_2023-10-10_143432490-250x159.png^$image,domain=tva.org.ua
 ||dam.mediacorp.sg/image/upload/*/mediacorp/cna/image/2025/03/25/telegram_*_0.png^$image,domain=channelnewsasia.com
 ||boost-recommend.mediacorp.sg^$important
@@ -2458,7 +2458,7 @@ vip.gophersport.com$image
 ||home.imgsmail.ru/resplash/*/i/subbotatv_$image,domain=mail.ru|~tv.mail.ru
 ||home.imgsmail.ru/resplash/*/i/muztv_$image,domain=mail.ru|~tv.mail.ru
 ||r3.mail.ru/*/error/$important,redirect=empty
-||vkvideo.ru^$removeparam=autoplay
+$removeparam=autoplay,domain=vkvideo.ru|ok.ru|player.vimeo.com
 ||mail.ru^$cookie=mtrc
 ||my.mail.ru/*/stat/$domain=my.mail.ru
 ||my.mail.ru/*/user/astat$domain=my.mail.ru
@@ -2533,7 +2533,6 @@ $cookie=BITRIX_MPS_LAST_VISIT,important
 ||api-qa.diginetica.net/v*/prescoring/digi-cookie$xhr,other,third-party
 ||api-statist.dev-tcsgroup.io^
 /zdconsent.js
-||player.vimeo.com^$removeparam=autoplay
 ||runonpc.com/images/ad/$image,domain=runonpc.com
 ||taboola.com^$important
 ||ad-assets.futurecdn.net^
@@ -3225,6 +3224,7 @@ $cookie=last_catalog_url
 ||cdek.ru/api-site/ping/
 ||sentry.chibbis.ru^$important
 /?sentry_key=
+! /?sentry_key=$domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-dsn-customers.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~getsentry.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru|~sentry-next.wixpress.com|~reporting.honeygain.com|~sentry-relay.opera-api.com|~sentry.walletbot.me|~sentry.viju.ru|~sentry-relay.bi.zone|~sentry.combo.mail.ru|~sentry.worldota.net|~sentry.dev.cdek-shopping.tech|~sentry.chibbis.ru|~metro.sentry.beta.agency|~sentry.timeweb.cloud|~sentry.radolyn.com|~sentry.obs.mts.ru|~sentry.*.mts.ru|~getsentry.com
 ||snt.dellin.ru^$important
 ||dellin.ru/api/chronicles/v*/tracking/
 ||dellin.ru/api/placement-selector/v*/banners
@@ -3234,6 +3234,22 @@ $cookie=first_visited_page
 ||api.yadrocrm.ru^$third-party
 ||extreme-ip-lookup.com^$third-party
 ||cdn-cookieyes.com^
+||fingerprint.daratech.ru^
+! www.kommersant.ru/doc/8691502?tg
+||kommersant.ru^$removeparam=tg
+!
+||techora.ru/ws$websocket,domain=techora.ru
+||kommersant.ru^$removeparam=max
+||kommersant.ru^$removeparam=vk
+||iv.kommersant.ru/ContentFlex/Redesign2020/kom2021.lazyChunks/article-lenta-$script,domain=kommersant.ru,redirect=noopjs
+||sentry.lfstrm.tv^$important
+||ok.ru^$cookie=landref
+||ok.ru^$cookie=_statid
+||ok.ru^$cookie=bci
+||pulse.videobel.by^
+||analytics.teleon.tv^
+/statistics/statistics.php
+||static-api.mediavitrina.ru/v*/epg/*/ad-injections_web.json^$xhr,script,important,redirect=empty
 !
 !
 !
@@ -3857,6 +3873,8 @@ dom.ru,*.dom.ru##div[class^="sc-6e31cbc2-0 kKbgFL"]
 ||st-ok.cdn-vk.ru/res/js/EventBus$script,redirect=noopjs
 ||st-ok.cdn-vk.ru/res/js/EventFactoryForEventBus$script,redirect=noopjs
 ||st-ok.cdn-vk.ru/res/js/StatLogger$script,redirect=noopjs
+||st-ok.cdn-vk.ru/res/js/TelemetryEventBuses_$script,redirect=noopjs
+||st-ok.cdn-vk.ru/res/js/capture_$script,redirect=noopjs
 ! В скриптах полная жесть.. куча метрики и всякого «мусора», причём зависимые - заблокируешь запрос, сломается сайт. (29.04.26: UPD: Вроде проблема решена.)
 !
 ! ==
@@ -5329,6 +5347,8 @@ studopedia.org##div.curled:first-child > a:first-child > table:first-child > tbo
 mathm.ru###reklam_osn_ya
 mathm.ru##.caramel790
 mathm.ru##div[class^="reklam_mejd_zadach"]
+techora.ru##div.fixed.inset-x-2.bottom-2.z-\[70\].mx-auto.max-w-md.rounded-2xl.bg-white.shadow-2xl.border.border-gray-100:nth-child(3)
+gismeteo.ru##.widget-note
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5441,6 +5461,7 @@ twitch.tv#%#//scriptlet('set-local-storage-item', 'ads_bitrate_bps', 'emptyObj')
 #%#//scriptlet('set-local-storage-item', 'sentry_device_id', 'emptyObj')
 twitch.tv#%#//scriptlet('set-local-storage-item', 'video_ads.stream_loudness', 'emptyObj')
 twitch.tv#%#//scriptlet('set-cookie', 'experiment_overrides', '', '{%22experiments%22:{}%2C%22disabled%22:[true]}')
+nuno.ru#%#//scriptlet('set-session-storage-item', 'dara_session', '$remove$')
 !
 !
 !
@@ -7518,6 +7539,7 @@ teletype.in#@#div.preloader
 @@||zakupki.gov.ru^$document,badfilter
 @@||ac.gov.ru/assets/img/ad/$image,domain=ac.gov.ru
 @@||samsonite.ru.com^$important
+@@||*-*-pool-*.telecom.by^
 !
 !
 ! -
