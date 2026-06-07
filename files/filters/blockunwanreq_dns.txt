@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.7.4
+! Version: 4.7.6
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-06-02T15:36:30+00:00
+! TimeUpdated: 2026-06-07T15:36:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 02.06.2026 15:36 UTC
+! Last Modified: 07.06.2026 15:36 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -467,6 +467,7 @@
 ||csi.gstatic.com^
 ||ulp1p*.googleapis.com^$important
 ||safebrowsing.google.com^$important
+||adservice.google.com^
 !
 ! ===
 !
@@ -1525,7 +1526,7 @@
 ||metrics-logger.spot.im^$important
 ||direct-events-collector.spot.im^$important
 ||sentry.obs.mws-team.ru^$important
-||rumstat.cdnvideo.ru^
+||rumstat.cdnvideo.ru^$important
 ||collector.githubapp.com^$important
 ||anltcs.llimonix.dev^
 ||telega.*^$important
@@ -1733,7 +1734,6 @@
 ||api.comfolks.com^
 ||vak345.com^
 ||ilkopushchupervyeru.dmses.ru^
-||dmses.ru^
 ||sender-click.net^
 ||stat.envir.ee^
 ||cmp.meteored.com^
@@ -1914,7 +1914,7 @@
 ||cnt.worldota.net^$important
 ||sink.gw.booking.com^
 ||otel-gw.booking.com^$important
-||px.dynotech.io^$important
+||dynotech.io^$important
 ||diginetica.net^
 ||cdn.kealabs.ru^
 ||sentry.dev.cdek-shopping.tech^$important
@@ -1931,6 +1931,54 @@
 ||pulse.videobel.by^
 ||analytics.teleon.tv^
 ||stbid.ru^
+||highperformanceformat.com^
+||spade.twitch.tv^
+||ad.gt^
+||adsrvr.org^
+||gumgum.com^
+||script.crazyegg.com^
+||brandmetrics.com^
+! ||ipapi.co^
+||browser-fp.production.linktr.ee^
+||consentjs.datagrail.io^$important
+||dn0qt3r0xannq.cloudfront.net^
+||frog.wix.com^
+||m3h0da.ru^
+||acsbapp.com^
+||js.datadome.co^
+||ravelin.click^
+||platform-api.sharethis.com^
+||krut.link^$important
+||mc.gdz.work^$important
+||cdn.matomo.cloud^
+||statcounter.com^
+||rum.cdnpure.com^$important
+||beacon.cdnpure.com^
+||brodownload9s.com^
+||gatekeeperconsent.com^
+||ezoicanalytics.com^$important
+||ezojs.com^
+||udbdf.apkfab.com^$important
+||ctcodein.biz^
+||bakteso.ru^$important
+||*-sentry.changzhi.top^$important
+||cmp.setupcmp.com^
+||sntr.lifehacker.ru^$important
+||dtagate.virginmedia.co.uk^
+||ssgtm.*.*^$important
+||flagcounter.com^
+||sentry.skyeng.tech^$important
+||app.speakpipe.com^
+||radionet.com.ru^
+||wss.klauncher.gg^
+||gc.zgo.at^$important
+||content.mql5.com^
+||network-n.com^$important
+||gtm-sst.crowdin.com^
+||hog.crowdin.com^
+||code-ya.jivosite.com^
+||metrika.kontur.ru^
+||frontreport-relay.kontur.host^
 !
 !
 !

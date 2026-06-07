@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.5.1
-! TimeUpdated: 2026-06-02T15:36:30+00:00
+! Version: 5.5.3
+! TimeUpdated: 2026-06-07T15:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -138,7 +138,7 @@
 ! ||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cookielaw.org|~2gis.ru|~2gis.*|~comnews.ru|~tyuiu.ru|~laratranslate.com,redirect=noopjs
 ||*cookie*.js^$script,important,domain=~cookielaw.org,redirect=noopjs
 ! ||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cookielaw.org|~2gis.ru|~2gis.*|~comnews.ru|~tyuiu.ru|~laratranslate.com,redirect=noopjs
-||*Cookie*.js^$script,important,domain=~cookielaw.org,redirect=noopjs
+||*Cookie*.js^$script,important,domain=~cookielaw.org|~wikia.nocookie.net|~fandom.com,redirect=noopjs
 /itunes_referals.js^$script,third-party
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script,third-party
 ||improving.duckduckgo.com^$important
@@ -159,7 +159,7 @@
 /1px.$image,xhr,redirect=1x1-transparent.gif,important
 /px.*$image,xhr,redirect=1x1-transparent.gif,domain=~adhigh.net,important
 /blank.*$image,xhr,redirect=1x1-transparent.gif,important
-/analytics.js$script,domain=~analytics.google.com|~www.google-analytics.com
+/analytics.js$script,domain=~analytics.google.com|~www.google-analytics.com|~ezoicanalytics.com
 ! */analytics.*^$script,important
 ! anki.bots/cdn/shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,domain=anki.bots,important
 shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
@@ -202,13 +202,14 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 !
 ||invitro.ru/edna/assets/multibutton.js$script,domain=invitro.ru
 ||invitro.ru/local/templates/invitro_main/webrtc/*/*.*^$script,css,domain=invitro.ru
-||*.*/*.gif^$image,domain=invitro.ru|gazprom-neft.ru|gazprom-neft.com|t2.ru|tele2.ru|*.t2.ru|*.tele2.ru|college.72to.ru|edu.ru|vtb.am|gpnbonus.ru|tj.gpnbonus.ru|gpnbonus.by|megavtogal.com|motivtelecom.ru|ruwiki.ru|tyumen-city.ru|gov.ru|*.gov.ru|rt-solar.ru|agt72.ru,important,redirect=1x1-transparent.gif
+*.*/*.gif$domain=invitro.ru|gazprom-neft.ru|gazprom-neft.com|t2.ru|tele2.ru|*.t2.ru|*.tele2.ru|college.72to.ru|edu.ru|vtb.am|gpnbonus.ru|tj.gpnbonus.ru|gpnbonus.by|megavtogal.com|motivtelecom.ru|ruwiki.ru|tyumen-city.ru|gov.ru|*.gov.ru|rt-solar.ru|agt72.ru,redirect=1x1-transparent.gif,important
 ||burp^$important
 ||zap^$important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,redirect=nooptext,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-dsn-customers.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~getsentry.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru|~sentry-next.wixpress.com|~reporting.honeygain.com|~sentry-relay.opera-api.com|~sentry.walletbot.me|~sentry.viju.ru|~sentry-relay.bi.zone|~sentry.combo.mail.ru|~sentry.worldota.net|~sentry.dev.cdek-shopping.tech|~sentry.chibbis.ru|~metro.sentry.beta.agency|~sentry.timeweb.cloud|~sentry.radolyn.com|~sentry.obs.mts.ru|~sentry.*.mts.ru|~getsentry.com,important
+*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-dsn-customers.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru|~sentry-next.wixpress.com|~reporting.honeygain.com|~sentry-relay.opera-api.com|~sentry.walletbot.me|~sentry.viju.ru|~sentry-relay.bi.zone|~sentry.combo.mail.ru|~sentry.worldota.net|~sentry.dev.cdek-shopping.tech|~sentry.chibbis.ru|~metro.sentry.beta.agency|~sentry.timeweb.cloud|~sentry.radolyn.com|~sentry.obs.mts.ru|~sentry.*.mts.ru|~getsentry.com|~sentry.skyeng.tech,important
+! */api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-dsn-customers.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru|~sentry-next.wixpress.com|~reporting.honeygain.com|~sentry-relay.opera-api.com|~sentry.walletbot.me|~sentry.viju.ru|~sentry-relay.bi.zone|~sentry.combo.mail.ru|~sentry.worldota.net|~sentry.dev.cdek-shopping.tech|~sentry.chibbis.ru|~metro.sentry.beta.agency|~sentry.timeweb.cloud|~sentry.radolyn.com|~sentry.obs.mts.ru|~sentry.*.mts.ru|~getsentry.com|~sentry.skyeng.tech,important
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com,important
@@ -554,7 +555,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||pdalife.to/default/images/icons/sprite.svg$xhr,domain=pdalife.to
 ||api*.ldplayer.net/ows/*/ldsite/event^$xhr,domain=ldplayer.net,redirect=empty,important
 ||api*.ldplayer.net/ows/*/ip/checkIpArea^$xhr,domain=ldplayer.net,important
-||cdn.ldplayer.net/gw/static/ld_gw/js/adMsg.js^$script,domain=ldplayer.net,redirect=noopjs,important
+||res.ldrescdn.com/assets/js/ad-msg.js^$script,domain=ldplayer.net,redirect=noopjs,important
 ||uptodown.com/img/vpn-mockup.webp^$image,domain=uptodown.com,important
 ||uptodown.com/img/svgs/icon-vpn-secondary.svg^$image,domain=uptodown.com,important
 ||pdalife.to/updateView/^$xhr,domain=pdalife.to
@@ -1111,8 +1112,8 @@ waf/fingerprint$xhr,important
 !
 !
 ||report.cdnpure.com^$important
-/api/v*/download-report^$xhr,domain=apkpure.net|apkpure.com,important.
-/report$xhr,domain=apkpure.net|apkpure.com,important
+/api/v*/download-report^$xhr,domain=apkpure.net|apkpure.com,important
+/report$xhr,domain=apkpure.net|apkpure.com|~rum.cdnpure.com,important
 ||getads.ru^$important
 ||d26xw8rp6mlgfg.cloudfront.net^
 ||strm.yandex.*^$app=com.infolink.limeiptv|octohide.vpn,redirect=noopvast-3.0
@@ -1209,9 +1210,9 @@ calltouch.js$script,xhr
 ||lyngsat.com/as10/intelsat_webinar.gif^$image,domain=lyngsat.com,important
 ||apistats.rg.ru^$important
 ||svibeacon.onezapp.com^
-||static.wikia.nocookie.net/silversurfer/prod/latest/marketingNotificationsUnit$script,domain=fandom.com|*.fandom.com,redirect=noopjs,important
+||static.wikia.nocookie.net/silversurfer/$script,domain=fandom.com|*.fandom.com,redirect=noopjs,important
 ||serverblight.com/audio/gamestartup*.mp3^$media,domain=serverblight.com
-||a.apkpure.*/dt_*_*.js$script,domain=apkpure.*
+||a.apkpure.*/dt_*_*.js$script,domain=apkpure.*,redirect=noopjs
 ||apkcombo.com/1.gif^$image,domain=apkcombo.com,redirect=1x1-transparent.gif,important
 ||tvrus.eu/wp-content/themes/pennews/images/telegram_trim.png$image,domain=tvrus.eu
 ||tvrus.eu/wp-content/themes/pennews/js/custom-scripts.js^$script,domain=tvrus.eu
@@ -1225,7 +1226,7 @@ calltouch.js$script,xhr
 ||gitlab.com/*/track_namespace_visits$xhr,domain=gitlab.com
 ||mtm.iptvx.one^$important,domain=iptvx.one|epg.iptvx.one,redirect=matomo
 ||iptvx.one/*/cust.js$script,important,domain=iptvx.one|epg.iptvx.one,redirect=noopjs
-||static.wikia.nocookie.net/silversurfer/prod/latest/sdk.js^$script,domain=fandom.com|*.fandom.com,redirect=noopjs,important
+! static.wikia.nocookie.net/silversurfer/prod/latest/sdk.js^$script,domain=fandom.com|*.fandom.com,redirect=noopjs,important
 ||theajack.github.io/disable-devtool/$redirect=noopjs
 ||cdn.promeai.pro/cutout-web/v*/img/prome_27.c2d5cac.png^$image,domain=cutout.pro
 ||sentry.infra.myapelsin.ru^$important
@@ -1738,7 +1739,7 @@ $cookie=MicexTrackID,important
 ||spravportal.ru^$cookie=sp_test_ab
 ||spravportal.ru^$cookie=sp_adnewuser
 ||spravportal.ru/assets/js/spcoredesktop*.$script,domain=spravportal.ru
-||spravportal.ru/assets/js/sp-dev.$script,domain=spravportal.ru,
+||spravportal.ru/assets/js/sp-dev.$script,domain=spravportal.ru
 ||lifemart.ru/_nuxt/Metrika.*.css^$css,domain=lifemart.ru,important,redirect=noopcss
 ||stats.vk-portal.net^$important
 ||zhivika.ru/api/promo/notifications/$xhr,domain=zhivika.ru
@@ -2070,7 +2071,7 @@ $cookie=BITRIX_SM_OT_GUEST_ID,important
 ||geo.yahoo.com^$important
 ||chartbeat.net^$important,third-party,domain=~chartbeat.net
 $cookie=trackingId
-||sentry.io^$important,domain=~sentry.io
+||sentry.io^$important,domain=~sentry.io|~*ingest*.sentry.io
 ||us.i.mi.com/weblogs
 ||call.beget.ru^$third-party,domain=~beget.ru,important
 /theme_adaptable/adaptablemarketingimages/*/maxthon1.png^$image,domain=efizika.ru
@@ -2701,7 +2702,7 @@ about:blank^$domain=greynoise.io
 ||ads.huawei.com^
 ||api.ok.ru/api/log
 ||bi-flogger-alb-ext-343643057.us-east-1.elb.amazonaws.com^
-||panorama.wixapps.net^
+||panorama.wixapps.net^$important
 ||kp.ru/sendsay_push_sw.js^$script
 ||sgtm.kaspersky.de^
 ||ksn-a-stat-geo.kaspersky-labs.com^
@@ -2830,21 +2831,21 @@ about:blank^$domain=greynoise.io
 ||pixel.wp.pl^
 ||websocket.wp.pl^
 ||wp.aliexpress.com^
-||analytics.rewixecommerce.com^
+||analytics.rewixecommerce.com^$important
 ||t13.9to5google.com^
-||ding.wix.com^
-||wce-frog.wix.com^
-||stores-counters.wix.com^
+||ding.wix.com^$important
+||wce-frog.wix.com^$important
+||stores-counters.wix.com^$important
 ||htlbid.com^$important
 ||chatgpt.com/ces/v*/t$xhr,redirect=noopjson
 ||chatgpt.com/ces/v*/p|$xhr,redirect=noopjson
 ||chatgpt.com/ces/v*/m$xhr,redirect=noopjson
 ||icmp0.ru^
-||analytics.yahoo.com^
-||gumgum.com^
+||analytics.yahoo.com^$important
+||gumgum.com^$important
 ||beacon.wiki-services.com^
-||ad.gt^
-||adsvr.org^
+||ad.gt^$important
+||adsvr.org^$important
 ||feature-flagging.deepl.com^$important
 ||kraken.rambler.ru^
 ||default.exp-tas.com^$important
@@ -2929,7 +2930,6 @@ $csp=upgrade-insecure-requests,domain=ocsp.digicert.com|c.lencr.org|crl.usertrus
 ||habr.com/kek/v*/inset/vacancies$xhr,domain=habr.com,redirect=noopjson
 ||oldversion.*/api/advertising/
 ||ilkopushchupervyeru.dmses.ru^
-||dmses.ru^
 ||console.cloud.ru/api/notification-api/tracking/
 ||sender-click.net^
 ||pinterest.*/email/open/
@@ -3000,7 +3000,7 @@ $cookie=/euconsent-v*/
 ||a.mts.ru^
 ||zvuk.com^$cookie=ip,important
 ||zvuk.com^$cookie=redirectUrl,important
-||zvuk.com^$cookie=referrer,important
+$cookie=referrer,important
 ||report.zvuk.com^$important
 ||cdn-new.zvuk.com/*-static/_next/static/chunks/yandexMetrikaWidget.$script,domain=zvuk.com,redirect=noopjs
 ||cdn-new.zvuk.com/*-static/_next/static/chunks/SberAdsWidget$script,domain=zvuk.com,redirect=noopjs
@@ -3163,7 +3163,6 @@ $cookie=_vwo_consent
 ||travelask.ru^$cookie=incognito_session_id
 ||travelask.ru/api/v*/banner_link_toolbar$xhr,domain=travelask.ru
 ||telecomdaily.ru/api/ad^$xhr,domain=telecomdaily.ru
-||lanbook.com^$removeparam=referrer
 ||viadata.store^$important
 ||lp4.io^$important
 ||quotiq.ru^$important
@@ -3198,8 +3197,8 @@ $cookie=_vwo_consent
 ||a.lmcdn.ru/static/*/assets/partners-banner$css,domain=lamoda.ru,redirect=noopcss
 ||sentry.worldota.net^$important
 ||cnt.worldota.net^$important
-*.*/none|
-||ostrovok.ru/none
+*.*/none^
+||ostrovok.ru/none^
 ||of.worldota.net/*/marketing_campaigns/$image
 ||dap.fastrovok.net/api/v*/ingest
 ||sink.gw.booking.com^
@@ -3211,7 +3210,7 @@ $cookie=_vwo_consent
 ||wamm.chat^$third-party
 ||gudok.te^$third-party
 $cookie=last_catalog_url
-||px.dynotech.io^$important
+||dynotech.io^$important
 /eventsCriteo.js$script
 /bitrix/tools/sotbit.seometa/statistics.php
 ||cdn.kealabs.ru^
@@ -3219,12 +3218,11 @@ $cookie=last_catalog_url
 ||lenmit.com^$important
 ||jointcomm.ru^$third-party
 ||usmall.ru/rpc/sentry/$script,domain=usmall.ru,redirect=noopjs
-||jointcomm.ru/api/v*/livechat/page.visited
-||jointcomm.ru/api/v*/livechat/visitor
-||cdek.ru/api-site/ping/
+||jointcomm.ru/api/v*/livechat/page.visited^
+||jointcomm.ru/api/v*/livechat/visitor^
+||cdek.ru/api-site/ping/^
 ||sentry.chibbis.ru^$important
-/?sentry_key=
-! /?sentry_key=$domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-dsn-customers.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~getsentry.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru|~sentry-next.wixpress.com|~reporting.honeygain.com|~sentry-relay.opera-api.com|~sentry.walletbot.me|~sentry.viju.ru|~sentry-relay.bi.zone|~sentry.combo.mail.ru|~sentry.worldota.net|~sentry.dev.cdek-shopping.tech|~sentry.chibbis.ru|~metro.sentry.beta.agency|~sentry.timeweb.cloud|~sentry.radolyn.com|~sentry.obs.mts.ru|~sentry.*.mts.ru|~getsentry.com
+/?sentry_key=$domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-dsn-customers.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru|~sentry-next.wixpress.com|~reporting.honeygain.com|~sentry-relay.opera-api.com|~sentry.walletbot.me|~sentry.viju.ru|~sentry-relay.bi.zone|~sentry.combo.mail.ru|~sentry.worldota.net|~sentry.dev.cdek-shopping.tech|~sentry.chibbis.ru|~metro.sentry.beta.agency|~sentry.timeweb.cloud|~sentry.radolyn.com|~sentry.obs.mts.ru|~sentry.*.mts.ru|~getsentry.com|~sentry.skyeng.tech
 ||snt.dellin.ru^$important
 ||dellin.ru/api/chronicles/v*/tracking/
 ||dellin.ru/api/placement-selector/v*/banners
@@ -3237,10 +3235,11 @@ $cookie=first_visited_page
 ||fingerprint.daratech.ru^
 ! www.kommersant.ru/doc/8691502?tg
 ||kommersant.ru^$removeparam=tg
-!
-||techora.ru/ws$websocket,domain=techora.ru
+! +
 ||kommersant.ru^$removeparam=max
 ||kommersant.ru^$removeparam=vk
+!
+||techora.ru/ws$websocket,domain=techora.ru
 ||iv.kommersant.ru/ContentFlex/Redesign2020/kom2021.lazyChunks/article-lenta-$script,domain=kommersant.ru,redirect=noopjs
 ||sentry.lfstrm.tv^$important
 ||ok.ru^$cookie=landref
@@ -3250,7 +3249,128 @@ $cookie=first_visited_page
 ||analytics.teleon.tv^
 /statistics/statistics.php
 ||static-api.mediavitrina.ru/v*/epg/*/ad-injections_web.json^$xhr,script,important,redirect=empty
-!
+||zoologyfibre.com^
+||cdn.betterbanned.com/dicbloc_$image,domain=betterbanned.com
+$removeparam=gtm_debug
+/error-tracker^
+||ps.kz/error-tracker^
+||conv.rs^$third-party
+||spade.twitch.tv^
+||betterbanned.com/alternate-dat^$domain=betterbanned.com
+||betterbanned.com/eLog^
+||script.wikia.nocookie.net/fandom-ae-assets/*/ad-engine/$script,domain=fandom.com|*.fandom.com,redirect=noopjs,important
+||script.wikia.nocookie.net/fandom-ae-assets/*/prebid/$script,domain=fandom.com|*.fandom.com,redirect=noopjs,important
+||vk.*/favicon.ico$domain=fandom.com,important
+||fandom.com^$cookie=Geo
+||ipapi.co^$third-party
+/_api/tag-manager/api/v*/tags/sites/*?$xhr,redirect=noopjson
+||consentjs.datagrail.io^$important
+/v*/bulk/report-exposures
+||frog.wix.com^$important
+.co.rs/kupovina
+$cookie=/_ym_d/
+||m3h0da.ru^
+||tass.ru/loop-tbp/api/v*/caption/$xhr,domain=tass.ru
+||memedepot.com/api/v*/analytics_events
+||cdn.fourthwall.dev/web-perf/instant.js^$script,redirect=noopjs,domain=*.fourthwall.com
+||cdn.fourthwall.dev/shop-event-listener/shop-events-listener.js^$script,redirect=noopjs,domain=*.fourthwall.com
+||ipify.org^$third-party
+||ra.co/next-api/log
+||last.fm/client-performance/report.json^
+||last.fm/plugins/discourse-client-performance/javascripts/discourse-client-performance.js$script,domain=last.fm,redirect=noopjs
+||krut.link^$important
+||mc.gdz.work^$important
+||cdn.matomo.cloud^
+||probiv.one/imager/*/*.avif^$image,domain=probiv.one
+||probiv.one/imager/2025/goodzonevideo.gif^$image,domain=probiv.one
+||statcounter.com/counter/$script,third-party
+||rum.cdnpure.com^$important
+||beacon.cdnpure.com^$important
+/static/assets/*/universal-report_$script,domain=apkpure.net|apkpure.com,redirect=noopjs
+||apkpure.net^$cookie=_qimei
+$cookie=_user_tag,domain=apkpure.net|apkpure.com
+||brodownload9s.com^
+/engine/ajax/controller.php?mod=*&id=*&action=newsread&$xhr,domain=programmy-dlya-android.ru|androidmob.ru
+$cookie=uuid,domain=androidmob.ru|programmy-dlya-android.ru
+||gatekeeperconsent.com^
+||ezoicanalytics.com^$important
+||apkfab.com/images/placeholder-transparent.png^$image,domain=apkfab.com
+/fingerprint2.$script
+||ezojs.com/ezoic/sa.$script
+||udbdf.apkfab.com^$important
+||apkfab.com/js/dt_*.js$script,domain=apkfab.com,redirect=noopjs
+||ctcodein.biz^
+||bakteso.ru^$important
+||5mod.ru/templates/5mod/lazydev/dle_subscribe/assets/dle_subscribe_$script,domain=5mod.ru,redirect=noopjs
+-sentry.changzhi.top^$important
+||sntr.lifehacker.ru^$important
+||bluestacks.com/wp-content/themes/bluestacks/dist/js/*/getGeoData.js$script,domain=bluestacks.com,redirect=noopjs
+||media.kasperskydaily.com/wp-content/uploads/sites/*/kaspersky-daily-telegram-channel-*-*-*-*.jpg^$image,domain=kaspersky.ru|kaspersky.com
+||media.kasperskydaily.com/wp-content/uploads/sites/*/protect-your-smartphone-V*-*-*.png^$image,domain=kaspersky.ru|kaspersky.com,important
+||media.kasperskydaily.com/wp-content/uploads/sites/*/secure-your-victory-*-*-*.png^$image,domain=kaspersky.ru|kaspersky.com
+||media.kasperskydaily.com/wp-content/uploads/sites/*/earth2050-*-banner-*-*.jpg^$image,domain=kaspersky.ru|kaspersky.com
+||media.kasperskydaily.com/wp-content/uploads/sites/*/kaspersky-named-top-player-in-apt-protection-*-*-*.jpg^$image,domain=kaspersky.ru|kaspersky.com
+||media.kasperskydaily.com/wp-content/uploads/sites/*/Cybermap-*_*.jpg^$image,domain=kaspersky.ru|kaspersky.com
+||dtagate.virginmedia.co.uk^$important
+||flagcounter.com^$important
+||sentry.skyeng.tech^$important
+||app.speakpipe.com/app/on-action
+||radionet.com.ru^
+||radio-archive.ru/modules/main/images/how-to-dis-adblock.gif^$domain=radio-archive.ru
+||radio-archive.ru/modules/main/images/cs.png^$image,domain=radio-archive.ru
+||securitylab.ru^$cookie=SL_BANNERS
+||securitylab.ru/upload/medialibrary/22b/$image,domain=securitylab.ru
+||xakep.ru/wp-admin/admin-ajax.php?action=xakep_view&pid=$xhr,domain=xakep.ru
+||xakep.ru/wp-content/themes/woohoo/images/curator-logo.svg^$image,domain=xakep.ru
+||static.xakep.ru/assets/tlg-up-*.png^$image,domain=xakep.ru
+||facebook.com/tr
+||repos.klaun.ch/monitoring/banners/$image,domain=klauncher.gg
+/image?url=https%3A%2F%2Frepos.klaun.ch%2Fmonitoring%2Fbanners%2F$image,domain=klauncher.gg
+||klauncher.gg/base64^
+||klauncher.gg/api/common/setBanner^
+||wss.klauncher.gg^$websocket
+||gc.zgo.at^$important
+/cdn-cgi/zaraz/*
+||klauncher.gg/images/icons/vk.svg^$domain=klauncher.gg
+||klauncher.gg/images/icons/telegram.svg^$domain=klauncher.gg
+||mc-monitor.org/images/servers/$media,domain=mc-monitor.org,redirect=noopmp4-1s
+||mc-monitor.org/img/circa.webp^$image,domain=mc-monitor.org
+||mc-monitor.org/img/arbalet.webp^$image,domain=mc-monitor.org
+||mc-monitor.org/img/totop.png^$image,domain=mc-monitor.org
+||mc-monitor.org/images/servers/*/*.webp^$image,domain=mc-monitor.org
+||mc-monitor.org/images/servers/*/*.png^$image,domain=mc-monitor.org
+||mc-monitoring.ru/img/vk.png^$image,domain=mc-monitoring.ru
+||mc-monitoring.ru/img/tg.png^$image,domain=mc-monitoring.ru
+||mc-monitoring.ru/img/cookie-image.svg^$image,domain=mc-monitoring.ru
+||mc-monitoring.ru/img/servers/*/banner.mp4$media,domain=mc-monitoring.ru,redirect=noopmp4-1s
+||mc-monitoring.ru/img/servers/*/banner.png$image,domain=mc-monitoring.ru
+||mc-monitoring.ru/img/servers/*/banner.jpg$image,domain=mc-monitoring.ru
+||mc-monitoring.ru/img/no-image-banner.png^$image,domain=mc-monitoring.ru
+||minecraft-inside.ru^$cookie=mobile
+||ipinfo.io^$third-party,important
+||findmcserver.com/api/tracking^
+||findmcserver.com/assets/parents-with-kids.webp^$image,domain=findmcserver.com
+||findmcserver.com/_next/image?url=%2Fassets%2FForParentsIcon.webp$image,domain=findmcserver.com
+||network-n.com^$important
+||d2gma3rgtloi6d.cloudfront.net/*/js/lib/tagmanager/$script,domain=crowdin.com,redirect=noopjs
+||d2gma3rgtloi6d.cloudfront.net/*/js/lib/analytics/$script,domain=crowdin.com,redirect=noopjs
+||hog.crowdin.com^
+||crowdin.com^$cookie=/*_posthog/
+||crowdin.com^$cookie=s_partner
+||crowdin.com^$cookie=m_partner
+||crowdin.com^$cookie=c_partner
+||embed.bsky.app/static/embed.js^$script,third-party,domain=~bsky.app
+||web.archive.org/web/*.googlesyndication.com/*$domain=web.archive.org
+||web.archive.org/web/*.doubleclick.net/*$domain=web.archive.org
+||api.theins.info:443/proxy/fb/?$xhr
+||api.theins.info:443/proxy/vk/?$xhr
+||api.theins.info:443/proxy/ok/*?$xhr
+||api.theins.info/proxy/fb/?$xhr
+||api.theins.info/proxy/vk/?$xhr
+||api.theins.info/proxy/ok/*?$xhr
+||frontreport-relay.kontur.host^
+/click-listener.js^$script,domain=kontur.ru,redirect=noopjs
+/sentry-$script,domain=kontur.ru,redirect=noopjs
 !
 !
 !
@@ -3280,7 +3400,7 @@ $cookie=first_visited_page
 ! Блокировка скрытых изображений в один пиксель (1 x 1).
 ! *4pda.to/s/PXti*.gif^$image,xhr,domain=4pda.to,redirect=1x1-transparent.gif,important
 !  4pda.to/static/module/lytebox/images/blank.gif^$image,domain=4pda.to,redirect=1x1-transparent.gif
-*4pda.to/s/*:|$image,domain=4pda.to,redirect=1x1-transparent.gif
+||4pda.to/s/*:|$image,domain=4pda.to,redirect=1x1-transparent.gif
 !
 !
 !
@@ -3294,6 +3414,7 @@ $cookie=first_visited_page
 !
 !
 !
+! ! Для лучшей блокировки рекламы на 4pda рекомендовано установить фильтр RU AdList: Counters !!
 !
 !
 !
@@ -3302,10 +3423,10 @@ $cookie=first_visited_page
 *4pda.to/stat/view
 !
 ! 23.04.25: Из фильтра RU AdList: Counters
-*4pda.to/s/*:|$xhr,important
+||4pda.to/s/*:|$xmlhttprequest,important
 !
 !
-!*appbk.4pda.to/er$xhr,domain=4pda.to
+! *appbk.4pda.to/er$xhr,domain=4pda.to
 *appbk.4pda.to^
 !
 !
@@ -5349,6 +5470,47 @@ mathm.ru##.caramel790
 mathm.ru##div[class^="reklam_mejd_zadach"]
 techora.ru##div.fixed.inset-x-2.bottom-2.z-\[70\].mx-auto.max-w-md.rounded-2xl.bg-white.shadow-2xl.border.border-gray-100:nth-child(3)
 gismeteo.ru##.widget-note
+betterbanned.com##div.page.page-dark:first-child > main.bg-\[\#0d1117\].max-w-7xl.mx-auto.flex-1.-mt-5.-mb-5.pb-5.pt-8.px-6.rounded-t-3xl.rounded-b-3xl.shadow-inner:nth-child(2) > div.max-w-7xl.mx-auto.box-border.items-center.content-center.leading-4.text-white.border-0.border-gray-300.border-solid.lg\:px-16 > div.content-wrapper.flex.flex-wrap.gap-8.justify-center.content-center.items-center.place-items-center.mt-4.mb-4.rounded-lg:first-child
+###modal-cookie-info
+##img[src*="mc.gdz.work"]
+megaresheba.ru##.media, .media-top, .media-3, .media-hidden-on-mobile
+euroki.org##.share-card
+my-dict.ru###qa-magic-button
+my-dict.ru##.max-banner
+probiv.one##div[class^="top-header-banner"]
+probiv.one##div[class^="block-body block-body--collapsible  is-active"]
+probiv.one###top > div.p-body:nth-child(5) > div.p-body-inner > div.p-body-main:nth-child(4) > div.p-body-content > div.p-body-pageContent > div:first-child
+programmy-dlya-android.ru##.rekl_zagr
+androidmob.ru##.frkl
+androidmob.ru##div.all-wrap:nth-child(4) > div.main-wr3:nth-child(3)
+apkfab.com##main.container.detail_container:nth-child(2) > div:nth-child(2)
+soft.mydiv.net##div.page:nth-child(2) > div.page__content:nth-child(2) > main.page__content-container.js-scroll-top-button-anchor > div.app-page:first-child > div.app-page__row:nth-child(5) > div.app-page__left:last-child > div:last-child
+kaspersky.ru##div.c-page:nth-child(6) > section.c-block.c-block--spacing-b-small\@sm.c-block--divider:nth-child(3) > div.o-container-fluid > div.o-row.c-card__row--divider:nth-child(2) > div.o-col-6\@sm.o-col-4\@lg.c-filler\@lg:nth-child(3)
+kaspersky.ru##div[class="c-block__product"]
+kaspersky.ru##div.c-page:nth-child(6) > section.c-block.c-block--spacing-t-small\@sm.c-block--spacing-b-small\@sm.c-block--divider:nth-child(4) > div.o-container-fluid > div.o-row.c-card__row--divider\@sm.c-card__row--fixed-width\@sm.js-slider-posts-mobile:nth-child(2) > div.o-col-6\@lg.c-filler\@lg:nth-child(2)
+kaspersky.ru##div.c-page:nth-child(6) > section.c-block.c-block--spacing-t-small\@sm.c-block--spacing-b-small\@sm.c-block--divider:nth-child(5) > div.o-container-fluid > div.o-row.c-card__row--divider\@sm.c-card__row--fixed-width\@sm.js-slider-posts-mobile:nth-child(2) > div.o-col-6\@sm.o-col-4\@lg.c-filler\@lg:nth-child(4)
+##a[href*="flagcounter.com/"]
+##img[src*="flagcounter.com/"]
+qrv.su##div[class^="bottom_colum3"]
+##img[src*="cycounter"][width="88"][height="31"]
+##a[href*="yandex.ru/cy"]
+radio-archive.ru##div.main:first-child > div.adb:last-child
+radio-archive.ru##div[class^="block RTB2"]
+securitylab.ru##.webinar-shell
+ya.ru##div[class^="content__punto"]
+klauncher.gg##.kl-banner
+mc-monitor.org###button
+mc-monitor.org###addToBookmark
+mc-monitor.org##div:nth-child(4) > div.container.content.pb-1 > div.row.animated.fadeIn.faster > div.col-12:first-child > div.mt-3.tg_ls:last-child > div:first-child
+mc-monitor.org##header:nth-child(3) > div.header-b:nth-child(2) > div.container.px-xl-5 > div.row > div.col-12 > div.header-b-btn.d-flex.justify-content-md-center.align-middle > div.header-b-btn-item.d-none.d-lg-flex:last-child
+mc-monitor.org##header:nth-child(3) > div.header-top:first-child > div.container > div.row.px-3.px-sm-0.d-flex.align-items-center.justify-content-between > div.nav-b.d-flex.justify-content-between.ml-lg-auto:last-child > div.d-none.d-md-block:last-child
+mc-monitor.org##.btn, .btn-success, .btn-sm, .w-100, .d-flex, .align-items-center, .justify-content-center
+mc-monitoring.ru##footer.footer:nth-child(19) > div.border:first-child > div.footer-content > div.footer-left-a:first-child > ul.socials-top-ul-footer:last-child
+mc-monitoring.ru##.custom-button-3
+mc-monitoring.ru##header.head:nth-child(16) > div.header-content > div.border > div.header-top-con:first-child > ul.socials-top-ul-footer:nth-child(2)
+minecraft-inside.ru##div.container:first-child > div.content.row:nth-child(2) > div.page.col-md-8:first-child > div:nth-child(41)
+findmcserver.com##div:nth-child(11) > div.ant-modal-root.css-vb99s0
+findmcserver.com##.home-styles__HomeAlertBarContainerMain-sc-afcdba5d-15, .esIrjI
 !
 ! - Scripts -
 vtb.ru#%#//scriptlet('remove-cookie', '/dtCookie|rxVisitor|dtPC|rxvt/')
@@ -5427,7 +5589,8 @@ arsibtower-tyumen.ru#%#//scriptlet('set-session-storage-item', 'visited', 'n')
 ~vk.com,~vk.ru,~vk.me#%#//scriptlet('set-session-storage-item', 'vk_code_verifier', '$remove$')
 #%#//scriptlet('set-session-storage-item', 'vk_redirect_url', '$remove$')
 ~yandex.*,~ya.ru#%#//scriptlet('remove-cookie', '/bh|cycada|is_gdpr|is_gdpr_b|isa|redirectUrl|sae|ancQTZw|ssesar')
-~yandex.*,~ya.ru#%#//scriptlet('remove-cookie', '/yandex_login|yp|ys|yuidss|_yasc|yandexuid|yashr|ymex|i|bltsr|alice_uuid|yandex_expboxes|alice_reqids/')
+~yandex.*,~ya.ru#%#//scriptlet('remove-cookie', '/yandex_login|yp|ys|yuidss|_yasc|yandexuid|yashr|ymex|i|bltsr/')
+~yandex.*,~ya.ru#%#//scriptlet('remove-cookie', '/alice_uuid|yandex_expboxes|alice_reqids|spravka|yclid_src|ys|yp/')
 #%#//scriptlet('set-local-storage-item', '/_ym*_*/', '$remove$')
 #%#//scriptlet('set-local-storage-item', '/_ym_*/', 'emptyObj')
 beetv.kz#%#//scriptlet('set-local-storage-item', 'querySearchHistory', 'emptyObj')
@@ -5462,6 +5625,7 @@ twitch.tv#%#//scriptlet('set-local-storage-item', 'ads_bitrate_bps', 'emptyObj')
 twitch.tv#%#//scriptlet('set-local-storage-item', 'video_ads.stream_loudness', 'emptyObj')
 twitch.tv#%#//scriptlet('set-cookie', 'experiment_overrides', '', '{%22experiments%22:{}%2C%22disabled%22:[true]}')
 nuno.ru#%#//scriptlet('set-session-storage-item', 'dara_session', '$remove$')
+archive.org#%#//scriptlet('set-cookie', 'adblock-state', '', '0')
 !
 !
 !
@@ -6346,6 +6510,7 @@ practicum.yandex.ru##.lc-button-up__button, .lc-button-up__button_align_right, .
 ||ulp1p*.googleapis.com^$important
 ||safebrowsing.google.com^$important
 ||gemini.google.com/_/BardChatUi/jserror$redirect=nooptext
+||adservice.google.com^
 !
 ! ===
 !
@@ -6389,7 +6554,7 @@ practicum.yandex.ru##.lc-button-up__button, .lc-button-up__button_align_right, .
 ||*ads.unity3d.com^$important
 ||*mediation.unity3d.com^$important
 ! domain=~aiondb.ru
-||mc.yandex.*^$important,domain=~aiondb.ru
+||mc.yandex.*^$important
 ||an.yandex.*^$app=~com.badmanners.murglar,important
 ||analytics.mobile.yandex.net^$important
 ||*footprintdns.com^$important
@@ -6659,7 +6824,7 @@ practicum.yandex.ru##.lc-button-up__button, .lc-button-up__button_align_right, .
 ||events.character.ai^$important
 ||bi-events-collector.spot.im^
 ||singular.net^
-||rumstat.cdnvideo.ru^
+||rumstat.cdnvideo.ru^important
 ||st.hbrd.io^
 ||adx.com.ru^
 ||weborama.fr^
@@ -7540,6 +7705,9 @@ teletype.in#@#div.preloader
 @@||ac.gov.ru/assets/img/ad/$image,domain=ac.gov.ru
 @@||samsonite.ru.com^$important
 @@||*-*-pool-*.telecom.by^
+@@$cookie=site_lang
+@@||streaming.broadcastrd.com^
+@@||media-edge*.hostin.live^
 !
 !
 ! -
