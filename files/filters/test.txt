@@ -1,6 +1,6 @@
 ! Title: Breaking GeoRestrictions [DNS only]
-! Version: 2.3-prerelease
-! Updated: 26.05.2026
+! Version: 2.5-prerelease
+! Updated: 03.06.2026
 !
 !
 !
@@ -187,6 +187,35 @@
 77.239.114.0 clienttoken.spotify.com
 77.239.114.0 exp.wg.spotify.com
 77.239.114.0 gew4-spclient.spotify.com
+77.239.114.0 accounts.scdn.co
+77.239.114.0 spotify.com
+77.239.114.0 play.spotify.com
+77.239.114.0 audio-fa.scdn.co
+77.239.114.0 pl.scdn.co
+! - Test
+77.239.114.0 spotify.org
+77.239.114.0 spotify.net
+77.239.114.0 spotify-everywhere.com
+77.239.114.0 spotify.co
+77.239.114.0 spotifycharts.com
+77.239.114.0 spotifycodes.com
+77.239.114.0 spotifyforbrands.com
+77.239.114.0 spotifyjobs.com
+77.239.114.0 spoti.fi
+77.239.114.0 spotify.design
+77.239.114.0 spotify.artworks.com
+77.239.114.0 spotify.events.com
+77.239.114.0 line-in.spotify.com
+77.239.114.0 upgrade.spotify.com
+77.239.114.0 download.spotify.com
+77.239.114.0 heads-fa.spotify.com
+!
+! last.fm [Streaming Service] [Regional block since the time when Paramount owned it]
+! Now, as of May 27, 2026, the service has become independent.
+! [https://support.last.fm/t/last-fm-is-now-independent/118591]
+! - last.fm
+! - api.last.fm
+! -
 !
 ! Supercell [Games] [Left Russia and Belarus, Full Geoblock]
 77.239.114.0 accounts.supercell.com
