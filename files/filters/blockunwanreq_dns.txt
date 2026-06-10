@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.7.6
+! Version: 4.7.7
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-06-07T15:36:30+00:00
+! TimeUpdated: 2026-06-10T16:36:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 07.06.2026 15:36 UTC
+! Last Modified: 10.06.2026 16:36 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -833,7 +833,7 @@
 ||wsd-fingerprint.kontur.ru^$important
 ||provision.app.devapps.ru^$important
 ! graphql*^
-!
+! ——
 ||adad.ir^$dnsrewrite=0.0.0.0,important
 ||dgad.ir^$dnsrewrite=0.0.0.0,important
 ||cs*.trafmag.com^$dnsrewrite=NXDOMAIN,important
@@ -852,7 +852,7 @@
 ||internet-inspection.com^$dnsrewrite=0.0.0.0,important
 ||ads.pacific.net.sg^$dnsrewrite=0.0.0.0,important
 ||smartadserver.com^$dnsrewrite=NXDOMAIN,important
-! ——
+!
 ||lkqd.net^
 ||lnkxfer8.com^
 ||looktest.win^$dnsrewrite=NXDOMAIN,important
@@ -885,7 +885,7 @@
 ||olopruy.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||yomeno.xyz^$important,dnsrewrite=ad-block.dns.adguard.com
 ||vstserv.com^$important,dnsrewrite=ad-block.dns.adguard.com
-!
+! ——
 ||sentry.ozon.ru^$important
 ||browser.sentry-cdn.com^$important
 ||event-stream-api.magnit.ru^$important
@@ -1979,6 +1979,8 @@
 ||code-ya.jivosite.com^
 ||metrika.kontur.ru^
 ||frontreport-relay.kontur.host^
+||cdn.cxense.com^
+||piano.io^
 !
 !
 !
