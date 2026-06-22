@@ -3,7 +3,7 @@
 ! Version: 4.7.8
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-06-21T16:36:30+00:00
+! TimeUpdated: 2026-06-22T16:36:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 21.06.2026 16:36 UTC
+! Last Modified: 22.06.2026 16:36 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -2014,6 +2014,8 @@
 ||effectivecpmnetwork.com^
 ||ee.openreplay.tools^
 ||buttons.github.io^
+||event-tracking.samsung.com^
+||mtrcs.llimonix.dev^
 !
 !
 !
@@ -2681,6 +2683,7 @@
 ||kgwhg.com^$dnsrewrite=BLOCKED
 ||claude-pro.com^$dnsrewrite=BLOCKED
 ||kittiescraftsmp.com^$dnsrewrite=BLOCKED
+||torroclk.com^
 !
 !
 !

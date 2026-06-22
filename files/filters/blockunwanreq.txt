@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 5.5.5
-! TimeUpdated: 2026-06-21T16:36:30+00:00
+! TimeUpdated: 2026-06-22T16:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -202,7 +202,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 !
 ||invitro.ru/edna/assets/multibutton.js$script,domain=invitro.ru
 ||invitro.ru/local/templates/invitro_main/webrtc/*/*.*^$script,css,domain=invitro.ru
-*.*/*.gif$domain=invitro.ru|gazprom-neft.ru|gazprom-neft.com|t2.ru|tele2.ru|*.t2.ru|*.tele2.ru|college.72to.ru|edu.ru|vtb.am|gpnbonus.ru|tj.gpnbonus.ru|gpnbonus.by|megavtogal.com|motivtelecom.ru|ruwiki.ru|tyumen-city.ru|gov.ru|*.gov.ru|rt-solar.ru|agt72.ru,redirect=1x1-transparent.gif,important
+*.*/*.gif$domain=invitro.ru|gazprom-neft.ru|gazprom-neft.com|t2.ru|tele2.ru|*.t2.ru|*.tele2.ru|college.72to.ru|edu.ru|vtb.am|gpnbonus.ru|tj.gpnbonus.ru|gpnbonus.by|megavtogal.com|motivtelecom.ru|ruwiki.ru|tyumen-city.ru|gov.ru|*.gov.ru|rt-solar.ru|agt72.ru|tok72.ru,redirect=1x1-transparent.gif,important
 ||burp^$important
 ||zap^$important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
@@ -1317,7 +1317,7 @@ $cookie=s24id
 ||sync.kazdsp.com^
 ||lyngsat.com/as10/intelsat_galaxy19.gif^$image,domain=lyngsat.com,important
 ||geojs.delfi.lt/g.js^$script,domain=delfi.lt,redirect=google-analytics
-||myloc.de/tag/container_*.js^$script,domain=myloc.de,important,redirect=noopjs
+||myloc.de/tag/container_$script,domain=myloc.de,important,redirect=noopjs
 ||datacentermap.com/api/pageview/^$xhr,domain=datacentermap.com,important
 ||umami.datacentermedia.com^$important
 ! api.picsart.com/*/subscription/promo/special-offer$xhr,domain=picsart.com (Waiting for adding..)
@@ -1959,6 +1959,7 @@ $cookie=showed_vkid_onetap,domain=~vk.com|~vk.ru|~vk.me
 ||static.vk.*/vkid/*/floating_one_tap_auth$third-party,important,domain=~vk.com|~vk.ru|~vk.me|~mail.ru|~ok.ru
 ||id.vk.*/vkid_sdk_get_config$third-party,important,domain=~vk.com|~vk.ru|~vk.me|~mail.ru|~ok.ru
 ||login.vk.*/?act=$third-party,important,domain=~vk.com|~vk.ru|~ok.ru|~vk.me|~mail.ru
+||login.vk.com/?act=$third-party,important,domain=~vk.com|~vk.ru|~ok.ru|~vk.me|~mail.ru
 ||api.vk.*/method/statEvents
 ||id.vk.*/stat_events_vkid_sdk$important
 ||vk.*/js/api/openapi.js$script
@@ -3484,6 +3485,19 @@ $cookie=ruid
 ||ee.openreplay.tools^
 ||vk.*^$domain=dzen.ru,important
 ||itshaman.ru/banners/*.html^$domain=itshaman.ru
+||event-tracking.samsung.com^
+||sport5.by/upload/banner_telegram3.jpg^$image,domain=sport5.by
+||sport5.by/api_integrations/ads/$xhr
+||sport5.by/upload/uf/*/*.mp4$media,redirect=noopmp4-1s
+||sport5.by/bitrix/services/main/ajax.php?mode=ajax&c=controllers%3Avideo.count&action=videocount$xhr
+||beterabelarus.online/*?
+||mtrcs.llimonix.dev^
+||tok72.ru^$cookie=csrf-token-name
+||tok72.ru^$cookie=csrf-token-value
+||tok72.ru/themes/default/img/banner-vk.jpg^$image,domain=tok72.ru
+||tok72.ru/admin/api/user/sticky/select^$xhr,domain=tok72.ru
+||cache.edgecenter.ru/js/container_$script,domain=edgecenter.ru
+! - /container_$script
 !
 !
 !
@@ -4269,7 +4283,7 @@ minecraftexpert.ru##div[class^="download-button tg-button"]
 ##div[class*="footer-counts"]
 ! ~hlebs.ru##div[class*="counts"] (01.24: ломаются элементы сайтов, отключён)
 ##div[class^="counts"]
-##a[href$="klauncher"]
+~bedrocklauncher.github.io##a[href$="/klauncher"]
 minecraftpatch.ru##div[style^="margin-top:20px;text-align: center;display: flex;flex-direction: column;justify-content: center;width: 100%;border-bottom: 1px solid #777;"]
 mcpehub.net##div[id="custom-7543-particle"]
 hotmc.ru##div[class^="banner-video-container"]
@@ -4949,7 +4963,7 @@ kod.ru##a[href*="t.me/+AMEkKQ_zOIdmYWUy"][class^="TgLinkCounter"]
 fonts-online.ru###block-user-menu > ul.nav:last-child > li:first-child
 ffont.ru##footer:nth-child(4) > div.content > div.footer-menu-one:last-child > ul.navMenu:last-child
 ##img[src*="mc.yandex.ru/"]
-##img[src*="mc.yandex.*/"]
+##img[src*="mc.yandex."]
 telecomtrainer.com###announcement-bar-root
 telecomtrainer.com###ghost-portal-root > iframe.gh-portal-triggerbtn-iframe
 ferra.ru##.YbTiHPLh
@@ -5691,6 +5705,11 @@ modrinth.com##div[class^="wrapper relative mb-3 flex w-full justify-center round
 mtpro.xyz##a[href*="tg://resolve?domain=durevpnbot"]
 mtpro.xyz##a[href*="://px6.me/"]
 mtpro.xyz##a[href*="://mod.ovh/"]
+mtproxytg6.vercel.app##a[href*="tg://resolve?domain=TriBukvyRoBot"]
+russkie.org###disclaimer
+tok72.ru##.popup
+tok72.ru##.js-core-container__modal
+tok72.ru##main:nth-child(3) > main:last-child > div.container:nth-child(4)
 !
 !
 ! - Scripts -
@@ -6452,6 +6471,7 @@ $removerapam=pgid
 ||statchecker.yandex.*^
 ||dzen.ru/api/v*/launcher/stats/
 ||rum.dzen.ru^
+||yandex.*/share/share.js$third-party
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -7910,6 +7930,7 @@ teletype.in#@#div.preloader
 @@||wss.volna.top^$domain=volna.top,important
 @@$cookie=theme
 @@||dl.delivery.mp.microsoft.com/filestreamingservice/files/
+@@||tok72.ru/themes/default/img/counter/$image,domain=tok72.ru,important
 !
 !
 ! -
@@ -8198,6 +8219,7 @@ teletype.in#@#div.preloader
 ||8.217.190.58^
 ||kittiescraftsmp.com^$all
 ||38.190.225.166^$all
+||torroclk.com^$all
 !
 !
 !
