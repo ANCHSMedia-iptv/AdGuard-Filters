@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.7.7
+! Version: 4.7.8
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-06-10T16:36:30+00:00
+! TimeUpdated: 2026-06-21T16:36:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 10.06.2026 16:36 UTC
+! Last Modified: 21.06.2026 16:36 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -166,6 +166,9 @@
 ||dr.yandex.net^
 ||dr*.yandex.net^
 ||static-mon.yandex.net^$important
+||statchecker.yandex.*^
+||cu.dzen.ru^
+||rum.dzen.ru^
 !
 !
 ! ===
@@ -1070,7 +1073,7 @@
 ||sentry.odysee.tv^$important
 ||sentry.runit.cc^$important
 ||sentry.hh.ru^$important
-://adsrv
+||adsrv.
 ||analytics.iportal.ru^$important
 ||sentry.viqeo.tv^$important
 ||sentry.interneturok.ru^$important
@@ -1981,6 +1984,36 @@
 ||frontreport-relay.kontur.host^
 ||cdn.cxense.com^
 ||piano.io^
+||metricus.artlebedev.ru^
+||lfeeder.com^
+||unisound.cdnvideo.ru^
+||unicontext.ru^
+||medhills.ru^$important
+||akashi.vk-portal.net^
+||stat.radio-holding.ru^$important
+||culturaltracking.ru^$important
+||enkod-*.akamaihd.net^$important
+||sentry.litres.io^$important
+||posthog.livelib.ru^
+||posthog.
+||librato-collector.genius.com^
+||widgets.outbrain.com^
+||assemblyexchange.com^
+||scr.kaspersky-labs.com^
+||u5jmvxka.cloudfine.quest^
+||supportmetrics.apple.com^
+||mailganer.com^
+||cookiebot.com^
+||pushadvert.bid^
+||advideo.ru^$important
+||dn0qt3r0xannq.cloudfront.net^
+||cmp.inmobi.com^
+||m.stripe.com^
+||mssl.fwmrm.net^
+||trackdb.go3.tv^
+||effectivecpmnetwork.com^
+||ee.openreplay.tools^
+||buttons.github.io^
 !
 !
 !
@@ -2029,11 +2062,11 @@
 ! —— 28.03.25: Добавлен.
 !
 !
-! primis.tech^$important
+||live.primis.tech^$important,dnsrewrite=ad-block.dns.adguard.com
 ! www.primis.tech^$important
 ||feed.avplayer.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||locp-*.viber.com^$important
-! primis-amp.tech^$important
+||primis-amp.tech^$important,dnsrewrite=ad-block.dns.adguard.com
 ||appnexusgslb.net^$important,dnsrewrite=ad-block.dns.adguard.com
 ||player.avplayer.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||primis*.openx.net^$important,dnsrewrite=ad-block.dns.adguard.com
