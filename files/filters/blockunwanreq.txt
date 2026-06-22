@@ -5701,7 +5701,7 @@ gdz.ru##div.layout:first-child > footer.footer:nth-child(6) > div.footer__links.
 ##div[id*="advideo_adv_container"]
 modrinth.com###__nuxt > div.layout:last-child > header.desktop-only.relative.z-\[5\].mx-auto.grid.max-w-\[1280px\].grid-cols-\[1fr_auto\].items-center.gap-2.px-6.py-4.lg\:grid-cols-\[auto_1fr_auto\]:first-child > div.gap-4.col-span-2.row-start-2.flex.justify-center.lg\:col-span-1.lg\:row-start-auto:nth-child(2) > div.btn-wrapper.transparent.text-base:nth-child(2) > a
 modrinth.com##div[class^="wrapper relative mb-3 flex w-full justify-center rounded-2xl"]
-##iframe[]
+! ##iframe[]
 mtpro.xyz##a[href*="tg://resolve?domain=durevpnbot"]
 mtpro.xyz##a[href*="://px6.me/"]
 mtpro.xyz##a[href*="://mod.ovh/"]
