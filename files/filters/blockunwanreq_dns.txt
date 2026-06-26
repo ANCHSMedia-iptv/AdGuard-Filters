@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.7.9
+! Version: 4.8.0
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-06-25T16:36:30+00:00
+! TimeUpdated: 2026-06-26T16:36:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 25.06.2026 16:36 UTC
+! Last Modified: 26.06.2026 16:36 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -634,7 +634,8 @@
 ||widget.replain.cc^
 ||begun.ru^
 ||tags.soloway.ru^$important
-||code.2ypkht.ru^
+! code.2ypkht.ru^
+||2ypkht.ru^
 ||marketplace.ur1s.ru^
 ||suggestions.dadata.ru^
 ||logs.tourister.ru^$important
@@ -665,7 +666,8 @@
 ||mediametrics.ru^$important
 ||pubmatic.com^$important
 ||rassilkatest.ru^$important
-||code.rkjs.net^
+! code.rkjs.net^
+||rkjs.net^
 ||vercel-insights.com^$important
 ||webstats.gnome.org^$important
 ||matomo*.*^$important
@@ -2021,11 +2023,21 @@
 ||cloud.roistat.com^
 ||counter.megaindex.ru^
 ||sentry.burgerkingrus.ru^$important
-||code.reffection.ru^$important
+! code.reffection.ru^$important
+||reffection.ru^$important
 ||st.yagla.ru^
 ||glitchtip.digital.uni.rest^$important
 ||tvspix.com^
 ||pixel.sitescout.com^
+||s0.2mdn.net^
+||2nosm7.ru^
+||mercury.itv.com^
+||rum.ngenix.net^$important
+||vitrinabeat.ru^
+||placeholder.com^
+! code.cake011.ru^
+||cake011.ru^
+||code.*.ru^
 !
 !
 !

@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.5.6
-! TimeUpdated: 2026-06-25T16:36:30+00:00
+! Version: 5.5.7
+! TimeUpdated: 2026-06-26T16:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -170,7 +170,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /wp-content/plugins/*/assets/js/tracks.js$script,important
 /ad.js^$script,important
 /empty*.$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru|~lenta.com|~aptoide.com|~magnit.ru|~mail.yandex.by|~mail.yandex.kz|~mail.yandex.ru|~mail.yandex.com|~mail.yandex.com.tr|~mail.yandex.*|~yastatic.net|~tenchat.ru|~smotrim.ru|~thb.tildacdn.com|~tildacdn.com|~gdz.ru
-*/adv/*$image,xhr,script,domain=~pinterest.com|~aliexpress.ru|~aliexpress.com,important
+*/adv/*$image,xhr,script,domain=~pinterest.com|~aliexpress.ru|~aliexpress.com|~buzzoola.com,important
 ! *empty*.*^$image,important
 ||store.bankiros.ru/js/metrics/$script,domain=bankiros.ru,redirect=noopjs,important
 ||adhigh.net^$important
@@ -353,7 +353,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /mindbox*.js^$script,important,domain=~mindbox.ru
 ||holodilnik.ru/js/credit*.$script,domain=holodilnik.ru
 ||dashboard.fstrk.io/widget*/$script
-||code.*.ru^$domain=~code.reffection.ru
+||code.*.ru^$domain=~reffection.ru|~rkjs.net|~2ypkht.ru|~giraff.io
 ||idealturnik.ru/waitsetcookie/^$xhr,domain=idealturnik.ru,redirect=empty,important
 ||ur1s.ru^$third-party
 ||idealturnik.ru/ordercall-config/^$xhr,domain=idealturnik.ru,important
@@ -476,7 +476,8 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||rassilkatest.ru^$important
 ||game-roblox.ru/wp-content/uploads/*niki.js^$script,domain=game-roblox.ru
 ||cubeworldgame.com/wp-content/uploads/*/download.png^$image
-||code.rkjs.net^$important
+! code.rkjs.net^$important
+||rkjs.net^$important
 ||minecraftkwiki.online/wp-json/post_helper/stats$xhr,domain=minecraftkwiki.online,important
 ||recommend.playground.ru/api/post.recommendations$xhr,domain=playground.ru,important
 ||playground.ru/css/post-recommendations.css^$css,domain=playground.ru,important,redirect=noopcss
@@ -1188,8 +1189,8 @@ calltouch.js$script,xhr
 ||oazgvj.com^$third-party
 ||bngtrak.com^$important
 ||pemsrv.com^$important
-||svc.iptv.rt.ru/event_collector$ping
-||restream-media.net/event_collector$ping
+||svc.iptv.rt.ru/event_collector$ping,important
+||restream-media.net/event_collector$ping,important
 ||al-adtech.com^$important
 !
 ||player.smotrim.ru/js/advsdk.js$important
@@ -3005,7 +3006,7 @@ otel-trace/otel.$script,redirect=noopjs
 ||consent.deezer.com^
 $cookie=/euconsent-v*/
 ||cdn-assets.dzcdn.net/common/js/gdpr-appliance.js^$script,domain=deezer.com,redirect=noopjs
-||a.mts.ru^
+||a.mts.ru^$important
 ||zvuk.com^$cookie=ip,important
 ||zvuk.com^$cookie=redirectUrl,important
 $cookie=referrer,important
@@ -3517,7 +3518,8 @@ $cookie=/*_SM_TZ/
 ||counter.megaindex.ru^$important
 ||sentry.burgerkingrus.ru^$important
 /bitrix/components/webway/metrics.simple/
-||code.reffection.ru^$important
+! code.reffection.ru^$important
+||reffection.ru^$important
 ||st.yagla.ru^$important
 ||glitchtip.digital.uni.rest^$important
 ||s82079.cdn.ngenix.net/625x480/$image,domain=rostics.ru
@@ -3526,6 +3528,26 @@ $cookie=/*_SM_TZ/
 ||browser-intake-datadoghq.com^$important
 ||pixel.sitescout.com^
 /*/js/visitors.php^$xhr,domain=nebo.ddns.net
+/forum/clientscript/kr_scripts/banner_rotator.js^$script
+/forum/clientscript/yui/yahoo-dom-event/yahoo-dom-event.js$script
+||s0.2mdn.net^
+||2nosm7.ru^
+||rossko.ru/analytics/
+||mercury.itv.com^
+||restream-media.net^$cookie=ngx_s_id
+||rum.ngenix.net^$important
+||staticmv.mediavitrina.ru/vitrina_assets/*/banner.gif$image,important,redirect=1x1-transparent.gif
+||staticmv.mediavitrina.ru/yastatic/ads.js$script,important,redirect=noopjs
+||vitrinabeat.ru^
+||cdn.skillbox.pro/frontend-libs/promo-banner/*/banner-plugin.$script,domain=skillbox.ru,redirect=noopjs
+||skillbox.ru/local/components/prmedia/popup.subscribe/templates/.default/script.js$script,domain=skillbox.ru,redirect=noopjs
+||skillbox.ru/setka/js/$script,domain=skillbox.ru,redirect=noopjs
+||placeholder.com^
+! code.cake011.ru^
+||cake011.ru^
+||acstat.com^
+||2ypkht.ru^
+||code.giraff.io^
 !
 !
 !
@@ -5748,6 +5770,11 @@ eda72.com###__next > div.light.red:nth-child(6) > section:last-child
 burgerkingrus.ru##.bk-order-point-info__geolocation-permission
 checko.ru###top-menu > li.d-none.d-md-inline-block.align-self-center:nth-child(5)
 rozetked.me##div[id^="marketWidget"]
+vintera.tv##div[id^="video-player_ima-ad-container"]
+##iframe[src*="://imasdk.googleapis.com/"]
+vintera.tv##iframe[title="Advertisement"]
+vintera.tv##div[id^="video-player_ima-controls-div"]
+wink.ru##.rdzgfo0, .enter-done
 !
 !
 ! - Scripts -
@@ -6658,7 +6685,7 @@ alice.yandex.ru##div[class*="AdvCard AdvCard_bottom"]
 ! gvt1.com^
 ||mail-ads.google.com^$important
 ! ↑ реклама в почте Gmail
-||imasdk.googleapis.com^$domain=~peers.tv,redirect=google-ima3
+||imasdk.googleapis.com^$important,redirect=google-ima3
 ||ogads*.googleapis.com^$important
 ||androidtvgtvmfe*.googleapis.com^
 ||playmoviesdfe*.googleapis.com^
@@ -6775,6 +6802,9 @@ alice.yandex.ru##div[class*="AdvCard AdvCard_bottom"]
 ||safebrowsing.google.com^$important
 ||gemini.google.com/_/BardChatUi/jserror$redirect=nooptext
 ||adservice.google.com^
+||googleads.github.io^$important,redirect=noopjs
+||googleads.github.io^$important,redirect=noopcss
+||imasdk.googleapis.com/js/core/bridge*_*.html
 !
 ! ===
 !
@@ -7979,6 +8009,8 @@ teletype.in#@#div.preloader
 @@$cookie=theme
 @@||dl.delivery.mp.microsoft.com/filestreamingservice/files/
 @@||tok72.ru/themes/default/img/counter/$image,domain=tok72.ru,important
+@@||restream-media.net/api/v*/user/feature_toggles/enable_teleport_streaming
+@@||teleport.media/v*/nodr/
 !
 !
 ! -
