@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.5.7
-! TimeUpdated: 2026-06-26T16:36:30+00:00
+! Version: 5.5.8
+! TimeUpdated: 2026-06-27T16:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -353,7 +353,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 /mindbox*.js^$script,important,domain=~mindbox.ru
 ||holodilnik.ru/js/credit*.$script,domain=holodilnik.ru
 ||dashboard.fstrk.io/widget*/$script
-||code.*.ru^$domain=~reffection.ru|~rkjs.net|~2ypkht.ru|~giraff.io
+||code.*.ru^$domain=~reffection.ru|~rkjs.net|~2ypkht.ru
 ||idealturnik.ru/waitsetcookie/^$xhr,domain=idealturnik.ru,redirect=empty,important
 ||ur1s.ru^$third-party
 ||idealturnik.ru/ordercall-config/^$xhr,domain=idealturnik.ru,important
@@ -1980,7 +1980,7 @@ $cookie=flyid,important
 ||reshalka.com/assets/icon/tg-$image,domain=reshalka.com
 ||in.pgvt.io^$important
 ||cdn.pgvt.io^$third-party,domain=~pagevitals.com,important
-||otvetkin.info/nassets/js/jquery.magnific-popup.$script,domain=otvetkin.info,redirect=noopjs
+/jquery.magnific-popup.$script,domain=otvetkin.info|rapsinews.ru,redirect=noopjs
 ||otvetkin.info/nassets/css/magnific-popup.css^$css,domain=otvetkin.info,redirect=noopcss
 ||cnt*.www.uz^$important
 ||api.xabar.uz/v*/stat/post/$xhr,domain=xabar.uz,important
@@ -3548,6 +3548,25 @@ $cookie=/*_SM_TZ/
 ||acstat.com^
 ||2ypkht.ru^
 ||code.giraff.io^
+||rapsinews.ru/i/svg/max.svg^$image,domain=rapsinews.ru
+||rapsinews.ru/i/svg/dzen.svg^$image,domain=rapsinews.ru
+||rapsinews.ru/i/svg/rutube.svg$image,domain=rapsinews.ru
+||rapsinews.ru/i/clear.gif^$image,domain=rapsinews.ru,redirect=1x1-transparent.gif
+||rapsinews.ru/i/bookmarks/$image,domain=rapsinews.ru
+||assets.efilli.com^$third-party,important
+/efilli_config.json^$xhr,redirect=noopjson
+||consent.efilli.com^$important
+||analytic.efilli.com^$important
+||bip.com^$cookie=Path
+||netmera-web.com^$important
+||mts.ru^$cookie=StickyID
+||mts.ru^$cookie=/TS*/
+/flsafety/idpip-
+/gib/*.js^$script
+||facct.ru^$cookie=gcfids
+||facct.ru^$cookie=cfidspip-w-mult
+/flsafety$xhr,redirect=empty
+||fp-back.facct.ru^
 !
 !
 !
@@ -5775,6 +5794,8 @@ vintera.tv##div[id^="video-player_ima-ad-container"]
 vintera.tv##iframe[title="Advertisement"]
 vintera.tv##div[id^="video-player_ima-controls-div"]
 wink.ru##.rdzgfo0, .enter-done
+bip.com##efilli-layout-dynamic:nth-child(11)
+##iframe[src*="id.facct.ru/"]
 !
 !
 ! - Scripts -
@@ -7517,7 +7538,7 @@ insearch.site#@$#body { background: #000000 !important; }
 @@||static-api.mediavitrina.ru/v*/forced_capping/*/config.json$xhr
 @@||time.is/t*/?$xhr,domain=time.is
 @@||gosuslugi.ru/auth-provider/check-session^$xhr,domain=gosuslugi.ru
-@@||*.id.facct.ru/id.html
+! @@||*.id.facct.ru/id.html
 @@||online.sberbank.ru/ESA/sbol/r-*/deprecatingbrowsers.json$xhr,domain=online.sberbank.ru
 @@||c.pki.goog^
 @@||x*.c.lencr.org^
