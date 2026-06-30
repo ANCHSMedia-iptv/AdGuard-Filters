@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.8.1
+! Version: 4.8.2
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-06-27T16:36:30+00:00
+! TimeUpdated: 2026-06-30T16:36:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 27.06.2026 16:36 UTC
+! Last Modified: 30.06.2026 16:36 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -148,7 +148,6 @@
 ||ysa-static.passport.yandex.*^
 ||zdevx.yandex.*^$important
 ||appmetrica.yandex.net.iberostar.com^
-! ||dr*.yandex.*^
 ||log.api-maps.yandex.*^$important
 ||admetrica.*^
 ||im*-tub-*.yandex.net^
@@ -169,6 +168,8 @@
 ||statchecker.yandex.*^
 ||cu.dzen.ru^
 ||rum.dzen.ru^
+||network-lc.ru^
+||scbh.yandex.net^
 !
 !
 ! ===
@@ -471,6 +472,9 @@
 ||ulp1p*.googleapis.com^$important
 ||safebrowsing.google.com^$important
 ||adservice.google.com^
+||googleads.github.io^
+||adtrafficquality.google^
+||c2paregistration*.googleapis.com^
 !
 ! ===
 !
@@ -1368,7 +1372,7 @@
 ||i.instagram.com^
 ||analytics.twitter.com^$dnsrewrite=REFUSED,important
 ! sync.otm-r.ru^
-||otm-r.ru^
+||otm-r.com^$important
 ||error-report.com^
 ||pxl-*.ozone.ru^
 ||wstat.ozon.ru^
@@ -2044,6 +2048,56 @@
 ||gateway.efilli.com^
 ||tcf.efilli.com^
 ||netmera-web.com^$important
+||omicron.rustore.ru^
+||platform-api.sharethis.com^
+||analytics.dns-shop.ru^
+||sdk-*.moengage.com^
+||tracker.smartcallback.ru^
+||events.myweb3id.io^
+||linkssp.ru^
+||dsp.onetarget.ru^$important
+||ttarget.ru^
+||aidata.io^
+||bumlam.com^
+||al-adtech.com^
+||shopnetic.com^
+||admon.pro^
+! mitdmp.whiteboxdigital.ru
+||whiteboxdigital.ru^
+||silvermob.com^
+||arcspire.io^
+||api.tinsurance.ru^
+||stat.media^
+||connect-*.hispace.dbankcloud.*^
+||s.4pda.to^$important
+! - imo[.]im
+||loveprogram.tech^
+||peaksite.tech^$important
+||ousaqb.tech^
+||bstream.kzhi.tech^
+||news-cdn.site^$important
+||titchating.com^
+||socks.imolive2.com^
+||live.bigo.sg^
+||d2e79g5k4asncr.cloudfront.net^
+||dp7iao1z55dlt.cloudfront.net^
+||dr9d8k43vu9dx.cloudfront.net^
+! -
+||sdk-*.moengage.com^$important
+||rlcdn.com^
+||sync.upravel.com^$important
+||dsp.onetarget.ru^$important
+||targetrtb.com^
+||s.uuidksinc.net^$important
+||intent.ai^$important
+||bidderstack.com^$important
+||mpartner.digital^
+||beacon.wikia-services.com^$important
+||quantserve.com^$important
+||services.fandom.com^$important
+||d.ghostery.com^$important
+||qntm.it.com^
+||content.24ttl.stream^
 !
 !
 !
@@ -2558,6 +2612,7 @@
 @@||multiqr.ru^
 @@||qr.nspk.ru^
 @@||samsonite.ru.com^
+@@||yango-maps-public.s3.*-*.amazonaws.com^$important
 !
 !
 !

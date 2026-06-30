@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.5.8
-! TimeUpdated: 2026-06-27T16:36:30+00:00
+! Version: 5.5.9
+! TimeUpdated: 2026-06-30T16:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -136,9 +136,9 @@
 */api/advertising/$xhr,domain=hitfm.ru|montecarlo.ru|rusradio.ru,redirect=nooptext,important
 !
 ! ||*cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cookielaw.org|~2gis.ru|~2gis.*|~comnews.ru|~tyuiu.ru|~laratranslate.com,redirect=noopjs
-||*cookie*.js^$script,important,domain=~cookielaw.org,redirect=noopjs
+||*cookie*.js^$script,important,domain=~cookielaw.org|~wikia.nocookie.net|~fandom.com|~securelist.ru|~flightradar24.com|~wikia.nocookie.net|~mnokol.tyuiu.ru|~2gis.ru|~2gis.*,redirect=noopjs
 ! ||*Cookie*.js^$script,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~youtube-nocookie.com|~youtu.be|~githubassets.com|~gitlab.com|~24h.tv|~clicktv.uz|~mnokol.tyuiu.ru|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~yastatic.net|~cookielaw.org|~2gis.ru|~2gis.*|~comnews.ru|~tyuiu.ru|~laratranslate.com,redirect=noopjs
-||*Cookie*.js^$script,important,domain=~cookielaw.org|~wikia.nocookie.net|~fandom.com|~securelist.ru,redirect=noopjs
+||*Cookie*.js^$script,important,domain=~cookielaw.org|~wikia.nocookie.net|~fandom.com|~securelist.ru|~flightradar24.com|~wikia.nocookie.net|~mnokol.tyuiu.ru|~2gis.ru|~2gis.*,redirect=noopjs
 /itunes_referals.js^$script,third-party
 ||autolinkmaker.itunes.apple.com/js/itunes_autolinkmaker.js^$script,third-party
 ||improving.duckduckgo.com^$important
@@ -419,7 +419,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||fedpress.ru/themes/fp/js/share.js^$script,domain=fedpress.ru,redirect=noopjs,important
 ||static.mel.fm/graph.js$script,domain=mel.fm,important
 ! ||*cookie*.css^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~githubassets.com|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~youtube-nocookie.com|~2gis.ru|~2gis.*|~comnews.ru|~tyuiu.ru|~laratranslate.com,redirect=noopcss
-||*cookie*.css^$css,important,redirect=noopcss
+||*cookie*.css^$css,important,domain=~cookielaw.org|~wikia.nocookie.net|~fandom.com|~securelist.ru|~flightradar24.com|~wikia.nocookie.net|~mnokol.tyuiu.ru|~2gis.ru|~2gis.*,redirect=noopcss
 ||b17.ru/img/0.gif^$image,domain=b17.ru,important
 ||ufamama.ru/UserStatistics/$xhr,important,domain=ufamama.ru
 ||ufamama.ru/services/BlogAdvisor/$xhr,important,domain=ufamama.ru
@@ -1578,7 +1578,7 @@ $cookie=RadioStatistica,important
 ||cdn.iz.ru/profiles/portal/themes/purple/js/ads-tools.js$script,domain=iz.ru,redirect=noopjs,important
 ||cdn.iz.ru/profiles/portal/themes/purple/js/index/two-col-with-advertise*/two-col-with-advertise*.js$script,domain=iz.ru,redirect=noopjs,important
 ||aif.ru/redesign2018/img/sharings/*.svg$image,domain=aif.ru
-||vkvideo.ru/dist/web/ads_light.*.js^$script,redirect=noopjs,important
+/dist/*/ads_light.$script,domain=vk.com|vk.ru,redirect=noopjs,important
 ||vkvideo.ru/*video.php?act=track_player_events$xhr,important
 ||a.ria.ru^$important
 /js/libs/ria.share.js$script,domain=ria.ru|1prime.ru,redirect=noopjs
@@ -1844,6 +1844,7 @@ $cookie=remixlang,third-party
 ! A
 ||nrk-nsk.ru/wp-content/uploads/2025/10/materialy-o-naczionalnom-messendzhere.jpg^$image,domain=nrk-nsk.ru
 ||nrk-nsk.ru/wp-content/uploads/2025/10/materialy-o-naczionalnom-messendzhere-003.jpg^$image,domain=nrk-nsk.ru
+||samotlor.tv/images/2025/08/13/2025-08-13-16.38.20.jpg^$image,domain=samotlor.tv
 !
 !
 ||figma.com^$removeparam=tracking_session_id
@@ -2685,7 +2686,7 @@ about:blank^$domain=greynoise.io
 ||ant.sberbank.ru^$important
 ||cdnflow.ru^
 ||sberbank.ru/common/*/js/dynatrace.js^$script,domain=sberbank.ru,redirect=noopjs
-||akashi.vk-portal.net/api/v*/nel$redirect=empty
+! akashi.vk-portal.net/api/v*/nel$redirect=empty
 ||vk.*/browser_reports$redirect=empty
 /videos1234/other/
 /xray.|$script,domain=mail.ru|*.mail.ru,redirect=noopjs
@@ -3567,6 +3568,66 @@ $cookie=/*_SM_TZ/
 ||facct.ru^$cookie=cfidspip-w-mult
 /flsafety$xhr,redirect=empty
 ||fp-back.facct.ru^
+||ottgtv.ru^$cookie
+||automobileportal.ru^$domain=ottgtv.ru,third-party
+||ottgtv.ru/wp-content/uploads/2021/11/auto2-768x768.png^$image,domain=ottgtv.ru
+||ottgtv.ru/wp-content/uploads/2021/01/SH-768x768.png^$image,domain=ottgtv.ru
+||ottgtv.ru/wp-content/uploads/2021/01/1080x1080_insta_smarttv-768x768.jpg^$image,domain=ottgtv.ru
+! ottgtv.ru/wp-content/uploads/*/*-768x768.*^$image,domain=ottgtv.ru
+$cookie=/mp_*_mixpanel/,important
+||smotrim.ru^$cookie=ngx_uid
+||vesti7.ru/banners/topic-banner.html^$domain=vesti7.ru
+||omicron.rustore.ru^
+||imgsmail.ru/*/logger-preset/$script,redirect=noopjs
+||rustore.ru/api/product-metrics$xhr,domain=rustore.ru
+||rustore.ru/_next/static/media/bear.$image,domain=rustore.ru
+||rustore.ru/_next/static/media/logo.$image,domain=rustore.ru
+||dns-shop.ru/static/*/utm-analytics.js^$script,domain=dns-shop.ru
+||dns-shop.ru/static/*/retail-rocket-$script,domain=dns-shop.ru
+||dns-shop.ru/pageNotification/page-notification/get-system-events/^$xhr,domain=dns-shop.ru
+! retailrocket.ru^$third-party,domain=~auchan.ru|~ozerki.ru
+||retailrocket.ru^$third-party,important
+||interesnoe.me/static/custom/js/share.js^$script,domain=interesnoe.me
+||studwork.ru/api/old-browser/$xhr,domain=studwork.ru,redirect=noopjs
+||sdk-*.moengage.com^
+||tracker.smartcallback.ru^
+||events.myweb3id.io^
+||linkssp.ru^
+||dsp.onetarget.ru^$important
+||ttarget.ru^
+||aidata.io^
+||bumlam.com^
+||shopnetic.com^
+||admon.pro^
+! mitdmp.whiteboxdigital.ru
+||whiteboxdigital.ru^
+||new-programmatic.com^
+||kimberlite.io^
+! euw-ice.360yield.com
+||360yield.com^
+||arcspire.io^
+||api.tinsurance.ru^
+/content/*/www/*/wap/cdn/wap.gif?$xhr,domain=intel.cn|intel.co.id|intel.co.jp|intel.co.kr|intel.com|intel.com.br|intel.com.tw|intel.de|intel.fr|intel.la|intel.vn,redirect=1x1-transparent.gif
+/content/*/www/*/wap/performance-config.js^$script,domain=intel.cn|intel.co.id|intel.co.jp|intel.co.kr|intel.com|intel.com.br|intel.com.tw|intel.de|intel.fr|intel.la|intel.vn,redirect=noopjs
+||stat.media^
+||connect-*.hispace.dbankcloud.*^
+||hcaptcha.com^$removeparam=sentry
+||sync.upravel.com^$important
+||dsp.onetarget.ru^$important
+||targetrtb.com^
+||s.uuidksinc.net^$important
+||intent.ai^$important
+||bidderstack.com^$important
+||mpartner.digital^
+||d.ghostery.com^$important
+! "C[:]\Program Files (x86)\Intel\Driver and Support Assistant\DSAArcDetect64[.]exe" json https[:]//dsadata[.]intel.com/data/en  ""
+||dsadata.intel.com^$app=DSAArcDetect64.exe
+/templates/*/*/recommends_mindbox.$script,redirect=noopjs
+||qntm.it.com^
+||24ttl.stream^
+/ajax/mindbox/
+! js-agent.newrelic.com
+||newrelic.com^$important
 !
 !
 !
@@ -3626,6 +3687,8 @@ $cookie=/*_SM_TZ/
 ! *appbk.4pda.to/er$xhr,domain=4pda.to
 *appbk.4pda.to^
 !
+!
+||s.4pda.to^$important
 !
 !
 ||4pda.to/huawei/$domain=4pda.to
@@ -4006,6 +4069,11 @@ ozon.ru##a[href*="/credit_card/"][class^="q4b1_3_0-a"]
 ||irecommend.ru/injector/metrika-config.js^$script,domain=irecommend.ru,important,redirect=metrica-yandex-watch
 !
 ||irecommend.ru/injector/gpu.js^$script,domain=irecommend.ru,important,redirect=noopjs
+||irecommend.ru^$cookie=ab_var
+||irecommend.ru^$cookie=v
+||irecommend.ru^$cookie=ssu
+||irecommend.ru^*superstat/
+||irecommend.ru/*/modules/*/banners_inline/$script,domain=irecommend.ru
 !
 ! ===
 !
@@ -4196,6 +4264,29 @@ dom.ru,*.dom.ru##div[class^="sc-6e31cbc2-0 kKbgFL"]
 ! В скриптах полная жесть.. куча метрики и всякого «мусора», причём зависимые - заблокируешь запрос, сломается сайт. (29.04.26: UPD: Вроде проблема решена.)
 !
 ! ==
+!
+!
+!
+!
+!
+!
+! =
+! - imo[.]im messanger -
+://ad.vk.com^$app=com.imo.android.imoimhd|com.imo.android.imoim
+://dzen.ru^$app=com.imo.android.imoimhd|com.imo.android.imoim
+://yandex.ru/p$app=com.imo.android.imoimhd|com.imo.android.imoim
+://beneathus.club^$app=com.imo.android.imoimhd|com.imo.android.imoim
+://dr9d8k43vu9dx.cloudfront.net/y.gif$app=com.imo.android.imoimhd|com.imo.android.imoim
+://vkvideo.ru^$app=com.imo.android.imoimhd|com.imo.android.imoim
+://vk.ru^$app=com.imo.android.imoimhd|com.imo.android.imoim
+://h8en2lxqjq.com^$app=com.imo.android.imoimhd|com.imo.android.imoim
+||ousaqb.tech^
+||news-cdn.site^
+||peaksite.tech^
+||loveprogram.tech^
+://d2e79g5k4asncr.cloudfront.net/y.gif$app=com.imo.android.imoimhd|com.imo.android.imoim
+://dp7iao1z55dlt.cloudfront.net/y.gif$app=com.imo.android.imoimhd|com.imo.android.imoim
+! =
 !
 !
 !
@@ -5796,6 +5887,20 @@ vintera.tv##div[id^="video-player_ima-controls-div"]
 wink.ru##.rdzgfo0, .enter-done
 bip.com##efilli-layout-dynamic:nth-child(11)
 ##iframe[src*="id.facct.ru/"]
+ottgtv.ru###page > center:nth-child(4)
+ottgtv.ru###block-3
+ottgtv.ru###media_image-6
+ottgtv.ru###media_image-3
+ottgtv.ru###text-3
+ottgtv.ru###colophon > center:nth-child(5)
+vesti7.ru##.adv, .topic__banner
+vesti7.ru##iframe[src^="/banners/topic-banner.html"]
+rustore.ru##.QRCode_wrapper__P9D5Z
+dns-shop.ru##.highlighter_DKA
+dns-shop.ru##.digital-gift-card
+dns-shop.ru##.survey-button-widget, .survey-button-widget_filter
+dns-shop.ru##.scroll-top
+zona-iptv.ru###HTML667
 !
 !
 ! - Scripts -
@@ -6562,18 +6667,29 @@ $removerapam=pgid
 $removeparam=nr,domain=ya.ru
 $removeparam=redirect_ts,domain=ya.ru
 ||ya.ru/ick/
+||yandex.$removeparam=redircnt
+||avatars.mds.yandex.net/get-yabs_performance/
+||yastatic.net/safeframe-bundles/*/render.html
+! 77.88.44.55:7$network,app=ru.yandex.weatherplugin
+/^77\.88\.(4|5){2}.(5|8){2}/:7$network,app=ru.yandex.weatherplugin
+||yandex.$removeparam=rnd
+||yandex.$removeparam=ncrnd
+||yandex.$removeparam=lr
+||network-lc.ru^
+||scbh.yandex.net^
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
-! Updated 31.05
+! Updated 30.06
 ://yandex.ru^$app=ru.yandex.weatherplugin
 ||yandex.com^$app=ru.yandex.weatherplugin
 ||cloud-api.yandex.net^$app=ru.yandex.weatherplugin
 ||favicon.yandex.net^$app=ru.yandex.weatherplugin
-! ://avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
+! avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
 ||strm.yandex.*^$app=ru.yandex.weatherplugin
 ://api.browser.yandex.ru^$app=ru.yandex.weatherplugin
 ||yastatic.net^$app=ru.yandex.weatherplugin
+||quasar.yandex.net^$app=ru.yandex.weatherplugin
 ! -
 ! -
 ! -
@@ -6581,15 +6697,16 @@ $removeparam=redirect_ts,domain=ya.ru
 ! -
 !
 @@||weather.yandex.ru^$app=ru.yandex.weatherplugin
-@@||static-maps.yandex.ru^$app=ru.yandex.weatherplugin
+@@://static-maps.yandex.ru^$app=ru.yandex.weatherplugin
 @@||login.yandex.ru^$app=ru.yandex.weatherplugin
 @@||passport.yandex.ru^$app=ru.yandex.weatherplugin
 @@||alice.yandex.ru^$app=ru.yandex.weatherplugin
+@@||avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
 ! -
 ! =
 !
 ! =Block analytics in other Yandex apps. (14.04.2026)=
-! Updated 17.05
+! Updated 30.06
 ! -Y.Music-
 ://yandex.ru^$app=ru.yandex.music
 !
@@ -6598,9 +6715,11 @@ $removeparam=redirect_ts,domain=ya.ru
 @@||mediabilling.yandex.ru^$app=ru.yandex.music
 @@||api.browser.yandex.ru^$app=ru.yandex.music
 @@||plus.yandex.ru^$app=ru.yandex.music
+@@||sp.yandex.ru^$app=ru.yandex.music
 ! -
 !
 ! -Yandex Go (ex. Yandex Taxi)-
+||avatars.mds.yandex.net^$app=ru.yandex.taxi
 ! -
 !
 ! -Y.Keyboard-
@@ -6724,7 +6843,7 @@ alice.yandex.ru##div[class*="AdvCard AdvCard_bottom"]
 ! ||cse.google.com/adsense/$script,important
 ||appsgrowthpromo*.googleapis.com^$important
 ! ↑ рекламный домен
-||peoplestackwebexperiments*.clients6.google.com^^$important
+||peoplestackwebexperiments*.clients6.google.com^$important
 ||safeframe.googleapis.*^$important
 ://mediation.goog^$important
 ://sin.prod.via.google^
@@ -6737,9 +6856,9 @@ alice.yandex.ru##div[class*="AdvCard AdvCard_bottom"]
 ||google.com/log$redirect=nooptext
 ||casespartner-pa.youtube.com/static/
 ||casespartner.youtube.com/static/
-||youtube.com/ptracking
+||youtube.com/ptracking$important
 ||youtube.com/s/player/*/*_*/endscreen.js
-||youtube.com/api/stats/qoe
+||youtube.com/api/stats/qoe$important
 ||google.*/pagead/$redirect=noopjs,important
 ||googletagservices.com^$important
 ||tagmanager.google.com^
@@ -6826,6 +6945,13 @@ alice.yandex.ru##div[class*="AdvCard AdvCard_bottom"]
 ||googleads.github.io^$important,redirect=noopjs
 ||googleads.github.io^$important,redirect=noopcss
 ||imasdk.googleapis.com/js/core/bridge*_*.html
+||youtube.com/api/stats/atr?ns=
+||youtube.com/api/stats/playback?ns=
+||youtube.com/api/timedtext?v=
+||youtube.com/api/stats/watchtime?ns=
+||adtrafficquality.google^
+||c2paregistration*.googleapis.com^
+||play.google.com/play/log$redirect=nooptext
 !
 ! ===
 !
@@ -6855,6 +6981,7 @@ alice.yandex.ru##div[class*="AdvCard AdvCard_bottom"]
 ||gvt2.com^$important
 !
 ||*ad.*.xiaomi.com^$important
+://*ad.*.xiaomi.com^
 ||ms.vk.*^$important
 ||aemetrics.aliexpress.ru^$important
 ||tnc*.byteoversea.com^$important
@@ -7830,7 +7957,6 @@ browserleaks.com$@$link[rel="manifest"]
 @@||ortoatlant.ru/*?route=product/product/captcha$image
 @@/globalRecaptchaContent/
 @@||recaptcha.umi.ru^
-@@||flightradar24.com^$cookie
 flightradar24.com#@$?#body { overflow: auto !important; }
 flightradar24.com#@$#body { overflow: auto !important; }
 gazeta.ru#@$#body { padding-top: 0!important; }
