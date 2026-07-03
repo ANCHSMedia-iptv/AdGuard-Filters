@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.8.2
+! Version: 4.8.3
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-06-30T16:36:30+00:00
+! TimeUpdated: 2026-07-03T16:36:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 30.06.2026 16:36 UTC
+! Last Modified: 03.07.2026 16:36 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -170,6 +170,7 @@
 ||rum.dzen.ru^
 ||network-lc.ru^
 ||scbh.yandex.net^
+||aflt.travel.yandex.ru^
 !
 !
 ! ===
@@ -371,7 +372,7 @@
 ||googletagmanager.com^$important
 ||googleadservices.com^$important
 ||google-analytics.com^$important
-||*ds.metric.gstatic.com^$important
+||metric.gstatic.com^$important
 ||analytics.google.com^$important
 ||doubleclick.*^$important
 ||googlesyndication.*^$important
@@ -388,7 +389,7 @@
 ||calendarpushnotification*.googleapis.com^
 !
 ||appsgrowthpromo*.googleapis.com^$important
-||peoplestackwebexperiments*.clients*.google.com^$important
+||peoplestackwebexperiments*.clients6.google.com^$important
 ||infinitedata*.googleapis.com^
 ||safeframe.googleapis.com^$important
 ||mediation.goog^$important
@@ -428,7 +429,7 @@
 ||ampcid.google.*^
 ||android-context-data*.googleapis.com^
 ||androidtvchannels*.googleapis.com^
-||auditrecording*.googleapis.com^
+! auditrecording*.googleapis.com^
 ||bluestacks-cloud-appplayer-logs.storage.googleapis.com^$important
 ||clienttracing*.googleapis.com^
 ||csp.withgoogle.com^
@@ -460,21 +461,70 @@
 ||bot*.googlerenewals.net^
 ||cdn.googletoolservices.com^
 ||accesspoints*.googleapis.com^
-!||safebrowsing.googleapis.com^
-||safebrowsingohttpgateway.googleapis.com^
-||retail.googleapis.com^
-||ohttp-relay-safebrowsing-android.google.fastly-edge.com^
-||ohttp-relay-safebrowsing-*.google.fastly-edge.com^
+! ||safebrowsing.googleapis.com^
+||safebrowsingohttpgateway*.googleapis.com^
+||retail*.googleapis.com^
+||ohttp-relay-safebrowsing-android.google.fastly-edge.com^$important
+||ohttp-relay-safebrowsing-*.google.fastly-edge.com^$important
 ||*-safebrowsing.google.com^$important
 ||safebrowsing.googleapis.com^$important
 ||app-measurement.com^$important
 ||csi.gstatic.com^
 ||ulp1p*.googleapis.com^$important
 ||safebrowsing.google.com^$important
-||adservice.google.com^
+||adservice.google.com^^$important
 ||googleads.github.io^
-||adtrafficquality.google^
-||c2paregistration*.googleapis.com^
+||adtrafficquality.google^^$important
+||c2paregistration*.googleapis.com^^$important
+||datasaver*.googleapis.com^
+||gvt2-cn.com^$important
+||gvt3.com^
+||searchpromo*.googleapis.com^$important
+||searchlabspartnerservice*.googleapis.com^$important
+||xgapromomanager*.googleapis.com^$important
+||glsfrontend*.googleapis.com^$important
+||localservices*.googleapis.com^$important
+||scone*.clients6.google.com^$important
+||scone*.googleapis.com^$important
+||nearbysharing*.googleapis.com^
+||admob*.googleapis.com^$important^$important
+||adsensehost*.googleapis.com^$important
+||audit-pa.googleapis.com^
+||analyticsadmin*.googleapis.com^$important
+||analyticsdata*.googleapis.com^$important
+||analyticshub*.googleapis.com^$important
+||analyticsreporting*.googleapis.com^$important
+||appenginereporting*.googleapis.com^$important
+||chromeuxreport*.googleapis.com^$important
+||cloudaudit*.googleapis.com^$important
+||cloudlatencytest*.googleapis.com^$important
+||cloudprofiler*.googleapis.com^$important
+||cloudtrace.*googleapis.com^$important
+||content-partnersbadge*.googleapis.com^$important
+||dfareporting*.googleapis.com^$important
+||doubleclickbidmanager*.googleapis.com^$important
+||doubleclicksearch*.googleapis.com^$important
+||firebasepredictions*.googleapis.com^$important
+||firewallinsights*.googleapis.com^$important
+||gapromomanager*.googleapis.com^$important
+||logging*.googleapis.com^$important
+||marketingplatformadmin*.googleapis.com^$important
+||meshtelemetry.*googleapis.com^$important
+||mobilenetworkscoring*.googleapis.com^$important
+||monitoring*.googleapis.com^$important
+||pagespeedmobilizer.com^$important
+||pagespeedonline*.googleapis.com^$important
+||partners-json*.googleapis.com^$important
+||recommendationengine*.googleapis.com^$important
+||recommender*.googleapis.com^$important
+||stackdriver*.googleapis.com^$important
+||tagmanager*.googleapis.com^$important
+||timeseriesinsights*.googleapis.com^$important
+||wirelessdevicestats*.googleapis.com^$important
+||tracedepot*.googleapis.com^$important
+||performanceparameters*.googleapis.com^$important
+||searchlabspartnerservice*.googleapis.com^$important
+||myphonenumbers-pa.googleapis.com^
 !
 ! ===
 !
@@ -2096,8 +2146,20 @@
 ||quantserve.com^$important
 ||services.fandom.com^$important
 ||d.ghostery.com^$important
-||qntm.it.com^
+||it.com^
 ||content.24ttl.stream^
+||chimpstatic.com^
+||data.killbot.ru^
+||hk.kill-bot.ru^
+||r*.kill-bot.ru^
+||gaug.es^
+||counter.people.cn^
+||cdn-go.cn^
+||sentry.joom.it^$important
+||emrld.ltd^
+||ads-media.wildberries.ru^
+||event-collector.instawork.com^
+||nel.wb.ru^
 !
 !
 !
