@@ -1,78 +1,82 @@
 ! Title: Breaking GeoRestrictions [DNS only]
-! Version: 2.5-prerelease
-! Updated: 03.06.2026
+! Version: 2.7-prerelease
+! Updated: 04.07.2026
 !
 !
 !
 ! ==
 ! ChatGPT (OpenAI) [AI] [Geoblock]
-77.239.114.0 ab.chatgpt.com
-77.239.114.0 android.chat.openai.com
-77.239.114.0 api.openai.com
-77.239.114.0 auth.openai.com
-77.239.114.0 auth0.openai.com
-77.239.114.0 cdn.auth0.com
-77.239.114.0 cdn.oaistatic.com
-77.239.114.0 chatgpt.com
-77.239.114.0 files.oaiusercontent.com
-77.239.114.0 ios.chat.openai.com
-77.239.114.0 operator.chatgpt.com
-77.239.114.0 platform.openai.com
-77.239.114.0 tcr9i.chat.openai.com
-77.239.114.0 videos.openai.com
-77.239.114.0 webrtc.chatgpt.com
-77.239.114.0 mobile.openai.com
-77.239.114.0 api.revenuecat.com
-77.239.114.0 chat.openai.com
-77.239.114.0 sora.chatgpt.com
-77.239.114.0 sora.com
-77.239.114.0 developers.openai.com
-77.239.114.0 cdn.platform.openai.com
+45.155.204.190 ab.chatgpt.com
+45.155.204.190 android.chat.openai.com
+45.155.204.190 api.openai.com
+45.155.204.190 auth.openai.com
+45.155.204.190 auth0.openai.com
+45.155.204.190 cdn.auth0.com
+45.155.204.190 cdn.oaistatic.com
+45.155.204.190 chatgpt.com
+45.155.204.190 files.oaiusercontent.com
+45.155.204.190 ios.chat.openai.com
+45.155.204.190 operator.chatgpt.com
+45.155.204.190 platform.openai.com
+45.155.204.190 tcr9i.chat.openai.com
+45.155.204.190 videos.openai.com
+45.155.204.190 webrtc.chatgpt.com
+45.155.204.190 mobile.openai.com
+45.155.204.190 api.revenuecat.com
+45.155.204.190 chat.openai.com
+45.155.204.190 sora.chatgpt.com
+45.155.204.190 sora.com
+45.155.204.190 developers.openai.com
+45.155.204.190 cdn.platform.openai.com
+45.155.204.190 sdmntprukwest.oaiusercontent.com
+45.155.204.190 sdmntpritalynorth.oaiusercontent.com
+45.155.204.190 sdmntprpolandcentral.oaiusercontent.com
+45.155.204.190 sdmntprnortheu.oaiusercontent.com
 ! Additional
-77.239.114.0 status.openai.com
+45.155.204.190 status.openai.com
 !
 ! Claude [AI] [Geoblock]
-77.239.114.0 api.anthropic.com
-77.239.114.0 auth.anthropic.com
-77.239.114.0 claude.ai
-77.239.114.0 console.anthropic.com
-77.239.114.0 platform.claude.com
-77.239.114.0 a.claude.ai
+45.155.204.190 api.anthropic.com
+45.155.204.190 auth.anthropic.com
+45.155.204.190 claude.ai
+45.155.204.190 console.anthropic.com
+45.155.204.190 platform.claude.com
+45.155.204.190 a.claude.ai
 !
 ! Deepl [Accurate Translator] [Geoblock]
-77.239.114.0 api-free.deepl.com
-77.239.114.0 auth.deepl.com
-77.239.114.0 backend.deepl.com
-77.239.114.0 clearance.deepl.com
-77.239.114.0 deepl.com
-77.239.114.0 dict.deepl.com
-77.239.114.0 experimentation-grpc.deepl.com
-77.239.114.0 experimentation.deepl.com
-77.239.114.0 ita-free.app.deepl.com
-77.239.114.0 ita-free.www.deepl.com
-77.239.114.0 login-wall.deepl.com
-77.239.114.0 oneshot-free.www.deepl.com
-77.239.114.0 ott.deepl.com
-77.239.114.0 shield.deepl.com
-77.239.114.0 w.deepl.com
-77.239.114.0 write-free.www.deepl.com
-77.239.114.0 www.deepl.com
-77.239.114.0 www2.deepl.com
-77.239.114.0 voice-proxy.www.deepl.com
+45.155.204.190 api-free.deepl.com
+45.155.204.190 auth.deepl.com
+45.155.204.190 backend.deepl.com
+45.155.204.190 clearance.deepl.com
+45.155.204.190 deepl.com
+45.155.204.190 dict.deepl.com
+45.155.204.190 experimentation-grpc.deepl.com
+45.155.204.190 experimentation.deepl.com
+45.155.204.190 ita-free.app.deepl.com
+45.155.204.190 ita-free.www.deepl.com
+45.155.204.190 login-wall.deepl.com
+45.155.204.190 oneshot-free.www.deepl.com
+45.155.204.190 ott.deepl.com
+45.155.204.190 shield.deepl.com
+45.155.204.190 w.deepl.com
+45.155.204.190 write-free.www.deepl.com
+45.155.204.190 www.deepl.com
+45.155.204.190 www2.deepl.com
+45.155.204.190 voice-proxy.www.deepl.com
 ! Additional
-77.239.114.0 api-demo-proxy.deepl.com
-77.239.114.0 write-free.app.deepl.com
+45.155.204.190 api-demo-proxy.deepl.com
+45.155.204.190 write-free.app.deepl.com
 !
 ! Deezer [Music streaming service] [Left Russia]
-77.239.114.0 deezer.com
-77.239.114.0 dzcdn.net
-77.239.114.0 payment.deezer.com
-77.239.114.0 www.deezer.com
+45.155.204.190 deezer.com
+45.155.204.190 dzcdn.net
+45.155.204.190 payment.deezer.com
+45.155.204.190 www.deezer.com
 ! Additional
-77.239.114.0 api.deezer.com
-77.239.114.0 pipe.deezer.com
-77.239.114.0 live.deezer.com
-77.239.114.0 auth.deezer.com
+45.155.204.190 api.deezer.com
+45.155.204.190 pipe.deezer.com
+45.155.204.190 live.deezer.com
+45.155.204.190 auth.deezer.com
 !
 ! Google AI - Gemini, Veo, Nano Banana, AI Studio, Flow, Antigravity, etc.. [AI] [Geoblock]
 62.133.62.97 aisandbox-pa.googleapis.com
@@ -111,9 +115,9 @@
 !
 !
 ! Grok - X (formerly Twitter) [xAI] [AI] [Blocked]
-77.239.114.0 accounts.x.ai
-77.239.114.0 assets.grok.com
-77.239.114.0 grok.com
+45.155.204.190 accounts.x.ai
+45.155.204.190 assets.grok.com
+45.155.204.190 grok.com
 !
 !
 ! Microsoft Copilot and Xbox + Microsoft Rewards + Xbox Cloud Gaming [AI] [Games] [Geoblock, regional restrictions]
@@ -160,55 +164,55 @@
 !
 !
 ! GitHub Copilot [AI] [Coding] [Regional Restrictions and Geoblock]
-! 77.239.114.0 api.github.com # 20.05: This won't work because the IP address is assigned to the domain.
-77.239.114.0 api.individual.githubcopilot.com
-77.239.114.0 proxy.individual.githubcopilot.com
+! 45.155.204.190 api.github.com # 20.05: This won't work because the IP address is assigned to the domain.
+103.27.157.38 api.individual.githubcopilot.com
+103.27.157.38 proxy.individual.githubcopilot.com
 !
 ! Spotify [Music streaming service] [Left Russia, Full Geoblock]
-77.239.114.0 accounts.spotify.com
-77.239.114.0 aet.spotify.com
-77.239.114.0 ap-gew1.spotify.com
-77.239.114.0 api-partner.spotify.com
-77.239.114.0 api.spotify.com
-77.239.114.0 appresolve.spotify.com
-77.239.114.0 encore.scdn.co
-77.239.114.0 login.app.spotify.com
-77.239.114.0 login5.spotify.com
-77.239.114.0 open.spotify.com
-77.239.114.0 spclient.wg.spotify.com
-77.239.114.0 www.spotify.com
-77.239.114.0 xpui.app.spotify.com
-77.239.114.0 gew1-spclient.spotify.com
-77.239.114.0 accounts.scdn.co
-77.239.114.0 gew1-dealer.spotify.com
+45.155.204.190 accounts.spotify.com
+45.155.204.190 aet.spotify.com
+45.155.204.190 ap-gew1.spotify.com
+45.155.204.190 api-partner.spotify.com
+45.155.204.190 api.spotify.com
+45.155.204.190 appresolve.spotify.com
+45.155.204.190 encore.scdn.co
+45.155.204.190 login.app.spotify.com
+45.155.204.190 login5.spotify.com
+45.155.204.190 open.spotify.com
+45.155.204.190 spclient.wg.spotify.com
+45.155.204.190 www.spotify.com
+45.155.204.190 xpui.app.spotify.com
+45.155.204.190 gew1-spclient.spotify.com
+45.155.204.190 accounts.scdn.co
+45.155.204.190 gew1-dealer.spotify.com
 ! Additional
-77.239.114.0 www-growth.scdn.co
-77.239.114.0 apresolve.spotify.com
-77.239.114.0 clienttoken.spotify.com
-77.239.114.0 exp.wg.spotify.com
-77.239.114.0 gew4-spclient.spotify.com
-77.239.114.0 accounts.scdn.co
-77.239.114.0 spotify.com
-77.239.114.0 play.spotify.com
-77.239.114.0 audio-fa.scdn.co
-77.239.114.0 pl.scdn.co
+45.155.204.190 www-growth.scdn.co
+45.155.204.190 apresolve.spotify.com
+45.155.204.190 clienttoken.spotify.com
+45.155.204.190 exp.wg.spotify.com
+45.155.204.190 gew4-spclient.spotify.com
+45.155.204.190 accounts.scdn.co
+45.155.204.190 spotify.com
+45.155.204.190 play.spotify.com
+45.155.204.190 audio-fa.scdn.co
+45.155.204.190 pl.scdn.co
 ! - Test
-77.239.114.0 spotify.org
-77.239.114.0 spotify.net
-77.239.114.0 spotify-everywhere.com
-77.239.114.0 spotify.co
-77.239.114.0 spotifycharts.com
-77.239.114.0 spotifycodes.com
-77.239.114.0 spotifyforbrands.com
-77.239.114.0 spotifyjobs.com
-77.239.114.0 spoti.fi
-77.239.114.0 spotify.design
-77.239.114.0 spotify.artworks.com
-77.239.114.0 spotify.events.com
-77.239.114.0 line-in.spotify.com
-77.239.114.0 upgrade.spotify.com
-77.239.114.0 download.spotify.com
-77.239.114.0 heads-fa.spotify.com
+45.155.204.190 spotify.org
+45.155.204.190 spotify.net
+45.155.204.190 spotify-everywhere.com
+45.155.204.190 spotify.co
+45.155.204.190 spotifycharts.com
+45.155.204.190 spotifycodes.com
+45.155.204.190 spotifyforbrands.com
+45.155.204.190 spotifyjobs.com
+45.155.204.190 spoti.fi
+45.155.204.190 spotify.design
+45.155.204.190 spotify.artworks.com
+45.155.204.190 spotify.events.com
+45.155.204.190 line-in.spotify.com
+45.155.204.190 upgrade.spotify.com
+45.155.204.190 download.spotify.com
+45.155.204.190 heads-fa.spotify.com
 !
 ! last.fm [Streaming Service] [Regional block since the time when Paramount owned it]
 ! Now, as of May 27, 2026, the service has become independent.
@@ -218,39 +222,39 @@
 ! -
 !
 ! Supercell [Games] [Left Russia and Belarus, Full Geoblock]
-77.239.114.0 accounts.supercell.com
-77.239.114.0 cdn.id.supercell.com
-77.239.114.0 clashofclans.inbox.supercell.com
+45.155.204.190 accounts.supercell.com
+45.155.204.190 cdn.id.supercell.com
+45.155.204.190 clashofclans.inbox.supercell.com
 185.246.223.127 game.brawlstarsgame.com
 62.133.62.97 game.clashroyaleapp.com
 62.133.62.97 game.mocogame.com
 108.61.167.26 game.squadbustersgame.com
-77.239.114.0 game-assets.brawlstarsgame.com
-193.23.209.189 game-assets.clashofclans.com
-77.239.114.0 game-assets.clashroyaleapp.com
+108.61.167.26 game-assets.brawlstarsgame.com
+108.61.167.26 game-assets.clashofclans.com
+108.61.167.26 game-assets.clashroyaleapp.com
 193.23.209.189 gamea.clashofclans.com
-77.239.114.0 security.id.supercell.com
-77.239.114.0 store.supercell.com
+103.27.157.38 security.id.supercell.com
+103.27.157.38 store.supercell.com
 !
 ! Twitch [Streaming] [Regional restrictions (for example: the resolution of video streams, the lack of certain functions, etc..)]
 ! 13.33.235.111 twitch.tv
-77.239.114.0 twitch.tv
+45.155.204.190 twitch.tv
 ! 13.33.235.111 gql.twitch.tv
-77.239.114.0 gql.twitch.tv
+45.155.204.190 gql.twitch.tv
 ! 18.165.140.115 usher.ttvnw.net
-77.239.114.0 usher.ttvnw.net
+45.155.204.190 usher.ttvnw.net
 ! Additional
 !13.33.235.111 assets.twitch.tv
 ! 13.33.235.111 k.twitchcdn.net
-77.239.114.0 k.twitchcdn.net
+45.155.204.190 k.twitchcdn.net
 ! 13.33.235.111 irc-ws.chat.twitch.tv
-77.239.114.0 irc-ws.chat.twitch.tv
+45.155.204.190 irc-ws.chat.twitch.tv
 ! 13.33.235.111 passport.twitch.tv
-77.239.114.0 passport.twitch.tv
+45.155.204.190 passport.twitch.tv
 ! 13.33.235.111 hermes.twitch.tv
-77.239.114.0 hermes.twitch.tv
+45.155.204.190 hermes.twitch.tv
 ! 18.165.140.115 vod-secure.twitch.tv
-77.239.114.0 vod-secure.twitch.tv
+45.155.204.190 vod-secure.twitch.tv
 !
 ! 4PDA [Forums] [Some topics are closed from Russian IP-addresses, Regional Restrictions]
 ! 07.05: This won't work because the IP address is assigned to the domain.
@@ -262,33 +266,33 @@
 ! -Own-
 !
 ! Canva [Creating] [Full Geoblock]
-77.239.114.0 www.canva.com
-77.239.114.0 canva.com
-77.239.114.0 content-management-files.canva.com
-77.239.114.0 static.canva.com
-77.239.114.0 canva.me
+45.155.204.190 www.canva.com
+45.155.204.190 canva.com
+45.155.204.190 content-management-files.canva.com
+45.155.204.190 static.canva.com
+45.155.204.190 canva.me
 !
 !
 ! Intel [Software] [Left Russia and Belarus, Full Geoblock]
-77.239.114.0 www.intel.com
-77.239.114.0 intel.com
+45.155.204.190 www.intel.com
+45.155.204.190 intel.com
 ! Additional
-77.239.114.0 dsadata.intel.com
-77.239.114.0 gameplay.intel.com
-77.239.114.0 certificates.intel.com
-77.239.114.0 pki.intel.com
-77.239.114.0 ocsp.intel.com
+! 45.155.204.190 dsadata.intel.com
+! 45.155.204.190 gameplay.intel.com
+45.155.204.190 certificates.intel.com
+45.155.204.190 pki.intel.com
+45.155.204.190 ocsp.intel.com
 !
 !
 ! Web Archive (Wayback Machine) [?] [Censorship restrictions]
-103.27.157.38 web.archive.org
-103.27.157.38 archive.org
+45.155.204.190 web.archive.org
+45.155.204.190 archive.org
 ! Additional
-!103.27.157.38 web-static.archive.org
-!103.27.157.38 wayback-api.archive.org
-!103.27.157.38 pragma.archivelab.org
-!103.27.157.38 archivelab.org
-!103.27.157.38 ca.archive.org
+!45.155.204.190 web-static.archive.org
+!45.155.204.190 wayback-api.archive.org
+!45.155.204.190 pragma.archivelab.org
+!45.155.204.190 archivelab.org
+!45.155.204.190 ca.archive.org
 !
 !
 ! Triage [CyberSecurity] [Geoblock]
@@ -296,41 +300,41 @@
 !
 !
 ! Tiktok [Social] [Regional Restrictions]
-77.239.114.0 www.tiktok.com
-77.239.114.0 tiktok.com
+103.27.157.38 www.tiktok.com
+103.27.157.38 tiktok.com
 ! Только на сайте. Приложение определяет регион по оператору, а не по IP. Поэтому есть моды.
 ! Additional
 23.73.2.132 bytedapm.com
 23.73.2.132 byteoversea.com
-77.239.114.0 muscdn.com
-77.239.114.0 musical.ly
-77.239.114.0 tik-tokapi.com
-77.239.114.0 tiktok-minis.com
-77.239.114.0 tiktok-row.net
+45.155.204.190 muscdn.com
+45.155.204.190 musical.ly
+45.155.204.190 tik-tokapi.com
+45.155.204.190 tiktok-minis.com
+45.155.204.190 tiktok-row.net
 23.73.2.132 tiktokcdn-eu.com
 23.73.2.132 tiktokcdn-us.com
 23.73.2.132 tiktokcdn.com
-77.239.114.0 tiktokd.net
-77.239.114.0 tiktokd.org
+45.155.204.190 tiktokd.net
+45.155.204.190 tiktokd.org
 23.73.2.132 tiktokeu-cdn.com
-77.239.114.0 tiktokglobalshopv.com
-77.239.114.0 tiktokminis.us
+45.155.204.190 tiktokglobalshopv.com
+45.155.204.190 tiktokminis.us
 23.73.2.132 tiktokrow-cdn.com
-77.239.114.0 tiktokv.com
-77.239.114.0 tiktokv.eu
-77.239.114.0 tiktokv.us
-77.239.114.0 tiktokw.eu
-77.239.114.0 tiktokw.us
-77.239.114.0 ttcdn-us.com
-77.239.114.0 ttlivecdn.com
-77.239.114.0 ttoverseaus.net
-77.239.114.0 ttwstatic.com
-77.239.114.0 tiktokcdn-us.com.edgesuite.net
-77.239.114.0 tiktokcdn.com.akamaized.net
-77.239.114.0 tiktokcdn.com.edgesuite.net
-77.239.114.0 tiktokv.com.edgekey.net
-77.239.114.0 tiktokv.com.edgesuite.net
-77.239.114.0 p16-tiktokcdn-com.akamaized.net
+45.155.204.190 tiktokv.com
+45.155.204.190 tiktokv.eu
+45.155.204.190 tiktokv.us
+45.155.204.190 tiktokw.eu
+45.155.204.190 tiktokw.us
+45.155.204.190 ttcdn-us.com
+45.155.204.190 ttlivecdn.com
+45.155.204.190 ttoverseaus.net
+45.155.204.190 ttwstatic.com
+45.155.204.190 tiktokcdn-us.com.edgesuite.net
+45.155.204.190 tiktokcdn.com.akamaized.net
+45.155.204.190 tiktokcdn.com.edgesuite.net
+45.155.204.190 tiktokv.com.edgekey.net
+45.155.204.190 tiktokv.com.edgesuite.net
+45.155.204.190 p16-tiktokcdn-com.akamaized.net
 !
 ! A-GPS [Software] [Embargo]
 ! Unlocking access to A-GPS data from vendors Qualcomm and Broadcom.
@@ -339,50 +343,50 @@
 ! Will it work? It's still unclear..
 ! XXX.XXX.XXX.X sfepodownload.mediatek.com
 ! XXX.XXX.XXX.X sgepodownload.mediatek.com
-77.239.114.0 xtrapath1.izatcloud.net
-77.239.114.0 xtrapath2.izatcloud.net
-77.239.114.0 xtrapath3.izatcloud.net
-77.239.114.0 xtrapath4.izatcloud.net
-77.239.114.0 xtrapath5.izatcloud.net
-77.239.114.0 xtrapath6.izatcloud.net
-77.239.114.0 xtrapath7.izatcloud.net
-77.239.114.0 xtrapath8.izatcloud.net
-77.239.114.0 xtrapath9.izatcloud.net
-77.239.114.0 xtrapath*.izatcloud.net
-77.239.114.0 xtrapath.izatcloud.net
-! 77.239.114.0 qcomgeo2.com
-77.239.114.0 path3.xtracloud.net
-77.239.114.0 path*.xtracloud.net
-77.239.114.0 path1.xtracloud.net
-77.239.114.0 path.xtracloud.net
-77.239.114.0 path2.xtracloud.net
-77.239.114.0 path4.xtracloud.net
-77.239.114.0 path5.xtracloud.net
-77.239.114.0 path6.xtracloud.net
-77.239.114.0 path7.xtracloud.net
-77.239.114.0 path8.xtracloud.net
-77.239.114.0 path9.xtracloud.net
-77.239.114.0 gllto.glpals.com
-77.239.114.0 gllto1.glpals.com
-77.239.114.0 gllto2.glpals.com
-77.239.114.0 gllto3.glpals.com
-77.239.114.0 gllto4.glpals.com
-77.239.114.0 gllto5.glpals.com
-77.239.114.0 gllto6.glpals.com
-77.239.114.0 gllto7.glpals.com
-77.239.114.0 gllto8.glpals.com
-77.239.114.0 gllto9.glpals.com
-77.239.114.0 gllto*.glpals.com
-77.239.114.0 gps_netops.broadcom.com
-77.239.114.0 ssl.izatcloud.net
+45.155.204.190 xtrapath1.izatcloud.net
+45.155.204.190 xtrapath2.izatcloud.net
+45.155.204.190 xtrapath3.izatcloud.net
+45.155.204.190 xtrapath4.izatcloud.net
+45.155.204.190 xtrapath5.izatcloud.net
+45.155.204.190 xtrapath6.izatcloud.net
+45.155.204.190 xtrapath7.izatcloud.net
+45.155.204.190 xtrapath8.izatcloud.net
+45.155.204.190 xtrapath9.izatcloud.net
+45.155.204.190 xtrapath*.izatcloud.net
+45.155.204.190 xtrapath.izatcloud.net
+! 45.155.204.190 qcomgeo2.com
+45.155.204.190 path3.xtracloud.net
+45.155.204.190 path*.xtracloud.net
+45.155.204.190 path1.xtracloud.net
+45.155.204.190 path.xtracloud.net
+45.155.204.190 path2.xtracloud.net
+45.155.204.190 path4.xtracloud.net
+45.155.204.190 path5.xtracloud.net
+45.155.204.190 path6.xtracloud.net
+45.155.204.190 path7.xtracloud.net
+45.155.204.190 path8.xtracloud.net
+45.155.204.190 path9.xtracloud.net
+45.155.204.190 gllto.glpals.com
+45.155.204.190 gllto1.glpals.com
+45.155.204.190 gllto2.glpals.com
+45.155.204.190 gllto3.glpals.com
+45.155.204.190 gllto4.glpals.com
+45.155.204.190 gllto5.glpals.com
+45.155.204.190 gllto6.glpals.com
+45.155.204.190 gllto7.glpals.com
+45.155.204.190 gllto8.glpals.com
+45.155.204.190 gllto9.glpals.com
+45.155.204.190 gllto*.glpals.com
+45.155.204.190 gps_netops.broadcom.com
+45.155.204.190 ssl.izatcloud.net
 !
-77.239.114.0 ssl.gpsonextra.net
-77.239.114.0 xtra1.gpsonextra.net
-77.239.114.0 xtra2.gpsonextra.net
-77.239.114.0 xtra3.gpsonextra.net
-77.239.114.0 xtra4.gpsonextra.net
-77.239.114.0 xtra5.gpsonextra.net
-77.239.114.0 xtra*.gpsonextra.net
+45.155.204.190 ssl.gpsonextra.net
+45.155.204.190 xtra1.gpsonextra.net
+45.155.204.190 xtra2.gpsonextra.net
+45.155.204.190 xtra3.gpsonextra.net
+45.155.204.190 xtra4.gpsonextra.net
+45.155.204.190 xtra5.gpsonextra.net
+45.155.204.190 xtra*.gpsonextra.net
 !
 !
 ! HP [Software]
@@ -402,17 +406,17 @@
 !
 ! DevianArt [Creating] [Restrictions on use VPN]
 ! 07.05: This won't work because the IP address is assigned to the domain..
-! 77.239.114.0 www.deviantart.com
-! 77.239.114.0 deviantart.com
-! 77.239.114.0 st.deviantart.net
-! 77.239.114.0 static.parastorage.com
-! 77.239.114.0 a.deviantart.net
+! 45.155.204.190 www.deviantart.com
+! 45.155.204.190 deviantart.com
+! 45.155.204.190 st.deviantart.net
+! 45.155.204.190 static.parastorage.com
+! 45.155.204.190 a.deviantart.net
 !
 ! Habr [?] [Some articles are closed to Russian IP-addresses, Regional Restrictions]
 ! 07.05: This won't work because the IP address is assigned to the domain..
-! 77.239.114.0 habr.com
-! 77.239.114.0 habrastorage.org
-! 77.239.114.0 assets.habr.com
+! 45.155.204.190 habr.com
+! 45.155.204.190 habrastorage.org
+! 45.155.204.190 assets.habr.com
 !
 !
 ! -
@@ -437,28 +441,34 @@
 ! Other [Regional Restrictions, Geoblock, other]
 130.255.77.28 ntc.party
 23.216.134.205 developer.nvidia.com
-77.239.114.0 profile.broadcom.com
-104.103.64.8 www.dell.com
+45.155.204.190 profile.broadcom.com
+45.155.204.190 www.dell.com
 89.108.98.20 www.notion.so
-77.239.114.0 api-global.squareup.com
-77.239.114.0 api.squareup.com
-77.239.114.0 api.cdnlibs.org
-146.75.116.193 api.imgur.com
-77.239.114.0 www.patreon.com
-77.239.114.0 calendar.notion.so
+45.155.204.190 api-global.squareup.com
+45.155.204.190 api.squareup.com
+45.155.204.190 api.cdnlibs.org
+45.155.204.190 api.imgur.com
+185.246.223.127 www.patreon.com
+45.155.204.190 calendar.notion.so
 ! Additional
-77.239.114.0 www.qualcomm.com
+45.155.204.190 www.qualcomm.com
 23.73.2.132 ntc.rkn.quest
-77.239.114.0 jobs.ashbyhq.com
-77.239.114.0 c14.patreon.com
-77.239.114.0 c*.patreon.com
-77.239.114.0 c5.patreon.com
+185.246.223.127 jobs.ashbyhq.com
+185.246.223.127 c14.patreon.com
+185.246.223.127 c*.patreon.com
+185.246.223.127 c5.patreon.com
+103.27.157.38 controlplane.tailscale.com
+157.240.245.174 instagram.com
+157.240.245.174 www.instagram.com
+157.240.245.174 b.i.instagram.com
+157.240.245.174 z-p42-chat-e2ee-ig.facebook.com
+157.240.245.174 help.instagram.com
 ! Will it work? It's still unclear..
-77.239.114.0 time.xtracloud.net
-77.239.114.0 nts.xtracloud.net
-77.239.114.0 info.izatcloud.net
-77.239.114.0 data-cdn.mbamupdates.com
-77.239.114.0 uupdump.net
+45.155.204.190 time.xtracloud.net
+45.155.204.190 nts.xtracloud.net
+45.155.204.190 info.izatcloud.net
+45.155.204.190 data-cdn.mbamupdates.com
+45.155.204.190 uupdump.net
 !
 !
 !
