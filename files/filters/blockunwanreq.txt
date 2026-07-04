@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.6.0
-! TimeUpdated: 2026-07-03T16:36:30+00:00
+! Version: 5.6.1
+! TimeUpdated: 2026-07-04T16:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -3673,6 +3673,16 @@ $cookie=trackingToken
 ||joom.*/api/*/rewardWheel/$xhr
 ||emrld.ltd^
 ||event-collector.instawork.com^
+||setka.ru^$cookie=user_device_id,important
+||cdn-assets.setka.ru/setka-web/static/js/controllers/cookieConsentController.$xhr,script,domain=setka.ru,redirect=noopjs
+||cdn-assets.setka.ru/setka-web/static/js/controllers/tracking/$xhr,script,domain=setka.ru,redirect=noopjs
+||cdn-assets.setka.ru/setka-web/static/js/controllers/utm/$xhr,script,domain=setka.ru,redirect=noopjs
+||cdn-assets.setka.ru/setka-web/static/js/controllers/vpnDataController.$xhr,script,domain=setka.ru,redirect=noopjs
+||cdn-assets.setka.ru/setka-web/static/js/utils/utmUtils.$xhr,script,domain=setka.ru,redirect=noopjs
+||setka.ru/analytics/
+||eventlog.setka.ru^$important
+/?local_ga_js=
+/wp-content/plugins/easy-table-of-contents/assets/js/ez-toc-sticky.$script,redirect=noopjs
 !
 !
 !
@@ -6066,6 +6076,10 @@ people.com.cn##div[class^="xz20100129_1"]
 joom.ru##.root___xW8vS
 gpnbonus.ru##.vue-popup-container
 globalcloudnetwork.ru##.kenta-cookies-consent, .full-width
+fastfox.pro##.action-block-support, .action-block-head, .rounded-0, .p-0
+fastfox.pro##.bg-light, .rounded-5, .p-4
+fastfox.pro##main.overflow-hidden:nth-child(5) > section.pt-sm-8.pt-5.pb-sm-10.pb-5:nth-child(3) > div.container > div.blog-post-wrapper > div.row.gx-5 > div.col-lg-8:first-child > div.mt-5:last-child
+setka.ru###section-banner
 !
 !
 ! - Scripts -
