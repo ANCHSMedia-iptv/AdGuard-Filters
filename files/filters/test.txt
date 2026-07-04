@@ -121,38 +121,38 @@
 !
 !
 ! Microsoft Copilot and Xbox + Microsoft Rewards + Xbox Cloud Gaming [AI] [Games] [Geoblock, regional restrictions]
-89.108.98.20 copilot.microsoft.com
-89.108.98.20 copilot.cloud.microsoft
-80.74.29.235 edgeservices.bing.com
-150.171.28.10 rewards.bing.com
+45.155.204.190 copilot.microsoft.com
+45.155.204.190 copilot.cloud.microsoft
+45.155.204.190 edgeservices.bing.com
+45.155.204.190 rewards.bing.com
 62.133.62.97 sydney.bing.com
-89.108.98.20 xboxdesignlab.xbox.com
-89.108.98.20 xgpuweb.gssv-play-prod.xboxlive.com
-89.108.98.20 xgpuwebf2p.gssv-play-prod.xboxlive.com
-89.108.98.20 xsts.auth.xboxlive.com
+45.155.204.190 xboxdesignlab.xbox.com
+45.155.204.190 xgpuweb.gssv-play-prod.xboxlive.com
+45.155.204.190 xgpuwebf2p.gssv-play-prod.xboxlive.com
+45.155.204.190 xsts.auth.xboxlive.com
 ! -Own-
-89.108.98.20 addr.tools
-89.108.98.20 accounts.xboxlive.com
+45.155.204.190 addr.tools
+45.155.204.190 accounts.xboxlive.com
 62.133.62.97 cp.microsoft.com
-89.108.98.20 device.auth.xboxlive.com
-89.108.98.20 dlassets-ssl.xboxlive.com
-89.108.98.20 gamepass.com
-89.108.98.20 gfx.ms
-89.108.98.20 images-eds-ssl.xboxlive.com
-89.108.98.20 mgt.xboxlive.com
-89.108.98.20 microsoftonline.com
-89.108.98.20 mp.microsoft.com
-89.108.98.20 packages.xboxlive.com
-89.108.98.20 pmservices.cp.microsoft.com
-89.108.98.20 rta.xboxlive.com
-89.108.98.20 title.auth.xboxlive.com
-89.108.98.20 titlestorage.xboxlive.com
-89.108.98.20 user.auth.xboxlive.com
-89.108.98.20 xbl-smooth.xboxlive.com
-89.108.98.20 xbox.com
-89.108.98.20 xboxab.com
-89.108.98.20 teal.xboxservices.com
-89.108.98.20 silver.xboxservices.com
+45.155.204.190 device.auth.xboxlive.com
+45.155.204.190 dlassets-ssl.xboxlive.com
+45.155.204.190 gamepass.com
+45.155.204.190 gfx.ms
+45.155.204.190 images-eds-ssl.xboxlive.com
+45.155.204.190 mgt.xboxlive.com
+45.155.204.190 microsoftonline.com
+45.155.204.190 mp.microsoft.com
+45.155.204.190 packages.xboxlive.com
+45.155.204.190 pmservices.cp.microsoft.com
+45.155.204.190 rta.xboxlive.com
+45.155.204.190 title.auth.xboxlive.com
+45.155.204.190 titlestorage.xboxlive.com
+45.155.204.190 user.auth.xboxlive.com
+45.155.204.190 xbl-smooth.xboxlive.com
+45.155.204.190 xbox.com
+45.155.204.190 xboxab.com
+45.155.204.190 teal.xboxservices.com
+45.155.204.190 silver.xboxservices.com
 ! Additional
 ! 62.133.62.97 digicert.com
 ! 62.133.62.97 msftauth.net
@@ -304,22 +304,29 @@
 103.27.157.38 tiktok.com
 ! Только на сайте. Приложение определяет регион по оператору, а не по IP. Поэтому есть моды.
 ! Additional
-23.73.2.132 bytedapm.com
-23.73.2.132 byteoversea.com
+! 23.73.2.132 bytedapm.com
+45.155.204.190 bytedapm.com
+! 23.73.2.132 byteoversea.com
+45.155.204.190 byteoversea.com
 45.155.204.190 muscdn.com
 45.155.204.190 musical.ly
 45.155.204.190 tik-tokapi.com
 45.155.204.190 tiktok-minis.com
 45.155.204.190 tiktok-row.net
-23.73.2.132 tiktokcdn-eu.com
-23.73.2.132 tiktokcdn-us.com
-23.73.2.132 tiktokcdn.com
+! 23.73.2.132 tiktokcdn-eu.com
+45.155.204.190 tiktokcdn-eu.com
+! 23.73.2.132 tiktokcdn-us.com
+45.155.204.190 tiktokcdn-us.com
+! 23.73.2.132 tiktokcdn.com
+45.155.204.190 tiktokcdn.com
 45.155.204.190 tiktokd.net
 45.155.204.190 tiktokd.org
-23.73.2.132 tiktokeu-cdn.com
+! 23.73.2.132 tiktokeu-cdn.com
+45.155.204.190 tiktokeu-cdn.com
 45.155.204.190 tiktokglobalshopv.com
 45.155.204.190 tiktokminis.us
-23.73.2.132 tiktokrow-cdn.com
+! 23.73.2.132 tiktokrow-cdn.com
+45.155.204.190 tiktokrow-cdn.com
 45.155.204.190 tiktokv.com
 45.155.204.190 tiktokv.eu
 45.155.204.190 tiktokv.us
@@ -391,18 +398,18 @@
 !
 ! HP [Software]
 ! Will it work? It's still unclear..
-89.108.98.20 sudf-resources.hpcloud.hp.com
+45.155.204.190 sudf-resources.hpcloud.hp.com
 !
 !
 ! Wix [?] [Regional Restrictions and Geoblock]
 ! Will it work? It's still unclear..
-89.108.98.20 wix-code.com
-89.108.98.20 wix.com
-89.108.98.20 wixapps.net
-89.108.98.20 support.wix.com
-89.108.98.20 duplexer.wix.com
-89.108.98.20 status.wix.com
-89.108.98.20 users.wix.com
+45.155.204.190 wix-code.com
+45.155.204.190 wix.com
+45.155.204.190 wixapps.net
+45.155.204.190 support.wix.com
+45.155.204.190 duplexer.wix.com
+45.155.204.190 status.wix.com
+45.155.204.190 users.wix.com
 !
 ! DevianArt [Creating] [Restrictions on use VPN]
 ! 07.05: This won't work because the IP address is assigned to the domain..
