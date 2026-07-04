@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
 ! Version: 5.6.1
-! TimeUpdated: 2026-07-04T16:36:30+00:00
+! TimeUpdated: 2026-07-04T18:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -208,8 +208,8 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
 ||invitro.ru/7d00d937187efe4c57c9e2b6292f94f9^$xhr,domain=invitro.ru,redirect=nooptext,important
 ||widget.7medica.ru/*.*^$script,xhr,important
-*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-dsn-customers.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru|~sentry-next.wixpress.com|~reporting.honeygain.com|~sentry-relay.opera-api.com|~sentry.walletbot.me|~sentry.viju.ru|~sentry-relay.bi.zone|~sentry.combo.mail.ru|~sentry.worldota.net|~sentry.dev.cdek-shopping.tech|~sentry.chibbis.ru|~metro.sentry.beta.agency|~sentry.timeweb.cloud|~sentry.radolyn.com|~sentry.obs.mts.ru|~sentry.*.mts.ru|~getsentry.com|~sentry.skyeng.tech|~sentry.iilab.ru|~sentry.burgerkingrus.ru|~sentry.joom.it,important
-! */api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-dsn-customers.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru|~sentry-next.wixpress.com|~reporting.honeygain.com|~sentry-relay.opera-api.com|~sentry.walletbot.me|~sentry.viju.ru|~sentry-relay.bi.zone|~sentry.combo.mail.ru|~sentry.worldota.net|~sentry.dev.cdek-shopping.tech|~sentry.chibbis.ru|~metro.sentry.beta.agency|~sentry.timeweb.cloud|~sentry.radolyn.com|~sentry.obs.mts.ru|~sentry.*.mts.ru|~getsentry.com|~sentry.skyeng.tech|~sentry.iilab.ru|~sentry.burgerkingrus.ru|~sentry.joom.it,important
+*/api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-dsn-customers.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru|~sentry-next.wixpress.com|~reporting.honeygain.com|~sentry-relay.opera-api.com|~sentry.walletbot.me|~sentry.viju.ru|~sentry-relay.bi.zone|~sentry.combo.mail.ru|~sentry.worldota.net|~sentry.dev.cdek-shopping.tech|~sentry.chibbis.ru|~metro.sentry.beta.agency|~sentry.timeweb.cloud|~sentry.radolyn.com|~sentry.obs.mts.ru|~sentry.*.mts.ru|~getsentry.com|~sentry.skyeng.tech|~sentry.iilab.ru|~sentry.burgerkingrus.ru|~sentry.joom.it|~receive-sentry.lmru.tech,important
+! */api/*/envelope/$ping,xhr,domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-dsn-customers.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru|~sentry-next.wixpress.com|~reporting.honeygain.com|~sentry-relay.opera-api.com|~sentry.walletbot.me|~sentry.viju.ru|~sentry-relay.bi.zone|~sentry.combo.mail.ru|~sentry.worldota.net|~sentry.dev.cdek-shopping.tech|~sentry.chibbis.ru|~metro.sentry.beta.agency|~sentry.timeweb.cloud|~sentry.radolyn.com|~sentry.obs.mts.ru|~sentry.*.mts.ru|~getsentry.com|~sentry.skyeng.tech|~sentry.iilab.ru|~sentry.burgerkingrus.ru|~sentry.joom.it|~receive-sentry.lmru.tech,important
 ||habrastorage.org/getpro/habr/branding/*/*/*/*.jpg^$image,domain=habr.com
 ||maxmind.com^$important
 ||mediafire.com/blank.html^$domain=mediafire.com,important
@@ -3232,7 +3232,7 @@ $cookie=last_catalog_url
 ||jointcomm.ru/api/v*/livechat/visitor^
 ||cdek.ru/api-site/ping/^
 ||sentry.chibbis.ru^$important
-/?sentry_key=$domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-dsn-customers.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru|~sentry-next.wixpress.com|~reporting.honeygain.com|~sentry-relay.opera-api.com|~sentry.walletbot.me|~sentry.viju.ru|~sentry-relay.bi.zone|~sentry.combo.mail.ru|~sentry.worldota.net|~sentry.dev.cdek-shopping.tech|~sentry.chibbis.ru|~metro.sentry.beta.agency|~sentry.timeweb.cloud|~sentry.radolyn.com|~sentry.obs.mts.ru|~sentry.*.mts.ru|~getsentry.com|~sentry.skyeng.tech|~sentry.iilab.ru|~sentry.burgerkingrus.ru|~sentry.joom.it
+/?sentry_key=$domain=~pochta.ru|~gloria-jeans.ru|~demix.ru|~sportmaster.ru|~mm.ru|~kazanexpress.ru|~vk.com|~vk.net|~vk.me|~vk.ru|~vk.me|~gitlab.com|~sentry.lenta.tech|~sentry.infra.myapelsin.ru|~sentry.iptv2022.com|~sentry.x5.ru|~sentry.ozon.ru|~sentry-tech.cdek.ru|~*-sentry.wb.ru|~sentry-dsn-customers.megamarket.tech|~stacks.vk-portal.net|~stats.vk-portal.net|~stacks.vk-portal.net|~sentry.pr-cy.io|~sentry-*.protontech.ch|~sentry.kontur.host|~*-sentry.vkplay.ru|~sentry.hcaptcha.com|~sentry.amediateka.tech|~sentry.iptv.rt.ru|~sentry.nperf.com|~sentry.cgorod.pw|~sentry-ms.prod.sc.prosv.ru|~portal-sentry-v2.vk.team|~sentry.*.mts.ru|~sentry.bigenc.ru|~sentry.sbercloud.tech|~sentry.papajohns.ltd|~sentry-relay.beeline.ru|~*-sentry.k.avito.ru|~sentry.mos.ru|~sentry.srv.habr.com|~sentry.matchtv.ru|~sentry.vedomosti.ru|~sentry.odysee.tv|~sentry.viqeo.tv|~sentry.hh.ru|~sentry-mobile.prod.ya.magnit.ru|~sentry.tibibox.com|~sentry-cdn.com|~sentry.radolyn.com|~*sentry.gitlab.net|~sentry.oits.su|~sentry-internal.x5.ru|~sentry.obs.mws-team.ru|~sentry-ingest.kuper.ru|~error-hub.tinkoff.ru|~error-hub.tbank.ru|~*ingest*.sentry.io|~sentry.np-internal.ru|~sentry.medrocket.ru|~sentry-next.wixpress.com|~reporting.honeygain.com|~sentry-relay.opera-api.com|~sentry.walletbot.me|~sentry.viju.ru|~sentry-relay.bi.zone|~sentry.combo.mail.ru|~sentry.worldota.net|~sentry.dev.cdek-shopping.tech|~sentry.chibbis.ru|~metro.sentry.beta.agency|~sentry.timeweb.cloud|~sentry.radolyn.com|~sentry.obs.mts.ru|~sentry.*.mts.ru|~getsentry.com|~sentry.skyeng.tech|~sentry.iilab.ru|~sentry.burgerkingrus.ru|~sentry.joom.it|~receive-sentry.lmru.tech
 ||snt.dellin.ru^$important
 ||dellin.ru/api/chronicles/v*/tracking/
 ||dellin.ru/api/placement-selector/v*/banners
@@ -3683,6 +3683,15 @@ $cookie=trackingToken
 ||eventlog.setka.ru^$important
 /?local_ga_js=
 /wp-content/plugins/easy-table-of-contents/assets/js/ez-toc-sticky.$script,redirect=noopjs
+/#_r_0_^
+/#_r_2_^
+/#_r_4_^
+||api-exponea.o2.cz^$important
+/^.*(\.|//)shar(e|ing)\.[a-z0-9-]{2,60}\..*$/$image,match-case,domain=~discord.com|~reddit.com|~reddittorjg6rue252oqsxryoxengawnmo46qy4kyii5wtqnwfj4ooad.onion
+||2gis.*^$cookie=spid
+||2gis.com/previews/1243808893742612480/d89a8614-0601-47c8-977d-ba2f1a8a418e/1/ru/image_48x48.png^$image,domain=2gis.ru
+||receive-sentry.lmru.tech^$important
+||scitylana.apteka.ru^$important
 !
 !
 !
@@ -6080,6 +6089,9 @@ fastfox.pro##.action-block-support, .action-block-head, .rounded-0, .p-0
 fastfox.pro##.bg-light, .rounded-5, .p-4
 fastfox.pro##main.overflow-hidden:nth-child(5) > section.pt-sm-8.pt-5.pb-sm-10.pb-5:nth-child(3) > div.container > div.blog-post-wrapper > div.row.gx-5 > div.col-lg-8:first-child > div.mt-5:last-child
 setka.ru###section-banner
+###gcookiegprompt
+##.td-social-sharing-button
+apteka.ru##.Carousel__stage
 !
 !
 ! - Scripts -
@@ -6972,6 +6984,7 @@ books.yandex.ru##.plus-button-cls, .PlusButtonLegacy_plusButton__header__RbPaw, 
 alice.yandex.ru##div[class*="MessageBubble-Container_component_futurisAdOnly"]
 alice.yandex.ru##div[class*="AdvCard AdvCard_bottom"]
 yandex.ru##li[class^="serp-item RsyaOrganic serp-item_card"]
+yandex.ru##div[class^="AdvPremium-List"]
 !
 !
 ! =
@@ -8235,8 +8248,8 @@ t2.ru,tele2.ru#@##portal
 @@||cdn.voka.tv/live/*.m3u8
 teletype.in#@#div.preloader
 ! @@||gazeta.ru^$removeparam=/^utm_auth=false$/,important
-@@$removeparam=utm_auth,domain=gazeta.ru|gazeta.press,important
-@@$removeparam=/^\??utm_.*$/i,domain=gazeta.ru|gazeta.press,important
+@@$removeparam=utm_auth,domain=gazeta.ru|gazeta.press|ferra.ru,important
+@@$removeparam=/^\??utm_.*$/i,domain=gazeta.ru|gazeta.press|ferra.ru,important
 @@||gazeta.ru/auth/sso.shtml?origin=
 @@/js-challenge-script-
 @@||1.1.1.1^$app=com.bluecord
@@ -8388,6 +8401,7 @@ teletype.in#@#div.preloader
 @@||restream-media.net/api/v*/user/feature_toggles/enable_teleport_streaming
 @@||teleport.media/v*/nodr/
 @@||vk.com/wkview.php$domain=vk.com,important
+@@$cookie=pll_language
 !
 !
 ! -
