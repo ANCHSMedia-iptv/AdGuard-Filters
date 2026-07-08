@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.8.4
+! Version: 4.8.5
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-07-04T18:36:30+00:00
+! TimeUpdated: 2026-07-08T18:36:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 04.07.2026 18:36 UTC
+! Last Modified: 08.07.2026 18:36 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -292,7 +292,7 @@
 ||applicationinsights.azure.*^
 ||inference-app-gateway.*.cloudapp.azure.com^
 ||collector.azure.*^
-||monitor.azure.com^
+||monitor.azure.com^$important
 ||adsdkpreprod*.azureedge.net^
 ||adsdkprod*.azureedge.net^
 ||msadsscale.azureedge.net^
@@ -728,7 +728,6 @@
 ||beacon.wikia-services.com^
 ||news.mirtesen.ru^
 ||counter.rambler.ru^$important
-||monitor.azure.com^$important
 ||clicktale.net^$important
 ||ads.linkedin.com^$important
 ||bat.bing.com^$important
@@ -1083,7 +1082,6 @@
 ||fyber.com^
 ||dls-account.di.atlas.samsung.com^
 ||kidecyg.com^
-||monitor.azure.com^
 ||impactradius-event.com^
 ||fpt.microsoft.com^
 ||lptag.liveperson.net^
@@ -2167,6 +2165,29 @@
 ||api-exponea.o2.cz^
 ||receive-sentry.lmru.tech^$important
 ||scitylana.apteka.ru^
+||p.data.cctv.com^
+||tracker-00.qvb.qcloud.com^
+||permutive.app^
+||ntv.io^
+||*.demdex.net^
+||rcontent.services.tvn.pl^
+||dcf.espn.com^
+||log.go.com^
+||lightning.*.*
+||services.disqus.com^
+||referrer.disqus.com^
+||dmp.dt.aitudala.kz^
+||rum-static.pingdom.net^
+||error-tracking.arvancloud.ir^$important
+||cdn.debugbear.com^
+||cdn.botfaqtor.ru^
+||metriks.serv.host^
+||tracking.serverguard.pro^$important
+||artfut.com^
+||detmir-stats.ru^$important
+||sp-env-p.detmir.ru^$important
+||slog.umico.az^$important
+||api.*.exponea.com^$important
 !
 !
 !
