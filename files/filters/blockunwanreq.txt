@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.6.2
-! TimeUpdated: 2026-07-08T18:36:30+00:00
+! Version: 5.6.3
+! TimeUpdated: 2026-07-09T18:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -2508,7 +2508,9 @@ $cookie=__fingerprint__,important
 ||growthbook.io^$third-party,domain=~growthbook.io
 ||monetka.ru/service_feedback/index/$domain=monetka.ru
 ||monetka.ru/uploads/homepage_banner/$image,domain=monetka.ru
-||growthbook-*.lenta.*^$important
+||growthbook-*.api.lenta.com^$important
+||growthbook-cdn.api.lenta.com^
+||growthbook-proxy.lenta.tech^$important
 ||fp.kaspersky-labs.com/cld_track
 ||magnit.ru/_nuxt/AdsBy$css,domain=magnit.ru,redirect=noopcss
 ||magnit.ru/webgate/ab/$xhr,domain=magnit.ru,redirect=empty
@@ -3697,7 +3699,7 @@ $cookie=trackingToken
 ||log.qvb.qcloud.com^
 ||cctv.com/js/cntv_Advertise.js^$script,domain=cctv.com,redirect=noopjs
 ||tracker-00.qvb.qcloud.com^
-||p2.img.cctvpic.com/photoAlbum/templet/special/PAGEztNyoigrNNrbbNV8eNiD230906/ELMTRUc44LDHiKiWEcTDpenf230906_1782376741.png^$image,domain=tv.cctv.com
+||p2.img.cctvpic.com/photoAlbum/templet/special/PAGEztNyoigrNNrbbNV8eNiD230906/ELMTRUc44LDHiKiWEcTDpenf230906_1782376741.png^$image,domain=tv.cctv.com|cctv.com
 ||ntv.io^
 /events/$domain=animalplanet.com|investigationdiscovery.com,important
 /cms/collections/$domain=animalplanet.com|investigationdiscovery.com,important
@@ -3727,6 +3729,13 @@ $cookie=trackingToken
 ||api.*.exponea.com^
 ||umico.az/clickstream/$xhr
 ||api.amediateka.tech/gateway/v*/get-ip/$xhr,domain=amediateka.ru
+||globalfreetv.com/affiliate/$image,domain=globalfreetv.com
+||5gvci.com^
+||im-sentry.sportmaster.ru^$important
+/api/fl/?u=$xhr,redirect=empty
+||ipgeolocation.io^
+||sentry.baseomni.ru^$important
+/minify.php
 !
 !
 !
@@ -3949,6 +3958,7 @@ $cookie=trackingToken
 ||ads-media.wildberries.ru^
 ||antibot.wildberries.ru/api/v*/frontend-analytics$important
 ||nel.wb.ru^
+||acollector.wb.ru^$important
 !
 !
 !
@@ -6116,7 +6126,7 @@ tass.ru##.SocialBlock_wrapper__rn7gt, .SocialBlock_wrapper--l__NpGtv
 inopressa.ru##table:nth-child(9) > tbody > tr:last-child > td > table.pagecontent:nth-child(3) > tbody > tr > td.alignleft:first-child > div:nth-child(9)
 inopressa.ru##table:nth-child(9) > tbody > tr:last-child > td > table:last-child > tbody > tr:last-child > td:nth-child(2) > div:last-child
 people.com.cn##.ipc_none
-##img[src*="://counter.people.cn"]
+people.com.cn##img[src*="://counter.people.cn"]
 people.com.cn##div[class^="xz20100129_1"]
 ##.back_to_top:not(html):not(body)
 ##.footer-social
@@ -6132,11 +6142,24 @@ setka.ru###section-banner
 ##.td-social-sharing-button
 apteka.ru##.Carousel__stage
 tv.cctv.com##div.bg_top_h_tile:nth-child(31) > div.bg_top_owner > div.bg_bottom_h_tile > div.bg_bottom_owner > div.page_body:nth-child(2) > div.column_wrapper:nth-child(18)
-! -
-! -
+ural.toys##.footercookies, .open
 ##.footercookies, .open
 podiumgul.ru###body_iframe_wrapper
 podiumgul.ru##.max-button-wrapper
+2gis.ru##._e27xbxx
+contell.ru###ct-cookies-informer
+globalfreetv.com###main > div.container.mx-auto.px-4.py-8.relative > aside.absolute.right-4.top-32.bottom-0.hidden.xl\:block:nth-child(2)
+globalfreetv.com###main > div.container.mx-auto.px-4.py-8.relative > aside.absolute.left-4.top-32.bottom-0.hidden.xl\:block:first-child
+globalfreetv.com###main > div.container.mx-auto.px-4.py-8.relative > div.max-w-3xl.mx-auto:nth-child(3) > div.relative.\[overflow-x\:clip\].mb-6:nth-child(4)
+globalfreetv.com###main > div.container.mx-auto.px-4.py-8.relative > div.max-w-3xl.mx-auto:nth-child(3) > div.mb-4:nth-child(5)
+globalfreetv.com##div[class^="container mx-auto max-w-3xl px-4 pb-8"]
+globalfreetv.com##aside[aria-label="Sponsored recommendation "]
+globalfreetv.com##aside[aria-label="Sponsored offer "]
+globalfreetv.com##div[aria-label="Sponsored offer "]
+globalfreetv.com##div.fixed.inset-x-0.bottom-0.z-\[90\].border-t.border-border.bg-popover\/95.text-popover-foreground.shadow-2xl.backdrop-blur:nth-child(7)
+lentagroup.ru##.z-cookie-popup, .visible
+uniconf.ru##.site-warning, .button-to-top--contrast, .visible, .active
+##iframe[src*="://creativecdn.com/"]
 !
 !
 ! - Scripts -
@@ -6791,7 +6814,7 @@ $cookie=_ym_debug
 ||yandex.*/clck/$important
 ||yastatic.net/pcode-native/loaders/$script
 ||api.plus.yandex.*/graphql?query_name=*%3FregisterSimpleActionWithPixel$xhr,important
-*$removeparam=yredirect
+$removeparam=yredirect
 ||yastatic.net/s3/web-alice/public/marketing-lite.html$domain=alice.yandex.ru
 ||strm.yandex.*/ping$important
 ||api.music.yandex.*/*/session/*/feedback/$xhr,important
@@ -6882,14 +6905,14 @@ $cookie=_ym_d
 ||passport.yandex.*/pwl-yandex/api/client-log
 ||passport.yandex.*/pwl-yandex/api/passport/stats
 ||passport.yandex.*/pwl-yandex/api/passport/js_fingerprint
-||yastatic.net/s3/weather-frontend/front2/_next/static/media/backgroundYa.e4d7d466.png^$image
+! yastatic.net/s3/weather-frontend/front2/_next/static/media/backgroundYa.e4d7d466.png^$image
 ||dr.yandex.net^
 ||dr*.yandex.net^
 ||static-mon.yandex.net^$important
-||yastatic.net/s3/weather-frontend/front2/_next/static/chunks/rateMe.$script,redirect=noopjs
+||yastatic.net/s3/weather-frontend/*/rateMe.$script,redirect=noopjs
 ||yastatic.net/taxi-widget/ya-taxi-widget.js^$script,third-party
 ://mc.yandex.*$websocket,important
-||yastatic.net/s3/web4static/_/v*/static/MouseTracking.$script,redirect=noopjs
+||yastatic.net/s3/*/*/static/MouseTracking.$script,redirect=noopjs
 ||vip*.ams.lb.opera.technology^$app=browser.exe
 $removerapam=pgid
 ||yastatic.net/s3/*/LcShare/LcShare.$script,redirect=noopjs
@@ -6903,7 +6926,7 @@ $removerapam=pgid
 $removeparam=nr,domain=ya.ru
 $removeparam=redirect_ts,domain=ya.ru
 ||ya.ru/ick/
-||yandex.$removeparam=redircnt
+$document,removeparam=redircnt
 ||avatars.mds.yandex.net/get-yabs_performance/
 ||yastatic.net/safeframe-bundles/*/render.html
 ! 77.88.44.55:7$network,app=ru.yandex.weatherplugin
@@ -8744,6 +8767,9 @@ teletype.in#@#div.preloader
 ||torroclk.com^$all
 ||ajb8.com^$all
 ||курьер-бургер-кинг.рф^$all
+||bulsis.net^$all
+||angeltarotreading.com^$all
+||1push.io^$all
 !
 !
 !
