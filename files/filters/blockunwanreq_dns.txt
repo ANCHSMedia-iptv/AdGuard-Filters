@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.8.7
+! Version: 4.8.9
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-07-14T18:36:30+00:00
+! TimeUpdated: 2026-07-20T18:36:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 14.07.2026 18:36 UTC
+! Last Modified: 20.07.2026 18:36 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -171,6 +171,7 @@
 ||network-lc.ru^
 ||scbh.yandex.net^
 ||aflt.travel.yandex.ru^
+||geoadv-partner.yandex.ru^
 !
 !
 ! ===
@@ -2057,7 +2058,6 @@
 ||u5jmvxka.cloudfine.quest^
 ||supportmetrics.apple.com^
 ||mailganer.com^
-||cookiebot.com^
 ||pushadvert.bid^
 ||advideo.ru^$important
 ||dn0qt3r0xannq.cloudfront.net^
@@ -2207,6 +2207,48 @@
 ||acollector.wb.ru^$important
 ||creativecdn.com^
 ||cdn*.searchbooster.net^
+||ffbbbdc6d3c353211fe2ba39c9f744cd.com^
+||omtrdc.net^
+||icreate-campaign.com^
+||d1g4ozz7tvtyuj.cloudfront.net^
+||api-metric.gosweb.gosuslugi.ru^
+||st.hbrd.io^
+||shrelay-docdoc.sberhealth.ru^$important
+||maniteka.com^
+||gk7qlc.ru^
+||pixel-cdp.sberhealth.ru^
+||cdn.callibri.ru^
+||mod.gudok.tel^
+||api.expf.ru^
+||sentry.astonio.com^
+||w.uptolike.com^
+||gsstats.ru^
+||ogeri.ru^
+||pophandler.net^
+||sleep.stratosbody.com^
+||dd-partner.ru^
+||net.kg^
+||events.bsky.app^
+||live-events.workers.bsky.app^
+||static.nativerent.ru^
+||videotronic.io^
+||ai-up.ru^
+||b242ya.ru^
+||metrika.myseldon.com^
+||c.zero.kz^
+||wm.timeweb.ru^
+||l2.io^
+||antisov.ru^
+||iubenda.com^
+||qform.io^
+||j.uralweb.ru^
+||fa.micstatic.com^
+||discovery.micstatic.com^
+||rum.made-in-china.com^
+||stat.made-in-china.com^
+||ads.nativenetwork.uz^$important
+||api.sypexgeo.net^
+||yoast-schema-graph.com^
 !
 !
 !
