@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.6.6
-! TimeUpdated: 2026-07-20T18:36:30+00:00
+! Version: 5.6.7
+! TimeUpdated: 2026-07-21T18:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -202,7 +202,8 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 !
 ||invitro.ru/edna/assets/multibutton.js$script,domain=invitro.ru
 ||invitro.ru/local/templates/invitro_main/webrtc/*/*.*^$script,css,domain=invitro.ru
-*.*/*.gif$domain=invitro.ru|gazprom-neft.ru|gazprom-neft.com|t2.ru|tele2.ru|*.t2.ru|*.tele2.ru|college.72to.ru|edu.ru|vtb.am|gpnbonus.ru|tj.gpnbonus.ru|gpnbonus.by|megavtogal.com|motivtelecom.ru|ruwiki.ru|tyumen-city.ru|gov.ru|*.gov.ru|rt-solar.ru|agt72.ru|tok72.ru|go.agt72.ru|xn--b1afabzvcegckfhg.xn--p1ai|*.xn--p1ai|krasnodar.ru|*.ru,redirect=1x1-transparent.gif,important
+*.*/*.gif$domain=invitro.ru|gazprom-neft.ru|gazprom-neft.com|t2.ru|tele2.ru|*.t2.ru|*.tele2.ru|college.72to.ru|edu.ru|vtb.am|gpnbonus.ru|tj.gpnbonus.ru|gpnbonus.by|megavtogal.com|motivtelecom.ru|ruwiki.ru|tyumen-city.ru|gov.ru|*.gov.ru|rt-solar.ru|agt72.ru|tok72.ru|go.agt72.ru|xn--b1afabzvcegckfhg.xn--p1ai|krasnodar.ru|grizv.ru,redirect=1x1-transparent.gif,important
+*.*/*.gif$domain=*.xn--p1ai|*.ru,redirect=1x1-transparent.gif,important
 ||burp^$important
 ||zap^$important
 ||invitro.ru/bitrix/images/main/composite/sprite-1x.png^$image,domain=invitro.ru,important
@@ -1848,6 +1849,7 @@ $cookie=remixlang,third-party
 /front/public/assets/simple-max-icon.png^$domain=*.xn--p1ai|*.ru
 /front/src/assets/tg-banner/max-bg-push.png^$domain=*.xn--p1ai|*.ru
 /front/src/assets/tg-banner/max.png^$domain=*.xn--p1ai|*.ru
+||grizv.ru/sites/grizv/files/banners/1080x1080-1.png^$image,domain=grizv.ru
 !
 !
 ||figma.com^$removeparam=tracking_session_id
@@ -3817,8 +3819,8 @@ $cookie=ipzone
 ||cdn.qform.io^
 ||gov.by/scripts/share.js^$script
 /0.png^$image
-||api.donation.ru/fproxyclient/set-log
 ||widgets.donation.ru/scripts/platformRedirector/platformRedirector.js$script,domain=golfstreamfond.ru
+||widgets.donation.ru/scripts/platformRedirector/platformRedirector.js$script
 ||static.att.by/js/watch.js^$script
 ||spb.ru/static/_g/img/banner-$image,domain=spb.ru
 /controller.php?mod=adminfunction&id=*&action=newsread
@@ -3871,6 +3873,40 @@ $cookie=sajssdk_2015_cross_new_user
 ||socium-a.ru/file/public/media/undefined$domain=socium-a.ru
 ||sdelanounas.ru/app/themes/sdelanounas/images/ads/$image,domain=sdelanounas.ru
 /plugins/jnews-social-share/*$script
+||stat.pravdafrance.com^$important
+.xn--p1ai/front/dist/js/prebid-$script,redirect=noopjs
+.xn--p1ai/front/dist/js/check-block.js^$script,redirect=noopjs
+||kriti.burrrr.workers.dev/gautam/*/script.js^$script
+||kriti.burrrr.workers.dev/*/event
+/e/?
+/api/surveys/?token=
+$cookie=/_posthog/
+/array/phc_*/
+/exception-autocapture.js
+/flags/?v=*&ip=
+||clicks.detools.dev^
+||bilibili.com^$cookie=bsource
+||hdslb.com/bfs/seed/log/report/$script,redirect=noopjs,important
+||hdslb.com/bfs/seed/jinkela/short/user-fingerprint/bili-user-fingerprint.$script,redirect=noopjs,important
+||api.bilibili.com/*/frontend/finger/$xhr,important
+||api.bilibili.com/*/vip/ads/materials$xhr,redirect=noopjson,important
+||hdslb.com/bfs/seed/jinkela/short/reporter-pb/index.js
+/privacy-banner/storefront-banner.js
+||news.mediametrics.ru^$important,third-party
+/bitrix/js/main/popup/dist/
+||*.p.avito.ru^
+||track.onef.pro^
+||maam.ru/templates/detskiy-sad/js/counterr.js^$script,domain=maam.ru
+||maam.ru/templates/detskiy-sad/js/metrika.js^$script,domain=maam.ru
+/site/inc/org_counters.asp
+/sites/all/themes/smi/js/cookies.js
+||grizv.ru/sites/grizv/files/banners/$image,domain=grizv.ru
+$cookie=BITRIX_MT_WS_TEMP_USER_ID
+66.ru/metrika-collect$domain=366.ru
+||avito.ru/*/network/check
+||avito.ru/*/2/ft
+/plugin-delay/^$xhr
+/democall-config/^$xhr
 !
 !
 !
@@ -6372,6 +6408,9 @@ otv-media.ru###metric_notification
 sdelanounas.ru##.article-sidebar-ad
 sdelanounas.ru##.banner_wide_top
 ##div.jeg_ad
+lessie.ai##.style-module-scss-module__NpCgRq__container
+maam.ru###infooter
+dobrota.ru##.confidential, .animated
 !
 !
 ! - Scripts -
@@ -6492,6 +6531,8 @@ sgrc.cyberosnova.ru,cyberosnova.ru#%#//scriptlet('set-local-storage-item', 'visi
 sgrc.cyberosnova.ru,cyberosnova.ru#%#//scriptlet('set-local-storage-item', 'bdu-viewed-history', 'emptyObj')
 радиогордость.рф,xn--80agcbs0bbbkgnm4k.xn--p1ai#%#//scriptlet('prevent-addEventListener', 'onClickLinkHandler')
 vk.com,vk.ru#%#//scriptlet('set-local-storage-item', '/PromoShowed_*/', '0')
+bilibili.com###bilibili-player > div.bpx-docker.bpx-docker-major.bpx-common-firefox > div.bpx-player-container.bpx-state-no-cursor > div.bpx-player-primary-area:first-child > div.bpx-player-video-area:first-child > div.bpx-player-toast-wrap:nth-child(11)
+bilibili.com##.activity-m-v1, .act-end
 !
 !
 !
@@ -7165,6 +7206,7 @@ $cookie=yabanner
 /wp-content/cache/min/*/share*/
 /ya-params.js
 $cookie=_yasc,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*
+||avatars.mds.yandex.net/get-direct-picture/$image,xhr,important
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -7240,46 +7282,35 @@ market.yandex.ru##div[data-zone-name="headerPromoStreamer"][data-baobab-name="he
 market.yandex.ru##div[id^="/content/header/headerPromo"]
 market.yandex.ru##div[data-apiary-widget-name="@monetize/IncutConstructor/MadvBasicCarouselPlain"]
 market.yandex.ru##div[data-zone-name="heroBannerCarousel"][data-auto="hero-banner-carousel"]
-! ya.ru##div[class^="VanillaReact AliceFabContainer"] # нихрена не помогает избавиться от Алисы
-! yandex.ru##div[class^="VanillaReact AliceFabContainer"] # нихрена не помогает избавиться от Алисы
 ##div[data-auto="creativeBanner"][data-daemon="/safeclick/]
 !
 yandex.ru,ya.ru##div[id^="feed-ssr"][class^="content-feed-ssr"]
-! yandex.ru/pogoda##div[class^="AppPromoInner_container__mT1cB"]
-! yandex.ru/pogoda###react-aria-«Rcj9tldbnb» > div.AppSettingsClientModal_content__AFYNq.common_verticalScroll__sFq8B > ul.AppSettingsClientModal_content__list__K_0Ih.AppSettingsClientModal_content__list_rounded__B4H7H:last-child > li.AppSettingsClientModal_content__item__W2NI3:last-child > a
-! yandex.ru/pogoda##div:nth-child(10) > div > div.AppLayoutCommon_overlay__h5IHD > div.AppLayoutTypeMain_contentWrapper__mZQ3q:last-child > aside.AppLayoutTypeMain_left__fUvzq:last-child > div:last-child > div.AppLeftPanelPromos_bottomLinks__WtJmk > a.AppLeftPanelPromos_bottomLinks__item__plzCV:first-child
-yandex.ru,ya.ru##.Distribution-Popup, .Distribution-Popup_hasShadow, .Distribution-Popup_motley_grey, .Distribution-Popup_layout_renew, .Distribution-Popup_animation_bounce, .Distribution-Popup_location_right-top, .Distribution-Popup_visible
 yandex.ru,ya.ru##.FuturisSnippet
 ##a[href*="yabs.yandex.ru/count/"]
-yandex.ru,ya.ru##div[class^="AdvMastHead"]
-yandex.ru,ya.ru##.DistributionPopup, .DistributionPopup_motley_grey, .DistributionPopup_layout_rectangle, .DistributionPopup_animation_bounce, .DistributionPopup_location_bottom, .DistributionPopup_visible
-! yandex.ru,ya.ru##.Distribution, .HeaderDesktopActions-Distribution, .HeaderDesktopActions-Item
-yandex.ru##.VideoViewer-Direct, .VideoViewer-Direct_placement_under-player, .VideoViewer-Direct_withStore
-mail.yandex.ru##.bDVhOgw1X3WEALZfVAdaptiveWidth
-mail.yandex.ru###js-mail-layout > div.PageLayout-m__body--xjMc4.PageLayout-m__pageLayoutWithGlobalBar--sa2zf:last-child > div.bHVBHhRxmwU8ZL5rsLiuK.bJUoNngtXwU8AJ4aTMy2ZWbs.bHVBHhRxmwU8ZL5rzKCCZVLvoqKMw7g707j5WbHVBHhRxmwU8ZL5rsLiuK.bHVBHhRxmwU8ZL5rsLiuKbHVBHhRxmwU8ZL5rzKCCZVLvoqKMw7g707j5W:last-child > div:first-child
-yandex.ru##.Box-cYgNPZ, .eVbChU
-yandex.ru###hYF3siGBwNgvu__dkrg0xnnmcdcyyuh59he-PqmL7TJ > div.hYF3smmhxOwM > div.hYF3smmhxOwM-Item:first-child
+[$path=/search]yandex.ru,ya.ru##div[class^="AdvMastHead"]
+[$path=/search/videos]yandex.ru##.VideoViewer-Direct, .VideoViewer-Direct_placement_under-player, .VideoViewer-Direct_withStore
 ##html[class^="i-ua_js_no i-ua_css_standart i-ua_browser_yandexbrowser i-ua_browser-engine_webkit i-ua_browser_desktop"]
 yandex.*##a[href*="://yandex.ru/an/"]
 ya.ru##a[href*="://ya.ru/an/"]
 !
-! -Баннер-блокировка «Похоже, вы используйте VPN» на сервисах Яндекса [17.04.2026]-
+! -Баннер-блокировка «Похоже, вы используйте VPN» в сервисах Яндекса [17.04.2026]-
 yandex.ru##div[id="root"][class^="page__block-19-84"]
 ! -
 !
 alice.yandex.ru##.Standalone-MobileApp
 mail.yandex.ru###js-neuroexpert-button
 mail.yandex.ru###global-bar-container > div > div._GlobalBarRoot_12n6w_1.GlobalBar-m__globalBarContainer--tb5M6 > div._GlobalBarContainer_12n6w_9 > div._Container_1di3h_1:last-child > div:first-child
-yandex.ru##div[class*="Warning_type_roskomnadzor"]
+[$path=/search]yandex.ru,ya.ru##div[class*="Warning_type_roskomnadzor"]
 practicum.yandex.ru##div[id^="chat-button"]
 practicum.yandex.ru###banner-course-1 > div.lc-offsets.lc-grid2-offsets
 practicum.yandex.ru##.lc-button-up__button, .lc-button-up__button_align_right, .lc-button-up__button_status_show
-yandex.ru##div[class^="map-controls__additional-button"]
+[$path=/maps]yandex.ru##div[class^="map-controls__additional-button"]
 books.yandex.ru##.plus-button-cls, .PlusButtonLegacy_plusButton__header__RbPaw, .HeaderDesktop_promoPlusButton__9HhDE
 alice.yandex.ru##div[class*="MessageBubble-Container_component_futurisAdOnly"]
 alice.yandex.ru##div[class*="AdvCard AdvCard_bottom"]
-yandex.ru##li[class^="serp-item RsyaOrganic serp-item_card"]
-yandex.ru##div[class^="AdvPremium-List"]
+[$path=/images/search]yandex.ru,ya.ru##div[class^="AdvPremium-List"]
+[$path=/pogoda]yandex.*##div.AppLayoutCommon_overlay__h5IHD:nth-child(12) > div.AppLayoutTypeMain_contentWrapper__mZQ3q:nth-child(2) > div.AppLayoutTypeMain_centerWrapper___mgad:first-child > aside.AppLayoutTypeMain_right__m6ZTJ.AppLayout_aside-base__SC9ps:first-child
+[$path=/pogoda]yandex.*###dialogs
 !
 !
 ! =
@@ -7435,7 +7466,7 @@ yandex.ru##div[class^="AdvPremium-List"]
 ||imasdk.googleapis.com/js/core/bridge*_*.html
 ||youtube.com/api/stats/atr?ns=
 ||youtube.com/api/stats/playback?ns=
-||adtrafficquality.google^
+||adtrafficquality.google^$important
 ||c2paregistration*.googleapis.com^
 ||play.google.com/play/log$redirect=nooptext
 ||datasaver*.googleapis.com^
@@ -8699,13 +8730,22 @@ teletype.in#@#div.preloader
 @@$cookie=eurosport_country_code,domain=eurosport.tvn24.pl|eurosport.*
 @@||lenta.com^$removeparam=utm_referrer,important
 @@||gosuslugi.ru^*/counters?$domain=gosuslugi.ru
-wildberries.ru#@#.footercookies, .open
-lifemart.ru#@#.footercookies, .open
+wildberries.ru,lifemart.ru#@#.footercookies, .open
 @@||youtube.com/api/timedtext?v=
 @@||youtube.com/api/stats/watchtime?ns=
 @@$cookie=cart_currency
 @@$cookie=localization
 @@$cookie=FRONT_LANG
+snaplytics.io#@##tweetContainer
+@@/.within.website/x/cmd/anubis/$permissions=private-state-token-redemption=()
+@@/.within.website/x/cmd/anubis/$permissions=browsing-topics=()
+@@/.within.website/x/cmd/anubis/$permissions=private-state-token-issuance=()
+@@/.within.website/x/cmd/anubis/$permissions=identity-credentials-get=()
+@@/.within.website/x/cmd/anubis/$permissions=join-ad-interest-group=()
+@@/.within.website/x/cmd/anubis/$permissions=run-ad-auction=()
+specktoys.com,bigens.com#@#.footer__newsletter
+specktoys.com#@#.list-social
+@@/plugins/counter/*.js^$script,important
 !
 !
 ! -
