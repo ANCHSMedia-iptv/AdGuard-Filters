@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.6.7
-! TimeUpdated: 2026-07-21T18:36:30+00:00
+! Version: 5.6.8
+! TimeUpdated: 2026-07-22T18:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -169,7 +169,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.*.js^$script,important (новое правило, строка 138 и 139)
 /wp-content/plugins/*/assets/js/tracks.js$script,important
 /ad.js^$script,important
-/empty*.$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru|~lenta.com|~aptoide.com|~magnit.ru|~mail.yandex.by|~mail.yandex.kz|~mail.yandex.ru|~mail.yandex.com|~mail.yandex.com.tr|~mail.yandex.*|~yastatic.net|~tenchat.ru|~smotrim.ru|~thb.tildacdn.com|~tildacdn.com|~gdz.ru|~tildacdn.pro|~myseldon.com
+/empty*.$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru|~lenta.com|~aptoide.com|~magnit.ru|~mail.yandex.by|~mail.yandex.kz|~mail.yandex.ru|~mail.yandex.com|~mail.yandex.com.tr|~mail.yandex.*|~yastatic.net|~tenchat.ru|~smotrim.ru|~thb.tildacdn.com|~tildacdn.com|~gdz.ru|~tildacdn.pro|~myseldon.com|~schoolotzyv.ru
 */adv/*$image,xhr,script,domain=~pinterest.com|~aliexpress.ru|~aliexpress.com|~buzzoola.com,important
 ! *empty*.*^$image,important
 ||store.bankiros.ru/js/metrics/$script,domain=bankiros.ru,redirect=noopjs,important
@@ -785,7 +785,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru,important
 ||disqus.com/count.js$script,xhr,important
 ||disqus.com/count-data.js$script,xhr,important
 ||ads.pro-market.net^$important
-||xn--r1a.website^
+||xn--r1a.website^$important
 ||tele-satinfo.ru/img/1.gif^$image,domain=tele-satinfo.ru
 ||api.vigo.one/uxzoom/*/notify$xhr
 /ad/content/render$important,domain=cableman.ru|cableman.pro
@@ -3521,7 +3521,7 @@ $removeparam=utm_term
 $removeparam=utm_referrer
 $cookie=BITRIX_SM_TZ
 $cookie=/*_SM_TZ/
-/bitrix/templates/aspro_max/js/observer.js$script,redirect=noopjs
+/aspro_max/js/observer.js$script,redirect=noopjs
 ! - /bitrix/components/aspro/marketing.popup.max/templates/.default/script.js$script,redirect=noopjs
 ||counter.megaindex.ru^$important
 ||sentry.burgerkingrus.ru^$important
@@ -3902,11 +3902,32 @@ $cookie=/_posthog/
 /sites/all/themes/smi/js/cookies.js
 ||grizv.ru/sites/grizv/files/banners/$image,domain=grizv.ru
 $cookie=BITRIX_MT_WS_TEMP_USER_ID
-66.ru/metrika-collect$domain=366.ru
+||366.ru/metrika-collect$domain=366.ru
 ||avito.ru/*/network/check
 ||avito.ru/*/2/ft
 /plugin-delay/^$xhr
 /democall-config/^$xhr
+||ipv6forum.com/ipv6_enabled/$third-party
+||ipv6enabled.org/ipv6_enabled/$third-party
+||emrldtp.cc^
+/screentime.js
+||krytota.ru^$cookie=browser
+||pro-interactive.ru/assets/img/cookie.svg^$domain=pro-interactive.ru
+||eventomania.ru/assets/tpl/images/phone-icon.png^$image,domain=eventomania.ru
+||eventomania.ru/assets/tpl/images/whatsapp-icon.png^$image,domain=eventomania.ru
+$cookie=ipp_uid
+||sp72ru.ru/wp-content/uploads/2025/12/prisoedinyajsya-k-nam-v-max2-1024x340.png^$image,domain=sp72ru.ru
+||sp72ru.ru/wp-content/uploads/2022/08/mspskidka-1024x616.jpg^$image,domain=sp72ru.ru
+||sp72ru.ru/wp-content/uploads/2025/11/ng-rossiya_2025-bannery_2500h2500-1024x1024.jpg^$image,domain=sp72ru.ru
+||stat.loymax.tech^$important
+||auchan.ru/api/api-front/digiTracking/$domain=auchan.ru
+||kids-price.ru/i/banner*.gif
+||shopozz.ru^$cookie=_dvs
+||shopozz.ru^$cookie=visits_id
+||shopozz.ru^$cookie=_userGUID
+||aq.dolyame.ru^$third-party
+$cookie=CITY_ORDER_ZVONOK
+$cookie=MAILING_USER_CAME
 !
 !
 !
@@ -3935,7 +3956,8 @@ $cookie=BITRIX_MT_WS_TEMP_USER_ID
 !
 ! Blocking hidden images in one pixel (1 x 1).
 ! Блокировка скрытых изображений в один пиксель (1 x 1).
-! *4pda.to/s/PXti*.gif^$image,xhr,domain=4pda.to,redirect=1x1-transparent.gif,important
+! ! *4pda.to/s/PXti*.gif^$image,xhr,domain=4pda.to,redirect=1x1-transparent.gif,important
+! *4pda.to/s/as6y*.gif^$image,xhr,domain=4pda.to,redirect=1x1-transparent.gif,important
 !  4pda.to/static/module/lytebox/images/blank.gif^$image,domain=4pda.to,redirect=1x1-transparent.gif
 ||4pda.to/s/*:|$image,domain=4pda.to,redirect=1x1-transparent.gif
 !
@@ -4130,6 +4152,7 @@ $cookie=BITRIX_MT_WS_TEMP_USER_ID
 ||antibot.wildberries.ru/api/v*/frontend-analytics$important
 ||nel.wb.ru^
 ||acollector.wb.ru^$important
+||antibot.wildberries.ru/api/v*/report$important
 !
 !
 !
@@ -4141,7 +4164,7 @@ $cookie=BITRIX_MT_WS_TEMP_USER_ID
 !
 !
 ! - Global version (Глобальная версия). -
-||*basket*.wbbasket.ru/vol*/data/promo-panel-data-*.json^$script,xhr,domain=global.wildberries.ru
+/vol*/data/promo-panel-data-*.json^$script,xhr,domain=global.wildberries.ru
 !
 /vol*/wbx-static/prod/assets/images/qr-code/qr-code.png^$image,domain=global.wildberries.ru
 ! -
@@ -4180,7 +4203,7 @@ wildberries.ru###travelHotelsSwitcher
 wildberries.ru###diamondsMenu > div.simple-menu__diamonds-wrap:last-child > ul.simple-menu__diamonds > li.diamondsItem--NZt57.j-hotels:nth-child(3)
 !
 ! Раздел «Работа в RWB» (ранее «Работа в Wildberries») (Российская версия).
-wildberries.ru###diamondsMenu > div.simple-menu__diamonds-wrap:last-child > ul.simple-menu__diamonds > li.diamondsItem--NZt57.j-work:last-child
+wildberries.ru###diamondsMenu > div.simple-menu__diamonds-wrap:last-child > ul.simple-menu__diamonds > li.diamondsItem--NZt57.j-work:nth-child(8)
 !
 ! Раздел «Авиабилеты» в меню каталога (Российская версия).
 wildberries.ru##li[data-menu-id="1236"]
@@ -6410,7 +6433,27 @@ sdelanounas.ru##.banner_wide_top
 ##div.jeg_ad
 lessie.ai##.style-module-scss-module__NpCgRq__container
 maam.ru###infooter
+bilibili.com###bilibili-player > div.bpx-docker.bpx-docker-major.bpx-common-firefox > div.bpx-player-container.bpx-state-no-cursor > div.bpx-player-primary-area:first-child > div.bpx-player-video-area:first-child > div.bpx-player-toast-wrap:nth-child(11)
+bilibili.com##.activity-m-v1, .act-end
 dobrota.ru##.confidential, .animated
+ezdili-znaem.com###text-7
+ezdili-znaem.com##div[class^=sohrani-block"]
+ezdili-znaem.com##article > div.inside-article:last-child > div:last-child > div:first-child
+ezdili-znaem.com###custom_html-2
+ezdili-znaem.com##article > div.inside-article:last-child > div:last-child > div:nth-child(5)
+pro-interactive.ru##.cookie, .js--cookie
+forestpark21.ru##.t825__btn
+mtpro.xyz##a[href*="://px6.net/"][onclick="this.href='://px6.net/e/"]
+mtpro.xyz##a[href*="/vpn2.php"]
+sp72ru.ru###custom_html-33
+sp72ru.ru###custom_html-32
+sp72ru.ru###custom_html-29
+sp72ru.ru###custom_html-28
+sp72ru.ru###custom_html-20
+sp72ru.ru###custom_html-10
+sp72ru.ru###custom_html-6
+sp72ru.ru###custom_html-5
+tdz-market.ru##.cw_wrapper
 !
 !
 ! - Scripts -
@@ -6531,8 +6574,7 @@ sgrc.cyberosnova.ru,cyberosnova.ru#%#//scriptlet('set-local-storage-item', 'visi
 sgrc.cyberosnova.ru,cyberosnova.ru#%#//scriptlet('set-local-storage-item', 'bdu-viewed-history', 'emptyObj')
 радиогордость.рф,xn--80agcbs0bbbkgnm4k.xn--p1ai#%#//scriptlet('prevent-addEventListener', 'onClickLinkHandler')
 vk.com,vk.ru#%#//scriptlet('set-local-storage-item', '/PromoShowed_*/', '0')
-bilibili.com###bilibili-player > div.bpx-docker.bpx-docker-major.bpx-common-firefox > div.bpx-player-container.bpx-state-no-cursor > div.bpx-player-primary-area:first-child > div.bpx-player-video-area:first-child > div.bpx-player-toast-wrap:nth-child(11)
-bilibili.com##.activity-m-v1, .act-end
+ezdili-znaem.com#%#//scriptlet('abort-on-property-write', 'data:text/javascript;base64,')
 !
 !
 !
@@ -7206,7 +7248,7 @@ $cookie=yabanner
 /wp-content/cache/min/*/share*/
 /ya-params.js
 $cookie=_yasc,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*
-||avatars.mds.yandex.net/get-direct-picture/$image,xhr,important
+||avatars.mds.yandex.net/get-direct-picture/$image,xhr
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -7294,7 +7336,7 @@ yandex.*##a[href*="://yandex.ru/an/"]
 ya.ru##a[href*="://ya.ru/an/"]
 !
 ! -Баннер-блокировка «Похоже, вы используйте VPN» в сервисах Яндекса [17.04.2026]-
-yandex.ru##div[id="root"][class^="page__block-19-84"]
+yandex.ru,ya.ru##div[id="root"][class^="page__block-19-84"]
 ! -
 !
 alice.yandex.ru##.Standalone-MobileApp
@@ -7311,6 +7353,7 @@ alice.yandex.ru##div[class*="AdvCard AdvCard_bottom"]
 [$path=/images/search]yandex.ru,ya.ru##div[class^="AdvPremium-List"]
 [$path=/pogoda]yandex.*##div.AppLayoutCommon_overlay__h5IHD:nth-child(12) > div.AppLayoutTypeMain_contentWrapper__mZQ3q:nth-child(2) > div.AppLayoutTypeMain_centerWrapper___mgad:first-child > aside.AppLayoutTypeMain_right__m6ZTJ.AppLayout_aside-base__SC9ps:first-child
 [$path=/pogoda]yandex.*###dialogs
+ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-z0-9]/=/"type":"adv"|advertiser/)) { display: none !important }
 !
 !
 ! =
@@ -8746,6 +8789,11 @@ snaplytics.io#@##tweetContainer
 specktoys.com,bigens.com#@#.footer__newsletter
 specktoys.com#@#.list-social
 @@/plugins/counter/*.js^$script,important
+ezdili-znaem.com#@#a[href*=pinterest][href*="/pin/create/b"]
+ezdili-znaem.com#@#.pinterest-wrapper
+@@||time2.google.com^
+@@||tildacdn.com/tild*/*/empty/*.*$image,important
+@@||tildacdn.pro/*/*/empty/*.*$image,important
 !
 !
 ! -
