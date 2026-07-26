@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.6.9
-! TimeUpdated: 2026-07-25T18:36:30+00:00
+! Version: 5.7.0
+! TimeUpdated: 2026-07-26T18:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -3996,6 +3996,12 @@ $cookie=/visid_incap_*/
 ://proxyjs.brdtnet.com^
 ://proxyjs.luminatinet.com^
 ://proxyjs.*
+$cookie=shm_nocache
+||epidermispushupvariable.com^$important
+/prebid-ads.js
+||juicyads.rocks^
+||rule34.xxx/images/*$image,domain=rule34.xxx
+||tyumen-time.ru/local/templates/main/images/Max_banner_site.png^$image,domain=tyumen-time.ru
 !
 !
 !
@@ -6541,6 +6547,11 @@ iphones.ru##div.clearfix
 xakep.ru###sticker
 xakep.ru###warp > div.bdMain:last-child > div.bdaia-home-container > div.bd-container > div.bd-sidebar.theia_sticky:last-child > div.theiaStickySidebar:nth-child(2) > a:first-child
 xakep.ru###warp > div.bdMain:nth-child(5) > div.bdaia-home-container > div.bd-container > div.bd-sidebar.theia_sticky:last-child > div.theiaStickySidebar:last-child > a:first-child
+##a[href*="//whos.amung.us/"]
+##img[src*="//whos.amung.us/widget/"]
+rule34.xxx##a[rel="sponsored"]
+rule34.xxx##.horizontalFlexWithMargins
+tyumen-time.ru##header.header:nth-child(6) > a:first-child
 !
 !
 ! - Scripts -
@@ -6662,6 +6673,7 @@ sgrc.cyberosnova.ru,cyberosnova.ru#%#//scriptlet('set-local-storage-item', 'bdu-
 радиогордость.рф,xn--80agcbs0bbbkgnm4k.xn--p1ai#%#//scriptlet('prevent-addEventListener', 'onClickLinkHandler')
 vk.com,vk.ru#%#//scriptlet('set-local-storage-item', '/PromoShowed_*/', '0')
 ezdili-znaem.com#%#//scriptlet('abort-on-property-write', 'data:text/javascript;base64,')
+rule34.xxx#%#//scriptlet('prevent-addEventListener', 'register')
 !
 !
 !
