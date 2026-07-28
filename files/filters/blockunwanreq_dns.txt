@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.9.3
+! Version: 4.9.4
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-07-26T18:36:30+00:00
+! TimeUpdated: 2026-07-28T18:36:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 26.07.2026 18:36 UTC
+! Last Modified: 28.07.2026 18:36 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -1423,7 +1423,7 @@
 ||analytics.twitter.com^$dnsrewrite=REFUSED,important
 ! sync.otm-r.ru^
 ||otm-r.com^$important
-||error-report.com^
+||error-report.com^$important,dnsrewrite=0.0.0.0
 ||pxl-*.ozone.ru^
 ||wstat.ozon.ru^
 ||media.net^
@@ -1991,7 +1991,6 @@
 ||highperformanceformat.com^
 ||spade.twitch.tv^
 ||ad.gt^
-||adsrvr.org^
 ||gumgum.com^
 ||script.crazyegg.com^
 ||brandmetrics.com^
@@ -2283,6 +2282,28 @@
 ||epidermispushupvariable.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||juicyads.rocks^$dnsrewrite=ad-block.dns.adguard.com
 ||whos.amung.us^
+||sentry.rarus.ru^
+||counter.top.ge^
+||stat.statsnet.co^
+||tds.bid^
+||forsweareven.com^
+||api.btmessage.com^
+||cdn.btmessage.com^
+||html-load.com^$important,dnsrewrite=0.0.0.0
+||imrworldwide.com^
+||openx.net^
+||3lift.com^
+||prebid.media.net^
+||navvy.media.net^
+||htlb.casalemedia.com^
+||rubiconproject.com^
+||pubmatic.com^
+||qsearch-*.akamaihd.net^
+||indexww.com^$important
+||servenobid.com^
+||js-load.com^$important,dnsrewrite=0.0.0.0
+||css-load.com^$important,dnsrewrite=0.0.0.0
+||adshield-fallback-dev-wskxz.b-cdn.net^
 !
 !
 !

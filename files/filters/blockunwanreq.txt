@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.7.0
-! TimeUpdated: 2026-07-26T18:36:30+00:00
+! Version: 5.7.1
+! TimeUpdated: 2026-07-28T18:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -157,7 +157,7 @@
 !
 /liru.gif^$image
 /1px.$image,xhr,redirect=1x1-transparent.gif,important
-/px.*$image,xhr,redirect=1x1-transparent.gif,domain=~adhigh.net|~px.ads.linkedin.com,important
+/px.*$image,xhr,redirect=1x1-transparent.gif,domain=~adhigh.net|~px.ads.linkedin.com|~px.adhigh.net,important
 /blank.*$image,xhr,redirect=1x1-transparent.gif,important
 /analytics.js$script,domain=~analytics.google.com|~www.google-analytics.com|~ezoicanalytics.com
 ! */analytics.*^$script,important
@@ -169,7 +169,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! *wp.com/p/woocommerce/*/assets/js/js-cookie/js.cookie.*.js^$script,important (новое правило, строка 138 и 139)
 /wp-content/plugins/*/assets/js/tracks.js$script,important
 /ad.js^$script,important
-/empty*.$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru|~lenta.com|~aptoide.com|~magnit.ru|~mail.yandex.by|~mail.yandex.kz|~mail.yandex.ru|~mail.yandex.com|~mail.yandex.com.tr|~mail.yandex.*|~yastatic.net|~tenchat.ru|~smotrim.ru|~thb.tildacdn.com|~tildacdn.com|~gdz.ru|~tildacdn.pro|~myseldon.com|~schoolotzyv.ru
+/empty*.$image,important,domain=~mm.ru|~kazanexpress.ru|~mywot.com|~lifemart.ru|~lenta.com|~aptoide.com|~magnit.ru|~mail.yandex.by|~mail.yandex.kz|~mail.yandex.ru|~mail.yandex.com|~mail.yandex.com.tr|~mail.yandex.*|~yastatic.net|~tenchat.ru|~smotrim.ru|~thb.tildacdn.com|~tildacdn.com|~gdz.ru|~tildacdn.pro|~myseldon.com|~schoolotzyv.ru|~uchet.kz
 */adv/*$image,xhr,script,domain=~pinterest.com|~aliexpress.ru|~aliexpress.com|~buzzoola.com,important
 ! *empty*.*^$image,important
 ||store.bankiros.ru/js/metrics/$script,domain=bankiros.ru,redirect=noopjs,important
@@ -1017,7 +1017,7 @@ yastatic.net^$app=com.radioapp.mayakradio|com.avito.android|ru.vk.store|com.allg
 ||zephyrsgroves.com^
 ||xn--80aafadvc9bifbaeqg0p.xn--p1ai/img/icons/sferum.svg^$image,domain=xn--80aafadvc9bifbaeqg0p.xn--p1ai
 !
-||fandom.com/*/api.php?action=query*&apprefix=Custom-Discord-&*uselang=content$xhr,domain=fandom.com|telepedia.fandom.com|*.fandom.com
+||fandom.com/*/api.php?action=query*&apprefix=Custom-Discord-&*uselang=content$domain=fandom.com|telepedia.fandom.com|*.fandom.com
 ||fandom.com/*/load.php?*&modules=u%3Adev%3AMediaWiki%3ADiscord.css$script,domain=fandom.com|telepedia.fandom.com|*.fandom.com
 images/*/Discord*logo.*$image,domain=fandom.com|telepedia.fandom.com|*.fandom.com
 ||api.corr.life/public/regions/lookup^$xhr,domain=life.ru
@@ -1219,7 +1219,7 @@ calltouch.js$script,xhr
 ||lyngsat.com/as10/intelsat_webinar.gif^$image,domain=lyngsat.com,important
 ||apistats.rg.ru^$important
 ||svibeacon.onezapp.com^
-||static.wikia.nocookie.net/silversurfer/$script,domain=fandom.com|*.fandom.com,redirect=noopjs,important
+/silversurfer/$important,domain=fandom.com|*.fandom.com,redirect=noopjs
 ||serverblight.com/audio/gamestartup*.mp3^$media,domain=serverblight.com
 ||a.apkpure.*/dt_*_*.js$script,domain=apkpure.*,redirect=noopjs
 ||apkcombo.com/1.gif^$image,domain=apkcombo.com,redirect=1x1-transparent.gif,important
@@ -2532,7 +2532,7 @@ $cookie=BITRIX_MPS_LAST_VISIT
 ||cdn.jsdelivr.net/gh/ad-shield/*$script,third-party,redirect=noopjs
 ||nowmodulo.com^$important
 ||data.sec.miui.com^$important
-://html-load.cc^$important,redirect=noopjs
+://html-load.cc^$important
 ||cdn.jsdelivr.net/gh/dobarkod/cookie-banner*/dist/cookiebanner.
 ||kdv-group.com/html/css/popup-banner.css^$css,domain=kdv-group.com,redirect=noopcss
 ||kdv-group.com/js/*/popup-banner.$script,domain=kdv-group.com
@@ -2927,8 +2927,8 @@ $csp=upgrade-insecure-requests,domain=ocsp.digicert.com|c.lencr.org|crl.usertrus
 ||xn--80aafadvc9bifbaeqg0p.xn--p1ai/img/icons/rutube.svg^$image,domain=xn--80aafadvc9bifbaeqg0p.xn--p1ai
 ||xn--80aafadvc9bifbaeqg0p.xn--p1ai/img/icons/sferum-footer.svg^$image,domain=xn--80aafadvc9bifbaeqg0p.xn--p1ai
 ||xn--80aafadvc9bifbaeqg0p.xn--p1ai/img/icons/max.svg^$image,domain=xn--80aafadvc9bifbaeqg0p.xn--p1ai
-://error-report.com^$important,redirect=noopjs
-://content-loader.com^$important,redirect=noopjs
+://error-report.com^$important
+://content-loader.com^$important
 ||abroad.api.comm.intl.miui.com^$important
 ||privacy.api.intl.miui.com^
 ||io.mi.com^$important
@@ -3275,8 +3275,8 @@ $removeparam=gtm_debug
 ||spade.twitch.tv^
 ||betterbanned.com/alternate-dat^$domain=betterbanned.com
 ||betterbanned.com/eLog^
-||script.wikia.nocookie.net/fandom-ae-assets/*/ad-engine/$script,domain=fandom.com|*.fandom.com,redirect=noopjs,important
-||script.wikia.nocookie.net/fandom-ae-assets/*/prebid/$script,domain=fandom.com|*.fandom.com,redirect=noopjs,important
+/fandom-ae-assets/*/ad-engine/$important,domain=fandom.com|*.fandom.com,redirect=noopjs
+/fandom-ae-assets/*/prebid/$important,domain=fandom.com|*.fandom.com,redirect=noopjs
 ||vk.*/favicon.ico$domain=fandom.com,important
 ||fandom.com^$cookie=Geo
 ||ipapi.co^$third-party
@@ -3407,7 +3407,7 @@ $cookie=uns
 ||akashi.vk-portal.net^
 ||vk.*/usefull.php
 ||vk.*/special.php
-||101.ru/api/common/clientLog$xhr
+||101.ru/api/common/clientLog$xhr,redirect=empty
 ||veseloeradio.ru^$cookie=incomeUrl
 /api/outreach/stat/*/spacer.png$redirect=1x1-transparent.gif
 ||retrofm.ru/_nuxt/AdvertisingBannerRambler.$css,domain=retrofm.ru,redirect=noopcss
@@ -3927,7 +3927,7 @@ $cookie=ipp_uid
 ||aq.dolyame.ru^$third-party
 $cookie=CITY_ORDER_ZVONOK
 $cookie=MAILING_USER_CAME
-$removeparam=t,denyallow=duckduckgo.com|noai.duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion|duck.ai
+$removeparam=t,domain=duckduckgo.com|noai.duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion|duck.ai
 $removeparam=we_feature_name,denyallow=duckduckgo.com|noai.duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion|duck.ai
 $removeparam=we_started_at,denyallow=duckduckgo.com|noai.duckduckgo.com|duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion|duck.ai
 ||deviantart.com^$cookie=td
@@ -4002,6 +4002,43 @@ $cookie=shm_nocache
 ||juicyads.rocks^
 ||rule34.xxx/images/*$image,domain=rule34.xxx
 ||tyumen-time.ru/local/templates/main/images/Max_banner_site.png^$image,domain=tyumen-time.ru
+||static.wixstatic.com/media/114e8c_e530e42fdfc242a7ba113fc1bf65608c*/v*/*/*/$image,domain=handyfraind.wixsite.com
+||static.wixstatic.com/media/114e8c_79b9fbde71864e47ad7b906e1fcb3ff1*/v*/*/*/$image,domain=handyfraind.wixsite.com
+||static.wixstatic.com/media/114e8c_d9017915e2a74d3da72c485eea178835*/v*/*/*/$image,domain=handyfraind.wixsite.com
+||static.wixstatic.com/media/114e8c_e6cfaf2941d74a7593d20be26fcb3b6f*/v*/*/*/$image,domain=handyfraind.wixsite.com
+||tumentoday.ru/i/b/max.png^$imagedomain=tumentoday.ru
+||t-l.ru/i/b/977/23_2ce618f37d4c198.jpg^$image,domain=t-l.ru
+$cookie=sf-prs-lu
+$cookie=sf-prs-ss
+||pepsico.ru/WebResource.axd?d=NjxTqR2bqTw1rewxxlkHPvaiqeUjGcSidr0UPgK01vdLpGdX8SZnrqgtwmNscjHvNewENVvvMx88UJFkpu_90I1F0YS0rEe5sBfDjn7M8bUcofFMrx9g0WR4iv8EydrQCcjJFHT8MmoJK2Mn3qycPFqwGX1FMSyzp8xSB_q4tbxosFBS4PIcrj7lzz7B00qg9BCKEcXDVbnt0W8WO-5gYc7x6SRwcl1uFt85Hw8SKRY1&t=638987834274040423^$script,domain=pepsico.ru
+||sentry.rarus.ru^$important
+||retail.ru/*/api/v*adbanners/$xhr,domain=retail.ru
+||bia.ge/*/Shared/AllowUserPushNotifications
+||bia.ge/*//WebStatistics/
+||counter.top.ge^$important
+||stat.statsnet.co^
+||statsnet.co/api/v*/geo
+||uchet.kz/ad/$image,domain=uchet.kz
+||forsweareven.com^
+||beacon.wikia-services.com^$important
+||error-report.com^
+||content-loader.com^
+||api.btmessage.com^
+||cdn.btmessage.com^
+||imrworldwide.com^
+||casalemedia.com^
+/dtnr-observability.js
+||beacon.wikia-services.com/__track/$important
+||indexww.com^$important
+||discord.com/api/guilds/*/widget.json^$third-party
+||fandom.com/*/load.php?lang=*&modules=u:dev:MediaWiki:ReferencePopups/jquery.effects.js$domain=fandom.com|telepedia.fandom.com|*.fandom.com
+||fandom.com/*/wiki/null
+||fandom.com/*/api.php?action=query*&ammessages=Custom-Discord-header|Custom-Discord-id&uselang=$domain=fandom.com|telepedia.fandom.com|*.fandom.com
+://css-load.com^$important
+||css-load.com^
+://js-load.com^$important
+||js-load.com^
+||adshield-fallback-dev-wskxz.b-cdn.net^
 !
 !
 !
@@ -6552,6 +6589,40 @@ xakep.ru###warp > div.bdMain:nth-child(5) > div.bdaia-home-container > div.bd-co
 rule34.xxx##a[rel="sponsored"]
 rule34.xxx##.horizontalFlexWithMargins
 tyumen-time.ru##header.header:nth-child(6) > a:first-child
+handyfraind.wixsite.com###comp-jmlpj500
+handyfraind.wixsite.com###comp-jmlr6sgr
+handyfraind.wixsite.com###comp-jmnumrmw
+handyfraind.wixsite.com###comp-jmmmwovl
+##img[src*="//metrika-informer.com/"]
+tumentoday.ru##header:first-child > div.container > div.banner:nth-child(2)
+t-l.ru##div.main_block_7:nth-child(10) > div.container > div.row > div.col-lg-9.col-md-9.col-sm-12.col-xs-12.ns > div.main_bottom_banner:last-child > div:last-child
+101.ru##.quiz-01-25
+finance.ozon.ru###svelte > div.app.svelte-1qtny5w.desktop:nth-child(2) > div.main.svelte-1qtny5w:last-child > main.svelte-1qtny5w > div.desk.svelte-17e63dp > div.column.svelte-17e63dp:first-child > div.block.svelte-17e63dp:nth-child(2) > div.swiper-banners-container.svelte-17e63dp:nth-child(3)
+finance.ozon.ru##.banner, .svelte-1e4i1bp, .with-image
+##td#freenet_table_ads
+###ea_intext_div
+##.lapni-pop-over
+###xenium_hot_offers
+##a[href*="privacyportal-eu.onetrust.com/webform/"]
+##div[id*="AdSense"]
+##div[class*=" RelatedAds "]
+orginfo.uz##.jahonai-banner__link
+myorg.uz##.TariffBottomBar_bar__ZQvL1
+pk.uchet.kz###__nuxt > div.relative.flex.min-h-screen.flex-col.overflow-x-clip:last-child > main.flex.flex-1.flex-col:first-child > div.bg-base-100.px-0.py-2.md\:px-8.md\:py-6.xl\:px-\[10\%\]:last-child > div.mx-auto.flex.w-full.max-w-360.flex-col.gap-2.md\:gap-6 > article.overflow-hidden.rounded-md:nth-child(2)
+mp.kz###bottom_page_line
+##iframe[src*="pubmatic.com/"]
+##iframe[src*="3lift.com/"]
+##iframe[src*="openx.net/"]
+##iframe[src*="indexww.com/"]
+##iframe[src*="rubiconproject.com"]
+##iframe[src*="servenobid.com"]
+##iframe[src*="criteo.com/"]
+##iframe[src*="adnxs.com"]
+##iframe[src*="error-report.com"]
+##iframe[src*="content-loader.com"]
+##iframe[src*="html-load.com"]
+##iframe[src*="js-load.com"]
+##iframe[src*="css-load.com"]
 !
 !
 ! - Scripts -
@@ -6674,6 +6745,8 @@ sgrc.cyberosnova.ru,cyberosnova.ru#%#//scriptlet('set-local-storage-item', 'bdu-
 vk.com,vk.ru#%#//scriptlet('set-local-storage-item', '/PromoShowed_*/', '0')
 ezdili-znaem.com#%#//scriptlet('abort-on-property-write', 'data:text/javascript;base64,')
 rule34.xxx#%#//scriptlet('prevent-addEventListener', 'register')
+#%#//scriptlet('remove-node-text', 'script', 'content-loader.com')
+#%#//scriptlet('remove-node-text', 'script', 'error-report.com')
 !
 !
 !
@@ -7668,6 +7741,7 @@ ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-
 ||myphonenumbers-pa.googleapis.com^
 ||cloud.google.com/log$important
 ||shell.cloud.google.com/event/
+||googletagmanager.com^$domain=fandom.com,important
 !
 ! ===
 !
