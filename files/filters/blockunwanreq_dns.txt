@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.9.4
+! Version: 4.9.9
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-07-28T18:36:30+00:00
+! TimeUpdated: 2026-08-17T09:36:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 28.07.2026 18:36 UTC
+! Last Modified: 17.08.2026 09:36 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -809,6 +809,7 @@
 ||g.ezoic.net^$important
 ||vp.rambler.ru^
 ||unagi*.amazon.com^$important
+||unagi*.amazon.*^$important
 ||cdn-advert.smi2.net^$important
 ||mradx.net^$important
 ||pixe*whirl.com^$important
@@ -2304,6 +2305,123 @@
 ||js-load.com^$important,dnsrewrite=0.0.0.0
 ||css-load.com^$important,dnsrewrite=0.0.0.0
 ||adshield-fallback-dev-wskxz.b-cdn.net^
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+! -Soon..-
+||counter.megagroup.ru^$important
+||simbadexchange.ru^
+||umami.*^
+||fls*.amazon.com^
+||fls*.amazon.*^
+||scripts.mediavine.com^
+||cdn.p-n.io^
+||srv.tunefindforfans.com^
+||tg*.vidcrunch.com^
+||umami-*.kreatell.gg^
+||litix.io^
+||cdn.gravito.net^
+||marketo.net^
+||ad-delivery.net^
+||cdn.iubenda.com^
+||tp-em.com^
+||kameleoon.io^
+||beacon.cdn.qq.com^
+||hm.baidu.com^
+||try.abtasty.com^
+||pluginboutique.postaffiliatepro.com^
+||cardinalcommerce.com^
+||iabusprivacy.pmc.com^
+||pmc-pp-tou.s3.us-west-1.amazonaws.com^
+||brochureclear.com^
+||blogherads.com^
+||cd.connatix.com^
+||s.skimresources.com^
+||tinypass.com^
+||scientificfor.com^
+||cookie-script.com^
+||diffuser-cdn.app-us1.com^
+||luckyorange.com^
+||d23dclunsivw3h.cloudfront.net^
+||api.config-security.com^
+||cdn.snigelweb.com^
+||s.thomasandfriends.ru^
+||sentry.etabl.ru^
+||xoalt.com^
+||emrldco.com^
+||ant.sbrf.ru^
+||media.net^
+||dummyimage.com^
 !
 !
 !
