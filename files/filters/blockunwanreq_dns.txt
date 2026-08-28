@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 4.9.9
+! Version: 5.0.0
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-08-17T09:36:30+00:00
+! TimeUpdated: 2026-08-28T09:36:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 17.08.2026 09:36 UTC
+! Last Modified: 28.08.2026 09:36 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -173,6 +173,7 @@
 ||aflt.travel.yandex.ru^
 ||geoadv-partner.yandex.ru^
 ||amc.yandex.*^$important
+||*.egress.yandex.net^
 !
 !
 ! ===
@@ -440,7 +441,7 @@
 ||fcmatch.google.com^
 ||feedback*.clients6.google.com^
 ||feedback*.googleapis.com^
-||footprints*.googleapis.com^
+||footprints*.googleapis.com^$important
 ||geoar*.googleapis.com^
 ||google-cloud-api.com^
 ||googleoptimize.com^
@@ -527,6 +528,13 @@
 ||performanceparameters*.googleapis.com^$important
 ||searchlabspartnerservice*.googleapis.com^$important
 ||myphonenumbers-pa.googleapis.com^
+||history.google.com^
+||timeline.google.com^
+||firebaseinstallations.googleapis.com^
+||semanticlocation*.googleapis.com^
+||userlocation*.googleapis.com^$important
+||locationhistory*.googleapis.com^$important
+||locationhistoryplacedetails*.googleapis.com^$important
 !
 ! ===
 !
@@ -1695,8 +1703,7 @@
 ||vd.visionlabs.ai^
 ||apollo.archive.org^
 ||trace-flow.ru^
-||relay-api.*.2gis.*^
-||relay-api.2gis.*^
+||relay.api.2gis.*^$important
 ||posthog.com^
 ||stats.iobit.com^
 ||adtech.de^
@@ -2304,68 +2311,39 @@
 ||servenobid.com^
 ||js-load.com^$important,dnsrewrite=0.0.0.0
 ||css-load.com^$important,dnsrewrite=0.0.0.0
-||adshield-fallback-dev-wskxz.b-cdn.net^
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
+||adshield-fallback-dev-wskxz.b-cdn.net^$dnsrewrite=0.0.0.0
+||installments.wildberries.ru^
+||installments-aggregator-bt.wildberries.ru^
+||f6-fp.wildberries.ru^
+||p.ozon.ru^
+||stg.ozonru.me^
+||limg.imgsmail.ru^
+||r3.mail.ru^
+||clickstream-proxy.api.2gis.com^
+||clickstream-proxy.api.2gis.*^
+||adskeeper.com^
+||xapi.ozon.ru^
+||sentry-*.avito.ru^
+||xapi.wildberries.ru^
+||a.oneme.ru^
+||gw-*.x5.ru^
+||cdn-probe-jobs.mrgcdn.ru^
+||inappcampaign.manzanagroup.ru^
+||mads-track.magnit.ru^
+||magnit.streamerce.live^
+||evs-*.gravityfield.ai^
+||mon.online.gpb.ru^
+||mads-serve.magnit.ru^
+||bss.2gis.*^
+||clientapi.mail.ru^
+||yadro.ru^$important
+||shepherd.ff.avast.com^$important
+||mdp-appconf-*.heytapdl.com^$important
+||ads-m.rustore.ru^
+||stats-dg.rustore.ru^
+||survey.magnit.ru^
+||ft-soft.ru^
+||mscu.ok.ru^
 ! -Soon..-
 ! -Soon..-
 ! -Soon..-
@@ -2403,12 +2381,12 @@
 ||cardinalcommerce.com^
 ||iabusprivacy.pmc.com^
 ||pmc-pp-tou.s3.us-west-1.amazonaws.com^
-||brochureclear.com^
+||brochureclear.com^$important,dnsrewrite=0.0.0.0
 ||blogherads.com^
 ||cd.connatix.com^
 ||s.skimresources.com^
-||tinypass.com^
-||scientificfor.com^
+||tinypass.com^$important,dnsrewrite=0.0.0.0
+||scientificfor.com^$important,dnsrewrite=0.0.0.0
 ||cookie-script.com^
 ||diffuser-cdn.app-us1.com^
 ||luckyorange.com^
@@ -2422,6 +2400,26 @@
 ||ant.sbrf.ru^
 ||media.net^
 ||dummyimage.com^
+||t1.tacdn.com^
+||rum.hlx.page^
+||tag.demandbase.com^
+||edge.adobedc.net^
+||api.statsig.com^
+||events.statsigapi.net^
+||v.ipinfo.io^
+||a.ipinfo.io^
+||pixel.ipinfo.io^
+||ibjs.group-ib.ru^
+||af.rt.ru^
+||mingleassertiveregard.com^
+||llvpn.com^
+||adsboosters.xyz^
+||gnomonsgashly.com^
+||s*.histats.com^
+||acscdn.com^
+||dcbbwymp1bhlf.cloudfront.net^
+||lumberjack.razorpay.com^
+||scripts.simpleanalyticscdn.com^
 !
 !
 !
@@ -2938,6 +2936,10 @@
 @@||samsonite.ru.com^
 @@||yango-maps-public.s3.*-*.amazonaws.com^$important
 @@||time2.google.com^
+@@||myrka.digital^$important
+@@||rr*---*-*.c.youtube.com^
+@@||*---*-*.c.youtube.com^
+@@||supl.google.com^$important
 !
 !
 !

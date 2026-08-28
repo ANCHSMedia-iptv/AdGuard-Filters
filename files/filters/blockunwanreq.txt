@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.7.6
-! TimeUpdated: 2026-08-17T09:36:30+00:00
+! Version: 5.7.8
+! TimeUpdated: 2026-08-28T09:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -186,7 +186,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||stat*.russianfood.com/tapi^$xhr,domain=russianfood.com,important
 ||russianfood.com/images/blg.png^$image,domain=russianfood.com,important
 /v*/geoinfo/by-ip/$domain=rbc.ru|rbclifemedia.ru|autonews.ru|sportrbc.ru
-! ext.clickstream.sberbank.ru/metrics/$xhr,important (новое правило, строка 771)
+! (новое правило, строка 771)
 !
 ||player.twitch.tv/js/embed/$script,domain=~twitch.tv,important
 ||cdn.gamestatic.net/files/pictures/promo_game_week_*.gif^$image,domain=rbkgames.com,important
@@ -247,7 +247,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||api-voyage.jetcrm.ru/public/form/subscribe-form.js^$script
 ! life.ru/_next/static/chunks/2793.3fd7e7f2a78da9d92688.js^$script,domain=life.ru,important # 3.04.25: скрипта наверное нет уже.
 /p.*^$image,xhr,domain=~lyngsat.com|~cityadstrack.com|~p.onlineradiobox.com|~counter.yadro.ru|~typekit.net|~p.data.cctv.com,redirect=1x1-transparent.gif,important
-||static.1tv.ru/player/config/banner.gif$image,domain=1tv.ru,important
+||static.1tv.ru/player/*/banner.gif$image,domain=1tv.ru,important,redirect=1x1-transparent.gif
 ||api.1tv.ru/v*/promo_places/alert_for_player^$xhr,domain=1tv.ru,redirect=empty,important
 ||ad-tech.ru^
 ||championat.com/atlas/metrics/^$xhr,domain=championat.com,important
@@ -272,7 +272,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! static.tnt-online.ru/accept_cookie.js^$script,domain=tnt-online.ru,important (новое правило, строка 138 и 139)
 ||tnt-online.ru/images/*/icons/sprite.svg$image,domain=tnt-online.ru,important
 ||rutube.ru/static/img/png/adsdkbanner.png^$xhr,important
-/pixel.*^$image,xhr,script,domain=~statad.ru|~tribalfusion.com|~pixel.sitescout.com|~viglink.com|~pixel.wp.com,redirect=1x1-transparent.gif,important
+/pixel.*^$image,xhr,script,domain=~statad.ru|~tribalfusion.com|~pixel.sitescout.com|~viglink.com|~pixel.wp.com|~pixel.ipinfo.io,redirect=1x1-transparent.gif,important
 ||api.*.ru/v*/distribution$xhr,domain=vc.ru|dtf.ru,important
 ||api.*.ru/v*/recommendations$xhr,domain=vc.ru|dtf.ru,important
 ||booster.osnova.io/*/relevant/many$xhr,domain=vc.ru|dtf.ru,important
@@ -320,7 +320,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ! dostavista.ru/backend/browser-error-log^$xhr,domain=dostavista.ru (новое правило, строка 314)
 ||express.dhl.ru/local/templates/dhl/components/bitrix/menu/*menu/images/left_menu_bg.gif^$xhr,domain=express.dhl.ru
 ||flocktory.com^$important
-! websbol.clickstream.sberbank.ru/metrics/sbol^$xhr,domain=sberbank.ru (новое правило, строка 771)
+! (новое правило, строка 771)
 /bitrix/js/yandex.metrika/script.js$script,important,redirect=metrika-yandex-watch
 ||iguides.ru/local/components/iguides/notifications.subscribe/manifest.json^$other,domain=iguides.ru,important
 ! cs*.pikabu.ru/apps/ub/*/*/sprite.svg^$xhr,domain=pikabu.ru (18.01.25: ломает сайт)
@@ -983,10 +983,10 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru,important
 ! qrator/validate$xhr,important (07.02.26: Защита от ДДос, из-за блокировки не заходит на сайты, где установлена защита от CURATOR)
 ||ad-source.pro^$important
 ||radio_vgtrk.hb.ru-msk.vkcs.cloud/prod/*/promoblock.json^$app=mobi.mpk.vestifm|mobi.mpk.radiorus
-/:\/\/yandex\.(ru|com)/$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.free.tiptop.vpn.proxy|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp|jp.ne.ibis.ibispaintxapp|com.allgoritm.youla|ru.sports,important
-/^77\.88\.(4|5){2}.(5|8){2}/$network,app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp|com.allgoritm.youla|ru.sports,important
+/:\/\/yandex\.(ru|com)/$app=com.vgtrk.smotrim|ru.tander.magnit|ru.rt.video.app.mobile|com.octopod.russianpost.client.android|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.free.tiptop.vpn.proxy|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp|jp.ne.ibis.ibispaintxapp|com.allgoritm.youla|ru.sports|com.ogonconnect.app|com.pingsecure.client.app|elyx.vpn.client|app.jumpjumpvpn.jumpjumpvpn|com.piplnetwork.piplvpn|com.supervpn.vpn.free.proxy|free.vpn.unblock.proxy.vpn.master.pro|com.hiro.vpn|io.speedtop.app|ru.vk.store|com.santon,important
+/^77\.88\.(4|5){2}.(5|8){2}/$network,app=com.vgtrk.smotrim|ru.cardsmobile.mw3|com.avito.android|ru.rt.video.app.mobile|ru.pyaterochka.app.browser|com.radioapp.mayakradio|com.radioapp.solovievfm|com.indygomobi.relaxfm|ru.ideast.ru101.rustore|com.ertelecom.domrutv|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp|com.allgoritm.youla|ru.sports|com.ogonconnect.app|com.pingsecure.client.app|elyx.vpn.client|app.jumpjumpvpn.jumpjumpvpn|com.piplnetwork.piplvpn|com.supervpn.vpn.free.proxy|free.vpn.unblock.proxy.vpn.master.pro|com.hiro.vpn|io.speedtop.app|ru.vk.store|ru.yandex.weatherplugin,important
 yastatic.net^$app=com.radioapp.mayakradio|com.avito.android|ru.vk.store|com.allgoritm.youla|ru.sports
-/^5\.255\.255\.77/$network,app=ru.pyaterochka.app.browser|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|ru.rt.video.app.mobile|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp|com.allgoritm.youla|ru.sports,important
+/^5\.255\.255\.77/$network,app=ru.pyaterochka.app.browser|com.avito.android|com.infolink.limeiptv|limehd.ru.ctv|ru.rt.video.app.mobile|com.parizene.netmonitor|ru.cardsmobile.mw3|com.octopod.russianpost.client.android|ru.vk.store|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|ru.ok.android|ru.ok.dating|ru.oneme.app|com.now.vpn|com.pengyou.cloneapp|com.allgoritm.youla|ru.sports|com.ogonconnect.app|com.pingsecure.client.app|elyx.vpn.client|app.jumpjumpvpn.jumpjumpvpn|com.piplnetwork.piplvpn|com.supervpn.vpn.free.proxy|free.vpn.unblock.proxy.vpn.master.pro|com.hiro.vpn|io.speedtop.app|ru.vk.store|ru.yandex.weatherplugin,important
 ||relax-fm.ru/prerols_relaxfm$app=com.indygomobi.relaxfm
 ||s3.amazonaws.com^$app=com.viber.voip
 ||bing.com^$app=com.viber.voip
@@ -1070,10 +1070,10 @@ images/*/Discord*logo.*$image,domain=fandom.com|telepedia.fandom.com|*.fandom.co
 ||log*.capcutapi.com^$important
 ||mobile-static.mindbox.ru^$important,domain=~mindbox.ru,third-party
 ||stat.teleport.media^$important
-||e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbankmobile|com.idamob.tinkoff.android|ru.dublgis.dgismobile|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|com.allgoritm.youla|ru.sports|com.popularapp.periodcalendar
+://e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbank.mobile|com.idamob.tinkoff.android|ru.dublgis.dgismobile|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|com.allgoritm.youla|ru.sports|com.popularapp.periodcalendar|ru.ok.android|com.yandex.browser
 /pull.config.get.json$xhr,redirect=noopjson
 ||sp-man.ru/bitrix/templates/eshop_bootstrap_green/assets/img/halva-btn.png^$image,domain=sp-man.ru
-||vk.com^$domain=shopogolic.net|shopogolic.club
+||vk.*^$domain=shopogolic.net|shopogolic.club
 ||js-collector.icewood.net^$important
 waf/fingerprint$xhr,important
 /waf*.js$script,important,domain=~limehd.tv
@@ -1086,8 +1086,8 @@ waf/fingerprint$xhr,important
 ||instagram.com/ajax/qm/$xhr
 !
 !
-||favicon.yandex.net^$app=com.avito.android
-||avatars.mds.yandex.net^$app=com.avito.android|free.vpn.proxy.secure|com.now.vpn|octohide.vpn|com.free.tiptop.vpn.proxy|free.vpn.unblock.proxy.turbovpn
+://favicon.yandex.net^$app=com.avito.android|ru.ok.android
+://avatars.mds.yandex.net^$app=com.avito.android|free.vpn.proxy.secure|com.now.vpn|octohide.vpn|com.free.tiptop.vpn.proxy|free.vpn.unblock.proxy.turbovpn|ru.ok.android
 ! ——
 ||twinrdengine.com^$important
 ||adthg.com^$important
@@ -1303,7 +1303,7 @@ $cookie=s24id
 ||sitecdn.api.lenta.com/assets-ng/scripts/kaspersky/$script,domain=lenta.com
 ||online-partners.lenta.com/api/tracker/$script,ping,domain=lenta.com,important
 !
-||youtube.com/s/search/audio/*.mp3^$media,domain=youtube.com
+/s/search/audio/*.mp3^$media,domain=youtube.com|youtubekids.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 ||orbit-promo.ru/res/video/popup*.mp4^$media,redirect=noopmp4-1s,domain=orbit-promo.ru
 /assets/PopupLayout-*.js^$script,domain=snickers.ru|twix.ru,redirect=noopjs
 /assets/popup-*.js^$script,domain=snickers.ru|twix.ru,redirect=noopjs
@@ -1386,7 +1386,7 @@ $cookie=s24id
 ||my-software.ru/sites/default/files/styles/large/public/images/*.png$image,domain=my-software.ru
 ||my-software.ru/images/linuxstudio.png^$image,domain=my-software.ru
 ||dmosk.ru/jas/*.js^$script,domain=dmosk.ru,important
-/proxy/services/sberlogger/$xhr,domain=sberbank.ru|sberbank.com,important
+/proxy/services/sberlogger/$xhr,domain=sberbank.ru|sberbank.com|sber.ru,important
 ||2gis.ru/_/log$redirect=empty
 ||2gis.ru/_/metrics$redirect=empty
 ||maps.2gis.com/v*/ald?*&ts=buyhere^$xhr,domain=2gis.ru|2gis.*,redirect=nooptext,important
@@ -1488,7 +1488,7 @@ $cookie=s24id
 ||analytics.tiktok.com^$important
 ||radiodacha.ru/backend/api/v*/geo/ip/view^$xhr,domain=radiodacha.ru
 ||radiozvezda.ru/analytics$xhr,domain=radiozvezda.ru,important
-||[2604:a880:800:10::e6:b001]/api/$xhr
+!
 ||mobi.sendsay.ru^$important
 /_nuxt/AdvertisingBanner.$css,domain=dorognoe.ru|retrofm.ru,important,redirect=noopcss
 ||dorognoe.ru/_nuxt/CookiePopUp.*.css^$xhr,domain=dorognoe.ru
@@ -1604,8 +1604,8 @@ $cookie=/utm_*/,important
 ||cdn2-static.ntv.ru/img/sberlogo_new.svg^$image,domain=ntv.ru
 ||ren.tv/images/subscribe/*.svg^$xhr,domain=ren.tv
 ||finance.wildberries.ru/chunks/sentry-$script,domain=finance.wildberries.ru,important,redirect=noopjs
-/ruxitagent_$script,domain=sberbank.ru|sberbank.com|sber.ru,redirect=noopjs,important
-||node*.vito.sber.ru/bf/$xhr,domain=sberbank.ru,redirect=empty
+/ruxitagent_$script,important,domain=sberbank.ru|sberbank.com|sber.ru,redirect=noopjs
+||node*.vito.sber.ru/bf/$xhr,domain=sberbank.ru|sberbank.com|sber.ru,redirect=empty
 ||resh.edu.ru/uploads/cinema-online.jpg^$image,domain=resh.edu.ru
 ||s.rbk.ru/v*_tv_static/common/common-*/scripts/build/fn/_ipMonitoring.js^$script,domain=tv.rbc.ru
 ||sck*.rbc.ru/t.$image,domain=tv.rbc.ru,important
@@ -1706,6 +1706,8 @@ $cookie=smi_last_visit_time,important
 ||services.sg101.prd.sctv.ch/reporting/*/tracking^$xhr,domain=tv.blue.ch,important
 ||services.sg101.prd.sctv.ch/portfolio/featurestates/^$xhr,domain=tv.blue.ch
 ||youtube.com/embed/$subdocument,removeparam=rel
+||youtube-nocookie.com/embed/$subdocument,removeparam=rel
+||youtubekids.com/embed/$subdocument,removeparam=rel
 ||osnmedia.ru/wp-content/themes/osn/assets/js/osn4partners.js^$script,domain=osnmedia.ru,redirect=noopjs
 ||osnmedia.ru/novosti-partnerov/$subdocument,third-party
 ||player-metrics.kinescope.io^$important
@@ -1799,7 +1801,7 @@ $cookie=MOLNETSTATSESSID,important
 ||static.criteo.net^$third-party,domain=~novayagazeta.ru
 ||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/telegram-subscribe.js^$script,domain=kp.ru|kp.*,redirect=noopjs
 /boom/api/*/metrics/adaptive/favicon-*.png$image,domain=kp.ru|kp.*|md.kp.media,important
-||vk.com^$app=ru.pyaterochka.app.browser
+://vk.*^$app=ru.pyaterochka.app.browser|com.avito.android|ru.tyumen.telemed|ru.mail.mailapp|u.gazprombank.android.mobilebank.app|ru.vk.store|ru.tander.magnit|ru.ok.android
 ||a1.pronouncefix.com^
 $document,removeparam=ref
 $cookie=BITRIX_SM_LAST_VISIT,important
@@ -2261,6 +2263,7 @@ $removeparam=msclkid
 $document,removeparam=is_autologin_ya
 ||i-trailer.ru^
 ||clickstream-proxy.api.2gis.*^$important
+||clickstream-proxy.api.2gis.com^
 ||advisor.api.2gis.*^$important
 ||mediascope.mail.ru^$important
 ||alt-xray.imgsmail.ru^$important
@@ -2474,7 +2477,7 @@ vip.gophersport.com$image
 ||home.imgsmail.ru/resplash/*/i/2x2_$image,domain=mail.ru|~tv.mail.ru
 ||home.imgsmail.ru/resplash/*/i/subbotatv_$image,domain=mail.ru|~tv.mail.ru
 ||home.imgsmail.ru/resplash/*/i/muztv_$image,domain=mail.ru|~tv.mail.ru
-||r3.mail.ru/*/error/$important,redirect=empty
+||r3.mail.ru^$important
 $removeparam=autoplay,domain=vkvideo.ru|ok.ru|player.vimeo.com
 ||mail.ru^$cookie=mtrc
 ||my.mail.ru/*/stat/$domain=my.mail.ru
@@ -2601,7 +2604,6 @@ _banner.swf
 ||undetectable.ai/fprmain.js^$script,domain=undetectable.ai
 ||log.aliyuncs.com^$important
 ||media.kasperskydaily.com/wp-content/uploads/sites/90/2025/05/23000922/900%D1%85945Rob_*.gif^$image,domain=kaspersky.ru|kaspersky.com
-||vk.ru^$app=com.avito.android
 ||character.ai/scripts/googlefc-$script,domain=character.ai
 ||sentry.timeweb.cloud^$important
 /yandexMetrikaCounter.js$redirect=metrika-yandex-watch
@@ -2693,7 +2695,7 @@ about:blank^$domain=greynoise.io
 ||hostinghub.ru/sites/default/files/styles/logo_grid/public/logo/$image,domain=hostinghub.ru
 ||ant.sberbank.ru^$important
 ||cdnflow.ru^
-||sberbank.ru/common/*/js/dynatrace.js^$script,domain=sberbank.ru,redirect=noopjs
+/common/*/js/dynatrace.js^$script,domain=sberbank.ru|sberbank.com|sber.ru,redirect=noopjs
 ! akashi.vk-portal.net/api/v*/nel$redirect=empty
 ||vk.*/browser_reports$redirect=empty
 /videos1234/other/
@@ -2710,8 +2712,8 @@ about:blank^$domain=greynoise.io
 ||cs45.pikabu.ru/ev.php$domain=pikabu.ru
 ||cs16.pikabu.ru/s/2026/03/31/11/zkxsjtw3.jpg^$image,domain=pikabu.ru
 ||nnmstatic.win/forum/misc/js/share.js^$script,domain=nnmclub.to,redirect=noopjs
-||cdn.yandex.net^$app=free.vpn.proxy.secure|com.zoogvpn.android|com.freevpnplanet|com.free.tiptop.vpn.proxy|free.vpn.unblock.proxy.turbovpn
-||rutube.ru^$app=com.zoogvpn.android
+://cdn.yandex.net^$app=free.vpn.proxy.secure|com.zoogvpn.android|com.freevpnplanet|com.free.tiptop.vpn.proxy|free.vpn.unblock.proxy.turbovpn
+://rutube.ru^$app=com.zoogvpn.android
 ||ximitime.com/wp-content/themes/xiaomiuiwp/assets/psmemeos.gif^$image,domain=ximitime.com
 ||metrics*.data.hicloud.com^$important
 ||grs.hicloud.com^
@@ -2768,8 +2770,7 @@ about:blank^$domain=greynoise.io
 ||archive.org/includes/donate.php$domain=archive.org
 ||archive.org/includes/apollo.js^$script,domain=archive.org
 ||apollo.archive.org^
-||relay-api.*.2gis.*^
-||relay-api.2gis.*^
+||relay.api.2gis.*^$important
 ||trace-flow.ru^
 ||rbc.ru/api/rbcnews/*/social-networks/$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,redirect=empty
 ||rbc.ru/api/rbcnews/v*/topline-branding$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,redirect=empty
@@ -2997,7 +2998,7 @@ otel-trace/otel.$script,redirect=noopjs
 ||torgi.gov.ru/new/assets/tg-banner-$image,domain=torgi.gov.ru
 ||hzakupki.gov.ru/epz/main/public/js/common/empty.js$domain=zakupki.gov.ru
 ||zakupki.gov.ru/static/useractivityrecordplugin/js/recordSupportSystem.js^$script,domain=zakupki.gov.ru,redirect=noopjs
-/statistics.js$script,redirect=noopjs
+/statistics.js$script,redirect=noopjs,domain=~google.com
 ||gov.ru^$cookie=GUEST_AUTH,important
 ||gossluzhba.gov.ru/api/metrics-configuration/$xhr,domain=gossluzhba.gov.ru,redirect=noopjson
 ||gossluzhba.gov.ru/health?pageId=*&event=$xhr,domain=gossluzhba.gov.ru
@@ -4040,86 +4041,42 @@ $cookie=sf-prs-ss
 ://js-load.com^$important
 ||js-load.com^
 ||adshield-fallback-dev-wskxz.b-cdn.net^
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
+||adskeeper.com^
+||sentry-*.avito.ru^
+||a.oneme.ru^
+||gw-*.x5.ru^
+||cdn-probe-jobs.mrgcdn.ru^
+||inappcampaign.manzanagroup.ru^
+||mads-track.magnit.ru^
+||magnit.streamerce.live^
+||evs-*.gravityfield.ai^
+||mon.online.gpb.ru^
+||mads-serve.magnit.ru^
+||bss.2gis.*^
+||sdk.mail.ru^
+||clientapi.mail.ru^
+||shepherd.ff.avast.com^$important
+||mdp-appconf-*.heytapdl.com^$important
+||ads-m.rustore.ru^
+||stats-dg.rustore.ru^
+||survey.magnit.ru^
+||ft-soft.ru^
+||mail.ru^$app=ru.ok.android
+||cdn-vk.ru^$app=ru.mail.mailapp
+||mail.ru/sdk/log/$document,subdocument
+://e.mail.ru/api/v*/omicron/get
+||mscu.ok.ru^
+8.8.8.8$network,app=ru.ok.android
+||ok.ru/pixel
+||gvt1.com/edgedl/$app=com.yandex.browser
+||svc.cdn.yandex.net/*/*/*/tc_*/*.crx$app=com.yandex.browser
+||ext-cloudcdn-*-*.cdn.yandex.net/*/*/*/*/*/*.crx$app=com.yandex.browser
+||dl.google.com/*/*/*$app=com.yandex.browser
+||update.googleapis.com/service/update2/$app=com.yandex.browser
+||api.browser.yandex.*/mcfg/$app=com.yandex.browser
+||api.browser.yandex.*/store/crx/$app=com.yandex.browser
+||vk.*/?act=get_unauth_action_box
+://*.imgsmail.ru^$app=ru.ok.android
 ! -Soon..-
 ! -Soon..-
 ! -Soon..-
@@ -4134,7 +4091,7 @@ $cookie=sf-prs-ss
 ||assets.genius.com/javascripts/*/DfpAd-$script,omain=genius.com,redirect=noopjs
 ||fls*.amazon.com^$important
 ||fls*.amazon.*^$important
-||cloudflare-dns.com^$domain=soundcloud.com
+||cloudflare-dns.com^$domain=soundcloud.com|replit.com
 ||umami-*.kreatell.gg^
 ||*.*/monitoring^
 /js/rem.js
@@ -4206,6 +4163,45 @@ $cookie=uui
 ||media.net^
 ||dummyimage.com^
 $removeparam=from
+/metrika/script.$script,redirect=metrika-yandex-tag
+/api/v*/utm/
+||anti-malware.ru/files/advagg_css/
+||anti-malware.ru/files/adm/*.png$image,domain=anti-malware.ru
+||anti-malware.ru/files/adm/*.jpg$image,domain=anti-malware.ru
+.ru/wp-content/themes/*/js/counters.$script,domain=androidinsider.ru|appleinsider.ru|hi-news.ru
+.ru/wp-content/themes/*/js/onecode-ad-geo.$script,domain=androidinsider.ru|appleinsider.ru|hi-news.ru
+||metanit.com/max.svg^$image,domain=metanit.com
+||otvet.mail.ru/autologin?$domain=otvet.mail.ru
+||lenizdat.ru/articles/views/?id=
+/bitrix/js/altasib.errorsend/
+||static.tacdn.com/*/concat/taevents-$script,domain=tripadvisor.*,redirect=noopjs
+||static.tacdn.com/img2/x.gif^$image,redirect=1x1-transparent.gif,domain=tripadvisor.*
+||static.tacdn.com/*/util/TALSO.js^$script,redirect=noopjs,domain=tripadvisor.*
+||hsforms.com/embed/v*/visitor/
+||elements.stytch.com/telemetry.js^$script
+||replit.com/cdn-cgi/trace
+||replit.com/public/stallwart.$script
+||segment.io^$third-party,domain=~segment.com,important
+/sdk.js/v*/*/sdk.$script
+||pixel.ipinfo.io^$important
+||ibjs.group-ib.ru^$third-party
+||af.rt.ru^
+||xiaomi-miui.gr/wp-content/uploads/2017/11/NordVpn-$image,domain=xiaomi-miui.gr
+||geekbuying.com/dynamic-ads/$third-party
+||img.gkbcdn.com/s3/dynamic-ads/$third-party
+||xiaomi-miui.gr/wp-content/uploads/2019/02/telegram.png^$image,domain=xiaomi-miui.gr
+||syaomaster.vercel.app/static/js/inject.js^$script,domain=syaomaster.vercel.app
+||ipwho.is^$third-party
+||dailyuploads.net/js/jquery.cookie.js$domain=dailyuploads.net,redirect=noopjs
+||s*.histats.com^$important
+||vexfile.com/js/locker.js$script,domain=vexfile.com,redirect=noopjs
+||antiadblockcore.com^
+||etrierduple.com^
+||cloudfam.io/api/cf_adflow_pub_data_collector.php$domain=
+||cloudfam.io/adflow_visitor_telemetry.php$domain=
+||lumberjack.razorpay.com^$important
+$removeparam=ref_url
+$removeparam=ref_domain
 !
 !
 !
@@ -4431,6 +4427,10 @@ $removeparam=from
 ||nel.wb.ru^
 ||acollector.wb.ru^$important
 ||antibot.wildberries.ru/api/v*/report$important
+||installments.wildberries.ru^
+||installments-aggregator-bt.wildberries.ru^
+||f6-fp.wildberries.ru^
+||xapi.wildberries.ru^
 !
 !
 !
@@ -4561,7 +4561,7 @@ wildberries.ru##li[data-menu-id="1250"]
 ! *ozon.*/api/entrypoint-api.bx/page/json/v*^$xhr,domain=ozon.ru|ozon.by **
 /assets/*/marketing-desktop-adv-banner-$script,domain=ozon.ru|ozon.by,redirect=noopjs
 ||st.ozone.ru/assets/*/common_molecules_adv-info_index_vue.$css,script,domain=ozon.ru
-@@||xapi.ozon.*/api/logs-gateway/$xhr
+! @@||xapi.ozon.*/api/logs-gateway/$xhr
 ! st.ozone.ru/assets/*/detached/*/autosplit-teams_*_components*_adv-*.js^$script,domain=ozon.ru|ozon.by **
 ||cdn1.ozonusercontent.com/s3/sellerassets/*/*.jpeg^$image,domain=ozon.ru|ozon.by
 ! st.ozone.ru/assets/*/detached/*/*-desktop-banner-carousel.js^$script,domain=ozon.ru **
@@ -4581,6 +4581,7 @@ wildberries.ru##li[data-menu-id="1250"]
 ||ozon.*/p-api/tracker/$important
 ||p.ozon.ru^
 ||stg.ozonru.me^
+||xapi.ozon.ru^
 !
 ! -The rule applies to Ozon and Ozon Bank's website. -
 ! - Правило применимо к сайту Озона и Озон Банка. -
@@ -4888,13 +4889,13 @@ dom.ru,*.dom.ru##div[class^="sc-6e31cbc2-0 kKbgFL"]
 ||ok.ru/web-api/v*/reports/$xhr,redirect=empty,important
 ||ok.ru/mres/img/react/*/megafon-like_sup.png^$image,domain=ok.ru
 ||api.ok.ru/fb.do
-||ok.ru/web-api/v*/resource-timings/$xhr,redirect=empty
+! ok.ru/web-api/v*/resource-timings/$xhr,redirect=empty
 ||st-ok.cdn-vk.ru/res/js/tracerPlaceholder$script,redirect=noopjs
 ||st-ok.cdn-vk.ru/res/js/EventBus$script,redirect=noopjs
 ||st-ok.cdn-vk.ru/res/js/EventFactoryForEventBus$script,redirect=noopjs
 ||st-ok.cdn-vk.ru/res/js/StatLogger$script,redirect=noopjs
 ||st-ok.cdn-vk.ru/res/js/TelemetryEventBuses_$script,redirect=noopjs
-||st-ok.cdn-vk.ru/res/js/capture_$script,redirect=noopjs
+! st-ok.cdn-vk.ru/res/js/capture_$script,redirect=noopjs
 ||ok.ru/web-api/v*/dailyphoto/log$domain=ok.ru
 ||favicon.yandex.net^$domain=ok.ru
 ||st.okcdn.ru/static/game-promo-image/$image,domain=ok.ru
@@ -6131,7 +6132,8 @@ nextmobile.ru##div:nth-child(28)
 ##.notification, .js-cookie-notification, .notification--shown
 ###cookie-bar
 planeta.tc###__next > div.css-1rz8i9c.er0yei90:last-child > div.css-iokqan.er0yei91 > div.content:first-child > div.row.css-ttsknn.e1ip4kte0:nth-child(3) > div.css-1btrsdx.e2tpg980:nth-child(2)
-youtube.com##.yt-list-item-view-model__label, .yt-list-item-view-model__container, .yt-list-item-view-model__container--compact, .yt-list-item-view-model__container--tappable
+planeta.tc##.css-72gfm9, .e1eo80bk0
+youtube.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##.yt-list-item-view-model__label, .yt-list-item-view-model__container, .yt-list-item-view-model__container--compact, .yt-list-item-view-model__container--tappable
 yappy.media##.css-1t1saub, .e1ied3zo0
 dnschecker.org##.protected_now, .ps-1
 cnews.ru###back-to-top
@@ -6320,8 +6322,8 @@ spravportal.ru###div-main-part > div.col-md-12.col-lg-12:first-child > a:nth-chi
 kdl.ru##header.header.js-header:first-child > div.header-container:first-child > div.header-bottom:last-child > div.container > div.header-nav.js-nav.swiper.swiper-container-horizontal:first-child > div.swiper-wrapper:first-child > a.header-nav__link.swiper-slide:nth-child(5)
 kdl.ru##a[href*="://max.ru/kdl_ru"]
 chatgpt.com##div[role="dialog"][class^="z-[100] w-full max-w-full overflow-hidden bg-token-bg-tertiary border-token-border-heavy flex flex-col gap-2 border-t p-4 pb-6"]
-texterra.ru##header.header.header--toggle-bottom.header--fixed:nth-child(4) > div.header__body:last-child > div.container.container--full > div.header__row > div.header__col:nth-child(3) > a.header__button.button.button--purple.button--fix:last-child
-sberbank.ru##img[src*="://bfds.sberbank.ru/"]
+texterra.ru##header.header.header--toggle-bottom.header--white-logo:nth-child(4) > div.header__body:last-child > div.container.container--full > div.header__row > div.header__col:nth-child(3) > a.header__button.button.button--purple.button--fix:last-child
+sberbank.ru,sberbank.com,sber.ru##img[src*="://bfds.sberbank.ru/"]
 ##iframe[src*=".cdnflow.ru/"]
 honeygain.com##div.sc-1b930a10-0.cWJOXf
 honeygain.com##.sc-hTZjHc, .kTLBjU
@@ -6728,7 +6730,7 @@ ezdili-znaem.com###custom_html-2
 ezdili-znaem.com##article > div.inside-article:last-child > div:last-child > div:nth-child(5)
 pro-interactive.ru##.cookie, .js--cookie
 forestpark21.ru##.t825__btn
-mtpro.xyz##a[href*="://px6.net/"][onclick="this.href='://px6.net/e/"]
+mtpro.xyz##a[href*="://px6.net/"]
 mtpro.xyz##a[href*="/vpn2.php"]
 sp72ru.ru###custom_html-33
 sp72ru.ru###custom_html-32
@@ -6813,7 +6815,7 @@ mp.kz###bottom_page_line
 ##iframe[src*="amazon-adsystem.com/"]
 vk.*##[id^="ads_"]
 vk.*###l_invite_menu_promo
-duckduckgo.com,noai.duckduckgo.com,duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion,duck.ai##iframe[sc^="/post3.html"]
+duckduckgo.com,noai.duckduckgo.com,duckduckgogg42xjoc72x3sjasowoarfbgcmvfimaftt6twagswzczad.onion,duck.ai##iframe[src^="/post3.html"]
 fandom.com##iframe[src*="fandom.com/silver-surfer.html"]
 ##iframe[src*="silver-surfer.html"]
 1001tracklists.com###csLeft > div:first-child
@@ -6826,7 +6828,7 @@ card-open.ru##.af-citycta
 ##div[id^="ad_frame"]
 ##link[rel="stylesheet"][href*="pub.network/"]
 ##iframe[src*="brochureclear.com"]
-##img[src="pixel.wp.com"]
+##img[src*="pixel.wp.com"]
 ##iframe[src*="scientificfor.com"]
 ##iframe[src*="tinypass.com"]
 ##skin-ad-section
@@ -6839,6 +6841,43 @@ remontka.pro##a[href*="://telegram.me/remontka_pro"]
 e.mail.ru###ph-whiteline > div.ph-container.svelte-1pihfi3 > div.ph-auth.svelte-ttryjx:nth-child(5) > div.ph-mw-button.ph-project.ph-project-widgets.svelte-qsdlzx:first-child
 ok.ru###hook_Loader_2277705777 > div.feed-list.__compact:first-child > div.feed-w:nth-child(3)
 computer76.ru##.page-scroll-up
+anti-malware.ru###block-block-109
+androidinsider.ru###sidebar > aside.ai.telegram:nth-child(2)
+fonelab.com##div.article-main.center:nth-child(5) > div.main.flex_box > div.sidenav:first-child > div.guile > div.guile-down:nth-child(2)
+fonelab.com##div.article-main.center:nth-child(5) > div.main.flex_box > div.sidenav:first-child > div.guile > div.guile-down:nth-child(4)
+fonelab.com##div.article-main.center:nth-child(5) > div.main.flex_box > div.sidenav:first-child > div.guile > div.guile-down:nth-child(6)
+podrobno.uz##.alert, .alert-info
+tripadvisor.*##img[src^="://static.tacdn.com/img2/x.gif?"]
+##img[src*="/x.gif?"]
+russiable.com###kt-scroll-up
+warp-gen.github.io###promoButton
+warp-gen.github.io###adButton
+azure.microsoft.com###mainContent > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.responsivegrid.aem-GridColumn.aem-GridColumn--default--12 > div.aem-Grid.aem-Grid--12.aem-Grid--default--12 > div.experiencefragment.aem-GridColumn.aem-GridColumn--default--12:nth-child(4)
+microsoft.com##a[href^="://aka.ms/yourcaliforniaprivacychoices"]
+ipinfo.io###main-content > div.w-full.rounded-md.bg-v2-green-01.px-4.py-3.flex.flex-col.gap-3.md\:flex-row.md\:items-center.md\:justify-between:first-child
+ipinfo.io##.bg-gray-800, .rounded, .p-6, .md\:py-6, .md\:px-10
+##iframe[src^="://scone-pa.clients6.google.com/static/proxy.html"]
+##iframe[src^="://scone.clients6.google.com/static/proxy.html"]
+youtube.com,youtubekids.com,youtube-nocookie.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##iframe[src^="://casespartner-pa.youtube.com/static/proxy.html"]
+youtube.com,youtubekids.com,youtube-nocookie.com,35.190.94.206,206.94.190.35.bc.googleusercontent.com##iframe[src^="://casespartner.youtube.com/static/proxy.html"]
+1tv.ru##div[class^="footer-promo-place"]
+1tv.ru##div[id*="adfox_"]
+35.190.94.206,206.94.190.35.bc.googleusercontent.com##.ytd-two-column-browse-results-renderer > ytd-rich-grid-renderer > #masthead-ad.ytd-rich-grid-renderer
+35.190.94.206,206.94.190.35.bc.googleusercontent.com##.ytp-suggested-action > .ytp-suggested-action-badge
+35.190.94.206,206.94.190.35.bc.googleusercontent.com###shopping-timely-shelf
+##a[href^="img.gkbcdn.com/s3/dynamic-ads/"]
+xiaomi-miui.gr##.google_responsive_1, .google_responsive_1-13
+xiaomi-miui.gr###ai_widget-15
+xiaomi-miui.gr###ai_widget-17
+xiaomi-miui.gr###ai_widget-8
+xiaomi-miui.gr###ai_widget-12
+xiaomi-miui.gr##a[href^="://t.me/xiaomimiuihellas"]
+cloudfam.io###preload-monthly-promo-modal
+cloudfam.io##div.bg-gradient-to-r.from-blue-600.via-indigo-600.to-blue-700.text-white.text-xs.font-semibold.py-2.px-4.text-center.shadow-inner.flex.items-center.justify-center.gap-2:first-child
+cloudfam.io##main.max-w-5xl.w-full.mx-auto.px-4.sm\:px-6.py-6.flex-1.space-y-5:nth-child(3) > div.cf-card.p-4.sm\:p-5.bg-gradient-to-br.from-white.to-blue-50\/40.border-blue-200:first-child
+cloudfam.io###state-blocked > div.cf-card.p-5.sm\:p-6.border-red-200.bg-gradient-to-r.from-red-50\/80.via-white.to-red-50\/50.flex.flex-col.sm\:flex-row.items-start.sm\:items-center.justify-between.gap-4:first-child
+cloudfam.io###state-blocked > div.space-y-3:last-child
+zdrive.to##main.relative.pt-20.flex.flex-col.min-h-screen:nth-child(2) > section.py-12.px-4.relative > div.max-w-4xl.mx-auto.relative.z-10:last-child > div.border.border-\[\#222\].bg-\[\#0a0a0a\].p-6.md\:p-8.relative:last-child > div.max-w-lg.mx-auto:nth-child(3) > div.grid.grid-cols-1.lg\:grid-cols-2.gap-4:last-child > a.btn.hover-snap.w-full.h-14.bg-primary.text-black.font-bold.text-sm.uppercase.tracking-widest.flex.items-center.justify-center.gap-2.transition-all.hover\:bg-white:last-child
 !
 !
 ! - Scripts -
@@ -6963,6 +7002,40 @@ ezdili-znaem.com#%#//scriptlet('abort-on-property-write', 'data:text/javascript;
 rule34.xxx#%#//scriptlet('prevent-addEventListener', 'register')
 #%#//scriptlet('remove-node-text', 'script', 'content-loader.com')
 #%#//scriptlet('remove-node-text', 'script', 'error-report.com')
+#%#//scriptlet('remove-node-text', 'script', 'brochureclear.com')
+#%#//scriptlet('remove-node-text', 'script', 'tinypass.com')
+#%#//scriptlet('remove-node-text', 'script', 'scientificfor.com')
+! -
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#(()=>{const t=Function.prototype.call;let e=!1,o=!1,n=!1;const c={apply:(c,r,a)=>{const i=a[0];if(i?.requestNumber&&i?.snapshot)try{o=((t,e=5)=>{if("object"!=typeof t||null===t)return!1;const o=new Array(1e3);let c=0;const r=new WeakSet;for(o[c++]={obj:t,depth:0};c>0&&!n;){const{obj:t,depth:a}=o[--c];if(a>e||"object"!=typeof t||null===t||r.has(t))continue;let i;r.add(t);try{i=Object.hasOwn(t,"backoffTimeMs")}catch(t){}if(i)return void 0!==t.backoffTimeMs||(n=!0,!1);for(const e in t)if(Object.hasOwn(t,e)){let n;try{n=t[e]}catch(t){}null!==n&&"object"==typeof n&&!r.has(n)&&c<o.length&&(o[c++]={obj:n,depth:a+1})}}return!1})(i),e=!0,(o||n)&&(Function.prototype.call=t)}catch(t){}return Reflect.apply(c,r,a)}};window.Function.prototype.call=new Proxy(window.Function.prototype.call,c);window.addEventListener("load",(async()=>{if(Function.prototype.call=t,!o&&e)return;const n=window.location.search,c=new URLSearchParams(n).get("v");if(!c)return;const r=await(a="#movie_player",i=200,l=1e4,new Promise((t=>{if(!a||!i||!l)return void t(null);const e=Date.now()+l,o=()=>{const n=document.querySelector(a);n?t(n):Date.now()>e?t(null):setTimeout(o,i)};o()})));var a,i,l;if(!r)return;const s=new URLSearchParams(n).get("t")??"0",u=parseInt(s,10);if("function"==typeof r.loadVideoById&&!location.search.includes("&rco="))try{r.loadVideoById(c,u)}catch(t){}}))})();
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('trusted-click-element', 'ytd-consent-bump-v2-lightbox .eom-buttons > .ytd-consent-bump-v2-lightbox > .ytd-consent-bump-v2-lightbox button.ytSpecButtonShapeNextHost')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('trusted-click-element', 'ytd-consent-bump-v2-lightbox .eom-buttons > .ytd-consent-bump-v2-lightbox > .ytd-consent-bump-v2-lightbox button.yt-spec-button-shape-next')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('set-constant', 'google_ad_status', '1')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('set-constant', 'ytInitialPlayerResponse.adPlacements', 'undefined')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('set-constant', 'ytInitialPlayerResponse.adSlots', 'undefined')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('set-constant', 'ytInitialPlayerResponse.playerAds', 'undefined')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('set-constant', 'playerResponse.adPlacements', 'undefined')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('json-prune', 'playerResponse.adPlacements playerResponse.adSlots', 'playerResponse.streamingData.serverAbrStreamingUrl')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('json-prune-xhr-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|\/player(?!.*(get_drm_license))|watch\?[tv]=|get_watch\?/')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('json-prune-fetch-response', 'playerResponse.adPlacements playerResponse.playerAds playerResponse.adSlots adPlacements playerAds adSlots', '', '/playlist\?list=|player\?|watch\?[tv]=/')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#(()=>{const t={apply:(t,o,n)=>{const e=n[0];return"function"==typeof e&&e.toString().includes("onAbnormalityDetected")&&(n[0]=function(){}),Reflect.apply(t,o,n)}};window.Promise.prototype.then=new Proxy(window.Promise.prototype.then,t)})();
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#(()=>{const e={apply:(e,t,n)=>{const o=Reflect.apply(e,t,n);try{o instanceof HTMLIFrameElement&&"about:blank"===o.src&&o.contentWindow&&(o.contentWindow.fetch=window.fetch,o.contentWindow.Request=window.Request)}catch(e){}return o}};Node.prototype.appendChild=new Proxy(Node.prototype.appendChild,e)})();
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('adjust-setTimeout', '[native code]', '17000', '0.001')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#(()=>{let t=document.location.href,e=[],n=[],o="",r=!1;const i=Array.prototype.push,a={apply:(t,o,a)=>(window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id&&a[0]&&a[0]!==window&&"number"==typeof a[0].start&&a[0].end&&"ssap"===a[0].namespace&&a[0].id&&(r||0!==a[0]?.start||n.includes(a[0].id)||(e.length=0,n.length=0,r=!0,i.call(e,a[0]),i.call(n,a[0].id)),r&&0!==a[0]?.start&&!n.includes(a[0].id)&&(i.call(e,a[0]),i.call(n,a[0].id))),Reflect.apply(t,o,a))};window.Array.prototype.push=new Proxy(window.Array.prototype.push,a),document.addEventListener("DOMContentLoaded",(function(){if(!window.yt?.config_?.EXPERIMENT_FLAGS?.html5_enable_ssap_entity_id)return;const i=()=>{const t=document.querySelector("video");if(t&&e.length){const i=Math.round(t.duration),a=Math.round(e.at(-1).end/1e3),c=n.join(",");if(!1===t.loop&&o!==c&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}else if(!0===t.loop&&i&&i===a){const n=e.at(-1).start/1e3;t.currentTime<n&&(t.currentTime=n,r=!1,o=c)}}};i();new MutationObserver((()=>{t!==document.location.href&&(t=document.location.href,e.length=0,n.length=0,r=!1),i()})).observe(document,{childList:!0,subtree:!0})}))})();
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#(()=>{const e="pyv",t="param_first",a="param_second",n="client_screen",c="ad_type",o="none",r="eAFgAQ",l="8AUB",i="YAHI",s="CHANNEL",y=t;let p=y,u=null;const d=Object.getOwnPropertyDescriptor(Document.prototype,"visibilityState"),b=()=>{try{Object.defineProperty(document,"visibilityState",{get:()=>"visible",configurable:!0})}catch(e){}},m=window.JSON.stringify,f=e=>{p=e};(()=>{try{const e=Object.getOwnPropertyDescriptor(window.JSON,"parse");return!!e&&e.writable}catch(e){return!1}})()||((()=>{const e={apply:(e,t,a)=>{try{const e=t;e?.includes('"minimumPlaybackRate":100,"maximumPlaybackRate":100')&&(t=e.replace('"minimumPlaybackRate":100,"maximumPlaybackRate":100','"minimumPlaybackRate":25,"maximumPlaybackRate":200'))}catch(e){}return Reflect.apply(e,t,a)}};window.String.prototype.replace=new Proxy(window.String.prototype.replace,e)})(),f(n));const x=e=>{(e.playbackContext||e.playerRequest)&&delete e.context?.client?.configInfo?.appInstallData},C=(p,m,C)=>{try{if(!p||!m||!C)return;(e=>{const t=e?.videoId;t&&(u&&u!==t&&f(y),u=t)})(p);const R=document.getElementById("movie_player")?.getPlayerResponse()?.playabilityStatus?.status;if("LOGIN_REQUIRED"!==R&&"CONTENT_CHECK_REQUIRED"!==R||(C=o),C===t&&p.context?.client?.clientScreen!==s&&!p.params?.startsWith(i))return p.params=r,p.playerRequest&&p.playerRequest.params!==r&&(p.playerRequest.params=r),p.playbackContext&&p.playbackContext.params!==r&&(p.playbackContext.params=r),m.contentPlaybackContext.lactMilliseconds=String(Date.now()),b(),void x(p);if(C===a&&p.context?.client?.clientScreen!==s&&!p.params?.startsWith(i))return p.params!==l&&(p.params=l),p.playerRequest&&p.playerRequest.params!==l&&(p.playerRequest.params=l),p.playbackContext&&p.playbackContext.params!==l&&(p.playbackContext.params=l),p.playlistId||(p.context.client.clientScreen=s),m.contentPlaybackContext.lactMilliseconds=String(Date.now()),b(),void x(p);if(!(C!==e||p.context?.client?.clientScreen===s||m.params?.startsWith(r)&&m.params?.startsWith(l)))return m.adPlaybackContext={pyv:!0},m.contentPlaybackContext.lactMilliseconds=String(Date.now()),void x(p);if(C===n&&"WEB"===p.context?.client?.clientName)return p.context.client.clientScreen=s,m.contentPlaybackContext.lactMilliseconds=String(Date.now()),b(),void x(p);if(C===c)return m.adPlaybackContext={adType:"AD_TYPE_INSTREAM"},m.contentPlaybackContext.lactMilliseconds=String(Date.now()),b(),void x(p);if(C===o)return delete m.adPlaybackContext,void(()=>{try{Object.defineProperty(document,"visibilityState",d)}catch(e){}})()}catch(e){}},R=["playerErrorMessageRenderer","UNPLAYABLE"],k={apply:(r,l,i)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/")||p===o)return Reflect.apply(r,l,i);let s;try{if(s=Reflect.apply(r,l,i),!s.responseContext&&!s.playabilityStatus)return s;const y=m(s);return R.some((e=>y.includes(e)))&&!y.includes("CONTENT_CHECK_REQUIRED")?p===t?(f(a),s):p===a?(f(e),s):p===e?(f(n),s):p===n?(f(c),s):(f(o),s):(p===t&&s.playerConfig?.audioConfig?.muteOnStart&&(location.href.includes("/watch")||s.cards&&!s.playabilityStatus?.miniplayer)&&(delete s.playerConfig.audioConfig.muteOnStart,s.messages?.[0]?.youThereRenderer&&delete s.messages[0].youThereRenderer),p===c&&s.playerConfig?.granularVariableSpeedConfig&&(s.playerConfig.granularVariableSpeedConfig.maximumPlaybackRate=200,s.playerConfig.granularVariableSpeedConfig.minimumPlaybackRate=25),s)}catch(e){}return Reflect.apply(r,l,i)}};window.JSON.parse=new Proxy(window.JSON.parse,k);const w={apply:(e,t,a)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(e,t,a);try{let n=a[0];if(n&&(n.includes('"contentPlaybackContext"')||n.includes('"adSignalsInfo"'))){const c=JSON.parse(n);if(!c.context?.client)return Reflect.apply(e,t,a);c.playbackContext&&C(c,c.playbackContext,p),c.playerRequest&&C(c,c.playerRequest.playbackContext,p),n=m(c),a[0]=n}}catch(e){}return Reflect.apply(e,t,a)}};window.TextEncoder.prototype.encode=new Proxy(window.TextEncoder.prototype.encode,w);const g={apply:(e,t,a)=>{if(location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(e,t,a);try{const n=a[0];if(!n?.context?.client)return Reflect.apply(e,t,a);n.playbackContext&&void 0===n.playbackContext.adPlaybackContext&&C(n,n.playbackContext,p),n.playerRequest&&void 0===n.playerRequest.playbackContext.adPlaybackContext&&C(n,n.playerRequest.playbackContext,p),a[0]=n}catch(e){}return Reflect.apply(e,t,a)}};window.JSON.stringify=new Proxy(window.JSON.stringify,g);const S={construct:(e,t,a)=>{try{const n=t[0];let c=t[1]?.body;if(!n?.includes("youtubei")||location.href.includes("/shorts/")||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/")||!c)return Reflect.construct(e,t,a);if(c.includes('"contentPlaybackContext"')||c.includes('"adSignalsInfo"')){const n=JSON.parse(c);if(!n.context?.client)return Reflect.construct(e,t,a);n.playbackContext&&C(n,n.playbackContext,p),n.playerRequest&&C(n,n.playerRequest.playbackContext,p),c=m(n),t[1].body=c}}catch(e){}return Reflect.construct(e,t,a)}};window.Request=new Proxy(window.Request,S)})();
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#(()=>{const e="movie_player",t="ytd-watch-flexy[player-unavailable]",r=`#${e} > .ytp-error`,n="yt-playability-error-supported-renderers#error-screen:has(>*)",a='yt-playability-error-supported-renderers#error-screen a[href^="//support.google.com/youtube/answer/2802245"]',o="LOGIN_REQUIRED",i="CONTENT_CHECK_REQUIRED",l="pyv",c="param_first",s="param_second",y="client_screen",p="ad_type",d="none",u="eAFgAQ",m="8AUB",f="YAHI",b="CHANNEL",S=c;let v=S,x=null;const g=new Set,C=()=>{const t=document.getElementById(e),r=window.location.search,n=new URLSearchParams(r).get("v")||t?.getVideoData?.().video_id,a=new URLSearchParams(r).get("t")??"0";return{videoId:n,timeInSeconds:parseInt(a,10)}},R=()=>{q();const t=document.getElementById(e);if(t&&"function"==typeof t.loadVideoById)try{const{videoId:e,timeInSeconds:r}=C();t.loadVideoById(e,r)}catch(e){}},I=(()=>{let e=null,t=null,r=0;return n=>{try{if(!n)return!1;const{videoId:a}=C();return!!a&&(e===a&&t===n?r++:(e=a,t=n,r=1),r>=2&&(r=0,!0))}catch(e){return!1}}})(),P=e=>{v=e},h=Object.getOwnPropertyDescriptor(Document.prototype,"visibilityState"),k=()=>{try{Object.defineProperty(document,"visibilityState",{get:()=>"visible",configurable:!0})}catch(e){}},q=()=>{const r=document.getElementById(e),l=document.querySelector(n),c=document.querySelector("yt-playability-error-supported-renderers.ytdMiniplayerPlayerContainerPlayabilityError:has(>*)"),s=document.querySelector(t),y=document.querySelector(a);if(!r||y)return;const p=r.getPlayerResponse?.();p?.playabilityStatus?.status!==o&&p?.playabilityStatus?.status!==i?(s||c)&&(l?.style.setProperty("display","none","important"),c?.style.setProperty("display","none","important"),s?.removeAttribute("player-unavailable")):l?.style.setProperty("display","block","important")},w=e=>{(e.playbackContext||e.playerRequest)&&delete e.context?.client?.configInfo?.appInstallData},E=(e,t,r)=>{try{if(!e||!t||!r)return;if((e=>{const t=e?.videoId;t&&(x&&x!==t&&P(S),x=t)})(e),r===c&&e.context?.client?.clientScreen!==b&&!e.params?.startsWith(f))return e.params=u,e.playerRequest&&e.playerRequest.params!==u&&(e.playerRequest.params=u),e.playbackContext&&e.playbackContext.params!==u&&(e.playbackContext.params=u),t.contentPlaybackContext.lactMilliseconds=String(Date.now()),k(),void w(e);if(r===s&&e.context?.client?.clientScreen!==b&&!e.params?.startsWith(f))return e.params!==m&&(e.params=m),e.playerRequest&&e.playerRequest.params!==m&&(e.playerRequest.params=m),e.playbackContext&&e.playbackContext.params!==m&&(e.playbackContext.params=m),e.playlistId||(e.context.client.clientScreen=b),t.contentPlaybackContext.lactMilliseconds=String(Date.now()),k(),void w(e);if(!(r!==l||e.context?.client?.clientScreen===b||t.params?.startsWith(u)&&t.params?.startsWith(m)))return t.adPlaybackContext={pyv:!0},t.contentPlaybackContext.lactMilliseconds=String(Date.now()),k(),void w(e);if(r===y&&"WEB"===e.context?.client?.clientName)return e.context.client.clientScreen=b,t.contentPlaybackContext.lactMilliseconds=String(Date.now()),k(),void w(e);if(r===p)return t.adPlaybackContext={adType:"AD_TYPE_INSTREAM"},t.contentPlaybackContext.lactMilliseconds=String(Date.now()),k(),void w(e);if(r===d)return delete t.adPlaybackContext,void(()=>{try{Object.defineProperty(document,"visibilityState",h)}catch(e){}})()}catch(e){}};(()=>{const e={apply:(e,t,r)=>{try{let n=r[0];if(!n||location.href.includes("youtube.com/tv")||location.href.includes("youtube.com/embed/"))return Reflect.apply(e,t,r);const a=Array.isArray(n),o=a?n[0]:n;if("string"!=typeof o)return Reflect.apply(e,t,r);if(!o.includes('"contentPlaybackContext"')&&!o.includes('"adSignalsInfo"'))return Reflect.apply(e,t,r);const i=JSON.parse(o);if(!i.context?.client)return Reflect.apply(e,t,r);i.playbackContext&&E(i,i.playbackContext,v),i.playerRequest&&E(i,i.playerRequest.playbackContext,v);const l=JSON.stringify(i);a?r[0][0]=l:r[0]=l}catch(e){}return Reflect.apply(e,t,r)}};window.XMLHttpRequest.prototype.send=new Proxy(window.XMLHttpRequest.prototype.send,e)})();const D=document.documentElement;new MutationObserver((()=>{if(document.querySelector(n)&&q(),!(()=>{const l=document.getElementById(e),c=document.querySelector(r),s=document.querySelector(n),y=document.querySelector(t),p=document.querySelector(a);if(!l||p)return!1;const d=l.getPlayerResponse?.();if(d?.playabilityStatus?.status===o||d?.playabilityStatus?.status===i)return!1;const u=l.getVideoData?.();return(s||y||c)&&null!=u?.errorCode})())return;const{videoId:u}=C();(e=>{if(e)for(const t of g)t!==e&&g.delete(t)})(u),(()=>{if(v===c){if(!I(s))return void R();P(s),R()}else if(v===s){if(!I(l))return void R();P(l),R()}else if(v===l){if(!I(y))return void R();P(y),R()}else if(v===y){if(!I(p))return void R();P(p),R()}else if(v===p){if(!I(d))return void R();P(d),R()}else if(v===d){const{videoId:e}=C();if(!e||g.has(e))return void q();g.add(e),R()}})()})).observe(D,{attributes:!0,childList:!0,subtree:!0})})();
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('json-prune', 'entries.[-].command.reelWatchEndpoint.adClientParams.isAd')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#(()=>{const e={apply:(e,r,t)=>{const n=t[0];if("string"==typeof n?.value&&n.value.includes("playerResponse"))try{n.value=(l=n.value,(location.href.includes("/watch")||l.includes("cards")&&!l.includes('"miniplayer"'))&&l.includes('"muteOnStart":true')&&(l=l.replace('"muteOnStart":true','"muteOnStart":false')).includes('"youThereRenderer":')&&(l=l.replace('"youThereRenderer":','"no_youThereRenderer":')),l.replace(/"(adSlots|playerAds)":/g,'"no_ads":')),t[0]=n}catch(e){}var l;return Reflect.apply(e,r,t)}},r={apply:(r,t,n)=>{const l=n[0];return"function"==typeof l&&l.toString().includes(".next(")&&(n[0]=new Proxy(l,e)),Reflect.apply(r,t,n)}};window.Promise.prototype.then=new Proxy(window.Promise.prototype.then,r)})();
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#(()=>{const e={apply:(e,t,o)=>{const n=Reflect.apply(e,t,o);if(n?.responseContext)try{delete n.adSlots,delete n.playerAds,n.playerConfig?.audioConfig?.muteOnStart&&(location.href.includes("/watch")||n.cards&&!n.playabilityStatus?.miniplayer)&&(delete n.playerConfig.audioConfig.muteOnStart,n.messages[0]?.youThereRenderer&&delete n.messages[0].youThereRenderer)}catch(e){}return n}},t={apply:(t,o,n)=>{const r=n[0];return"function"==typeof r&&r.toString().includes("jspbResponseCtor")&&(n[0]=new Proxy(r,e)),Reflect.apply(t,o,n)}};window.Promise.prototype.then=new Proxy(window.Promise.prototype.then,t)})();
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('json-prune', 'contents.twoColumnBrowseResultsRenderer.tabs.[].tabRenderer.content.richGridRenderer.contents.[-].richItemRenderer.content.adSlotRenderer')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('json-prune', 'ytInitialData.contents.twoColumnBrowseResultsRenderer.tabs.[].tabRenderer.content.richGridRenderer.contents.[-].richItemRenderer.content.adSlotRenderer')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#(()=>{let t=!1;const i={apply:(i,n,a)=>{try{!t&&window.ytInitialData&&(window.ytInitialData=JSON.parse(JSON.stringify(window.ytInitialData)),t=!0)}catch(t){}return Reflect.apply(i,n,a)}};window.Promise.prototype.then=new Proxy(window.Promise.prototype.then,i)})();
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('set-constant', 'ytcfg.data_.EXPERIMENT_FLAGS.web_streaming_watch', 'false')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('prevent-setTimeout', '(),a,b)', '5000')
+35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('prevent-xhr', '/\/api\/stats\/atr\?.+?&rt=\d+\.\d+.+?&volume=\d+&cbr=.+?&fexp=v1%[-%0-9C]{300,}&.+?&muted=\d(&vis=3)?&docid=/ method:POST')
+! -
+sberbank.ru,sberbank.com,sber.ru#%#//scriptlet('set-local-storage-item', 'loglevel', '')
+sberbank.ru,sberbank.com,sber.ru#%#//scriptlet('set-session-storage-item', 'entryAnalytics', '0000000000000')
+sberbank.ru,sberbank.com,sber.ru#%#//scriptlet('set-session-storage-item', 'ioAnalytics', '0000000000000')
 !
 !
 !
@@ -7556,7 +7629,7 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||im*-tub-*.yandex.net^
 ||api.browser.yandex.*/installstats/$important,redirect=nooptext
 ||yandex.*/secure-ads/$important
-||egress.yandex.net^
+||*.egress.yandex.net^
 ||yandex.*/maps/_crpd/*/*/*|$xhr
 ||api-maps.yandex.ru/v*/counters
 ||yastatic.net/lego/_/$image,redirect=1x1-transparent.gif
@@ -7606,8 +7679,8 @@ $removerapam=pgid
 ||dzen.ru/api/v*/launcher/stats/
 ||rum.dzen.ru^
 ||yandex.*/share/share.js$third-party
-$removeparam=nr,domain=ya.ru
-$removeparam=redirect_ts,domain=ya.ru
+$removeparam=nr,domain=ya.ru|yandex.*
+$removeparam=redirect_ts,domain=ya.ru|yandex.*
 ||ya.ru/ick/
 $document,removeparam=redircnt
 ||avatars.mds.yandex.net/get-yabs_performance/
@@ -7639,7 +7712,10 @@ $cookie=_yasc,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yande
 ||avatars.mds.yandex.net/get-direct-picture/$image,xhr
 /portal/set/any?yrsncd=*&*$image,domain=yandex.ru|ya.ru,redirect=1x1-transparent.gif
 /portal/set/any?*&sk=*&sz=*&$image,domain=yandex.ru|ya.ru,redirect=1x1-transparent.gif
+/portal/set/any/?*&sk=*&*$image,domain=yandex.ru|ya.ru,redirect=1x1-transparent.gif"
 $removeparam=ysclid
+||yandex.*/search/_sttc/*/*/*|$ping
+||api.browser.yandex.ru/expflags/
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -7650,6 +7726,7 @@ $removeparam=ysclid
 ||favicon.yandex.net^$app=ru.yandex.weatherplugin
 ! avatars.mds.yandex.net^$app=ru.yandex.weatherplugin
 ||strm.yandex.*^$app=ru.yandex.weatherplugin
+||strm.yandex.net^$app=ru.yandex.weatherplugin
 ://api.browser.yandex.ru^$app=ru.yandex.weatherplugin
 ||yastatic.net^$app=ru.yandex.weatherplugin
 ||quasar.yandex.net^$app=ru.yandex.weatherplugin
@@ -7814,12 +7891,20 @@ ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-
 ||casespartner.youtube.com/static/
 ||youtube.com/ptracking$important
 ||youtube-nocookie.com/ptracking$important
+||youtubekids.com/ptracking$important
 ||youtube.com/s/player/*/*_*/endscreen.js
 ||youtube-nocookie.com/s/player/*/*_*/endscreen.js
+||youtubekids.com/s/player/*/*_*/endscreen.js
+||youtu.be/s/player/*/*_*/endscreen.js
+||35.190.94.206,206.94.190.35.bc.googleusercontent.com
+||35.190.94.206/s/player/*/*_*/endscreen.js
+||206.94.190.35.bc.googleusercontent.com/s/player/*/*_*/endscreen.js
 ||youtube.com/api/stats/qoe$important
 ||youtube-nocookie.com/api/stats/qoe$important
+||youtubekids.com/api/stats/qoe$important
+*/watch_autoplayrenderer.js$script,domain=youtube.com|youtube.com|youtubekids.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 ||google.*/pagead/$redirect=noopjs,important
-||googletagservices.com^$important
+://googletagservices.com^$important
 ||tagmanager.google.com^
 ||clientservices.googleapis.com^
 ||ads.youtube.com^
@@ -7827,6 +7912,8 @@ ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-
 ||admob.com^
 ||accounts.google.com/gsi/log$xhr,redirect=nooptext
 ||youtube.com/ad_companion$important
+||youtubekids.com/ad_companion$important
+||youtube-nocookie.com/ad_companion$important
 ||fundingchoicesmessages.google.com^$important
 ||geomobileservices*.googleapis.com^$important
 ||federatedcompute*.googleapis.com^$important
@@ -7904,8 +7991,14 @@ ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-
 ||imasdk.googleapis.com/js/core/bridge*_*.html
 ||youtube.com/api/stats/atr?ns=
 ||youtube-nocookie.com/api/stats/atr?ns=
+||youtubekids.com/api/stats/atr?ns=
+||35.190.94.206/api/stats/atr?ns=
+||206.94.190.35.bc.googleusercontent.com/api/stats/atr?ns=
 ||youtube.com/api/stats/playback?ns=
 ||youtube-nocookie.com/api/stats/playback?ns=
+||youtubekids.com/api/stats/playback?ns=
+||35.190.94.206/api/stats/playback?ns=
+||206.94.190.35.bc.googleusercontent.com/api/stats/playback?ns=
 ||adtrafficquality.google^$important
 ||c2paregistration*.googleapis.com^
 ||play.google.com/play/log$redirect=nooptext
@@ -7965,6 +8058,14 @@ ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-
 ||cloud.google.com/log$important
 ||shell.cloud.google.com/event/
 ||googletagmanager.com^$domain=fandom.com,important
+||history.google.com^
+||semanticlocation*.googleapis.com^
+||timeline.google.com^
+||firebaseinstallations.googleapis.com^
+||userlocation*.googleapis.com^$important
+||locationhistory*.googleapis.com^$important
+||locationhistoryplacedetails*.googleapis.com^$important
+||google.*/httpservice/retry/$ping
 !
 ! ===
 !
@@ -9202,6 +9303,10 @@ auchan.ru#@?#p:contains(/^\xA0$/):not(:contains(/\S/)):not(:has(img))
 @@||api.vk.*/method/statEvents.$domain=ok.ru
 @@||login.vk.com/?act=$domain=ok.ru,important
 @@||ok.ru/res/assets/empty_video-$domain=ok.ru,important
+@@||[2604:a880:800:10::e6:b001]/api/$important
+@@||myrka.digital
+@@||rr*---*-*.c.youtube.com^
+@@||*---*-*.c.youtube.com^
 !
 !
 ! -
