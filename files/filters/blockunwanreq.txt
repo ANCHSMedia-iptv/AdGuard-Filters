@@ -1,6 +1,6 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.7.8
+! Version: 5.7.9
 ! TimeUpdated: 2026-08-28T09:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
@@ -421,7 +421,7 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||static.mel.fm/graph.js$script,domain=mel.fm,important
 ! ||*cookie*.css^$css,important,domain=~deepl.com|~wikia.nocookie.net|~fandom.com|~githubassets.com|~ya.ru|~yandex.ru|~yandex.net|~yandex.com|~youtube-nocookie.com|~2gis.ru|~2gis.*|~comnews.ru|~tyuiu.ru|~laratranslate.com,redirect=noopcss
 ||*cookie*.css^$css,important,domain=~cookielaw.org|~fandom.com|~*.fandom.com|~securelist.ru|~flightradar24.com|~wikia.nocookie.net|~mnokol.tyuiu.ru|~2gis.ru|~2gis.*|~l-stat.livejournal.net,redirect=noopcss
-||b17.ru/img/0.gif^$image,domain=b17.ru,important
+||b17.ru/img/0.gif^$image,domain=b17.ru,redirect=1x1-transparent.gif,important
 ||ufamama.ru/UserStatistics/$xhr,important,domain=ufamama.ru
 ||ufamama.ru/services/BlogAdvisor/$xhr,important,domain=ufamama.ru
 ||ufamama.ru/QR$image,domain=ufamama.ru
@@ -2580,7 +2580,7 @@ $removeparam=mt_click_id
 ||check-host.net/ip/widget.js^$script,domain=check-host.net,important,redirect=noopjs
 ||gstatic.com/firebasejs/
 ||apm-proxy.obs.mts.ru^$important
-||bandcamp.com/img/0.gif
+||bandcamp.com/img/0.gif$redirect=1x1-transparent.gif
 ||bcbits.com/client-bundle/*/GlobalJS_*/tko_trackpipe-$script,domain=bandcamp.com,redirect=noopjs
 ||bcbits.com/client-bundle/*/Tracker_*/analytics-$script,domain=bandcamp.com,redirect=noopjs
 ||bandcamp.com/client_log
@@ -4202,6 +4202,17 @@ $removeparam=from
 ||lumberjack.razorpay.com^$important
 $removeparam=ref_url
 $removeparam=ref_domain
+||fp.f6.security^
+||vtb.ru/projects/vtbfl/files/leopard/leopard1centr.gif^$image,domain=online.vtb.ru
+||vtb.ru/projects/vtbfl/files/leopard/leopard2centr.gif^$image,domain=online.vtb.ru
+/bitrix/*/scode.cookie/
+||securitymedia.org/upload/iblock/30e/lc7s3kla1esako8sqs3qxwqsuk1mgk4r.jpg^$image,domain=securitymedia.org
+||securitymedia.org/upload/iblock/7f7/ayb0vbhdm52gbs5jtcb2tu726ipqem26.jpg^$image,domain=securitymedia.org
+||adx.com.ru^$important
+/img/0.gif$redirect=1x1-transparent.gif
+||5gservice.ru/?counter&$script,domain=5gservice.ru,redirect=noopjs
+||keplerleads.com^
+||lk-api.rt.ru/client-api/loadBannersEco$domain=lk.rt.ru
 !
 !
 !
@@ -6878,6 +6889,13 @@ cloudfam.io##main.max-w-5xl.w-full.mx-auto.px-4.sm\:px-6.py-6.flex-1.space-y-5:n
 cloudfam.io###state-blocked > div.cf-card.p-5.sm\:p-6.border-red-200.bg-gradient-to-r.from-red-50\/80.via-white.to-red-50\/50.flex.flex-col.sm\:flex-row.items-start.sm\:items-center.justify-between.gap-4:first-child
 cloudfam.io###state-blocked > div.space-y-3:last-child
 zdrive.to##main.relative.pt-20.flex.flex-col.min-h-screen:nth-child(2) > section.py-12.px-4.relative > div.max-w-4xl.mx-auto.relative.z-10:last-child > div.border.border-\[\#222\].bg-\[\#0a0a0a\].p-6.md\:p-8.relative:last-child > div.max-w-lg.mx-auto:nth-child(3) > div.grid.grid-cols-1.lg\:grid-cols-2.gap-4:last-child > a.btn.hover-snap.w-full.h-14.bg-primary.text-black.font-bold.text-sm.uppercase.tracking-widest.flex.items-center.justify-center.gap-2.transition-all.hover\:bg-white:last-child
+##.box_adv_annunci
+##.sb-box-pubbliredazionale
+##a[href^="://affiliazioniads.snai.it/"]
+##a[href^="//adserver.html.it/"]
+online.vtb.ru##.v1-c-iWnpsx
+securitymedia.org##.banner
+checko.ru###top > section.x-section:nth-child(6)
 !
 !
 ! - Scripts -
@@ -7716,6 +7734,8 @@ $cookie=_yasc,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yande
 $removeparam=ysclid
 ||yandex.*/search/_sttc/*/*/*|$ping
 ||api.browser.yandex.ru/expflags/
+||s3.yandex.net/*/*/rum.js
+||*/web-api/models/liza1?_m=get-event-ics^$xhr,domain=mail.yandex.ru|mail.yandex.*
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
