@@ -1801,7 +1801,7 @@ $cookie=MOLNETSTATSESSID,important
 ||static.criteo.net^$third-party,domain=~novayagazeta.ru
 ||s*.stc.yc.kpcdn.net/s*/version-*/adaptive/telegram-subscribe.js^$script,domain=kp.ru|kp.*,redirect=noopjs
 /boom/api/*/metrics/adaptive/favicon-*.png$image,domain=kp.ru|kp.*|md.kp.media,important
-://vk.*^$app=ru.pyaterochka.app.browser|com.avito.android|ru.tyumen.telemed|ru.mail.mailapp|u.gazprombank.android.mobilebank.app|ru.vk.store|ru.tander.magnit|ru.ok.android
+://vk.*^$app=ru.pyaterochka.app.browser|com.avito.android|ru.tyumen.telemed|ru.mail.mailapp|ru.gazprombank.android.mobilebank.app|ru.vk.store|ru.tander.magnit|ru.ok.android
 ||a1.pronouncefix.com^
 $document,removeparam=ref
 $cookie=BITRIX_SM_LAST_VISIT,important
@@ -4212,7 +4212,8 @@ $removeparam=ref_domain
 /img/0.gif$redirect=1x1-transparent.gif
 ||5gservice.ru/?counter&$script,domain=5gservice.ru,redirect=noopjs
 ||keplerleads.com^
-||lk-api.rt.ru/client-api/loadBannersEco$domain=lk.rt.ru
+||rt.ru/client-api/loadBannersEco$xhr,domain=lk.rt.ru|my.rt.ru
+/ruxitagent_$script,redirect=noopjs
 !
 !
 !
