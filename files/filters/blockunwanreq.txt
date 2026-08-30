@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.7.9
-! TimeUpdated: 2026-08-28T09:36:30+00:00
+! Version: 5.8.0
+! TimeUpdated: 2026-08-30T09:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -18,7 +18,7 @@
 !
 ! Подойдёт для мобильных устройств и компьютеров.
 ! Suitable for mobile devices and computers.
-! Некоторые домены и правила для блокировки взяты из других источников.
+! Некоторые домены и правила для блокировки взяты из других источников и фильтров.
 ! Много чего собрано из моих «наблюдений» и добавлений. Все комментарии к правилам находятся в самом конце файла.
 !
 !
@@ -102,7 +102,7 @@
 ||skcrtxr.com^$important
 ! avito.ru/stat/radar?data=*$image,domain=avito.ru
 ! avito.ru/web/*/adv/network/creative$xhr,domain=avito.ru
-||*advert*^$image,important,domain=~everesttech.net|~tele2life.ru|~log.api-maps.yandex.ru|~log.api-maps.yandex.*|~made-in-china.com
+||*advert*^$image,important,domain=~everesttech.net|~tele2life.ru|~log.api-maps.yandex.ru|~log.api-maps.yandex.*|~made-in-china.com|~adverti.me|~sovetnik.net
 /firebase*.*^$script,xhr,important
 ||d3c8j8snkzfr1n.cloudfront.net^$important
 ||adskeeper.co.uk^$important
@@ -1906,7 +1906,7 @@ $cookie=fpm_referer,important
 ||servicebox.ru/js/socials.js$script,domain=servicebox.ru
 !
 ||stat.media^$important
-*/*/event/^$xhr,ping,domain=adguard.com|adguard.info|adguard.app|adguard-vpn.*|adguardvpn-help.*|adguard-dns.io|execute-api.eu-north-1.amazonaws.com|adguardaccount.net|adguardaccount.*,important
+*/*/event/^$xhr,ping,domain=adguard.com|adguard.info|adguard.app|adguard-vpn.*|adguard-dns.io|execute-api.eu-north-1.amazonaws.com|adguardaccount.net|adguardaccount.*|ad-guard-vpn.xyz|adguardvpn-help.com|adguardvpn-help.info|adguard-wallet.com|adguard-mail.com,important
 ||overclockers.ru/assets/lazy_clear.gif^$image,domain=overclockers.ru,redirect=1x1-transparent.gif
 ! $cookie=qrator_ssid,important  (07.02.26: Защита от ДДос, из-за блокировки не заходит на сайты, где установлена защита от CURATOR)
 ||rt*.cackle.me/ws/cc$websocket
@@ -2243,7 +2243,7 @@ $cookie=/ADRUM_*/,important
 ||asiarussia.ru/upload/resize_cache/iblock/894/1000_1000_1/894d83a7c39eb875c893d71aa8895806.jpeg^$image,domain=asiarussia.ru
 ||asiarussia.ru/bitrix/templates/4/img/240.png^$image,domain=asiarussia.ru
 ||cc34ea.cyberinsider.com^$important
-*/*/logs/^$xhr,domain=adguard.com|adguard.info|adguard.app|adguard-vpn.*|adguardvpn-help.*|adguard-dns.io|execute-api.eu-north-1.amazonaws.com|adguardaccount.net|adguardaccount.*,important
+*/*/logs/^$xhr,domain=adguard.com|adguard.info|adguard.app|adguard-vpn.*|adguard-dns.io|execute-api.eu-north-1.amazonaws.com|adguardaccount.net|adguardaccount.*|ad-guard-vpn.xyz|adguardvpn-help.com|adguardvpn-help.info|adguard-wallet.com|adguard-mail.com,important
 ||cloud-f*.dev.drweb.com^
 ||c*.dev.drweb.com^
 ||sentry.iptv.rt.ru^$important
@@ -2627,7 +2627,7 @@ _banner.swf
 ||ruvds.com/api/statistics^$xhr,domain=ruvds.com
 ||sentry.obs.mws-team.ru^$important
 /mancgi/counter$important
-*$document,removeparam=clid,domain=adguard-dns.io
+! *$document,removeparam=clid,domain=adguard-dns.io
 ||cdn.vesti.ru/static/_nuxt/HeaderDesktop.$css,domain=vesti.ru
 ||cdn.vesti.ru/static/_nuxt/HeaderMobile.$css,domain=vesti.ru
 ||collector.githubapp.com^$important
@@ -4192,13 +4192,13 @@ $removeparam=from
 ||xiaomi-miui.gr/wp-content/uploads/2019/02/telegram.png^$image,domain=xiaomi-miui.gr
 ||syaomaster.vercel.app/static/js/inject.js^$script,domain=syaomaster.vercel.app
 ||ipwho.is^$third-party
-||dailyuploads.net/js/jquery.cookie.js$domain=dailyuploads.net,redirect=noopjs
+||dailyuploads.net/js/jquery.cookie.js$script,domain=dailyuploads.net,redirect=noopjs
 ||s*.histats.com^$important
 ||vexfile.com/js/locker.js$script,domain=vexfile.com,redirect=noopjs
 ||antiadblockcore.com^
 ||etrierduple.com^
-||cloudfam.io/api/cf_adflow_pub_data_collector.php$domain=
-||cloudfam.io/adflow_visitor_telemetry.php$domain=
+||cloudfam.io/api/cf_adflow_pub_data_collector.php$domain=cloudfam.io
+||cloudfam.io/adflow_visitor_telemetry.php$domain=cloudfam.io
 ||lumberjack.razorpay.com^$important
 $removeparam=ref_url
 $removeparam=ref_domain
@@ -4213,7 +4213,50 @@ $removeparam=ref_domain
 ||5gservice.ru/?counter&$script,domain=5gservice.ru,redirect=noopjs
 ||keplerleads.com^
 ||rt.ru/client-api/loadBannersEco$xhr,domain=lk.rt.ru|my.rt.ru
-/ruxitagent_$script,redirect=noopjs
+/ruxitagent*_
+/ruxitagent
+/jstag/*/*/*/bs.js
+||runet.news/wp-content/uploads/banner-$image,domain=runet.news
+||runet.news/wp-content/uploads/2026/03/IMG_20230108_201123_198.png^$image,domain=runet.news
+||get-save.com/banner_$image,domain=get-save.com
+||sovetnik.net^$important
+||buy.mi.com/bbs/api/*/popup/next?
+||datacdn.ru^$important
+||whitesaas.com^
+||sflog.ru^$important
+||geo.tildaapi.com^
+$cookie=APP_REFERER
+/cookie-notifier.js^$script,redirect=noopjs
+||malahit.com^
+||style-optika.ru/wp-content/uploads/2024/03/scroll-phone.svg^$image,domain=style-optika.ru
+||style-optika.ru/wp-content/uploads/2025/12/max-messenger-sign-logo-1.svg^$image,domain=style-optika.ru
+||optica72.com/upload/iblock/699/8yjkkx8ct8y4cjg715fvgomumcncfjwe/adv_chip.png^$image,domain=optica72.com
+/cms-cookie-bubble.css
+||gshdw.cyou^
+||106.11.25.175^
+||106.11.25.175$network
+||kingdata.ksyun.com^
+||203.107.1.34^
+||203.107.1.34$network
+||203.119.204.226^
+||203.119.204.226$network
+||203.119.238.240^
+||203.119.238.240$network
+||203.107.1.97^
+||203.107.1.97$network
+||203.107.1.1^
+||203.107.1.1$network
+||tmfsdk.m.qq.com^
+||tmfsdk*.m.qq.com^
+||[240d:c000:2010:1807:6:4969:2ec3:4d1f]$network
+||[240d:c000:2010:1807:6:4969:2ec3:4d1f]^
+||[240d:c000:2010:1807:6:4969:2dfd:b717]$network
+||[240d:c000:2010:1807:6:4969:2dfd:b717]^
+||43.163.179.38$network
+||43.129.105.3$network
+||ccc.sys.miui.com^
+||installer.xiaomi.com^
+/wp-content/plugins/perfecty-push-notifications/
 !
 !
 !
@@ -4566,7 +4609,7 @@ wildberries.ru##li[data-menu-id="1250"]
 ! Rules for blocking scripts, styles (CSS) and ad images are present, as well as personalized recommendations.
 ! Присутствуют правила блокировки скриптов, стилей (CSS) и рекламных изображений, а также персонализированных рекомендаций.
 !
-/s3/cms/*/qr-code_*.png^$image,domain=ozon.ru|ozon.by
+!
 /assets/*/detached/marketing*/entry.*.js^$script,domain=ozon.ru|ozon.by,redirect=noopjs
 /assets/*/detached/*/entry.marketing.js^$script,domain=ozon.ru|ozon.by,redirect=noopjs
 /s3/ozon-tag-manager/$script,important,domain=ozon.ru|ozon.by,redirect=noopjs
@@ -4593,16 +4636,17 @@ wildberries.ru##li[data-menu-id="1250"]
 ||ozon.*/p-api/tracker/$important
 ||p.ozon.ru^
 ||stg.ozonru.me^
-||xapi.ozon.ru^
+||ozon.ru/api/entrypoint-api.bx/page/json/v*?url=https%3A%2F%2Fozon.ru%2Fnotification%2Fcookies_acceptance$xhr,domain=ozon.ru
 !
 ! -The rule applies to Ozon and Ozon Bank's website. -
 ! - Правило применимо к сайту Озона и Озон Банка. -
-||xapi.ozon.*/dlte^$ping,xhr,redirect=empty
+! xapi.ozon.*/dlte^$ping,xhr,redirect=empty
+||xapi.ozon.ru^$important
 ! -
 !
 ! Белорусская версия (ozon .by)
 !
-||xapi.ozon.by/perf-metrics-collector/$redirect=empty
+||xapi.ozon.by^
 ||st.ozone.ru/assets/*/detached/uw/uw-desktop-object-banner-list.js^$script,domain=ozon.by,redirect=noopjs
 !
 !
@@ -4644,15 +4688,15 @@ ozon.ru##div[class^="om_21_a om_21_a0"][style^="background-color: var(--bgSecond
 ozon.ru##div[class^="r0 r1"]
 !
 ! Реклама кредитной Ozon карты на странице оформления заказа (Российская версия). 
-ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a.uw_ap1:nth-child(3) > div.uw_ap1 > div.container.c > div.e1:last-child > div.c8:nth-child(2) > div.e1 > div.d6.c8:first-child > div.xb2_7:first-child > div.bx3_7:last-child > div.b3x_7:last-child
-ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a.uw_ap1:nth-child(3) > div.uw_ap1 > div.container.c > div.e1:last-child > div.c8:nth-child(2) > div.e1 > div.d6.c8:first-child > div.xb2_7:first-child > div.bx0_7:nth-child(2) > div.a35_3_1-a2 > div.a35_3_1-a3:first-child > div.a35_3_1-a4 > div.xb0_7.a35_3_1-a1:nth-child(2)
-ozon.ru##div[style^="padding:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;background-color:rgba(255, 255, 255, 1);border-radius:16px;"]
+! ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a.uw_ap1:nth-child(3) > div.uw_ap1 > div.container.c > div.e1:last-child > div.c8:nth-child(2) > div.e1 > div.d6.c8:first-child > div.xb2_7:first-child > div.bx3_7:last-child > div.b3x_7:last-child
+! ozon.ru###layoutPage > div.b6:first-child > div.uw_p0a.uw_ap1:nth-child(3) > div.uw_ap1 > div.container.c > div.e1:last-child > div.c8:nth-child(2) > div.e1 > div.d6.c8:first-child > div.xb2_7:first-child > div.bx0_7:nth-child(2) > div.a35_3_1-a2 > div.a35_3_1-a3:first-child > div.a35_3_1-a4 > div.xb0_7.a35_3_1-a1:nth-child(2)
+! ozon.ru##div[style^="padding:0;margin-left:0;margin-right:0;margin-top:0;margin-bottom:0;background-color:rgba(255, 255, 255, 1);border-radius:16px;"]
 !
 ! Раздел «Кредитная карта» в ЛК левом меню (Российская версия).
-ozon.ru##a[href*="/credit_card/"][class^="q4b1_3_0-a tsBody400Small h0u_23 hu0_23"]
+! ozon.ru##a[href*="/credit_card/"][class^="q4b1_3_0-a tsBody400Small h0u_23 hu0_23"]
 !
 ! Раздел «Билеты, отели» сверху у поиска (Российская версия).
-ozon.ru###layoutPage > div.b6:first-child > div.uw_qa0:first-child > div > header.uw_a1i > div.uw_i0a.uw_ai1:last-child > div.uw_ha7:first-child > div.uw_ai3 > ul.uw_a4i > li.uw_a3i:nth-child(2)
+! ozon.ru###layoutPage > div.b6:first-child > div.uw_qa0:first-child > div > header.uw_a1i > div.uw_i0a.uw_ai1:last-child > div.uw_ha7:first-child > div.uw_ai3 > ul.uw_a4i > li.uw_a3i:nth-child(2)
 !
 ! Рекламные блоки (Российская версия).
 ozon.ru###layoutPage > div.b6:first-child > div.uw_ap2:last-child > div > div.container.c > div:last-child > div > div.jl3_11:nth-child(3)
@@ -4663,7 +4707,7 @@ ozon.ru###layoutPage > div.b6:first-child > div.uw_ap2:last-child > div > div.co
 ! Придётся придумывать что то другое..
 !
 ! Раздел «Кредитная карта» в всплывающем меню профиля (Российская версия).
-ozon.ru##a[href*="/credit_card/"][class^="q4b1_3_0-a"]
+! ozon.ru##a[href*="/credit_card/"][class^="q4b1_3_0-a"]
 !
 ! Раздел «Подобрали для вас» в Сообщениях в чате «Заказы» (Российская версия).
 ! Придётся придумывать что то другое..
@@ -4671,19 +4715,22 @@ ozon.ru##a[href*="/credit_card/"][class^="q4b1_3_0-a"]
 !
 !
 ! Раздел «Подарочные сертификаты OZON» в каталоге (Российская версия).
-ozon.ru##li[id="37234"]
+ozon.ru##a[id="37234"]
 !
 !
 ! Раздел «Автомобили» в каталоге (Российская версия).
-ozon.ru##li[id="39803"]
+ozon.ru##a[id="39803"]
 !
 !
 ! Раздел «Музыки и видео» в каталоге (Российская версия).
-ozon.ru##li[id="13100"]
+ozon.ru##a[id="13100"]
 !
 !
 ! Раздел «Товары для курения и аксессуары» в каталоге (Российская версия).
-ozon.ru##li[id="35659"]
+ozon.ru##a[id="35659"]
+!
+! Раздел «Аптека» в каталоге (Российская версия).
+ozon.ru##a[id="6000"]
 !
 !
 !
@@ -6897,6 +6944,18 @@ zdrive.to##main.relative.pt-20.flex.flex-col.min-h-screen:nth-child(2) > section
 online.vtb.ru##.v1-c-iWnpsx
 securitymedia.org##.banner
 checko.ru###top > section.x-section:nth-child(6)
+runet.news###pos-6 > div.center-bl > div.row > div.cl.date-cl.bord:last-child
+runet.news###runet-bottom-banner
+runet.news##.module, .text-bl
+newpeople.ru###app > div.max-w-\[2560px\].mx-auto.relative.min-h-screen.bg-neutral-50 > div.fixed.bottom-2\.5.right-2\.5.tablet-sm\:bottom-7\.5.tablet-sm\:right-7\.5.z-40.flex.flex-col.items-end.gap-5.w-auto.tablet-sm\:w-full.max-w-\[640px\].tablet-sm\:max-w-\[596px\]:last-child
+ru-mi.com##.cookie-agreement
+style-optika.ru###social__scroll
+optica72.com##div.floating-banners.d-none.d-md-flex:nth-child(28)
+banki.ru##.l23703f77
+banki.ru##.FactWithImagestyled__StyledWrapper-sc-11qsznw-0, .lcgrej
+banki.ru##.sc-gsTCUz, .izurNQ
+banki.ru##div.page-container:nth-child(3) > main.page-container__body:nth-child(2) > div.bg-minor-black-lighten2:nth-child(4) > div.layout-wrapper:first-child > div.grid-row:last-child > div.lbb023d8c.l0a493b73:first-child > div:first-child > div.lc91c72cc.lee954187 > div.l6627205e:last-child > div:last-child > div
+memeosupdates.com##.lifecycle-ad
 !
 !
 ! - Scripts -
@@ -7731,12 +7790,13 @@ $cookie=_yasc,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yande
 ||avatars.mds.yandex.net/get-direct-picture/$image,xhr
 /portal/set/any?yrsncd=*&*$image,domain=yandex.ru|ya.ru,redirect=1x1-transparent.gif
 /portal/set/any?*&sk=*&sz=*&$image,domain=yandex.ru|ya.ru,redirect=1x1-transparent.gif
-/portal/set/any/?*&sk=*&*$image,domain=yandex.ru|ya.ru,redirect=1x1-transparent.gif"
+/portal/set/any/?*&sk=*&*$image,domain=yandex.ru|ya.ru,redirect=1x1-transparent.gif
 $removeparam=ysclid
 ||yandex.*/search/_sttc/*/*/*|$ping
 ||api.browser.yandex.ru/expflags/
-||s3.yandex.net/*/*/rum.js
+||s3.yandex.net/*/*/rum.js$redirect=noopjs
 ||*/web-api/models/liza1?_m=get-event-ics^$xhr,domain=mail.yandex.ru|mail.yandex.*
+/wp-content/uploads/wga-cache/yandex-tracking/
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -7923,7 +7983,7 @@ ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-
 ||youtube.com/api/stats/qoe$important
 ||youtube-nocookie.com/api/stats/qoe$important
 ||youtubekids.com/api/stats/qoe$important
-*/watch_autoplayrenderer.js$script,domain=youtube.com|youtube.com|youtubekids.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
+*/watch_autoplayrenderer.js$script,domain=youtube.com|youtubekids.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 ||google.*/pagead/$redirect=noopjs,important
 ://googletagservices.com^$important
 ||tagmanager.google.com^
@@ -8087,6 +8147,7 @@ ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-
 ||locationhistory*.googleapis.com^$important
 ||locationhistoryplacedetails*.googleapis.com^$important
 ||google.*/httpservice/retry/$ping
+||ogs.google.com/_/OneGoogleWidgetUi/cspreport
 !
 ! ===
 !
@@ -8257,7 +8318,7 @@ ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-
 ||impactradius-event.com^
 ||onetrust.com^$important
 ||cookiebot.com^$important
-||consent.trustarc.com^
+||consent.trustarc.com^$important
 ||privacy-mgmt.com^
 ||2giga.link^
 ||greatis.com^
@@ -8422,6 +8483,7 @@ ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-
 ||slackb.com^
 ||posthog.com^
 ||amazon-adsystem.com^$important
+||adspire.io^$important
 !
 ! --
 !
@@ -9235,7 +9297,7 @@ teletype.in#@#div.preloader
 @@||idam.metro-cc.ru/authorize/api/oauth2/check_cookie_iframe$domain=metro-cc.ru
 @@||ads.vk.*^$domain=ads.vk.com|ads.vk.ru
 @@/counters^$domain=astral.ru|au.ru|av.by|glavagronom.ru|itpc.ru|letu.ru|mos.ru|pay.tns-e.ru|pikabu.ru|habr.com|mail.yandex.by|mail.yandex.kz|mail.yandex.ru|mail.yandex.com|mail.yandex.com.tr|mail.yandex.*
-@@||ximitime.com^
+!
 @@||rapidsave.com/download.php?permalink=
 @@||habr.com/service-worker.js^$domain=habr.com
 @@||gstatic.com^$app=com.pinterest
@@ -9243,7 +9305,7 @@ teletype.in#@#div.preloader
 @@||sierra.chat/*/api/graphql
 @@||doas.top^$important
 @@||chelpus.com/luckypatcher/LuckyPatcherInstaller.apk^$important
-@@||yandex.ru/portal/ntp/informers/$important
+@@||yandex.*/portal/ntp/informers/$important
 @@||api.browser.yandex.*/ntp/widgets
 @@||ozon.ru/abt/
 @@||api.beget.com/website/captcha/
@@ -9690,7 +9752,7 @@ auchan.ru#@?#p:contains(/^\xA0$/):not(:contains(/\S/)):not(:has(img))
 ! Примечание к 996 строке (правилу) - не поломается создание/восстановлений резервных копий в/из Google Диск?.. не думаю!
 ! Примечание к 244 строке (правилу) - бесполезно, названия скриптов рандомные и меняются.
 ! Примечание к 1207 строке (правилу) - кому надо, можете разблокировать. (If you need it, you can unblock it.)
-! ipwho.is^ (4.02.26: Issue from ipwhois-io)
+! ipwho.is^ (4.02.26: Issue from ipwhois-io) [Снова добавлено 28.08.26 с правилом $third-party]
 !
 !
 !

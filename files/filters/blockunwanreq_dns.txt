@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 5.0.1
+! Version: 5.0.2
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-08-28T15:36:30+00:00
+! TimeUpdated: 2026-08-30T09:36:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 28.08.2026 15:36 UTC
+! Last Modified: 30.08.2026 09:36 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -1653,7 +1653,6 @@
 ||ophan.theguardian.com^
 ||deltarockme.com^
 ||rum.hlx.page^
-||consent.trustarc.com^
 ||cdn-rtb.sape.ru^
 ||bidder.criteo.com^
 ||static.criteo.net^
@@ -2323,6 +2322,7 @@
 ||clickstream-proxy.api.2gis.*^
 ||adskeeper.com^
 ||xapi.ozon.ru^
+||xapi.ozon.by^
 ||sentry-*.avito.ru^
 ||xapi.wildberries.ru^
 ||a.oneme.ru^
@@ -2421,8 +2421,23 @@
 ||lumberjack.razorpay.com^
 ||scripts.simpleanalyticscdn.com^
 ||fp.f6.security^
+||antiadblockcore.com^$dnsrewrite=0.0.0.0
+||etrierduple.com^$dnsrewrite=0.0.0.0
 ||adx.com.ru^$important
 ||keplerleads.com^
+||p1.lostfilm.*^
+||sovetnik.net^
+||dmp.one^
+||datacdn.ru^
+||sflog.ru^
+||geo.tildaapi.com^
+||malahit.com^
+||gshdw.cyou^
+||kingdata.ksyun.com^
+||tmfsdk.m.qq.com^
+||tmfsdk*.m.qq.com^
+||ccc.sys.miui.com^
+||installer.xiaomi.com^
 !
 !
 !
