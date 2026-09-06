@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 5.0.2
+! Version: 5.0.4
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-08-30T09:36:30+00:00
+! TimeUpdated: 2026-09-06T09:36:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 30.08.2026 09:36 UTC
+! Last Modified: 06.09.2026 09:36 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -1222,7 +1222,6 @@
 ||cnt*.www.uz^$important
 ||sentry.bigenc.ru^$important
 ||c.bigenc.ru^$important
-||tracking.diginetica.net^$important
 ||moe.video^
 ||sdk.mrf.io^
 ||i.viafoura.co^
@@ -2344,7 +2343,7 @@
 ||survey.magnit.ru^
 ||ft-soft.ru^
 ||mscu.ok.ru^
-! -Soon..-
+||rok.mail.ru^
 ! -Soon..-
 ! -Soon..-
 ! -Soon..-
@@ -2438,6 +2437,19 @@
 ||tmfsdk*.m.qq.com^
 ||ccc.sys.miui.com^
 ||installer.xiaomi.com^
+||logs.rzd-medicine.ru^
+||datamind.ru^
+||gooroo.works^
+||aptoide-mmp.aptoide.com^
+||acscdn.com^
+||ccqfqdwfdcvjo.online^
+||adexchangerapid.com^
+||usrpubtrk.com^
+||bbj3nb.ru^
+||tglink.io^
+||p*.techlab-cdn.com^
+||afp.ai^
+||dsp.gotechnology.io^
 !
 !
 !
