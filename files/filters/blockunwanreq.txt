@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.8.2
-! TimeUpdated: 2026-09-06T09:36:30+00:00
+! Version: 5.8.3
+! TimeUpdated: 2026-09-07T15:36:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -3570,7 +3570,7 @@ $cookie=/*_SM_TZ/
 ||bip.com^$cookie=Path
 ||netmera-web.com^$important
 ||mts.ru^$cookie=StickyID
-||mts.ru^$cookie=/TS*/
+! mts.ru^$cookie=/TS*/
 */flsafety/idpip-
 */gib/*.js^$script
 ||facct.ru^$cookie=gcfids
@@ -4285,11 +4285,23 @@ $cookie=KC_TRACE_ID,domain=x5.ru|5ka.ru|perekrestok.ru|vprok.ru
 ||kommersant.ru/ContentFlex/*/*.pushPopup.$script,domain=kommersant.ru,redirect=noopjs
 ||bbj3nb.ru^
 ||tglink.io^$important
-||beeline.ru/api/info/advertisingbanner/
-||beeline.ru/api/info/cookies
+||beeline.ru/api/info/advertisingbanner/^$xhr
+||beeline.ru/api/info/cookies^$xhr
 ||adu.by^$cookie=MoodleSession,third-party
 $cookie=ak_bmsc
 ||dsp.gotechnology.io^$important
+/elastic-apm-rum.umd.
+||plugin.handtalk.me^$third-party
+/wp-content/plugins/custom-facebook-feed/
+$cookie=/*_LAST_ADV/
+$cookie=/*_BANNERS/
+||goya.rutube.ru/online/*/?start=
+||rutube.ru^$cookie=csrftoken
+||mts.ru/api/v*/ab-tests^$xhr
+||mts.ru^$cookie=MTS_AB_DATA_mnp-test
+||mts.ru^$cookie=MTS_AB_NAME_mnp-test
+||mts.ru^$cookie=MTS_AB_VARIANT_mnp-test
+||s3.t2.ru/ds-site/js/ytm-layer.js^$script,domain=t2.ru
 !
 !
 !
@@ -6998,6 +7010,11 @@ riamo.ru##._1lm4gq60
 riamo.ru##div._1vyk8ks5:nth-child(16) > main._1vyk8ksd._1vyk8ksc._1vyk8ks7:nth-child(4) > div.e7p3b82.e7p3b80:last-child > div.e7p3b81:first-child > div._12mv6bx1._12mv6bx0._12mv6bxf:last-child > article.ozbl3x0._12mv6bx1._12mv6bx0._12mv6bx9:first-child > footer._9ov2r53:nth-child(4) > div._196stya1._196stya0._196styad._196stya6._196styak._196stya2:first-child > div._196stya1._196stya0._196styah._196stya7._196stya2._1baqt6j1._1baqt6j0._1baqt6j6._1baqt6j2:last-child
 timesavingmachine.ru###agreement_accept_block
 ##img[src*="dsp.gotechnology.io"]
+ip8.com##section.flex.flex-1.flex-col.justify-between.pb-10:first-child > main.mt-20.w-full.max-w-7xl.mx-auto.px-4.sm\:px-6.lg\:px-8:last-child > div.banner-gradient.banner-shine.relative.w-full.mb-4.rounded-xl.shadow-md.overflow-hidden.text-white.bg-gradient-to-r.from-indigo-600.via-blue-500.to-cyan-500:first-child
+##img[src*="weborama-tech.ru/"]
+beeline.ru##img[src^="/assets/vk/pixel.png"]
+yota.ru##div[class^="ssl-certificate-informer"]
+megafon.ru##div[class^="mfui-content-area mfui-content-area_background-color_transparent certificate-alert"]
 !
 !
 ! - Scripts -
