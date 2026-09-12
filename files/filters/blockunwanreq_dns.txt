@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 5.0.5
+! Version: 5.0.6
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-09-07T15:36:30+00:00
+! TimeUpdated: 2026-09-12T13:48:30+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 07.09.2026 15:36 UTC
+! Last Modified: 12.09.2026 13:48 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -2424,6 +2424,7 @@
 ||adx.com.ru^$important
 ||keplerleads.com^
 ||p1.lostfilm.*^
+||p1.lostfilm*.*^
 ||sovetnik.net^
 ||dmp.one^
 ||datacdn.ru^
@@ -2450,6 +2451,24 @@
 ||afp.ai^
 ||dsp.gotechnology.io^
 ||elasticteste-gneuexcgg0fyeud0.a03.azurefd.net^
+||pingback.giphy.com^
+||arclight.vimeo.com^
+||event-router.olympics.com^
+||tag.digitaltarget.ru^
+||pngme.ru^
+||otel-us.dvdfab.me^
+||otel-*.dvdfab.me^
+||servo-report.streamfab.com^
+||sentry.streamfab.com^
+||cdn-*.gravityfield.ai^
+||log-stream.mvideo.ru^
+||dap-*.c.hihonor.com^
+||athena.displate.com^
+||athena.*.*^
+||braze.eu^
+||measure.displate.com^
+||measure.*.*^
+||static.opiniac.com^
 !
 !
 !

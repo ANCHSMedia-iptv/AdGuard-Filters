@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.8.3
-! TimeUpdated: 2026-09-07T15:36:30+00:00
+! Version: 5.8.4
+! TimeUpdated: 2026-09-12T11:48:30+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -219,13 +219,14 @@ shopifycloud/consent-tracking-api/v*/consent-tracking-api.js^$script,important
 ||papajohns.ru/assets/empty.*.jpg^$image,domain=papajohns.ru,important
 ||supportai.yandex/widget/v*/bundle.js^$script,important
 ||id.rambler.ru/rambler-id-helper/auth_events.js^$script,third-party,redirect=noopjs,important
-/js/analytics/$script,domain=ria.ru|1prime.ru,redirect=noopjs,important
-/js/libs/ria.get.banners.js$script,domain=ria.ru|1prime.ru,redirect=noopjs,important
-/js/libs/notifications.js$script,domain=ria.ru|1prime.ru,redirect=noopjs
+/js/analytics/$script,domain=ria.ru|1prime.ru|inosmi.ru,redirect=noopjs,important
+/js/libs/ria.get.banners.js$script,domain=ria.ru|1prime.ru|inosmi.ru,redirect=noopjs,important
+/js/libs/notifications.js$script,domain=ria.ru|1prime.ru|inosmi.ru,redirect=noopjs
 /adv.gif^$image,important
 ! */adv.*^$image,important
 ||ura.news/widgets/banner_loader/loader.php$xhr,domain=ura.news,important
 ||telegram.org/js/*widget*.js$script,domain=~telegram.org|~t.me,third-party
+||telegram.me/js/*widget*.js$script,domain=~telegram.me,third-party
 ||vk.*/al_video.php$xhr,domain=~vk.com|~vk.ru
 ! vk.*/dist/web/ads_light.$script,important
 ||s.ura.news/js/dist/ccc.bundle.js$script,domain=ura.news,redirect=noopjs,important
@@ -704,7 +705,8 @@ $cookie=/__ddg*/,important
 ||rbc.ru/track/*/*/$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,important
 !
 ||rbc.ru/rbcmetr/stat/$xhr,domain=rbc.ru|sportrbc.ru|autonews.ru|rbcautonews.ru|rbclifemedia.ru,important,redirect=empty
-||telegram.org/css/*widget*.css$css,third-party,domain=~telegram.org|~t.me
+||telegram.org/css/*widget*.css$css,third-party,domain=~telegram.org|~t.me,third-party
+||telegram.me/css/*widget*.css$css,third-party,domain=~telegram.me,third-party
 ||iguides.ru/bitrix/templates/iguides-2015/js/tg-widget.js$xhr,domain=iguides.ru
 ||tourister.ru^$cookie=dis_is_retina
 ||tochka.com^$cookie=tochka_analytics_client_uid
@@ -754,7 +756,8 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru,important
 ||banki.ru^$cookie=/banki_prev_page|BANKI_RU_USER_IDENTITY_UID|_flpt_main_page_personalization_absegment/,important
 ||i.hizliresim.com/fxiyl01.png^$image,domain=flysat.com
 ||cbctv.az^$cookie=laravel_session
-||telegram.org/js/telegram-web-app.js^$script,domain=~telegram.org|~t.me,third-party
+||telegram.org/js/telegram-web-app.js^$script,domain=~telegram.org|~t.me|~telegram.me,third-party
+||telegram.me/js/telegram-web-app.js^$script,domain=~telegram.me,third-party
 /chtm/s/metric/*.gif$image,important
 ||feeds.tildacdn.com/api/setpostviewed/$xhr
 /chtm/s/metric/clarity.js^$script,important
@@ -1584,8 +1587,8 @@ $cookie=RadioStatistica,important
 /ads_light.$script,domain=vk.com|vk.ru,redirect=noopjs,important
 ||vkvideo.ru/*video.php?act=track_player_events$xhr,important
 ||a.ria.ru^$important
-/js/libs/ria.share.js$script,domain=ria.ru|1prime.ru,redirect=noopjs
-/js/libs/ria.share.sliding.js$script,domain=ria.ru|1prime.ru,redirect=noopjs
+/js/libs/ria.share.js$script,domain=ria.ru|1prime.ru|inosmi.ru,redirect=noopjs
+/js/libs/ria.share.sliding.js$script,domain=ria.ru|1prime.ru|inosmi.ru,redirect=noopjs
 ||invitro.ru/edna/threadswidget-$script,domain=invitro.ru
 ||widget.7medica.ru/version$xhr,important
 ||vtb.ru/media-files/vtb.ru/shared/scripts/RTM/calcma.js^$script,redirect=noopjs,domain=vtb.ru
@@ -3740,7 +3743,7 @@ $cookie=trackingToken
 ||globalfreetv.com/affiliate/$image,domain=globalfreetv.com
 ||5gvci.com^
 ||im-sentry.sportmaster.ru^$important
-*/api/fl/?u=$xhr,redirect=empty
+/api/fl/?u=*&$xhr,redirect=empty
 ||ipgeolocation.io^
 ||sentry.baseomni.ru^$important
 /minify.php
@@ -4302,6 +4305,29 @@ $cookie=/*_BANNERS/
 ||mts.ru^$cookie=MTS_AB_NAME_mnp-test
 ||mts.ru^$cookie=MTS_AB_VARIANT_mnp-test
 ||s3.t2.ru/ds-site/js/ytm-layer.js^$script,domain=t2.ru
+||giphy.com/api/geolocation
+||norilsk.tv/wp-content/uploads/2020/10/*.metrika.svg^$image,domain=gazetazp.ru
+||player.vimeo.com/_csp
+||f.vimeocdn.com/js_opt/modules/utils/vuid.
+/ddna-analytics.js^$script
+||inosmi.ru^$cookie=ad_inosmi_ab
+||gagauzinfo.md/storage/banners/
+||gagauzia.md/.htaccess
+||otel-us.dvdfab.me^
+||otel-*.dvdfab.me^
+||servo-report.streamfab.com^
+||sentry.streamfab.com^$important
+||cdn-*.gravityfield.ai^
+/api/fl/idgib-$xhr,redirect=empty
+||log-stream.mvideo.ru^
+||dap-*.c.hihonor.com^
+||hihonor.com/survey/base/report?
+||hihonor.com/survey/base/analysis/
+||athena.displate.com^
+||athena.*.*^
+||measure.*.*^
+||measure.displate.com^
+||displate.com/elysium-api/user/v*/session?ctrc=*&visitorId=
 !
 !
 !
@@ -5612,7 +5638,7 @@ rutube.ru##div.portalRoot:last-child > div.wdp-popup-overlay-module__overlay
 rutube.ru###root > div:last-child > div:last-child > div.application-module__container > div:first-child > nav.menu-content-module__wrapper.menu-content-module__menu.menu-content-module__menuWide.menu-content-module__menuOpen:nth-child(3) > span.menu-content-module__innerWrapper > section.menu-section-container-module__wrapper:first-child > ul.menu-links-module__list.navigation_group_main > li:last-child > a.wdp-link-module__link.menu-link-module__item
 aif.ru##div[class^="couter_block"]
 aif.ru##div[class^="count_box_nodisplay"]
-ria.ru,1prime.ru##div[class^="ultraright"]
+ria.ru,1prime.ru,inosmi.ru##div[class^="ultraright"]
 tassphoto.com##div.cookie-modal
 oilgasforum.ru###__next > footer.footer.js-header-theme-trigger:nth-child(3) > div.footer-inner.wrapper > div.footer-top:first-child > div.footer-top-left:first-child > div.footer-news
 ##iframe[src*="//www.acint.net/mc"]
@@ -6233,6 +6259,7 @@ blog.rt.ru##.blog__share, .sp-t-1-2, .flex-start-center, .sp-b-3, .td-sp-t-1-1, 
 ##.cookie-consent__banner
 nextmobile.ru##div:nth-child(28)
 ##.dc_promo, .curatorpromark
+detector404.ru##.curator
 3dnews.ru###feed-to-top
 ##.notification, .js-cookie-notification, .notification--shown
 ###cookie-bar
@@ -7015,6 +7042,15 @@ ip8.com##section.flex.flex-1.flex-col.justify-between.pb-10:first-child > main.m
 beeline.ru##img[src^="/assets/vk/pixel.png"]
 yota.ru##div[class^="ssl-certificate-informer"]
 megafon.ru##div[class^="mfui-content-area mfui-content-area_background-color_transparent certificate-alert"]
+norcom.ru##.confirm-policy
+russisches-haus.de###__next > div.__variable_5a16d4.__variable_8a6eb9.__variable_2634f7.font-gilregular:last-child > main.main-content-pt > div.fixed.max-lg\:w-full.lg\:w-1\/3.bottom-2.right-2.bg-white.dark\:bg-black.p-5.border.z-20:last-child
+iz.ru##.container__dzen-fos, .dzen-fos
+russkiymir.ru##.bf-banner, .bf-banner_active
+gagauzinfo.md##.header-ganner
+imeicheck.com##.imei-ad-shell
+displate.com###main-container > div.SearchPage_container__Q7KGO:last-child > div.w-full.mx-auto.max-w-\[1920px\].px-4.md\:px-6.lg\:px-8.\32 xl\:px-12:first-child > div.fixed.inset-x-0.bottom-0.z-1000.w-full.overflow-hidden.bg-transparent.h-full.max-h-\[clamp\(590px\,60vh\,80vh\)\].supports-\[height\:100dvh\]\:max-h-\[clamp\(590px\,60dvh\,80dvh\)\].rounded-t-lg.md\:h-auto.md\:rounded-t-md.translate-y-full.opacity-0.transition-transform.duration-250.ease-out.before\:fixed.before\:inset-0.before\:-z-1.before\:size-full.before\:content-\[\'\'\].before\:bg-\[linear-gradient\(197deg\,var\(--color-magenta-500\)_3\.41\%\,\#000_60\.22\%\)\].md\:before\:bg-\[linear-gradient\(358deg\,\#000_7\.94\%\,var\(--color-magenta-500\)_98\.75\%\)\].data-\[state\=open\]\:translate-y-0.data-\[state\=open\]\:opacity-100.data-\[state\=partial\]\:z-997.data-\[state\=partial\]\:translate-y-\[86\%\].data-\[state\=partial\]\:opacity-100:last-child
+displate.com###__next > header.Header_container__XXCJe:nth-child(4) > button.flex.h-14.max-h-14.w-full.items-center.gap-3.border-none.px-4.py-2.transition-\[max-height\].md\:h-10.md\:max-h-none.md\:justify-center.cursor-pointer:first-child
+displate.com###main-container > div.SearchPage_container__Q7KGO:last-child > div.w-full.mx-auto.max-w-\[1920px\].px-4.md\:px-6.lg\:px-8.\32 xl\:px-12:first-child > div.flex.flex-col.items-center.\[\&_button\:first-letter\]\:uppercase.mt-4.md\:mt-6:nth-child(2) > div.grid.w-full.auto-rows-\[minmax\(100px\,auto\)\].grid-cols-2.grid-flow-dense.gap-4.md\:grid-cols-4.md\:gap-6.lg\:grid-cols-5.xl\:grid-cols-6 > a.relative.flex.w-full.min-w-0.flex-col.items-center.justify-between.pb-4.text-center.aspect-5\/7.row-end-\[span_2\].hover\:no-underline\!:nth-child(11)
 !
 !
 ! - Scripts -
@@ -7631,8 +7667,8 @@ $cookie=_ym_debug
 ||strm.yandex.*/perf 
 ||yandex.ru/internet/api/v*/stats
 ||yandex.ru/internet/api/v*/share-link/
-||yandex.ru^$cookie,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*
-||yandex.*^$cookie,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*
+||yandex.ru^$cookie,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*|~kinopoisk.ru
+||yandex.*^$cookie,third-party,domain=~yandex.ru|~ya.ru|~yandex.by|~yandex.com|~yandex.kz|~yandex.lv|~yandex.uz|~yandex.*|~kinopoisk.ru
 ||yandex.*/cycounter$important
 ||hdrc.yandex.net^
 ||yandex.*/ick/
@@ -7856,6 +7892,10 @@ $removeparam=ysclid
 ||s3.yandex.net/*/*/rum.js$redirect=noopjs
 ||*/web-api/models/liza1?_m=get-event-ics^$xhr,domain=mail.yandex.ru|mail.yandex.*
 /wp-content/uploads/wga-cache/yandex-tracking/
+||yastatic.net/aab-pub/
+||yastatic.net/aab-pub/abp.html
+||yastatic.net/s3/kinopoisk-frontend/tag-manager/$domain=kinopoisk.ru
+||api.plus.kinopoisk.ru/graphql?operationName=registerSimpleActionWithPixel$xhr,important
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -7875,7 +7915,7 @@ $removeparam=ysclid
 ! -
 ! -
 ! -
-!
+! -
 @@||weather.yandex.ru^$app=ru.yandex.weatherplugin
 @@://static-maps.yandex.ru^$app=ru.yandex.weatherplugin
 @@||login.yandex.ru^$app=ru.yandex.weatherplugin
@@ -7939,6 +7979,7 @@ yandex.ru,ya.ru##.FuturisSnippet
 ##a[href*="yabs.yandex.ru/count/"]
 [$path=/search]yandex.ru,ya.ru##div[class^="AdvMastHead"]
 [$path=/search/videos]yandex.ru##.VideoViewer-Direct, .VideoViewer-Direct_placement_under-player, .VideoViewer-Direct_withStore
+tel.yandex.ru##.VideoViewer-Direct, .VideoViewer-Direct_placement_under-player, .VideoViewer-Direct_withStore
 ##html[class^="i-ua_js_no i-ua_css_standart i-ua_browser_yandexbrowser i-ua_browser-engine_webkit i-ua_browser_desktop"]
 yandex.*##a[href*="://yandex.ru/an/"]
 ya.ru##a[href*="://ya.ru/an/"]
@@ -7950,7 +7991,7 @@ yandex.ru,ya.ru##div[id="root"][class^="page__block-19-84"]
 alice.yandex.ru##.Standalone-MobileApp
 mail.yandex.ru###js-neuroexpert-button
 mail.yandex.ru###global-bar-container > div > div._GlobalBarRoot_12n6w_1.GlobalBar-m__globalBarContainer--tb5M6 > div._GlobalBarContainer_12n6w_9 > div._Container_1di3h_1:last-child > div:first-child
-[$path=/search]yandex.ru,ya.ru##div[class*="Warning_type_roskomnadzor"]
+[$path=/search]yandex.ru,ya.ru##span[class*="Warning_type_roskomnadzor"]
 practicum.yandex.ru##div[id^="chat-button"]
 practicum.yandex.ru###banner-course-1 > div.lc-offsets.lc-grid2-offsets
 practicum.yandex.ru##.lc-button-up__button, .lc-button-up__button_align_right, .lc-button-up__button_status_show
@@ -7965,6 +8006,7 @@ ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-
 [$path=/video/search]yandex.ru##li[class*="AdvSnippetFeature"]
 [$path=/chat]alice.yandex.ru##div[class^="AdvCard "]
 [$path=/chat/]alice.yandex.ru##div[class^="AdvCard "]
+alice.yandex.ru##a[href^="://360.yandex.ru/business/alice-business/?"]
 !
 !
 ! =
@@ -8122,7 +8164,6 @@ ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-
 ||safebrowsing.googleapis.com^$important
 ||app-measurement.com^$important
 ||csi.gstatic.com^
-! maps.googleapis.com/maps-api-v*/api/js/*/*/log.js$important,redirect=noopjs
 ||ssl.gstatic.com/ui/v*/icons/*/images/cleardot.gif?$image,redirect=1x1-transparent.gif
 ||ulp1p*.googleapis.com^$important
 ||safebrowsing.google.com^$important
@@ -8212,6 +8253,8 @@ ya.*,yandex.*#$?#[id][aria-label] > [class]:has(> div > button:matches-attr(/[a-
 ||google.com/_/*/browserinfo$redirect=nooptext
 ||206.94.190.35.bc.googleusercontent.com/youtubei/v*/log_event
 ||35.190.94.206/youtubei/v*/log_event
+||translate.googleapis.com/element/log
+||google.*/ccm/
 !
 ! ===
 !
@@ -8602,7 +8645,7 @@ aliexpress.ru#@$#body { overflow: auto!important; padding-right: 0!important; }
 @@||group-ib.com^
 @@||smartcaptcha.yandexcloud.net
 @@||mega.nz^$ghide
-@@||hd.kinopoisk.ru^$important,document
+! @@||hd.kinopoisk.ru^$important,document
 @@||kinopoisk.ru/install?
 @@||cdn.hsmedia.ru/ump-webapp-public/dist/client/assets/*Sticky*Adv*.$script,css,domain=116.ru|14.ru|161.ru|164.ru|173.ru|26.ru|29.ru|35.ru|43.ru|45.ru|48.ru|51.ru|53.ru|56.ru|59.ru|60.ru|63.ru|68.ru|71.ru|72.ru|74.ru|76.ru|86.ru|89.ru|93.ru|chita.ru|e1.ru|fontanka.ru|ircity.ru|izh1.ru|mgorsk.ru|msk1.ru|ngs.ru|ngs22.ru|ngs24.ru|ngs42.ru|ngs55.ru|ngs70.ru|nn.ru|sochi1.ru|sterlitamak1.ru|tolyatty.ru|ufa1.ru|v1.ru|vladivostok1.ru|voronezh1.ru|ya62.ru
 @@||support.avito.ru^
@@ -9106,7 +9149,7 @@ kommersant.ru#@#.footer_adv
 @@||vk*.vkuser.net/?expires=*&srcIp=*&*&srcAg=*&ms=*&*&sig=*&urls=
 @@||rutube.ru/multipass/api/accounts/captcha/
 @@||ob-tb.ru^
-@@/js/libs/grecaptcha.js$script,domain=ria.ru|1prime.ru
+@@/js/libs/grecaptcha.js$script,domain=ria.ru|1prime.ru|inosmi.ru
 @@||yastatic.net/s3/front-maps-static/maps-front-maps/build/client/map-widget
 @@||dropmefiles.com/*/securimage/
 @@||wikipedia.org^$cookie
@@ -9507,12 +9550,12 @@ auchan.ru#@?#p:contains(/^\xA0$/):not(:contains(/\S/)):not(:has(img))
 ! ==
 ! Servicepipe Anti-DDoS and Anti-Bot System (16.02.26)
 ! Не открывались сайты, защищённые Анти-DDos и Анти-Бот защитой от Servicepipe.
-@@||servicepipe.ru/static/$script,important
-@@||servicepipe.ru/loaders/$image,important
-@@||servicepipe.ru^$permissions=identity-credentials-get=()
-@@||servicepipe.ru^$permissions=private-state-token-issuance=()
-@@||servicepipe.ru^$permissions=private-state-token-redemption=()
-@@||servicepipe.ru^
+@@||servicepipe.tech/static/$script,important
+@@||servicepipe.tech/loaders/$image,important
+@@||servicepipe.tech^$permissions=identity-credentials-get=()
+@@||servicepipe.tech^$permissions=private-state-token-issuance=()
+@@||servicepipe.tech^$permissions=private-state-token-redemption=()
+@@||servicepipe.tech^
 ! -
 @@$permissions=identity-credentials-get=(),domain=onlinetrade.ru|5ka.ru
 @@$permissions=private-state-token-issuance=(),domain=onlinetrade.ru|5ka.ru
