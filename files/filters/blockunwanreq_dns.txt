@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 5.0.6
+! Version: 5.0.7
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-09-12T13:48:30+00:00
+! TimeUpdated: 2026-09-12T11:48:40+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 12.09.2026 13:48 UTC
+! Last Modified: 13.09.2026 13:48 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -676,7 +676,7 @@
 ||static.addtoany.com^$important
 ||player-telemetry.vimeo.com^$important
 ||fresnel-events.vimeocdn.com^$important
-||roistat.com^$important
+! roistat.com^$important
 ||*retailrocket.*^$important
 ||botfaqtor.ru^$important
 ||stat.sputnik.*^$important
@@ -2076,7 +2076,7 @@
 ||mtrcs.llimonix.dev^
 ||sentry.iilab.ru^$important
 ||rum.beusable.net^
-||cloud.roistat.com^
+||cloud.roistat.com^$important
 ||counter.megaindex.ru^
 ||sentry.burgerkingrus.ru^$important
 ! code.reffection.ru^$important
@@ -2149,7 +2149,7 @@
 ||services.fandom.com^$important
 ||d.ghostery.com^$important
 ||it.com^
-||content.24ttl.stream^
+||24ttl.stream^
 ||chimpstatic.com^
 ||data.killbot.ru^
 ||hk.kill-bot.ru^
@@ -2350,12 +2350,6 @@
 ! -Soon..-
 ! -Soon..-
 ! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
 ||counter.megagroup.ru^$important
 ||simbadexchange.ru^
 ||umami.*^
@@ -2469,6 +2463,15 @@
 ||measure.displate.com^
 ||measure.*.*^
 ||static.opiniac.com^
+||*.infox.ru^
+||sentry.hostvds.com^
+||network.cogentco.com^
+||public.profitwell.com^
+||insights.sitesearch360.com^
+||t.paypal.com^
+||node.illicium.co^
+||sp.aviasales.ru^
+||sentry-relay.avs.io^
 !
 !
 !

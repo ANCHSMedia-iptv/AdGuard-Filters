@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.8.4
-! TimeUpdated: 2026-09-12T11:48:30+00:00
+! Version: 5.8.5
+! TimeUpdated: 2026-09-13T11:48:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -3518,7 +3518,7 @@ $cookie=abt_data,third-party,domain=~ozone.ru|~ozon.ru|~ozon.*
 ||rcpay.ru/assets/offer-adblock-$script,domain=rcpay.ru,redirect=noopjs
 /wpfront-scroll-top.$script
 ||kakaocdn.net/kakao_js_sdk/v*/kakao.$script,third-party
-||cloud.roistat.com^
+||cloud.roistat.com^$important
 ||xn--e1avv4a.xn--p1ai/static/yarche_core/counters.$script,domain=xn--e1avv4a.xn--p1ai,redirect=noopjs
 $removeparam=utm_campaign,domain=~quke.ru|~usprobioticguide.com
 $removeparam=utm_medium,domain=~usprobioticguide.com
@@ -3744,7 +3744,7 @@ $cookie=trackingToken
 ||5gvci.com^
 ||im-sentry.sportmaster.ru^$important
 /api/fl/?u=*&$xhr,redirect=empty
-||ipgeolocation.io^
+||ipgeolocation.io^$third-party,domain=~ipgeolocation.io
 ||sentry.baseomni.ru^$important
 /minify.php
 ||PTR-*.intel-port.ru^
@@ -4143,8 +4143,8 @@ $cookie=ab_fast_search
 $cookie=found_cheaper_ab
 $cookie=location
 $cookie=uui
-/collect
-/collect_batch
+/collect^
+/collect_batch^
 /tooltip/v*/process-links?location=
 /entrypoint_config?page_url=
 /link-switch/v*/convert?location=
@@ -4328,6 +4328,38 @@ $cookie=/*_BANNERS/
 ||measure.*.*^
 ||measure.displate.com^
 ||displate.com/elysium-api/user/v*/session?ctrc=*&visitorId=
+||infox.ru^
+||infox.sg^
+||memebase.ru/u.js^$script,domain=memebase.ru,redirect=noopjs
+||memebase.ru/api/record
+||memebase.ru/api/send
+||memebase.ru/cookie
+||sentry.hostvds.com^$important
+||hostvds.com/js/yandex-$script,domain=hostvds.com,redirect=noopjs
+||igroutka.ru^$domain=t72.ru
+||im72.su/sql.php?token=*&tb=camstat&*
+||streams.cam72.su/*-72/logo?
+/vendor/js.cookie-$script,redirect=noopjs
+/vendor/js-cookie.js$script,redirect=noopjs
+/cookie_notification.js$script,redirect=noopjs
+||paypal.com^$cookie=ts_c
+||paypal.com^$cookie=tsrce
+||paypal.com^$cookie=t
+||paypal.com^$cookie=l7_az
+||paypalobjects.com/activation/js/marketingIntents$script,redirect=noopjs
+||paypalobjects.com/martech/tm/paypal/mktgtagmanager.js$script,redirect=noopjs
+/ga4.js
+||paypal.com/csplog/
+/pardot/pd.js
+/static/common-static/bottom-html/build/init-sentry.$script,domain=banki.ru,redirect=noopjs
+||banki.ru/common-service-api/*/client-log/$domain=banki.ru,redirect=empty
+||be.broker.ru^$important
+||sentry-relay.avs.io^$important
+||priorbank.by/health/v*/ping
+||bnb.by/ak-push.js^$script,domain=bnb.by
+||bnb.by/webchat_events
+||bnb.by/sse_event
+||cdn.corpowid.com/assets/icon/cursor.svg$image
 !
 !
 !
@@ -6274,7 +6306,7 @@ kp.ru###app > div.sc-13iz5ku-0.gLVCYP:nth-child(4) > div.sc-1dpva40-0.dfKjHz > d
 monetka.ru##.banners_wrapper
 lenta.com##lnt-root:nth-child(3) > lu-layout:nth-child(2) > lu-mobile-app-widget:first-child
 magnit.ru##div[class^="unit-ad-block-message"]
-magnit-family.ru##.cookie
+magnit-family.ru,stbank.by##.cookie
 ##.js-cookies-popup-custom, .cookies-popup-custom, ._openPopup
 chistayalinia.ru##div.wrapper:nth-child(2) > header.js-header.header._desk-grid:first-child > div.header__line._desk-bg-green:first-child > div.header__top._desk-grid._desk-align-i-c._width-sizer._mob-p._desk-color-white > button.js-subscribe-open.header__contact-us._desktop._uppercase._desk-btn-sd-1:nth-child(3)
 chistayalinia.ru##.mobile-arrow, .mobile-arrow--up, .mobile-arrow--active
@@ -7042,6 +7074,7 @@ ip8.com##section.flex.flex-1.flex-col.justify-between.pb-10:first-child > main.m
 beeline.ru##img[src^="/assets/vk/pixel.png"]
 yota.ru##div[class^="ssl-certificate-informer"]
 megafon.ru##div[class^="mfui-content-area mfui-content-area_background-color_transparent certificate-alert"]
+vybory.gov.ru###training-notifier
 norcom.ru##.confirm-policy
 russisches-haus.de###__next > div.__variable_5a16d4.__variable_8a6eb9.__variable_2634f7.font-gilregular:last-child > main.main-content-pt > div.fixed.max-lg\:w-full.lg\:w-1\/3.bottom-2.right-2.bg-white.dark\:bg-black.p-5.border.z-20:last-child
 iz.ru##.container__dzen-fos, .dzen-fos
@@ -7051,6 +7084,27 @@ imeicheck.com##.imei-ad-shell
 displate.com###main-container > div.SearchPage_container__Q7KGO:last-child > div.w-full.mx-auto.max-w-\[1920px\].px-4.md\:px-6.lg\:px-8.\32 xl\:px-12:first-child > div.fixed.inset-x-0.bottom-0.z-1000.w-full.overflow-hidden.bg-transparent.h-full.max-h-\[clamp\(590px\,60vh\,80vh\)\].supports-\[height\:100dvh\]\:max-h-\[clamp\(590px\,60dvh\,80dvh\)\].rounded-t-lg.md\:h-auto.md\:rounded-t-md.translate-y-full.opacity-0.transition-transform.duration-250.ease-out.before\:fixed.before\:inset-0.before\:-z-1.before\:size-full.before\:content-\[\'\'\].before\:bg-\[linear-gradient\(197deg\,var\(--color-magenta-500\)_3\.41\%\,\#000_60\.22\%\)\].md\:before\:bg-\[linear-gradient\(358deg\,\#000_7\.94\%\,var\(--color-magenta-500\)_98\.75\%\)\].data-\[state\=open\]\:translate-y-0.data-\[state\=open\]\:opacity-100.data-\[state\=partial\]\:z-997.data-\[state\=partial\]\:translate-y-\[86\%\].data-\[state\=partial\]\:opacity-100:last-child
 displate.com###__next > header.Header_container__XXCJe:nth-child(4) > button.flex.h-14.max-h-14.w-full.items-center.gap-3.border-none.px-4.py-2.transition-\[max-height\].md\:h-10.md\:max-h-none.md\:justify-center.cursor-pointer:first-child
 displate.com###main-container > div.SearchPage_container__Q7KGO:last-child > div.w-full.mx-auto.max-w-\[1920px\].px-4.md\:px-6.lg\:px-8.\32 xl\:px-12:first-child > div.flex.flex-col.items-center.\[\&_button\:first-letter\]\:uppercase.mt-4.md\:mt-6:nth-child(2) > div.grid.w-full.auto-rows-\[minmax\(100px\,auto\)\].grid-cols-2.grid-flow-dense.gap-4.md\:grid-cols-4.md\:gap-6.lg\:grid-cols-5.xl\:grid-cols-6 > a.relative.flex.w-full.min-w-0.flex-col.items-center.justify-between.pb-4.text-center.aspect-5\/7.row-end-\[span_2\].hover\:no-underline\!:nth-child(11)
+memebase.ru##div.fixed.bottom-0.inset-x-0.z-\[95\].border-t.px-3.py-2\.5.sm\:px-6.sm\:py-3:nth-child(54)
+memebase.ru##.mt-6
+zummer.su##div[style^="position: fixed; bottom: 1rem; left: 1rem; right: 1rem; display: flex; gap: 1rem; justify-content: space-around; align-items: center; padding: 1rem; background: white; border: 2px solid rgb(64, 128, 192); border-radius: 1rem; color: black; z-index: 1000000;"]
+zummer.su##div[style^="display: none;"]
+castles.pro##.cookies
+stormwall.pro##.accept-cookies-block
+oilgasforum.ru##.telegram-popup, .popup, .popup--opened
+lk.oilgasforum.ru##a[href^="://max.ru/id7203205528_bot"]
+lk.oilgasforum.ru###page-topbar > div.navbar-header:last-child > div.header__profile.d-flex.align-items-center.vpr-flex-100:last-child > div.vpr-flex-100:last-child > div.d-flex.align-items-center.justify-content-end > div.vpr-flex-100.vpr-me-xxl-14.vpr-me-sm-8.vpr-me-4:first-child > div.d-flex.align-items-center.justify-content-end.position-relative > div.vpr-me-sm-5.vpr-me-4.col-auto:first-child
+##img[src*="t.paypal.com/ts?"]
+##img[src*="facebook.com/tr?"]
+koronapay.com##.css-1c70qiv, .e15i1j270
+zkcompany.ru##.css-mh2q6y, .ebebih30
+bcs.ru##.aweZL, .kx7Go
+bcs.ru##.ntf-container, .nft-cookies
+bcs.ru###react_0HNOG04FLS10S > div:first-child
+aviasales.ru###ArticlePage_page__ahsy4 > div.ArticlePage_seasonal__QFhkr:nth-child(2)
+aviasales.ru##.PsgrTelegramBanner_container__xskrU
+bnb.by##.subscribe-block__inner
+bnb.by###cookie-modal
+dronedetectors.ru##.t190
 !
 !
 ! - Scripts -
@@ -9497,6 +9551,8 @@ auchan.ru#@?#p:contains(/^\xA0$/):not(:contains(/\S/)):not(:has(img))
 @@||myrka.digital
 @@||rr*---*-*.c.youtube.com^
 @@||*---*-*.c.youtube.com^
+@@||maps.gstatic.com/mapfiles/transparent.png^$image,important
+@@||206.94.190.35.bc.googleusercontent.com/generate_204$important
 !
 !
 ! -
