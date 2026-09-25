@@ -1,9 +1,9 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
-! Version: 5.0.7
+! Version: 5.1.0
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-09-12T11:48:40+00:00
+! TimeUpdated: 2026-09-23T11:48:40+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 13.09.2026 13:48 UTC
+! Last Modified: 23.09.2026 13:48 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -535,6 +535,7 @@
 ||userlocation*.googleapis.com^$important
 ||locationhistory*.googleapis.com^$important
 ||locationhistoryplacedetails*.googleapis.com^$important
+||chart.googleapis.com^
 !
 ! ===
 !
@@ -557,7 +558,7 @@
 ||*instabug*^$important
 ||xray.mail.ru^$important
 ||ad.mail.ru^$important
-! ||*dbankcloud*^$important
+! *dbankcloud*^$important
 ||rayjump.com^$important
 ||smi2.ru^$important
 ||24smi.net^$important
@@ -569,8 +570,8 @@
 ||inappstory.ru^$dnsrewrite=REFUSED,important
 ||inappstory.com^$dnsrewrite=REFUSED,important
 ||appsflyersdk.com^$important
-! facebook.com^$dnsrewrite=REFUSED,domain=~facebook.com
-! www.facebook.com^$dnsrewrite=REFUSED,domain=~facebook.com
+! facebook.com^$dnsrewrite=REFUSED
+! www.facebook.com^$dnsrewrite=REFUSED
 ||snapkit.com^$important
 ||appsflyer.com^$important
 ||analytics.72.ru^$important
@@ -1169,7 +1170,6 @@
 ||smetric.hilton.com^
 ||edge.adobedc.net^
 ||ads-engagement.presage.io^
-||siteintercept.qualtrics.com^
 ||dwin1.com^
 ||beam.koddi.com^
 ||beacon.sojern.com^
@@ -1253,7 +1253,7 @@
 ||ma.chitai-gorod.ru^$important
 ||oko.sima-land.ru^$important
 ||cityadstrack.com^$important
-! ynuf.aliapp.org^
+||ynuf.aliapp.org^
 ||pms.mail.ru^$important
 ||sentry.adspower.com^$important
 ||qoopler.ru^$important
@@ -1815,7 +1815,6 @@
 ||evs.icy-lake.kickstarter.com^
 ||featureassets.org^
 ||cdn.siftscience.com^
-||siteintercept.qualtrics.com^
 ||top100.ru^
 ||backend.reshak.ru^
 ||js.sentry-cdn.com^
@@ -2039,7 +2038,6 @@
 ||gtm-sst.crowdin.com^
 ||hog.crowdin.com^
 ||code-ya.jivosite.com^
-||metrika.kontur.ru^
 ||frontreport-relay.kontur.host^
 ||cdn.cxense.com^
 ||piano.io^
@@ -2273,7 +2271,7 @@
 ||backstory.ebay.*^
 ||pulsar.ebay.com^
 ||sentry.klipy.co^
-||tg-api.giga.pub^$dnsrewrite=BLOCKED
+||tg-api.giga.pub^$dnsrewrite=BLOCKED_MALWARE
 ||observability.x5.ru^
 ||js.datadome.co^
 ||mtmanalytics.softline.ru^
@@ -2282,8 +2280,8 @@
 ||proxyjs.luminatinet.com^
 ||bright-sdk.com^
 ||proxyjs.*.*^
-||tgai.app^$dnsrewrite=BLOCKED
-||jads.co^
+||tgai.app^$dnsrewrite=BLOCKED_MALWARE
+||jads.co^$dnsrewrite=ad-block.dns.adguard.com
 ||realsrv.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||epidermispushupvariable.com^$important,dnsrewrite=ad-block.dns.adguard.com
 ||juicyads.rocks^$dnsrewrite=ad-block.dns.adguard.com
@@ -2472,6 +2470,68 @@
 ||node.illicium.co^
 ||sp.aviasales.ru^
 ||sentry-relay.avs.io^
+||tdum.alibaba.com^
+||ad4game.com^
+||metis.truecaller.com^
+||cookies.truecaller.com^
+||sstats.adobe.com^
+||as.tbank.ru^
+||wa.finuslugi.ru^
+||data.kill-bot.net^
+||t.lpgenerator.ru^
+||exp.anti-malware.ru^
+||cp.unisender.com^
+||analytics.telegram.org^
+||ads.telegram.org^
+||services.kontur.ru^
+||wsd-fingerprint.kontur.ru^
+||hercules.kontur.ru^
+||cdn.clarip.com^
+||d2fw3s7rfepszt.cloudfront.net^
+||d2lozshlknej0q.cloudfront.net^
+||d6wfl40rgh70w.cloudfront.net^
+||siteperformancetest.net^
+||cdn*.forter.com^
+||d2o5idwacg3gyw.cloudfront.net^
+||duvkog4eyegl0.cloudfront.net^
+||cdn-v*.conductrics.net^
+||cdn.branch.io^
+||s.yimg.jp^
+||s.yimg.com^
+||s.yimg.*^
+||tag.flvcdn.net^
+||s.pinimg.com^
+||apps.rokt-api.com^
+||cdn.treasuredata.com^
+||mplat-ppcprotect.com^
+||micpn.com^
+||ads-engagement.presage.io^
+||gwmtracking.com^
+||beam.koddi.com^
+||apps.rokt.com^
+||beacon.sojern.com^
+||videoamp.com^
+||servedby.flashtalking.com^
+||d196fri2z18sm.cloudfront.net^
+||aswpsdkus.com^
+||cloudfunctions.net^
+||st-*.dynamicyield.com^
+||mi-test.shalltry.com^
+||os-code.shalltry.com^
+||mi-pre.shalltry.com^
+||log.skyroam.com.cn^
+||countly.skyroam.com^
+||simo.skyroam.com^
+||ahagamecenter.com^
+||d.selvomon.com^
+||torraria.com^
+||novadw.com^
+||betadw.com^
+||webbedtrash.com^
+||hdbkome.com^
+||vnmfvnkd.win^
+||fontmenice.com^
+||cashmachines.biz^
 !
 !
 !
@@ -2991,7 +3051,6 @@
 @@||myrka.digital^$important
 @@||rr*---*-*.c.youtube.com^
 @@||*---*-*.c.youtube.com^
-@@||supl.google.com^$important
 !
 !
 !
@@ -3037,7 +3096,7 @@
 ||87h6.cfd^$dnsrewrite=BLOCKED
 ||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^
 ||clicks.af-pb06e2.com^$dnsrewrite=0.0.0.0
-||151.243.18.101^$dnsrewrite=0.0.0.0
+! 151.243.18.101^$dnsrewrite=0.0.0.0
 ||adalh-zcq.com^$dnsrewrite=BLOCKED
 ||obqj2.com^$dnsrewrite=BLOCKED
 ||hellopeople.app.tc^$dnsrewrite=BLOCKED
@@ -3143,13 +3202,15 @@
 ||fewteraurums.com^
 ||qxgolds.com^$dnsrewrite=BLOCKED
 ||kgwhg.com^$dnsrewrite=BLOCKED
-||claude-pro.com^$dnsrewrite=BLOCKED
+||claude-pro.com^$dnsrewrite=BLOCKED_MALWARE
 ||kittiescraftsmp.com^$dnsrewrite=BLOCKED
 ||torroclk.com^
 ||ajb8.com^$dnsrewrite=BLOCKED
 ||bulsis.net^$dnsrewrite=0.0.0.0
 ||angeltarotreading.com^$dnsrewrite=0.0.0.0
 ||1push.io^$dnsrewrite=0.0.0.0
+||i-ceusernames.org^$dnsrewrite=BLOCKED_DATA_BREACH
+||deadhub.org^$dnsrewrite=BLOCKED_MALWARE
 !
 !
 !
@@ -3170,6 +3231,7 @@
 ! ipwho.is^ (4.02.26: Issue from ipwhois-io)
 !
 !
+! *
 ! Соцсети Facebook и Instagram заблокированы на территории РФ, владеющая ими компания Meta признана экстремисткой и деятельность в РФ запрещена.
 ! Соцсеть X (бывший Twitter) заблокирован на территории РФ.
 ! Social networks Facebook and Instagram are blocked and banned in the Russian Federation, the company that owns them, Meta, is recognized as extremist and its activities in the Russian Federation are prohibited.
