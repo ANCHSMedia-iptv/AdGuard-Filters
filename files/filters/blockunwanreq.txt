@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.8.9
-! TimeUpdated: 2026-09-23T11:48:00+00:00
+! Version: 5.9.0
+! TimeUpdated: 2026-09-26T11:48:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -1131,8 +1131,8 @@ waf/fingerprint$xhr,important
 ||strm.yandex.*^$app=com.infolink.limeiptv|octohide.vpn,redirect=noopvast-3.0
 ||rumor.press^$third-party,important
 ||otcnet.ru/wp-content/plugins/wp-yandex-metrika/$script,xhr,redirect=metrika-yandex-watch,domain=otcnet.ru
-/ads/styles/all/theme/phpbbads.css$css,redirect=noopcss
-/ads/styles/all/theme/phpbbads.css$xhr,redirect=empty
+/phpbb/ads/styles/all/theme/phpbbads.css$css,redirect=noopcss
+/phpbb/ads/styles/all/theme/phpbbads.css$xhr,redirect=empty
 /js/ads-2025.js^$script,domain=smotret.tv|smotret.top
 /js/lozad*.$script,domain=smotret.tv|smotret.top
 ||tv2free.ru/core/modules/statistics/statistics.php^$xhr,subdocument,domain=tv2free.ru
@@ -1234,7 +1234,7 @@ calltouch.js$script,xhr
 ||tvrus.eu/wp-content/uploads/2021/12/telegram_05_*.jpg^$image,domain=tvrus.eu
 ||tvrus.eu/wp-content/uploads/2020/08/filtry.gif^$image,domain=tvrus.eu
 ||ruspresse.de/rhted_show.php$domain=tvrus.eu
-*/cdn-cgi/trace$xhr,other,third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one
+*/cdn-cgi/trace$xhr,other,third-party,important,domain=~cloudflare.com|~1.1.1.1|~myair.resmed.com|~one.one.one.one|~ipcheck.ing
 ||amplitude-experiments.*.*^
 ||gitlab.com/*/track_namespace_visits$xhr,domain=gitlab.com
 ||mtm.iptvx.one^$important,domain=iptvx.one|epg.iptvx.one,redirect=matomo
@@ -2997,7 +2997,7 @@ otel-trace/otel.$script,redirect=noopjs
 ||mail.aeza.net/*/go2_link_tracker
 ||api.videobel.by/v*/banners?$xhr,domain=videobel.by
 ||w.rulive.ru^$important
-||moe.video^
+||moe.video^$important
 ||torgi.gov.ru/new/assets/mobile-app-banner.png^$image,domain=torgi.gov.ru
 ||torgi.gov.ru/new/assets/tg-banner-$image,domain=torgi.gov.ru
 ||hzakupki.gov.ru/epz/main/public/js/common/empty.js$domain=zakupki.gov.ru
@@ -4469,6 +4469,79 @@ $cookie=rhg-device-info,domain=radissonhotels.com
 ||api.vkplay.ru/play/pocket/promo/
 /ext/phpbb/ads/
 /ext/phpbb/webpushnotifications/
+||secpost.ru/wp-content/themes/madd-child/js,_advertising-post.js$script,domain=secpost.ru
+||secpost.ru/wp-content/uploads/20*/*/yandex-security-$image,domain=secpost.ru
+||secpost.ru/wp-content/uploads/20*/*/banner-$image,domain=secpost.ru
+||secpost.ru/wp-content/uploads/20*/*/bizone-$image,domain=secpost.ru
+||secpost.ru/wp-content/uploads/20*/*/technosreda-$image,domain=secpost.ru
+||xoilaczzqipxt.tv^
+/erid-counter.js
+||networkguru.ru/erid-counter^
+||networkguru.ru/erid-counter/^
+||*.*/erid-counter^
+||*.*/erid-counter/^
+||emag.ru/counter/$script,third-party,important
+||networkguru.ru/files/uploads/*/Networkguru-feat-VoiceXpert-$image,domain=networkguru.ru
+||777999.au.ru^
+||afisha21.ru/css/bg/*.gif^$image,domain=forum.na-svyazi.ru|na-svyazi.ru
+||na-svyazi.ru/style_images/*/spacer.gif$image,domain=na-svyazi.ru
+/ulogin.js
+$cookie=adv-WWW_2
+||garant.ru/ajax/social_banner/
+/yandex-yclid.js
+/mail-ru-counter.js
+/get-ip.js$redirect=noopjs
+||alfabank.ru/*/platform-id.js^$script,domain=alfabank.ru,redirect=noopjs
+/yandex-varioqub.js
+||kurs.alfabank.ru/api/public/courses/banner/*?$domain=alfabank.ru
+||saby.ru/consumertracking/$domain=saby.ru
+||cdn*.saby.ru/cdn/*/ym/$script,domain=saby.ru,redirect=noopjs
+$cookie=unisourcedetector
+||techora.ru/api/ui/m^$domain=techora.ru
+||techora.ru/api/ui/cf^$domain=techora.ru
+||techora.ru/api/ui/vv?$domain=techora.ru
+||techora.ru/api/ui/s^$domain=techora.ru
+||techora.ru/api/ui/t^$domain=techora.ru
+||techora.ru/api/ui/a^$domain=techora.ru
+||playground.ru/api/tzr.show^$domain=playground.ru
+$cookie=pg_device
+||img.playground.ru/moevideo_$domain=playground.ru
+||unpkg.com/*vkid/*/dist-sdk/
+/webpush/jsi18n/
+||static.multiurok.ru/videouroki/ro2/2026/09/pro/20260902_catalog-ktopfile-sep26.png^$image,domain=kopilkaurokov.ru
+||static.multiurok.ru/videouroki/products/instructions/video_instructions/tri-supersposobnosti-uchitelya-poster.webp^$image,domain=kopilkaurokov.ru
+||static.multiurok.ru/videouroki/ro2/2022/08/pro/20220830_vr3-videocourse1-2.png^$image,domain=kopilkaurokov.ru
+||static.multiurok.ru/videouroki/ro2/2026/09/pro/20260902_catalog-kright-sep26.png^$image,domain=kopilkaurokov.ru
+||static.multiurok.ru/videouroki/ro2/2026/02/pro/20260212_interkon-kright2.png^$image,domain=kopilkaurokov.ru
+||static.multiurok.ru/videouroki/ro2/2022/09/pro/20220905_kopilka-bubble-videoucourse.png^$image,domain=kopilkaurokov.ru
+||static.multiurok.ru/videouroki/products/instructions/video_instructions/tri-supersposobnosti-uchitelya.mp4^$media,domain=kopilkaurokov.ru
+||videouroki.net/img/look/muskach.gif^$image,domain=kopilkaurokov.ru
+||videouroki.net/img/look/muskach.gif^$image,third-party
+||kopilkaurokov.ru/img/bunner-cert-multiurok.jpg^$image,domain=kopilkaurokov.ru
+/bitrix/templates/sub/js/goTop.js
+/tnc.js?h=
+/js.cookie.
+||don24.ru/js/background-banners.$script,domain=don24.ru
+||don24.ru/js/instagram.js$script,domain=don24.ru
+||don24.ru/js/geotag.js$script,domain=don24.ru
+||don24.ru/js/vk-login-click.js$script,domain=don24.ru
+||don24.ru/img/alisa.svg^$image,domain=don24.ru
+||don24.ru/img/dzen-btn.png^$image,domain=don24.ru
+||don24.ru/ajax/background-banners$domain=don24.ru
+||lansite.ru/lsbanner/
+||bigbookname.com/img/rkmr.png^$domain=bigbookname.com
+/aqx.js
+/aq.js
+/aq/t?
+||services.fandom.com/icbm/api/location
+||services.fandom.com/adeng/
+||fandom.com/extensions-ucp/*/fandom/AgeDeclaration/
+||events.appmagic.rocks^
+||centrifugo-v*.appmagic.rocks^
+||vishavideo.com^
+||g-api.ekatox.com^
+||litemsg.ekatox.com^
+||toolmatrix.plus^
 !
 !
 !
@@ -4530,7 +4603,7 @@ $cookie=rhg-device-info,domain=radissonhotels.com
 *appbk.4pda.to^
 !
 !
-||s.4pda.to^$important
+||s.4pda.to^
 !
 !
 ||4pda.to/huawei/$domain=4pda.to
@@ -4867,7 +4940,7 @@ wildberries.ru##li[data-menu-id="1250"]
 ! = Косметические правила =
 ! Удаление баннера с рекламой «Озон Рассрочки» на странице товара (в блоке с указанием цены и т.д.).
 ! Removing the banner with «Ozon Installment» advertising on the product page (in the block with the price, etc.).
-ozon.ru##div[data-widget="webInstallmentPurchase"]
+! ozon.ru##div[data-widget="webInstallmentPurchase"]
 !
 ozon.ru###layoutPage > div.b6:first-child > div.dy0_9 > div > div.container.c:nth-child(3) > div.e1:last-child > div.d3.c8:last-child > div.e4 > div:nth-child(3)
 ozon.ru###layoutPage > div.b6:first-child > div.d0m_9 > div > div.container.c:nth-child(3) > div.e1:last-child > div.d3.c8:last-child > div.e4 > div:nth-child(3) > div > div.b3228-a.b3228-a0
@@ -5047,7 +5120,7 @@ aliexpress.ru##a[href*="utm_content=banner"] img
 !
 !
 ! == "Superfluous garbage" from the website (personal cabinet) of T-Bank (ex. Tinkoff). ==
-! == «Лишний мусор» с сайта (личного кабинета) Т-Банка (ex. Тинькофф). + сервисов самого банка и журнала Т-Ж (journal .tinkoff .ru, new address (from 02.25) t-j .ru) ==
+! == «Лишний мусор» с сайта (личного кабинета) Т-Банка (ex. Тинькофф). + экосистемы самого банка и журнала Т-Ж (journal .tinkoff .ru, new address (from 02.25) t-j .ru) ==
 !
 */api/front/$domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
 */gateway/v*/event$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru|~api-statist.tinkoff.ru|~api-statist.tbank.ru,important,redirect=empty
@@ -5093,10 +5166,12 @@ aliexpress.ru##a[href*="utm_content=banner"] img
 ||fingerprint.t-static.ru^
 ||sso-forms-prod.t-static.ru/client/*/*/browserDetect/browserDetect-$script,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjs
 ||as.tbank.ru^$important
+||cdp-data-collector.t-j.ru^
+||api.secrets.tbank.ru/ipa-gateway/api/*/*/?*&ext_pathname=*&touchpoints=bs.web-banners.poll-start%2Cbs.web-banners.poll-end%2Cbs.web-banners.advertising-popup
 !
 ! Чат поддержки, разные элементы, разделы и прочее в ЛК на сайте сломались в результате блокировки множества адресов (запросов).
 ! Хитро, хитро сделано.. привязанность аналитики и прочему «мусору» к чате поддержки и не только..
-! Тут только делать пробы так называемые, чтобы понять, что мешает загрузиться окну чата поддержки..
+! Тут только делать пробы так называемые, чтобы понять, что мешает загрузиться окну чата поддержки.. (не актуально с 07.26)
 !
 !
 ! ===
@@ -7078,12 +7153,6 @@ mp.kz###bottom_page_line
 ##iframe[src*="css-load.com"]
 ! -Soon..-
 ! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
 ok.ru##.promo-banner-right-column
 ok.ru###hook_Block_AvatarPromoMenu
 ##iframe[src*="amazon-adsystem.com/"]
@@ -7110,7 +7179,7 @@ fastbox.su###top > div.flex.centered-align.Modals_cookie__Qnjdc.false:first-chil
 fastbox.su##button.flex.centered.Buttons_topbtn__Lu7VB
 shopozz.ru##div.page_wrapper:nth-child(7) > div:nth-child(14) > div.wrapper > div.wrapper:last-child
 akusherstvo.ru##.popup-tip-courier-content
-ipcheck.ing###mainpart > div.rounded-md > section.ip-data-section.mb-10.mt-2:first-child > div.jn-banner.mt-3.flex.flex-col.md\:flex-row.items-start.gap-3.rounded-lg.border.border-info\/30.bg-info\/5.p-4.md\:p-5:last-child
+ipcheck.ing###mainpart > div.rounded-md > section.ip-data-section.mb-10.mt-2:first-child > div.grid.mt-3.gap-3:last-child
 remontka.pro##a[href*="://telegram.me/remontka_pro"]
 e.mail.ru###ph-whiteline > div.ph-container.svelte-1pihfi3 > div.ph-auth.svelte-ttryjx:nth-child(5) > div.ph-mw-button.ph-project.ph-project-widgets.svelte-qsdlzx:first-child
 ok.ru###hook_Loader_2277705777 > div.feed-list.__compact:first-child > div.feed-w:nth-child(3)
@@ -7194,6 +7263,7 @@ megafon.ru##div[class^="mfui-content-area mfui-content-area_background-color_tra
 vybory.gov.ru###training-notifier
 s7.ru##.DS__TechnicalMessage__root, .alert-block, .hide-alert-block-on-thematic-page
 [$path=/edg]elections.gosuslugi.ru##edg-landing-root:first-child > div.main:first-child > edg-landing-root:last-child > div.container-d.pt-24.pt-lg-64.grid-row:last-child > div.col-3.col-md-6.col-lg-9.flex-container.flex-column.gap-24.gap-md-32 > lib-disclaimer-elk:first-child
+admtyumen.ru##.critical-notice
 norcom.ru##.confirm-policy
 russisches-haus.de###__next > div.__variable_5a16d4.__variable_8a6eb9.__variable_2634f7.font-gilregular:last-child > main.main-content-pt > div.fixed.max-lg\:w-full.lg\:w-1\/3.bottom-2.right-2.bg-white.dark\:bg-black.p-5.border.z-20:last-child
 iz.ru##.container__dzen-fos, .dzen-fos
@@ -7286,6 +7356,39 @@ xn--24-6kchq2abwi5bc.xn--p1ai,вконтакте24.рф##div.container:nth-child
 xn--24-6kchq2abwi5bc.xn--p1ai,вконтакте24.рф##.last-news
 iitrust.ru###__next > div:last-child > div.app-fixed.app-bottom-6.app-left-6.app-max-w-\[280px\].md\:app-max-w-sm.app-p-4.app-rounded-2xl.app-bg-white.app-border.app-transition-all.app-duration-300.app-z-30.animate-bounceFadeInUp:nth-child(4)
 zdrive.to##.zd-gold-cta
+secpost.ru##.mb-4
+secpost.ru###page > div.main-page:nth-child(3) > div.top-ads-wrap:first-child > div.container-fluid.layout
+secpost.ru##.banner-sidebar
+secpost.ru##.my-banner
+##iframe[src*="xoilaczzqipxt.tv"]
+networkguru.ru###app > div.container > div.content:nth-child(4) > div.content__left:first-child > p:nth-child(2)
+networkguru.ru###app > div.container > div.content:nth-child(4) > div.content__right:last-child > div.sidebar > div.sub:first-child
+networkguru.ru###app > div.container > div.content:nth-child(4) > div.content__right:last-child > div.sidebar > div.consultation:nth-child(2)
+city-n.ru##.odnoklassniki
+##iframe[src*="ulogin.ru/stats.html"]
+forum.na-svyazi.ru###ipbwrapper > div:nth-child(5)
+secrets.tbank.ru##div[data-testid="cookies"]
+secrets.tbank.ru##a[href^="tbank.ru/business/registration/form/signature/start/?internal_source=tsecrets-through-header-registration_ip"]
+superjob.ru##.Rc-XA
+cons-plus.ru###personal-data-popup
+playground.ru##iframe[src*="img.playground.ru/moevideo_"]
+playground.ru###contentLayout > div.page-main-column.content-layout:nth-child(2) > div.content_aside-container:first-child > aside.page-aside:last-child
+dnr-news.ru##.subscribe-block
+kopilkaurokov.ru##div.container-fluid:nth-child(3) > div.row.show-grid:first-child > div.col-xs-7:nth-child(2) > noindex:nth-child(5)
+kopilkaurokov.ru##div.container-fluid:nth-child(3) > div.row.show-grid:first-child > div.col-xs-3:last-child > div:nth-child(3)
+kopilkaurokov.ru##div.container-fluid:nth-child(3) > div.row.show-grid:first-child > div.col-xs-3:last-child > div:nth-child(5)
+kopilkaurokov.ru##div.container-fluid:nth-child(3) > div.row.show-grid:first-child > div.col-xs-3:last-child > div:nth-child(6)
+kopilkaurokov.ru##div.container-fluid:nth-child(3) > div.row.show-grid:first-child > div.col-xs-3:last-child > div:nth-child(8)
+kopilkaurokov.ru##a:nth-child(10)
+kopilkaurokov.ru##div.footterbun_close:nth-child(9)
+kopilkaurokov.ru##.effective
+kopilkaurokov.ru##div.container-fluid:nth-child(3) > div.row.show-grid:first-child > div.col-xs-7:nth-child(2) > noindex:nth-child(8)
+kurortix.ru###callback_btn
+kurortix.ru##.cookie-banner__wrapper
+ateneum-center.ru###elementor-popup-modal-1999
+don24.ru##.post__interaction-btns
+bigbookname.com##.xad_vertleft1
+[$path=/ru/wiki/Error.№S165]minecraftcreepypasta.fandom.com###mw-content-text > div.mw-content-ltr.mw-parser-output:last-child > div.thumb.embedvideo.autoResize:last-child > div.embedvideo.autoResize.autoResized
 !
 !
 ! - Scripts -
@@ -7705,7 +7808,7 @@ sberbank.ru,sberbank.com,sber.ru#%#//scriptlet('set-session-storage-item', 'ioAn
 ! == Браузерные запросы ==
 ! == Browser requests ==
 !
-||settings.kiwibrowser.com/search/getrecommendedsearch^$important,app=com.kiwibrowser.browser
+! settings.kiwibrowser.com/search/getrecommendedsearch^$important,app=com.kiwibrowser.browser
 ! Рекомендованные запросы в браузере Kiwi ↑
 ||gstatic.com/chrome/ntp/suggested_sites_*.json^$important
 ! Рекомендованные сайты от Гугла ↑
@@ -7715,9 +7818,11 @@ sberbank.ru,sberbank.com,sber.ru#%#//scriptlet('set-session-storage-item', 'ioAn
 ||enjoyxstudy.com^$important
 ! ↑ фиг пойми что за домен..
 !
-! Блокировка адреса, который открывается после обновления браузера Опера (Opera).
-||opera.com/*/ofa/upgraded*^$all
-||opera.com/client/upgraded*^$all
+! =Kiwi Browser=
+! The browser developer announced that the application is effectively shutting down. Development and further work on it have ceased as of January 2025. [https://www.reddit.com/r/Android/comments/1i86ybn/kiwi_browser_is_officially_discontinued/ , https://discord.com/channels/494814211579445270/494814211579445274/1332000330522558525 ]
+! The browser domain isn't working, so this is to avoid unnecessary requests.
+||kiwibrowser.com^
+! ==
 !
 !
 ! =Opera=
@@ -7750,6 +7855,15 @@ sberbank.ru,sberbank.com,sber.ru#%#//scriptlet('set-session-storage-item', 'ioAn
 -proxy.satoshi.opera-api2.com^
 ||composer.opera-api.com^
 ||mcp.operacdn.com/*/optimized/*_thumbnail_*.webp$app=com.opera.browser
+! Блокировка адреса, который открывается после обновления браузера Опера (Opera).
+||opera.com/*/ofa/upgraded*^$all
+||opera.com/client/upgraded*^$all
+! =
+!
+! =Brave=
+!
+||ads.brave.com^
+||variantions.brave.com^
 ! =
 !
 !
@@ -8133,6 +8247,10 @@ $removeparam=ysclid
 ||api.plus.kinopoisk.ru/graphql?operationName=registerSimpleActionWithPixel$xhr,important
 ||yandex.ru/video/result$domain=youtube.com|youtu.be|youtube-nocookie.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com|youtubekids.com
 ||yandex.*/static-mon/
+||market.yandex.ru/api/resolve/?r=*/baobab/src/resolvers/logEvents
+||market.yandex.ru/api/web/market.front.market_mediaadv.MarketMediaAdv/
+||market.yandex.ru/api/render-lazy?w=%40monetize%2FHeroContentCarousel
+||yastatic.net/s3/market-b2c-static-production/*/browser/browser.monetize_PromoStreamer.$script,redirect=noopjs
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -8494,6 +8612,7 @@ yandex.ru,ya.ru##img[src*="yandex.ru/clck/"]
 ||translate.googleapis.com/element/log
 ||google.*/ccm/
 ||chart.googleapis.com^
+||google.com/o/cspreport
 !
 ! ===
 !

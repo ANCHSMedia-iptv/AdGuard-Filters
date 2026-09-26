@@ -3,7 +3,7 @@
 ! Version: 5.1.0
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 ! Expires: 72 hours (updated almost every day)
-! TimeUpdated: 2026-09-23T11:48:40+00:00
+! TimeUpdated: 2026-09-26T11:48:40+00:00
 ! 
 !
 !
@@ -11,7 +11,7 @@
 ! Title: Block unwanted connections (DNS)
 ! Description: Блокировка нежелательных запросов: аналитика, реклама и т.д. и лишнего мусора на уровне DNS.
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
-! Last Modified: 23.09.2026 13:48 UTC
+! Last Modified: 26.09.2026 13:48 UTC
 !
 !
 ! English Description: Blocking unwanted requests: analytics, advertising, etc. at the DNS level.
@@ -162,13 +162,13 @@
 ||appmetrika.yandex.*^
 ||surveys.yandex.*^
 ||feeds-admin-media-eats-promotions.s3.yandex.net^
-||dr.yandex.net^
-||dr*.yandex.net^
+||dr.yandex.net^$dnsrewrite=0.0.0.0
+||dr*.yandex.net^$dnsrewrite=0.0.0.0
 ||static-mon.yandex.net^$important
 ||statchecker.yandex.*^
 ||cu.dzen.ru^
 ||rum.dzen.ru^
-||network-lc.ru^
+||network-lc.ru^$dnsrewrite=0.0.0.0
 ||scbh.yandex.net^
 ||aflt.travel.yandex.ru^
 ||geoadv-partner.yandex.ru^
@@ -194,8 +194,8 @@
 ||us.mineplex.com^$dnsrewrite=NXDOMAIN
 ||play.vexalmc.co^
 ||play.pioneersurvival.net^
-! _minecraft._tcp.play.pioneersurvival.net^
-! _minecraft._tcp.us.mineplex.com^$dnsrewrite=NXDOMAIN
+!  _minecraft._tcp.play.pioneersurvival.net^
+!  _minecraft._tcp.us.mineplex.com^
 ||play.pixelparadise.gg^
 ||mco.mineplex.com^$dnsrewrite=NXDOMAIN
 !
@@ -464,7 +464,6 @@
 ||bot*.googlerenewals.net^
 ||cdn.googletoolservices.com^
 ||accesspoints*.googleapis.com^
-! ||safebrowsing.googleapis.com^
 ||safebrowsingohttpgateway*.googleapis.com^
 ||retail*.googleapis.com^
 ||ohttp-relay-safebrowsing-android.google.fastly-edge.com^$important
@@ -567,29 +566,29 @@
 ||onesignal.com^$important
 ||viglink.com^$important
 ||connect.facebook.net^$important
-||inappstory.ru^$dnsrewrite=REFUSED,important
-||inappstory.com^$dnsrewrite=REFUSED,important
+||inappstory.ru^$important
+||inappstory.com^$important
 ||appsflyersdk.com^$important
-! facebook.com^$dnsrewrite=REFUSED
-! www.facebook.com^$dnsrewrite=REFUSED
+! facebook.com^
+! www.facebook.com^
 ||snapkit.com^$important
 ||appsflyer.com^$important
 ||analytics.72.ru^$important
-||syndication.twitter.com^$dnsrewrite=REFUSED
-||rexpush.pro^$dnsrewrite=REFUSED,important
-||peiynu.com^$dnsrewrite=REFUSED,important
+||syndication.twitter.com^
+||rexpush.pro^$important
+||peiynu.com^$important
 ! appspot.com^
 ||yabro.ru^$important
-||flowerpla.com^$dnsrewrite=REFUSED,important
-||amocrm.ru^$dnsrewrite=REFUSED,important
-||gtrxlnd2.com^$dnsrewrite=REFUSED,important
-||*uxfeedback*^$dnsrewrite=NXDOMAIN,important
+||flowerpla.com^$important
+||amocrm.ru^$important
+||gtrxlnd2.com^$important
+||*uxfeedback*^$important
 ||tiqcdn.com^$important
 ||*analytics.tele2.ru^$important
 ! analytics.tele2.ru^$important
 ||bcebos.com^$important
 ||rutrk.org^$important
-||pglstatp.com^$dnsrewrite=REFUSED,important
+||pglstatp.com^$important
 ||stat-analytics.mediavitrina.ru^
 ||stats.avito.ru^$important
 ||trk.pinterest.com^$important
@@ -609,7 +608,7 @@
 ||btloader.com^$important
 ||adskeeper.co.uk^$important,dnsrewrite=ad-block.dns.adguard.com
 ||digitalcaramel.com^$important
-||ads*.twitter.com^$dnsrewrite=REFUSED,important
+||ads*.twitter.com^$important
 ||ms.vk.*^$important
 ||*ad.*.xiaomi.com^$important
 ||d3c8j8snkzfr1n.cloudfront.net^
@@ -710,13 +709,12 @@
 ||getrcmx.com^
 ||dpd-site-analytics-backend-api-prod.dpd.ru^$important
 ! js-agent.newrelic.com^$important
-! ||graphql.kazanexpress.ru^
 ||hc.uralweb.ru^$important
 ||clarity.ms^
 ||cadmus.script.ac^$important
 ||dn0qt3r0xannq.cloudfront.net^$important
 ||bservr.com^$important
-! ||cpmstar.com^$domain=~cpmstar.com,important
+! ||cpmstar.com^$important
 ||prft1pub.com^$important
 ||2ruoe1cm.ru^
 ||zcode*.com^
@@ -842,9 +840,9 @@
 ||pubnative.net^$important
 ||dwxjayoxbnyrr.cloudfront.net^$important
 ||applifier.com^$dnsrewrite=NXDOMAIN,important
-||live.chartboost.com^$dnsrewrite=0.0.0.0,important
+||live.chartboost.com^$important
 ||my.com^$important
-||inmobicdn.net^$dnsrewrite=REFUSED,important
+||inmobicdn.net^$important
 ||analytics.localytics.com^$important
 ||taboola*fastly.net^$important
 ||idm.iot.mi.com^
@@ -865,31 +863,31 @@
 ||tabun.info^
 ||ads.vk.com^$important
 ||events.maps.vk.com^$important
-||madnet.ru^$dnsrewrite=REFUSED,important
-||mydas.mobi^$dnsrewrite=NXDOMAIN,important
-||greystripe.com^$dnsrewrite=REFUSED,important
-||nexage.com^$dnsrewrite=NXDOMAIN,important
-||mobfox.com^$dnsrewrite=NXDOMAIN,important
-||wapstart.ru^$dnsrewrite=REFUSED,important
-||millennialmedia.com^$dnsrewrite=0.0.0.0,important
-||appsdt.com^$dnsrewrite=NXDOMAIN,important
+||madnet.ru^$important
+||mydas.mobi^$important
+||greystripe.com^$important
+||nexage.com^$important
+||mobfox.com^$important
+||wapstart.ru^$important
+||millennialmedia.com^$important
+||appsdt.com^$important
 ||admost.com^$important
-||appnext.com^$dnsrewrite=REFUSED,important
-! ||*moatads*^$dnsrewrite=NXDOMAIN,important
+||appnext.com^$important
+! ||*moatads*^$important
 ||adsafeprotected.com^$important
 ||adcolony.com^$important
-! ||appnext.hs^$dnsrewrite=NXDOMAIN,important (Waiting for adding..)
-||supersonicads.com^$dnsrewrite=0.0.0.0,important
+||appnext.hs^$important
+||supersonicads.com^$important
 ||startappservice.com^$dnsrewrite=ad-block.dns.adguard.com,important
 ||adz.wattpad.com^$important
-! ||ad.api.kaffnet.com^$dnsrewrite=REFUSED,important (Waiting for adding..)
-||batmobil.net^$dnsrewrite=NXDOMAIN,important
+! ||ad.api.kaffnet.com^$important (Waiting for adding..)
+||batmobil.net^$important
 ||eqmob.com^$important
-! ||duapps.com^$dnsrewrite=NXDOMAIN,important
+! ||duapps.com^$important
 !
-||tapas.net^$dnsrewrite=NXDOMAIN,important
-||tapjoyads.com^$dnsrewrite=NXDOMAIN,important
-||tapjoy.com^$dnsrewrite=NXDOMAIN,important
+||tapas.net^$dnsrewrite=0.0.0.0,important
+||tapjoyads.com^$dnsrewrite=0.0.0.0,important
+||tapjoy.com^$dnsrewrite=0.0.0.0,important
 ||cdn.cookielaw.org^$important
 ||zap^$dnsrewrite=NXDOMAIN,important
 ||burp^$dnsrewrite=NXDOMAIN,important
@@ -914,13 +912,13 @@
 ||hgad.silvercdn.com^
 ||adnxs.com^
 ||ads.2xpub.com^
-||hits.netgeography.net^$dnsrewrite=0.0.0.0,important
+||hits.netgeography.net^$dnsrewrite=NXDOMAIN,important
 ||ad45.com^
 ||adserver.gruprc.ro^
 ||51yes.com^$dnsrewrite=NXDOMAIN,important
 ||intellitxt.com^$important
-||internet-inspection.com^$dnsrewrite=0.0.0.0,important
-||ads.pacific.net.sg^$dnsrewrite=0.0.0.0,important
+||internet-inspection.com^$dnsrewrite=NXDOMAIN,important
+||ads.pacific.net.sg^$dnsrewrite=NXDOMAIN,important
 ||smartadserver.com^$dnsrewrite=NXDOMAIN,important
 !
 ||lkqd.net^
@@ -965,7 +963,6 @@
 ||console.userx.pro^
 ||*-stream.lenta.tech^
 ||sentry.tibibox.com^$important
-! collector.github.com^$important
 ||otel-collector.lenta.tech^$important
 ||performance.radar.cloudflare.com^$important,dnsrewrite=0.0.0.0
 ||sentry-tech.cdek.ru^$important
@@ -974,8 +971,8 @@
 ||*sentry.wb.ru^$important
 ||*-sentry.wb.ru^$important
 ||collector-prod.perek.epoch8.ru^$important
-||fda.middle-api.magnit.ru^
-||fp.kaspersky-labs.com^
+||fda.middle-api.magnit.ru^$dnsrewrite=0.0.0.0
+||fp.kaspersky-labs.com^$dnsrewrite=0.0.0.0
 ||sentry-dsn-customers.megamarket.tech^$important
 ||confiant-integrations.net^$important
 ||ad-source.pro^$important
@@ -1139,7 +1136,7 @@
 ||sentry.odysee.tv^$important
 ||sentry.runit.cc^$important
 ||sentry.hh.ru^$important
-||adsrv.
+||adsrv.*.*^
 ||analytics.iportal.ru^$important
 ||sentry.viqeo.tv^$important
 ||sentry.interneturok.ru^$important
@@ -1284,7 +1281,6 @@
 ||mediascope.mail.ru^$important
 ||alt-xray.imgsmail.ru^$important
 ||advmusic.com^
-! ||naydex.net^$important
 ||1l-hit.mail.ru^
 ||1l-view.mail.ru^
 ||1link.mail.ru^
@@ -1428,7 +1424,7 @@
 ||popads.net^$dnsrewrite=ad-block.dns.adguard.com
 ||graph.instagram.com^
 ||i.instagram.com^
-||analytics.twitter.com^$dnsrewrite=REFUSED,important
+||analytics.twitter.com^$important
 ! sync.otm-r.ru^
 ||otm-r.com^$important
 ||error-report.com^$important,dnsrewrite=0.0.0.0
@@ -1530,7 +1526,7 @@
 ||jwpltx.com^
 ||connatix.com^
 ||f.vimeocdn.com^
-||video-ads.twitter.com^$dnsrewrite=REFUSED
+||video-ads.twitter.com^
 ||ads.dailymotion.com^
 ||aax-*.amazon.com^
 ||ad.dm.gg^
@@ -1596,9 +1592,8 @@
 ||rumstat.cdnvideo.ru^$important
 ||collector.githubapp.com^$important
 ||anltcs.llimonix.dev^
-||telega.*^$important
-||telega.*^$important
-! ||events.telega.*^
+! telega.*^$important F
+! events.telega.*^ F
 ||metro.sentry.beta.agency^$important
 ||sentry-ingest.kuper.ru^$important
 ||stat.tildacdn.com^
@@ -1792,7 +1787,7 @@
 ||abroad.api.comm.intl.miui.com^$important
 ||privacy.api.intl.miui.com^
 ||io.mi.com^$important
-||icmp0.ru^$important
+||icmp0.ru^$important,dnsrewrite=0.0.0.0
 ||errortracking.deepl.com^
 ||api.comfolks.com^
 ||vak345.com^
@@ -2119,7 +2114,7 @@
 ||api.tinsurance.ru^
 ||stat.media^
 ||connect-*.hispace.dbankcloud.*^
-||s.4pda.to^$important
+||s.4pda.to^
 ! - imo[.]im
 ||loveprogram.tech^
 ||peaksite.tech^$important
@@ -2149,9 +2144,9 @@
 ||it.com^
 ||24ttl.stream^
 ||chimpstatic.com^
-||data.killbot.ru^
-||hk.kill-bot.ru^
-||r*.kill-bot.ru^
+||data.killbot.ru^$dnsrewrite=0.0.0.0
+||hk.kill-bot.ru^$dnsrewrite=0.0.0.0
+||r*.kill-bot.ru^$dnsrewrite=0.0.0.0
 ||gaug.es^
 ||counter.people.cn^
 ||cdn-go.cn^
@@ -2275,11 +2270,11 @@
 ||observability.x5.ru^
 ||js.datadome.co^
 ||mtmanalytics.softline.ru^
-||bright-sdk.com^
-||proxyjs.brdtnet.com^
-||proxyjs.luminatinet.com^
-||bright-sdk.com^
-||proxyjs.*.*^
+||bright-sdk.com^$dnsrewrite=BLOCKED_PUP
+||proxyjs.brdtnet.com^$dnsrewrite=BLOCKED_PUP
+||proxyjs.luminatinet.com^$dnsrewrite=BLOCKED_PUP
+||bright-sdk.com^$dnsrewrite=BLOCKED_PUP
+||proxyjs.*.*^$dnsrewrite=BLOCKED_PUP
 ||tgai.app^$dnsrewrite=BLOCKED_MALWARE
 ||jads.co^$dnsrewrite=ad-block.dns.adguard.com
 ||realsrv.com^$important,dnsrewrite=ad-block.dns.adguard.com
@@ -2344,10 +2339,6 @@
 ||rok.mail.ru^
 ! -Soon..-
 ! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
-! -Soon..-
 ||counter.megagroup.ru^$important
 ||simbadexchange.ru^
 ||umami.*^
@@ -2381,7 +2372,7 @@
 ||cookie-script.com^
 ||diffuser-cdn.app-us1.com^
 ||luckyorange.com^
-||d23dclunsivw3h.cloudfront.net^
+||d23dclunsivw3h.cloudfront.net^$dnsrewrite=0.0.0.0
 ||api.config-security.com^
 ||cdn.snigelweb.com^
 ||s.thomasandfriends.ru^
@@ -2434,9 +2425,9 @@
 ||gooroo.works^
 ||aptoide-mmp.aptoide.com^
 ||acscdn.com^
-||ccqfqdwfdcvjo.online^
+||ccqfqdwfdcvjo.online^$dnsrewrite=0.0.0.0
 ||adexchangerapid.com^
-||usrpubtrk.com^
+||usrpubtrk.com^$dnsrewrite=0.0.0.0
 ||bbj3nb.ru^
 ||tglink.io^
 ||p*.techlab-cdn.com^
@@ -2477,7 +2468,7 @@
 ||sstats.adobe.com^
 ||as.tbank.ru^
 ||wa.finuslugi.ru^
-||data.kill-bot.net^
+||data.kill-bot.net^$dnsrewrite=0.0.0.0
 ||t.lpgenerator.ru^
 ||exp.anti-malware.ru^
 ||cp.unisender.com^
@@ -2487,13 +2478,13 @@
 ||wsd-fingerprint.kontur.ru^
 ||hercules.kontur.ru^
 ||cdn.clarip.com^
-||d2fw3s7rfepszt.cloudfront.net^
-||d2lozshlknej0q.cloudfront.net^
-||d6wfl40rgh70w.cloudfront.net^
-||siteperformancetest.net^
+||d2fw3s7rfepszt.cloudfront.net^$dnsrewrite=0.0.0.0
+||d2lozshlknej0q.cloudfront.net^$dnsrewrite=0.0.0.0
+||d6wfl40rgh70w.cloudfront.net^$dnsrewrite=0.0.0.0
+||siteperformancetest.net^$dnsrewrite=0.0.0.0
 ||cdn*.forter.com^
-||d2o5idwacg3gyw.cloudfront.net^
-||duvkog4eyegl0.cloudfront.net^
+||d2o5idwacg3gyw.cloudfront.net^$dnsrewrite=0.0.0.0
+||duvkog4eyegl0.cloudfront.net^$dnsrewrite=0.0.0.0
 ||cdn-v*.conductrics.net^
 ||cdn.branch.io^
 ||s.yimg.jp^
@@ -2512,8 +2503,8 @@
 ||beacon.sojern.com^
 ||videoamp.com^
 ||servedby.flashtalking.com^
-||d196fri2z18sm.cloudfront.net^
-||aswpsdkus.com^
+||d196fri2z18sm.cloudfront.net^$dnsrewrite=0.0.0.0
+||aswpsdkus.com^$dnsrewrite=0.0.0.0
 ||cloudfunctions.net^
 ||st-*.dynamicyield.com^
 ||mi-test.shalltry.com^
@@ -2527,11 +2518,25 @@
 ||torraria.com^
 ||novadw.com^
 ||betadw.com^
-||webbedtrash.com^
-||hdbkome.com^
-||vnmfvnkd.win^
-||fontmenice.com^
-||cashmachines.biz^
+||webbedtrash.com^$dnsrewrite=0.0.0.0
+||hdbkome.com^$dnsrewrite=0.0.0.0
+||vnmfvnkd.win^$dnsrewrite=0.0.0.0
+||fontmenice.com^$dnsrewrite=0.0.0.0
+||cashmachines.biz^$dnsrewrite=0.0.0.0
+||ad.hutor.ru^
+||easy.au.ru^
+||777999.au.ru^
+||cdp-data-collector.t-j.ru^
+||cookieinfoscript.com^
+||load.sumome.com^
+||c.index.ru^
+||nicelymodulo.com^$important,dnsrewrite=0.0.0.0
+||events.appmagic.rocks^
+||centrifugo-v*.appmagic.rocks^
+||vishavideo.com^
+||g-api.ekatox.com^
+||litemsg.ekatox.com^
+||toolmatrix.plus^
 !
 !
 !
@@ -2671,9 +2676,14 @@
 ! -- ==Браузерные запросы ==
 ! -- == Browser requests ==
 !
-||news.google.com^$dnsrewrite=REFUSED
+||news.google.com^
 ||enjoyxstudy.com^$dnsrewrite=0.0.0.0
 !
+! =Kiwi Browser=
+! The browser developer announced that the application is effectively shutting down. Development and further work on it have ceased as of January 2025. [https://www.reddit.com/r/Android/comments/1i86ybn/kiwi_browser_is_officially_discontinued/ , https://discord.com/channels/494814211579445270/494814211579445274/1332000330522558525 ]
+! The browser domain isn't working, so this is to avoid unnecessary requests.
+||kiwibrowser.com^
+! ==
 !
 ! -- =Opera=
 !
@@ -2700,6 +2710,13 @@
 ! ||speeddials.opera.com^
 ||*-proxy.satoshi.opera-api2.com^
 ||composer.opera-api.com^
+! -- =
+!
+! =Brave=
+!
+||ads.brave.com^
+||variantions.brave.com^
+! =
 !
 ! -- =Other=
 !
