@@ -2341,7 +2341,7 @@
 ! -Soon..-
 ||counter.megagroup.ru^$important
 ||simbadexchange.ru^
-||umami.*^
+||umami.*.*^
 ||fls*.amazon.com^
 ||fls*.amazon.*^
 ||scripts.mediavine.com^
@@ -2680,7 +2680,7 @@
 ||enjoyxstudy.com^$dnsrewrite=0.0.0.0
 !
 ! =Kiwi Browser=
-! The browser developer announced that the application is effectively shutting down. Development and further work on it have ceased as of January 2025. [https://www.reddit.com/r/Android/comments/1i86ybn/kiwi_browser_is_officially_discontinued/ , https://discord.com/channels/494814211579445270/494814211579445274/1332000330522558525 ]
+! The browser developer announced that the application is effectively shutting down. Development and further work on it have ceased as of January 2025. [https://www.reddit.com/r/Android/comments/1i86ybn/kiwi_browser_is_officially_discontinued/ , https://discord.com/channels/494814211579445270/494814211579445274/1332000330522558525]
 ! The browser domain isn't working, so this is to avoid unnecessary requests.
 ||kiwibrowser.com^
 ! ==

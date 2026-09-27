@@ -2644,7 +2644,7 @@ _banner.swf
 ||thewindowsclub.com/wp-content/uploads/2026/02/Site24x7.png^$image,domain=thewindowsclub.com
 /wp-content/plugins/advanced-ads/
 ||telega.*^$important
-! ||api.telega.*^$app=ru.dahl.messenger
+! api.telega.*^$app=ru.dahl.messenger F
 ||serverspace.ru/wp-content/uploads/2025/06/frame-1321314229-6-4-2.svg^$image,domain=serverspace.ru
 ||serverspace.ru/wp-content/uploads/2023/05/vpn-server-$image,domain=serverspace.ru
 ||serverspace.ru/assets/v*/js/custom-block-loader.$script,domain=serverspace.ru
@@ -4482,7 +4482,7 @@ $cookie=rhg-device-info,domain=radissonhotels.com
 ||*.*/erid-counter/^
 ||emag.ru/counter/$script,third-party,important
 ||networkguru.ru/files/uploads/*/Networkguru-feat-VoiceXpert-$image,domain=networkguru.ru
-||777999.au.ru^
+||777999.au.ru^$important
 ||afisha21.ru/css/bg/*.gif^$image,domain=forum.na-svyazi.ru|na-svyazi.ru
 ||na-svyazi.ru/style_images/*/spacer.gif$image,domain=na-svyazi.ru
 /ulogin.js
@@ -4493,7 +4493,7 @@ $cookie=adv-WWW_2
 /get-ip.js$redirect=noopjs
 ||alfabank.ru/*/platform-id.js^$script,domain=alfabank.ru,redirect=noopjs
 /yandex-varioqub.js
-||kurs.alfabank.ru/api/public/courses/banner/*?$domain=alfabank.ru
+||alfabank.ru/api/public/*/banner/*?$domain=alfabank.ru
 ||saby.ru/consumertracking/$domain=saby.ru
 ||cdn*.saby.ru/cdn/*/ym/$script,domain=saby.ru,redirect=noopjs
 $cookie=unisourcedetector
@@ -7819,7 +7819,7 @@ sberbank.ru,sberbank.com,sber.ru#%#//scriptlet('set-session-storage-item', 'ioAn
 ! ↑ фиг пойми что за домен..
 !
 ! =Kiwi Browser=
-! The browser developer announced that the application is effectively shutting down. Development and further work on it have ceased as of January 2025. [https://www.reddit.com/r/Android/comments/1i86ybn/kiwi_browser_is_officially_discontinued/ , https://discord.com/channels/494814211579445270/494814211579445274/1332000330522558525 ]
+! The browser developer announced that the application is effectively shutting down. Development and further work on it have ceased as of January 2025. [https://www.reddit.com/r/Android/comments/1i86ybn/kiwi_browser_is_officially_discontinued/ , https://discord.com/channels/494814211579445270/494814211579445274/1332000330522558525]
 ! The browser domain isn't working, so this is to avoid unnecessary requests.
 ||kiwibrowser.com^
 ! ==
@@ -7854,8 +7854,8 @@ sberbank.ru,sberbank.com,sber.ru#%#//scriptlet('set-session-storage-item', 'ioAn
 ||speeddials.opera.com/api/v*/external-suggestions-config
 -proxy.satoshi.opera-api2.com^
 ||composer.opera-api.com^
-||mcp.operacdn.com/*/optimized/*_thumbnail_*.webp$app=com.opera.browser
-! Блокировка адреса, который открывается после обновления браузера Опера (Opera).
+||mcp.operacdn.com/*/optimized/*_thumbnail_*.webp$app=com.opera.browser|com.opera.mini.native|com.opera.gx|com.opera.mini.native.beta|com.opera.browser.beta
+! Блокировка адреса, который открывается после обновления браузера Opera.
 ||opera.com/*/ofa/upgraded*^$all
 ||opera.com/client/upgraded*^$all
 ! =
