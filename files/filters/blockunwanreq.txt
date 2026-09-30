@@ -1,7 +1,7 @@
 ! Title: Block unwanted connections
 ! Description: Блокировка нежелательных запросов: аналитика, реклама, скрипты и т.д., удаление/блокировка ненужного мусора, элементов и прочего.
-! Version: 5.9.0
-! TimeUpdated: 2026-09-27T11:48:00+00:00
+! Version: 5.9.1
+! TimeUpdated: 2026-09-30T11:48:00+00:00
 ! Expires: 72 hours (updated almost every day)
 ! Homepage: https://github.com/ANCHSMedia-iptv/AdGuard-Filters
 !
@@ -907,7 +907,7 @@ $cookie=/pc|sc|tc|uid/,domain=ligaudio.ru|lightaudio.ru,important
 ||tp.kontur.ru/support/support_center.js^$script,domain=kontur.ru,redirect=noopjs
 /api/v*/fingerprint$xhr,important,domain=~limehd.tv,redirect=empty
 ||time.is/js/7/jquary.ad.js$script,domain=time.is,redirect=noopjs
-||provision.app.devapps.ru^$important
+://provision.app.devapps.ru^$important
 /files/tgparser/*.html$subdocument,domain=armeniasputnik.am|sputnikankhazia.info|sputnik-abkhazia.ru|sputnik-georgia.com|sputnik-georgia.ru|sputnik-news.ee|sputnik-ossetia.com|sputnik-ossetia.com|sputnik-tj.com|sputnik.az|sputnik.by|sputnik.kg|sputnik.kz|sputnik.md|sputniknews-uz.com|sputniknews.cn|sputniknews.com|sputniknews.gr|sputniknews.ru|tj.sputniknews.ru
 ||img.sputnik.*/min/js/libs/banners/adfx.loader.bind.js$script,domain=armeniasputnik.am|sputnikankhazia.info|sputnik-abkhazia.ru|sputnik-georgia.com|sputnik-georgia.ru|sputnik-news.ee|sputnik-ossetia.com|sputnik-ossetia.com|sputnik-tj.com|sputnik.az|sputnik.by|sputnik.kg|sputnik.kz|sputnik.md|sputniknews-uz.com|sputniknews.cn|sputniknews.com|sputniknews.gr|sputniknews.ru|tj.sputniknews.ru
 ! ——
@@ -1076,7 +1076,7 @@ images/*/Discord*logo.*$image,domain=fandom.com|telepedia.fandom.com|*.fandom.co
 ://e.mail.ru^$app=com.wildberries.ru|ru.vk.store|com.icemobile.lenta.prod|ru.sberbank.mobile|com.idamob.tinkoff.android|ru.dublgis.dgismobile|com.gpn.azs|com.gpn.azs.kg|com.gpn.azs.tj|com.gpn.azs.kz|ru.gazprombank.broker|ru.gazprombank.invest|ru.gazprombank.mobile.gpbbusiness|ru.gpbmbile.lk|ru.gazprombank.android.mobilebank.app|ru.gazprompay.android|ru.ogon.app|ru.biz_it.mp.regiongaz|ru.gazpromneft.keyservice|cpm.gpncard.gpnkps|com.gpn.gman.stable|com.allgoritm.youla|ru.sports|com.popularapp.periodcalendar|ru.ok.android|com.yandex.browser
 /pull.config.get.json$xhr,redirect=noopjson
 ||sp-man.ru/bitrix/templates/eshop_bootstrap_green/assets/img/halva-btn.png^$image,domain=sp-man.ru
-||vk.*^$domain=shopogolic.net|shopogolic.club|tbank.ru
+||vk.*^$domain=shopogolic.net|shopogolic.club|tbank.ru|dzen.ru
 ||js-collector.icewood.net^$important
 waf/fingerprint$xhr,important
 /waf*.js$script,important,domain=~limehd.tv
@@ -1390,8 +1390,8 @@ $cookie=s24id
 ||my-software.ru/images/linuxstudio.png^$image,domain=my-software.ru
 ||dmosk.ru/jas/*.js^$script,domain=dmosk.ru,important
 /proxy/services/sberlogger/$xhr,domain=sberbank.ru|sberbank.com|sber.ru,important
-||2gis.ru/_/log$redirect=empty
-||2gis.ru/_/metrics$redirect=empty
+||2gis.ru/_/log$redirect=noopjson
+||2gis.ru/_/metrics$redirect=nooptext
 ||maps.2gis.com/v*/ald?*&ts=buyhere^$xhr,domain=2gis.ru|2gis.*,redirect=nooptext,important
 ||maps.2gis.com/v*/ald?ts=*&x=*&y=*&z=*&lang=*^$xhr,domain=2gis.ru|2gis.*,redirect=nooptext
 ||wink.ru/omnichat/*/trailer$domain=lk.rt.ru|my.rt.ru,important
@@ -1845,9 +1845,10 @@ $cookie=yaParams
 ||mail.ru/grstat$important,redirect=empty
 $cookie=remixdt
 $cookie=remixlgck
-$cookie=remixstlid,third-party
+$cookie=remixstlid
 $cookie=remixua
 $cookie=remixlang,third-party
+$cookie=remixstid
 ! A
 ||nrk-nsk.ru/wp-content/uploads/2025/10/materialy-o-naczionalnom-messendzhere.jpg^$image,domain=nrk-nsk.ru
 ||nrk-nsk.ru/wp-content/uploads/2025/10/materialy-o-naczionalnom-messendzhere-003.jpg^$image,domain=nrk-nsk.ru
@@ -3175,7 +3176,6 @@ $cookie=jd_pr,domain=quprawholesale.com
 ||prd.jwpltx.com^$important
 ||tremorhub.com^
 $cookie=kognetiks_unique_id,important
-$cookie=_cfuvid
 ||beyondwickedmapping.org^$important
 $cookie=_vwo_consent
 ||bestchange.ru^$cookie=pixel
@@ -3291,7 +3291,7 @@ $removeparam=gtm_debug
 /v*/bulk/report-exposures
 ||frog.wix.com^$important
 .co.rs/kupovina
-$cookie=/_ym_d/,important
+!
 ||m3h0da.ru^
 ||tass.ru/loop-tbp/api/v*/caption/$xhr,domain=tass.ru
 ||memedepot.com/api/v*/analytics_events
@@ -3498,7 +3498,6 @@ $cookie=ruid
 /static/scripts/trackdb/$image,domain=play.tv3.lt|play.tv3.lv|go3.lv|go3.lt|go3.tv,redirect=1x1-transparent.gif
 ||effectivecpmnetwork.com^
 ||ee.openreplay.tools^
-||vk.*^$domain=dzen.ru,important
 ||itshaman.ru/banners/*.html^$domain=itshaman.ru
 ||event-tracking.samsung.com^
 ||sport5.by/upload/banner_telegram3.jpg^$image,domain=sport5.by
@@ -3984,7 +3983,7 @@ $cookie=/visid_incap_*/
 ||klipy.com/_next/image?url=%2Fcookie.png$image,domain=klipy.com
 ||klipy.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fapp-download-qr.$image,domain=klipy.com
 ||cdn.iphones.ru/wp-content/themes/simpla2/images/sprites/ir-2x/max-logo-2025_new.webp^$image,domain=iphones.ru
-||tg-api.giga.pub^$all
+||tg-api.giga.pub^$all,reason=malicious
 ||observability.x5.ru^
 /themes/woohoo/js/views.js
 ||xakep.ru/wp-content/plugins/xakep-core/ads/style.css^$css,domain=xakep.ru,redirect=noopcss
@@ -4027,8 +4026,6 @@ $cookie=sf-prs-ss
 ||uchet.kz/ad/$image,domain=uchet.kz
 ||forsweareven.com^
 ||beacon.wikia-services.com^$important
-||error-report.com^
-||content-loader.com^
 ||api.btmessage.com^
 ||cdn.btmessage.com^
 ||imrworldwide.com^
@@ -4097,7 +4094,7 @@ $cookie=sf-prs-ss
 ||fls*.amazon.*^$important
 ||cloudflare-dns.com^$domain=soundcloud.com|replit.com|mypresentation.ru
 ||umami-*.kreatell.gg^
-||*.*/monitoring^
+||*.*/monitoring^$domain=~tbank-online.com|~tbank.ru|~tinkoff.ru|~t-j.ru
 /js/rem.js
 ||dn0qt3r0xannq.cloudfront.net^$important
 ||duckduckgo.com/d.js?$important
@@ -4143,11 +4140,11 @@ $cookie=ab_fast_search
 $cookie=found_cheaper_ab
 $cookie=location
 $cookie=uui
-/collect^$xhr
-/collect_batch^$xhr
-/tooltip/v*/process-links?location=
-/entrypoint_config?page_url=
-/link-switch/v*/convert?location=
+||*.*/collect^$xhr,domain=~tbank-online.com|~tbank.ru|~tinkoff.ru|~t-j.ru
+||*.*/collect_batch^$xhr
+||*.*/tooltip/v*/process-links?location=
+||*.*/entrypoint_config?page_url=
+||*.*/link-switch/v*/convert?location=
 ||static.akusherstvo.ru/static/js/controller/subscription_email_popup.js$script,domain=akusherstvo.ru
 /google_analytics_ecommerce_event_push.js
 /google_analytics_ecommerce_event_push.
@@ -4542,6 +4539,30 @@ $cookie=pg_device
 ||g-api.ekatox.com^
 ||litemsg.ekatox.com^
 ||toolmatrix.plus^
+||analytics.lunarclientprod.com^
+||reports.adguard.*^
+||finance.wb.ru^$important
+||cybernews.com/clientfpid/?
+||media.cybernews.com/*/*-sponsored-$image,domain=cybernews.com
+/videojs.ima.css$css
+/videojs.ads.js$script
+/videojs.ima.js$script
+||exacdn.com^
+||qyvir.com^
+||csp-reporting.cloudflare.com^
+$removeparam=sso_failed,domain=dzen.ru
+$removeparam=uuid,domain=dzen.ru
+||dzen.ru/api/auth/*/autologin-vk-log-only?
+||suggest.sso.dzen.ru^
+||dzen.ru/portal/front/reports/
+||dzen.ru/clck/$important
+://html-load.com^$important
+||dyf08yha87tii.cloudfront.net^
+||evenyippee.com^
+||myinstants.com/analytics/
+||soundboardguys.com/js/reward-ad.js^$script
+||mega4upload.net/images/p/$image,domain=mega4upload.net
+||mega4upload.net/js/advertisement.js^$script,domain=mega4upload.net,redirect=noopjs
 !
 !
 !
@@ -4600,7 +4621,7 @@ $cookie=pg_device
 !
 !
 ! *appbk.4pda.to/er$xhr,domain=4pda.to
-*appbk.4pda.to^
+://appbk.4pda.to^
 !
 !
 ||s.4pda.to^
@@ -5122,52 +5143,57 @@ aliexpress.ru##a[href*="utm_content=banner"] img
 ! == "Superfluous garbage" from the website (personal cabinet) of T-Bank (ex. Tinkoff). ==
 ! == «Лишний мусор» с сайта (личного кабинета) Т-Банка (ex. Тинькофф). + экосистемы самого банка и журнала Т-Ж (journal .tinkoff .ru, new address (from 02.25) t-j .ru) ==
 !
-*/api/front/$domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
-*/gateway/v*/event$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru|~api-statist.tinkoff.ru|~api-statist.tbank.ru,important,redirect=empty
-*/api/front/supreme-beer/$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
-*/api/v*/log^$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
-*/resources?name=analytics_config$domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
-*/tracking/mappings/test/active-mapping.json^$script,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjs
+*/api/front/$domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,important,redirect=empty
+*/gateway/v*/event$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com|~api-statist.tinkoff.ru|~api-statist.tbank.ru,important,redirect=empty
+*/api/front/supreme-beer/$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,important,redirect=empty
+*/api/v*/log^$ping,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,important,redirect=empty
+*/resources?name=analytics_config$domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,important,redirect=empty
+*/tracking/mappings/test/active-mapping.json^$script,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,important,redirect=noopjs
 ! */api/cfg/web-gateway/getResponse$domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
-*/api-gateway/v*/getToggles^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
-*/twa/hosted-libs/top-mail/v*/code.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjs
-*/twa/hosted-libs/target-ads/v*/targetads-sdk-*.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=noopjs,important
-*/twa/ad-hoc/pixel-iframe/index.html^$domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=noopframe,important
-*/twa/hosted-libs/vk/v*/openapi.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important
+*/api-gateway/v*/getToggles^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,important,redirect=empty
+*/twa/*/top-mail/$script,domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,important,redirect=noopjs
+*/twa/*/target-ads/$script,domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,redirect=noopjs,important
+*/twa/*/pixel-iframe/index.html^$domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,redirect=noopframe,important
+*/twa/*/vk/v*/openapi.js$script,domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,important
 !*.ru/eventea/v*/eventea.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjs
-*/hedge/v*/yandex-metrika$script,domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=metrika-yandex-watch,important
+*/hedge/v*/yandex-metrika$script,domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,redirect=metrika-yandex-watch,important
 !*.ru/eventea/v*/pwa.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=noopjson,important
 !*.ru/eventea/v*/tj.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjson
-*/hedge/v*/vk-counter$script,domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=noopjs,important
-*/hedge/v*/mercury-tracking-event.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=noopjs,important
+*/hedge/v*/vk-counter$script,domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,redirect=noopjs,important
+*/hedge/v*/mercury-tracking-event.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,redirect=noopjs,important
 ! */twa/*/tinkoff-pwa/*/*/index.js^$script,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjs
-*/eventea/$script,xhr,other,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=empty
+*/eventea/$script,xhr,other,domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,important,redirect=empty
 ! .ru/eventea/v*/tjournal.json^$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjson
-*/api/common/v*/ping$domain=tbank.ru|tinkoff.ru,important,redirect=empty
+*/api/common/v*/ping$domain=tbank.ru|tinkoff.ru|tbank-online.com,important,redirect=empty
 ! .ru/api/common/v*/session_status?appName=$xhr,domain=tbank.ru|tinkoff.ru,important,redirect=empty
 ! .ru/api/common/v*/session?appName=$xhr,domain=tbank.ru|tinkoff.ru,important,redirect=empty
-*/frontend-libraries/*/sentry/*/*.js^$script,domain=tbank.ru|tinkoff.ru,important,redirect=noopjs
+*/frontend-libraries/*/sentry/*/*.js^$script,domain=tbank.ru|tinkoff.ru|tbank-online.com,important,redirect=noopjs
 ! *.*/*/*-web-performance-*.js^$script,xhr,domain=tbank.ru|tinkoff.ru,important,redirect=noopjs
 ||error-hub.tinkoff.ru^$important
-*.*/ws/monitoring/log|$image,domain=tbank.ru|tinkoff.ru,important,redirect=empty
-||mf-platform-production.t-static.ru/devtools/lockfile-boxy$domain=tbank.ru|tinkoff.ru,redirect=noopjs
+||*.*/ws/monitoring/log|$image,domain=tbank.ru|tinkoff.ru|tbank-online.com,important,redirect=empty
+/devtools/lockfile-boxy$domain=tbank.ru|tinkoff.ru|tbank-online.com,redirect=noopjs
 ||api-statist.tinkoff.ru^$important
 ||api-statist.tbank.ru^$important
 ||fingerprint.t-static.ru^$important
-||api-common.tinkoff.ru/front-logs/v*/logs$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=empty
+/front-logs/v*/logs$xhr,domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,redirect=empty
 ||sage-collector.tbank.ru^$important
 ||ms-ads-image.t-static.ru^$important
 ||tads.tbank.ru^$important
 ||webim-tknzr.tinkoff.ru^
 ||error-hub.tbank.ru^
 ||ms-dsp.tinkoff.ru^$important
-*.*/performance/$domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=empty
-*/web-fingerprint/api/v*/$domain=tbank.ru|tinkoff.ru|t-j.ru,redirect=empty
+||*.*/performance/$domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,redirect=empty
+*/web-fingerprint/api/v*/$domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,redirect=empty
 ||fingerprint.t-static.ru^
-||sso-forms-prod.t-static.ru/client/*/*/browserDetect/browserDetect-$script,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru,important,redirect=noopjs
+/client/*/*/browserDetect/browserDetect-$script,xhr,domain=tbank.ru|tinkoff.ru|t-j.ru|tbank-online.com,important,redirect=noopjs
 ||as.tbank.ru^$important
 ||cdp-data-collector.t-j.ru^
 ||api.secrets.tbank.ru/ipa-gateway/api/*/*/?*&ext_pathname=*&touchpoints=bs.web-banners.poll-start%2Cbs.web-banners.poll-end%2Cbs.web-banners.advertising-popup
+||2w.ru^
+||error-hub.tbank-online.com^
+||sage-collector.tbank-online.com^
+||fingerprint.t-static-online.com^
+/twa/ttm/_runtime/mts/metric.$script,domain=tbank-online.com|tbank.ru|tinkoff.ru|t-j.ru
 !
 ! Чат поддержки, разные элементы, разделы и прочее в ЛК на сайте сломались в результате блокировки множества адресов (запросов).
 ! Хитро, хитро сделано.. привязанность аналитики и прочему «мусору» к чате поддержки и не только..
@@ -7149,6 +7175,7 @@ mp.kz###bottom_page_line
 ##iframe[src*="error-report.com"]
 ##iframe[src*="content-loader.com"]
 ##iframe[src*="html-load.com"]
+##iframe[src*="html-load.cc"]
 ##iframe[src*="js-load.com"]
 ##iframe[src*="css-load.com"]
 ! -Soon..-
@@ -7389,6 +7416,20 @@ ateneum-center.ru###elementor-popup-modal-1999
 don24.ru##.post__interaction-btns
 bigbookname.com##.xad_vertleft1
 [$path=/ru/wiki/Error.№S165]minecraftcreepypasta.fandom.com###mw-content-text > div.mw-content-ltr.mw-parser-output:last-child > div.thumb.embedvideo.autoResize:last-child > div.embedvideo.autoResize.autoResized
+chromewebstore.google.com##div[class^="F7ptP"][aria-labelledby="promo-header"]
+chromewebstore.google.com##div[class^="gSrP5d"]
+vlesska.com##div.container-fluid:first-child > div.row > main.col-lg-9.col-xl-10.px-3.px-lg-5:last-child > div.py-4.py-lg-5.mx-auto:nth-child(2) > div.border.rounded-3.p-3.mb-4.bg-body-tertiary:nth-child(2)
+! 29.09.26: [https://github.com/AdguardTeam/AdguardFilters/issues/242941]
+wb-bank.ru##.TopAlert
+!
+tbank-online.com,tbank.ru,tinkoff.ru,t-j.ru##iframe[src*="/pixel-iframe/index.html"]
+##[id*="google_ads"]
+##iframe[src*="evenyippee.com"]
+soundinstants.com###notify-optin-backdrop
+soundinstants.com##.latest-topics-sidebar
+mega4upload.net##.m4ad
+mega4upload.net##main:nth-child(3) > section.dl-section.dl-section--subtle:nth-child(10)
+mega4upload.net##.dl-side-card, .dl-upsell
 !
 !
 ! - Scripts -
@@ -7470,14 +7511,15 @@ arsibtower-tyumen.ru#%#//scriptlet('set-session-storage-item', 'visited', 'n')
 ~yandex.*,~ya.ru#%#//scriptlet('remove-cookie', '/bh|cycada|is_gdpr|is_gdpr_b|isa|redirectUrl|sae|ancQTZw|ssesar')
 ~yandex.*,~ya.ru#%#//scriptlet('remove-cookie', '/yandex_login|yp|ys|yuidss|_yasc|yandexuid|yashr|ymex|i|bltsr/')
 ~yandex.*,~ya.ru#%#//scriptlet('remove-cookie', '/alice_uuid|yandex_expboxes|alice_reqids|spravka|yclid_src|ys|yp/')
-#%#//scriptlet('set-local-storage-item', '/_ym*_*/', '$remove$')
-#%#//scriptlet('set-local-storage-item', '/_ym_*/', 'emptyObj')
+#%#//scriptlet('set-local-storage-item', '/^_ym/', '$remove$')
+! #%#//scriptlet('set-local-storage-item', '/_ym_*/', 'emptyObj')
 beetv.kz#%#//scriptlet('set-local-storage-item', 'querySearchHistory', 'emptyObj')
 #%#//scriptlet('set-session-storage-item', 'sentryReplaySession', 'emptyObj')
-#%#//scriptlet('set-session-storage-item', '__ym_tab_guid', '$remove$')
+#%#//scriptlet('set-session-storage-item', '/^_ym', '$remove$')
 smotrim.ru#%#//scriptlet('set-local-storage-item', '/tmr_*/', '$remove$')
 #%#//scriptlet('set-cookie', 'adblock', '', '0')
-#%#//scriptlet('remove-cookie', 'ym_uid')
+#%#//scriptlet('remove-cookie', '/^ym_/')
+#%#//scriptlet('remove-cookie', '/^_ym/')
 pult.ru#%#//scriptlet('set-local-storage-item', 'newsletterPopupStart', '0')
 pult.ru#%#//scriptlet('set-local-storage-item', 'RCC__pending_events', 'emptyObj')
 #%#//scriptlet('remove-cookie', '/cfz_*|OptanonConsent|zaraz-consent/')
@@ -7516,6 +7558,8 @@ rule34.xxx#%#//scriptlet('prevent-addEventListener', 'register')
 #%#//scriptlet('remove-node-text', 'script', 'brochureclear.com')
 #%#//scriptlet('remove-node-text', 'script', 'tinypass.com')
 #%#//scriptlet('remove-node-text', 'script', 'scientificfor.com')
+#%#//scriptlet('remove-node-text', 'script', 'html-load.com')
+#%#//scriptlet('remove-node-text', 'script', 'evenyippee.com')
 ! -
 35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#(()=>{const t=Function.prototype.call;let e=!1,o=!1,n=!1;const c={apply:(c,r,a)=>{const i=a[0];if(i?.requestNumber&&i?.snapshot)try{o=((t,e=5)=>{if("object"!=typeof t||null===t)return!1;const o=new Array(1e3);let c=0;const r=new WeakSet;for(o[c++]={obj:t,depth:0};c>0&&!n;){const{obj:t,depth:a}=o[--c];if(a>e||"object"!=typeof t||null===t||r.has(t))continue;let i;r.add(t);try{i=Object.hasOwn(t,"backoffTimeMs")}catch(t){}if(i)return void 0!==t.backoffTimeMs||(n=!0,!1);for(const e in t)if(Object.hasOwn(t,e)){let n;try{n=t[e]}catch(t){}null!==n&&"object"==typeof n&&!r.has(n)&&c<o.length&&(o[c++]={obj:n,depth:a+1})}}return!1})(i),e=!0,(o||n)&&(Function.prototype.call=t)}catch(t){}return Reflect.apply(c,r,a)}};window.Function.prototype.call=new Proxy(window.Function.prototype.call,c);window.addEventListener("load",(async()=>{if(Function.prototype.call=t,!o&&e)return;const n=window.location.search,c=new URLSearchParams(n).get("v");if(!c)return;const r=await(a="#movie_player",i=200,l=1e4,new Promise((t=>{if(!a||!i||!l)return void t(null);const e=Date.now()+l,o=()=>{const n=document.querySelector(a);n?t(n):Date.now()>e?t(null):setTimeout(o,i)};o()})));var a,i,l;if(!r)return;const s=new URLSearchParams(n).get("t")??"0",u=parseInt(s,10);if("function"==typeof r.loadVideoById&&!location.search.includes("&rco="))try{r.loadVideoById(c,u)}catch(t){}}))})();
 35.190.94.206,206.94.190.35.bc.googleusercontent.com#%#//scriptlet('trusted-click-element', 'ytd-consent-bump-v2-lightbox .eom-buttons > .ytd-consent-bump-v2-lightbox > .ytd-consent-bump-v2-lightbox button.ytSpecButtonShapeNextHost')
@@ -8005,7 +8049,7 @@ sberbank.ru,sberbank.com,sber.ru#%#//scriptlet('set-session-storage-item', 'ioAn
 ! domain=~aiondb.ru
 ||mc.yandex.*/metrika/tag_*.js$redirect=metrika-yandex-tag
 ||clck.yandex.*^$~other,important
-$cookie=_ym_debug
+$cookie=/^_ym/,important
 ||yandex.*/metrika/$important,redirect=metrika-yandex-watch,domain=~mc.yandex.*|~metrika.yandex.*|~ms.yandex.*
 ||yastatic.net/browser-updater/
 !
@@ -8174,9 +8218,9 @@ $document,removeparam=clid,domain=dzen.ru|ya.ru|yandex.*
 ||yandex.$removeparam=mongoID
 ||yandex.$removeparam=download_date
 ||yandex.$removeparam=statpromo
-$cookie=_ym_isad
-$cookie=_ym_uid
-$cookie=_ym_d
+! cookie=_ym_isad
+! cookie=_ym_uid
+! cookie=_ym_d
 ||feeds-admin-media-eats-promotions.s3.yandex.net^
 ! mc.yandex.*/metrika/tag_jet_beta.js$redirect=metrika-yandex-tag
 ! mc.yandex.*/metrika/tag_jet.js$redirect=metrika-yandex-tag
@@ -8251,6 +8295,11 @@ $removeparam=ysclid
 ||market.yandex.ru/api/web/market.front.market_mediaadv.MarketMediaAdv/
 ||market.yandex.ru/api/render-lazy?w=%40monetize%2FHeroContentCarousel
 ||yastatic.net/s3/market-b2c-static-production/*/browser/browser.monetize_PromoStreamer.$script,redirect=noopjs
+! market
+! market
+! market
+||ya.ru/portal/front/reports/
+||yastatic.net/s3/web4static/*/static/App-FootScript_advRsya.$script,redirect=noopjs
 !
 !
 ! =Block ads in Yandex Weather app. (15.02.26)=
@@ -8439,9 +8488,9 @@ yandex.ru,ya.ru##img[src*="yandex.ru/clck/"]
 ||35.190.94.206,206.94.190.35.bc.googleusercontent.com
 ||35.190.94.206/s/player/*/*_*/endscreen.js
 ||206.94.190.35.bc.googleusercontent.com/s/player/*/*_*/endscreen.js
-||youtube.com/api/stats/qoe$important
-||youtube-nocookie.com/api/stats/qoe$important
-||youtubekids.com/api/stats/qoe$important
+||youtube.com/api/stats/qoe$important,redirect=nooptext
+||youtube-nocookie.com/api/stats/qoe$important,redirect=nooptext
+||youtubekids.com/api/stats/qoe$important,redirect=nooptext
 */watch_autoplayrenderer.js$script,domain=youtube.com|youtubekids.com|35.190.94.206|206.94.190.35.bc.googleusercontent.com
 ||google.*/pagead/$redirect=noopjs,important
 ://googletagservices.com^$important
@@ -8528,16 +8577,16 @@ yandex.ru,ya.ru##img[src*="yandex.ru/clck/"]
 ||googleads.github.io^$important,redirect=noopjs
 ||googleads.github.io^$important,redirect=noopcss
 ||imasdk.googleapis.com/js/core/bridge*_*.html
-||youtube.com/api/stats/atr?ns=
-||youtube-nocookie.com/api/stats/atr?ns=
-||youtubekids.com/api/stats/atr?ns=
-||35.190.94.206/api/stats/atr?ns=
-||206.94.190.35.bc.googleusercontent.com/api/stats/atr?ns=
-||youtube.com/api/stats/playback?ns=
-||youtube-nocookie.com/api/stats/playback?ns=
-||youtubekids.com/api/stats/playback?ns=
-||35.190.94.206/api/stats/playback?ns=
-||206.94.190.35.bc.googleusercontent.com/api/stats/playback?ns=
+||youtube.com/api/stats/atr?ns=$redirect=nooptext
+||youtube-nocookie.com/api/stats/atr?ns=$redirect=nooptext
+||youtubekids.com/api/stats/atr?ns=$redirect=nooptext
+||35.190.94.206/api/stats/atr?ns=$redirect=nooptext
+||206.94.190.35.bc.googleusercontent.com/api/stats/atr?ns=$redirect=nooptext
+||youtube.com/api/stats/playback?ns=$redirect=nooptext
+||youtube-nocookie.com/api/stats/playback?ns=$redirect=nooptext
+||youtubekids.com/api/stats/playback?ns=$redirect=nooptext
+||35.190.94.206/api/stats/playback?ns=$redirect=nooptext
+||206.94.190.35.bc.googleusercontent.com/api/stats/playback?ns=$redirect=nooptext
 ||adtrafficquality.google^$important
 ||c2paregistration*.googleapis.com^
 ||play.google.com/play/log$redirect=nooptext
@@ -9673,7 +9722,7 @@ teletype.in#@#div.preloader
 @@/LazyGoogleReCaptchaV*.js
 @@||strm-*-*.strm.yandex.*/music-v*/crypt/ysign*=*/*/*-mp4?
 @@||api.letsencrypt.org^
-@@||youtube.com/api/stats/watchtime$image,domain=youtube.com|youtube-nocookie.com|youtu.be
+@@||youtube.com/api/stats/watchtime?ns=$domain=youtube.com|youtube-nocookie.com|youtu.be
 @@||yandex.*/captchapgrd
 @@||yandex.*/maps/api/traffic/getRoadEvents
 @@||nperf.com/partner/frame
@@ -9823,8 +9872,7 @@ teletype.in#@#div.preloader
 @@||lenta.com^$removeparam=utm_referrer,important
 @@||gosuslugi.ru^*/counters?$domain=gosuslugi.ru
 wildberries.ru,lifemart.ru#@#.footercookies, .open
-@@||youtube.com/api/timedtext?v=
-@@||youtube.com/api/stats/watchtime?ns=
+@@||youtube.com/api/timedtext?v=$domain=youtube.com|youtube-nocookie.com|youtu.be
 @@$cookie=cart_currency
 @@$cookie=localization
 @@$cookie=FRONT_LANG
@@ -10010,150 +10058,152 @@ securelist.ru#@#p:empty:not([class],[id])
 ! -- Непонятные адреса, но нежелательные --
 !
 ||tobipovsem.com^$important
-||largestloitering.com^
+||largestloitering.com^$document,reason="Сайт заблокирован: был замечен в сомнительной рекламе."
 ||f1e4fcff2b.27640ea29d.com^$all
 ||d157c90939.1b384556ae.com^$all
 ||*vesmaveselo*^$third-party
 ||myroledance.com^
-||*.vaterlines.com^
-||otnolatrnup.com^$important,all
-||resp.us^$all
-||meshuradres.best^$all
-||bit.ly*vaylakazan^$all
-||tinyurl.com/vaylakzan^$all
-||t2m.io/2254777^$all
-||bonuscudede.com^$all
-||lavatoryyourself.com^$all
-||antpeak.com^$all
-||t2m.io^$all
-||vaycasino*.com^$all
-||87h6.cfd^$all
+||vaterlines.com^$document,reason=malicious
+||otnolatrnup.com^$important,document,reason=disreputable
+||ostlon.com^$document,reason=disreputable
+||resp.us^$document,reason="Сайт заблокирован: был замечен в сомнительной рекламе."
+||meshuradres.best^$document,reason="Сайт заблокирован: реклама казино."
+||bit.ly*vaylakazan^$document,reason="Сайт заблокирован: реклама казино."
+||tinyurl.com/vaylakzan^$document,reason="Сайт заблокирован: реклама казино."
+||t2m.io/2254777^$document,reason="Сайт заблокирован: реклама казино."
+||bonuscudede.com^$document,reason=disreputable
+||lavatoryyourself.com^$document,reason=malicious
+||antpeak.com^$document,reason=malicious
+||t2m.io^$document,reason="Сайт заблокирован: сайт используется в распространении фишинга, а также для сомнительной рекламы."
+||vaycasino*.com^$document,reason="Сайт заблокирован: реклама казино."
+||87h6.cfd^$document,reason=disreputable
 ||05e6775b2e7e9fbe8ed69f85c04874dbf64236caa3f28638318868d0.com^$all
 ||clicks.af-pb06e2.com^$all
-||adalh-zcq.com^$all
-||clck.ru/3PBAni^$all
-||151.243.18.101/auto_campaign$all
-||clck.ru/3P9b4M^$all
-||clk.li/SwmO^$all
-||obqj2.com^$all
-||hellopeople.app.tc^$all
-||onclick3.shop^$all
-||cimurak.ru^$all
-||click68.icu^$all
-||vironin.info^$all
-||rufanek.ru^$all
-||doburex.ru^$all
-||jebarix.ru^$all
-||click85.icu^$all
-||junarex.shop^$all
-||xelarik.shop^$all
-||vimonex.pro^$all
-||dubarek.shop^$all
-||zubanox.shop^$all
-||domenik.shop^$all
-||wanorex.shop^$all
-||dulinor.ru^$all
-||sipurek.shop^$all
-||morilex.shop^$all
-||zolunex.shop^$all
-||xuvonik.shop^$all
-||liveupdt.com^
-||dealctr.com^
-||geronix.shop^$all
-||ripanex.shop^$all
-||korubin.shop^$all
-||tezunok.shop^$all
-||kamorik.ru^$all
-||zanireb.ru^$all
-||yarunex.ru^$all
-||bikonel.ru^$all
-||lonirex.ru^$all
-||tolarix.ru^$all
-||vimerok.ru^$all
-||wimorix.ru^$all
-||zapurek.ru^$all
-||golunex.ru^$all
-||kemurik.ru^$all
-||bomurex.ru^$all
-||kazunor.ru^$all
-||jumarek.ru^$all
-||xomurek.ru^$all
-||xiremal.shop^$all
-||camorex.shop^$all
-||gulonir.shop^$all
-||ximorev.shop^$all
-||fivanok.shop^$all
-||torunex.shop^$all
-||kemorix.shop^$all
-||fimurex.shop^$all
-||somarik.shop^$all
-||tuvanok.shop^$all
-||dexarib.shop^$all
-||sipurek.shop^$all
-||vekurex.shop^$all
-||zapunik.shop^$all
-||zubanox.shop^$all
-||dubarek.com^$all
-||vironin.org^$all
-||tepurex.today^$all
-||vimonex.pro^$all
-||click42.icu^$all
-||click55.icu^$all
-||click62.icu^$all
-||click92.icu^$all
-||click72.icu^$all
-||click50.icu^$all
-||click36.icu^$all
-||click76.icu^$all
-||click39.icu^$all
-||click91.icu^$all
-||click93.icu^$all
-||click48.icu^$all
-||click78.icu^$all
-||click60.icu^$all
-||click49.icu^$all
-||click71.icu^$all
-||click6.icu^$all
-||click73.icu^$all
-||click98.icu^$all
-||click02.icu^$all
-||dopurex.ru^$all
-||lopunex.ru^$all
-||seburex.ru^$all
-||kavunex.ru^$all
-||nivonak.ru^$all
-||solurex.ru^$all
-||wikalon.ru^$all
-||zubirak.ru^$all
-||tegulon.ru^$all
-||zanireb.ru^$all
-||yarunex.ru^$all
-||ximarok.ru^$all
-||xebonak.ru^$all
-||piguiqproxy.com^$all
-||temp.swtest.ru^$all
-||shopsleta.ru^$all
-||aitd.one^$all
-||piguiqproxy.com^$important
-||refeuficn.github.io^$all
-||mitarchive.info^$all
-||fewteraurums.com^
+||adalh-zcq.com^$document,reason=disreputable
+||clck.ru/3PBAni^$document,reason=disreputable
+||151.243.18.101/auto_campaign$document,reason=disreputable
+||clck.ru/3P9b4M^$document,reason=disreputable
+||clk.li/SwmO^$document,reason=disreputable
+||obqj2.com^$document,reason=disreputable
+||hellopeople.app.tc^$document,reason=malicious
+||onclick3.shop^$document,reason=disreputable
+||cimurak.ru^$document,reason=disreputable
+||click68.icu^$document,reason=disreputable
+||vironin.info^$document,reason=disreputable
+||rufanek.ru^$document,reason=disreputable
+||doburex.ru^$document,reason=disreputable
+||jebarix.ru^$document,reason=disreputable
+||click85.icu^$document,reason=disreputable
+||junarex.shop^$document,reason=disreputable
+||xelarik.shop^$document,reason=disreputable
+||vimonex.pro^$document,reason=disreputable
+||dubarek.shop^$document,reason=disreputable
+||zubanox.shop^$document,reason=disreputable
+||domenik.shop^$document,reason=disreputable
+||wanorex.shop^$document,reason=disreputable
+||dulinor.ru^$document,reason=disreputable
+||sipurek.shop^$document,reason=disreputable
+||morilex.shop^$document,reason=disreputable
+||zolunex.shop^$document,reason=disreputable
+||xuvonik.shop^$document,reason=disreputable
+||liveupdt.com^$document,reason=disreputable
+||dealctr.com^$document,reason=disreputable
+||geronix.shop^$document,reason=disreputable
+||ripanex.shop^$document,reason=disreputable
+||korubin.shop^$document,reason=disreputable
+||tezunok.shop^$document,reason=disreputable
+||kamorik.ru^$document,reason=disreputable
+||zanireb.ru^$document,reason=disreputable
+||yarunex.ru^$document,reason=disreputable
+||bikonel.ru^$document,reason=disreputable
+||lonirex.ru^$document,reason=disreputable
+||tolarix.ru^$document,reason=disreputable
+||vimerok.ru^$document,reason=disreputable
+||wimorix.ru^$document,reason=disreputable
+||zapurek.ru^$document,reason=disreputable
+||golunex.ru^$document,reason=disreputable
+||kemurik.ru^$document,reason=disreputable
+||bomurex.ru^$document,reason=disreputable
+||kazunor.ru^$document,reason=disreputable
+||jumarek.ru^$document,reason=disreputable
+||xomurek.ru^$document,reason=disreputable
+||xiremal.shop^$document,reason=disreputable
+||camorex.shop^$document,reason=disreputable
+||gulonir.shop^$document,reason=disreputable
+||ximorev.shop^$document,reason=disreputable
+||fivanok.shop^$document,reason=disreputable
+||torunex.shop^$document,reason=disreputable
+||kemorix.shop^$document,reason=disreputable
+||fimurex.shop^$document,reason=disreputable
+||somarik.shop^$document,reason=disreputable
+||tuvanok.shop^$document,reason=disreputable
+||dexarib.shop^$document,reason=disreputable
+||sipurek.shop^$document,reason=disreputable
+||vekurex.shop^$document,reason=disreputable
+||zapunik.shop^$document,reason=disreputable
+||zubanox.shop^$document,reason=disreputable
+||dubarek.com^$document,reason=disreputable
+||vironin.org^$document,reason=disreputable
+||tepurex.today^$document,reason=disreputable
+||vimonex.pro^$document,reason=disreputable
+||click42.icu^$document,reason=disreputable
+||click55.icu^$document,reason=disreputable
+||click62.icu^$document,reason=disreputable
+||click92.icu^$document,reason=disreputable
+||click72.icu^$document,reason=disreputable
+||click50.icu^$document,reason=disreputable
+||click36.icu^$document,reason=disreputable
+||click76.icu^$document,reason=disreputable
+||click39.icu^$document,reason=disreputable
+||click91.icu^$document,reason=disreputable
+||click93.icu^$document,reason=disreputable
+||click48.icu^$document,reason=disreputable
+||click78.icu^$document,reason=disreputable
+||click60.icu^$document,reason=disreputable
+||click49.icu^$document,reason=disreputable
+||click71.icu^$document,reason=disreputable
+||click6.icu^$document,reason=disreputable
+||click73.icu^$document,reason=disreputable
+||click98.icu^$document,reason=disreputable
+||click02.icu^$document,reason=disreputable
+||dopurex.ru^$document,reason=disreputable
+||lopunex.ru^$document,reason=disreputable
+||seburex.ru^$document,reason=disreputable
+||kavunex.ru^$document,reason=disreputable
+||nivonak.ru^$document,reason=disreputable
+||solurex.ru^$document,reason=disreputable
+||wikalon.ru^$document,reason=disreputable
+||zubirak.ru^$document,reason=disreputable
+||tegulon.ru^$document,reason=disreputable
+||zanireb.ru^$document,reason=disreputable
+||yarunex.ru^$document,reason=disreputable
+||ximarok.ru^$document,reason=disreputable
+||xebonak.ru^$document,reason=disreputable
+||piguiqproxy.com^$all,important
+||temp.swtest.ru^$all,reason=malicious
+||shopsleta.ru^$all,reason=malicious
+||aitd.one^$all,reason=malicious
+||piguiqproxy.com^$important,reason=malicious
+||refeuficn.github.io^$all,reason=malicious
+||mitarchive.info^$all,reason=malicious
+||fewteraurums.com^$all,reason=malicious
 ||159.138.237.10^
-||qxgolds.com^$all
+||qxgolds.com^$all,reason=malicious
 /cdn/t.gif
-||kgwhg.com^$all
-||claude-pro.com^$all
+||kgwhg.com^$document,reason=malicious
+||claude-pro.com^$document,reason=malicious
 ||8.217.190.58^
-||kittiescraftsmp.com^$all
+||8.217.190.58^
+||kittiescraftsmp.com^$document,reason=malicious
 ||38.190.225.166^$all
-||torroclk.com^$all
-||ajb8.com^$all
-||курьер-бургер-кинг.рф^$all
+||torroclk.com^$all,reason=malicious
+||ajb8.com^$all,reason=malicious
+||курьер-бургер-кинг.рф^$document,reason="Сайт заблокирован: домен перехвачен рекламщиками казино."
 ||bulsis.net^$all
-||angeltarotreading.com^$all
-||1push.io^$all
-||tgai.app^$all
-||i-ceusernames.org^$all
+||angeltarotreading.com^$document,reason=disreputable
+||1push.io^$document,reason=malicious
+||tgai.app^$document,reason=malicious
+||i-ceusernames.org^$document,reason="Сайт заблокирован: конфидициальные данные."
 ||94.228.167.90^$all
 ||deadhub.org^$all
 ||193.23.118.155^
