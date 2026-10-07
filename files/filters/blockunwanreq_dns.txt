@@ -1127,7 +1127,6 @@
 ||cdn.dmtgvn.com^
 ||metrics.teamviewer.com^$important
 ||analytics.slashdotmedia.com^$important
-||public.profitwell.com^
 ||ad-wa.anydesk.com^
 ||analytics*.tiktok.com^$important
 ||unisound.cdnvideo.ru^
@@ -1841,7 +1840,6 @@
 ||parsely.com^$important
 ||rum.dzen.ru^$important
 ||gewfwdgd.site^
-||public.profitwell.com^
 ||embed.tawk.to^
 ||clean.gg^
 ||mxpnl.com^$important
@@ -2114,7 +2112,7 @@
 ||api.tinsurance.ru^
 ||stat.media^
 ||connect-*.hispace.dbankcloud.*^
-||s.4pda.to^
+! s.4pda.to^
 ! - imo[.]im
 ||loveprogram.tech^
 ||peaksite.tech^$important
@@ -2296,7 +2294,6 @@
 ||navvy.media.net^
 ||htlb.casalemedia.com^
 ||rubiconproject.com^
-||pubmatic.com^
 ||qsearch-*.akamaihd.net^
 ||indexww.com^$important
 ||servenobid.com^
@@ -2379,7 +2376,7 @@
 ||sentry.etabl.ru^
 ||xoalt.com^
 ||emrldco.com^
-||ant.sbrf.ru^
+||ant.sbrf.ru^$important
 ||media.net^
 ||dummyimage.com^
 ||t1.tacdn.com^
@@ -2455,7 +2452,6 @@
 ||*.infox.ru^
 ||sentry.hostvds.com^
 ||network.cogentco.com^
-||public.profitwell.com^
 ||insights.sitesearch360.com^
 ||t.paypal.com^
 ||node.illicium.co^
@@ -2556,6 +2552,13 @@
 ||rawcdn.githack.com^
 ||bbcdn.githack.com^
 ||researchingsweatexit.com^
+||leadsy.ai^
+||ddwl4m2hdecbv.cloudfront.net^
+||metrics.rapidedge.io^
+||*-st-expc.vivo.com^
+||shrillyclose.com^
+||vito.sber.ru^
+||visor.sbrf.ru^
 !
 !
 !
@@ -3087,6 +3090,9 @@
 @@||myrka.digital^$important
 @@||rr*---*-*.c.youtube.com^
 @@||*---*-*.c.youtube.com^
+@@||lava.top^
+@@||telehelp.top^$important
+@@||akenai.click^
 !
 !
 !
